@@ -26,6 +26,7 @@
     <v-app-bar
       fixed
       app
+      clipped-right
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn
@@ -54,34 +55,6 @@
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
-
-    <v-sheet
-      style="position: fixed; bottom: 0; width: 100%; z-index: 6;"
-      elevation="5"
-    >
-      <v-toolbar dense>
-        <v-toolbar-title>Item editor</v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-btn icon @click="bottomDrawer = !bottomDrawer">
-          <v-icon :class="{ rotated: bottomDrawer }">mdi-chevron-up</v-icon>
-        </v-btn>
-
-      </v-toolbar>
-
-      <v-expand-transition>
-        <v-card
-          tile
-          style="height:30vh; overflow:auto;"
-          v-if="bottomDrawer"
-        >
-          <v-card-text>
-            <p> Sit quia dolorum obcaecati nam repudiandae Quibusdam ea possimus animi dicta aspernatur! Mollitia assumenda dicta possimus at reiciendis Nam deserunt cupiditate odit non atque blanditiis Fugiat distinctio excepturi optio cupiditate harum? Officiis aspernatur </p>
-          </v-card-text>
-        </v-card>
-      </v-expand-transition>
-
-    </v-sheet>
-
   </v-app>
 </template>
 
