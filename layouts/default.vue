@@ -3,7 +3,6 @@
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
-      :clipped="clipped"
       fixed
       app
     >
@@ -25,36 +24,24 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
-      :clipped-left="clipped"
       fixed
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn
+        v-if="false"
         icon
         @click.stop="miniVariant = !miniVariant"
       >
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-btn
         icon
-        @click.stop="rightDrawer = !rightDrawer"
+        disabled
       >
-        <v-icon>mdi-menu</v-icon>
+        <v-icon>mdi-account</v-icon>
       </v-btn>
     </v-app-bar>
     <v-main>
@@ -62,24 +49,39 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      fixed
-      open
-      right
-    >
-      <ul id="toc">
-        <router-link custom v-slot="{ href, isExactActive }" :to="{ path: '/', hash: '#uno' }"><li :class="{ active: isExactActive }"><a :href="href">Uno</a></li></router-link>
-        <router-link custom v-slot="{ href, isExactActive }" :to="{ path: '/', hash: '#due' }"><li :class="{ active: isExactActive }"><a :href="href">Due</a></li></router-link>
-        <router-link custom v-slot="{ href, isExactActive }" :to="{ path: '/', hash: '#tre' }"><li :class="{ active: isExactActive }"><a :href="href">Tre</a></li></router-link>
-      </ul>
-    </v-navigation-drawer>
     <v-footer
-      :absolute="!fixed"
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
+
+    <v-sheet
+      style="position: fixed; bottom: 0; width: 100%; z-index: 6;"
+      elevation="5"
+    >
+      <v-toolbar dense>
+        <v-toolbar-title>Item editor</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn icon @click="bottomDrawer = !bottomDrawer">
+          <v-icon :class="{ rotated: bottomDrawer }">mdi-chevron-up</v-icon>
+        </v-btn>
+
+      </v-toolbar>
+
+      <v-expand-transition>
+        <v-card
+          tile
+          style="height:30vh; overflow:auto;"
+          v-if="bottomDrawer"
+        >
+          <v-card-text>
+            <p> Sit quia dolorum obcaecati nam repudiandae Quibusdam ea possimus animi dicta aspernatur! Mollitia assumenda dicta possimus at reiciendis Nam deserunt cupiditate odit non atque blanditiis Fugiat distinctio excepturi optio cupiditate harum? Officiis aspernatur </p>
+          </v-card-text>
+        </v-card>
+      </v-expand-transition>
+
+    </v-sheet>
+
   </v-app>
 </template>
 
@@ -87,9 +89,8 @@
 export default {
   data () {
     return {
-      clipped: false,
+      bottomDrawer: true,
       drawer: false,
-      fixed: false,
       items: [
         {
           icon: 'mdi-apps',
@@ -104,7 +105,7 @@ export default {
       ],
       miniVariant: false,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'testu.eu'
     }
   }
 }
@@ -113,5 +114,8 @@ export default {
   #toc .active {
     font-weight: bold;
     color: red;
+  }
+  .rotated {
+    transform: rotate(-180deg);
   }
 </style>
