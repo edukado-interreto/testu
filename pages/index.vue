@@ -2,18 +2,17 @@
   <div>
     <v-navigation-drawer
       app
+      clipped
       right
       bottom
-      clipped
-      v-model="drawer"
-      :mini-variant.sync="mini"
       disable-resize-watcher
-      disable-route-watcher
+      v-model="edit_drawer.show"
+      width="45vw"
     >
       <v-list-item dense v-if="!$vuetify.breakpoint.mobile">
-        <v-btn @click.stop="mini = !mini" icon><v-icon>mdi-chevron-{{ mini ? 'left' : 'right' }}</v-icon></v-btn>
+        <v-btn @click.stop="edit_drawer.show = false" icon><v-icon>mdi-chevron-right</v-icon></v-btn>
       </v-list-item>
-      <v-container v-show="!mini">
+      <v-container v-show="!edit_drawer.mini">
         <v-textarea
           v-model="sheet[0].code"
           auto-grow
@@ -33,6 +32,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer />
+          <v-btn @click="edit_drawer.show = true">Edit</v-btn>
           <v-btn
             color="primary"
             nuxt
@@ -62,8 +62,10 @@ export default {
     })
   },
   data: () => ({
-    mini: false,
-    drawer: true,
+    edit_drawer: {
+      mini: false,
+      show: false
+    },
     sheet: [
       {
         type: "gapFilling",

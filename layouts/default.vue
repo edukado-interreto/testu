@@ -1,14 +1,27 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
+    <v-app-bar
+      app
+      clipped-right
+      height="72"
+    >
+      <v-app-bar-nav-icon @click.stop="nav_drawer.show = !nav_drawer.show" />
+      <v-toolbar-title v-text="title" />
+      <v-spacer />
+      <v-btn
+        icon
+        disabled
+      >
+        <v-icon>mdi-account</v-icon>
+      </v-btn>
+    </v-app-bar>
     <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      fixed
+      v-model="nav_drawer.show"
       app
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in nav_drawer.items"
           :key="i"
           :to="item.to"
           router
@@ -23,28 +36,6 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      fixed
-      app
-      clipped-right
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        v-if="false"
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn
-        icon
-        disabled
-      >
-        <v-icon>mdi-account</v-icon>
-      </v-btn>
-    </v-app-bar>
     <v-main>
       <v-container>
         <Nuxt />
@@ -62,22 +53,21 @@
 export default {
   data () {
     return {
-      bottomDrawer: true,
-      drawer: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      rightDrawer: false,
+      nav_drawer: {
+        show: null,
+        items: [
+          {
+            icon: 'mdi-apps',
+            title: 'Welcome',
+            to: '/'
+          },
+          {
+            icon: 'mdi-chart-bubble',
+            title: 'Inspire',
+            to: '/inspire'
+          }
+        ],
+      },
       title: 'testu.eu'
     }
   }
