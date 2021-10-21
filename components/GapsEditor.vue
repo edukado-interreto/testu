@@ -1,6 +1,5 @@
 <template>
   <div class="editor">
-    <textarea class="editor_area" v-model="code"></textarea>
     <div class="gap_demo">
       <ol>
         <li v-for="phrase in parsed">
@@ -14,14 +13,14 @@
         </li>
       </ol>
     </div>
-    <div class="code"><pre>{{ parsed }}</pre></div>
+    <div v-if="false"><pre>{{ parsed }}</pre></div>
   </div>
 </template>
 <script>
 export default {
   name: 'GapsEditor',
+  props: [ 'code' ],
   data: () => ({
-    code: "To [be|is] or not to be, [that|those] is the question\n\nThe dog [has|is|gives] eaten [its|it's] food"
   }),
   computed: {
     parsed: function(v) {
@@ -52,14 +51,8 @@ export default {
   pre {
     white-space: break-spaces;
   }
-  .editor_area {
-    width: 500px;
-    height: 120px;
-    margin: .5em;
-    padding: .5em;
-    border: 0;
-    font-family: monospace;
-    font-size: 12pt;
-    line-height: 1.2em;
+  li {
+    line-height: 3.5em;
+    height: auto;
   }
 </style>
