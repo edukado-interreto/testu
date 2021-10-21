@@ -46,20 +46,12 @@
   </div>
 </template>
 <script>
-import { mapMutations } from "vuex"
-
 export default {
   name: 'Index',
   head() {
     return {
       title: 'Home page'
     }
-  },
-  methods: {
-    ...mapMutations({
-      set_node_path: 'edit_drawer/set_node_path',
-      set_sheet: 'edit_drawer/set_sheet'
-    })
   },
   data: () => ({
     edit_drawer: {
@@ -78,9 +70,6 @@ export default {
         code: "The [book|bok|buuk|boock] is on the [table|teble|thable]\n\n[|The] Jupiter and [the|] Earth are planets.\n\nLorem [ipsum|!@#] dolor sit amet."
       }
     ]
-  }),
-  mounted() {
-    this.set_sheet(this.sheet)
-  }
+  })
 }
 </script>
