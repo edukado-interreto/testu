@@ -9,10 +9,10 @@
       v-model="edit_drawer.show"
       width="45vw"
     >
-      <v-list-item dense v-if="!$vuetify.breakpoint.mobile">
+      <v-list-item v-if="!$vuetify.breakpoint.mobile">
         <v-btn @click.stop="edit_drawer.show = false" icon><v-icon>mdi-chevron-right</v-icon></v-btn>
       </v-list-item>
-      <v-container v-show="!edit_drawer.mini">
+      <v-container>
         <v-textarea
           v-model="sheet[0].code"
           auto-grow
@@ -21,15 +21,36 @@
     </v-navigation-drawer>
     <v-container>
       <v-card v-for="section in sheet" class="mb-4">
-        <v-card-title class="headline">
-          {{ section.title }}
-        </v-card-title>
         <v-card-text>
-          <GapsEditor
-            v-if="section.type == 'gapFilling'"
-            :code="section.code"
-          />
+          <v-row no-gutters class="mb-1">
+            <v-col class="flex-grow-0 me-3">
+              <v-btn
+                x-small depressed style="height:100%;"
+                @click="edit_drawer.show = true"
+              ><v-icon small>mdi-pencil</v-icon></v-btn>
+            </v-col>
+            <v-col>
+              <span class="headline">
+                {{ section.title }}
+              </span>
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col class="flex-grow-0 me-3">
+              <v-btn
+                x-small depressed style="height:100%;"
+                @click="edit_drawer.show = true"
+              ><v-icon small>mdi-pencil</v-icon></v-btn>
+            </v-col>
+            <v-col>
+              <GapsEditor
+                v-if="section.type == 'gapFilling'"
+                :code="section.code"
+              />
+            </v-col>
+          </v-row>
         </v-card-text>
+        <!--
         <v-card-actions>
           <v-spacer />
           <v-btn @click="edit_drawer.show = true">Edit</v-btn>
@@ -41,6 +62,7 @@
             Next
           </v-btn>
         </v-card-actions>
+        -->
       </v-card>
     </v-container>
   </div>

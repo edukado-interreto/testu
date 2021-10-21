@@ -52,7 +52,7 @@ export default {
     white-space: break-spaces;
   }
   li {
-    line-height: 3.5em;
-    height: auto;
+    margin-bottom: 1.5em;
+    line-height: 3em;
   }
 </style>
