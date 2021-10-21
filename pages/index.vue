@@ -21,12 +21,15 @@
       </v-container>
     </v-navigation-drawer>
     <v-container>
-      <v-card>
+      <v-card v-for="section in sheet" class="mb-4">
         <v-card-title class="headline">
-          {{ sheet[0].title }}
+          {{ section.title }}
         </v-card-title>
         <v-card-text>
-          <GapsEditor :code="sheet[0].code" />
+          <GapsEditor
+            v-if="section.type == 'gapFilling'"
+            :code="section.code"
+          />
         </v-card-text>
         <v-card-actions>
           <v-spacer />
@@ -52,6 +55,12 @@ export default {
       title: 'Home page'
     }
   },
+  methods: {
+    ...mapMutations({
+      set_node_path: 'edit_drawer/set_node_path',
+      set_sheet: 'edit_drawer/set_sheet'
+    })
+  },
   data: () => ({
     mini: false,
     drawer: true,
@@ -60,8 +69,16 @@ export default {
         type: "gapFilling",
         title: "Fill in the gaps",
         code: "To [be|is] or not to be, [that|those] is the question\n\nThe dog [has|is|gives] eaten [its|it's] food"
+      },
+      {
+        type: "gapFilling",
+        title: "Another time",
+        code: "The [book|bok|buuk|boock] is on the [table|teble|thable]\n\n[|The] Jupiter and [the|] Earth are planets.\n\nLorem [ipsum|!@#] dolor sit amet."
       }
     ]
   }),
+  mounted() {
+    this.set_sheet(this.sheet)
+  }
 }
 </script>
