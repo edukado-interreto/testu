@@ -15,7 +15,7 @@
       </v-list-item>
       <v-container v-show="!mini">
         <v-textarea
-          v-model="code"
+          v-model="sheet[0].code"
           auto-grow
         ></v-textarea>
       </v-container>
@@ -23,10 +23,10 @@
     <v-container>
       <v-card>
         <v-card-title class="headline">
-          {{ title }}
+          {{ sheet[0].title }}
         </v-card-title>
         <v-card-text>
-          <GapsEditor :code="code" />
+          <GapsEditor :code="sheet[0].code" />
         </v-card-text>
         <v-card-actions>
           <v-spacer />
@@ -43,6 +43,8 @@
   </div>
 </template>
 <script>
+import { mapMutations } from "vuex"
+
 export default {
   name: 'Index',
   head() {
@@ -50,13 +52,9 @@ export default {
       title: 'Home page'
     }
   },
-  methods: {
-  },
   data: () => ({
     mini: false,
     drawer: true,
-    title: "Fill in the gaps",
-    code: "To [be|is] or not to be, [that|those] is the question\n\nThe dog [has|is|gives] eaten [its|it's] food",
     sheet: [
       {
         type: "gapFilling",
@@ -64,6 +62,6 @@ export default {
         code: "To [be|is] or not to be, [that|those] is the question\n\nThe dog [has|is|gives] eaten [its|it's] food"
       }
     ]
-  })
+  }),
 }
 </script>
