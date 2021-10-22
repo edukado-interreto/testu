@@ -20,23 +20,25 @@
       </v-container>
     </v-navigation-drawer>
     <v-container>
-      <v-card v-for="section in sheet" class="mb-4">
-        <v-card-text>
+      <v-sheet v-for="(section, i) in sheet" class="mb-6" elevation="0" rounded>
           <v-row no-gutters class="mb-1">
-            <v-col class="flex-grow-0 me-3">
+            <v-col class="flex-grow-0 me-4">
               <v-btn
                 x-small depressed style="height:100%;"
                 @click="edit_drawer.show = true"
               ><v-icon small>mdi-pencil</v-icon></v-btn>
             </v-col>
             <v-col>
-              <span class="headline">
-                {{ section.title }}
+              <span class="headline"> 
+                {{ i+1 }}. {{ section.title }}
+                <span v-if="section.title === ''" class="font-italic">
+                  (no title)
+                </span>
               </span>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col class="flex-grow-0 me-3">
+            <v-col class="flex-grow-0 me-4">
               <v-btn
                 x-small depressed style="height:100%;"
                 @click="edit_drawer.show = true"
@@ -49,7 +51,6 @@
               />
             </v-col>
           </v-row>
-        </v-card-text>
         <!--
         <v-card-actions>
           <v-spacer />
@@ -63,7 +64,17 @@
           </v-btn>
         </v-card-actions>
         -->
-      </v-card>
+      </v-sheet>
+
+      <v-btn
+        color="primary"
+        rounded
+        @click="sheet.push({ type: 'gapFilling', code: 'Example [phrase|fraze].\n\nAnother [one|ones].', title: '' })"
+      >
+        <v-icon class="me-2">mdi-plus</v-icon>
+        Add
+      </v-btn>
+
     </v-container>
   </div>
 </template>

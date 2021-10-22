@@ -1,5 +1,6 @@
 <template>
   <v-select
+    ref="select"
     dense
     hide-details
     :style="'display:inline-block; width: ' + gap_width"
@@ -21,7 +22,7 @@ export default {
     choices: function() {
       /**
        * Return the array of the possible answers to choose from,
-       * in random order.
+       * including right ones and wrong ones, in random order.
        * @returns {str[]}
        */
       return this.shuffle(
@@ -30,7 +31,7 @@ export default {
         )
       )
     },
-    longer_choice_length: function() {
+    longest_choice_length: function() {
       /**
        * Return the length in character of the longest
        * answer that one can choice (to calculate gap width)
@@ -47,7 +48,7 @@ export default {
        * Returns the css value used to set the gap width
        * @returns {str}
        */
-      return this.longer_choice_length + 7 + 'ch';
+      return this.longest_choice_length + 7 + 'ch';
       // FIXME
       // heuristic calculation: to display the string "0"
       // into the v-select, a minimum width of 8ch was
@@ -70,7 +71,10 @@ export default {
   },
   methods: {
     shuffle: function(array) {
-      // shuffle an array using the Fisher-Yates algorithm
+      /**
+       * Shuffle an array using the Fisher-Yates algorithm,
+       * O(n), un-biased.
+       */
       let currentIndex = array.length,  randomIndex;
       // While there remain elements to shuffle...
       while (currentIndex != 0) {
@@ -82,17 +86,27 @@ export default {
           array[randomIndex], array[currentIndex]];
       }
       return array;
+    },
+    get_center: function(element) {
+      const rect = element.getBoundingClientRect()
+      const left = rect.x - rect.width / 2
+      const top = rect.y - rect.height / 2
+      // TODO: calculate x and y using left and top
+      // in proportion to the window size
+      return { x: 0.5, y: 0.5 } // TODO
     }
   },
   watch: {
     success: function(val, oldVal) {
       if (process.server) return
       if (val === true) {
+        const coords = this.get_center(this.$refs.select.$refs['input-slot'])
         this.$confetti({
           angle: 90,
           spread: 110,
           particleCount: 60,
-          origin: { x:0.5, y: 0.5 },
+          //origin: { x: 0.5, y: 0.5 },
+          //origin: { x: coords.x, y: coords.y },
           decay: 0.8
         });
       }

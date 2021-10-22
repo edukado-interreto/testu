@@ -4,6 +4,7 @@
       app
       clipped-right
       height="72"
+      flat
     >
       <v-app-bar-nav-icon @click.stop="nav_drawer.show = !nav_drawer.show" />
       <v-toolbar-title v-text="title" />
