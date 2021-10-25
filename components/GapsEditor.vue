@@ -2,7 +2,11 @@
   <div class="editor">
     <div class="gap_demo">
       <ol>
-        <li v-for="(phrase, i) in parsed" :key="i">
+        <li
+          v-for="(phrase, i) in parsed"
+          :key="i"
+          class="pre-line"
+        >
           <template v-for="(token, j) in phrase">
             <PlayGapSelect
               :key="j"
@@ -18,7 +22,6 @@
         </li>
       </ol>
     </div>
-    <div v-if="false"><pre>{{ parsed }}</pre></div>
   </div>
 </template>
 <script>
@@ -53,11 +56,9 @@ export default {
 }
 </script>
 <style scoped>
-  pre {
-    white-space: break-spaces;
-  }
   li {
     margin-bottom: 1.5em;
     line-height: 3em;
   }
+  .pre-line { white-space: pre-line; }
 </style>

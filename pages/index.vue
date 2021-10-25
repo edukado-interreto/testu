@@ -19,9 +19,17 @@
           @input="update('title')"
           outlined
         ></v-text-field>
-
+        <v-textarea
+          v-model="current.description"
+          rows="1"
+          auto-grow
+          label="Description"
+          @input="update('description')"
+          outlined
+        ></v-textarea>
         <v-textarea
           v-model="current.code"
+          label="Content"
           @input="update('code')"
           auto-grow
           outlined
@@ -40,13 +48,17 @@
           <v-col
             class="flex-grow-0"
           >
-            <v-btn
-              x-small
-              depressed
-              @click="edit(i)"
-              :disabled="i == current.index"
-              :style="{ height: '100%', visibility: (i == current.index) ? 'hidden' : 'visible' }"
-            ><v-icon small>mdi-pencil</v-icon></v-btn>
+              <v-btn
+                x-small
+                depressed
+                @click="(i != current.index) ? edit(i) : (edit_drawer.show = false)"
+                :color="(i != current.index) ? undefined : 'primary'"
+                style="height: 100%; border-radius: 4px 0 0 4px;"
+              >
+                <v-icon small>
+                  {{ (i != current.index) ? 'mdi-pencil' : 'mdi-check-bold' }}
+                </v-icon>
+              </v-btn>
           </v-col>
           <v-col class="ms-4">
             <div class="headline my-4"> 
@@ -55,6 +67,10 @@
                 (no title)
               </span>
             </div>
+            <div
+              v-if="section.description"
+              class="body-2 mb-4 pre-line"
+            >{{ section.description }}</div>
             <GapsEditor
               v-if="section.type == 'gapFilling'"
               :code="section.code"
@@ -128,8 +144,9 @@ export default {
           { offset: 15 }
         )
       })
-      this.current.code = this.sheet[i].code
       this.current.title = this.sheet[i].title
+      this.current.description = this.sheet[i].description
+      this.current.code = this.sheet[i].code
     },
     add(type) {
       this.sheet.push({
@@ -157,3 +174,6 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .pre-line { white-space: pre-line; }
+</style>
