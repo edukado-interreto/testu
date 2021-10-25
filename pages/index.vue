@@ -14,7 +14,8 @@
       </v-list-item>
       <v-container>
         <v-textarea
-          v-model="sheet[0].code"
+          v-model="current.code"
+          @input="update('code')"
           auto-grow
         ></v-textarea>
       </v-container>
@@ -22,7 +23,7 @@
     <v-container>
       <v-sheet
         v-for="(section, i) in sheet"
-        :elevation="i == edit_index ? 8 : 0"
+        :elevation="i == current.index ? 8 : 0"
         ref="sheet"
         class="mb-6 transition-swing"
         rounded
@@ -30,7 +31,7 @@
         <v-row no-gutters class="mb-1">
           <v-col
             class="flex-grow-0"
-            v-show="i != edit_index"
+            v-show="i != current.index"
           >
             <v-btn
               x-small depressed style="height:100%;"
@@ -89,7 +90,10 @@ export default {
     edit_drawer: {
       show: false
     },
-    edit_index: undefined,
+    current: {
+      index: undefined,
+      code: '',
+    },
     sheet: [
       {
         type: "gapFilling",
@@ -105,15 +109,15 @@ export default {
   }),
   methods: {
     edit(i) {
-      console.log("edit", i)
-      this.edit_index = i
+      this.current.index = i
       this.edit_drawer.show = true
       this.$nextTick(function() {
         this.$vuetify.goTo(
           this.$refs.sheet[i],
-          { offset: 10 }
+          { offset: 15 }
         )
       })
+      this.current.code = this.sheet[i].code
     },
     add(type) {
       this.sheet.push({
@@ -122,12 +126,17 @@ export default {
         code: 'Example [phrase|fraze].\n\nAnother [one|ones].',
       })
       this.edit(this.sheet.length - 1)
+    },
+    update(node) {
+      if (node === 'code') {
+        this.$set(this.sheet[this.current.index], 'code', this.current.code)
+      }
     }
   },
   watch: {
     'edit_drawer.show': function(val) {
       if (val === false) {
-        this.edit_index = undefined
+        this.current.index = undefined
       }
     }
   }

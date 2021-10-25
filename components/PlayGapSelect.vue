@@ -9,6 +9,7 @@
     :success="success === true"
     :error="success === false"
     :prepend-inner-icon="success === undefined ? undefined : (success ? 'mdi-check-bold' : 'mdi-close-thick')"
+    @change="on_change"
   ></v-select>
 </template>
 <script>
@@ -70,6 +71,22 @@ export default {
     }
   },
   methods: {
+    on_change: function() {
+      if (process.server) return
+      if (this.success === true) {
+        this.$confetti({
+          angle: 90,
+          spread: 110,
+          particleCount: 60,
+          //origin: { x: 0.5, y: 0.5 },
+          origin: this.confetti_gun_coords(
+            this.$refs.select.$refs['input-slot']
+          ),
+          decay: 0.8,
+          disableForReducedMotion: true
+        });
+      }
+    },
     shuffle: function(array) {
       /**
        * Shuffle an array using the Fisher-Yates algorithm,
@@ -111,23 +128,5 @@ export default {
       }
     }
   },
-  watch: {
-    success: function(val, oldVal) {
-      if (process.server) return
-      if (val === true) {
-        this.$confetti({
-          angle: 90,
-          spread: 110,
-          particleCount: 60,
-          //origin: { x: 0.5, y: 0.5 },
-          origin: this.confetti_gun_coords(
-            this.$refs.select.$refs['input-slot']
-          ),
-          decay: 0.8,
-          disableForReducedMotion: true
-        });
-      }
-    }
-  }
 }
 </script>
