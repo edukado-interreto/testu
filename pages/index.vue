@@ -13,10 +13,18 @@
         <v-btn @click.stop="edit_drawer.show = false" icon><v-icon>mdi-chevron-right</v-icon></v-btn>
       </v-list-item>
       <v-container>
+        <v-text-field
+          v-model="current.title"
+          label="Title"
+          @input="update('title')"
+          outlined
+        ></v-text-field>
+
         <v-textarea
           v-model="current.code"
           @input="update('code')"
           auto-grow
+          outlined
         ></v-textarea>
       </v-container>
     </v-navigation-drawer>
@@ -28,18 +36,20 @@
         class="mb-6 transition-swing"
         rounded
       >
-        <v-row no-gutters class="mb-1">
+        <v-row no-gutters>
           <v-col
             class="flex-grow-0"
-            v-show="i != current.index"
           >
             <v-btn
-              x-small depressed style="height:100%;"
+              x-small
+              depressed
               @click="edit(i)"
+              :disabled="i == current.index"
+              :style="{ height: '100%', visibility: (i == current.index) ? 'hidden' : 'visible' }"
             ><v-icon small>mdi-pencil</v-icon></v-btn>
           </v-col>
           <v-col class="ms-4">
-            <div class="headline my-2"> 
+            <div class="headline my-4"> 
               {{ i+1 }}. {{ section.title }}
               <span v-if="section.title === ''" class="font-italic">
                 (no title)
@@ -92,6 +102,7 @@ export default {
     },
     current: {
       index: undefined,
+      title: '',
       code: '',
     },
     sheet: [
@@ -118,6 +129,7 @@ export default {
         )
       })
       this.current.code = this.sheet[i].code
+      this.current.title = this.sheet[i].title
     },
     add(type) {
       this.sheet.push({
@@ -128,9 +140,12 @@ export default {
       this.edit(this.sheet.length - 1)
     },
     update(node) {
+      this.$set(this.sheet[this.current.index], node, this.current[node])
+      /*
       if (node === 'code') {
         this.$set(this.sheet[this.current.index], 'code', this.current.code)
       }
+      */
     }
   },
   watch: {

@@ -2,13 +2,18 @@
   <div class="editor">
     <div class="gap_demo">
       <ol>
-        <li v-for="phrase in parsed">
-          <template v-for="token in phrase">
+        <li v-for="(phrase, i) in parsed" :key="i">
+          <template v-for="(token, j) in phrase">
             <PlayGapSelect
+              :key="j"
               v-if="token.token === 'gap'"
               :token="token"
             ></PlayGapSelect>
-            <span v-if="token.token === 'text'">{{token.value}}</span>
+            <span
+              :key="j"
+              v-if="token.token === 'text'"
+              v-text="token.value"
+            ></span>
           </template>
         </li>
       </ol>

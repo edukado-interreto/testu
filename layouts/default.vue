@@ -52,6 +52,7 @@
 
 <script>
 export default {
+  name: 'default',
   data () {
     return {
       nav_drawer: {
@@ -59,12 +60,12 @@ export default {
         items: [
           {
             icon: 'mdi-apps',
-            title: 'Welcome',
+            title: 'Home page',
             to: '/'
           },
           {
             icon: 'mdi-chart-bubble',
-            title: 'Inspire',
+            title: 'About',
             to: '/inspire'
           }
         ],

@@ -1,18 +1,8 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <img
-        src="/v.png"
-        alt="Vuetify.js"
-        class="mb-5"
-      >
       <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
+        Lorem ipsum dolor sit amet consectetur unde doloremque error aperiam quisquam Omnis excepturi voluptate totam maxime dignissimos Architecto repudiandae sit obcaecati a magnam deleniti adipisci suscipit. Nam mollitia labore tempora nam ab cupiditate Provident a obcaecati itaque natus inventore! Nihil atque corporis vero amet pariatur Aspernatur nemo quaerat commodi sit necessitatibus. Consectetur sunt perferendis beatae repudiandae minus necessitatibus maiores? Vel excepturi quae magnam reiciendis accusantium. Suscipit ab eveniet labore eveniet porro? Consectetur deserunt voluptatibus eligendi quasi ut. Odio quidem suscipit illum in accusamus. Ad cum vero ab cumque ducimus Voluptatibus repudiandae nulla tenetur omnis non. Ad nulla ipsum molestias totam dignissimos Incidunt architecto tempora quidem architecto architecto ex, ea. Possimus dolores laboriosam quas esse doloremque, porro! Perspiciatis minus laboriosam atque quam quas temporibus Iure quod commodi obcaecati aut dolor, magni Maxime vero exercitationem quae sequi temporibus doloremque sit Dolorum quas omnis fuga aut dolorem Officia obcaecati a sed placeat non. Soluta saepe sed qui non sint Consequuntur impedit amet non tenetur error? Qui et itaque placeat consectetur id Vel illum repellat nam beatae aut. Sapiente doloremque magnam amet pariatur esse incidunt sunt Non illum optio harum beatae accusamus quis Quia consequuntur repellat pariatur consequatur itaque accusamus! Dolores atque nihil soluta nisi iure, veniam? Incidunt magni officia vel omnis porro Eligendi commodi nesciunt eos laborum deserunt! Omnis ab architecto ipsum enim a. Quia quam fugiat minus in reprehenderit ab Dolorem a suscipit fugiat ea et? Sapiente distinctio dolores ad sit ea ipsum Hic tempora vel porro aut fugiat animi obcaecati deleniti minima? Perspiciatis rerum dignissimos quis eum porro consequatur? Unde corporis temporibus suscipit voluptatibus quis officia. Saepe magni voluptatum cum numquam corporis ea fugit Quod sit quia sint nisi atque. Aliquam veniam ad recusandae autem explicabo enim qui? Eum dicta consequuntur quas assumenda quia autem et. Necessitatibus beatae magnam modi animi sed praesentium harum. Vitae quod error distinctio eveniet quam dolores. Provident deleniti nam sequi magnam similique. Ipsum mollitia perspiciatis itaque optio vitae. Vero ipsa ipsam inventore dolores vel Delectus sed officiis consequuntur dolores harum Aliquid atque eaque odit maiores ipsum Quas at dolorem corporis error architecto voluptates, nesciunt. Sed earum veritatis esse quis nostrum modi molestiae Dolor aut maiores tempore fugiat iusto odio numquam earum Porro magnam vitae quod deleniti corporis voluptas. Sed accusamus est perferendis maxime repellat? Blanditiis excepturi tempore animi quaerat at temporibus dolorem laborum sed neque Dolorem consequatur quibusdam eius dolor sapiente vero! Possimus esse ab nesciunt nostrum accusamus.
       </blockquote>
     </v-col>
   </v-row>
