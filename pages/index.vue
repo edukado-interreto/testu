@@ -20,37 +20,36 @@
       </v-container>
     </v-navigation-drawer>
     <v-container>
-      <v-sheet v-for="(section, i) in sheet" class="mb-6" elevation="0" rounded>
-          <v-row no-gutters class="mb-1">
-            <v-col class="flex-grow-0 me-4">
-              <v-btn
-                x-small depressed style="height:100%;"
-                @click="edit_drawer.show = true"
-              ><v-icon small>mdi-pencil</v-icon></v-btn>
-            </v-col>
-            <v-col>
-              <span class="headline"> 
-                {{ i+1 }}. {{ section.title }}
-                <span v-if="section.title === ''" class="font-italic">
-                  (no title)
-                </span>
+      <v-sheet
+        v-for="(section, i) in sheet"
+        :elevation="i == edit_index ? 8 : 0"
+        ref="sheet"
+        class="mb-6 transition-swing"
+        rounded
+      >
+        <v-row no-gutters class="mb-1">
+          <v-col
+            class="flex-grow-0"
+            v-show="i != edit_index"
+          >
+            <v-btn
+              x-small depressed style="height:100%;"
+              @click="edit(i)"
+            ><v-icon small>mdi-pencil</v-icon></v-btn>
+          </v-col>
+          <v-col class="ms-4">
+            <div class="headline my-2"> 
+              {{ i+1 }}. {{ section.title }}
+              <span v-if="section.title === ''" class="font-italic">
+                (no title)
               </span>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col class="flex-grow-0 me-4">
-              <v-btn
-                x-small depressed style="height:100%;"
-                @click="edit_drawer.show = true"
-              ><v-icon small>mdi-pencil</v-icon></v-btn>
-            </v-col>
-            <v-col>
-              <GapsEditor
-                v-if="section.type == 'gapFilling'"
-                :code="section.code"
-              />
-            </v-col>
-          </v-row>
+            </div>
+            <GapsEditor
+              v-if="section.type == 'gapFilling'"
+              :code="section.code"
+            />
+          </v-col>
+        </v-row>
         <!--
         <v-card-actions>
           <v-spacer />
@@ -69,7 +68,7 @@
       <v-btn
         color="primary"
         rounded
-        @click="sheet.push({ type: 'gapFilling', code: 'Example [phrase|fraze].\n\nAnother [one|ones].', title: '' })"
+        @click="add('gapFilling')"
       >
         <v-icon class="me-2">mdi-plus</v-icon>
         Add
@@ -88,9 +87,9 @@ export default {
   },
   data: () => ({
     edit_drawer: {
-      mini: false,
       show: false
     },
+    edit_index: undefined,
     sheet: [
       {
         type: "gapFilling",
@@ -103,6 +102,34 @@ export default {
         code: "The [book|bok|buuk|boock] is on the [table|teble|thable]\n\n[|The] Jupiter and [the|] Earth are planets.\n\nLorem [ipsum|!@#] dolor sit amet."
       }
     ]
-  })
+  }),
+  methods: {
+    edit(i) {
+      console.log("edit", i)
+      this.edit_index = i
+      this.edit_drawer.show = true
+      this.$nextTick(function() {
+        this.$vuetify.goTo(
+          this.$refs.sheet[i],
+          { offset: 10 }
+        )
+      })
+    },
+    add(type) {
+      this.sheet.push({
+        type: 'gapFilling',
+        title: '',
+        code: 'Example [phrase|fraze].\n\nAnother [one|ones].',
+      })
+      this.edit(this.sheet.length - 1)
+    }
+  },
+  watch: {
+    'edit_drawer.show': function(val) {
+      if (val === false) {
+        this.edit_index = undefined
+      }
+    }
+  }
 }
 </script>
