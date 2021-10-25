@@ -9,10 +9,12 @@
       v-model="edit_drawer.show"
       width="45vw"
     >
-      <v-list-item v-if="!$vuetify.breakpoint.mobile">
-        <v-btn @click.stop="edit_drawer.show = false" icon><v-icon>mdi-chevron-right</v-icon></v-btn>
-      </v-list-item>
-      <v-container>
+      <v-toolbar dense flat>
+        <v-btn @click="move(-1)" :disabled="current.index == 0" icon><v-icon>mdi-arrow-up</v-icon></v-btn>
+        <v-btn @click="move(+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-arrow-down</v-icon></v-btn>
+        <v-btn @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
+      </v-toolbar>
+      <v-container class="mt-2">
         <v-text-field
           v-model="current.title"
           label="Title"
@@ -135,6 +137,17 @@ export default {
     ]
   }),
   methods: {
+    move(offset) {
+      const from = this.current.index
+      const to = from + offset
+      this.sheet[from] = this.sheet.splice(to, 1, this.sheet[from])[0]
+      // swap array[from] with array[to]
+      this.edit(to)
+    },
+    remove() {
+      this.sheet.splice(this.current.index, 1)
+      this.edit_drawer.show = false
+    },
     edit(i) {
       this.current.index = i
       this.edit_drawer.show = true
