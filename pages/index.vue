@@ -38,6 +38,7 @@
     <v-container>
       <v-sheet
         v-for="(section, i) in sheet"
+        :key="i"
         :elevation="i == current.index ? 8 : 0"
         ref="sheet"
         class="mb-6 transition-swing"
