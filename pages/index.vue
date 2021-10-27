@@ -10,9 +10,14 @@
       width="45vw"
     >
       <v-toolbar dense flat>
-        <v-btn @click="move(-1)" :disabled="current.index == 0" icon><v-icon>mdi-arrow-up</v-icon></v-btn>
-        <v-btn @click="move(+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-arrow-down</v-icon></v-btn>
+        <v-btn @click="edit(current.index-1)" :disabled="current.index == 0" icon><v-icon>mdi-chevron-left</v-icon></v-btn>
+        <v-btn @click="edit(current.index+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-chevron-right</v-icon></v-btn>
+        <v-divider vertical class="mx-2"></v-divider>
         <v-btn @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
+        <v-btn @click="move(-1)" :disabled="current.index == 0" icon><v-icon>mdi-transfer-up</v-icon></v-btn>
+        <v-btn @click="move(+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-transfer-down</v-icon></v-btn>
+        <v-spacer></v-spacer>
+        <v-btn @click="edit_drawer.show = false" icon><v-icon>mdi-close</v-icon></v-btn>
       </v-toolbar>
       <v-container class="mt-2">
         <v-text-field
@@ -36,61 +41,73 @@
       </v-container>
     </v-navigation-drawer>
     <v-container>
-      <v-sheet
-        v-for="(section, i) in sheet"
-        :key="i"
-        :elevation="i == current.index ? 8 : 0"
-        ref="sheet"
-        class="mb-6 transition-swing"
-        rounded
-      >
-        <v-row no-gutters>
-          <v-col
-            class="flex-grow-0"
+      <v-slide-y-transition group>
+        <div
+          v-for="(section, i) in sheet"
+          :key="keyed(sheet, i)"
+        >
+          <!-- 
+          The outer <div> is needed to have both the
+          sliding animation when the v-sheets are moved
+          (<v-slide-y-transition group>) and the fading
+          animation of the v-sheet's elevation when
+          entering/exiting edit mode (.transition-swing).
+          -->
+          <v-sheet
+            :elevation="i == current.index ? 8 : 0"
+            :ref="`section-${keyed(sheet, i)}`"
+            class="mb-4 transition-swing"
+            rounded
           >
-              <v-btn
-                x-small
-                depressed
-                @click="(i != current.index) ? edit(i) : (edit_drawer.show = false)"
-                :color="(i != current.index) ? undefined : 'primary'"
-                style="height: 100%; border-radius: 4px 0 0 4px;"
+            <v-row no-gutters>
+              <v-col
+                class="flex-grow-0"
               >
-                <v-icon small>
-                  {{ (i != current.index) ? 'mdi-pencil' : 'mdi-check-bold' }}
-                </v-icon>
+                <v-btn
+                  x-small
+                  depressed
+                  @click="(i != current.index) ? edit(i) : (edit_drawer.show = false)"
+                  :color="(i != current.index) ? undefined : 'primary'"
+                  style="height: 100%; border-radius: 4px 0 0 4px;"
+                >
+                  <v-icon small>
+                    {{ (i != current.index) ? 'mdi-pencil' : 'mdi-check-bold' }}
+                  </v-icon>
+                </v-btn>
+              </v-col>
+              <v-col class="ms-4">
+                <div class="headline my-4"> 
+                  {{ i+1 }}. {{ section.title }}
+                  <span v-if="section.title === ''" class="font-italic">
+                    (no title)
+                  </span>
+                </div>
+                <div
+                  v-if="section.description"
+                  class="body-2 mb-4 pre-line"
+                >{{ section.description }}</div>
+                <GapsEditor
+                  v-if="section.type == 'gapFilling'"
+                  :code="section.code"
+                />
+              </v-col>
+            </v-row>
+            <!--
+            <v-card-actions>
+              <v-spacer />
+              <v-btn @click="edit_drawer.show = true">Edit</v-btn>
+              <v-btn
+                color="primary"
+                nuxt
+                to="/inspire"
+              >
+                Next
               </v-btn>
-          </v-col>
-          <v-col class="ms-4">
-            <div class="headline my-4"> 
-              {{ i+1 }}. {{ section.title }}
-              <span v-if="section.title === ''" class="font-italic">
-                (no title)
-              </span>
-            </div>
-            <div
-              v-if="section.description"
-              class="body-2 mb-4 pre-line"
-            >{{ section.description }}</div>
-            <GapsEditor
-              v-if="section.type == 'gapFilling'"
-              :code="section.code"
-            />
-          </v-col>
-        </v-row>
-        <!--
-        <v-card-actions>
-          <v-spacer />
-          <v-btn @click="edit_drawer.show = true">Edit</v-btn>
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Next
-          </v-btn>
-        </v-card-actions>
-        -->
-      </v-sheet>
+            </v-card-actions>
+            -->
+          </v-sheet>
+          </div>
+      </v-slide-y-transition>
 
       <v-btn
         color="primary"
@@ -106,6 +123,8 @@
   </div>
 </template>
 <script>
+import { nanoid } from 'nanoid'
+
 export default {
   name: 'Index',
   head() {
@@ -121,8 +140,7 @@ export default {
       index: undefined,
       data: {},
     },
-    sheet: [],
-    /*
+    sheet: [
       {
         type: "gapFilling",
         title: "Fill in the gaps",
@@ -134,9 +152,15 @@ export default {
         code: "The [book|bok|buuk|boock] is on the [table|teble|thable]\n\n[|The] Jupiter and [the|] Earth are planets.\n\nLorem [ipsum|!@#] dolor sit amet."
       }
     ]
-    */
   }),
   methods: {
+    keyed(iterable, i) {
+      if ("_key" in iterable[i]) {
+        return iterable[i]._key
+      }
+      iterable[i]._key = nanoid()
+      return iterable[i]._key
+    },
     move(offset) {
       const from = this.current.index
       const to = from + offset
@@ -160,13 +184,20 @@ export default {
     edit(i) {
       this.current.index = i
       this.edit_drawer.show = true
+      this.current.data = this.sheet[i]
       this.$nextTick(function() {
         this.$vuetify.goTo(
-          this.$refs.sheet[i],
+          this.$refs[`section-${this.keyed(this.sheet, i)}`][0],
           { offset: 15 }
         )
+        // Ideally we could just use this.$refs.sheet[i] since we can have
+        // a template like <v-sheet ref="sheet" v-for="...">.
+        // Unfortunately this would break when reordering the items, because
+        // "v-for refs do not guarantee the same order as your source Array"
+        // (https://github.com/vuejs/vue/issues/4952#issuecomment-280661367)
+        // so we build the refs using the sections' key and then use the
+        // first and only element, as the ref will be an array anyway.
       })
-      this.current.data = this.sheet[i]
     },
     add(type) {
       this.sheet.push({
@@ -183,16 +214,21 @@ export default {
         this.current.index = undefined
       }
     },
-    'current.data': {
-      handler: function() {
-        this.$set(
-          this.sheet,
-          this.current.index,
-          this.current.data
-        )
-      },
-      deep: true
-    }
+    //'current.data': {
+    //
+    //  // this watcher is not needed because when entering edit mode we assign
+    //  // to this.current.data a reference to this.sheet[this.current.index],
+    //  // so the changes to the former are actually performed on the latter
+    //
+    //  handler: function() {
+    //    this.$set(
+    //      this.sheet,
+    //      this.current.index,
+    //      this.current.data
+    //    )
+    //  },
+    //  deep: true
+    //}
   }
 }
 </script>
