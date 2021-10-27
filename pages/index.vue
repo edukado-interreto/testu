@@ -16,23 +16,20 @@
       </v-toolbar>
       <v-container class="mt-2">
         <v-text-field
-          v-model="current.title"
+          v-model="current.data.title"
           label="Title"
-          @input="update('title')"
           outlined
         ></v-text-field>
         <v-textarea
-          v-model="current.description"
+          v-model="current.data.description"
           rows="1"
           auto-grow
           label="Description"
-          @input="update('description')"
           outlined
         ></v-textarea>
         <v-textarea
-          v-model="current.code"
+          v-model="current.data.code"
           label="Content"
-          @input="update('code')"
           auto-grow
           outlined
         ></v-textarea>
@@ -121,8 +118,7 @@ export default {
     },
     current: {
       index: undefined,
-      title: '',
-      code: '',
+      data: {},
     },
     sheet: [],
     /*
@@ -169,9 +165,7 @@ export default {
           { offset: 15 }
         )
       })
-      this.current.title = this.sheet[i].title
-      this.current.description = this.sheet[i].description
-      this.current.code = this.sheet[i].code
+      this.current.data = this.sheet[i]
     },
     add(type) {
       this.sheet.push({
@@ -181,20 +175,22 @@ export default {
       })
       this.edit(this.sheet.length - 1)
     },
-    update(node) {
-      this.$set(this.sheet[this.current.index], node, this.current[node])
-      /*
-      if (node === 'code') {
-        this.$set(this.sheet[this.current.index], 'code', this.current.code)
-      }
-      */
-    }
   },
   watch: {
     'edit_drawer.show': function(val) {
       if (val === false) {
         this.current.index = undefined
       }
+    },
+    'current.data': {
+      handler: function() {
+        this.$set(
+          this.sheet,
+          this.current.index,
+          this.current.data
+        )
+      },
+      deep: true
     }
   }
 }
