@@ -98,9 +98,10 @@
         color="primary"
         rounded
         @click="add('gapFilling')"
+        class="mt-3"
       >
         <v-icon class="me-2">mdi-plus</v-icon>
-        Add
+        Gap filling
       </v-btn>
 
     </v-container>
@@ -123,7 +124,8 @@ export default {
       title: '',
       code: '',
     },
-    sheet: [
+    sheet: [],
+    /*
       {
         type: "gapFilling",
         title: "Fill in the gaps",
@@ -135,6 +137,7 @@ export default {
         code: "The [book|bok|buuk|boock] is on the [table|teble|thable]\n\n[|The] Jupiter and [the|] Earth are planets.\n\nLorem [ipsum|!@#] dolor sit amet."
       }
     ]
+    */
   }),
   methods: {
     move(offset) {
@@ -146,7 +149,16 @@ export default {
     },
     remove() {
       this.sheet.splice(this.current.index, 1)
-      this.edit_drawer.show = false
+      if (this.sheet.length === 0) {
+        this.edit_drawer.show = false
+        return
+      }
+      this.edit(
+        Math.min(
+          this.current.index,
+          this.sheet.length - 1
+        )
+      )
     },
     edit(i) {
       this.current.index = i
@@ -165,7 +177,7 @@ export default {
       this.sheet.push({
         type: 'gapFilling',
         title: '',
-        code: 'Example [phrase|fraze].\n\nAnother [one|ones].',
+        code: 'This is an [example|eksample] phrase.\n\n[This|These] is another one.',
       })
       this.edit(this.sheet.length - 1)
     },
