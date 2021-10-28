@@ -10,8 +10,8 @@
       width="45vw"
     >
       <v-toolbar dense flat>
-        <v-btn @click="edit(current.index-1)" :disabled="current.index == 0" icon><v-icon>mdi-chevron-left</v-icon></v-btn>
-        <v-btn @click="edit(current.index+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-chevron-right</v-icon></v-btn>
+        <v-btn @click="edit(current.index-1)" :disabled="current.index == 0" icon><v-icon>mdi-chevron-up</v-icon></v-btn>
+        <v-btn @click="edit(current.index+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-chevron-down</v-icon></v-btn>
         <v-divider vertical class="mx-2"></v-divider>
         <v-btn @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
         <v-btn @click="move(-1)" :disabled="current.index == 0" icon><v-icon>mdi-transfer-up</v-icon></v-btn>
@@ -32,11 +32,63 @@
           label="Description"
           outlined
         ></v-textarea>
+        <v-toolbar
+          dense
+          flat
+          color="grey lighten-4"
+          class="rounded-b-0 rounded-t-lg"
+        >
+
+          <v-dialog
+            v-model="add_gap_dialog"
+            max-width="750"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                icon
+                v-bind="attrs"
+                v-on="on"
+              >
+                <v-icon>mdi-keyboard-space</v-icon>
+              </v-btn>
+            </template>
+
+            <v-card>
+              <v-card-title>New gap</v-card-title>
+              <v-card-text>
+                <v-row>
+                  <v-col>
+                    <OptionsSelector
+                      :value.sync="new_gap_rights"
+                      label="Right option(s)"
+                      autofocus
+                    ></OptionsSelector>
+                  </v-col>
+                  <v-col>
+                    <OptionsSelector
+                      :value.sync="new_gap_wrongs"
+                      label="Wrong option(s)"
+                    ></OptionsSelector>
+                  </v-col>
+                </v-row>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="primary" @click="insert_gap">Add gap</v-btn>
+                <v-btn text @click="add_gap_dialog=false">Cancel</v-btn>
+              </v-card-actions>
+            </v-card>
+
+          </v-dialog>
+
+        </v-toolbar>
         <v-textarea
+          placeholder="Content"
+          ref="textarea"
           v-model="current.data.code"
-          label="Content"
           auto-grow
           outlined
+          class="rounded-t-0 rounded-b-md"
         ></v-textarea>
       </v-container>
     </v-navigation-drawer>
@@ -133,6 +185,9 @@ export default {
     }
   },
   data: () => ({
+    new_gap_rights: [],
+    new_gap_wrongs: [],
+    add_gap_dialog: false,
     edit_drawer: {
       show: false
     },
@@ -154,6 +209,28 @@ export default {
     ]
   }),
   methods: {
+    insert_gap() {
+
+      const new_gap = "[" + this.new_gap_rights.concat(this.new_gap_wrongs).join("|") + "]"
+
+      const input = this.$refs.textarea.$refs.input
+      const start = input.selectionStart
+      const code = this.current.data.code
+      this.current.data.code = code.slice(
+        0, input.selectionStart
+      ) + new_gap + code.slice(
+        input.selectionEnd
+      )
+
+      this.add_gap_dialog = false
+
+      requestAnimationFrame(() => {
+        input.selectionStart = start + new_gap.length
+        input.selectionEnd   = start + new_gap.length
+        input.focus()
+      })
+
+    },
     keyed(iterable, i) {
       if ("_key" in iterable[i]) {
         return iterable[i]._key
@@ -190,13 +267,13 @@ export default {
           this.$refs[`section-${this.keyed(this.sheet, i)}`][0],
           { offset: 15 }
         )
-        // Ideally we could just use this.$refs.sheet[i] since we can have
-        // a template like <v-sheet ref="sheet" v-for="...">.
+        // Ideally we could just use this.$refs.sheet[i], since we can have
+        // something like <v-sheet ref="sheet" v-for="..."> in the template.
         // Unfortunately this would break when reordering the items, because
         // "v-for refs do not guarantee the same order as your source Array"
         // (https://github.com/vuejs/vue/issues/4952#issuecomment-280661367)
-        // so we build the refs using the sections' key and then use the
-        // first and only element, as the ref will be an array anyway.
+        // so we are using the sections' key to build unique refs, which are
+        // going to be arrays anyway, so we take their first and only item.
       })
     },
     add(type) {
