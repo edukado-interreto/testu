@@ -9,16 +9,18 @@
       v-model="edit_drawer.show"
       width="45vw"
     >
-      <v-toolbar dense flat>
-        <v-btn @click="edit(current.index-1)" :disabled="current.index == 0" icon><v-icon>mdi-chevron-up</v-icon></v-btn>
-        <v-btn @click="edit(current.index+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-chevron-down</v-icon></v-btn>
-        <v-divider vertical class="mx-2"></v-divider>
-        <v-btn @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
-        <v-btn @click="move(-1)" :disabled="current.index == 0" icon><v-icon>mdi-transfer-up</v-icon></v-btn>
-        <v-btn @click="move(+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-transfer-down</v-icon></v-btn>
-        <v-spacer></v-spacer>
-        <v-btn @click="edit_drawer.show = false" icon><v-icon>mdi-close</v-icon></v-btn>
-      </v-toolbar>
+      <template v-slot:prepend>
+        <v-toolbar dense flat>
+          <v-btn @click="edit(current.index-1)" :disabled="current.index == 0" icon><v-icon>mdi-chevron-up</v-icon></v-btn>
+          <v-btn @click="edit(current.index+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-chevron-down</v-icon></v-btn>
+          <v-divider vertical class="mx-2"></v-divider>
+          <v-btn @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
+          <v-btn @click="move(-1)" :disabled="current.index == 0" icon><v-icon>mdi-transfer-up</v-icon></v-btn>
+          <v-btn @click="move(+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-transfer-down</v-icon></v-btn>
+          <v-spacer></v-spacer>
+          <v-btn @click="edit_drawer.show = false" icon><v-icon>mdi-close</v-icon></v-btn>
+        </v-toolbar>
+      </template>
       <v-container class="mt-2">
         <v-text-field
           v-model="current.data.title"
@@ -97,7 +99,7 @@
 
         </v-toolbar>
         <v-textarea
-          placeholder="Start typing  a sentence…"
+          placeholder="Start typing a sentence…"
           ref="textarea"
           v-model="current.data.code"
           auto-grow

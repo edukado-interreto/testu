@@ -57,8 +57,8 @@ export default {
 </script>
 <style scoped>
   li {
-    margin-bottom: 1.5em;
-    line-height: 3em;
+    margin-bottom: 1.25em;
+    line-height: 2.25em;
   }
   .pre-line { white-space: pre-line; }
 </style>
