@@ -41,6 +41,12 @@
 
           <v-btn
             icon
+            @click="append_new_sentence"
+          >
+            <v-icon>mdi-playlist-plus</v-icon>
+          </v-btn>
+          <v-btn
+            icon
             @click.stop="add_gap_dialog_show(true)"
           >
             <v-icon>mdi-keyboard-space</v-icon>
@@ -58,6 +64,7 @@
                   <v-col>
                     <OptionsSelector
                       :value.sync="new_gap_rights"
+                      :rules="[ val => (val.length == 0) ? 'Please insert one option' : true ]"
                       label="Right option(s)"
                       autofocus
                     ></OptionsSelector>
@@ -78,6 +85,7 @@
                   if the user don't press Enter or blurs the input.
                 -->
                 <v-btn
+                  :disabled="new_gap_rights.length == 0"
                   color="primary"
                   @click="doubleRequestAnimationFrame(insert_gap)"
                 >Add gap</v-btn>
@@ -89,7 +97,7 @@
 
         </v-toolbar>
         <v-textarea
-          placeholder="Content"
+          placeholder="Start typing  a sentence…"
           ref="textarea"
           v-model="current.data.code"
           auto-grow
@@ -137,7 +145,7 @@
                 <div class="headline my-4"> 
                   {{ i+1 }}. {{ section.title }}
                   <span v-if="section.title === ''" class="font-italic">
-                    (no title)
+                    Untitled exercise
                   </span>
                 </div>
                 <div
@@ -168,7 +176,6 @@
       </v-slide-y-transition>
 
       <v-btn
-        color="primary"
         rounded
         @click="add('gapFilling')"
         class="mt-3"
@@ -216,6 +223,19 @@ export default {
     ] */
   }),
   methods: {
+    append_new_sentence() {
+      const input = this.$refs.textarea.$refs.input
+      const code = this.current.data.code.trimEnd()
+
+      if (code !== "") {
+        this.current.data.code = code + "\n\n"
+      }
+
+      requestAnimationFrame(() => {
+        input.selectionStart = this.current.data.code.length
+        input.focus()
+      })
+    },
     doubleRequestAnimationFrame(f) {
       // force the browser to re-render the DOM before
       // calling the callback function.

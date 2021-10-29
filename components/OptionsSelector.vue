@@ -4,10 +4,13 @@
     chips
     @keydown="keydown"
     v-model="valueInnerModel"
-    hint='Press Ctrl+Enter to insert the "leave blank" option.'
+    hint='Press Tab to add a new option, press Ctrl+Space to insert the "leave blank" option.'
     :append-icon="null"
     :label="label"
     :autofocus="autofocus"
+    :rules="rules"
+    :error="error"
+    validate-on-blur
   >
     <template v-slot:selection="data">
       <v-chip
@@ -25,7 +28,7 @@
 </template>
 <script>
 export default {
-  props: ['value', 'label', 'autofocus'],
+  props: ['value', 'label', 'autofocus', 'rules'],
   data: () => ({
   }),
   computed: {
@@ -36,7 +39,7 @@ export default {
       // an empty string may be added to the items and is
       // correctly displayed using slots, or even as is,
       // but when deleting the empty string item by user
-      // interaction, all items got removed.
+      // interaction, all items get removed.
       // So we use a computed internal model for the
       // v-combobox, where every occurrences of empty
       // string elements are replaced by a non-printable
@@ -69,7 +72,7 @@ export default {
       // append an empty string to the model on Ctrl+Enter
 
       if (!e.ctrlKey) return
-      if (e.code != 'Enter') return
+      if (e.code != 'Space') return
 
       if (e.path[0].value !== "") return
       // input field is not empty, abort
