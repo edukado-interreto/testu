@@ -4,7 +4,7 @@
     chips
     @keydown="keydown"
     v-model="valueInnerModel"
-    hint="Press Enter to confirm, Ctrl+Enter to insert the blank option."
+    hint='Press Ctrl+Enter to insert the "leave blank" option.'
     :append-icon="null"
     :label="label"
     :autofocus="autofocus"

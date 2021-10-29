@@ -39,19 +39,17 @@
           class="rounded-b-0 rounded-t-lg"
         >
 
+          <v-btn
+            icon
+            @click.stop="add_gap_dialog_show"
+          >
+            <v-icon>mdi-keyboard-space</v-icon>
+          </v-btn>
+
           <v-dialog
             v-model="add_gap_dialog"
             max-width="750"
           >
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                icon
-                v-bind="attrs"
-                v-on="on"
-              >
-                <v-icon>mdi-keyboard-space</v-icon>
-              </v-btn>
-            </template>
 
             <v-card>
               <v-card-title>New gap</v-card-title>
@@ -74,7 +72,12 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="primary" @click="insert_gap">Add gap</v-btn>
+                <!--
+                  Using requestAnimationFrame(insert_gap) will ensure
+                  that the value two OptionsSelectors is updated even
+                  if the user don't press Enter or blurs the inputs.
+                -->
+                <v-btn color="primary" @click="requestAnimationFrame(insert_gap)">Add gap</v-btn>
                 <v-btn text @click="add_gap_dialog=false">Cancel</v-btn>
               </v-card-actions>
             </v-card>
@@ -209,6 +212,19 @@ export default {
     ]
   }),
   methods: {
+    requestAnimationFrame(f) {
+      // force the browser to re-render the DOM before
+      // calling the callback function.
+      // E.g. <v-btn @click="requestAnimationFrame(f)">
+      // will call f() after performing the blur event
+      // of the previous focused element.
+      return window.requestAnimationFrame(f)
+    },
+    add_gap_dialog_show() {
+      this.new_gap_rights = []
+      this.new_gap_wrongs = []
+      this.add_gap_dialog = true
+    },
     insert_gap() {
 
       const new_gap = "[" + this.new_gap_rights.concat(this.new_gap_wrongs).join("|") + "]"
