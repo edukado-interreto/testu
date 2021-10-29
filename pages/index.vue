@@ -41,7 +41,7 @@
 
           <v-btn
             icon
-            @click.stop="add_gap_dialog_show"
+            @click.stop="add_gap_dialog_show(true)"
           >
             <v-icon>mdi-keyboard-space</v-icon>
           </v-btn>
@@ -73,12 +73,15 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <!--
-                  Using requestAnimationFrame(insert_gap) will ensure
+                  Using double requestAnimationFrame will ensure
                   that the value two OptionsSelectors is updated even
-                  if the user don't press Enter or blurs the inputs.
+                  if the user don't press Enter or blurs the input.
                 -->
-                <v-btn color="primary" @click="requestAnimationFrame(insert_gap)">Add gap</v-btn>
-                <v-btn text @click="add_gap_dialog=false">Cancel</v-btn>
+                <v-btn
+                  color="primary"
+                  @click="doubleRequestAnimationFrame(insert_gap)"
+                >Add gap</v-btn>
+                <v-btn text @click="add_gap_dialog_show(false)">Cancel</v-btn>
               </v-card-actions>
             </v-card>
 
@@ -173,6 +176,7 @@
         <v-icon class="me-2">mdi-plus</v-icon>
         Gap filling
       </v-btn>
+      
 
     </v-container>
   </div>
@@ -198,7 +202,7 @@ export default {
       index: undefined,
       data: {},
     },
-    sheet: [
+    sheet: [] /*
       {
         type: "gapFilling",
         title: "Fill in the gaps",
@@ -209,21 +213,27 @@ export default {
         title: "Another time",
         code: "The [book|bok|buuk|boock] is on the [table|teble|thable]\n\n[|The] Jupiter and [the|] Earth are planets.\n\nLorem [ipsum|!@#] dolor sit amet."
       }
-    ]
+    ] */
   }),
   methods: {
-    requestAnimationFrame(f) {
+    doubleRequestAnimationFrame(f) {
       // force the browser to re-render the DOM before
       // calling the callback function.
-      // E.g. <v-btn @click="requestAnimationFrame(f)">
-      // will call f() after performing the blur event
-      // of the previous focused element.
-      return window.requestAnimationFrame(f)
+      // See:
+      // https://github.com/vuejs/vue/issues/9200
+      // https://github.com/twickstrom/vue-force-next-tick
+      return window.requestAnimationFrame(
+        () => window.requestAnimationFrame(
+          f
+        )
+      )
     },
-    add_gap_dialog_show() {
-      this.new_gap_rights = []
-      this.new_gap_wrongs = []
-      this.add_gap_dialog = true
+    add_gap_dialog_show(show) {
+      if (show) {
+        this.add_gap_dialog = true
+      } else {
+        this.add_gap_dialog = false
+      }
     },
     insert_gap() {
 
@@ -279,6 +289,7 @@ export default {
       this.edit_drawer.show = true
       this.current.data = this.sheet[i]
       this.$nextTick(function() {
+        // scroll to the currently edited section
         this.$vuetify.goTo(
           this.$refs[`section-${this.keyed(this.sheet, i)}`][0],
           { offset: 15 }
@@ -288,20 +299,30 @@ export default {
         // Unfortunately this would break when reordering the items, because
         // "v-for refs do not guarantee the same order as your source Array"
         // (https://github.com/vuejs/vue/issues/4952#issuecomment-280661367)
-        // so we are using the sections' key to build unique refs, which are
-        // going to be arrays anyway, so we take their first and only item.
+        // so we are using the sections' key to build unique refs, that will
+        // be arrays anyway, so then we scroll to their first and only item.
       })
     },
     add(type) {
       this.sheet.push({
         type: 'gapFilling',
         title: '',
-        code: 'This is an [example|eksample] phrase.\n\n[This|These] is another one.',
+        code: '' //This is an [example|eksample] phrase.\n\n[This|These] is another one.',
       })
       this.edit(this.sheet.length - 1)
     },
   },
   watch: {
+    add_gap_dialog: function(val) {
+      if (val) {
+        this.new_gap_rights = []
+        this.new_gap_wrongs = []
+      } else {
+        requestAnimationFrame(() => {
+          this.$refs.textarea.focus()
+        })
+      }
+    },
     'edit_drawer.show': function(val) {
       if (val === false) {
         this.current.index = undefined
