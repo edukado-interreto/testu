@@ -18,6 +18,7 @@
     </v-app-bar>
     <v-navigation-drawer
       v-model="nav_drawer.show"
+      mini-variant
       app
     >
       <v-list>
@@ -56,7 +57,7 @@ export default {
   data () {
     return {
       nav_drawer: {
-        show: null,
+        show: false,
         items: [
           {
             icon: 'mdi-apps',
