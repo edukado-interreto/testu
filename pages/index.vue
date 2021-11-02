@@ -63,22 +63,21 @@
               <v-form ref="new_gap_form">
                 <v-card-title>New gap</v-card-title>
                 <v-card-text>
-                  <v-row>
-                    <v-col>
-                      <OptionsSelector
-                        :value.sync="new_gap_rights"
-                        :rules="[ val => (val.length == 0) ? 'Please insert one option' : true ]"
-                        label="Right option(s)"
-                        autofocus
-                      ></OptionsSelector>
-                    </v-col>
-                    <v-col>
-                      <OptionsSelector
-                        :value.sync="new_gap_wrongs"
-                        label="Wrong option(s)"
-                      ></OptionsSelector>
-                    </v-col>
-                  </v-row>
+                  <ul>
+                    <li>
+                      Press <code>Tab</code> to finalize the option and add a new one.
+                    </li>
+                    <li>
+                      Press <code>Ctrl + Space</code> to insert the <v-icon small>mdi-selection</v-icon> <i>leave blank</i> option.
+                    </li>
+                  </ul>
+                  
+                  <OptionsSelector
+                    v-model="new_gap_options"
+                    firstchecked
+                    :rules="[ val => (val.length == 0) ? 'Please insert at least one option' : true ]"
+                    autofocus
+                  ></OptionsSelector>
                 </v-card-text>
                 <v-card-actions>
                   <v-spacer></v-spacer>
@@ -202,8 +201,7 @@ export default {
     }
   },
   data: () => ({
-    new_gap_rights: [],
-    new_gap_wrongs: [],
+    new_gap_options: [],
     add_gap_dialog: false,
     edit_drawer: {
       show: false
@@ -269,10 +267,8 @@ export default {
       // TODO:
       // ensure ltr string concatenanion
       // http://stackoverflow.com/q/29988144/
-      const new_gap = "[" + this.new_gap_rights.map(
-        val => '+'+val
-      ).concat(
-        this.new_gap_wrongs
+      const new_gap = "[" + this.new_gap_options.map(
+        opt => opt.right ? '+'+opt.value : opt.value
       ).join("|") + "]"
 
       const input = this.$refs.textarea.$refs.input
@@ -351,8 +347,7 @@ export default {
   watch: {
     add_gap_dialog: function(val) {
       if (val) {
-        this.new_gap_rights = []
-        this.new_gap_wrongs = []
+        this.new_gap_options = []
       } else {
         requestAnimationFrame(() => {
           this.$refs.textarea.focus()

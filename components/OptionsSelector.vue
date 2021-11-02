@@ -3,8 +3,9 @@
     multiple
     chips
     @keydown="keydown"
-    v-model="valueInnerModel"
-    hint='Press Tab to add a new option, press Ctrl+Space to insert the "leave blank" option.'
+    v-model="optionsModel"
+    :hint='((optionsModel.length > 0) ? "Toggle the switches to set the options as right or wrong." : "")'
+    placeholder="Start typing an option..."
     :append-icon="null"
     :label="label"
     :autofocus="autofocus"
@@ -19,6 +20,13 @@
         :disabled="data.disabled"
         @click:close="data.parent.selectItem(data.item)"
       >
+        <v-switch
+          v-model="checkedModel"
+          :value="data.item"
+          dense
+        >
+          <template v-slot:label></template>
+        </v-switch>
         <v-icon small v-if="data.item === '\0'">mdi-selection</v-icon>
         <template v-else>{{ data.item }}</template>
       </v-chip>
@@ -27,49 +35,12 @@
 </template>
 <script>
 export default {
-  props: ['value', 'label', 'autofocus', 'rules'],
+  props: ['value', 'label', 'autofocus', 'rules', 'firstchecked'],
   data: () => ({
+    checkedModel: [],
+    optionsModel: [],
   }),
-  computed: {
-    valueInnerModel: {
-      // This computed property and the usage of "\0" as
-      // replacement for the empty string is a workaround.
-      // v-combobox have an issue handling falsy elements:
-      // an empty string may be added to the items and is
-      // correctly displayed using slots, or even as is,
-      // but when deleting the empty string item by user
-      // interaction, all items get removed.
-      // So we use a computed internal model for the
-      // v-combobox, where every occurrences of empty
-      // string elements are replaced by a non-printable
-      // char (we chose "\0", but also "\n" would work).
-      get() {
-        return this.valueModel.map(e => (e === "") ? "\0" : e)
-      },
-      set(val) {
-        this.valueModel = val.map(e => (e === "\0") ? "" : e)
-      }
-    },
-    valueModel: {
-      // This enable two-way communication between the
-      // component and its parent if the 'value' prop
-      // is used this way:
-      // <component :value.sync="my_value"/>
-      get() {
-        return this.value
-      },
-      set(val) {
-        this.$emit(
-          'update:value',
-          val
-        )
-      }
-    },
-  },
   methods: {
-    log(s) {
-      console.log(s)
-    },
     keydown(e) {
       // append an empty string to the model on Ctrl+Enter
 
@@ -79,15 +50,66 @@ export default {
       if (e.path[0].value !== "") return
       // input field is not empty, abort
       
-      if ((this.valueInnerModel||[]).includes('\0')) return
+      if ((this.optionsModel||[]).includes('\0')) return
       // empty string is already present, abort
 
-      if (!this.valueInnerModel) this.valueInnerModel = []
+      if (!this.optionsModel) this.optionsModel = []
       // create the array if its value is falsy
 
-      this.valueInnerModel = [...this.valueInnerModel, '\0']
+      this.optionsModel = [...this.optionsModel, '\0']
       // append the value, push() seems to be unreactive here
     },
+    updateData(k, val) {
+      // update a data attribute only if its value differs
+      // from the one we want to set. This is useful to
+      // avoid triggering a watcher, specifically when that
+      // leads to infinite loops
+      if (JSON.stringify(this[k]) == JSON.stringify(val)) return
+      this[k] = val
+    }
+  },
+  watch: {
+    optionsModel(val) {
+
+      if (this.firstchecked !== undefined) {
+        // automatically set the first item as
+        // checked (i.e. right) when entered
+        if (
+          (this.optionsModel.length == 1)
+          && (this.checkedModel.length == 0)
+        ) {
+          this.checkedModel.push(
+            this.optionsModel[0]
+          )
+        }
+      }
+
+      this.$emit(
+        'input',
+        val.map(e => ({
+          value: e,
+          right: this.checkedModel.includes(e)
+        }))
+      )
+
+    },
+    checkedModel(val) {
+      this.$emit(
+        'input',
+        this.optionsModel.map(e => ({
+          value: e,
+          right: val.includes(e)
+        }))
+      )
+    },
+    value: {
+      handler(val) {
+        this.updateData('optionsModel', val.map(e => e.value))
+        this.updateData('checkedModel', val.filter(e => e.right).map(e => e.value))
+      },
+      deep: true,
+      immediate: true
+    }
   }
 }
 </script>
