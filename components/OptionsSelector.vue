@@ -9,7 +9,6 @@
     :label="label"
     :autofocus="autofocus"
     :rules="rules"
-    :error="error"
     validate-on-blur
   >
     <template v-slot:selection="data">
@@ -68,6 +67,9 @@ export default {
     },
   },
   methods: {
+    log(s) {
+      console.log(s)
+    },
     keydown(e) {
       // append an empty string to the model on Ctrl+Enter
 

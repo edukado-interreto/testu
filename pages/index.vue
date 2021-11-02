@@ -60,39 +60,40 @@
           >
 
             <v-card>
-              <v-card-title>New gap</v-card-title>
-              <v-card-text>
-                <v-row>
-                  <v-col>
-                    <OptionsSelector
-                      :value.sync="new_gap_rights"
-                      :rules="[ val => (val.length == 0) ? 'Please insert one option' : true ]"
-                      label="Right option(s)"
-                      autofocus
-                    ></OptionsSelector>
-                  </v-col>
-                  <v-col>
-                    <OptionsSelector
-                      :value.sync="new_gap_wrongs"
-                      label="Wrong option(s)"
-                    ></OptionsSelector>
-                  </v-col>
-                </v-row>
-              </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <!--
-                  Using double requestAnimationFrame will ensure
-                  that the value two OptionsSelectors is updated even
-                  if the user don't press Enter or blurs the input.
-                -->
-                <v-btn
-                  :disabled="new_gap_rights.length == 0"
-                  color="primary"
-                  @click="doubleRequestAnimationFrame(insert_gap)"
-                >Add gap</v-btn>
-                <v-btn text @click="add_gap_dialog_show(false)">Cancel</v-btn>
-              </v-card-actions>
+              <v-form ref="new_gap_form">
+                <v-card-title>New gap</v-card-title>
+                <v-card-text>
+                  <v-row>
+                    <v-col>
+                      <OptionsSelector
+                        :value.sync="new_gap_rights"
+                        :rules="[ val => (val.length == 0) ? 'Please insert one option' : true ]"
+                        label="Right option(s)"
+                        autofocus
+                      ></OptionsSelector>
+                    </v-col>
+                    <v-col>
+                      <OptionsSelector
+                        :value.sync="new_gap_wrongs"
+                        label="Wrong option(s)"
+                      ></OptionsSelector>
+                    </v-col>
+                  </v-row>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <!--
+                    Using double requestAnimationFrame will ensure that
+                    the value of the OptionsSelectors is updated even
+                    if the user doesn't press Enter or blurs the input.
+                  -->
+                  <v-btn
+                    color="primary"
+                    @click="insert_gap_click"
+                  >Add gap</v-btn>
+                  <v-btn text @click="add_gap_dialog_show(false)">Cancel</v-btn>
+                </v-card-actions>
+              </v-form>
             </v-card>
 
           </v-dialog>
@@ -119,7 +120,7 @@
           sliding animation when the v-sheets are moved
           (<v-slide-y-transition group>) and the fading
           animation of the v-sheet's elevation when
-          entering/exiting edit mode (.transition-swing).
+          toggling edit mode (.transition-swing).
           -->
           <v-sheet
             :elevation="i == current.index ? 8 : 0"
@@ -256,6 +257,12 @@ export default {
       } else {
         this.add_gap_dialog = false
       }
+    },
+    insert_gap_click() {
+      this.doubleRequestAnimationFrame(() => {
+        if (!this.$refs.new_gap_form.validate()) return
+        this.insert_gap()
+      })
     },
     insert_gap() {
 
