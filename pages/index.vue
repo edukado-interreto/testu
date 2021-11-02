@@ -266,7 +266,14 @@ export default {
     },
     insert_gap() {
 
-      const new_gap = "[" + this.new_gap_rights.concat(this.new_gap_wrongs).join("|") + "]"
+      // TODO:
+      // ensure ltr string concatenanion
+      // http://stackoverflow.com/q/29988144/
+      const new_gap = "[" + this.new_gap_rights.map(
+        val => '+'+val
+      ).concat(
+        this.new_gap_wrongs
+      ).join("|") + "]"
 
       const input = this.$refs.textarea.$refs.input
       const start = input.selectionStart

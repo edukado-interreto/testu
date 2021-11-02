@@ -42,10 +42,18 @@ export default {
           } else {
             // is gap
             if (!value) return { value: "" }
-            let ret = { token: 'gap' }
-            let options = value.split("|")
-            ret.rights = options.slice(0, 1)
-            ret.wrongs = options.slice(1)
+            let ret = {
+              token: 'gap',
+              wrongs: [],
+              rights: []
+            }
+            value.split("|").forEach(v => {
+              if (v[0] == '+') {
+                ret.rights.push(v.slice(1))
+              } else {
+                ret.wrongs.push(v)
+              }
+            })
             return ret
           }
         }).filter(t => t.value != "")
