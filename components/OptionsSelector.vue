@@ -1,10 +1,12 @@
 <template>
   <v-combobox
+    ref="combobox"
     multiple
     chips
     @keydown="keydown"
+    @input="input_is_blank = true"
     v-model="optionsModel"
-    :hint='((optionsModel.length > 0) ? "Toggle the switches to set the options as right or wrong." : "")'
+    :hint="hint"
     placeholder="Start typing an option..."
     :append-icon="null"
     :label="label"
@@ -12,6 +14,38 @@
     :rules="rules"
     validate-on-blur
   >
+    <template v-slot:append-outer>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on }">
+          <div v-on="on">
+            <v-btn
+              :disabled="input_is_blank"
+              class="rounded-l-xl rounded-r-0"
+              @click="insert_option"
+            >
+              <v-icon small>mdi-plus</v-icon>
+              <v-icon small>mdi-text-short</v-icon>
+            </v-btn>
+          </div>
+        </template>
+        <span>Add option (Tab)</span>
+      </v-tooltip>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on }">
+          <div v-on="on">
+            <v-btn
+              :disabled="!input_is_blank || optionsModel.includes('\0')"
+              class="rounded-l-0 rounded-r-xl"
+              @click="insert_blank"
+            >
+              <v-icon small>mdi-plus</v-icon>
+              <v-icon small>mdi-selection</v-icon>
+            </v-btn>
+          </div>
+        </template>
+        <span>Add the "leave blank" option (Ctrl+Space)</span>
+      </v-tooltip>
+    </template>
     <template v-slot:selection="data">
       <v-chip
         :key="JSON.stringify(data.item)"
@@ -39,8 +73,51 @@ export default {
   data: () => ({
     checkedModel: [],
     optionsModel: [],
+    input_is_blank: true,
   }),
+  computed: {
+    hint() {
+      if (this.optionsModel.length == 0) return ""
+      let rights = 0
+      let wrongs = 0
+      this.value.forEach(function(opt) {
+        if (opt.right) rights++
+        else wrongs++
+      })
+      let txt = ""
+      if (rights) txt += `${rights} right ${(rights != 1) ? 'options' : 'option'}`
+      if (rights && wrongs) txt += ", "
+      if (wrongs) txt += `${wrongs} wrong ${(wrongs != 1) ? 'options' : 'option'}`
+      txt += ". Toggle the switches to change the options' rightness."
+      return txt
+    }
+  },
+  mounted() {
+    this.$refs.combobox.$refs.input.addEventListener(
+      'input',
+      (e) => {
+        this.input_is_blank = e.target.value === ''
+      }
+    )
+  },
   methods: {
+    insert_option() {
+      this.$refs.combobox.blur()
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          this.$refs.combobox.focus()
+        })
+      })
+    },
+    insert_blank() {
+      this.$refs.combobox.blur()
+      this.optionsModel = [...this.optionsModel, '\0']
+      setTimeout(() => {
+        // for some reasons even the double requestAnimationFrame
+        // is not always doing its job here (Chrome)
+        this.$refs.combobox.focus()
+      }, 250)
+    },
     keydown(e) {
       // append an empty string to the model on Ctrl+Enter
 

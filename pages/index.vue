@@ -51,7 +51,7 @@
             icon
             @click.stop="add_gap_dialog_show(true)"
           >
-            <v-icon>mdi-keyboard-space</v-icon>
+            <v-icon>mdi-tray</v-icon>
           </v-btn>
 
           <v-dialog
@@ -63,15 +63,6 @@
               <v-form ref="new_gap_form">
                 <v-card-title>New gap</v-card-title>
                 <v-card-text>
-                  <ul>
-                    <li>
-                      Press <code>Tab</code> to finalize the option and add a new one.
-                    </li>
-                    <li>
-                      Press <code>Ctrl + Space</code> to insert the <v-icon small>mdi-selection</v-icon> <i>leave blank</i> option.
-                    </li>
-                  </ul>
-                  
                   <OptionsSelector
                     v-model="new_gap_options"
                     firstchecked
@@ -89,7 +80,7 @@
                   <v-btn
                     color="primary"
                     @click="insert_gap_click"
-                  >Add gap</v-btn>
+                  >Insert gap</v-btn>
                   <v-btn text @click="add_gap_dialog_show(false)">Cancel</v-btn>
                 </v-card-actions>
               </v-form>
