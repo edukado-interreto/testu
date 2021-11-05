@@ -72,11 +72,6 @@
                 </v-card-text>
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <!--
-                    Using double requestAnimationFrame will ensure that
-                    the value of the OptionsSelectors is updated even
-                    if the user doesn't press Enter or blurs the input.
-                  -->
                   <v-btn
                     color="primary"
                     @click="insert_gap_click"
@@ -248,6 +243,9 @@ export default {
       }
     },
     insert_gap_click() {
+      // Using double requestAnimationFrame will ensure that
+      // the value of the OptionsSelectors is updated even
+      // if the user doesn't press Enter or blurs the input.
       this.doubleRequestAnimationFrame(() => {
         if (!this.$refs.new_gap_form.validate()) return
         this.insert_gap()

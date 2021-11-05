@@ -14,36 +14,20 @@
     :rules="rules"
     validate-on-blur
   >
-    <template v-slot:append-outer>
+    <template v-slot:append>
       <v-tooltip bottom>
         <template v-slot:activator="{ on }">
-          <div v-on="on">
-            <v-btn
-              :disabled="input_is_blank"
-              class="rounded-l-xl rounded-r-0"
-              @click="insert_option"
-            >
-              <v-icon small>mdi-plus</v-icon>
-              <v-icon small>mdi-text-short</v-icon>
-            </v-btn>
-          </div>
+          <v-btn
+            v-on="on"
+            rounded
+            text
+            @click="insert_blank"
+          >
+            <v-icon small>mdi-plus</v-icon>
+            <v-icon small>mdi-selection</v-icon>
+          </v-btn>
         </template>
-        <span>Add option (Tab)</span>
-      </v-tooltip>
-      <v-tooltip bottom>
-        <template v-slot:activator="{ on }">
-          <div v-on="on">
-            <v-btn
-              :disabled="!input_is_blank || optionsModel.includes('\0')"
-              class="rounded-l-0 rounded-r-xl"
-              @click="insert_blank"
-            >
-              <v-icon small>mdi-plus</v-icon>
-              <v-icon small>mdi-selection</v-icon>
-            </v-btn>
-          </div>
-        </template>
-        <span>Add the "leave blank" option (Ctrl+Space)</span>
+        <span>Add the "leave blank" option (Ctrl+Enter)</span>
       </v-tooltip>
     </template>
     <template v-slot:selection="data">
@@ -58,6 +42,7 @@
           v-model="checkedModel"
           :value="data.item"
           dense
+          color="success"
         >
           <template v-slot:label></template>
         </v-switch>
@@ -77,64 +62,63 @@ export default {
   }),
   computed: {
     hint() {
-      if (this.optionsModel.length == 0) return ""
-      let rights = 0
-      let wrongs = 0
-      this.value.forEach(function(opt) {
-        if (opt.right) rights++
-        else wrongs++
-      })
-      let txt = ""
-      if (rights) txt += `${rights} right ${(rights != 1) ? 'options' : 'option'}`
-      if (rights && wrongs) txt += ", "
-      if (wrongs) txt += `${wrongs} wrong ${(wrongs != 1) ? 'options' : 'option'}`
-      txt += ". Toggle the switches to change the options' rightness."
-      return txt
+      if (!this.input_is_blank) {
+        return "Press Enter to finalize the option…"
+      }
+      if (this.optionsModel.length == 0) {
+        return ""
+      }
+      return "Toggle the switches (on = right, off = wrong) or start typing a new option."
     }
   },
   mounted() {
-    this.$refs.combobox.$refs.input.addEventListener(
+    const combobox = this.$refs.combobox
+
+    combobox.$refs.input.addEventListener(
       'input',
       (e) => {
+        // NOTE: this may not be bulletproof
+
+        if (combobox.$el.classList.contains(
+          'v-autocomplete--is-selecting-index'
+        )) {
+          // when the v-combobox has the class
+          // 'v-autocomplete--is-selecting-index',
+          // VueJS sets the <input> (e.target) opacity
+          // to 0 and read its key events so that the user
+          // can traverse the chips using the arrow keys.
+          // This means that the user may actually
+          // type some text in it, which VueJS would
+          // remove when setting back the opacity to 1.
+          this.input_is_blank = true
+          return
+        }
+
         this.input_is_blank = e.target.value === ''
+
       }
     )
   },
   methods: {
-    insert_option() {
-      this.$refs.combobox.blur()
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          this.$refs.combobox.focus()
-        })
-      })
-    },
     insert_blank() {
-      this.$refs.combobox.blur()
-      this.optionsModel = [...this.optionsModel, '\0']
-      setTimeout(() => {
-        // for some reasons even the double requestAnimationFrame
-        // is not always doing its job here (Chrome)
-        this.$refs.combobox.focus()
-      }, 250)
+      // Append a '\0' to the array of options.
+      // If the option is already in the array,
+      // remove that one and append a new one
+      this.optionsModel = [
+        ...(this.optionsModel.filter(
+          e => e != '\0'
+        )),
+        '\0'
+      ]
     },
     keydown(e) {
       // append an empty string to the model on Ctrl+Enter
 
       if (!e.ctrlKey) return
-      if (e.code != 'Space') return
+      if (e.code != 'Enter') return
+      if (!this.input_is_blank) return
 
-      if (e.path[0].value !== "") return
-      // input field is not empty, abort
-      
-      if ((this.optionsModel||[]).includes('\0')) return
-      // empty string is already present, abort
-
-      if (!this.optionsModel) this.optionsModel = []
-      // create the array if its value is falsy
-
-      this.optionsModel = [...this.optionsModel, '\0']
-      // append the value, push() seems to be unreactive here
+      this.insert_blank()
     },
     updateData(k, val) {
       // update a data attribute only if its value differs
@@ -181,8 +165,14 @@ export default {
     },
     value: {
       handler(val) {
-        this.updateData('optionsModel', val.map(e => e.value))
-        this.updateData('checkedModel', val.filter(e => e.right).map(e => e.value))
+        this.updateData(
+          'optionsModel',
+          val.map(e => e.value)
+        )
+        this.updateData(
+          'checkedModel',
+          val.filter(e => e.right).map(e => e.value)
+        )
       },
       deep: true,
       immediate: true
@@ -190,3 +180,10 @@ export default {
   }
 }
 </script>
+<style>
+  .v-input--switch__thumb.success--text::after {
+    content: '\002714';
+    font-weight: bold;
+    color: white;
+  }
+</style>
