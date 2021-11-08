@@ -103,7 +103,16 @@ export default {
     insert_blank() {
       // Append a '\0' to the array of options.
       // If the option is already in the array,
-      // remove that one and append a new one
+      // remove that one and append a new one.
+      //
+      // NOTE: we use '\0' instead of '' because
+      // the v-combobox has issues when an option
+      // contains an empty string or any falsy
+      // values, e.g. if the user uses backspace
+      // to remove an empty string option, every
+      // other option get removed too.
+      // Using '\0' instead is a workaround for
+      // this issue.
       this.optionsModel = [
         ...(this.optionsModel.filter(
           e => e != '\0'
@@ -127,14 +136,18 @@ export default {
       // leads to infinite loops
       if (JSON.stringify(this[k]) == JSON.stringify(val)) return
       this[k] = val
-    }
+    },
+    unescapeEmpty(arr) {
+      return arr.map(e => e == '\0' ? '' : e)
+    },
   },
   watch: {
     optionsModel(val) {
 
       if (this.firstchecked !== undefined) {
-        // automatically set the first item as
-        // checked (i.e. right) when entered
+        // automatically set the inserted item
+        // as checked (i.e. right option), if
+        // it's the first and only one.
         if (
           (this.optionsModel.length == 1)
           && (this.checkedModel.length == 0)
@@ -145,26 +158,43 @@ export default {
         }
       }
 
+      const u_val = this.unescapeEmpty(val)
+      const u_checkedModel = this.unescapeEmpty(
+        this.checkedModel
+      )
+
       this.$emit(
         'input',
-        val.map(e => ({
+        u_val.map(e => ({
           value: e,
-          right: this.checkedModel.includes(e)
+          right: u_checkedModel.includes(e)
         }))
       )
 
     },
     checkedModel(val) {
+
+      const u_val = this.unescapeEmpty(val)
+      const u_optionsModel = this.unescapeEmpty(
+        this.optionsModel
+      )
+
       this.$emit(
         'input',
-        this.optionsModel.map(e => ({
+        u_optionsModel.map(e => ({
           value: e,
-          right: val.includes(e)
+          right: u_val.includes(e)
         }))
       )
     },
     value: {
       handler(val) {
+
+        val = val.map(e => ({
+          right: e.right, 
+          value: e.value == '' ? '\0' : e.value
+        }))
+
         this.updateData(
           'optionsModel',
           val.map(e => e.value)
@@ -182,8 +212,9 @@ export default {
 </script>
 <style>
   .v-input--switch__thumb.success--text::after {
-    content: '\002714';
+    content: '\002714'; /* heavy check mark */
     font-weight: bold;
     color: white;
+    text-shadow: 0 0 5px rgb(0,0,0,.5);
   }
 </style>
