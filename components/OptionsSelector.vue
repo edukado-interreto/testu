@@ -68,7 +68,7 @@ export default {
       if (this.optionsModel.length == 0) {
         return ""
       }
-      return "Toggle the switches (on = right, off = wrong) or start typing a new option."
+      return "Toggle the switches to change the options' rightness or start typing a new option."
     }
   },
   mounted() {
