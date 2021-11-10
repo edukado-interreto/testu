@@ -43,15 +43,15 @@
 
           <v-btn
             icon
-            @click="append_new_sentence"
-          >
-            <v-icon>mdi-playlist-plus</v-icon>
-          </v-btn>
-          <v-btn
-            icon
             @click.stop="add_gap_dialog_show(true)"
           >
             <v-icon>mdi-tray</v-icon>
+          </v-btn>
+          <v-btn
+            icon
+            @click="append_new_sentence"
+          >
+            <v-icon>mdi-playlist-plus</v-icon>
           </v-btn>
 
           <v-dialog
