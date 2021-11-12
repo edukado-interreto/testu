@@ -18,6 +18,7 @@
       <v-tooltip bottom>
         <template v-slot:activator="{ on }">
           <v-btn
+            :disabled="!input_is_blank"
             v-on="on"
             rounded
             text

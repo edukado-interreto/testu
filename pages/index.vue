@@ -90,7 +90,7 @@
           v-model="current.data.code"
           auto-grow
           outlined
-          class="rounded-t-0 rounded-b-md"
+          class="code rounded-t-0 rounded-b-md"
         ></v-textarea>
       </v-container>
     </v-navigation-drawer>
@@ -368,4 +368,5 @@ export default {
 </script>
 <style scoped>
   .pre-line { white-space: pre-line; }
+  .code { font-family: monospace; }
 </style>
