@@ -2,35 +2,48 @@
   <v-select
     ref="select"
     dense
-    hide-details
     :style="'display:inline-block; width: ' + gap_width"
     :items="choices"
+    item-text="value"
+    item-value="value"
+    return-object
     v-model="value"
     :success="success === true"
+    hide-details="auto"
     :error="success === false"
     :prepend-inner-icon="success === undefined ? undefined : (success ? 'mdi-check-bold' : 'mdi-close-thick')"
     @change="on_change"
-  ></v-select>
+    :readonly="once && success !== undefined"
+  >
+  </v-select>
 </template>
 <script>
 export default {
   name: 'PlayGapSelect',
-  props: [ "token" ],
+  props: [
+    "options",
+    "shuffle", // bool: wether shuffle the options
+    "once", // bool: if true, allow only one try
+  ],
   data: () => ({
     value: undefined
   }),
   computed: {
     choices: function() {
       /**
-       * Return the array of the possible answers to choose from,
-       * including right ones and wrong ones, in random order.
-       * @returns {str[]}
+       * Return the array of the possible answers to choose from.
+       + The array contains objects in the form:
+       * { "value": <string>, "right": <bool> }
        */
-      return this.shuffle(
-        this.token.rights.concat(
-          this.token.wrongs
+
+      if (this.shuffle) {
+        return this.shuffle_array(
+          this.options
         )
-      )
+      }
+
+      return this.options
+
     },
     longest_choice_length: function() {
       /**
@@ -40,7 +53,7 @@ export default {
        */
       return Math.max(
         ...this.choices.map(
-          s => s.length
+          s => s.value.length
         )
       )
     },
@@ -61,12 +74,15 @@ export default {
       // of the v-select will have an inpact on it.
     },
     success: function() {
-      if (this.token.rights.includes(this.value)) {
-        return true
+      /**
+       * @returns: true | false | undefined
+       */
+      if ('right' in (this.value || {})) {
+        // the gap was filled with a value:
+        // return the value's rightness
+        return this.value.right
       }
-      if (this.token.wrongs.includes(this.value)) {
-        return false
-      }
+      // the gap is still not filled
       return undefined
     }
   },
@@ -87,22 +103,28 @@ export default {
         });
       }
     },
-    shuffle: function(array) {
+    shuffle_array: function(in_array) {
       /**
        * Shuffle an array using the Fisher-Yates algorithm,
        * O(n), un-biased.
        */
-      let currentIndex = array.length,  randomIndex;
+
+      const out_array = in_array.slice();
+      // clone the input array
+
+      let currentIndex = out_array.length, randomIndex;
+
       // While there remain elements to shuffle...
       while (currentIndex != 0) {
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
         // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-          array[randomIndex], array[currentIndex]];
+        [out_array[currentIndex], out_array[randomIndex]] = [
+          out_array[randomIndex], out_array[currentIndex]];
       }
-      return array;
+
+      return out_array;
     },
     confetti_gun_coords: function(element) {
       /**
@@ -117,11 +139,11 @@ export default {
       const px_x = rect.left + rect.width  / 2  // center
       const px_y = rect.top  + rect.height + 15 // underneath
       // since we shoot the confetti straight upwards,
-      // is more pretty if the confetti come from
+      // it is more pretty if the confetti come from
       // below the element, hence the offset added in px_y.
 
       // coordinates as values between 0 and 1,
-      // as requested by the confetti api
+      // as required by the confetti api
       return {
         x: px_x / window.innerWidth,
         y: px_y / window.innerHeight

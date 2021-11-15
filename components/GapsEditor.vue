@@ -11,7 +11,8 @@
             <PlayGapSelect
               :key="j"
               v-if="token.token === 'gap'"
-              :token="token"
+              :options="token.options"
+              :shuffle="shuffle"
             ></PlayGapSelect>
             <span
               :key="j"
@@ -27,7 +28,7 @@
 <script>
 export default {
   name: 'GapsEditor',
-  props: [ 'code' ],
+  props: [ 'code', 'shuffle' ],
   data: () => ({
   }),
   computed: {
@@ -44,15 +45,18 @@ export default {
             if (!value) return { value: "" }
             let ret = {
               token: 'gap',
-              wrongs: [],
-              rights: []
+              options: []
             }
             value.split("|").forEach(v => {
+              let right = false
               if (v[0] == '+') {
-                ret.rights.push(v.slice(1))
-              } else {
-                ret.wrongs.push(v)
+                right = true
+                v = v.slice(1)
               }
+              ret.options.push({
+                value: v,
+                right
+              })
             })
             return ret
           }

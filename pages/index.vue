@@ -90,8 +90,15 @@
           v-model="current.data.code"
           auto-grow
           outlined
+          hide-details="auto"
           class="code rounded-t-0 rounded-b-md"
         ></v-textarea>
+
+        <v-switch
+          v-model="current.data.shuffle"
+          label="Shuffle options"
+        ></v-switch>
+
       </v-container>
     </v-navigation-drawer>
     <v-container>
@@ -143,6 +150,7 @@
                 <GapsEditor
                   v-if="section.type == 'gapFilling'"
                   :code="section.code"
+                  :shuffle="section.shuffle"
                 />
               </v-col>
             </v-row>
