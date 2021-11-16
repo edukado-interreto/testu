@@ -9,6 +9,7 @@
     return-object
     v-model="value"
     :success="success === true"
+    :error-messages="success === false ? errorExplanation : undefined"
     hide-details="auto"
     :error="success === false"
     :prepend-inner-icon="success === undefined ? undefined : (success ? 'mdi-check-bold' : 'mdi-close-thick')"
@@ -24,6 +25,7 @@ export default {
     "options",
     "shuffle", // bool: wether shuffle the options
     "once", // bool: if true, allow only one try
+    "error-explanation", // string: message to display when picked answer is wrong 
   ],
   data: () => ({
     value: undefined

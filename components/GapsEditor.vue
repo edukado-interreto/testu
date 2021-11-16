@@ -13,6 +13,7 @@
               v-if="token.token === 'gap'"
               :options="token.options"
               :shuffle="shuffle"
+              :error-explanation="token.errorExplanation"
             ></PlayGapSelect>
             <span
               :key="j"
@@ -47,12 +48,26 @@ export default {
               token: 'gap',
               options: []
             }
-            value.split("|").forEach(v => {
+            value.split("|").forEach((v, i, a) => {
+
+              // a prepending '+' in an option marks
+              // a right answer: set ret.right accordingly
+              // and remove the leading '+' from the option
               let right = false
               if (v[0] == '+') {
                 right = true
                 v = v.slice(1)
               }
+
+              // a '~' in the last option introduces a
+              // message to show when a wrong answer is given,
+              // e.g. [cat|+fish|dog~It can swim!]
+              // remove that message from the option and use
+              // it as ret.errorExplanation
+              if (i === a.length-1) {
+                [ v, ret.errorExplanation ] = v.split("~")
+              }
+
               ret.options.push({
                 value: v,
                 right
