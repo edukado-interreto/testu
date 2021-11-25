@@ -45,7 +45,7 @@
             icon
             @click.stop="add_gap_dialog_show(true)"
           >
-            <v-icon>mdi-tray</v-icon>
+            <v-icon>mdi-tray-plus</v-icon>
           </v-btn>
           <v-btn
             icon
