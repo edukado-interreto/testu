@@ -6,7 +6,7 @@
       height="72"
       flat
     >
-      <v-app-bar-nav-icon @click.stop="nav_drawer.show = !nav_drawer.show" />
+      <v-app-bar-nav-icon @click.stop="nav_drawer.show = !nav_drawer.show" disabled />
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-btn
@@ -46,7 +46,7 @@
     <v-footer
       app
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>TestU Online – sandbox 0.1</span>
     </v-footer>
   </v-app>
 </template>
