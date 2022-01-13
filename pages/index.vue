@@ -11,14 +11,88 @@
     >
       <template v-slot:prepend>
         <v-toolbar dense flat>
-          <v-btn @click="edit(current.index-1)" :disabled="current.index == 0" icon><v-icon>mdi-chevron-up</v-icon></v-btn>
-          <v-btn @click="edit(current.index+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-chevron-down</v-icon></v-btn>
+
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                @click="edit(current.index-1)"
+                :disabled="current.index == 0"
+                icon
+              ><v-icon>mdi-chevron-up</v-icon>
+              </v-btn>
+            </template>
+            <span>Edit previous</span>
+          </v-tooltip>
+
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                @click="edit(current.index+1)"
+                :disabled="current.index == sheet.length-1"
+                icon
+              ><v-icon>mdi-chevron-down</v-icon></v-btn>
+            </template>
+            <span>Edit next</span>
+          </v-tooltip>
+
           <v-divider vertical class="mx-2"></v-divider>
-          <v-btn @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
-          <v-btn @click="move(-1)" :disabled="current.index == 0" icon><v-icon>mdi-transfer-up</v-icon></v-btn>
-          <v-btn @click="move(+1)" :disabled="current.index == sheet.length-1" icon><v-icon>mdi-transfer-down</v-icon></v-btn>
+
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                @click="remove"
+                icon><v-icon>mdi-delete</v-icon>
+              </v-btn>
+            </template>
+            <span>Delete</span>
+          </v-tooltip>
+
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                @click="move(-1)"
+                :disabled="current.index == 0"
+                icon
+              ><v-icon>mdi-transfer-up</v-icon></v-btn>
+            </template>
+            <span>Move up</span>
+          </v-tooltip>
+
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                @click="move(+1)"
+                :disabled="current.index == sheet.length-1"
+                icon
+              ><v-icon>mdi-transfer-down</v-icon></v-btn>
+            </template>
+            <span>Move down</span>
+          </v-tooltip>
+
           <v-spacer></v-spacer>
-          <v-btn @click="edit_drawer.show = false" icon><v-icon>mdi-close</v-icon></v-btn>
+
+          <v-tooltip left>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                @click="edit_drawer.show = false"
+                icon
+              ><v-icon>mdi-close</v-icon></v-btn>
+            </template>
+            <span>Close editor</span>
+          </v-tooltip>
+
         </v-toolbar>
       </template>
       <v-container class="mt-2">
@@ -41,18 +115,33 @@
           class="rounded-b-0 rounded-t-lg"
         >
 
-          <v-btn
-            icon
-            @click.stop="add_gap_dialog_show(true)"
-          >
-            <v-icon>mdi-tray-plus</v-icon>
-          </v-btn>
-          <v-btn
-            icon
-            @click="append_new_sentence"
-          >
-            <v-icon>mdi-playlist-plus</v-icon>
-          </v-btn>
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                icon
+                @click.stop="add_gap_dialog_show(true)"
+              >
+                <v-icon>mdi-tray-plus</v-icon>
+              </v-btn>
+            </template>
+            <span>Insert gap</span>
+          </v-tooltip>
+
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                icon
+                @click="append_new_sentence"
+              >
+                <v-icon>mdi-playlist-plus</v-icon>
+              </v-btn>
+            </template>
+            <span>Insert sentence</span>
+          </v-tooltip>
 
           <v-dialog
             v-model="add_gap_dialog"
