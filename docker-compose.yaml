@@ -1,0 +1,63 @@
+version: "3.9"
+
+services:
+  django:
+    build:
+      context: backend
+      target: development
+    restart: on-failure
+    volumes:
+      - ./backend:/code:z
+    working_dir: /code
+    environment:
+      DJANGO_PORT: "${DJANGO_PORT}"
+    user: 1000:1000
+    env_file:
+      - backend/.env
+    networks:
+      - internal
+    tty: true
+    stdin_open: true
+    command: >
+      sh -c "make migrate && make run"
+
+  vue:
+    build: client
+    volumes:
+      - ./client:/code:z
+    working_dir: /code/
+    env_file:
+      - client/.env
+    user: 1000:1000
+    ports:
+      - "${VUE_PORT}:${VUE_PORT}"
+    networks:
+      - internal
+    tty: true
+    command: >
+      sh -c "npm install && npm run dev"
+
+  nginx:
+    image: nginx:1.20.2-alpine
+    restart: on-failure
+    volumes:
+      - ./etc/nginx/default.conf:/etc/nginx/templates/default.conf.template:z
+    environment:
+      VUE_PORT: "${VUE_PORT}"
+      DJANGO_PORT: "${DJANGO_PORT}"
+      DJANGO_ADMIN_URL: "${DJANGO_ADMIN_URL}"
+      DOMAIN: ${DOMAIN}
+    depends_on:
+      - django
+      - vue
+    ports:
+      - "80:80"
+    networks:
+      - internal
+      - web
+
+networks:
+  web:
+    driver: bridge
+  internal:
+    driver: bridge
