@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM python:3.8.13-slim-buster AS python-base
+FROM python:3.9-slim-buster AS python-base
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
