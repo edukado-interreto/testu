@@ -36,14 +36,14 @@ RUN apt-get update && \
         curl \
         build-essential
 
-RUN mkdir $POETRY_HOME $PYSETUP_PATH
+RUN mkdir -p $POETRY_HOME $PYSETUP_PATH
 
 RUN chown -R 1000:1000 $POETRY_HOME $PYSETUP_PATH
 
-USER 1000
+# USER 1000
 
 # Install Poetry - respects $POETRY_VERSION & $POETRY_HOME
-ENV POETRY_VERSION=1.1.13
+ENV POETRY_VERSION=1.2.0
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # We copy our Python requirements here to cache them
@@ -58,8 +58,6 @@ RUN XDG_CACHE_HOME="/opt/poetry/.cache" poetry install --no-dev
 ### STAGE development installs all dev deps and can be used to develop code
 # For example using docker-compose to mount local volume under /code
 FROM python-base AS development
-
-USER 1000
 
 # Copying poetry and venv into image
 COPY --from=builder-base $POETRY_HOME $POETRY_HOME

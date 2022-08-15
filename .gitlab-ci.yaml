@@ -1,0 +1,79 @@
+Django:
+  stage: build
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_BUILDKIT: 1
+    CACHE_IMAGE: $CI_REGISTRY_IMAGE/backend
+    TAG: $CI_REGISTRY_IMAGE/backend:$CI_COMMIT_SHORT_SHA
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - |
+      docker build \
+        --cache-from $CACHE_IMAGE:latest \
+        --build-arg BUILDKIT_INLINE_CACHE=1 \
+        -t $TAG \
+        -t $CACHE_IMAGE:latest \
+        -f backend/Dockerfile \
+        ./backend/
+  after_script:
+    - docker push $TAG
+    - docker push $CACHE_IMAGE:latest
+
+Vue:
+  stage: build
+  image: node:16
+  script:
+    - npm --prefix client install
+    - npm --prefix client run generate
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - client/dist
+
+Nginx:
+  stage: build
+  needs: ["Vue"]
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - cp -r client/dist nginx
+    - |
+      docker build \
+        -t $CI_REGISTRY_IMAGE/nginx:$CI_COMMIT_SHORT_SHA \
+        -f nginx/Dockerfile \
+        ./nginx/
+    - docker push $CI_REGISTRY_IMAGE/nginx:$CI_COMMIT_SHORT_SHA
+
+
+Deploy:
+  stage: deploy
+  # rules:
+    # - when: manual
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  variables:
+    DOCKER_HOST: 'ssh://ec2-user@$VPS_IP'
+  before_script:
+    - apk update && apk add openssh-client bash
+    - eval "$(ssh-agent -s)"
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H $VPS_IP 2> /dev/null >> ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/known_hosts
+    - docker info
+    - echo $CI_JOB_TOKEN | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+  script:
+    - |
+      printf $POSTGRES_PASSWORD | docker secret create POSTGRES_PASSWORD - || true
+    - |
+      printf $ALLOWED_HOSTS | docker secret create ALLOWED_HOSTS - || true
+    - docker stack deploy -c swarm.yaml testu --with-registry-auth

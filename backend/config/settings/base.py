@@ -1,8 +1,11 @@
 from pathlib import Path
 
-from decouple import Csv, config
+from decouple import Csv, Config, RepositorySecret, AutoConfig
+
+config = Config(RepositorySecret()) if Path("/run/secrets/").exists() else AutoConfig()
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
 USE_TZ = True
@@ -20,10 +23,11 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
 DEFAULT_FROM_EMAIL = "Testu Staging <testu@em9073.kond.uk.to>"
-STATIC_URL = "static/"
-STATIC_ROOT = config("STATIC_ROOT", default=str(BASE_DIR / "static/"))
-MEDIA_URL = "/media/"
-MEDIA_ROOT = config("MEDIA_ROOT", default=str(BASE_DIR / "media/"))
+
+STATIC_URL = "/assets/static/"
+STATIC_ROOT = config("STATIC_ROOT", default=str(BASE_DIR / "assets/static/"))
+MEDIA_URL = "/assets/media/"
+MEDIA_ROOT = config("MEDIA_ROOT", default=str(BASE_DIR / "assets/media/"))
 
 ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
@@ -87,8 +91,13 @@ TEMPLATES = [
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "database.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("POSTGRES_DB", default="testu"),
+        "USER": config("POSTGRES_USER", default="testu"),
+        "PASSWORD": config("POSTGRES_PASSWORD"),
+        "HOST": config("POSTGRES_HOST", default="postgres"),
+        "PORT": config("POSTGRES_PORT", cast=int, default=5432),
+        "ATOMIC_REQUESTS": True,
     }
 }
 

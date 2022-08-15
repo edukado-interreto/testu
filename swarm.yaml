@@ -1,0 +1,75 @@
+version: "3.9"
+
+services:
+  django:
+    image: ${CI_REGISTRY_IMAGE}/backend:${CI_COMMIT_SHORT_SHA}
+    working_dir: /code
+    environment:
+      - DJANGO_PORT
+      - SECRET_KEY
+      - DEBUG
+    volumes:
+      - backendassets:/code/assets:z
+    networks:
+      - main
+    secrets:
+      - POSTGRES_PASSWORD
+      - ALLOWED_HOSTS
+    command: |
+      sh -c "ls -lAh /code/ &&
+      python manage.py collectstatic --noinput &&
+      python manage.py migrate &&
+      gunicorn config.wsgi:application --bind 0.0.0.0:8000 --capture-output --access-logfile -
+      "
+
+  postgres:
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+    networks:
+      - main
+
+  nginx:
+    image: ${CI_REGISTRY_IMAGE}/nginx:${CI_COMMIT_SHORT_SHA}
+    environment:
+      VUE_PORT: "${VUE_PORT}"
+      DJANGO_PORT: "${DJANGO_PORT}"
+      DJANGO_ADMIN_URL: "${DJANGO_ADMIN_URL}"
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - backendassets:/var/www/testu/assets
+    depends_on:
+      - django
+    networks:
+      - main
+      - traefik-public
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.constraint-label=traefik-public
+        - traefik.http.routers.nginx-http.rule=Host(`sandbox.testu.eu`)
+        - traefik.http.routers.nginx-http.entrypoints=http
+        - traefik.http.routers.nginx-http.middlewares=https-redirect
+        - traefik.http.routers.nginx-https.entrypoints=https
+        - traefik.http.routers.nginx-https.rule=Host(`sandbox.testu.eu`)
+        - traefik.http.routers.nginx-https.tls=true
+        - traefik.http.routers.nginx-https.tls.certresolver=le
+        - traefik.http.services.nginx.loadbalancer.server.port=80
+
+networks:
+  traefik-public: 
+    external: true
+  main:
+    driver: overlay
+
+volumes:
+  backendassets:
+
+secrets:
+  POSTGRES_PASSWORD:
+    external: true
+  ALLOWED_HOSTS:
+    external: true
