@@ -10,7 +10,6 @@
       <v-app-bar-nav-icon @click.stop="nav_drawer.show = !nav_drawer.show"/>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <!-- {{ authUser }} -->
       <v-menu
         offset-y
       >
@@ -27,56 +26,47 @@
           </v-btn>
         </template>
 
-        <v-list dense rounded>
-          <v-subheader
-            class="text--primary font-weight-black text-uppercase"
-          >Interface language</v-subheader>
-          <v-list-item @click="" class="v-list-item--active">
+        <v-list>
+          <v-list-item>
             <v-list-item-content>
               <v-list-item-title>English</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <!--
-          <v-list-item @click="">
+          <v-list-item>
             <v-list-item-content>
               <v-list-item-title>Esperanto</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item @click="">
+          <v-list-item>
             <v-list-item-content>
               <v-list-item-title>French</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item @click="">
+          <v-list-item>
             <v-list-item-content>
               <v-list-item-title>Italian</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          -->
         </v-list>
 
       </v-menu>
 
-      <div
-        v-if="!logged_in"
-        class="ml-3"
+      <template
+        v-if="!DEBUG_logged_in"
       >
         <v-btn
-          class="mr-1 text-none white"
-          text
-          nuxt
-          to="/login"
+          @click="DEBUG_logged_in = true"
+          class="mr-1 text-none"
         >Log in</v-btn>
         <v-btn
-          class="text-none primary"
-          text
-          nuxt
-          to="/signup"
+          @click="DEBUG_logged_in = true"
+          color="primary"
+          class="text-none"
         >Sign up</v-btn>
-      </div>
+      </template>
 
       <v-menu
-        v-if="logged_in"
+        v-if="DEBUG_logged_in"
         offset-y
       >
         <template v-slot:activator="{ on, attrs }">
@@ -89,52 +79,56 @@
           </v-btn>
         </template>
 
-        <v-list dense>
-          <v-list-item>
-            <v-list-item-avatar>
-              <v-icon>mdi-account</v-icon>
-              <!--img
-                src="https://cdn.vuetifyjs.com/images/john.jpg"
-                alt="John"
-              -->
-            </v-list-item-avatar>
+        <v-card>
+          <v-list>
+            <v-list-item>
+              <v-list-item-avatar>
+                <v-icon>mdi-account</v-icon>
+                <!--img
+                  src="https://cdn.vuetifyjs.com/images/john.jpg"
+                  alt="John"
+                -->
+              </v-list-item-avatar>
 
-            <v-list-item-content>
-              <v-list-item-title>{{authUser.username}}</v-list-item-title>
-              <v-list-item-subtitle>{{authUser.email}}</v-list-item-subtitle>
-            </v-list-item-content>
+              <v-list-item-content>
+                <v-list-item-title>John Smith</v-list-item-title>
+                <v-list-item-subtitle>john@example.org</v-list-item-subtitle>
+              </v-list-item-content>
 
-          </v-list-item>
+            </v-list-item>
+          </v-list>
 
           <v-divider></v-divider>
 
-          <v-list-item
-            to="/profile"
-            router
-            exact
-            disabled
-          >
-            <v-list-item-action>
-              <v-icon>mdi-cog</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Account settings</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+          <v-list>
 
-          <v-list-item
-            @click="logout"
-          >
-            <v-list-item-action>
-              <v-icon>mdi-logout</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Logout</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+            <v-list-item
+              to="/profile"
+              router
+              exact
+            >
+              <v-list-item-action>
+                <v-icon>mdi-cog</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>Account settings</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
 
-        </v-list>
+            <v-list-item
+              @click="DEBUG_logged_in = false"
+            >
+              <v-list-item-action>
+                <v-icon>mdi-logout</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>Logout</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
 
+          </v-list>
+
+        </v-card>
       </v-menu>
 
 
@@ -165,7 +159,6 @@
           to="/learn"
           router
           exact
-          disabled
         >
           <v-list-item-action>
             <v-icon>mdi-chart-bar</v-icon>
@@ -192,7 +185,6 @@
           to="/about"
           router
           exact
-          disabled
         >
           <v-list-item-action>
             <v-icon>mdi-information</v-icon>
@@ -220,24 +212,13 @@
 <script>
 export default {
   name: 'default',
-  data: () => ({
-    nav_drawer: {
-      show: true
-    },
-    title: 'testu.eu'
-  }),
-  methods: {
-    async logout() {
-      await this.$auth.logout()
-      this.$router.push('/')
-    },
-  },
-  mounted: async function() {
-    await this.$store.dispatch("authenticator/CHECK_TOKENS");
-    try {
-      await this.$auth.user(true)
-    } catch {
-      console.error('this.$auth.user raised an exception')
+  data () {
+    return {
+      DEBUG_logged_in: true,
+      nav_drawer: {
+        show: true
+      },
+      title: 'testu.eu'
     }
   },
   computed: {
