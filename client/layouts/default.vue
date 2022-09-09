@@ -26,23 +26,26 @@
           </v-btn>
         </template>
 
-        <v-list>
-          <v-list-item>
+        <v-list dense rounded>
+          <v-subheader
+            class="text--primary font-weight-black text-uppercase"
+          >Interface language</v-subheader>
+          <v-list-item @click="" class="v-list-item--active">
             <v-list-item-content>
               <v-list-item-title>English</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item @click="">
             <v-list-item-content>
               <v-list-item-title>Esperanto</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item @click="">
             <v-list-item-content>
               <v-list-item-title>French</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item @click="">
             <v-list-item-content>
               <v-list-item-title>Italian</v-list-item-title>
             </v-list-item-content>
@@ -51,8 +54,9 @@
 
       </v-menu>
 
-      <template
+      <div
         v-if="!DEBUG_logged_in"
+        class="ml-3"
       >
         <v-btn
           @click="DEBUG_logged_in = true"
@@ -63,7 +67,7 @@
           color="primary"
           class="text-none"
         >Sign up</v-btn>
-      </template>
+      </div>
 
       <v-menu
         v-if="DEBUG_logged_in"
@@ -79,56 +83,51 @@
           </v-btn>
         </template>
 
-        <v-card>
-          <v-list>
-            <v-list-item>
-              <v-list-item-avatar>
-                <v-icon>mdi-account</v-icon>
-                <!--img
-                  src="https://cdn.vuetifyjs.com/images/john.jpg"
-                  alt="John"
-                -->
-              </v-list-item-avatar>
+        <v-list dense>
+          <v-list-item>
+            <v-list-item-avatar>
+              <v-icon>mdi-account</v-icon>
+              <!--img
+                src="https://cdn.vuetifyjs.com/images/john.jpg"
+                alt="John"
+              -->
+            </v-list-item-avatar>
 
-              <v-list-item-content>
-                <v-list-item-title>John Smith</v-list-item-title>
-                <v-list-item-subtitle>john@example.org</v-list-item-subtitle>
-              </v-list-item-content>
+            <v-list-item-content>
+              <v-list-item-title>John Smith</v-list-item-title>
+              <v-list-item-subtitle>john@example.org</v-list-item-subtitle>
+            </v-list-item-content>
 
-            </v-list-item>
-          </v-list>
+          </v-list-item>
 
           <v-divider></v-divider>
 
-          <v-list>
+          <v-list-item
+            to="/profile"
+            router
+            exact
+          >
+            <v-list-item-action>
+              <v-icon>mdi-cog</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Account settings</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
 
-            <v-list-item
-              to="/profile"
-              router
-              exact
-            >
-              <v-list-item-action>
-                <v-icon>mdi-cog</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Account settings</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
+          <v-list-item
+            @click="DEBUG_logged_in = false"
+          >
+            <v-list-item-action>
+              <v-icon>mdi-logout</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Logout</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
 
-            <v-list-item
-              @click="DEBUG_logged_in = false"
-            >
-              <v-list-item-action>
-                <v-icon>mdi-logout</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Logout</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
+        </v-list>
 
-          </v-list>
-
-        </v-card>
       </v-menu>
 
 
