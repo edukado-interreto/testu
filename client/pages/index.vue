@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12" md="8">
+      <v-col cols="12" md="7">
         <v-text-field
           label="Search exercise"
           append-icon="mdi-magnify"
@@ -10,7 +10,7 @@
           hide-details
         ></v-text-field>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="5">
         <v-chip-group
           multiple
           active-class="primary"
@@ -48,7 +48,6 @@
             dense
             outlined
             hide-details
-            auto-select-first
             multiple
             v-model="search.lang_learn.langs"
             :items="langs_available"
@@ -93,16 +92,12 @@
         </v-col>
       </v-row>
 
-      <v-row>
-        <v-spacer></v-spacer>
-        <v-col cols="auto">
-          <v-btn
-            class="primary--text"
-            text
-            to="/editor"
-          ><v-icon class="mr-1">mdi-plus</v-icon>Create a new exercise</v-btn>
-        </v-col>
-      </v-row>
+      <v-btn
+        class="primary--text mt-3"
+        large
+        text
+        to="/editor"
+      ><v-icon class="mr-1">mdi-plus</v-icon>Create a new exercise</v-btn>
 
   </v-container>
 </template>

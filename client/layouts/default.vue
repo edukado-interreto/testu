@@ -60,12 +60,13 @@
       >
         <v-btn
           @click="DEBUG_logged_in = true"
-          class="mr-1 text-none"
+          class="mr-1 text-none white"
+          text
         >Log in</v-btn>
         <v-btn
           @click="DEBUG_logged_in = true"
-          color="primary"
-          class="text-none"
+          class="text-none primary"
+          text
         >Sign up</v-btn>
       </div>
 
