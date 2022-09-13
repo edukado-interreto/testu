@@ -96,13 +96,6 @@
         </v-toolbar>
       </template>
       <v-container class="mt-2">
-        <v-select
-          outlined
-          dense
-          label="Type"
-          :items="available_types"
-          v-model="current.data.type"
-        ></v-select>
         <v-text-field
           v-model="current.data.title"
           label="Title"
@@ -129,7 +122,6 @@
                 v-on="on"
                 icon
                 @click.stop="add_gap_dialog_show(true)"
-                :disabled="current.data.type == 'pairing'"
               >
                 <v-icon>mdi-tray-plus</v-icon>
               </v-btn>
@@ -200,14 +192,11 @@
     </v-navigation-drawer>
     <v-container>
         <div
-          class="mb-5 pa-9"
+          class="mb-5"
           v-if="sheet.length == 0"
           key="no_units"
-          style="border: 4px dashed #e7e7e7"
         >
-          <!--img style="height: 120px" :src="require('~/assets/empty.svg')" alt="" /-->
-          <div class="text--disabled text-h6">Empty exercise</div>
-          <span class="text--disabled">Add a new unit to begin</span>
+          <img style="height: 120px" :src="require('~/assets/empty.svg')" alt="" />
         </div>
 
       <v-slide-y-transition group>
@@ -215,7 +204,7 @@
           v-for="(section, i) in sheet"
           :key="keyed(sheet, i)"
         >
-          <!-- 
+          <!--
           The outer <div> is needed to have both the
           sliding animation when the v-sheets are moved
           (<v-slide-y-transition group>) and the fading
@@ -245,7 +234,7 @@
                 </v-btn>
               </v-col>
               <v-col class="ms-4">
-                <div class="headline my-4"> 
+                <div class="headline my-4">
                   {{ i+1 }}. {{ section.title }}
                   <span v-if="section.title === ''" class="font-italic">
                     Untitled unit
@@ -255,11 +244,10 @@
                   v-if="section.description"
                   class="body-2 mb-4 pre-line"
                 >{{ section.description }}</div>
-                <component
-                  :is="unit_component(section.type)"
+                <GapsEditor
+                  v-if="section.type == 'gapFilling'"
                   :code="section.code"
                   :shuffle="section.shuffle"
-                  ref="unit"
                 />
               </v-col>
             </v-row>
@@ -281,34 +269,25 @@
       </v-slide-y-transition>
 
       <v-btn
-        @click="add('default')"
+        rounded
+        @click="add('gapFilling')"
         class="mt-3"
-        :elevation="0"
       >
         <v-icon class="me-2">mdi-plus</v-icon>
-        Add unit
+        Add a new unit
       </v-btn>
-      
+
 
     </v-container>
   </div>
 </template>
 <script>
 import { nanoid } from 'nanoid'
-import unit_component from '~/mixins/unit_component.js'
+
 export default {
   name: 'SheetEditor',
-  mixins: [
-    unit_component,
-  ],
   props: ['sheet'],
   data: () => ({
-    available_types: [
-      { text: 'Default', value: 'default' },
-      { text: 'Open answer', value: 'open_answer' },
-      { text: 'Multiple choice', value: 'multiple_choice' },
-      { text: 'Sort and match', value: 'pairing' },
-    ],
     new_gap_options: [],
     add_gap_dialog: false,
     edit_drawer: {
@@ -320,12 +299,12 @@ export default {
     },
     /* sheet: [
       {
-        type: "default",
+        type: "gapFilling",
         title: "Fill in the gaps",
         code: "To [be|is] or not to be, [that|those] is the question\n\nThe dog [has|is|gives] eaten [its|it's] food"
       },
       {
-        type: "default",
+        type: "gapFilling",
         title: "Another time",
         code: "The [book|bok|buuk|boock] is on the [table|teble|thable]\n\n[|The] Jupiter and [the|] Earth are planets.\n\nLorem [ipsum|!@#] dolor sit amet."
       }
@@ -448,7 +427,7 @@ export default {
     },
     add(type) {
       this.sheet.push({
-        type: 'default',
+        type: 'gapFilling',
         title: '',
         code: '' //This is an [example|eksample] phrase.\n\n[This|These] is another one.',
       })
