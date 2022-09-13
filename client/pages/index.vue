@@ -31,7 +31,7 @@
       <v-row>
         <v-col cols="12" md="3">
           <v-autocomplete
-            label="Exercise language"
+            label="Language"
             dense
             outlined
             hide-details
@@ -93,6 +93,17 @@
         </v-col>
       </v-row>
 
+      <v-row>
+        <v-spacer></v-spacer>
+        <v-col cols="auto">
+          <v-btn
+            class="primary--text"
+            text
+            to="/editor"
+          ><v-icon class="mr-1">mdi-plus</v-icon>Create a new exercise</v-btn>
+        </v-col>
+      </v-row>
+
   </v-container>
 </template>
 <script>
@@ -127,7 +138,16 @@ export default {
         author: 'ipsum',
         title: 'Sorting algorithms',
         lang: 'en',
-        tags: ['programming'],
+        tags: ['programming', 'math'],
+        age_min: 5,
+        age_max: 99,
+      },
+      {
+        id: '3',
+        author: 'dolor',
+        title: 'La seconda guerra mondiale',
+        lang: 'it',
+        tags: ['history', 'literature'],
         age_min: 5,
         age_max: 99,
       }
