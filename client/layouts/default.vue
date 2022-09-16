@@ -214,7 +214,6 @@
 export default {
   name: 'default',
   data: () => ({
-    user: {},
     nav_drawer: {
       show: true
     },
@@ -223,26 +222,20 @@ export default {
   methods: {
     async logout() {
       await this.$auth.logout()
-      //this.getUserInfo()
       this.$router.push('/')
     },
-    async getUserInfo() {
-      try {
-        this.user = await this.$auth.user(true)
-      } catch {
-        this.user = {}
-        console.log('this.$auth.user raised an exception')
-      }
-    }
   },
   mounted: async function() {
     await this.$store.dispatch("authenticator/CHECK_TOKENS");
-    await this.getUserInfo()
+    try {
+      await this.$auth.user(true)
+    } catch {
+      console.log('this.$auth.user raised an exception')
+    }
   },
   computed: {
     logged_in() {
       return this.authUser && this.authUser.id !== undefined
-      //return this.user && this.user.id !== undefined
     },
     authUser() {
       return this.$store.getters['authenticator/authUser']
