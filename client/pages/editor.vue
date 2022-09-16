@@ -45,6 +45,7 @@ export default {
     }
   },
   data: () => ({
+    user: {},
     sheet: [],
     details: {
       tags: []
@@ -53,6 +54,13 @@ export default {
   }),
   asyncData({params}) {
     return { tags_available }
+  },
+  mounted: async function() {
+    this.user = await this.$auth.user(true)
+  },
+  middleware: 'redirects',
+  meta: {
+    requiresAuth: true
   }
 }
 </script>
