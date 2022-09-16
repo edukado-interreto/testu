@@ -189,7 +189,10 @@ export default {
     tags_available() {
       return this.exercises.flatMap(e => e.tags)
     }
-  }
+  },
+  //mounted: async function() {
+  //  this.user = await this.$auth.user(true)
+  //},
 }
 </script>
 

@@ -10,6 +10,7 @@
       <v-app-bar-nav-icon @click.stop="nav_drawer.show = !nav_drawer.show"/>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      {{ authUser }}
       <v-menu
         offset-y
       >
@@ -55,23 +56,23 @@
       </v-menu>
 
       <div
-        v-if="!DEBUG_logged_in"
+        v-if="!logged_in"
         class="ml-3"
       >
         <v-btn
-          @click="DEBUG_logged_in = true"
           class="mr-1 text-none white"
           text
+          nuxt
+          to="/login"
         >Log in</v-btn>
         <v-btn
-          @click="DEBUG_logged_in = true"
           class="text-none primary"
           text
         >Sign up</v-btn>
       </div>
 
       <v-menu
-        v-if="DEBUG_logged_in"
+        v-if="logged_in"
         offset-y
       >
         <template v-slot:activator="{ on, attrs }">
@@ -95,8 +96,8 @@
             </v-list-item-avatar>
 
             <v-list-item-content>
-              <v-list-item-title>John Smith</v-list-item-title>
-              <v-list-item-subtitle>john@example.org</v-list-item-subtitle>
+              <v-list-item-title>{{authUser.id}}</v-list-item-title>
+              <v-list-item-subtitle>{{authUser.email}}</v-list-item-subtitle>
             </v-list-item-content>
 
           </v-list-item>
@@ -117,7 +118,7 @@
           </v-list-item>
 
           <v-list-item
-            @click="DEBUG_logged_in = false"
+            @click="logout"
           >
             <v-list-item-action>
               <v-icon>mdi-logout</v-icon>
@@ -212,15 +213,41 @@
 <script>
 export default {
   name: 'default',
-  data () {
-    return {
-      DEBUG_logged_in: true,
-      nav_drawer: {
-        show: true
-      },
-      title: 'testu.eu'
+  data: () => ({
+    user: {},
+    nav_drawer: {
+      show: true
+    },
+    title: 'testu.eu'
+  }),
+  methods: {
+    async logout() {
+      await this.$auth.logout()
+      //this.getUserInfo()
+      this.$router.push('/')
+    },
+    async getUserInfo() {
+      try {
+        this.user = await this.$auth.user(true)
+      } catch {
+        this.user = {}
+        console.log('this.$auth.user raised an exception')
+      }
     }
-  }
+  },
+  mounted: async function() {
+    await this.$store.dispatch("authenticator/CHECK_TOKENS");
+    await this.getUserInfo()
+  },
+  computed: {
+    logged_in() {
+      return this.authUser && this.authUser.id !== undefined
+      //return this.user && this.user.id !== undefined
+    },
+    authUser() {
+      return this.$store.getters['authenticator/authUser']
+    }
+  },
 }
 </script>
 <style scoped>
