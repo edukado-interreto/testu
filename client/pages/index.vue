@@ -107,19 +107,13 @@
   </v-container>
 </template>
 <script>
-const CEFR = {
-  A1: 0,
-  A2: 1,
-  B1: 2,
-  B2: 3,
-  C1: 4,
-  C2: 5,
-}
 
 import langs_available from '~/mixins/langs_available.js'
+import cefr from '~/mixins/cefr.js'
 export default {
   mixins: [
-    langs_available
+    langs_available,
+    cefr
   ],
   data: () => ({
     exercises: [
@@ -133,8 +127,8 @@ export default {
         age_max: 99,
         lang_learn: {
           target_lang: 'eo',
-          cefr_min: CEFR.A2,
-          cefr_max: CEFR.A2,
+          cefr_min: 0,
+          cefr_max: 5,
         }
       },
       {
@@ -173,11 +167,6 @@ export default {
     //  'it'
     //]
   }),
-  methods: {
-    n2cefr(n) {
-      return Object.entries(CEFR).find(e => e[1] == n)[0];
-    }
-  },
   computed: {
     current_cefr_label() {
       const [min, max] = this.search.lang_learn.levels.map(this.n2cefr);
