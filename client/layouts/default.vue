@@ -10,7 +10,7 @@
       <v-app-bar-nav-icon @click.stop="nav_drawer.show = !nav_drawer.show"/>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      {{ authUser }}
+      <!-- {{ authUser }} -->
       <v-menu
         offset-y
       >

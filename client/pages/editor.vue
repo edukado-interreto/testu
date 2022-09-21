@@ -81,7 +81,7 @@
       Save
     </v-btn>
 
-    {{ details }}
+    <!-- {{ details }} -->
   </div>
 </template>
 <script>
