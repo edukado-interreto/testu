@@ -104,6 +104,38 @@
         to="/editor"
       ><v-icon class="mr-1">mdi-plus</v-icon>Create a new exercise</v-btn>
 
+      <v-data-iterator
+        class="mt-5"
+        :items="exercises"
+        :items-per-page="20"
+      >
+        <template v-slot:default="props">
+          <v-row>
+            <v-col
+              v-for="item in props.items"
+              :key="item.name"
+              cols="12"
+              sm="6"
+              md="4"
+              lg="3"
+            >
+              <v-card>
+                <v-card-title class="subheading font-weight-bold">
+                  {{ item.name }}
+                </v-card-title>
+                <v-card-text v-if="item.description">
+                  {{ item.description }}
+                </v-card-text>
+                <v-divider></v-divider>
+
+              </v-card>
+            </v-col>
+          </v-row>
+        </template>
+      </v-data-iterator>
+
+
+
   </v-container>
 </template>
 <script>
@@ -111,45 +143,13 @@
 import langs_available from '~/mixins/langs_available.js'
 import cefr from '~/mixins/cefr.js'
 export default {
+  name: 'Index',
   mixins: [
     langs_available,
     cefr
   ],
   data: () => ({
-    exercises: [
-      {
-        id: '1',
-        author: 'lorem',
-        title: 'Ekzerco pri akuzativo',
-        lang: 'eo',
-        tags: ['grammar'],
-        age_min: 0,
-        age_max: 99,
-        lang_learn: {
-          target_lang: 'eo',
-          cefr_min: 0,
-          cefr_max: 5,
-        }
-      },
-      {
-        id: '2',
-        author: 'ipsum',
-        title: 'Sorting algorithms',
-        lang: 'en',
-        tags: ['programming', 'math'],
-        age_min: 5,
-        age_max: 99,
-      },
-      {
-        id: '3',
-        author: 'dolor',
-        title: 'La seconda guerra mondiale',
-        lang: 'it',
-        tags: ['history', 'literature'],
-        age_min: 5,
-        age_max: 99,
-      }
-    ],
+    exercises: [],
     search: {
       text: '',
       tags: [],
@@ -176,12 +176,37 @@ export default {
       return ret;
     },
     tags_available() {
-      return this.exercises.flatMap(e => e.tags)
+      return this.exercises.flatMap(e => e.tags).filter(t => !!t)
     }
   },
-  //mounted: async function() {
-  //  this.user = await this.$auth.user(true)
-  //},
+  methods: {
+    async fetchExercises(search) {
+
+      let resp;
+
+      try {
+
+        // TODO: fetch on server
+        const resp = await (
+          await fetch('/api/v1/sheets/') // TODO: search parameters
+        ).json();
+
+      } catch(e) {
+        alert("Cannot fetch exercises from the server");
+        console.log(e);
+        return;
+      }
+
+      this.exercises = resp;
+
+    },
+  },
+  async fetch() {
+    this.exercises = await (
+      await fetch('/api/v1/sheets/')
+    ).json();
+  },
+  fetchOnServer: true,
+  fetchKey: 'exercises'
 }
 </script>
-
