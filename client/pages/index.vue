@@ -119,8 +119,13 @@
               md="4"
               lg="3"
             >
-              <v-card>
-                <v-card-title class="subheading font-weight-bold">
+              <v-card
+                :to="`/exercise/${item.id}`"
+                nuxt
+              >
+                <v-card-title
+                  class="subheading font-weight-bold"
+                >
                   {{ item.name }}
                 </v-card-title>
                 <v-card-text v-if="item.description">
