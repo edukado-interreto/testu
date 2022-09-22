@@ -107,6 +107,7 @@ export default {
     sheet: [],
     details: {
       src_lang: 'en',
+      description: '',
       tags: [],
       age_range: [0, 18],
       lang_learn: {
@@ -156,6 +157,7 @@ export default {
       payload.age_max = this.details.age_range[1];
       payload.unlisted = !!this.details.unlisted;
       payload.data = { sheet: this.sheet };
+      payload.created_by = this.$store.getters['authenticator/authUser'].id;
 
       console.log("data:", payload);
 
@@ -164,14 +166,19 @@ export default {
       // the other ones are going to be regular form fields
       const form_data = new FormData();
       Object.keys(payload).filter(
-        k => k != 'data'
+        k => {
+          if (k == 'data') return false;
+          return true;
+        }
       ).forEach(
         k => form_data.append(k, payload[k])
       );
       form_data.append('data', JSON.stringify(payload.data));
       // --
 
-      await fetch('/api/v1/sheets/', {
+      console.log({form_data});
+
+      const ret = await fetch('/api/v1/sheets/', {
         method: 'POST',
         //headers: {
         //  'Content-Type': 'application/json'
@@ -181,8 +188,23 @@ export default {
         //  data: payload
         //})
       })
+      
+      console.log(ret);
 
-      alert("success!")
+      let ret_json;
+      try {
+        ret_json = await ret.json();
+      } catch {
+      }
+
+      if (ret.status >= 400) {
+        console.error({ ret, ret_json })
+        alert(`Error ${ret.status}. ${ret_json}`)
+        return
+      }
+
+      console.log(ret_json)
+      this.$router.push(`/exercise/${ret_json.id}`)
     }
   },
   mounted: async function() {

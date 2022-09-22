@@ -230,7 +230,7 @@ export default {
     try {
       await this.$auth.user(true)
     } catch {
-      console.log('this.$auth.user raised an exception')
+      console.error('this.$auth.user raised an exception')
     }
   },
   computed: {
