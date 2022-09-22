@@ -1,6 +1,43 @@
 <template>
   <v-container>
-    <h1>{{ exercise.name }}</h1>
+    <v-row>
+      <v-col>
+        <h1>{{ exercise.name }}</h1>
+      </v-col>
+      <v-spacer></v-spacer>
+      <v-col cols="auto">
+        <v-menu offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              icon
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-icon>mdi-dots-vertical</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              disabled
+            >
+              <v-list-item-title>
+                Create a copy
+              </v-list-item-title>
+            </v-list-item>
+            <v-list-item
+              v-if="user_is_creator"
+              class="red--text font-weight-bold"
+              @click="remove"
+            >
+              <v-list-item-title>
+                Delete exercise
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-col>
+    </v-row>
+
     <v-row class="text-caption mb-2">
       <v-col cols="auto">
         <v-icon small>mdi-account</v-icon> {{ exercise.created_by || 'anonymous' }}
@@ -42,6 +79,7 @@
     data: () => ({
     }),
     async asyncData({ route, params }) {
+
       const id = (process.server) ? route.params.id : params.id;
       let exercise;
 
@@ -61,6 +99,29 @@
         return (
           new Date(this.exercise.modified)
         ).toLocaleString("en-US") // TODO: i18n 
+      },
+      user_is_creator() {
+        const authUser = this.$store.getters['authenticator/authUser']
+        if (!authUser) return false
+        return this.exercise.created_by === authUser.id
+      }
+    },
+    methods: {
+      async remove() {
+
+        if (!confirm(
+          'Are you sure you want to delete this exercise?'
+        )) return;
+
+        const resp = await fetch(`/api/v1/sheets/${this.id}`, {
+          method: 'DELETE'
+        })
+        if (resp.status >= 400) {
+          console.error(resp)
+          alert(`Error ${resp.status}`)
+          return
+        }
+        this.$router.push('/')
       }
     },
     head() {
