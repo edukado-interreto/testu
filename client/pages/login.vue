@@ -1,25 +1,31 @@
 <template>
-  <v-row>
-    <v-col class="text-center">
+  <v-row class="mt-5">
+    <v-spacer></v-spacer>
+    <v-col cols="7">
       <v-form
         ref="login_form"
         v-model="valid"
-        lazy-validation
+        :lazy-validation="true"
+        @submit.prevent="login"
       >
         <v-text-field
           v-model="email"
           label="E-mail"
+          prepend-icon="mdi-account"
           :rules="[ v => /.+@.+\..+/.test(v) || 'E-mail must be valid' ]"
           required
         ></v-text-field>
         <v-text-field
           v-model="password"
           label="Password"
+          type="password"
+          prepend-icon="mdi-lock"
           :rules="[ v => v !== '' || 'Required field' ]"
           required
         ></v-text-field>
         <v-btn
-          @click="login"
+          type="submit"
+          class="primary mt-2"
         >Login</v-btn>
         <v-alert
           class="mt-2"
@@ -30,6 +36,7 @@
         </v-alert>
       </v-form>
     </v-col>
+    <v-spacer></v-spacer>
   </v-row>
 </template>
 <script>
@@ -40,6 +47,12 @@
       valid: undefined,
       error_message: '',
     }),
+    name: 'Login',
+    head() {
+      return {
+        title: 'Login'
+      }
+    },
     methods: {
       validate() {
         return this.$refs.login_form.validate()
