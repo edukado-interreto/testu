@@ -96,13 +96,24 @@ export default {
   name: 'Editor',
   head() {
     return {
-      title: 'New exercise'
+      title: (this.overwrite_id === undefined) ? 'New exercise' : 'Edit exercise'
     }
   },
-  asyncData({params}) {
+  async fetch() {
+    if (this.$route.query.new_from) {
+      await this.load_exercise(this.$route.query.new_from)
+      this.details.title = 'Copy of ' + this.details.title // TODO i18n
+    }
+    if (this.$route.query.edit) {
+      await this.load_exercise(this.$route.query.edit)
+      this.overwrite_id = this.$route.query.edit
+    }
+  },
+  async asyncData({params, route}) {
     return { tags_available }
   },
   data: () => ({
+    overwrite_id: undefined,
     user: {},
     sheet: [],
     details: {
@@ -111,6 +122,7 @@ export default {
       tags: [],
       age_range: [0, 18],
       lang_learn: {
+        lang: undefined,
         cefr_level_range: [0, 5],
       }
     },
@@ -133,6 +145,15 @@ export default {
     }
   },
   methods: {
+    async load_exercise(id) {
+      const exercise = await (
+        await fetch(`/api/v1/sheets/${id}/`)
+      ).json()
+      this.sheet = exercise.data.sheet
+      this.details.title = exercise.name
+      this.details.description = exercise.description
+      // TODO set tags, age range and the other fields
+    },
     async save() {
       if (this.sheet.length == 0) {
         alert("Please add at least one unit");
@@ -147,7 +168,7 @@ export default {
       payload.description = this.details.description;
       payload.src_lang = this.details.src_lang;
       payload.tags = [...this.details.tags];
-      if (this.details.lang_learn.lang) {
+      if (this.details.lang_learn?.lang) {
         payload.lang_learn = true;
         payload.lang_learn_lang = this.details.lang_learn.lang;
         payload.lang_learn_cefr_level_min = this.details.lang_learn.cefr_level_range[0];
@@ -178,8 +199,17 @@ export default {
 
       console.log({form_data});
 
-      const ret = await fetch('/api/v1/sheets/', {
-        method: 'POST',
+      const api = {
+        path: '/api/v1/sheets/',
+        method: 'POST'
+      }
+      if (this.overwrite_id !== undefined) {
+        api.path = `/api/v1/sheets/${this.overwrite_id}/`
+        api.method = 'PUT'
+      }
+
+      const ret = await fetch(api.path, {
+        method: api.method,
         //headers: {
         //  'Content-Type': 'application/json'
         //},
