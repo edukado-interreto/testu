@@ -7,6 +7,7 @@
           append-icon="mdi-magnify"
           clearable
           v-model="search.text"
+          @keyup.enter="update_filtered_exercises"
           hide-details
         ></v-text-field>
       </v-col>
@@ -106,7 +107,7 @@
 
       <v-data-iterator
         class="mt-5"
-        :items="exercises"
+        :items="filtered_exercises"
         :items-per-page="20"
       >
         <template v-slot:default="props">
@@ -155,6 +156,7 @@ export default {
   ],
   data: () => ({
     exercises: [],
+    filtered_exercises: [],
     search: {
       text: '',
       tags: [],
@@ -185,31 +187,18 @@ export default {
     }
   },
   methods: {
-    async fetchExercises(search) {
-
-      let resp;
-
-      try {
-
-        // TODO: fetch on server
-        const resp = await (
-          await fetch('/api/v1/sheets/') // TODO: search parameters
-        ).json();
-
-      } catch(e) {
-        alert("Cannot fetch exercises from the server");
-        console.log(e);
-        return;
-      }
-
-      this.exercises = resp;
-
+    update_filtered_exercises() {
+      this.filtered_exercises = this.exercises.filter(
+        e => e.name.includes(this.search.text)
+      )
+      console.log("filtered")
     },
   },
   async fetch() {
     this.exercises = await (
       await fetch('/api/v1/sheets/')
     ).json();
+    this.update_filtered_exercises()
   },
   fetchOnServer: true,
   fetchKey: 'exercises'
