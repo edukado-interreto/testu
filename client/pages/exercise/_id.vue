@@ -18,10 +18,20 @@
           </template>
           <v-list>
             <v-list-item
-              disabled
+              nuxt
+              :to="`/editor?new_from=${exercise.id}`"
             >
               <v-list-item-title>
                 Create a copy
+              </v-list-item-title>
+            </v-list-item>
+            <v-list-item
+              v-if="user_is_creator"
+              nuxt
+              :to="`/editor?edit=${exercise.id}`"
+            >
+              <v-list-item-title>
+                Edit exercise
               </v-list-item-title>
             </v-list-item>
             <v-list-item
