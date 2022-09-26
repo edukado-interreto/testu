@@ -18,6 +18,7 @@
             v-model="details.description"
           ></v-text-field>
           <v-autocomplete
+            v-if="false"
             label="Tags"
             small-chips
             deletable-chips
@@ -42,10 +43,10 @@
               >
                 <v-range-slider
                   dense
-                  :min="0"
-                  :max="5"
-                  :value="[0, 5]"
-                  :tick-labels="['A1', 'A2', 'B1', 'B2', 'C1', 'C2']"
+                  :min="cefr_lbound"
+                  :max="cefr_ubound"
+                  :value="[cefr_lbound, cefr_ubound]"
+                  :tick-labels="cefr_levels"
                   v-model="details.lang_learn.cefr_level_range"
                 ></v-range-slider>
               </v-list-item>
@@ -126,7 +127,10 @@ export default {
       age_range: [0, 18],
       lang_learn: {
         lang: undefined,
-        cefr_level_range: [0, 5],
+        cefr_level_range: [
+          1, // this.cefr_lbound,
+          6, // this.cefr_ubound,
+        ],
       }
     },
     infobox: undefined
@@ -169,8 +173,8 @@ export default {
       const payload = {};
       payload.name = this.details.title;
       payload.description = this.details.description;
+      // payload.tags = [...this.details.tags]; // TODO: uncomment this
       payload.src_lang = this.details.src_lang;
-      payload.tags = [...this.details.tags];
       if (this.details.lang_learn?.lang) {
         payload.lang_learn = true;
         payload.lang_learn_lang = this.details.lang_learn.lang;
@@ -179,7 +183,7 @@ export default {
       }
       payload.age_min = this.details.age_range[0];
       payload.age_max = this.details.age_range[1];
-      payload.unlisted = !!this.details.unlisted;
+      payload.searchable = !this.details.unlisted;
       payload.data = {
         sheet: this.sheet.map(
           (e, i) => ({
