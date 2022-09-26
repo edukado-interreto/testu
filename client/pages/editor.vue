@@ -162,7 +162,7 @@ export default {
       this.details.tags = [...exercise.tags]
       this.details.src_lang = exercise.src_lang
       if (exercise.lang_learn) {
-        this.details.lang_learn.lang = 'it' // TODO: read from database
+        this.details.lang_learn.lang = exercise.lang_learn_lang,
         this.details.lang_learn.cefr_level_range = [
           exercise.lang_learn_cefr_level_min,
           exercise.lang_learn_cefr_level_max,

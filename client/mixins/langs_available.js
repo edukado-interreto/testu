@@ -1,6 +1,9 @@
 import langs from '~/data/langs.js'
 export default {
   computed: {
+    langs_table() {
+      return langs.langs; // TODO i18n
+    },
     langs_available() {
       return Object.entries(
         langs.langs

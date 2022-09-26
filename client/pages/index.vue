@@ -134,7 +134,7 @@
                     Age: {{ item.age_min }} - {{ (item.age_max == 18) ? '18+' : item.age_max  }}
                   </div>
                   <div v-if="item.lang_learn === true">
-                    Language learning: {{ item.lang_learn_lang }} {{ cefr_info(item) }}
+                    Language learning: {{ langs_table[item.lang_learn_lang].name }} {{ cefr_info(item) }}
                   </div>
                 </v-card-text>
                 <v-divider></v-divider>
