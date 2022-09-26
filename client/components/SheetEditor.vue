@@ -255,6 +255,7 @@
                   v-if="section.type == 'default'"
                   :code="section.code"
                   :shuffle="section.shuffle"
+                  ref="unit"
                 />
               </v-col>
             </v-row>

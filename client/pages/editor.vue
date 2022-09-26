@@ -1,6 +1,9 @@
 <template>
   <div>
-    <SheetEditor :sheet="sheet"></SheetEditor>
+    <SheetEditor
+      :sheet="sheet"
+      ref="sheet_editor"
+    ></SheetEditor>
 
     <v-expansion-panels class="mt-9" v-model="infobox">
       <v-expansion-panel>
@@ -177,7 +180,17 @@ export default {
       payload.age_min = this.details.age_range[0];
       payload.age_max = this.details.age_range[1];
       payload.unlisted = !!this.details.unlisted;
-      payload.data = { sheet: this.sheet };
+      payload.data = {
+        sheet: this.sheet.map(
+          (e, i) => ({
+            ...e,
+            _parsed: this.$refs.sheet_editor.$refs.unit[i].parsed
+            // inject the parsed exercises into the sheet object that will
+            // be stored in the database. The code is parsed by the grand-children
+            // components so we use $refs to access it here.
+          })
+        )
+      };
       payload.created_by = this.$store.getters['authenticator/authUser'].id;
 
       console.log("data:", payload);
