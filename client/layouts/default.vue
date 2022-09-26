@@ -68,6 +68,8 @@
         <v-btn
           class="text-none primary"
           text
+          nuxt
+          to="/signup"
         >Sign up</v-btn>
       </div>
 

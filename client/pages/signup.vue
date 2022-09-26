@@ -1,21 +1,7 @@
 <template>
   <v-row class="mt-5">
     <v-spacer></v-spacer>
-    <v-col
-      v-if="submitted"
-      cols="7"
-    >
-      <p>
-        Thank you for signing up.
-      </p>
-      <p>
-        Please check your inbox to confirm your registration.
-      </p>
-    </v-col>
-    <v-col
-      v-else
-      cols="7"
-    >
+    <v-col cols="7">
       <v-form
         ref="signup_form"
         v-model="valid"
@@ -24,13 +10,6 @@
       >
         <h1 class="text-h5 mb-5">Register to TestU</h1>
         <v-text-field
-          outlined
-          dense
-          v-model="username"
-          label="User name"
-          :rules="[ v => v !== '' || 'Required field' ]"
-          required
-        ></v-text-field><v-text-field
           outlined
           dense
           v-model="email"
@@ -72,14 +51,12 @@
 <script>
   export default {
     data: () => ({
-      username: '',
       email: '',
       password: '',
       valid: undefined,
-      submitted: false,
       error_message: '',
     }),
-    name: 'Signup',
+    name: 'Sign up',
     head() {
       return {
         title: 'SignUp'
@@ -94,7 +71,6 @@
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            username: this.username,
             email: this.email,
             password: this.password
           })
@@ -106,14 +82,11 @@
         } catch {
         }
 
-        console.error({ ret, ret_json })
-
         if (ret.status >= 400) {
+          console.error({ ret, ret_json })
           this.error_message = `Error ${ret.status}. ${ret_json}`
           return
         }
-
-        this.submitted = true
 
       },
       validate() {
