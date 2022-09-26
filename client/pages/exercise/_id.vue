@@ -56,6 +56,20 @@
       <v-col cols="auto">
         <v-icon small>mdi-clock</v-icon> {{ date_formatted }}
       </v-col>
+      <v-spacer></v-spacer>
+      <v-col
+        cols="auto"
+        v-if="exercise.age_min > 0 || exercise.age_max < 18"
+      >
+        <v-icon small>mdi-human-child</v-icon> Age: {{ exercise.age_min }} - {{ (exercise.age_max == 18) ? '18+' : exercise.age_max  }}
+      </v-col>
+      <v-col
+        cols="auto"
+        v-if="exercise.lang_learn === true"
+      >
+        <v-icon small>mdi-chat</v-icon>
+        {{ exercise.lang_learn_lang }} {{ cefr_info(exercise) }}
+      </v-col>
     </v-row>
 
     <v-sheet v-if="exercise.description" class="mb-7">
@@ -85,8 +99,12 @@
   </v-container>
 </template>
 <script>
+  import cefr from '~/mixins/cefr.js'
   export default {
     name: 'Exercise',
+    mixins: [
+      cefr
+    ],
     data: () => ({
     }),
     async asyncData({ route, params }) {
