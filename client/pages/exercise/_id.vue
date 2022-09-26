@@ -68,7 +68,7 @@
         v-if="exercise.lang_learn === true"
       >
         <v-icon small>mdi-chat</v-icon>
-        {{ exercise.lang_learn_lang }} {{ cefr_info(exercise) }}
+        {{ langs_table[exercise.lang_learn_lang].name }} {{ cefr_info(exercise) }}
       </v-col>
     </v-row>
 
@@ -100,9 +100,11 @@
 </template>
 <script>
   import cefr from '~/mixins/cefr.js'
+  import langs_available from '~/mixins/langs_available.js'
   export default {
     name: 'Exercise',
     mixins: [
+      langs_available,
       cefr
     ],
     data: () => ({
