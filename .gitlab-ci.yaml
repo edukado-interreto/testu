@@ -54,13 +54,17 @@ Nginx:
 
 Deploy:
   stage: deploy
-  # rules:
-    # - when: manual
+  environment:
+    name: staging
+    url: https://sandbox.testu.eu
+  rules:
+    - when: manual
+    - if: $CI_COMMIT_BRANCH == "sandbox"
   image: docker:20.10.16
   services:
     - docker:20.10.16-dind
   variables:
-    DOCKER_HOST: 'ssh://ec2-user@$VPS_IP'
+    DOCKER_HOST: ssh://$VPS_USER@$VPS_IP
   before_script:
     - apk update && apk add openssh-client bash
     - eval "$(ssh-agent -s)"
@@ -76,4 +80,6 @@ Deploy:
       printf $POSTGRES_PASSWORD | docker secret create POSTGRES_PASSWORD - || true
     - |
       printf $ALLOWED_HOSTS | docker secret create ALLOWED_HOSTS - || true
+    - |
+      printf $SENDGRID_API_KEY | docker secret create SENDGRID_API_KEY - || true
     - docker stack deploy -c swarm.yaml testu --with-registry-auth
