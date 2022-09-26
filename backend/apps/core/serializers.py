@@ -3,16 +3,10 @@ from allauth.account.adapter import get_adapter
 from allauth.account.utils import setup_user_email
 from allauth.utils import email_address_exists
 from django.contrib.auth import get_user_model
-from django.core.mail import send_mail
-from django.core.validators import EmailValidator
-from django.shortcuts import get_object_or_404
-from rest_framework.fields import CharField, EmailField, SerializerMethodField
-from rest_framework.serializers import ModelSerializer, Serializer
+from rest_framework.fields import CharField, EmailField
+from rest_framework.serializers import (ModelSerializer, Serializer,
+                                        as_serializer_error)
 from rest_framework.validators import ValidationError
-
-from .models import OneTimeCode
-from .utils import get_url
-from .validators import PASSWORD_VALIDATORS, six_digits
 
 User = get_user_model()
 
@@ -32,7 +26,7 @@ class RegisterSerializer(Serializer):
         email = get_adapter().clean_email(email)
         if allauth_settings.UNIQUE_EMAIL:
             if email and email_address_exists(email):
-                raise serializers.ValidationError(
+                raise ValidationError(
                     "A user is already registered with this e-mail address.",
                 )
         return email
@@ -55,9 +49,7 @@ class RegisterSerializer(Serializer):
             try:
                 adapter.clean_password(self.cleaned_data["password"], user=user)
             except DjangoValidationError as exc:
-                raise serializers.ValidationError(
-                    detail=serializers.as_serializer_error(exc)
-                )
+                raise ValidationError(detail=as_serializer_error(exc))
         user.save()
         setup_user_email(request, user, [])
         return user
