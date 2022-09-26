@@ -12,6 +12,7 @@
               icon
               v-bind="attrs"
               v-on="on"
+              :disabled="!user_logged_in"
             >
               <v-icon>mdi-dots-vertical</v-icon>
             </v-btn>
@@ -109,6 +110,11 @@
         return (
           new Date(this.exercise.modified)
         ).toLocaleString("en-US") // TODO: i18n 
+      },
+      user_logged_in() {
+        const authUser = this.$store.getters['authenticator/authUser']
+        if (!authUser) return false
+        return true
       },
       user_is_creator() {
         const authUser = this.$store.getters['authenticator/authUser']
