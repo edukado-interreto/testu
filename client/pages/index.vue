@@ -5,7 +5,6 @@
         <v-text-field
           label="Search exercise"
           append-icon="mdi-magnify"
-          clearable
           v-model="search.text"
           @keyup.enter="update_filtered_exercises"
           hide-details
@@ -40,6 +39,7 @@
           multiple
           v-model="search.src_langs"
           :items="langs_available"
+          @change="update_filtered_exercises"
         >
           <template v-slot:selection="{ item, index }">
             <span>{{ item.text }}</span>
@@ -90,6 +90,7 @@
         <v-select
           dense
           label="Sort"
+          disabled
           prepend-inner-icon="mdi-sort"
           v-model="search.sort"
           :items="[ { value: 'recent', text: 'Most recent' }, { value: 'rate', text: 'Most rated' }]"
@@ -203,9 +204,13 @@ export default {
     },
     update_filtered_exercises() {
       this.filtered_exercises = this.exercises.filter(
-        e => e.name.includes(this.search.text)
+        e => e.name.includes(this.search.text || "")
+      ).filter(
+        e => (
+          this.search.src_langs.length == 0
+          || this.search.src_langs.includes(e.src_lang)
+        )
       )
-      console.log("filtered")
     },
   },
   async fetch() {
