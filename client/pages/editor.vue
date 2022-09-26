@@ -182,23 +182,10 @@ export default {
 
       console.log("data:", payload);
 
-      // create a FormData object from payload
-      // the 'data' prop is encoded as json string,
-      // the other ones are going to be regular form fields
-      const form_data = new FormData();
-      Object.keys(payload).filter(
-        k => {
-          if (k == 'data') return false;
-          return true;
-        }
-      ).forEach(
-        k => form_data.append(k, payload[k])
-      );
-      form_data.append('data', JSON.stringify(payload.data));
-      // --
-
-      console.log({form_data});
-
+      // setup the api call: a PUT request if editing
+      // an existing exercise, i.e. when this.overwrite_id
+      // contains an exercise id, or a POST request if
+      // creating a new one otherwise
       const api = {
         path: '/api/v1/sheets/',
         method: 'POST'
@@ -210,13 +197,10 @@ export default {
 
       const ret = await fetch(api.path, {
         method: api.method,
-        //headers: {
-        //  'Content-Type': 'application/json'
-        //},
-        body: form_data
-        //body: JSON.stringify({
-        //  data: payload
-        //})
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
       })
       
       console.log(ret);
