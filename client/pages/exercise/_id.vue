@@ -76,7 +76,7 @@
         class="body-2 mb-4 pre-line"
       >{{ section.description }}</div>
       <GapsEditor
-        v-if="section.type == 'gapFilling'"
+        v-if="section.type == 'default'"
         :code="section.code"
         :shuffle="section.shuffle"
       />
