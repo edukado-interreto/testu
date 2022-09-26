@@ -65,10 +65,10 @@
             >
               <v-range-slider
                 dense
-                :min="0"
-                :max="5"
-                :value="[0, 5]"
-                :tick-labels="['A1', 'A2', 'B1', 'B2', 'C1', 'C2']"
+                :min="cefr_lbound"
+                :max="cefr_ubound"
+                :value="[cefr_lbound, cefr_ubound]"
+                :tick-labels="cefr_levels"
                 v-model="search.lang_learn.levels"
               ></v-range-slider>
             </v-list-item>
@@ -163,7 +163,7 @@ export default {
       src_langs: ['en'], // TODO: current interface language
       lang_learn: {
         langs: [],
-        levels: [0, 5],
+        levels: [1, 6],
       },
       sort: 'recent'
     },
