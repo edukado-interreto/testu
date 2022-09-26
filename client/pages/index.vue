@@ -116,9 +116,6 @@
               v-for="item in props.items"
               :key="item.id"
               cols="12"
-              sm="6"
-              md="4"
-              lg="3"
             >
               <v-card
                 :to="`/exercise/${item.id}`"
@@ -129,11 +126,23 @@
                 >
                   {{ item.name }}
                 </v-card-title>
-                <v-card-text v-if="item.description">
+                <v-card-subtitle v-if="item.description">
                   {{ item.description }}
+                </v-card-subtitle>
+                <v-card-text class="text-caption">
+                  <div v-if="item.age_min > 0 || item.age_max < 18">
+                    Age: {{ item.age_min }} - {{ (item.age_max == 18) ? '18+' : item.age_max  }}
+                  </div>
+                  <div v-if="item.lang_learn === true">
+                    Language learning: {{ item.lang_learn_lang }} {{ cefr_info(item) }}
+                  </div>
                 </v-card-text>
                 <v-divider></v-divider>
-
+                <v-card-text>
+                  <v-icon small>mdi-account</v-icon> {{ item.created_by || 'anonymous' }}
+                  <span>·</span>
+                  <v-icon small>mdi-clock</v-icon> {{ date_formatted(item.created) }}
+                </v-card-text>
               </v-card>
             </v-col>
           </v-row>
@@ -176,17 +185,22 @@ export default {
   }),
   computed: {
     current_cefr_label() {
-      const [min, max] = this.search.lang_learn.levels.map(this.n2cefr);
-      if (min == 'A1' && max == 'C2') return ''; // any level
-      let ret = min;
-      if (min != max) ret += ` - ${max}`;
-      return ret;
+      const [min, max] = this.search.lang_learn.levels;
+      return this.cefr_info({
+        lang_learn_cefr_level_min: min,
+        lang_learn_cefr_level_max: max,
+      });
     },
     tags_available() {
       return this.exercises.flatMap(e => e.tags).filter(t => !!t)
     }
   },
   methods: {
+    date_formatted(d) {
+      return (
+        new Date(d)
+      ).toLocaleString("en-US") // TODO: i18n 
+    },
     update_filtered_exercises() {
       this.filtered_exercises = this.exercises.filter(
         e => e.name.includes(this.search.text)
