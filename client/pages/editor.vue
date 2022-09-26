@@ -189,7 +189,8 @@ export default {
       payload.description = this.details.description;
       // payload.tags = [...this.details.tags]; // TODO: uncomment this
       payload.src_lang = this.details.src_lang;
-      if (this.details.lang_learn?.lang) {
+      payload.lang_learn = false;
+      if (this.details.lang_learn.lang) {
         payload.lang_learn = true;
         payload.lang_learn_lang = this.details.lang_learn.lang;
         payload.lang_learn_cefr_level_min = this.details.lang_learn.cefr_level_range[0];
