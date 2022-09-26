@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.contrib.auth.models import Group
 
-from .models import OneTimeCode, User
+from .models import User
 
 admin.site.unregister(Group)
 
@@ -22,9 +22,3 @@ class UserAdmin(DjangoUserAdmin):
             },
         ),
     ]
-
-
-@admin.register(OneTimeCode)
-class OneTimeCodeAdmin(admin.ModelAdmin):
-    list_display = ["code", "user"]
-    list_filter = ["user"]

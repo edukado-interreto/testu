@@ -14,8 +14,8 @@ User = get_user_model()
 class UserSerializer(ModelSerializer):
     class Meta:
         model = User
-        fields = ["id", "email", "data", "date_joined"]
-        read_only_fields = ["id", "email", "date_joined"]
+        fields = ["id", "email", "username", "data", "date_joined"]
+        read_only_fields = ["id", "email", "username", "date_joined"]
 
 
 class RegisterSerializer(Serializer):
@@ -38,12 +38,14 @@ class RegisterSerializer(Serializer):
         return {
             "password": self.validated_data.get("password", ""),
             "email": self.validated_data.get("email", ""),
+            "username": self.validated_data.get("username", ""),
         }
 
     def save(self, request):
         adapter = get_adapter()
         user = adapter.new_user(request)
         user.email = self.validated_data["email"]
+        user.username = self.validated_data.get("username", user.email)
         self.cleaned_data = self.get_cleaned_data()
         if "password" in self.cleaned_data:
             try:

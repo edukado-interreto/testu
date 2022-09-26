@@ -38,7 +38,7 @@ class EmailUserManager(UserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
-    # username = models.CharField("username", max_length=150, unique=True, validators=[UnicodeUsernameValidator()])
+    username = models.CharField("username", max_length=150, unique=True, validators=[UnicodeUsernameValidator()])
     email = models.EmailField("email address", unique=True)
     data = models.JSONField("data", default=dict, blank=True)
     is_staff = models.BooleanField(
