@@ -5,13 +5,7 @@ from django_extensions.db.models import TimeStampedModel
 User = get_user_model()
 
 
-class CEFR(models.IntegerChoices):
-    A1 = 0
-    A2 = 1
-    B1 = 2
-    B2 = 3
-    C1 = 4
-    C2 = 5
+CEFR = models.IntegerChoices("CEFR", "A1 A2 B1 B2 C1 C2")
 
 
 class Tag(TimeStampedModel):
@@ -27,9 +21,10 @@ class Sheet(TimeStampedModel):
         User, on_delete=models.SET_NULL, blank=True, null=True
     )
     data = models.JSONField("data", default=list, blank=True)
-    src_lang = models.CharField("source language", max_length=10, blank=True)
     tags = models.ManyToManyField(Tag, blank=True)
     lang_learn = models.BooleanField("about language", default=True)
+    src_lang = models.CharField("source language", max_length=10, blank=True)
+    lang_learn_lang = models.CharField("target language", max_length=10, blank=True)
     lang_learn_cefr_level_min = models.PositiveSmallIntegerField(
         "CEFR min",
         choices=CEFR.choices,

@@ -31,6 +31,7 @@ class SheetSerializer(serializers.ModelSerializer):
             "data",
             "src_lang",
             "lang_learn",
+            "lang_learn_lang",
             "lang_learn_cefr_level_min",
             "lang_learn_cefr_level_max",
             "age_min",
