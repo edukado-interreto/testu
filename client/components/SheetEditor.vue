@@ -96,6 +96,13 @@
         </v-toolbar>
       </template>
       <v-container class="mt-2">
+        <v-select
+          outlined
+          dense
+          label="Type"
+          :items="available_types"
+          value="default"
+        ></v-select>
         <v-text-field
           v-model="current.data.title"
           label="Title"
@@ -245,7 +252,7 @@
                   class="body-2 mb-4 pre-line"
                 >{{ section.description }}</div>
                 <GapsEditor
-                  v-if="section.type == 'gapFilling'"
+                  v-if="section.type == 'default'"
                   :code="section.code"
                   :shuffle="section.shuffle"
                 />
@@ -270,7 +277,7 @@
 
       <v-btn
         rounded
-        @click="add('gapFilling')"
+        @click="add('default')"
         class="mt-3"
       >
         <v-icon class="me-2">mdi-plus</v-icon>
@@ -288,6 +295,7 @@ export default {
   name: 'SheetEditor',
   props: ['sheet'],
   data: () => ({
+    available_types: [{text:'Default', value:'default'}],
     new_gap_options: [],
     add_gap_dialog: false,
     edit_drawer: {
@@ -299,12 +307,12 @@ export default {
     },
     /* sheet: [
       {
-        type: "gapFilling",
+        type: "default",
         title: "Fill in the gaps",
         code: "To [be|is] or not to be, [that|those] is the question\n\nThe dog [has|is|gives] eaten [its|it's] food"
       },
       {
-        type: "gapFilling",
+        type: "default",
         title: "Another time",
         code: "The [book|bok|buuk|boock] is on the [table|teble|thable]\n\n[|The] Jupiter and [the|] Earth are planets.\n\nLorem [ipsum|!@#] dolor sit amet."
       }
@@ -427,7 +435,7 @@ export default {
     },
     add(type) {
       this.sheet.push({
-        type: 'gapFilling',
+        type: 'default',
         title: '',
         code: '' //This is an [example|eksample] phrase.\n\n[This|These] is another one.',
       })
