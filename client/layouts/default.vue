@@ -36,6 +36,7 @@
               <v-list-item-title>English</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+          <!--
           <v-list-item @click="">
             <v-list-item-content>
               <v-list-item-title>Esperanto</v-list-item-title>
@@ -51,6 +52,7 @@
               <v-list-item-title>Italian</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+          -->
         </v-list>
 
       </v-menu>
@@ -110,6 +112,7 @@
             to="/profile"
             router
             exact
+            disabled
           >
             <v-list-item-action>
               <v-icon>mdi-cog</v-icon>
@@ -162,6 +165,7 @@
           to="/learn"
           router
           exact
+          disabled
         >
           <v-list-item-action>
             <v-icon>mdi-chart-bar</v-icon>
@@ -188,6 +192,7 @@
           to="/about"
           router
           exact
+          disabled
         >
           <v-list-item-action>
             <v-icon>mdi-information</v-icon>
