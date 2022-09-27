@@ -50,6 +50,7 @@
       <v-col cols="12" md="3">
         <v-autocomplete
           label="Language learning"
+          @change="update_filtered_exercises"
           prepend-inner-icon="mdi-chat"
           dense
           outlined
@@ -70,6 +71,7 @@
                 :value="[cefr_lbound, cefr_ubound]"
                 :tick-labels="cefr_levels"
                 v-model="search.lang_learn.levels"
+                @change="update_filtered_exercises"
               ></v-range-slider>
             </v-list-item>
           </template>
@@ -203,6 +205,10 @@ export default {
       ).toLocaleString("en-US") // TODO: i18n 
     },
     update_filtered_exercises() {
+      // TODO: fetch from api + debounce
+      console.log("update_filtered_exercises")
+      console.log(this.search.lang_learn.langs)
+      console.log(this.search.lang_learn.levels)
       this.filtered_exercises = this.exercises.filter(
         e => e.name.includes(this.search.text || "")
       ).filter(
@@ -210,7 +216,15 @@ export default {
           this.search.src_langs.length == 0
           || this.search.src_langs.includes(e.src_lang)
         )
-      )
+      ).filter(e => {
+        const langs = this.search.lang_learn.langs
+        if (langs.length == 0) return true
+        if (!langs.includes(e.lang_learn_lang)) return false
+        const [min, max] = this.search.lang_learn.levels
+        if (min > e.lang_learn_cefr_level_max) return false
+        if (max < e.lang_learn_cefr_level_min) return false
+        return true
+      })
     },
   },
   async fetch() {
