@@ -1,7 +1,21 @@
 <template>
   <v-row class="mt-5">
     <v-spacer></v-spacer>
-    <v-col cols="7">
+    <v-col
+      v-if="submitted"
+      cols="7"
+    >
+      <p>
+        Thank you for signing up.
+      </p>
+      <p>
+        Please check your inbox to confirm your registration.
+      </p>
+    </v-col>
+    <v-col
+      v-else
+      cols="7"
+    >
       <v-form
         ref="signup_form"
         v-model="valid"
@@ -62,6 +76,7 @@
       email: '',
       password: '',
       valid: undefined,
+      submitted: false,
       error_message: '',
     }),
     name: 'Signup',
@@ -97,6 +112,8 @@
           this.error_message = `Error ${ret.status}. ${ret_json}`
           return
         }
+
+        this.submitted = true
 
       },
       validate() {
