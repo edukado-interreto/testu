@@ -64,7 +64,7 @@
       valid: undefined,
       error_message: '',
     }),
-    name: 'Sign up',
+    name: 'Signup',
     head() {
       return {
         title: 'SignUp'
@@ -91,8 +91,9 @@
         } catch {
         }
 
+        console.error({ ret, ret_json })
+
         if (ret.status >= 400) {
-          console.error({ ret, ret_json })
           this.error_message = `Error ${ret.status}. ${ret_json}`
           return
         }

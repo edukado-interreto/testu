@@ -57,8 +57,7 @@
         </v-menu>
       </v-col>
     </v-row>
-
-    <v-row class="text-caption mb-2">
+    <v-row dense class="text-caption mb-6">
       <v-col cols="auto">
         <v-icon small>mdi-account</v-icon> {{ exercise.created_by || 'anonymous' }}
       </v-col>
