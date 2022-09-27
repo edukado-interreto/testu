@@ -157,11 +157,15 @@
   </v-container>
 </template>
 <script>
-
 import langs_available from '~/mixins/langs_available.js'
 import cefr from '~/mixins/cefr.js'
 export default {
   name: 'Index',
+  head() {
+    return {
+      title: 'Home page'
+    }
+  },
   mixins: [
     langs_available,
     cefr
