@@ -242,7 +242,7 @@ export default {
   },
   computed: {
     logged_in() {
-      return this.authUser && this.authUser.id !== undefined
+      return this.authUser && this.authUser.username !== undefined
     },
     authUser() {
       return this.$store.getters['authenticator/authUser']
