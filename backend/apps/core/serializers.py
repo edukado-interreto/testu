@@ -20,6 +20,7 @@ class UserSerializer(ModelSerializer):
 
 class RegisterSerializer(Serializer):
     email = EmailField(required=True)
+    username = CharField(required=True)
     password = CharField(write_only=True, style={"input_type": "password"})
 
     def validate_email(self, email):
@@ -30,6 +31,12 @@ class RegisterSerializer(Serializer):
                     "A user is already registered with this e-mail address.",
                 )
         return email
+
+    def validate_username(self, username):
+        username = username.strip()
+        if User.objects.filter(username=username).exists():
+            raise ValidationError("This username is already in use.")
+        return username
 
     def validate_password(self, password):
         return get_adapter().clean_password(password)
