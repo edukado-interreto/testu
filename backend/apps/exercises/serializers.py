@@ -17,7 +17,7 @@ class TagSerializer(serializers.ModelSerializer):
 
 class SheetSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, required=False)
-    created_by = serializers.PrimaryKeyRelatedField(read_only=True)
+    created_by = serializers.SlugRelatedField(read_only=True, slug_field="username")
 
     class Meta:
         model = Sheet
