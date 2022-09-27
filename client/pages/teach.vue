@@ -78,7 +78,7 @@ export default {
     date_formatted(d) {
       return (
         new Date(d)
-      ).toLocaleString("en-US") // TODO: i18n 
+      ).toLocaleString("en-US") // TODO: i18n
     },
   },
   async fetch() {
