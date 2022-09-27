@@ -219,7 +219,7 @@ export default {
           })
         )
       };
-      payload.created_by = this.$store.getters['authenticator/authUser'].id;
+      payload.created_by = this.$store.getters['authenticator/authUser'].username;
 
       console.log("data:", payload);
 

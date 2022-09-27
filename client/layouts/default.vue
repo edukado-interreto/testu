@@ -98,7 +98,7 @@
             </v-list-item-avatar>
 
             <v-list-item-content>
-              <v-list-item-title>{{authUser.id}}</v-list-item-title>
+              <v-list-item-title>{{authUser.username}}</v-list-item-title>
               <v-list-item-subtitle>{{authUser.email}}</v-list-item-subtitle>
             </v-list-item-content>
 
