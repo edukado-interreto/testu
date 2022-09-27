@@ -7,7 +7,15 @@
 
     <v-expansion-panels class="mt-9" v-model="infobox">
       <v-expansion-panel>
-        <v-expansion-panel-header>Details</v-expansion-panel-header>
+        <v-expansion-panel-header>
+          <template v-slot:default="{ open }">
+            Exercise details
+            <span class="ml-5 text--disabled" v-if="!open">
+              <span v-if="details.title">{{ details.title }}</span>
+              <span v-else class="font-italic">Untitled exercise</span>
+            </span>
+          </template>
+        </v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-text-field
             label="Title"
@@ -106,7 +114,7 @@ export default {
   async fetch() {
     if (this.$route.query.new_from) {
       await this.load_exercise(this.$route.query.new_from)
-      this.details.title = 'Copy of ' + this.details.title // TODO i18n
+      this.$set(this.details, 'title', 'Copy of ' + this.details.title) // TODO i18n
     }
     if (this.$route.query.edit) {
       await this.load_exercise(this.$route.query.edit)
@@ -121,6 +129,7 @@ export default {
     user: {},
     sheet: [],
     details: {
+      title: '',
       src_lang: 'en',
       description: '',
       tags: [],
