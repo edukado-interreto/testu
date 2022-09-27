@@ -199,11 +199,14 @@
     </v-navigation-drawer>
     <v-container>
         <div
-          class="mb-5"
+          class="mb-5 pa-9"
           v-if="sheet.length == 0"
           key="no_units"
+          style="border: 4px dashed #e7e7e7"
         >
-          <img style="height: 120px" :src="require('~/assets/empty.svg')" alt="" />
+          <!--img style="height: 120px" :src="require('~/assets/empty.svg')" alt="" /-->
+          <div class="text--disabled text-h6">Empty exercise</div>
+          <span class="text--disabled">Add a new unit to begin</span>
         </div>
 
       <v-slide-y-transition group>
@@ -277,12 +280,12 @@
       </v-slide-y-transition>
 
       <v-btn
-        rounded
         @click="add('default')"
         class="mt-3"
+        :elevation="0"
       >
         <v-icon class="me-2">mdi-plus</v-icon>
-        Add a new unit
+        Add unit
       </v-btn>
 
 
