@@ -22,6 +22,9 @@
               nuxt
               :to="`/editor?new_from=${exercise.id}`"
             >
+              <v-list-item-icon>
+                <v-icon>mdi-content-copy</v-icon>
+              </v-list-item-icon>
               <v-list-item-title>
                 Create a copy
               </v-list-item-title>
@@ -31,6 +34,9 @@
               nuxt
               :to="`/editor?edit=${exercise.id}`"
             >
+              <v-list-item-icon>
+                <v-icon>mdi-pencil</v-icon>
+              </v-list-item-icon>
               <v-list-item-title>
                 Edit exercise
               </v-list-item-title>
@@ -40,6 +46,9 @@
               class="red--text font-weight-bold"
               @click="remove"
             >
+              <v-list-item-icon>
+                <v-icon color="red">mdi-delete</v-icon>
+              </v-list-item-icon>
               <v-list-item-title>
                 Delete exercise
               </v-list-item-title>
