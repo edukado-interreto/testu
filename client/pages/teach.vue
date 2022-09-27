@@ -87,7 +87,11 @@ export default {
     ).json();
   },
   fetchOnServer: true,
-  fetchKey: 'exercises'
+  fetchKey: 'exercises',
+  middleware: 'redirects',
+  meta: {
+    requiresAuth: true
+  }
 }
 </script>
 
