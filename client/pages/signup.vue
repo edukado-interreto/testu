@@ -12,6 +12,13 @@
         <v-text-field
           outlined
           dense
+          v-model="username"
+          label="User name"
+          :rules="[ v => v !== '' || 'Required field' ]"
+          required
+        ></v-text-field><v-text-field
+          outlined
+          dense
           v-model="email"
           label="E-mail"
           :rules="[ v => /.+@.+\..+/.test(v) || 'E-mail must be valid' ]"
@@ -51,6 +58,7 @@
 <script>
   export default {
     data: () => ({
+      username: '',
       email: '',
       password: '',
       valid: undefined,
@@ -71,6 +79,7 @@
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
+            username: this.username,
             email: this.email,
             password: this.password
           })
