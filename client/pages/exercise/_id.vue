@@ -147,7 +147,7 @@
       user_is_creator() {
         const authUser = this.$store.getters['authenticator/authUser']
         if (!authUser) return false
-        return this.exercise.created_by === authUser.id
+        return this.exercise.created_by === authUser.username
       }
     },
     methods: {
