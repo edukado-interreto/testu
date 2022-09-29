@@ -1,12 +1,5 @@
-from allauth.account import app_settings as allauth_settings
-from allauth.account.adapter import get_adapter
-from allauth.account.utils import setup_user_email
-from allauth.utils import email_address_exists
 from django.contrib.auth import get_user_model
-from rest_framework.fields import CharField, EmailField
-from rest_framework.serializers import (ModelSerializer, Serializer,
-                                        as_serializer_error)
-from rest_framework.validators import ValidationError
+from rest_framework.serializers import ModelSerializer
 
 User = get_user_model()
 
@@ -16,49 +9,3 @@ class UserSerializer(ModelSerializer):
         model = User
         fields = ["id", "email", "username", "data", "date_joined"]
         read_only_fields = ["id", "email", "username", "date_joined"]
-
-
-class RegisterSerializer(Serializer):
-    email = EmailField(required=True)
-    username = CharField(required=True)
-    password = CharField(write_only=True, style={"input_type": "password"})
-
-    def validate_email(self, email):
-        email = get_adapter().clean_email(email)
-        if allauth_settings.UNIQUE_EMAIL:
-            if email and email_address_exists(email):
-                raise ValidationError(
-                    "A user is already registered with this e-mail address.",
-                )
-        return email
-
-    def validate_username(self, username):
-        username = username.strip()
-        if User.objects.filter(username=username).exists():
-            raise ValidationError("This username is already in use.")
-        return username
-
-    def validate_password(self, password):
-        return get_adapter().clean_password(password)
-
-    def get_cleaned_data(self):
-        return {
-            "password": self.validated_data.get("password", ""),
-            "email": self.validated_data.get("email", ""),
-            "username": self.validated_data.get("username", ""),
-        }
-
-    def save(self, request):
-        adapter = get_adapter()
-        user = adapter.new_user(request)
-        user.email = self.validated_data["email"]
-        user.username = self.validated_data.get("username", user.email)
-        self.cleaned_data = self.get_cleaned_data()
-        if "password" in self.cleaned_data:
-            try:
-                adapter.clean_password(self.cleaned_data["password"], user=user)
-            except DjangoValidationError as exc:
-                raise ValidationError(detail=as_serializer_error(exc))
-        user.save()
-        setup_user_email(request, user, [])
-        return user

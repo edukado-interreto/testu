@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from decouple import Csv, Config, RepositorySecret, AutoConfig
+from decouple import AutoConfig, Config, Csv, RepositorySecret
 
 config = Config(RepositorySecret()) if Path("/run/secrets/").exists() else AutoConfig()
 
@@ -15,7 +15,6 @@ USE_I18N = False
 AUTH_USER_MODEL = "core.User"
 AUTHENTICATION_BACKENDS = ["apps.core.auth.EmailBackend"]
 
-ACCOUNT_USER_MODEL_USERNAME_FIELD = "email"
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_USER_DISPLAY = lambda user: user.__str__()
 ACCOUNT_USERNAME_REQUIRED = False
@@ -137,9 +136,6 @@ JWT_AUTH_REFRESH_COOKIE = "jwt-refresh"
 
 REST_AUTH_SERIALIZERS = {
     "USER_DETAILS_SERIALIZER": "apps.core.serializers.UserSerializer",
-}
-REST_AUTH_REGISTER_SERIALIZERS = {
-    "REGISTER_SERIALIZER": "apps.core.serializers.RegisterSerializer",
 }
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

@@ -96,7 +96,8 @@
           body: JSON.stringify({
             username: this.username,
             email: this.email,
-            password: this.password
+            password1: this.password,
+            password2: this.password,
           })
         })
 
@@ -108,7 +109,11 @@
 
         console.error({ ret, ret_json })
 
-        if (ret.status >= 400) {
+        if (ret.status == 400) {
+          this.error_message = Object.values(ret_json).flat().join(" ")
+          return
+        }
+        if (ret.status > 400) {
           this.error_message = `Error ${ret.status}. ${ret_json}`
           return
         }
