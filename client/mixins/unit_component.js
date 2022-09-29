@@ -2,7 +2,8 @@ export default {
   methods: {
     unit_component(t) {
       return {
-        'default': 'UnitDefault'
+        'default': 'UnitDefault',
+        'open_answer': 'UnitOpenAnswer',
       }[t]
     },
   }

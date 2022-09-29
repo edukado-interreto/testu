@@ -30,7 +30,7 @@
 </template>
 <script>
 export default {
-  name: 'GapsEditor',
+  name: 'UnitDefault',
   props: [ 'code', 'shuffle' ],
   data: () => ({
     score_awarded: 0
