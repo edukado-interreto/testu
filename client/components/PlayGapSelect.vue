@@ -7,7 +7,7 @@
     item-text="value"
     item-value="value"
     return-object
-    v-model="value"
+    v-model="answer"
     :success="success === true"
     :error-messages="success === false ? errorExplanation : undefined"
     hide-details="auto"
@@ -32,7 +32,7 @@ export default {
     confetti_shoot
   ],
   data: () => ({
-    value: undefined
+    answer: undefined
   }),
   computed: {
     choices: function() {
@@ -83,10 +83,10 @@ export default {
       /**
        * @returns: true | false | undefined
        */
-      if ('right' in (this.value || {})) {
+      if ('right' in (this.answer || {})) {
         // the gap was filled with a value:
         // return the value's rightness
-        return this.value.right
+        return this.answer.right
       }
       // the gap is still not filled
       return undefined
@@ -94,6 +94,9 @@ export default {
   },
   methods: {
     on_change: function() {
+
+      this.$emit('answer', this.answer)
+
       if (process.server) return
       if (this.success === true) {
         this.confetti_shoot(

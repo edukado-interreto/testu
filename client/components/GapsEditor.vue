@@ -14,6 +14,8 @@
               :options="token.options"
               :shuffle="shuffle"
               :error-explanation="token.errorExplanation"
+              ref="gap"
+              @answer="on_answer($event, i, j)"
             ></PlayGapSelect>
             <span
               :key="j"
@@ -24,6 +26,7 @@
         </li>
       </ol>
     </div>
+    {{ score_awarded }} / {{ score_available }}
   </div>
 </template>
 <script>
@@ -31,9 +34,27 @@ export default {
   name: 'GapsEditor',
   props: [ 'code', 'shuffle' ],
   data: () => ({
+    score_awarded: 0
   }),
+  methods: {
+    on_answer(answer, i, j) {
+      // We use this event to update the amount of
+      // right answers. We access the computed
+      // 'success' prop of each child component
+      // to get the amount of successful answers.
+      console.log(answer.value, i, j)
+      this.score_awarded = this.$refs.gap.filter(
+        c => !!c.success
+      ).length
+    }
+  },
   computed: {
-    parsed: function(v) {
+    score_available() {
+      return this.parsed.flatMap(
+        row => row.filter(t => t.token === 'gap')
+      ).length
+    },
+    parsed: function() {
       let ret = this.code.split(
         "\n\n"
       ).map(s => {
