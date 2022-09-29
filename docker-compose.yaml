@@ -31,6 +31,7 @@ services:
       - .postgresql:/var/lib/postgresql:z
     networks:
       - internal
+
   vue:
     build: client
     volumes:

@@ -28,8 +28,13 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
+    volumes:
+      - postgres-${CI_ENVIRONMENT_SLUG}:/var/lib/postgresql/data
     networks:
       - main
+    deploy:
+      placement:
+        constraints: [node.role == manager]
 
   nginx:
     image: ${CI_REGISTRY_IMAGE}/nginx:${CI_COMMIT_SHORT_SHA}
@@ -67,6 +72,8 @@ networks:
 
 volumes:
   backendassets:
+  postgres-sandbox:
+  postgres-production:
 
 secrets:
   POSTGRES_PASSWORD:
