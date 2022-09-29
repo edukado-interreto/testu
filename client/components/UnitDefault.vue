@@ -26,7 +26,6 @@
         </li>
       </ol>
     </div>
-    {{ score_awarded }} / {{ score_available }}
   </div>
 </template>
 <script>

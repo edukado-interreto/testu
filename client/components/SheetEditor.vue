@@ -254,11 +254,10 @@
                   v-if="section.description"
                   class="body-2 mb-4 pre-line"
                 >{{ section.description }}</div>
-                <GapsEditor
-                  v-if="section.type == 'default'"
+                <component
+                  :is="unit_component(section.type)"
                   :code="section.code"
                   :shuffle="section.shuffle"
-                  ref="unit"
                 />
               </v-col>
             </v-row>
@@ -294,9 +293,12 @@
 </template>
 <script>
 import { nanoid } from 'nanoid'
-
+import unit_component from '~/mixins/unit_component.js'
 export default {
   name: 'SheetEditor',
+  mixins: [
+    unit_component,
+  ],
   props: ['sheet'],
   data: () => ({
     available_types: [{text:'Default', value:'default'}],
