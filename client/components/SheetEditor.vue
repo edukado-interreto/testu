@@ -101,7 +101,7 @@
           dense
           label="Type"
           :items="available_types"
-          value="default"
+          v-model="current.data.type"
         ></v-select>
         <v-text-field
           v-model="current.data.title"
@@ -258,6 +258,7 @@
                   :is="unit_component(section.type)"
                   :code="section.code"
                   :shuffle="section.shuffle"
+                  ref="unit"
                 />
               </v-col>
             </v-row>
@@ -301,7 +302,10 @@ export default {
   ],
   props: ['sheet'],
   data: () => ({
-    available_types: [{text:'Default', value:'default'}],
+    available_types: [
+      { text: 'Default', value: 'default' },
+      { text: 'Open answer', value: 'open_answer' },
+    ],
     new_gap_options: [],
     add_gap_dialog: false,
     edit_drawer: {
