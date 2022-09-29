@@ -98,8 +98,8 @@
         v-if="section.description"
         class="body-2 mb-4 pre-line"
       >{{ section.description }}</div>
-      <GapsEditor
-        v-if="section.type == 'default'"
+      <component
+        :is="unit_component(section.type)"
         :code="section.code"
         :shuffle="section.shuffle"
       />
@@ -107,71 +107,73 @@
   </v-container>
 </template>
 <script>
-  import cefr from '~/mixins/cefr.js'
-  import langs_available from '~/mixins/langs_available.js'
-  export default {
-    name: 'Exercise',
-    mixins: [
-      langs_available,
-      cefr
-    ],
-    data: () => ({
-    }),
-    async asyncData({ route, params }) {
+import cefr from '~/mixins/cefr.js'
+import langs_available from '~/mixins/langs_available.js'
+import unit_component from '~/mixins/unit_component.js'
+export default {
+  name: 'Exercise',
+  mixins: [
+    langs_available,
+    cefr,
+    unit_component,
+  ],
+  data: () => ({
+  }),
+  async asyncData({ route, params }) {
 
-      const id = (process.server) ? route.params.id : params.id;
-      let exercise;
+    const id = (process.server) ? route.params.id : params.id;
+    let exercise;
 
-      if (id) {
-        exercise = await (
-          await fetch(`/api/v1/sheets/${id}/`)
-        ).json()
-      }
+    if (id) {
+      exercise = await (
+        await fetch(`/api/v1/sheets/${id}/`)
+      ).json()
+    }
 
-      return {
-        id,
-        exercise
-      }
+    return {
+      id,
+      exercise
+    }
+  },
+  computed: {
+    date_formatted() {
+      return (
+        new Date(this.exercise.modified)
+      ).toLocaleString("en-US") // TODO: i18n 
     },
-    computed: {
-      date_formatted() {
-        return (
-          new Date(this.exercise.modified)
-        ).toLocaleString("en-US") // TODO: i18n 
-      },
-      user_logged_in() {
-        const authUser = this.$store.getters['authenticator/authUser']
-        if (!authUser) return false
-        return true
-      },
-      user_is_creator() {
-        const authUser = this.$store.getters['authenticator/authUser']
-        if (!authUser) return false
-        return this.exercise.created_by === authUser.username
-      }
+    user_logged_in() {
+      const authUser = this.$store.getters['authenticator/authUser']
+      if (!authUser) return false
+      return true
     },
-    methods: {
-      async remove() {
+    user_is_creator() {
+      const authUser = this.$store.getters['authenticator/authUser']
+      if (!authUser) return false
+      return this.exercise.created_by === authUser.username
+    }
+  },
+  methods: {
+    async remove() {
 
-        if (!confirm(
-          'Are you sure you want to delete this exercise?'
-        )) return;
+      if (!confirm(
+        'Are you sure you want to delete this exercise?'
+      )) return;
 
-        const resp = await fetch(`/api/v1/sheets/${this.id}`, {
-          method: 'DELETE'
-        })
-        if (resp.status >= 400) {
-          console.error(resp)
-          alert(`Error ${resp.status}`)
-          return
-        }
-        this.$router.push('/')
+      const resp = await fetch(`/api/v1/sheets/${this.id}`, {
+        method: 'DELETE'
+      })
+      if (resp.status >= 400) {
+        console.error(resp)
+        alert(`Error ${resp.status}`)
+        return
       }
-    },
-    head() {
-      return {
-        title: this.exercise.name
-      }
+      this.$router.push('/')
+    }
+  },
+  head() {
+    return {
+      title: this.exercise.name
     }
   }
+}
 </script>
