@@ -4,6 +4,7 @@ export default {
       return {
         'default': 'UnitDefault',
         'open_answer': 'UnitOpenAnswer',
+        'multiple_choice': 'UnitMultipleChoice',
       }[t]
     },
   }
