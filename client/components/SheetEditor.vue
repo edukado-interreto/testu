@@ -306,6 +306,7 @@ export default {
       { text: 'Default', value: 'default' },
       { text: 'Open answer', value: 'open_answer' },
       { text: 'Multiple choice', value: 'multiple_choice' },
+      { text: 'Sort and match', value: 'pairing' },
     ],
     new_gap_options: [],
     add_gap_dialog: false,
