@@ -305,6 +305,7 @@ export default {
     available_types: [
       { text: 'Default', value: 'default' },
       { text: 'Open answer', value: 'open_answer' },
+      { text: 'Multiple choice', value: 'multiple_choice' },
     ],
     new_gap_options: [],
     add_gap_dialog: false,
