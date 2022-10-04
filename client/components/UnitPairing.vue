@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-5">
     <v-row dense v-for="(pair, i) in drags" :key="parsed[i][1]">
       <v-col cols="4">
         <div class="mr-4">
@@ -211,14 +211,19 @@ export default {
       let ret = this.code.split(
         "\n\n"
       ).map((s, i) => {
-        let [src, dst] = s.split("=").map(s => s.trim())
+        let [src, dst] = s.split(/=(.*)/s).map(s => s.trim())
+        // split on the first occurrence of "=", e.g.
+        // "condition = a == b" => ["condition", "a == b"]
+
         // if no = sign is found, the destination will be
         // the row number, i.e. ordering exercise
-        if (dst === undefined) {
+        if (!dst) {
           dst = `${i+1}`
         }
         return [src, dst]
-      });
+      }).filter(
+        ([src, dst]) => !!src
+      )
       return ret
     }
   },
