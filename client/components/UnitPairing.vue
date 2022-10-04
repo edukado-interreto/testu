@@ -32,7 +32,10 @@
           <v-sheet
             v-else
             rounded
-            class="pa-2 grey lighten-4 grey--text text-center"
+            :class="
+              'pa-2 grey grey--text text-center '
+              + (overed[i][0] ? 'lighten-2' : 'lighten-5')
+            "
             @drop="on_drop($event, i, 0)"
             @dragenter="on_dragenter($event, i, 0)"
             @dragleave="on_dragleave($event, i, 0)"
@@ -40,7 +43,7 @@
           >&nbsp;</v-sheet>
         </div>
       </v-col>
-      <v-col cols="4">
+      <v-col cols="4" ref="guess_col">
         <div
           v-if="pair[1] !== null"
           :draggable="movable[i][1]"
@@ -66,31 +69,45 @@
         <v-sheet
           v-else
           rounded
-          class="pa-2 grey lighten-4 grey--text text-center"
+          :class="
+            'pa-2 grey grey--text text-center '
+            + (overed[i][1] ? 'lighten-2' : 'lighten-4')
+          "
           @drop="on_drop($event, i, 1)"
           @dragenter="on_dragenter($event, i, 1)"
           @dragleave="on_dragleave($event, i, 1)"
           @dragover="on_dragover($event, i, 1)"
         >drop here</v-sheet>
       </v-col>
-      <v-col cols="4">
+      <v-col cols="4" style="position: relative;">
         <v-sheet
           rounded
           :elevation="2"
-          class="pa-1"
+          class="pa-1 mr-7"
         >
           <div
             class="pa-1"
           >{{parsed[i][1]}}</div>
         </v-sheet>
+        <div
+          v-if="success !== undefined"
+          style="position: absolute; right:4px; top: 10px"
+        >
+          <v-icon v-if="success[i] === true" color="success">mdi-check-bold</v-icon>
+          <v-icon v-if="success[i] === false" color="error">mdi-close-thick</v-icon>
+        </div>
       </v-col>
     </v-row>
   </div>
 </template>
 <script>
+import confetti_shoot from '~/mixins/confetti_shoot.js'
 export default {
   name: 'UnitPairing',
   props: [ 'code', 'shuffle' ],
+  mixins: [
+    confetti_shoot
+  ],
   data: () => ({
     score_awarded: 0,
     drags: [],   // see update_dragging
@@ -101,9 +118,6 @@ export default {
     this.update_dragging()
   },
   methods: {
-    test() {
-      console.log("TEST")
-    },
     on_dragstart(e, src_row, src_col) {
       console.log("dragstart, component", this._uid)
       e.dataTransfer.setData("component", this._uid)
@@ -123,23 +137,24 @@ export default {
       this.$set(this.overed[dst_row], dst_col, true)
     },
     on_drop(e, dst_row, dst_col) {
-      console.log("drop")
-      console.log({
-        component: e.dataTransfer.getData("component"),
-        dst_row,
-        dst_col
-      })
       if (
         this._uid != e.dataTransfer.getData("component")
       ) return // prevent cross-unit drag and drop
       e.preventDefault()
       const src_row = e.dataTransfer.getData("src_row")
       const src_col = e.dataTransfer.getData("src_col")
-      console.log("from", src_row, src_col);
-      console.log("to", dst_row, dst_col);
       this.$set(this.drags[dst_row], dst_col, this.drags[src_row][src_col])
       this.$set(this.drags[src_row], src_col, null)
       this.$set(this.overed[dst_row], dst_col, false)
+
+      if (
+        (dst_col == 1) // drop in guess column
+        && (this.success[dst_row] === true)
+      ) {
+        this.confetti_shoot(
+          this.$refs['guess_col'][dst_row]
+        )
+      }
     },
     update_dragging() {
       // this.drags: two-dimensional array with values
@@ -183,6 +198,12 @@ export default {
     },
   },
   computed: {
+    success() {
+      return this.drags.map((pair, i) => {
+        if (pair[1] === null) return undefined
+        return pair[1] === this.parsed[i][0]
+      })
+    },
     score_available() {
       return 0 // TODO
     },
