@@ -129,6 +129,7 @@
                 v-on="on"
                 icon
                 @click.stop="add_gap_dialog_show(true)"
+                :disabled="current.data.type == 'pairing'"
               >
                 <v-icon>mdi-tray-plus</v-icon>
               </v-btn>
