@@ -102,11 +102,13 @@
 </template>
 <script>
 import confetti_shoot from '~/mixins/confetti_shoot.js'
+import shuffle_array from '~/mixins/shuffle_array.js'
 export default {
   name: 'UnitPairing',
   props: [ 'code', 'shuffle' ],
   mixins: [
-    confetti_shoot
+    confetti_shoot,
+    shuffle_array
   ],
   data: () => ({
     score_awarded: 0,
@@ -139,7 +141,10 @@ export default {
     on_drop(e, dst_row, dst_col) {
       if (
         this._uid != e.dataTransfer.getData("component")
-      ) return // prevent cross-unit drag and drop
+      ) {
+        this.$set(this.overed[dst_row], dst_col, false)
+        return // prevent cross-unit drag and drop
+      }
       e.preventDefault()
       const src_row = e.dataTransfer.getData("src_row")
       const src_col = e.dataTransfer.getData("src_col")
@@ -174,10 +179,16 @@ export default {
       this.drags = this.parsed.map(
         p => p[0]
       ).sort(
-        (a, b) => a.localeCompare(b) // TODO: shuffle if the flag is set
+        (a, b) => a.localeCompare(b)
       ).map(
         e => [e, null]
       )
+      
+      if (this.shuffle) {
+        this.drags = this.shuffle_array(
+          this.drags
+        )
+      }
 
       // this.movable: two-dimensional array of booleans.
       // Represents the 'draggable' html attribute of the items.
@@ -229,6 +240,9 @@ export default {
   },
   watch: {
     parsed() {
+      this.update_dragging()
+    },
+    shuffle() {
       this.update_dragging()
     }
   }
