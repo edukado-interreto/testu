@@ -4,28 +4,17 @@
       <span
         v-if="t.type == 'text'"
       >{{ t.content }}</span>
-
-      <template
+      <v-img
         v-if="t.type == 'img'"
-      >
-        <div v-if="t.invalid_src" class="grey--text">
-          <v-icon small>mdi-alert-outline</v-icon>
-          <i>Invalid image: {{ t.content }}</i>
-        </div>
-        <v-img
-          v-else
-          :src="t.src"
-          contain
-          max-height="150"
-        ></v-img>
-      </template>
-
+        :src="`https://picsum.photos/seed/${t.content}/200/300`"
+        contain
+        max-height="150"
+      ></v-img>
       <template
         v-if="t.type == 'video'"
       >
-        <div v-if="t.invalid_url" class="grey--text">
-          <v-icon small>mdi-alert-outline</v-icon>
-          <i>Invalid video url: {{ t.content }}</i>
+        <div v-if="t.invalid_url">
+          <i>Invalid url: {{ t.content }}</i>
         </div>
         <iframe
           v-else
@@ -37,27 +26,6 @@
           allowfullscreen
         ></iframe>
       </template>
-
-      <template
-        v-if="t.type == 'sound'"
-      >
-        <div v-if="t.invalid_src" class="grey--text">
-          <v-icon small>mdi-alert-outline</v-icon>
-          <i>Invalid audio: {{ t.content }}</i>
-        </div>
-        <audio
-          v-else
-          controls
-          style="max-height:150px; max-width:100%;"
-        >
-          <source
-            :src="t.src"
-            :type="t.mimetype"
-          ></source>
-        </audio>
-      </template>
-
-
     </template>
   </div>
 </template>
@@ -68,7 +36,7 @@ export default {
   computed: {
     tokens() {
       return this.text.split(
-        RegExp("{((?:img|video|sound):[^}]+)}")
+        RegExp("{((?:img|video):[^}]+)}")
       ).map((t, i) => {
         if (i % 2 == 0) {
           return {
@@ -82,33 +50,12 @@ export default {
           type, content
         }
 
-        if (type == 'img') {
-          const src=`https://picsum.photos/seed/${content}/200/300`
-          // TODO: get the actual image source
-          if (src) {
-            ret.src = src
-          } else {
-            ret.invalid_src = true
-          }
-        }
-
         if (type == 'video') {
           const id = this.get_youtube_id(content)
           if (id) {
             ret.embed_url = `https://www.youtube.com/embed/${id}`
           } else {
             ret.invalid_url = true
-          }
-        }
-
-        if (type == 'sound') {
-          const src = "https://upload.wikimedia.org/wikipedia/commons/5/5c/Lb-juristin1.mp3"
-          // TODO: get the actual source url
-          if (src) {
-            ret.src = src
-            ret.mimetype="audio/mpeg"
-          } else {
-            ret.invalid_src = true
           }
         }
 
