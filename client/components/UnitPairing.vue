@@ -2,7 +2,7 @@
   <div class="mb-5">
     <v-row dense v-for="(pair, i) in drags" :key="parsed[i][1]">
       <v-col cols="4">
-        <div class="mr-4">
+        <div class="mr-4 fill-height">
           <!--
             we use redundant divs because binding some events
             to v-sheet elements results in a buggy behaviour
@@ -11,16 +11,21 @@
             v-if="pair[0] !== null"
             :draggable="movable[i][0]"
             @dragstart="on_dragstart($event, i, 0)"
+            class="fill-height"
           >
             <v-sheet
               rounded
               :elevation="2"
-              class="pa-1"
+              class="pa-1 fill-height"
               style="position:relative;"
             >
               <div
                 class="pa-1 mr-7"
-              >{{pair[0]}}</div>
+              >
+                <UnitPairingContent
+                  :text="pair[0]"
+                ></UnitPairingContent>
+              </div>
               <v-icon
                 class="pa-2"
                 style="position:absolute; right: 0; top: 0; cursor: move;"
@@ -33,7 +38,7 @@
             v-else
             rounded
             :class="
-              'pa-2 grey grey--text text-center '
+              'pa-2 grey grey--text text-center fill-height '
               + (overed[i][0] ? 'lighten-2' : 'lighten-5')
             "
             @drop="on_drop($event, i, 0)"
@@ -57,8 +62,12 @@
             style="position:relative;"
           >
             <div
-              class="pa-1"
-            >{{pair[1]}}</div>
+              class="pa-1 mr-7"
+            >
+              <UnitPairingContent
+                :text="pair[1]"
+              ></UnitPairingContent>
+            </div>
             <v-icon
               class="pa-2"
               style="position:absolute; right: 0; top: 0; cursor: move;"
@@ -71,7 +80,8 @@
           v-else
           rounded
           :class="
-            'pa-2 grey grey--text text-center fill-height '
+            'pa-2 grey grey--text '
+            + 'd-flex justify-center align-center fill-height '
             + (overed[i][1] ? 'lighten-2' : 'lighten-4')
           "
           @drop="on_drop($event, i, 1)"
@@ -79,7 +89,9 @@
           @dragleave="on_dragleave($event, i, 1)"
           @dragover="on_dragover($event, i, 1)"
         >
-          drop here
+          <div>
+            drop here
+          </div>
         </v-sheet>
       </v-col>
       <v-col cols="4" style="position: relative;">
@@ -90,7 +102,11 @@
         >
           <div
             class="pa-1"
-          >{{parsed[i][1]}}</div>
+          >
+            <UnitPairingContent
+              :text="parsed[i][1]"
+            ></UnitPairingContent>
+          </div>
         </v-sheet>
         <div
           v-if="success !== undefined"
@@ -225,15 +241,16 @@ export default {
       let ret = this.code.split(
         "\n\n"
       ).map((s, i) => {
-        let [src, dst] = s.split(/=(.*)/s).map(s => s.trim())
-        // split on the first occurrence of "=", e.g.
-        // "condition = a == b" => ["condition", "a == b"]
+        let [src, dst] = s.split(/==(.*)/s).map(s => s.trim())
+        // split on the first occurrence of "==", e.g.
+        // "a == b == c" => ["a", "b == c"]. Multiline.
 
-        // if no = sign is found, the destination will be
+        // if no "==" is found, the destination will be
         // the row number, i.e. ordering exercise
         if (!dst) {
           dst = `${i+1}`
         }
+        console.log(src, dst)
         return [src, dst]
       }).filter(
         ([src, dst]) => !!src
