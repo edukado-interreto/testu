@@ -19,7 +19,7 @@
               style="position:relative;"
             >
               <div
-                class="pa-1"
+                class="pa-1 mr-7"
               >{{pair[0]}}</div>
               <v-icon
                 class="pa-2"
