@@ -48,11 +48,12 @@
           v-if="pair[1] !== null"
           :draggable="movable[i][1]"
           @dragstart="on_dragstart($event, i, 1)"
+          class="fill-height"
         >
           <v-sheet
             rounded
             :elevation="2"
-            class="pa-1"
+            class="pa-1 fill-height"
             style="position:relative;"
           >
             <div
@@ -70,20 +71,22 @@
           v-else
           rounded
           :class="
-            'pa-2 grey grey--text text-center '
+            'pa-2 grey grey--text text-center fill-height '
             + (overed[i][1] ? 'lighten-2' : 'lighten-4')
           "
           @drop="on_drop($event, i, 1)"
           @dragenter="on_dragenter($event, i, 1)"
           @dragleave="on_dragleave($event, i, 1)"
           @dragover="on_dragover($event, i, 1)"
-        >drop here</v-sheet>
+        >
+          drop here
+        </v-sheet>
       </v-col>
       <v-col cols="4" style="position: relative;">
         <v-sheet
           rounded
           :elevation="2"
-          class="pa-1 mr-7"
+          class="pa-1 mr-7 fill-height"
         >
           <div
             class="pa-1"
