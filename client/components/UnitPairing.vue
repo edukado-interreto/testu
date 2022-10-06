@@ -30,7 +30,9 @@
                 class="pa-2"
                 style="position:absolute; right: 0; top: 0; cursor: move;"
                 @mouseenter="$set(movable[i], 0, true)"
+                @touchstart="$set(movable[i], 0, true)"
                 @mouseleave="$set(movable[i], 0, false)"
+                @touchend="$set(movable[i], 0, false)"
               >mdi-drag</v-icon>
             </v-sheet>
           </div>
@@ -72,7 +74,9 @@
               class="pa-2"
               style="position:absolute; right: 0; top: 0; cursor: move;"
               @mouseenter="$set(movable[i], 1, true)"
+              @touchstart="$set(movable[i], 1, true)"
               @mouseleave="$set(movable[i], 1, false)"
+              @touchend="$set(movable[i], 1, false)"
             >mdi-drag</v-icon>
           </v-sheet>
         </div>
@@ -89,7 +93,7 @@
           @dragleave="on_dragleave($event, i, 1)"
           @dragover="on_dragover($event, i, 1)"
         >
-          <div>
+          <div style="pointer-events: none; touch-action: none;">
             drop here
           </div>
         </v-sheet>
@@ -141,9 +145,11 @@ export default {
   methods: {
     on_dragstart(e, src_row, src_col) {
       console.log("dragstart, component", this._uid)
-      e.dataTransfer.setData("component", this._uid)
-      e.dataTransfer.setData("src_row", src_row)
-      e.dataTransfer.setData("src_col", src_col)
+      e.dataTransfer.setData("text/plain", JSON.stringify({
+        component: this._uid,
+        row: src_row,
+        col: src_col,
+      }))
     },
     on_dragleave(e, dst_row, dst_col) {
       this.$set(this.overed[dst_row], dst_col, false)
@@ -158,17 +164,18 @@ export default {
       this.$set(this.overed[dst_row], dst_col, true)
     },
     on_drop(e, dst_row, dst_col) {
-      if (
-        this._uid != e.dataTransfer.getData("component")
-      ) {
+      let src
+      try {
+        src = JSON.parse(e.dataTransfer.getData("text"))
+        if (src.component != this._uid) throw "Cross-component drop"
+      } catch(e) {
+        // abort if invalid json or cross-component drop
         this.$set(this.overed[dst_row], dst_col, false)
-        return // prevent cross-unit drag and drop
+        return
       }
       e.preventDefault()
-      const src_row = e.dataTransfer.getData("src_row")
-      const src_col = e.dataTransfer.getData("src_col")
-      this.$set(this.drags[dst_row], dst_col, this.drags[src_row][src_col])
-      this.$set(this.drags[src_row], src_col, null)
+      this.$set(this.drags[dst_row], dst_col, this.drags[src.row][src.col])
+      this.$set(this.drags[src.row], src.col, null)
       this.$set(this.overed[dst_row], dst_col, false)
 
       if (
