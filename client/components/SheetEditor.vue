@@ -170,7 +170,11 @@
             max-width="750"
           >
             <v-card>
-              <v-form v-model="add_pair_form_valid" ref="add_pair_form">
+              <v-form
+                ref="add_pair_form"
+                lazy-validation
+                @submit.prevent="add_pair_insert_click"
+              >
                 <v-card-title>New matching pair</v-card-title>
                 <v-card-text>
                   <v-text-field
@@ -189,7 +193,7 @@
                   <v-spacer></v-spacer>
                   <v-btn
                     color="primary"
-                    @click="add_pair_insert_click"
+                    type="submit"
                   >Insert pair</v-btn>
                   <v-btn text @click="add_pair_dialog=false">Cancel</v-btn>
                 </v-card-actions>
@@ -402,7 +406,6 @@ export default {
     add_pair_dialog: false,
     add_pair_first_item: '',
     add_pair_second_item: '',
-    add_pair_form_valid: undefined,
     edit_drawer: {
       show: false
     },
@@ -494,8 +497,7 @@ export default {
     },
     add_pair_insert_click() {
 
-      this.$refs.add_pair_form.validate()
-      if (!this.add_pair_form_valid) return
+      if (!this.$refs.add_pair_form.validate()) return
 
       const input = this.$refs.textarea.$refs.input
       let code = this.current.data.code.trimEnd()
