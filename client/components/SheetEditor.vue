@@ -236,7 +236,7 @@
                 v-bind="attrs"
                 v-on="on"
                 icon
-                @click=""
+                @click="insert_video_dialog=true"
                 :disabled="current.data.type != 'pairing'"
               >
                 <v-icon>mdi-movie</v-icon>
@@ -244,6 +244,37 @@
             </template>
             <span>Insert video</span>
           </v-tooltip>
+
+          <v-dialog
+            v-model="insert_video_dialog"
+            max-width="750"
+          >
+            <v-card>
+              <v-form
+                lazy-validation
+                @submit.prevent="insert_video_insert_click"
+                ref="insert_video_form"
+              >
+                <v-card-title>Insert video</v-card-title>
+                <v-card-text>
+                  <v-text-field
+                    v-model="insert_video_url"
+                    autofocus
+                    label="Video URL"
+                    :rules="[ val => (/^https?:/i).test(val) ? true : 'Please type a valid url' ]"
+                  ></v-text-field>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    color="primary"
+                    type="submit"
+                  >Insert video</v-btn>
+                  <v-btn text @click="insert_video_dialog=false">Cancel</v-btn>
+                </v-card-actions>
+              </v-form>
+            </v-card>
+          </v-dialog>
 
           <v-dialog
             v-model="add_gap_dialog"
@@ -403,9 +434,14 @@ export default {
     ],
     new_gap_options: [],
     add_gap_dialog: false,
+
     add_pair_dialog: false,
     add_pair_first_item: '',
     add_pair_second_item: '',
+
+    insert_video_dialog: false,
+    insert_video_url: '',
+
     edit_drawer: {
       show: false
     },
@@ -517,6 +553,29 @@ export default {
 
       this.add_pair_dialog = false
     },
+    insert_video_insert_click() {
+
+      if (!this.$refs.insert_video_form.validate()) return
+
+      const snippet = `{video:${this.insert_video_url}}`
+      const input = this.$refs.textarea.$refs.input
+      const start = input.selectionStart
+      const code = this.current.data.code
+      this.current.data.code = code.slice(
+        0, input.selectionStart
+      ) + snippet + code.slice(
+        input.selectionEnd
+      )
+
+      this.insert_video_dialog = false
+
+      requestAnimationFrame(() => {
+        input.selectionStart = start + snippet.length
+        input.selectionEnd   = start + snippet.length
+        input.focus()
+      })
+
+    },
     keyed(iterable, i) {
       if ("_key" in iterable[i]) {
         return iterable[i]._key
@@ -587,6 +646,17 @@ export default {
         this.add_pair_first_item = ''
         this.add_pair_second_item = ''
       } else {
+        this.$refs.add_pair_form.resetValidation()
+        requestAnimationFrame(() => {
+          this.$refs.textarea.focus()
+        })
+      }
+    },
+    insert_video_dialog: function(val) {
+      if (val) {
+        this.insert_video_url = ''
+      } else {
+        this.$refs.insert_video_form.resetValidation()
         requestAnimationFrame(() => {
           this.$refs.textarea.focus()
         })
