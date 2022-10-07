@@ -148,8 +148,46 @@
                 <v-icon>mdi-playlist-plus</v-icon>
               </v-btn>
             </template>
-            <span>Insert sentence</span>
+            <span>Add sentence</span>
           </v-tooltip>
+
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                icon
+                @click="add_pair_dialog=true"
+                :disabled="current.data.type != 'pairing'"
+              >
+                <v-icon>mdi-code-equal</v-icon>
+              </v-btn>
+            </template>
+            <span>Add matching pair</span>
+          </v-tooltip>
+          <v-dialog
+            v-model="add_pair_dialog"
+            max-width="750"
+          >
+
+            <v-card>
+              <v-form ref="new_pair_form">
+                <v-card-title>New matching pair</v-card-title>
+                <v-card-text>
+                  <v-text-field v-model="add_pair_first_item" autofocus label="First item"></v-text-field>
+                  <v-text-field v-model="add_pair_second_item" label="Second item"></v-text-field>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    color="primary"
+                    @click="add_pair_insert_click"
+                  >Insert pair</v-btn>
+                  <v-btn text @click="add_pair_dialog=false">Cancel</v-btn>
+                </v-card-actions>
+              </v-form>
+            </v-card>
+          </v-dialog>
 
           <v-dialog
             v-model="add_gap_dialog"
@@ -311,6 +349,9 @@ export default {
     ],
     new_gap_options: [],
     add_gap_dialog: false,
+    add_pair_dialog: false,
+    add_pair_first_item: '',
+    add_pair_second_item: '',
     edit_drawer: {
       show: false
     },
@@ -400,6 +441,25 @@ export default {
       })
 
     },
+    add_pair_insert_click() {
+      const input = this.$refs.textarea.$refs.input
+      let code = this.current.data.code.trimEnd()
+
+      if (code !== "") {
+        code += "\n\n"
+      }
+
+      code += `${this.add_pair_first_item } == ${this.add_pair_second_item}`
+
+      this.current.data.code = code
+
+      requestAnimationFrame(() => {
+        input.selectionStart = this.current.data.code.length
+        input.focus()
+      })
+
+      this.add_pair_dialog = false
+    },
     keyed(iterable, i) {
       if ("_key" in iterable[i]) {
         return iterable[i]._key
@@ -459,6 +519,16 @@ export default {
     add_gap_dialog: function(val) {
       if (val) {
         this.new_gap_options = []
+      } else {
+        requestAnimationFrame(() => {
+          this.$refs.textarea.focus()
+        })
+      }
+    },
+    add_pair_dialog: function(val) {
+      if (val) {
+        this.add_pair_first_item = ''
+        this.add_pair_second_item = ''
       } else {
         requestAnimationFrame(() => {
           this.$refs.textarea.focus()
