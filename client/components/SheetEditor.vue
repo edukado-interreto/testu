@@ -513,22 +513,9 @@ export default {
         opt => opt.right ? '+'+opt.value : opt.value
       ).join("|") + "]"
 
-      const input = this.$refs.textarea.$refs.input
-      const start = input.selectionStart
-      const code = this.current.data.code
-      this.current.data.code = code.slice(
-        0, input.selectionStart
-      ) + new_gap + code.slice(
-        input.selectionEnd
-      )
+      this.inject_snippet(new_gap)
 
       this.add_gap_dialog = false
-
-      requestAnimationFrame(() => {
-        input.selectionStart = start + new_gap.length
-        input.selectionEnd   = start + new_gap.length
-        input.focus()
-      })
 
     },
     add_pair_insert_click() {
@@ -554,10 +541,16 @@ export default {
       this.add_pair_dialog = false
     },
     insert_video_insert_click() {
-
       if (!this.$refs.insert_video_form.validate()) return
-
-      const snippet = `{video:${this.insert_video_url}}`
+      this.inject_snippet(
+        `{video:${this.insert_video_url}}`
+      )
+      this.insert_video_dialog = false
+    },
+    inject_snippet(snippet) {
+      // insert in the current code a snippet at the
+      // current cursor position, move the cursor
+      // after the snippet and focus the textarea
       const input = this.$refs.textarea.$refs.input
       const start = input.selectionStart
       const code = this.current.data.code
@@ -566,15 +559,11 @@ export default {
       ) + snippet + code.slice(
         input.selectionEnd
       )
-
-      this.insert_video_dialog = false
-
       requestAnimationFrame(() => {
         input.selectionStart = start + snippet.length
         input.selectionEnd   = start + snippet.length
         input.focus()
       })
-
     },
     keyed(iterable, i) {
       if ("_key" in iterable[i]) {
