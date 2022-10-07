@@ -128,13 +128,12 @@
                 v-bind="attrs"
                 v-on="on"
                 icon
-                @click.stop="add_gap_dialog_show(true)"
-                :disabled="current.data.type == 'pairing'"
+                @click="append_new_sentence"
               >
-                <v-icon>mdi-tray-plus</v-icon>
+                <v-icon>mdi-playlist-plus</v-icon>
               </v-btn>
             </template>
-            <span>Insert gap</span>
+            <span>Add sentence</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -143,12 +142,13 @@
                 v-bind="attrs"
                 v-on="on"
                 icon
-                @click="append_new_sentence"
+                @click.stop="add_gap_dialog_show(true)"
+                :disabled="current.data.type == 'pairing'"
               >
-                <v-icon>mdi-playlist-plus</v-icon>
+                <v-icon>mdi-tray-plus</v-icon>
               </v-btn>
             </template>
-            <span>Add sentence</span>
+            <span>Insert gap</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -169,13 +169,21 @@
             v-model="add_pair_dialog"
             max-width="750"
           >
-
             <v-card>
-              <v-form ref="new_pair_form">
+              <v-form v-model="add_pair_form_valid" ref="add_pair_form">
                 <v-card-title>New matching pair</v-card-title>
                 <v-card-text>
-                  <v-text-field v-model="add_pair_first_item" autofocus label="First item"></v-text-field>
-                  <v-text-field v-model="add_pair_second_item" label="Second item"></v-text-field>
+                  <v-text-field
+                    v-model="add_pair_first_item"
+                    autofocus
+                    label="First item"
+                    :rules="[ val => (!val) ? 'Please type some text' : true ]"
+                  ></v-text-field>
+                  <v-text-field
+                    v-model="add_pair_second_item"
+                    label="Second item"
+                    :rules="[ val => (!val) ? 'Please type some text' : true ]"
+                  ></v-text-field>
                 </v-card-text>
                 <v-card-actions>
                   <v-spacer></v-spacer>
@@ -189,11 +197,54 @@
             </v-card>
           </v-dialog>
 
+          <v-divider vertical inset class="mx-2"></v-divider>
+
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                icon
+                @click=""
+                :disabled="current.data.type != 'pairing'"
+              >
+                <v-icon>mdi-image</v-icon>
+              </v-btn>
+            </template>
+            <span>Insert image</span>
+          </v-tooltip><v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                icon
+                @click=""
+                :disabled="current.data.type != 'pairing'"
+              >
+                <v-icon>mdi-volume-high</v-icon>
+              </v-btn>
+            </template>
+            <span>Insert sound</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                icon
+                @click=""
+                :disabled="current.data.type != 'pairing'"
+              >
+                <v-icon>mdi-movie</v-icon>
+              </v-btn>
+            </template>
+            <span>Insert video</span>
+          </v-tooltip>
+
           <v-dialog
             v-model="add_gap_dialog"
             max-width="750"
           >
-
             <v-card>
               <v-form ref="new_gap_form">
                 <v-card-title>New gap</v-card-title>
@@ -243,7 +294,6 @@
           key="no_units"
           style="border: 4px dashed #e7e7e7"
         >
-          <!--img style="height: 120px" :src="require('~/assets/empty.svg')" alt="" /-->
           <div class="text--disabled text-h6">Empty exercise</div>
           <span class="text--disabled">Add a new unit to begin</span>
         </div>
@@ -352,6 +402,7 @@ export default {
     add_pair_dialog: false,
     add_pair_first_item: '',
     add_pair_second_item: '',
+    add_pair_form_valid: undefined,
     edit_drawer: {
       show: false
     },
@@ -442,6 +493,10 @@ export default {
 
     },
     add_pair_insert_click() {
+
+      this.$refs.add_pair_form.validate()
+      if (!this.add_pair_form_valid) return
+
       const input = this.$refs.textarea.$refs.input
       let code = this.current.data.code.trimEnd()
 
