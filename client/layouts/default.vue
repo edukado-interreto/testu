@@ -4,11 +4,18 @@
       app
       clipped-right
       clipped-left
-      height="72"
       flat
+      outlined
+      style="border-bottom: 1px solid #d2d2d2 !important;"
+      color="white"
     >
       <v-app-bar-nav-icon @click.stop="nav_drawer.show = !nav_drawer.show"/>
-      <v-toolbar-title v-text="title" />
+      
+      <img src="/favicon.png" class="mx-3" height="40"/>
+      <v-toolbar-title
+        class="accent--text"
+        v-text="title"
+      />
       <v-spacer />
       <!-- {{ authUser }} -->
       <v-menu
@@ -62,13 +69,13 @@
         class="ml-3"
       >
         <v-btn
-          class="mr-1 text-none white"
+          class="mr-1 text-none grey lighten-4"
           text
           nuxt
           to="/login"
         >Log in</v-btn>
         <v-btn
-          class="text-none primary"
+          class="text-none amber"
           text
           nuxt
           to="/signup"
@@ -146,7 +153,9 @@
       app
       clipped
     >
-      <v-list>
+      <v-list
+      class="accent--text"
+      >
 
         <v-list-item
           to="/"
