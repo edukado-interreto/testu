@@ -12,8 +12,10 @@
               :key="j"
               v-if="token.token === 'gap'"
               :options="token.options"
+              :value="token.answer"
               :shuffle="shuffle"
               :error-explanation="token.errorExplanation"
+              :readonly="readonly"
               ref="gap"
               @answer="on_answer($event, i, j)"
             ></PlayGapSelect>
@@ -31,7 +33,7 @@
 <script>
 export default {
   name: 'UnitDefault',
-  props: [ 'code', 'shuffle' ],
+  props: [ 'code', 'shuffle', 'solved', 'readonly' ],
   data: () => ({
     score_awarded: 0
   }),
@@ -45,6 +47,19 @@ export default {
       this.score_awarded = this.$refs.gap.filter(
         c => !!c.success
       ).length
+    },
+    get_solved() {
+      // inject the answers into "parsed"
+      // and return the whole object
+      let i = 0
+      return this.parsed.map(
+        s => s.map(t => {
+          if (t.token != 'gap') return t
+          t.answer = this.$refs.gap[i].answer
+          i++
+          return t
+        })
+      )
     }
   },
   computed: {
@@ -54,6 +69,13 @@ export default {
       ).length
     },
     parsed: function() {
+
+      if (this.solved !== undefined) return this.solved
+      // if the parent component provided a 'solved' prop,
+      // bypass 'code' and load the 'solved' object which
+      // contains the already parsed 'code' with answers
+      // included.
+
       let ret = this.code.split(
         "\n\n"
       ).map(s => {

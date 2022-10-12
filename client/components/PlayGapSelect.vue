@@ -14,7 +14,7 @@
     :error="success === false"
     :prepend-inner-icon="success === undefined ? undefined : (success ? 'mdi-check-bold' : 'mdi-close-thick')"
     @change="on_change"
-    :readonly="once && success !== undefined"
+    :readonly="readonly || (once && success !== undefined)"
   >
   </v-select>
 </template>
@@ -23,10 +23,12 @@ import confetti_shoot from '~/mixins/confetti_shoot.js'
 export default {
   name: 'PlayGapSelect',
   props: [
+    "value",
     "options",
     "shuffle", // bool: wether shuffle the options
     "once", // bool: if true, allow only one try
     "error-explanation", // string: message to display when picked answer is wrong 
+    "readonly",
   ],
   mixins: [
     confetti_shoot
@@ -34,6 +36,13 @@ export default {
   data: () => ({
     answer: undefined
   }),
+  created() {
+    // This will preload the answer on create.
+    // Note that if the parent component changes
+    // the prop 'value' afterwards, it will not
+    // update the internal 'answer' variable.
+    this.answer = this.value
+  },
   computed: {
     choices: function() {
       /**
@@ -95,7 +104,7 @@ export default {
   methods: {
     on_change: function() {
 
-      this.$emit('answer', this.answer)
+      this.$emit('update:answer', this.answer)
 
       if (process.server) return
       if (this.success === true) {
@@ -128,5 +137,10 @@ export default {
       return out_array;
     },
   },
+  watch: {
+    answer(v) {
+      this.$emit('input', v)
+    }
+  }
 }
 </script>

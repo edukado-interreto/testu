@@ -43,11 +43,11 @@
             </v-list-item>
             <v-list-item
               v-if="user_is_creator"
-              class="red--text font-weight-bold"
+              class="error--text font-weight-bold"
               @click="remove"
             >
               <v-list-item-icon>
-                <v-icon color="red">mdi-delete</v-icon>
+                <v-icon color="error">mdi-delete</v-icon>
               </v-list-item-icon>
               <v-list-item-title>
                 Delete exercise
@@ -88,7 +88,7 @@
       v-for="(section, i) in exercise.data.sheet"
       :key="section._key"
     >
-      <div class="headline my-4"> 
+      <div class="headline my-4">
         {{ i+1 }}. {{ section.title }}
         <span v-if="section.title === ''" class="font-italic">
           Untitled unit
@@ -102,7 +102,16 @@
         :is="unit_component(section.type)"
         :code="section.code"
         :shuffle="section.shuffle"
+        ref="unit"
       />
+    </v-sheet>
+
+    <v-btn @click="get_solved_sheet">test</v-btn>
+    <component
+      :is="unit_component('default')"
+      :solved="solved_test"
+      :readonly="true"
+    />
     </v-sheet>
   </v-container>
 </template>
@@ -118,6 +127,7 @@ export default {
     unit_component,
   ],
   data: () => ({
+    solved_test: []
   }),
   async asyncData({ route, params }) {
 
@@ -139,12 +149,24 @@ export default {
     date_formatted() {
       return (
         new Date(this.exercise.modified)
-      ).toLocaleString("en-US") // TODO: i18n 
+      ).toLocaleString("en-US") // TODO: i18n
     },
-    user_logged_in() {
-      const authUser = this.$store.getters['authenticator/authUser']
-      if (!authUser) return false
-      return true
+    computed: {
+      date_formatted() {
+        return (
+          new Date(this.exercise.modified)
+        ).toLocaleString("en-US") // TODO: i18n
+      },
+      user_logged_in() {
+        const authUser = this.$store.getters['authenticator/authUser']
+        if (!authUser) return false
+        return true
+      },
+      user_is_creator() {
+        const authUser = this.$store.getters['authenticator/authUser']
+        if (!authUser) return false
+        return this.exercise.created_by === authUser.id
+      }
     },
     user_is_creator() {
       const authUser = this.$store.getters['authenticator/authUser']
@@ -167,13 +189,10 @@ export default {
         alert(`Error ${resp.status}`)
         return
       }
-      this.$router.push('/')
-    }
-  },
-  head() {
-    return {
-      title: this.exercise.name
-    }
+    },
+    get_solved_sheet() {
+      this.solved_test = this.$refs.unit[0].get_solved()
+    },
   }
 }
 </script>
