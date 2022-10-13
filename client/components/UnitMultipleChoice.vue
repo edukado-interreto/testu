@@ -13,7 +13,7 @@
               v-if="token.token === 'gap'"
               :options="token.options"
               :value="token.answer"
-              :shuffle="shuffle"
+              :shuffle="(solved===undefined) ? shuffle : false"
               :error-explanation="token.errorExplanation"
               :readonly="readonly"
               ref="gap"
@@ -53,14 +53,23 @@ export default {
       // inject the answers into "parsed"
       // and return the whole object
       let i = 0
-      return this.parsed.map(
+      const parsed_filled = this.parsed.map(
         s => s.map(t => {
           if (t.token != 'gap') return t
-          t.answer = this.$refs.gap[i].answer
+          const new_t = JSON.parse(
+            JSON.stringify(
+              t
+            )
+          )
+          new_t.answer = this.$refs.gap[i].answer
+          new_t.options = this.$refs.gap[i].choices
           i++
-          return t
+          return new_t
         })
       )
+      return {
+        parsed: parsed_filled
+      }
     }
   },
   computed: {
@@ -71,11 +80,11 @@ export default {
     },
     parsed: function() {
 
-      if (this.solved !== undefined) return this.solved
+      if (this.solved !== undefined) return this.solved.parsed
       // if the parent component provided a 'solved' prop,
       // bypass 'code' and load the 'solved' object which
-      // contains the already parsed 'code' with answers
-      // included.
+      // contains the already parsed 'code' with includes
+      // the answers and keeps the options shuffling order
 
       if (!this.code) return []
 
