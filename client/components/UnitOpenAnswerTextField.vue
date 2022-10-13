@@ -9,7 +9,7 @@
     hide-details="auto"
     :error="!silent && (success === false)"
     :prepend-inner-icon="icon"
-    @change="on_change"
+    @input="on_change"
     :readonly="readonly || (once && success !== undefined)"
   >
   </v-text-field>

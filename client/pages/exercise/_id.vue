@@ -102,7 +102,8 @@
         :is="unit_component(section.type)"
         :code="section.code"
         :shuffle="section.shuffle"
-        :silent="true"
+        :silent="all_silent"
+        :readonly="all_readonly"
         ref="unit"
       />
     </v-sheet>
@@ -128,7 +129,9 @@ export default {
     unit_component,
   ],
   data: () => ({
-    solved_test: []
+    solved_test: [],
+    all_readonly: false,
+    all_silent: true,
   }),
   async asyncData({ route, params }) {
 
@@ -193,6 +196,8 @@ export default {
     },
     get_solved_sheet() {
       this.solved_test = this.$refs.unit[0].get_solved()
+      this.all_silent = false
+      this.all_readonly = true
     },
   }
 }
