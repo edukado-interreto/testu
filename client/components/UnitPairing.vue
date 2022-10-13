@@ -29,6 +29,7 @@
               <v-icon
                 class="pa-2"
                 style="position:absolute; right: 0; top: 0; cursor: move;"
+                :disabled="readonly === true"
                 @mouseenter="$set(movable[i], 0, true)"
                 @touchstart="$set(movable[i], 0, true)"
                 @mouseleave="$set(movable[i], 0, false)"
@@ -73,6 +74,7 @@
             <v-icon
               class="pa-2"
               style="position:absolute; right: 0; top: 0; cursor: move;"
+              :disabled="readonly === true"
               @mouseenter="$set(movable[i], 1, true)"
               @touchstart="$set(movable[i], 1, true)"
               @mouseleave="$set(movable[i], 1, false)"
@@ -113,7 +115,7 @@
           </div>
         </v-sheet>
         <div
-          v-if="success !== undefined"
+          v-if="!silent && (success !== undefined)"
           style="position: absolute; right:4px; top: 10px"
         >
           <v-icon v-if="success[i] === true" color="success">mdi-check-bold</v-icon>
@@ -128,7 +130,7 @@ import confetti_shoot from '~/mixins/confetti_shoot.js'
 import shuffle_array from '~/mixins/shuffle_array.js'
 export default {
   name: 'UnitPairing',
-  props: [ 'code', 'shuffle' ],
+  props: [ 'code', 'shuffle', 'solved', 'readonly', 'silent' ],
   mixins: [
     confetti_shoot,
     shuffle_array
@@ -142,8 +144,17 @@ export default {
   mounted() {
     this.update_dragging()
   },
+  created() {
+    this.load_drags_from_solved()
+  },
   methods: {
+    load_drags_from_solved() {
+      if (!this.solved) return
+      if (!this.solved.drags) return
+      this.drags = [...this.solved.drags]
+    },
     on_dragstart(e, src_row, src_col) {
+      if (this.readonly === true) return
       console.log("dragstart, component", this._uid)
       e.dataTransfer.setData("text/plain", JSON.stringify({
         component: this._uid,
@@ -152,18 +163,22 @@ export default {
       }))
     },
     on_dragleave(e, dst_row, dst_col) {
+      if (this.readonly === true) return
       this.$set(this.overed[dst_row], dst_col, false)
     },
     on_dragover(e, dst_row, dst_col) {
+      if (this.readonly === true) return
       if (this.drags[dst_row][dst_col] !== null) return;
       e.preventDefault();
     },
     on_dragenter(e, dst_row, dst_col) {
+      if (this.readonly === true) return
       if (this.drags[dst_row][dst_col] !== null) return;
       e.preventDefault();
       this.$set(this.overed[dst_row], dst_col, true)
     },
     on_drop(e, dst_row, dst_col) {
+      if (this.readonly === true) return
       let src
       try {
         src = JSON.parse(e.dataTransfer.getData("text"))
@@ -182,6 +197,7 @@ export default {
         (dst_col == 1) // drop in guess column
         && (this.success[dst_row] === true)
       ) {
+        if (this.silent) return
         this.confetti_shoot(
           this.$refs['guess_col'][dst_row]
         )
@@ -233,6 +249,14 @@ export default {
       )
 
     },
+    get_solved() {
+      // pack 'parsed' and 'drags' in one object
+      // and return it
+      return {
+        parsed: this.parsed,
+        drags: this.drags
+      }
+    }
   },
   computed: {
     success() {
@@ -245,6 +269,13 @@ export default {
       return 0 // TODO
     },
     parsed: function() {
+
+      if (this.solved !== undefined) return this.solved.parsed || []
+      // if the parent component provided a 'solved' prop,
+      // bypass 'code' and load the 'parsed' object
+      // passed into the 'solved' prop, which
+      // contains the already parsed 'code' 
+
       let ret = this.code.split(
         "\n\n"
       ).map((s, i) => {
@@ -271,6 +302,9 @@ export default {
     },
     shuffle() {
       this.update_dragging()
+    },
+    solved() {
+      this.load_drags_from_solved()
     }
   }
 }
