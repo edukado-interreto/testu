@@ -102,6 +102,7 @@
         :is="unit_component(section.type)"
         :code="section.code"
         :shuffle="section.shuffle"
+        :silent="true"
         ref="unit"
       />
     </v-sheet>

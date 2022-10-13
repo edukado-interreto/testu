@@ -8,11 +8,11 @@
     item-value="value"
     return-object
     v-model="answer"
-    :success="success === true"
-    :error-messages="success === false ? errorExplanation : undefined"
+    :success="!silent && (success === true)"
+    :error-messages="error_messages"
     hide-details="auto"
-    :error="success === false"
-    :prepend-inner-icon="success === undefined ? undefined : (success ? 'mdi-check-bold' : 'mdi-close-thick')"
+    :error="!silent && (success === false)"
+    :prepend-inner-icon="icon"
     @change="on_change"
     :readonly="readonly || (once && success !== undefined)"
   >
@@ -29,6 +29,7 @@ export default {
     "once", // bool: if true, allow only one try
     "error-explanation", // string: message to display when picked answer is wrong 
     "readonly",
+    "silent",
   ],
   mixins: [
     confetti_shoot
@@ -44,6 +45,16 @@ export default {
     this.answer = this.value
   },
   computed: {
+    icon() {
+      if (this.silent) return
+      if (this.success === undefined) return
+      return this.success ? 'mdi-check-bold' : 'mdi-close-thick'
+    },
+    error_messages() {
+      if (this.silent) return
+      if (this.success !== false) return
+      return this.errorExplanation
+    },
     choices: function() {
       /**
        * Return the array of the possible answers to choose from.
@@ -106,6 +117,7 @@ export default {
 
       this.$emit('update:answer', this.answer)
 
+      if (this.silent) return
       if (process.server) return
       if (this.success === true) {
         this.confetti_shoot(

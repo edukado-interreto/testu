@@ -18,6 +18,7 @@
               :readonly="readonly"
               ref="gap"
               @answer="on_answer($event, i, j)"
+              :silent="silent"
             ></PlayGapSelect>
             <span
               :key="j"
@@ -33,7 +34,7 @@
 <script>
 export default {
   name: 'UnitDefault',
-  props: [ 'code', 'shuffle', 'solved', 'readonly' ],
+  props: [ 'code', 'shuffle', 'solved', 'readonly', 'silent' ],
   data: () => ({
     score_awarded: 0
   }),
