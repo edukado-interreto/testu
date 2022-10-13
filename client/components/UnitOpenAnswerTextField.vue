@@ -4,13 +4,13 @@
     dense
     :style="'display:inline-block; width: ' + gap_width"
     v-model="answer"
-    :success="success === true"
-    :error-messages="success === false ? errorExplanation : undefined"
+    :success="!silent && (success === true)"
+    :error-messages="error_messages"
     hide-details="auto"
-    :error="success === false"
-    :prepend-inner-icon="success === undefined ? undefined : (success ? 'mdi-check-bold' : 'mdi-close-thick')"
+    :error="!silent && (success === false)"
+    :prepend-inner-icon="icon"
     @change="on_change"
-    :readonly="once && success !== undefined"
+    :readonly="readonly || (once && success !== undefined)"
   >
   </v-text-field>
 </template>
@@ -19,10 +19,13 @@ import confetti_shoot from '~/mixins/confetti_shoot.js'
 export default {
   name: 'UnitOpenAnswerTextField',
   props: [
+    "value",
     "options",
     "shuffle", // bool: wether shuffle the options
     "once", // bool: if true, allow only one try
     "error-explanation", // string: message to display when picked answer is wrong 
+    "readonly",
+    "silent",
   ],
   mixins: [
     confetti_shoot
@@ -30,7 +33,24 @@ export default {
   data: () => ({
     answer: undefined
   }),
+  created() {
+    // This will preload the answer on create.
+    // Note that if the parent component changes
+    // the prop 'value' afterwards, it will not
+    // update the internal 'answer' variable.
+    this.answer = this.value
+  },
   computed: {
+    icon() {
+      if (this.silent) return
+      if (this.success === undefined) return
+      return this.success ? 'mdi-check-bold' : 'mdi-close-thick'
+    },
+    error_messages() {
+      if (this.silent) return
+      if (this.success !== false) return
+      return this.errorExplanation
+    },
     choices: function() {
       /**
        * Return the array of the possible answers to choose from.
@@ -91,8 +111,9 @@ export default {
   methods: {
     on_change: function() {
 
-      this.$emit('answer', this.answer)
+      this.$emit('update:answer', this.answer)
 
+      if (this.silent) return
       if (process.server) return
       if (this.success === true) {
         this.confetti_shoot(
@@ -101,6 +122,11 @@ export default {
       }
     },
   },
+  watch: {
+    answer(v) {
+      this.$emit('input', v)
+    }
+  }
 }
 </script>
 

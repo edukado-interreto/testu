@@ -109,7 +109,7 @@
 
     <v-btn @click="get_solved_sheet">test</v-btn>
     <component
-      :is="unit_component('default')"
+      :is="unit_component('open_answer')"
       :solved="solved_test"
       :readonly="true"
     />
