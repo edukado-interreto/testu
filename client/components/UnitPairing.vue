@@ -9,7 +9,7 @@
           -->
           <div
             v-if="pair[0] !== null"
-            :draggable="movable[i][0]"
+            :draggable="(!readonly) && movable[i][0]"
             @dragstart="on_dragstart($event, i, 0)"
             class="fill-height"
           >
@@ -54,7 +54,7 @@
       <v-col cols="4" ref="guess_col">
         <div
           v-if="pair[1] !== null"
-          :draggable="movable[i][1]"
+          :draggable="(!readonly) && movable[i][1]"
           @dragstart="on_dragstart($event, i, 1)"
           class="fill-height"
         >
