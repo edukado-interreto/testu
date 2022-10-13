@@ -103,18 +103,20 @@
         :code="section.code"
         :shuffle="section.shuffle"
         :silent="all_silent"
-        :readonly="false"
+        :readonly="all_readonly"
         ref="unit"
       />
     </v-sheet>
 
-    <v-btn @click="get_solved_sheet">test</v-btn>
+    <v-btn @click="submit">Submit</v-btn>
+    <!--
     <component
-      :is="unit_component('multiple_choice')"
+      :is="unit_component('open_answer')"
       :solved="solved_test"
       :readonly="false"
       :shuffle="true"
     />
+    -->
     </v-sheet>
   </v-container>
 </template>
@@ -130,7 +132,6 @@ export default {
     unit_component,
   ],
   data: () => ({
-    solved_test: [],
     all_readonly: false,
     all_silent: true,
   }),
@@ -195,8 +196,9 @@ export default {
         return
       }
     },
-    get_solved_sheet() {
-      this.solved_test = this.$refs.unit[0].get_solved()
+    submit() {
+      // show the results of the quiz
+      //this.solved_test = this.$refs.unit[0].get_solved()
       this.all_silent = false
       this.all_readonly = true
     },

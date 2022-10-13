@@ -53,7 +53,7 @@ export default {
       // inject the answers into "parsed"
       // and return the whole object
       let i = 0
-      return this.parsed.map(
+      const parsed_filled = this.parsed.map(
         s => s.map(t => {
           if (t.token != 'gap') return t
           t.answer = this.$refs.gap[i].answer
@@ -61,6 +61,9 @@ export default {
           return t
         })
       )
+      return {
+        parsed: parsed_filled
+      }
     }
   },
   computed: {
@@ -71,7 +74,7 @@ export default {
     },
     parsed: function() {
 
-      if (this.solved !== undefined) return this.solved
+      if (this.solved !== undefined) return this.solved.parsed
       // if the parent component provided a 'solved' prop,
       // bypass 'code' and load the 'solved' object which
       // contains the already parsed 'code' with answers
