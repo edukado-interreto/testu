@@ -58,11 +58,13 @@ export default {
        * { "value": <string>, "right": <bool> }
        */
 
-      if (this.shuffle) {
-        return this.shuffle_array(
-          this.options
-        )
-      }
+      // shuffle makes no sense in open answers
+
+      //if (this.shuffle) {
+      //  return this.shuffle_array(
+      //    this.options
+      //  )
+      //}
 
       return this.options
 

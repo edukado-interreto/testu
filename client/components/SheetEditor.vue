@@ -317,6 +317,7 @@
 
         <v-switch
           v-model="current.data.shuffle"
+          :disabled="current.data.type == 'open_answer'"
           label="Shuffle options"
         ></v-switch>
 
