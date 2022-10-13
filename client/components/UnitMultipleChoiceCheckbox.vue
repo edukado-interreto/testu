@@ -9,19 +9,22 @@
       @change="on_change(i)"
       ref="checkbox"
       :key="choice.value"
+      :readonly="readonly"
     >
       <template v-slot:label>
         <span class="black--text">{{ choice.value }}</span>
-        <v-icon
-          v-if="success[i] === true"
-          class="mx-1"
-          color="success"
-        >mdi-check-bold</v-icon>
-        <v-icon
-          v-if="success[i] === false"
-          class="mx-1"
-          color="error"
-        >mdi-close-thick</v-icon>
+        <template v-if="!silent">
+          <v-icon
+            v-if="success[i] === true"
+            class="mx-1"
+            color="success"
+          >mdi-check-bold</v-icon>
+          <v-icon
+            v-if="success[i] === false"
+            class="mx-1"
+            color="error"
+          >mdi-close-thick</v-icon>
+        </template>
       </template>
     </v-checkbox>
   </div>
@@ -49,10 +52,13 @@ import confetti_shoot from '~/mixins/confetti_shoot.js'
 export default {
   name: 'UnitMultipleChoiceCheckbox',
   props: [
+    "value",
     "options",
     "shuffle", // bool: wether shuffle the options
     "once", // bool: if true, allow only one try
     "error-explanation", // string: message to display when picked answer is wrong 
+    "readonly",
+    "silent",
   ],
   mixins: [
     confetti_shoot
@@ -60,6 +66,13 @@ export default {
   data: () => ({
     answer: []
   }),
+  created() {
+    // This will preload the answer on create.
+    // Note that if the parent component changes
+    // the prop 'value' afterwards, it will not
+    // update the internal 'answer' variable.
+    this.answer = this.value || []
+  },
   computed: {
     choices: function() {
       /**
@@ -92,8 +105,9 @@ export default {
   methods: {
     on_change: function(i) {
 
-      this.$emit('answer', this.answer)
+      this.$emit('update:answer', this.answer)
 
+      if (this.silent) return
       if (process.server) return
       if (this.success[i] === true) {
         this.confetti_shoot(
@@ -125,5 +139,10 @@ export default {
       return out_array;
     },
   },
+  watch: {
+    answer(v) {
+      this.$emit('input', v)
+    }
+  }
 }
 </script>
