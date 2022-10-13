@@ -103,16 +103,17 @@
         :code="section.code"
         :shuffle="section.shuffle"
         :silent="all_silent"
-        :readonly="all_readonly"
+        :readonly="false"
         ref="unit"
       />
     </v-sheet>
 
     <v-btn @click="get_solved_sheet">test</v-btn>
     <component
-      :is="unit_component('pairing')"
+      :is="unit_component('default')"
       :solved="solved_test"
-      :readonly="true"
+      :readonly="false"
+      :shuffle="true"
     />
     </v-sheet>
   </v-container>
