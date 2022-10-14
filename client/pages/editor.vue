@@ -223,6 +223,9 @@ export default {
 
       console.log("data:", payload);
 
+      console.log("checking tokens")
+      await this.$auth.checkTokens()
+
       // setup the api call: a PUT request if editing
       // an existing exercise, i.e. when this.overwrite_id
       // contains an exercise id, or a POST request if
