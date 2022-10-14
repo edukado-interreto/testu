@@ -108,7 +108,11 @@
       />
     </v-sheet>
 
-    <v-btn @click="submit">Submit</v-btn>
+    <v-btn
+      @click="submit"
+      class="mt-9 primary"
+      :disabled="submitted"
+    >Check results</v-btn>
     <!--
     <component
       :is="unit_component('open_answer')"
@@ -134,6 +138,7 @@ export default {
   data: () => ({
     all_readonly: false,
     all_silent: true,
+    submitted: false,
   }),
   async asyncData({ route, params }) {
 
@@ -199,6 +204,10 @@ export default {
     submit() {
       // show the results of the quiz
       //this.solved_test = this.$refs.unit[0].get_solved()
+
+      this.submitted = true
+      window.scrollTo({ top:0, behavior: 'smooth'})
+
       this.all_silent = false
       this.all_readonly = true
     },
