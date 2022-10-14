@@ -154,7 +154,7 @@
       clipped
     >
       <v-list
-      class="accent--text"
+      class="primary--text"
       >
 
         <v-list-item
