@@ -3,7 +3,7 @@
     <v-data-iterator
       class="mt-5"
       :items="filtered_exercises"
-      :items-per-page="20"
+      :items-per-page="15"
     >
       <template v-slot:default="props">
         <v-row>
