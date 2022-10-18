@@ -71,6 +71,9 @@ export default {
     filtered_exercises() {
       return this.exercises.filter(
         e => e.created_by == this.current_username
+      ).sort(
+        // newest to oldest
+        (a, b) => new Date(b.created) - new Date(a.created)
       )
     }
   },

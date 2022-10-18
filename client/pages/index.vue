@@ -228,7 +228,10 @@ export default {
         if (min > e.lang_learn_cefr_level_max) return false
         if (max < e.lang_learn_cefr_level_min) return false
         return true
-      })
+      }).sort(
+        // newest to oldest
+        (a, b) => new Date(b.created) - new Date(a.created)
+      )
     },
   },
   async fetch() {
