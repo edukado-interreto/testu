@@ -220,8 +220,18 @@
     </v-main>
     <v-footer
       app
+      class="grey lighten-5"
     >
-      <span>TestU Online – sandbox 0.1</span>
+      <v-spacer></v-spacer>
+      <div>
+        <NuxtLink to="/terms" class="grey--text caption text-decoration-none font-weight-bold">
+          Terms of use
+        </NuxtLink>
+        <span class="caption mx-1">·</span>
+        <NuxtLink to="/privacy" class="caption text-decoration-none font-weight-bold">
+          Privacy policy
+        </NuxtLink>
+      </div>
     </v-footer>
   </v-app>
 </template>
