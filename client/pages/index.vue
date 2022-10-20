@@ -161,9 +161,40 @@ import langs_available from '~/mixins/langs_available.js'
 import cefr from '~/mixins/cefr.js'
 export default {
   name: 'Index',
-  head() {
-    return {
-      title: 'Home page'
+  mixins: [
+    langs_available,
+    cefr
+  ],
+  data: () => ({
+    exercises: [],
+    filtered_exercises: [],
+    search: {
+      text: '',
+      tags: [],
+      src_langs: ['en'], // TODO: current interface language
+      lang_learn: {
+        langs: [],
+        levels: [1, 6],
+      },
+      sort: 'recent'
+    },
+    //langs_available: [
+    //  'en',
+    //  'eo',
+    //  'fr',
+    //  'it'
+    //]
+  }),
+  computed: {
+    current_cefr_label() {
+      const [min, max] = this.search.lang_learn.levels;
+      return this.cefr_info({
+        lang_learn_cefr_level_min: min,
+        lang_learn_cefr_level_max: max,
+      });
+    },
+    tags_available() {
+      return this.exercises.flatMap(e => e.tags).filter(t => !!t)
     }
   },
   mixins: [

@@ -88,7 +88,7 @@
       v-for="(section, i) in exercise.data.sheet"
       :key="section._key"
     >
-      <div class="headline my-4">
+      <div class="headline my-4"> 
         {{ i+1 }}. {{ section.title }}
         <span v-if="section.title === ''" class="font-italic">
           Untitled unit
@@ -160,24 +160,12 @@ export default {
     date_formatted() {
       return (
         new Date(this.exercise.modified)
-      ).toLocaleString("en-US") // TODO: i18n
+      ).toLocaleString("en-US") // TODO: i18n 
     },
-    computed: {
-      date_formatted() {
-        return (
-          new Date(this.exercise.modified)
-        ).toLocaleString("en-US") // TODO: i18n
-      },
-      user_logged_in() {
-        const authUser = this.$store.getters['authenticator/authUser']
-        if (!authUser) return false
-        return true
-      },
-      user_is_creator() {
-        const authUser = this.$store.getters['authenticator/authUser']
-        if (!authUser) return false
-        return this.exercise.created_by === authUser.id
-      }
+    user_logged_in() {
+      const authUser = this.$store.getters['authenticator/authUser']
+      if (!authUser) return false
+      return true
     },
     user_is_creator() {
       const authUser = this.$store.getters['authenticator/authUser']
@@ -200,6 +188,7 @@ export default {
         alert(`Error ${resp.status}`)
         return
       }
+      this.$router.push('/')
     },
     submit() {
       // show the results of the quiz
@@ -211,7 +200,12 @@ export default {
       this.all_silent = false
       this.all_readonly = true
     },
-  }
+  },
+  head() {
+    return {
+      title: this.exercise.name
+    }
+  },
 }
 </script>
 <style scoped>
