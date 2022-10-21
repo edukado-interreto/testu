@@ -209,14 +209,23 @@
                 v-bind="attrs"
                 v-on="on"
                 icon
-                @click=""
+                @click="$refs.image_uploader.click()"
                 :disabled="current.data.type != 'pairing'"
               >
                 <v-icon>mdi-image</v-icon>
               </v-btn>
             </template>
             <span>Insert image</span>
-          </v-tooltip><v-tooltip bottom>
+          </v-tooltip>
+          <input
+            type="file"
+            class="d-none"
+            ref="image_uploader"
+            @change="image_uploader_onchange"
+            accept="image/*"
+          >
+
+          <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
               <v-btn
                 v-bind="attrs"
@@ -547,6 +556,38 @@ export default {
         `{video:${this.insert_video_url}}`
       )
       this.insert_video_dialog = false
+    },
+    async image_uploader_onchange(e) {
+
+      const file = e.target.files[0]
+      if (!file) return
+
+      const formData = new FormData()
+      formData.append("file", file)
+      formData.append("type", "image")
+
+      const resp = await fetch('/api/v1/upload/', {
+        method: 'post',
+        body: formData
+      })
+
+      let resp_json = null
+      let error = null
+      try {
+        resp_json = await resp.json()
+        error = resp_json.error
+      } catch(e) {
+        error = "Unattended server response"
+      }
+      if (resp.status >= 400) {
+        alert(error)
+        return
+      }
+      //console.log({resp, resp_json})
+    
+      this.inject_snippet(
+        `{img:${resp_json.name}}`
+      )
     },
     inject_snippet(snippet) {
       // insert in the current code a snippet at the

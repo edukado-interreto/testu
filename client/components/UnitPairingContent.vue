@@ -12,12 +12,11 @@
           <v-icon small>mdi-alert-outline</v-icon>
           <i>Invalid image: {{ t.content }}</i>
         </div>
-        <v-img
+        <UnitPairingImage
           v-else
           :src="t.src"
-          contain
-          max-height="150"
-        ></v-img>
+          :content="t.content"
+        ></UnitPairingImage>
       </template>
 
       <template
@@ -83,8 +82,7 @@ export default {
         }
 
         if (type == 'img') {
-          const src=`https://picsum.photos/seed/${content}/200/300`
-          // TODO: get the actual image source
+          const src=`/assets/media/uploads/${content}`
           if (src) {
             ret.src = src
           } else {
