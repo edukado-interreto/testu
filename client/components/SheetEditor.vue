@@ -231,7 +231,7 @@
                 v-bind="attrs"
                 v-on="on"
                 icon
-                @click=""
+                @click="$refs.audio_uploader.click()"
                 :disabled="current.data.type != 'pairing'"
               >
                 <v-icon>mdi-volume-high</v-icon>
@@ -239,6 +239,14 @@
             </template>
             <span>Insert sound</span>
           </v-tooltip>
+          <input
+            type="file"
+            class="d-none"
+            ref="audio_uploader"
+            @change="audio_uploader_onchange"
+            accept="audio/*"
+          >
+
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
               <v-btn
@@ -587,6 +595,38 @@ export default {
     
       this.inject_snippet(
         `{img:${resp_json.name}}`
+      )
+    },
+    async audio_uploader_onchange(e) {
+
+      const file = e.target.files[0]
+      if (!file) return
+
+      const formData = new FormData()
+      formData.append("file", file)
+      formData.append("type", "audio")
+
+      const resp = await fetch('/api/v1/upload/', {
+        method: 'post',
+        body: formData
+      })
+
+      let resp_json = null
+      let error = null
+      try {
+        resp_json = await resp.json()
+        error = resp_json.error
+      } catch(e) {
+        error = "Unattended server response"
+      }
+      if (resp.status >= 400) {
+        alert(error)
+        return
+      }
+      //console.log({resp, resp_json})
+    
+      this.inject_snippet(
+        `{sound:${resp_json.name}}`
       )
     },
     inject_snippet(snippet) {

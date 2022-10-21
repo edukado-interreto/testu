@@ -44,18 +44,12 @@
           <v-icon small>mdi-alert-outline</v-icon>
           <i>Invalid audio: {{ t.content }}</i>
         </div>
-        <audio
+        <UnitPairingSound
           v-else
-          controls
-          style="max-height:150px; max-width:100%;"
-        >
-          <source
-            :src="t.src"
-            :type="t.mimetype"
-          ></source>
-        </audio>
+          :src="t.src"
+          :content="t.content"
+        ></UnitPairingSound>
       </template>
-
 
     </template>
   </div>
@@ -100,11 +94,10 @@ export default {
         }
 
         if (type == 'sound') {
-          const src = "https://upload.wikimedia.org/wikipedia/commons/5/5c/Lb-juristin1.mp3"
-          // TODO: get the actual source url
+          const src=`/assets/media/uploads/${content}`
           if (src) {
             ret.src = src
-            ret.mimetype="audio/mpeg"
+            //ret.mimetype="audio/mpeg"
           } else {
             ret.invalid_src = true
           }
