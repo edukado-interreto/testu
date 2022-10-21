@@ -27,7 +27,12 @@ def UploadView(request):
                 request.FILES["file"], request.POST["type"]
             )
             return JsonResponse(
-                {"name": uploaded_file["file"].name, "path": uploaded_file["file"].path}
+                {
+                    "id": uploaded_file["file"].instance.pk,
+                    "name": uploaded_file["name"],
+                    "url": uploaded_file["file"].url,
+                    "type": uploaded_file["file"].instance.file_type
+                }
             )
 
         except FileUploadException as err:
