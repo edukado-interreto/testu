@@ -7,61 +7,109 @@ import django_extensions.db.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('exercises', '0002_sheet_created_by_alter_sheet_description'),
+        ("exercises", "0002_sheet_created_by_alter_sheet_description"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Tag',
+            name="Tag",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created', django_extensions.db.fields.CreationDateTimeField(auto_now_add=True, verbose_name='created')),
-                ('modified', django_extensions.db.fields.ModificationDateTimeField(auto_now=True, verbose_name='modified')),
-                ('name', models.CharField(max_length=100, verbose_name='name')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "created",
+                    django_extensions.db.fields.CreationDateTimeField(
+                        auto_now_add=True, verbose_name="created"
+                    ),
+                ),
+                (
+                    "modified",
+                    django_extensions.db.fields.ModificationDateTimeField(
+                        auto_now=True, verbose_name="modified"
+                    ),
+                ),
+                ("name", models.CharField(max_length=100, verbose_name="name")),
             ],
             options={
-                'get_latest_by': 'modified',
-                'abstract': False,
+                "get_latest_by": "modified",
+                "abstract": False,
             },
         ),
         migrations.AddField(
-            model_name='sheet',
-            name='age_max',
-            field=models.PositiveSmallIntegerField(blank=True, null=True, verbose_name='maximum age'),
+            model_name="sheet",
+            name="age_max",
+            field=models.PositiveSmallIntegerField(
+                blank=True, null=True, verbose_name="maximum age"
+            ),
         ),
         migrations.AddField(
-            model_name='sheet',
-            name='age_min',
-            field=models.PositiveSmallIntegerField(blank=True, null=True, verbose_name='minimum age'),
+            model_name="sheet",
+            name="age_min",
+            field=models.PositiveSmallIntegerField(
+                blank=True, null=True, verbose_name="minimum age"
+            ),
         ),
         migrations.AddField(
-            model_name='sheet',
-            name='lang_learn',
-            field=models.BooleanField(default=True, verbose_name='about language'),
+            model_name="sheet",
+            name="lang_learn",
+            field=models.BooleanField(default=True, verbose_name="about language"),
         ),
         migrations.AddField(
-            model_name='sheet',
-            name='lang_learn_cefr_level_max',
-            field=models.PositiveSmallIntegerField(blank=True, choices=[(0, 'A1'), (1, 'A2'), (2, 'B1'), (3, 'B2'), (4, 'C1'), (5, 'C2')], null=True, verbose_name='CEFR max'),
+            model_name="sheet",
+            name="lang_learn_cefr_level_max",
+            field=models.PositiveSmallIntegerField(
+                blank=True,
+                choices=[
+                    (0, "A1"),
+                    (1, "A2"),
+                    (2, "B1"),
+                    (3, "B2"),
+                    (4, "C1"),
+                    (5, "C2"),
+                ],
+                null=True,
+                verbose_name="CEFR max",
+            ),
         ),
         migrations.AddField(
-            model_name='sheet',
-            name='lang_learn_cefr_level_min',
-            field=models.PositiveSmallIntegerField(blank=True, choices=[(0, 'A1'), (1, 'A2'), (2, 'B1'), (3, 'B2'), (4, 'C1'), (5, 'C2')], null=True, verbose_name='CEFR min'),
+            model_name="sheet",
+            name="lang_learn_cefr_level_min",
+            field=models.PositiveSmallIntegerField(
+                blank=True,
+                choices=[
+                    (0, "A1"),
+                    (1, "A2"),
+                    (2, "B1"),
+                    (3, "B2"),
+                    (4, "C1"),
+                    (5, "C2"),
+                ],
+                null=True,
+                verbose_name="CEFR min",
+            ),
         ),
         migrations.AddField(
-            model_name='sheet',
-            name='searchable',
-            field=models.BooleanField(default=True, verbose_name='searchable'),
+            model_name="sheet",
+            name="searchable",
+            field=models.BooleanField(default=True, verbose_name="searchable"),
         ),
         migrations.AddField(
-            model_name='sheet',
-            name='src_lang',
-            field=models.CharField(blank=True, max_length=10, verbose_name='source language'),
+            model_name="sheet",
+            name="src_lang",
+            field=models.CharField(
+                blank=True, max_length=10, verbose_name="source language"
+            ),
         ),
         migrations.AddField(
-            model_name='sheet',
-            name='tags',
-            field=models.ManyToManyField(blank=True, to='exercises.tag'),
+            model_name="sheet",
+            name="tags",
+            field=models.ManyToManyField(blank=True, to="exercises.tag"),
         ),
     ]

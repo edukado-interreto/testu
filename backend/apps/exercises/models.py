@@ -48,20 +48,22 @@ class Sheet(TimeStampedModel):
 
 
 class UploadedFile(TimeStampedModel):
-  file_name = models.CharField("file_name", max_length=100, unique=True)
-  created_by = models.ForeignKey(
-    User, on_delete=models.SET_NULL, blank=True, null=True
-  )
+    file_name = models.CharField("file_name", max_length=100, unique=True)
+    created_by = models.ForeignKey(
+        User, on_delete=models.SET_NULL, blank=True, null=True
+    )
 
-  class FileType(models.TextChoices):
-    IMAGE = 'image', 'image'
-    AUDIO = 'audio', 'audio'
+    class FileType(models.TextChoices):
+        IMAGE = "image", "image"
+        AUDIO = "audio", "audio"
 
-  file_type = models.CharField(max_length=5, choices=FileType.choices, default=FileType.IMAGE)
-  file = models.FileField(upload_to='uploads/')
+    file_type = models.CharField(
+        max_length=5, choices=FileType.choices, default=FileType.IMAGE
+    )
+    file = models.FileField(upload_to="uploads/")
 
-  def __str__(self):
-    return self.file_name
+    def __str__(self):
+        return self.file_name
 
 
 @receiver(post_delete, sender=UploadedFile)

@@ -3,8 +3,12 @@ from random import choices
 from string import digits
 
 from django.contrib.auth.hashers import make_password
-from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin,
-                                        UnicodeUsernameValidator, UserManager)
+from django.contrib.auth.models import (
+    AbstractBaseUser,
+    PermissionsMixin,
+    UnicodeUsernameValidator,
+    UserManager,
+)
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.shortcuts import get_object_or_404
@@ -38,7 +42,9 @@ class EmailUserManager(UserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
-    username = models.CharField("username", max_length=150, unique=True, validators=[UnicodeUsernameValidator()])
+    username = models.CharField(
+        "username", max_length=150, unique=True, validators=[UnicodeUsernameValidator()]
+    )
     email = models.EmailField("email address", unique=True)
     data = models.JSONField("data", default=dict, blank=True)
     is_staff = models.BooleanField(

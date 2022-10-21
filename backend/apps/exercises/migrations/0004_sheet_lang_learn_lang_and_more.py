@@ -6,23 +6,49 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('exercises', '0003_more_fields_for_filtering'),
+        ("exercises", "0003_more_fields_for_filtering"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='sheet',
-            name='lang_learn_lang',
-            field=models.CharField(blank=True, max_length=10, verbose_name='target language'),
+            model_name="sheet",
+            name="lang_learn_lang",
+            field=models.CharField(
+                blank=True, max_length=10, verbose_name="target language"
+            ),
         ),
         migrations.AlterField(
-            model_name='sheet',
-            name='lang_learn_cefr_level_max',
-            field=models.PositiveSmallIntegerField(blank=True, choices=[(1, 'A1'), (2, 'A2'), (3, 'B1'), (4, 'B2'), (5, 'C1'), (6, 'C2')], null=True, verbose_name='CEFR max'),
+            model_name="sheet",
+            name="lang_learn_cefr_level_max",
+            field=models.PositiveSmallIntegerField(
+                blank=True,
+                choices=[
+                    (1, "A1"),
+                    (2, "A2"),
+                    (3, "B1"),
+                    (4, "B2"),
+                    (5, "C1"),
+                    (6, "C2"),
+                ],
+                null=True,
+                verbose_name="CEFR max",
+            ),
         ),
         migrations.AlterField(
-            model_name='sheet',
-            name='lang_learn_cefr_level_min',
-            field=models.PositiveSmallIntegerField(blank=True, choices=[(1, 'A1'), (2, 'A2'), (3, 'B1'), (4, 'B2'), (5, 'C1'), (6, 'C2')], null=True, verbose_name='CEFR min'),
+            model_name="sheet",
+            name="lang_learn_cefr_level_min",
+            field=models.PositiveSmallIntegerField(
+                blank=True,
+                choices=[
+                    (1, "A1"),
+                    (2, "A2"),
+                    (3, "B1"),
+                    (4, "B2"),
+                    (5, "C1"),
+                    (6, "C2"),
+                ],
+                null=True,
+                verbose_name="CEFR min",
+            ),
         ),
     ]

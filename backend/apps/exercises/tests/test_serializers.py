@@ -70,4 +70,3 @@ class TestSheet:
             "searchable": True,
         }
         assert response.status_code == HTTPStatus.CREATED
-
