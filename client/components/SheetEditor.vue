@@ -211,6 +211,7 @@
                 icon
                 @click="$refs.image_uploader.click()"
                 :disabled="current.data.type != 'pairing'"
+                :loading="image_uploading"
               >
                 <v-icon>mdi-image</v-icon>
               </v-btn>
@@ -233,6 +234,7 @@
                 icon
                 @click="$refs.audio_uploader.click()"
                 :disabled="current.data.type != 'pairing'"
+                :loading="audio_uploading"
               >
                 <v-icon>mdi-volume-high</v-icon>
               </v-btn>
@@ -460,6 +462,9 @@ export default {
     insert_video_dialog: false,
     insert_video_url: '',
 
+    image_uploading: false,
+    audio_uploading: false,
+
     edit_drawer: {
       show: false
     },
@@ -574,6 +579,8 @@ export default {
       formData.append("file", file)
       formData.append("type", "image")
 
+      this.image_uploading = true
+
       const resp = await fetch('/api/v1/upload/', {
         method: 'post',
         body: formData
@@ -586,6 +593,8 @@ export default {
         error = resp_json.error
       } catch(e) {
         error = "Unattended server response"
+      } finally {
+        this.image_uploading = false
       }
       if (resp.status >= 400) {
         alert(error)
@@ -606,6 +615,8 @@ export default {
       formData.append("file", file)
       formData.append("type", "audio")
 
+      this.audio_uploading = true
+
       const resp = await fetch('/api/v1/upload/', {
         method: 'post',
         body: formData
@@ -618,6 +629,8 @@ export default {
         error = resp_json.error
       } catch(e) {
         error = "Unattended server response"
+      } finally {
+        this.audio_uploading = false
       }
       if (resp.status >= 400) {
         alert(error)
