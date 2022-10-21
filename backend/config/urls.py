@@ -1,4 +1,4 @@
-from apps.exercises.views import SheetViewSet
+from apps.exercises.views import SheetViewSet, UploadView
 from dj_rest_auth.registration.views import VerifyEmailView
 from django.contrib import admin
 from django.urls import include, path
@@ -19,4 +19,5 @@ urlpatterns = [
         VerifyEmailView.as_view(),
         name="account_email_verification_sent",
     ),
+    path("api/v1/upload/", UploadView),
 ]
