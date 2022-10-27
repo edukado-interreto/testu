@@ -89,7 +89,6 @@ export default {
             return { token: 'text', value }
           } else {
             // is gap
-            if (!value) return { value: "" }
             let ret = {
               token: 'gap',
               options: []
@@ -121,7 +120,7 @@ export default {
             })
             return ret
           }
-        }).filter(t => t.value != "")
+        }).filter(t => !(t.token == "text" && t.value == ""))
       });
       return ret
     }

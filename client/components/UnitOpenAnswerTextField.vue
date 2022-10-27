@@ -86,7 +86,12 @@ export default {
        * Returns the css value used to set the gap width
        * @returns {str}
        */
-      return this.longest_choice_length + 7 + 'ch';
+
+      if (this.longest_choice_length === 0) return '30ch'
+      // open answer without options, return a standard size
+      // that should fit for a generic answer
+
+      return this.longest_choice_length + 7 + 'ch'
       // FIXME
       // heuristic calculation: to display the string "0"
       // into the v-select, a minimum width of 8ch was
@@ -104,6 +109,15 @@ export default {
       const current_option = this.options.find(
         e => e.value === this.answer
       )
+
+      if (this.options.every(o => o.right === true)) {
+        // the options list contains only one (or more) right option(s),
+        // e.g.: "2+2 = [+4]" or "red is a [+color|+colour]".
+        // In this case, we consider wrong (success = false) any
+        // other answers apart from the empty string (success = undefined).
+        if (!this.answer) return undefined
+        return !!current_option
+      }
 
       if (!current_option) return undefined
 
