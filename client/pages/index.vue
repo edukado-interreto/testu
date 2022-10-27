@@ -245,7 +245,9 @@ export default {
       console.log(this.search.lang_learn.langs)
       console.log(this.search.lang_learn.levels)
       this.filtered_exercises = this.exercises.filter(
-        e => e.name.includes(this.search.text || "")
+        e => e.name.toLowerCase().includes(
+          this.search.text.toLowerCase() || ""
+        )
       ).filter(
         e => (
           this.search.src_langs.length == 0
