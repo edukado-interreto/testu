@@ -114,46 +114,14 @@
         :items-per-page="15"
       >
         <template v-slot:default="props">
-          <v-row>
-            <v-col
-              v-for="item in props.items"
-              :key="item.id"
-              cols="12"
-            >
-              <v-card
-                :to="`/exercise/${item.id}`"
-                nuxt
-              >
-                <v-card-title
-                  class="subheading font-weight-bold"
-                >
-                  {{ item.name }}
-                </v-card-title>
-                <v-card-subtitle v-if="item.description">
-                  {{ item.description }}
-                </v-card-subtitle>
-                <v-card-text class="text-caption">
-                  <div v-if="item.age_min > 0 || item.age_max < 18">
-                    Age: {{ item.age_min }} - {{ (item.age_max == 18) ? '18+' : item.age_max  }}
-                  </div>
-                  <div v-if="item.lang_learn === true">
-                    Language learning: {{ langs_table[item.lang_learn_lang].name }} {{ cefr_info(item) }}
-                  </div>
-                </v-card-text>
-                <v-divider></v-divider>
-                <v-card-text>
-                  <v-icon small>mdi-account</v-icon> {{ item.created_by || 'anonymous' }}
-                  <span>·</span>
-                  <v-icon small>mdi-clock</v-icon> {{ date_formatted(item.created) }}
-                </v-card-text>
-              </v-card>
-            </v-col>
-          </v-row>
+          <ExerciseListItem
+            v-for="item in props.items"
+            :item="item"
+            :key="item.id"
+          >
+          </ExerciseListItem>
         </template>
       </v-data-iterator>
-
-
-
   </v-container>
 </template>
 <script>
@@ -245,6 +213,8 @@ export default {
       console.log(this.search.lang_learn.langs)
       console.log(this.search.lang_learn.levels)
       this.filtered_exercises = this.exercises.filter(
+        e => e.searchable !== false
+      ).filter(
         e => e.name.toLowerCase().includes(
           this.search.text.toLowerCase() || ""
         )
