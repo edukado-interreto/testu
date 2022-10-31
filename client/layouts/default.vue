@@ -164,7 +164,8 @@
       >
 
         <v-list-item
-          to="/"
+          :to="localePath('/')"
+          nuxt
           router
           exact
         >
@@ -177,7 +178,8 @@
         </v-list-item>
 
         <v-list-item
-          to="/learn"
+          :to="localePath('/learn')"
+          nuxt
           router
           exact
           disabled
@@ -191,7 +193,8 @@
         </v-list-item>
 
         <v-list-item
-          to="/teach"
+          :to="localePath('/teach')"
+          nuxt
           router
           exact
         >
@@ -204,7 +207,8 @@
         </v-list-item>
 
         <v-list-item
-          to="/about"
+          :to="localePath('/about')"
+          nuxt
           router
           exact
           disabled

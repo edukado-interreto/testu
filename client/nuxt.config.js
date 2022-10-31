@@ -58,6 +58,7 @@ export default {
       'eo',
     ],
     vueI18n: {
+      detectBrowserLanguage: true,
       fallbackLocale: 'en',
       messages: {
         en: {
