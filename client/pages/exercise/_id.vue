@@ -102,6 +102,7 @@
         :is="unit_component(section.type)"
         :code="section.code"
         :shuffle="section.shuffle"
+        :ignore_case="section.ignore_case"
         :silent="all_silent"
         :readonly="all_readonly"
         ref="unit"

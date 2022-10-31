@@ -338,6 +338,16 @@
           v-model="current.data.shuffle"
           :disabled="current.data.type == 'open_answer'"
           label="Shuffle options"
+          prepend-icon="mdi-shuffle"
+          class="mt-6 mb-0"
+        ></v-switch>
+
+        <v-switch
+          v-model="current.data.ignore_case"
+          :disabled="current.data.type != 'open_answer'"
+          label="Ignore case"
+          prepend-icon="mdi-case-sensitive-alt"
+          class="mt-0"
         ></v-switch>
 
       </v-container>
@@ -402,6 +412,7 @@
                   :is="unit_component(section.type)"
                   :code="section.code"
                   :shuffle="section.shuffle"
+                  :ignore_case="section.ignore_case"
                   ref="unit"
                 />
               </v-col>

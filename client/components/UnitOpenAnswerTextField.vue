@@ -22,6 +22,7 @@ export default {
     "value",
     "options",
     "shuffle", // bool: wether shuffle the options
+    "ignore_case", // bool: wether to ignore the case
     "once", // bool: if true, allow only one try
     "error-explanation", // string: message to display when picked answer is wrong 
     "readonly",
@@ -106,8 +107,13 @@ export default {
       /**
        * @returns: true | false | undefined
        */
+
+      const adapt_str = s => (
+        s && this.ignore_case
+      ) ? s.toLowerCase() : s
+
       const current_option = this.options.find(
-        e => e.value === this.answer
+        e => adapt_str(e.value) === adapt_str(this.answer)
       )
 
       if (this.options.every(o => o.right === true)) {

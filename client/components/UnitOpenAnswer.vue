@@ -14,6 +14,7 @@
               :options="token.options"
               :value="token.answer"
               :shuffle="shuffle"
+              :ignore_case="ignore_case"
               :error-explanation="token.errorExplanation"
               :readonly="readonly"
               ref="gap"
@@ -34,7 +35,7 @@
 <script>
 export default {
   name: 'UnitOpenAnswer',
-  props: [ 'code', 'shuffle', 'solved', 'readonly', 'silent' ],
+  props: [ 'code', 'shuffle', 'solved', 'readonly', 'silent', 'ignore_case' ],
   data: () => ({
     score_awarded: 0
   }),
