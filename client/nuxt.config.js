@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import testu_locales from './i18n/testu_locales.js'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -53,25 +54,11 @@ export default {
 
   i18n: {
     defaultLocale: 'en',
-    locales: [
-      'en',
-      'eo',
-    ],
+    langDir: 'i18n/',
+    locales: testu_locales.locales,
+    lazy: true,
     vueI18n: {
-      detectBrowserLanguage: true,
       fallbackLocale: 'en',
-      messages: {
-        en: {
-          'langs.en': 'English',
-          'langs.eo': 'Esperanto',
-          'home.search_exercise': 'Search exercise',
-        },
-        eo: {
-          'langs.en': 'Angla',
-          'langs.eo': 'Esperanto',
-          'home.search_exercise': 'Serĉu ekzercon',
-        },
-      }
     }
   },
 
