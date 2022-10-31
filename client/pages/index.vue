@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12" md="7">
         <v-text-field
-          label="Search exercise"
+          :label="$t('home.search_exercise')"
           append-icon="mdi-magnify"
           v-model="search.text"
           @keyup.enter="update_filtered_exercises"

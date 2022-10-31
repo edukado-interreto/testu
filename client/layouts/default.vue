@@ -29,7 +29,7 @@
             class="text-none px-1 mr-1"
           >
             <v-icon class="mr-1">mdi-translate</v-icon>
-            en
+            {{ $i18n.locale }}
             <v-icon class="ml-1">mdi-chevron-down</v-icon>
           </v-btn>
         </template>
@@ -38,9 +38,15 @@
           <v-subheader
             class="text--primary font-weight-black text-uppercase"
           >Interface language</v-subheader>
-          <v-list-item @click="" class="v-list-item--active">
+          <v-list-item
+            v-for="lang in $i18n.localeCodes"
+            nuxt
+            :to="switchLocalePath(lang)"
+            :class="{ 'v-list-item--active': lang == $i18n.locale }"
+            :key="lang"
+          >
             <v-list-item-content>
-              <v-list-item-title>English</v-list-item-title>
+              <v-list-item-title>{{ $t(`langs.${lang}`) }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           <!--
