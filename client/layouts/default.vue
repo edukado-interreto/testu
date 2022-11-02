@@ -37,7 +37,7 @@
         <v-list dense rounded>
           <v-subheader
             class="text--primary font-weight-black text-uppercase"
-          >Interface language</v-subheader>
+          >{{ $t("main.lang_menu_header") }}</v-subheader>
           <v-list-item
             v-for="lang in $i18n.localeCodes"
             nuxt
@@ -79,13 +79,13 @@
           text
           nuxt
           to="/login"
-        >Log in</v-btn>
+        >{{ $t("main.login") }}</v-btn>
         <v-btn
           class="text-none amber"
           text
           nuxt
           to="/signup"
-        >Sign up</v-btn>
+        >{{ $t("main.signup") }}</v-btn>
       </div>
 
       <v-menu
@@ -131,7 +131,7 @@
               <v-icon>mdi-cog</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>Account settings</v-list-item-title>
+              <v-list-item-title>{{$t("main.settings")}}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -142,7 +142,7 @@
               <v-icon>mdi-logout</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>Logout</v-list-item-title>
+              <v-list-item-title>{{ $t("main.logout") }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -173,7 +173,7 @@
             <v-icon>mdi-home</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Home</v-list-item-title>
+            <v-list-item-title>{{$t("main.home")}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -188,7 +188,7 @@
             <v-icon>mdi-chart-bar</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>My learning</v-list-item-title>
+            <v-list-item-title>{{$t("main.my_learning")}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -202,7 +202,7 @@
             <v-icon>mdi-briefcase</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>My teaching</v-list-item-title>
+            <v-list-item-title>{{$t("main.my_teaching")}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -217,7 +217,7 @@
             <v-icon>mdi-information</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>About</v-list-item-title>
+            <v-list-item-title>{{$t("main.about")}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -235,11 +235,11 @@
       <v-spacer></v-spacer>
       <div>
         <NuxtLink to="/terms" class="grey--text caption text-decoration-none font-weight-bold">
-          Terms of use
+         {{ $t("main.terms") }}
         </NuxtLink>
         <span class="caption mx-1">·</span>
         <NuxtLink to="/privacy" class="caption text-decoration-none font-weight-bold">
-          Privacy policy
+         {{ $t("main.privacy") }}
         </NuxtLink>
       </div>
     </v-footer>

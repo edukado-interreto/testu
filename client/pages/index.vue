@@ -30,7 +30,7 @@
     <v-row>
       <v-col cols="12" md="3">
         <v-autocomplete
-          label="Language"
+          :label="$t('exercise.language')"
           dense
           outlined
           hide-details
@@ -106,7 +106,7 @@
         large
         text
         to="/editor"
-      ><v-icon class="mr-1">mdi-plus</v-icon>Create a new exercise</v-btn>
+      ><v-icon class="mr-1">mdi-plus</v-icon> {{$t("home.create_exercise")}}</v-btn>
 
       <v-data-iterator
         class="mt-5"
