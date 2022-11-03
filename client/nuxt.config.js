@@ -1,5 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 import testu_locales from './i18n/testu_locales.js'
+import vuetify_locales from './i18n/vuetify_locales.js'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -34,6 +35,7 @@ export default {
   plugins: [
     { src: '~/plugins/canvas-confetti.js', mode: 'client' },
     { src: '~/plugins/vue-auth-jwt.js', mode: 'client' },
+    { src: '~/plugins/i18n.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -81,6 +83,10 @@ export default {
           success: colors.lightGreen.darken2
         }
       }
+    },
+    lang: {
+      locales: vuetify_locales,
+      current: 'en',
     }
   },
 

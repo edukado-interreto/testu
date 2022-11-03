@@ -268,6 +268,10 @@ export default {
     } catch {
       console.error('this.$auth.user raised an exception')
     }
+
+    // set the initial value for the vuetify language.
+    this.$vuetify.lang.current = this.$i18n.locale;
+
   },
   computed: {
     logged_in() {

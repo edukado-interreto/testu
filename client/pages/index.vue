@@ -105,7 +105,8 @@
         class="primary--text mt-3"
         large
         text
-        to="/editor"
+        :to="localePath('/editor')"
+        nuxt
       ><v-icon class="mr-1">mdi-plus</v-icon> {{$t("home.create_exercise")}}</v-btn>
 
       <v-data-iterator
