@@ -10,23 +10,23 @@
       >
         <v-text-field
           v-model="email"
-          label="E-mail"
+          :label="$t('login.email')"
           prepend-icon="mdi-account"
-          :rules="[ v => /.+@.+\..+/.test(v) || 'E-mail must be valid' ]"
+          :rules="[ v => /.+@.+\..+/.test(v) || $t('login.mail_invalid') ]"
           required
         ></v-text-field>
         <v-text-field
           v-model="password"
-          label="Password"
+          :label="$t('login.password')"
           type="password"
           prepend-icon="mdi-lock"
-          :rules="[ v => v !== '' || 'Required field' ]"
+          :rules="[ v => v !== '' || $t('login.required_field') ]"
           required
         ></v-text-field>
         <v-btn
           type="submit"
           class="primary mt-2"
-        >Login</v-btn>
+        >{{ $t('login.login') }}</v-btn>
         <v-alert
           class="mt-2"
           type="error"
@@ -50,7 +50,7 @@
     name: 'Login',
     head() {
       return {
-        title: 'Login'
+        title: this.$t('login.page_title')
       }
     },
     methods: {

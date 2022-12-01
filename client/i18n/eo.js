@@ -20,6 +20,14 @@ export default {
     search_exercise: 'Serĉu ekzercon',
     create_exercise: 'Krei novan ekzercon',
   },
+  login: {
+    page_title: 'Ensaluto',
+    email: 'Retpoŝtadreso',
+    password: 'Pasvorto',
+    mail_invalid: 'La retpoŝtadreso devas esti valida',
+    required_field: 'Tiu ĉi kampo estas deviga',
+    login: 'Ensaluti',
+  },
   exercise: {
     language: 'Lingvo',
   },

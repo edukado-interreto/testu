@@ -78,13 +78,13 @@
           class="mr-1 text-none grey lighten-4"
           text
           nuxt
-          to="/login"
+          :to="localePath('/login')"
         >{{ $t("main.login") }}</v-btn>
         <v-btn
           class="text-none amber"
           text
           nuxt
-          to="/signup"
+          :to="localePath('/signup')"
         >{{ $t("main.signup") }}</v-btn>
       </div>
 
@@ -234,11 +234,11 @@
     >
       <v-spacer></v-spacer>
       <div>
-        <NuxtLink to="/terms" class="grey--text caption text-decoration-none font-weight-bold">
+        <NuxtLink :to="localePath('/terms')" class="grey--text caption text-decoration-none font-weight-bold">
          {{ $t("main.terms") }}
         </NuxtLink>
         <span class="caption mx-1">·</span>
-        <NuxtLink to="/privacy" class="caption text-decoration-none font-weight-bold">
+        <NuxtLink :to="localePath('/privacy')" class="caption text-decoration-none font-weight-bold">
          {{ $t("main.privacy") }}
         </NuxtLink>
       </div>

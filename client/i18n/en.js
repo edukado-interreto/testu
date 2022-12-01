@@ -20,6 +20,14 @@ export default {
     search_exercise: 'Search exercise',
     create_exercise: 'Create a new exercise',
   },
+  login: {
+    page_title: 'Login',
+    email: 'E-mail',
+    password: 'Password',
+    mail_invalid: 'E-mail must be valid',
+    required_field: 'Required field',
+    login: 'Login',
+  },
   exercise: {
     language: 'Language',
   },
