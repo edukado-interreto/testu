@@ -22,9 +22,9 @@
               <div
                 class="pa-1 mr-7"
               >
-                <UnitPairingContent
+                <RichContent
                   :text="pair[0]"
-                ></UnitPairingContent>
+                ></RichContent>
               </div>
               <v-icon
                 class="pa-2"
@@ -67,9 +67,9 @@
             <div
               class="pa-1 mr-7"
             >
-              <UnitPairingContent
+              <RichContent
                 :text="pair[1]"
-              ></UnitPairingContent>
+              ></RichContent>
             </div>
             <v-icon
               class="pa-2"
@@ -109,9 +109,9 @@
           <div
             class="pa-1"
           >
-            <UnitPairingContent
+            <RichContent
               :text="parsed[i][1]"
-            ></UnitPairingContent>
+            ></RichContent>
           </div>
         </v-sheet>
         <div

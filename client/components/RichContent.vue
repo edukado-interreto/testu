@@ -12,11 +12,11 @@
           <v-icon small>mdi-alert-outline</v-icon>
           <i>Invalid image: {{ t.content }}</i>
         </div>
-        <UnitPairingImage
+        <RichContentImage
           v-else
           :src="t.src"
           :content="t.content"
-        ></UnitPairingImage>
+        ></RichContentImage>
       </template>
 
       <template
@@ -44,11 +44,11 @@
           <v-icon small>mdi-alert-outline</v-icon>
           <i>Invalid audio: {{ t.content }}</i>
         </div>
-        <UnitPairingSound
+        <RichContentSound
           v-else
           :src="t.src"
           :content="t.content"
-        ></UnitPairingSound>
+        ></RichContentSound>
       </template>
 
     </template>
@@ -56,7 +56,7 @@
 </template>
 <script>
 export default {
-  name: 'UnitPairingContent.vue',
+  name: 'RichContent',
   props: ['text'],
   computed: {
     tokens() {

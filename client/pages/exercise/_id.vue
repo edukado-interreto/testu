@@ -97,7 +97,12 @@
       <div
         v-if="section.description"
         class="body-2 mb-4 pre-line"
-      >{{ section.description }}</div>
+      >
+        <RichContent
+          :text="section.description"
+        >
+        </RichContent>
+      </div>
       <component
         :is="unit_component(section.type)"
         :code="section.code"
