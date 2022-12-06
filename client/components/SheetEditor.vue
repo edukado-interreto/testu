@@ -114,7 +114,41 @@
           auto-grow
           label="Description"
           outlined
-        ></v-textarea>
+        >
+          <template v-slot:append>
+            <v-menu offset-y>
+              <template v-slot:activator="{on, attrs}">
+                <v-icon v-bind="attrs" v-on="on">mdi-dots-vertical</v-icon>
+              </template>
+              <v-list>
+                <v-list-item>
+                  <v-list-item-icon>
+                    <v-icon>mdi-image</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>
+                    Insert image
+                  </v-list-item-title>
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-icon>
+                    <v-icon>mdi-volume-high</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>
+                    Insert sound
+                  </v-list-item-title>
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-icon>
+                    <v-icon>mdi-movie</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>
+                    Insert video
+                  </v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </template>
+        </v-textarea>
         <v-toolbar
           dense
           flat
