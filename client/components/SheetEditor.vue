@@ -110,34 +110,54 @@
         ></v-text-field>
         <v-textarea
           v-model="current.data.description"
+          ref="unit_description"
           rows="1"
           auto-grow
           label="Description"
           outlined
+          :loading="description_loading"
         >
           <template v-slot:append>
             <v-menu offset-y>
               <template v-slot:activator="{on, attrs}">
-                <v-icon v-bind="attrs" v-on="on">mdi-dots-vertical</v-icon>
+                <v-icon v-bind="attrs" v-on="on" :disabled="description_loading">mdi-dots-vertical</v-icon>
               </template>
               <v-list>
-                <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon>mdi-image</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-title>
-                    Insert image
-                  </v-list-item-title>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon>mdi-volume-high</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-title>
-                    Insert sound
-                  </v-list-item-title>
-                </v-list-item>
-                <v-list-item>
+                <InsertMedia
+                  v-slot="s"
+                  type="image"
+                  @load_start="description_loading = true"
+                  @load_end="description_loading = false"
+                  :input_el="$refs.unit_description ? [ $refs.unit_description.$refs, 'input' ] : null"
+                  :model="current ? [ current.data, 'description' ] : null"
+                >
+                  <v-list-item @click="s.click">
+                    <v-list-item-icon>
+                      <v-icon>mdi-image</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>
+                      Insert image
+                    </v-list-item-title>
+                  </v-list-item>
+                </InsertMedia>
+                <InsertMedia
+                  v-slot="s"
+                  type="audio"
+                  @load_start="description_loading = true"
+                  @load_end="description_loading = false"
+                  :input_el="$refs.unit_description ? [ $refs.unit_description.$refs, 'input' ] : null"
+                  :model="current ? [ current.data, 'description' ] : null"
+                >
+                  <v-list-item @click="s.click">
+                    <v-list-item-icon>
+                      <v-icon>mdi-volume-high</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>
+                      Insert sound
+                    </v-list-item-title>
+                  </v-list-item>
+                </InsertMedia>
+                <v-list-item v-if="false">
                   <v-list-item-icon>
                     <v-icon>mdi-movie</v-icon>
                   </v-list-item-icon>
@@ -515,6 +535,8 @@ export default {
 
     insert_video_dialog: false,
     insert_video_url: '',
+
+    description_loading: false,
 
     image_uploading: false,
     audio_uploading: false,

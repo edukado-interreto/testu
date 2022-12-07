@@ -65,15 +65,20 @@ export default {
       // current cursor position, move the cursor
       // after the snippet and focus the textarea
 
-      console.log("input_el:", this.input_el[0])
-
       const input = this.input_el[0][this.input_el[1]]
+      const code = this.model[0][this.model[1]] || ""
+
+      console.log("content:", code)
+      //console.log("input_el:", this.input_el[0][this.input_el[1]])
+
       const start = input.selectionStart
-      const code = this.model[0][this.model[1]]
-      this.model[0][this.model[1]] = code.slice(
-        0, input.selectionStart
-      ) + snippet + code.slice(
-        input.selectionEnd
+
+      //this.model[0][this.model[1]] = code.slice(
+      this.$set(this.model[0], this.model[1], code.slice(
+          0, input.selectionStart
+        ) + snippet + code.slice(
+          input.selectionEnd
+        )
       )
       requestAnimationFrame(() => {
         input.selectionStart = start + snippet.length
