@@ -237,51 +237,55 @@
 
           <v-divider vertical inset class="mx-2"></v-divider>
 
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                v-bind="attrs"
-                v-on="on"
-                icon
-                @click="$refs.image_uploader.click()"
-                :disabled="current.data.type != 'pairing'"
-                :loading="image_uploading"
-              >
-                <v-icon>mdi-image</v-icon>
-              </v-btn>
-            </template>
-            <span>Insert image</span>
-          </v-tooltip>
-          <input
-            type="file"
-            class="d-none"
-            ref="image_uploader"
-            @change="image_uploader_onchange"
-            accept="image/*"
+          <InsertMedia
+            v-slot="s"
+            type="image"
+            @load_start="image_uploading = true"
+            @load_end="image_uploading = false"
+            :input_el="$refs.textarea ? [ $refs.textarea.$refs, 'input' ] : null"
+            :model="[ this.current.data, 'code' ]"
           >
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  v-bind="attrs"
+                  v-on="on"
+                  icon
+                  @click="s.click"
+                  :disabled="current.data.type != 'pairing'"
+                  :loading="image_uploading"
+                >
+                  <v-icon>mdi-image</v-icon>
+                </v-btn>
+              </template>
+              <span>Insert image</span>
+            </v-tooltip>
+          </InsertMedia>
 
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                v-bind="attrs"
-                v-on="on"
-                icon
-                @click="$refs.audio_uploader.click()"
-                :disabled="current.data.type != 'pairing'"
-                :loading="audio_uploading"
-              >
-                <v-icon>mdi-volume-high</v-icon>
-              </v-btn>
-            </template>
-            <span>Insert sound</span>
-          </v-tooltip>
-          <input
-            type="file"
-            class="d-none"
-            ref="audio_uploader"
-            @change="audio_uploader_onchange"
-            accept="audio/*"
+          <InsertMedia
+            v-slot="s"
+            type="audio"
+            @load_start="audio_uploading = true"
+            @load_end="audio_uploading = false"
+            :input_el="$refs.textarea ? [ $refs.textarea.$refs, 'input' ] : null"
+            :model="[ this.current.data, 'code' ]"
           >
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  v-bind="attrs"
+                  v-on="on"
+                  icon
+                  @click="s.click"
+                  :disabled="current.data.type != 'pairing'"
+                  :loading="audio_uploading"
+                >
+                  <v-icon>mdi-volume-high</v-icon>
+                </v-btn>
+              </template>
+              <span>Insert sound</span>
+            </v-tooltip>
+          </InsertMedia>
 
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">

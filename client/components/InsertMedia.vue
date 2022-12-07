@@ -1,0 +1,86 @@
+<template>
+  <form ref="form">
+    <input
+      type="file"
+      ref="uploader"
+      @change="change"
+      :accept="`${type}/*`"
+      class="d-none"
+    />
+    <slot :click="click"></slot>
+  </form>
+</template>
+<script>
+export default {
+  props: [ 'type', 'input_el', 'model' ],
+  computed: {
+    snippet_prefix() {
+      if (this.type === 'audio') return 'sound'
+      if (this.type === 'image') return 'img'
+      throw `InsertMedia: type must be 'audio' or 'image', was: '${this.type}'`
+    }
+  },
+  methods: {
+    click() {
+      this.$refs.uploader.click()
+    },
+    async change(e) {
+
+      const file = e.target.files[0]
+      if (!file) return // canceled by user
+
+      this.$emit("load_start")
+
+      const formData = new FormData()
+      formData.append("file", file)
+      formData.append("type", this.type)
+
+      const resp = await fetch('/api/v1/upload/', {
+        method: 'post',
+        body: formData
+      })
+
+      let resp_json = null
+      let error = null
+      try {
+        resp_json = await resp.json()
+        error = resp_json.error
+      } catch(e) {
+        error = "Unexpected server response"
+      } finally {
+        this.$emit("load_end")
+      }
+      if (resp.status >= 400) {
+        alert(error)
+        return
+      }
+
+      this.inject_snippet(
+        `{${this.snippet_prefix}:${resp_json.name}}`
+      )
+      this.$refs.form.reset()
+    },
+    inject_snippet(snippet) {
+      // insert in the current code a snippet at the
+      // current cursor position, move the cursor
+      // after the snippet and focus the textarea
+
+      console.log("input_el:", this.input_el[0])
+
+      const input = this.input_el[0][this.input_el[1]]
+      const start = input.selectionStart
+      const code = this.model[0][this.model[1]]
+      this.model[0][this.model[1]] = code.slice(
+        0, input.selectionStart
+      ) + snippet + code.slice(
+        input.selectionEnd
+      )
+      requestAnimationFrame(() => {
+        input.selectionStart = start + snippet.length
+        input.selectionEnd   = start + snippet.length
+        input.focus()
+      })
+    }
+  }
+}
+</script>
