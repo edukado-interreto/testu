@@ -1,19 +1,38 @@
 <template>
   <v-container>
-    <v-data-iterator
-      class="mt-5"
-      :items="filtered_exercises"
-      :items-per-page="15"
-    >
-      <template v-slot:default="props">
-        <ExerciseListItem
-          v-for="item in props.items"
-          :item="item"
-          :key="item.id"
+    <v-tabs v-model="tab">
+      <v-tab>Exercises</v-tab>
+      <v-tab>Exams</v-tab>
+    </v-tabs>
+
+    <v-tabs-items v-model="tab" class="pa-1 mt-5">
+      <!-- exercises -->
+      <v-tab-item>
+        <v-data-iterator
+          class="mt-5"
+          :items="filtered_exercises"
+          :items-per-page="15"
         >
-        </ExerciseListItem>
-      </template>
-    </v-data-iterator>
+          <template v-slot:default="props">
+            <ExerciseListItem
+              v-for="item in props.items"
+              :item="item"
+              :key="item.id"
+            >
+            </ExerciseListItem>
+          </template>
+        </v-data-iterator>
+      </v-tab-item>
+
+      <!-- exams -->
+      <v-tab-item>
+        <v-card :to="localePath(`/review/0`)">
+          <v-card-title>
+            Exams list item
+          </v-card-title>
+        </v-card>
+      </v-tab-item>
+    </v-tabs-items>
   </v-container>
 </template>
 <script>
@@ -32,6 +51,7 @@ export default {
   ],
   data: () => ({
     exercises: [],
+    tab: 0,
   }),
   computed: {
     current_username() {
