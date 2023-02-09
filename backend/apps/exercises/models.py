@@ -18,7 +18,9 @@ class Tag(TimeStampedModel):
 class Exercise(TimeStampedModel):
     CEFR = CEFR
 
-    lid = models.CharField("lid", max_length=8, default=long_id, blank=True)
+    lid = models.CharField(
+        "lid", unique=True, max_length=8, default=long_id, blank=True
+    )
     name = models.CharField("name", max_length=100)
     description = models.TextField("description", blank=True)
     created_by = models.ForeignKey(
