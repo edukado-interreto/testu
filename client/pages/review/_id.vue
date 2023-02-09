@@ -30,7 +30,7 @@
         >
         </v-switch>
       </v-col>
-      <v-col cols="auto">
+      <v-col cols="auto" class="text-caption">
         Created: {{ exam.created.toLocaleString('en-US') }}
       </v-col>
     </v-row>
@@ -59,20 +59,18 @@
       </v-col>
     </v-row>
 
-    <p>
-      {{ current_submission.author.display_name }}
+    <p class="text-caption">
+      Right answers:
+      <v-progress-circular
+        :value="current_submission.score*100"
+        :rotate="270"
+        :size="25"
+        :width="6"
+        color="primary"
+      >
+      </v-progress-circular>
+      {{ current_submission.score * 100 }}%
     </p>
-    <v-progress-circular
-      :value="current_submission.score*100"
-      :rotate="270"
-      :size="50"
-      :width="6"
-      color="teal"
-    >
-      <span class="text-caption">
-        {{ current_submission.score * 100 }}%
-      </span>
-    </v-progress-circular>
 
   </v-container>
 </template>
@@ -102,6 +100,14 @@ export default {
           author: {
             display_name: 'Mario',
             user_id: null
+          },
+        },
+        {
+          submitted: new Date(2023, 1, 2, 9, 11, 13),
+          score: 0.5,
+          author: {
+            display_name: 'edoardo',
+            user_id: 'edoardo'
           },
         },
       ]
