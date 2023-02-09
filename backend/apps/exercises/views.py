@@ -1,6 +1,7 @@
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.viewsets import ModelViewSet
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse, Http404
+from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import Exercise
@@ -12,6 +13,16 @@ class ExerciseViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Exercise.objects.all()
     serializer_class = ExerciseSerializer
+    lookup_field = "lid"
+
+    def get_object(self):
+        try:
+            return super().get_object()
+        except Http404:
+            return get_object_or_404(
+                self.filter_queryset(self.get_queryset()),
+                pk=self.kwargs.get(self.lookup_field),
+            )
 
 
 @csrf_exempt  # TODO: ĉu eblas fari tion pli bone?
