@@ -21,6 +21,7 @@ class TagSerializer(serializers.ModelSerializer):
 class SheetSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, required=False)
     created_by = serializers.SlugRelatedField(read_only=True, slug_field="username")
+    url = serializers.URLField(source="get_absolute_url")
 
     class Meta:
         model = Sheet
@@ -43,6 +44,7 @@ class SheetSerializer(serializers.ModelSerializer):
             "age_max",
             "searchable",
             "tags",
+            "url",
         ]
 
     def create(self, validated_data):

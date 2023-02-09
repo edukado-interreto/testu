@@ -59,6 +59,9 @@ class Exercise(TimeStampedModel):
                 self.lid = long_id()
         return super().save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return f"/exercise/{self.lid}"
+
 
 class UploadedFile(TimeStampedModel):
     file_name = models.CharField("file_name", max_length=100, unique=True)
