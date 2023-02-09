@@ -1,6 +1,9 @@
 from django.contrib import admin
 
-from .models import Sheet, UploadedFile
+try:
+    from .models import Exercise as Sheet, UploadedFile
+except ImportError:
+    from .models import Sheet, UploadedFile
 
 
 @admin.register(Sheet)

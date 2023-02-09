@@ -14,7 +14,7 @@ class Tag(TimeStampedModel):
     name = models.CharField("name", max_length=100)
 
 
-class Sheet(TimeStampedModel):
+class Exercise(TimeStampedModel):
     CEFR = CEFR
 
     name = models.CharField("name", max_length=100)

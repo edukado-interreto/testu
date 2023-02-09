@@ -3,7 +3,10 @@ from rest_framework.viewsets import ModelViewSet
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import Sheet
+try:
+    from .models import Exercise as Sheet
+except ImportError:
+    from .models import Sheet
 from .serializers import SheetSerializer
 from .file_upload_functions import handle_uploaded_file, FileUploadException
 
@@ -31,7 +34,7 @@ def UploadView(request):
                     "id": uploaded_file["file"].instance.pk,
                     "name": uploaded_file["name"],
                     "url": uploaded_file["file"].url,
-                    "type": uploaded_file["file"].instance.file_type
+                    "type": uploaded_file["file"].instance.file_type,
                 }
             )
 

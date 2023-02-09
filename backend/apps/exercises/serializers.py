@@ -1,7 +1,10 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from .models import Sheet, Tag
+try:
+    from .models import Exercise as Sheet, Tag
+except ImportError:
+    from .models import Sheet, Tag
 
 User = get_user_model()
 
