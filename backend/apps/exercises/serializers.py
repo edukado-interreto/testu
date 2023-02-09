@@ -1,10 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-try:
-    from .models import Exercise as Sheet, Tag
-except ImportError:
-    from .models import Sheet, Tag
+from .models import Exercise, Tag
 
 User = get_user_model()
 
@@ -18,13 +15,13 @@ class TagSerializer(serializers.ModelSerializer):
         return super().create(validated_data)
 
 
-class SheetSerializer(serializers.ModelSerializer):
+class ExerciseSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, required=False)
     created_by = serializers.SlugRelatedField(read_only=True, slug_field="username")
     url = serializers.URLField(source="get_absolute_url")
 
     class Meta:
-        model = Sheet
+        model = Exercise
         fields = [
             "pk",
             "id",

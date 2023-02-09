@@ -1,13 +1,10 @@
 from django.contrib import admin
 
-try:
-    from .models import Exercise as Sheet, UploadedFile
-except ImportError:
-    from .models import Sheet, UploadedFile
+from .models import Exercise, UploadedFile
 
 
-@admin.register(Sheet)
-class SheetAdmin(admin.ModelAdmin):
+@admin.register(Exercise)
+class ExerciseAdmin(admin.ModelAdmin):
     list_display = ["__str__", "created_by", "created"]
 
 

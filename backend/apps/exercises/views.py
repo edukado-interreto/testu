@@ -3,18 +3,15 @@ from rest_framework.viewsets import ModelViewSet
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-try:
-    from .models import Exercise as Sheet
-except ImportError:
-    from .models import Sheet
-from .serializers import SheetSerializer
+from .models import Exercise
+from .serializers import ExerciseSerializer
 from .file_upload_functions import handle_uploaded_file, FileUploadException
 
 
-class SheetViewSet(ModelViewSet):
+class ExerciseViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
-    queryset = Sheet.objects.all()
-    serializer_class = SheetSerializer
+    queryset = Exercise.objects.all()
+    serializer_class = ExerciseSerializer
 
 
 @csrf_exempt  # TODO: ĉu eblas fari tion pli bone?

@@ -1,4 +1,4 @@
-from apps.exercises.views import SheetViewSet, UploadView
+from apps.exercises.views import ExerciseViewSet, UploadView
 from dj_rest_auth.registration.views import VerifyEmailView
 from django.contrib import admin
 from django.urls import include, path
@@ -12,7 +12,8 @@ from rest_framework_simplejwt.views import (
 )
 
 router = DefaultRouter()
-router.register("sheets", SheetViewSet)
+router.register("exercises", ExerciseViewSet)
+router.register("sheets", ExerciseViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
