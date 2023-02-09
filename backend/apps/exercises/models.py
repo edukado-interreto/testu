@@ -3,6 +3,7 @@ from django.db import models
 from django_extensions.db.models import TimeStampedModel
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
+from apps.core.utils import long_id
 
 User = get_user_model()
 
@@ -17,6 +18,7 @@ class Tag(TimeStampedModel):
 class Exercise(TimeStampedModel):
     CEFR = CEFR
 
+    lid = models.CharField("lid", max_length=8, default=long_id, blank=True)
     name = models.CharField("name", max_length=100)
     description = models.TextField("description", blank=True)
     created_by = models.ForeignKey(
@@ -43,8 +45,19 @@ class Exercise(TimeStampedModel):
     age_max = models.PositiveSmallIntegerField("maximum age", null=True, blank=True)
     searchable = models.BooleanField("searchable", default=True)
 
+    class Meta:
+        indexes = [
+            models.Index(fields=["lid"], name="exercise_lid_idx"),
+        ]
+
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if self._state.adding:
+            while self.__class__.objects.filter(lid=self.lid).exists():
+                self.lid = long_id()
+        return super().save(*args, **kwargs)
 
 
 class UploadedFile(TimeStampedModel):

@@ -25,7 +25,9 @@ class SheetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sheet
         fields = [
+            "pk",
             "id",
+            "lid",
             "created",
             "modified",
             "created_by",
