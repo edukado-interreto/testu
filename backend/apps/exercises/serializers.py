@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from .models import Exercise, Tag
+from .models import Exam, Exercise, Submission, Tag
 
 User = get_user_model()
 
@@ -47,4 +47,50 @@ class ExerciseSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = self.context["request"].user
         validated_data["created_by"] = user
+        return super().create(validated_data)
+
+
+class ExamSerializer(serializers.ModelSerializer):
+    created_by = serializers.SlugRelatedField(read_only=True, slug_field="username")
+    url = serializers.URLField(source="get_absolute_url")
+
+    class Meta:
+        model = Exam
+        fields = [
+            "pk",
+            "lid",
+            "created",
+            "modified",
+            "created_by",
+            "name",
+            "description",
+            "exercise",
+            "accept_submission",
+            "url",
+        ]
+
+    def create(self, validated_data):
+        user = self.context["request"].user
+        validated_data["created_by"] = user
+        return super().create(validated_data)
+
+
+class SubmissionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Submission
+        fields = [
+            "pk",
+            "created",
+            "modified",
+            "created_by",
+            "guest",
+            "exam",
+            "exercise",
+            "data",
+            "score",
+        ]
+
+    def create(self, validated_data):
+        if user := self.context["request"].user:
+            validated_data["created_by"] = user
         return super().create(validated_data)
