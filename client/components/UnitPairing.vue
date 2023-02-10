@@ -151,7 +151,10 @@ export default {
     load_drags_from_solved() {
       if (!this.solved) return
       if (!this.solved.drags) return
-      this.drags = [...this.solved.drags]
+      this.$nextTick(() => {
+        this.drags = [...this.solved.drags]
+        console.log("drags loaded from solved prop")
+      })
     },
     on_dragstart(e, src_row, src_col) {
       if (this.readonly === true) return
@@ -247,7 +250,6 @@ export default {
       this.overed = this.parsed.map(
         p => [false, false]
       )
-
     },
     get_solved() {
       // pack 'parsed' and 'drags' in one object

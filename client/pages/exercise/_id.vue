@@ -120,14 +120,45 @@
       class="mt-9 primary"
       :disabled="submitted"
     >Check results</v-btn>
-    <!--
-    <component
-      :is="unit_component('open_answer')"
-      :solved="solved_test"
-      :readonly="false"
-      :shuffle="true"
-    />
-    -->
+    
+
+    <div
+      v-for="(c, i) in submission"
+    >
+      <!-- this is not working, hence the long list:
+      <component
+        :key="i"
+        :is="unit_component('c.type')"
+        :solved="c.solved"
+        :readonly="true"
+      />
+      -->
+      <UnitMultipleChoice
+        v-if="c.type == 'multiple_choice'"
+        :key="i"
+        :solved="c.solved"
+        :readonly="true"
+      ></UnitMultipleChoice>
+      <UnitPairing
+        v-if="c.type == 'pairing'"
+        :key="i"
+        :solved="c.solved"
+        :readonly="true"
+      ></UnitPairing>
+      <UnitDefault
+        v-if="c.type == 'default'"
+        :key="i"
+        :solved="c.solved"
+        :readonly="true"
+      ></UnitDefault>
+      <UnitOpenAnswer
+        v-if="c.type == 'open_answer'"
+        :key="i"
+        :solved="c.solved"
+        :readonly="true"
+      ></UnitOpenAnswer>
+    </div>
+
     </v-sheet>
   </v-container>
 </template>
@@ -143,6 +174,8 @@ export default {
     unit_component,
   ],
   data: () => ({
+    solved_test: {},
+    submission: [],
     all_readonly: false,
     all_silent: true,
     submitted: false,
@@ -194,7 +227,14 @@ export default {
     },
     submit() {
       // show the results of the quiz
+
       //this.solved_test = this.$refs.unit[0].get_solved()
+      //console.log(this.exercise.data.sheet[0].type)
+
+      this.submission = this.exercise.data.sheet.map((e, i) => ({
+        type: e.type,
+        solved: JSON.parse(JSON.stringify(this.$refs.unit[i].get_solved()))
+      }))
 
       this.submitted = true
       window.scrollTo({ top:0, behavior: 'smooth'})
