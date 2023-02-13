@@ -86,29 +86,29 @@
     </v-sheet>
 
     <v-sheet
-      v-for="(section, i) in exercise.data.sheet"
-      :key="section._key"
+      v-for="(unit, i) in exercise.data.sheet"
+      :key="unit._key"
     >
       <div class="headline my-4"> 
-        {{ i+1 }}. {{ section.title }}
-        <span v-if="section.title === ''" class="font-italic">
+        {{ i+1 }}. {{ unit.title }}
+        <span v-if="unit.title === ''" class="font-italic">
           Untitled unit
         </span>
       </div>
       <div
-        v-if="section.description"
+        v-if="unit.description"
         class="body-2 mb-4 pre-line"
       >
         <RichContent
-          :text="section.description"
+          :text="unit.description"
         >
         </RichContent>
       </div>
       <component
-        :is="unit_component(section.type)"
-        :code="section.code"
-        :shuffle="section.shuffle"
-        :ignore_case="section.ignore_case"
+        :is="unit_component(unit.type)"
+        :code="unit.code"
+        :shuffle="unit.shuffle"
+        :ignore_case="unit.ignore_case"
         :silent="all_silent"
         :readonly="all_readonly"
         ref="unit"
@@ -121,43 +121,62 @@
       :disabled="submitted"
     >Check results</v-btn>
     
-
-    <div
-      v-for="(c, i) in submission"
+    <v-sheet
+      v-for="(unit, i) in submission.exercise?.data?.sheet"
+      :key="`submitted_${unit._key}`"
     >
-      <!-- this is not working, hence the long list:
+      <div class="headline my-4"> 
+        {{ i+1 }}. {{ unit.title }}
+        <span v-if="unit.title === ''" class="font-italic">
+          Untitled unit
+        </span>
+      </div>
+      <div
+        v-if="unit.description"
+        class="body-2 mb-4 pre-line"
+      >
+        <RichContent
+          :text="unit.description"
+        >
+        </RichContent>
+      </div>
+      <!--
       <component
-        :key="i"
-        :is="unit_component('c.type')"
-        :solved="c.solved"
-        :readonly="true"
+        :is="unit_component(unit.type)"
+        :code="unit.code"
+        :shuffle="unit.shuffle"
+        :ignore_case="unit.ignore_case"
+        :silent="all_silent"
+        :readonly="all_readonly"
+        ref="unit"
       />
       -->
       <UnitMultipleChoice
-        v-if="c.type == 'multiple_choice'"
+        v-if="unit.type == 'multiple_choice'"
         :key="i"
-        :solved="c.solved"
+        :solved="unit.solved"
         :readonly="true"
       ></UnitMultipleChoice>
       <UnitPairing
-        v-if="c.type == 'pairing'"
+        v-if="unit.type == 'pairing'"
         :key="i"
-        :solved="c.solved"
+        :solved="unit.solved"
         :readonly="true"
       ></UnitPairing>
       <UnitDefault
-        v-if="c.type == 'default'"
+        v-if="unit.type == 'default'"
         :key="i"
-        :solved="c.solved"
+        :solved="unit.solved"
         :readonly="true"
       ></UnitDefault>
       <UnitOpenAnswer
-        v-if="c.type == 'open_answer'"
+        v-if="unit.type == 'open_answer'"
         :key="i"
-        :solved="c.solved"
+        :solved="unit.solved"
         :readonly="true"
+        :ignore_case="unit.ignore_case"
       ></UnitOpenAnswer>
-    </div>
+    </v-sheet>
 
     </v-sheet>
   </v-container>
@@ -174,8 +193,7 @@ export default {
     unit_component,
   ],
   data: () => ({
-    solved_test: {},
-    submission: [],
+    submission: {},
     all_readonly: false,
     all_silent: true,
     submitted: false,
@@ -225,16 +243,35 @@ export default {
         await this.$refs.msgbox.alert(`Error ${e.response.status}`)
       }
     },
+    create_submission() {
+      // create the submission object to be sent to the server
+
+      const submission = {}
+
+      const username = this.$store.getters['authenticator/authUser'].username
+      if (username) {
+        submission.created_by_user = username
+      } else {
+        submission.created_by_guest = 'x' // TODO: display name
+      }
+
+      submission.created = new Date()
+      submission.exercise = { ...this.exercise }
+      submission.exercise.data.sheet = this.exercise.data.sheet.map(
+        (unit, i) => ({
+          ...unit,
+          solved: this.$refs.unit[i].get_solved()
+        })
+      )
+
+      return submission
+    },
     submit() {
       // show the results of the quiz
 
-      //this.solved_test = this.$refs.unit[0].get_solved()
-      //console.log(this.exercise.data.sheet[0].type)
-
-      this.submission = this.exercise.data.sheet.map((e, i) => ({
-        type: e.type,
-        solved: JSON.parse(JSON.stringify(this.$refs.unit[i].get_solved()))
-      }))
+      // TODO: submit only if logged user or exam
+      this.submission = this.create_submission()
+      // send to the server...
 
       this.submitted = true
       window.scrollTo({ top:0, behavior: 'smooth'})
