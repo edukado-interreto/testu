@@ -162,9 +162,9 @@ export default {
   },
   methods: {
     async load_exercise(id) {
-      const exercise = await (
-        await fetch(`/api/v1/sheets/${id}/`)
-      ).json()
+      const exercise = (
+        await this.$auth.axios.get(`/v1/sheets/${id}/`)
+      ).data
       this.sheet = exercise.data.sheet
       this.details.title = exercise.name
       this.details.description = exercise.description
@@ -231,38 +231,29 @@ export default {
       // contains an exercise id, or a POST request if
       // creating a new one otherwise
       const api = {
-        path: '/api/v1/sheets/',
+        path: '/v1/sheets/',
         method: 'POST'
       }
       if (this.overwrite_id !== undefined) {
-        api.path = `/api/v1/sheets/${this.overwrite_id}/`
+        api.path = `/v1/sheets/${this.overwrite_id}/`
         api.method = 'PUT'
       }
 
-      const ret = await fetch(api.path, {
-        method: api.method,
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      })
-      
-      console.log(ret);
-
-      let ret_json;
       try {
-        ret_json = await ret.json();
-      } catch {
+        const ret = await this.$auth.axios({
+          url: api.path,
+          method: api.method,
+          data: payload,
+        })
+        console.log(ret.data)
+        this.$router.push(`/exercise/${ret.data.id}`)
+      } catch(e) {
+        console.error({...e});
+        if (e.response.status >= 400) {
+          alert(`Server error (${e.response.status})`)
+        }
       }
 
-      if (ret.status >= 400) {
-        console.error({ ret, ret_json })
-        alert(`Error ${ret.status}. ${ret_json}`)
-        return
-      }
-
-      console.log(ret_json)
-      this.$router.push(`/exercise/${ret_json.id}`)
     }
   },
   mounted: async function() {
