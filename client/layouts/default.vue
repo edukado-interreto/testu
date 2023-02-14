@@ -265,8 +265,9 @@ export default {
     await this.$store.dispatch("authenticator/CHECK_TOKENS");
     try {
       await this.$auth.user(true)
-    } catch {
+    } catch(e) {
       console.error('this.$auth.user raised an exception')
+      throw e
     }
 
     // set the initial value for the vuetify language.
