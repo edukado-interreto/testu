@@ -35,28 +35,21 @@ export default {
       formData.append("file", file)
       formData.append("type", this.type)
 
-      const resp = await fetch('/api/v1/upload/', {
-        method: 'post',
-        body: formData
-      })
+      let resp = undefined
 
-      let resp_json = null
-      let error = null
       try {
-        resp_json = await resp.json()
-        error = resp_json.error
+        resp = await this.$auth.axios.post('/v1/upload/', formData)
       } catch(e) {
-        error = "Unexpected server response"
+        console.error({...e})
+        alert(e.response.data.error || "Unexpected server response")
       } finally {
         this.$emit("load_end")
       }
-      if (resp.status >= 400) {
-        alert(error)
-        return
-      }
+
+      if (!resp) return
 
       this.inject_snippet(
-        `{${this.snippet_prefix}:${resp_json.name}}`
+        `{${this.snippet_prefix}:${resp.data.name}}`
       )
       this.$refs.form.reset()
     },
