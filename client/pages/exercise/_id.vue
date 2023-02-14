@@ -146,17 +146,14 @@ export default {
     all_silent: true,
     submitted: false,
   }),
-  async asyncData({ route, params }) {
-
+  async asyncData({ route, params, $auth }) {
     const id = (process.server) ? route.params.id : params.id;
     let exercise;
-
     if (id) {
-      exercise = await (
-        await fetch(`/api/v1/sheets/${id}/`)
-      ).json()
+      exercise = (
+        await $auth.axios.get(`/v1/sheets/${id}/`)
+      ).data
     }
-
     return {
       id,
       exercise
@@ -186,15 +183,13 @@ export default {
         'Are you sure you want to delete this exercise?'
       )) return;
 
-      const resp = await fetch(`/api/v1/sheets/${this.id}`, {
-        method: 'DELETE'
-      })
-      if (resp.status >= 400) {
-        console.error(resp)
-        alert(`Error ${resp.status}`)
-        return
+      try {
+        await this.$auth.axios.delete(`/v1/sheets/${this.id}`)
+        this.$router.push('/')
+      } catch(e) {
+        console.error(e)
+        alert(`Error ${e.response.status}`)
       }
-      this.$router.push('/')
     },
     submit() {
       // show the results of the quiz

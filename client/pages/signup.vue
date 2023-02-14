@@ -52,11 +52,15 @@
           class="primary mt-2"
         >Sign up</v-btn>
         <v-alert
-          class="mt-2"
+          class="mt-2 alert-pre-line"
           type="error"
-          v-show="!!error_message"
+          v-show="error_messages.length > 0"
         >
-          {{ error_message }}
+          <ul style="list-style: none; padding: 0;">
+            <li
+              v-for="(error, i) in error_messages"
+            >{{ error }}</li>
+          </ul>
         </v-alert>
       </v-form>
 
@@ -77,7 +81,7 @@
       password: '',
       valid: undefined,
       submitted: false,
-      error_message: '',
+      error_messages: [],
     }),
     name: 'Signup',
     head() {
@@ -87,39 +91,26 @@
     },
     methods: {
       async register_new_user() {
-        if (!this.validate()) return;
-        const ret = await fetch('/api/auth/register/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
+        if (!this.validate()) return
+
+        this.error_messages = []
+
+        try {
+          const ret = await this.$auth.axios.post('/auth/register/', {
             username: this.username,
             email: this.email,
             password1: this.password,
             password2: this.password,
           })
-        })
-
-        let ret_json;
-        try {
-          ret_json = await ret.json();
-        } catch {
+          this.submitted = true
+        } catch(e) {
+          if (e.response.status == 400) {
+            this.error_messages = Object.values(e.response.data).flat()
+            return
+          }
+          this.error_messages = [ `Server error (${e.response.status})` ]
+          console.error({...e})
         }
-
-        console.error({ ret, ret_json })
-
-        if (ret.status == 400) {
-          this.error_message = Object.values(ret_json).flat().join(" ")
-          return
-        }
-        if (ret.status > 400) {
-          this.error_message = `Error ${ret.status}. ${ret_json}`
-          return
-        }
-
-        this.submitted = true
-
       },
       validate() {
         return this.$refs.signup_form.validate()
