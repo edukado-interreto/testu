@@ -266,8 +266,14 @@ export default {
     try {
       await this.$auth.user(true)
     } catch(e) {
-      console.error('this.$auth.user raised an exception')
-      throw e
+      if (e.response.status) {
+        // unauthorized: the user is not logged in
+        console.log("user not logged in")
+      } else {
+        console.error('this.$auth.user raised an exception')
+        console.error({ ...e })
+        throw e
+      }
     }
 
     // set the initial value for the vuetify language.
