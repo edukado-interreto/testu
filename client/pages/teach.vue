@@ -56,9 +56,9 @@ export default {
     },
   },
   async fetch() {
-    this.exercises = await (
-      await fetch('/api/v1/sheets/')
-    ).json();
+    this.exercises = (
+      await this.$auth.axios.get('/v1/sheets/')
+    ).data
   },
   fetchOnServer: true,
   fetchKey: 'exercises',
