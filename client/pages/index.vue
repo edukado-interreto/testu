@@ -239,9 +239,9 @@ export default {
     },
   },
   async fetch() {
-    this.exercises = await (
-      await fetch('/api/v1/sheets/')
-    ).json();
+    this.exercises = (
+      await this.$auth.axios('/v1/sheets/')
+    ).data;
     this.update_filtered_exercises()
   },
   fetchOnServer: true,
