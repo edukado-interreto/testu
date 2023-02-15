@@ -1,5 +1,6 @@
 <template>
   <div>
+    <MsgBox ref="msgbox"></MsgBox>
     <SheetEditor
       :sheet="sheet"
       ref="sheet_editor"
@@ -186,12 +187,12 @@ export default {
     },
     async save() {
       if (this.sheet.length == 0) {
-        alert("Please add at least one unit");
-        return;
+        await this.$refs.msgbox.alert("Please add at least one unit")
+        return
       }
       if (!this.details.title) {
-        alert("Please provide a title for the exercise");
-        return;
+        await this.$refs.msgbox.alert("Please provide a title for the exercise")
+        return
       }
       const payload = {};
       payload.name = this.details.title;
@@ -250,7 +251,7 @@ export default {
       } catch(e) {
         console.error({...e});
         if (e.response.status >= 400) {
-          alert(`Server error (${e.response.status})`)
+          await this.$refs.msgbox.alert(`Server error (${e.response.status})`)
         }
       }
 

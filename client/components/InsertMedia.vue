@@ -1,14 +1,17 @@
 <template>
-  <form ref="form">
-    <input
-      type="file"
-      ref="uploader"
-      @change="change"
-      :accept="`${type}/*`"
-      class="d-none"
-    />
-    <slot :click="click"></slot>
-  </form>
+  <div>
+    <MsgBox ref="msgbox"></MsgBox>
+    <form ref="form">
+      <input
+        type="file"
+        ref="uploader"
+        @change="change"
+        :accept="`${type}/*`"
+        class="d-none"
+      />
+      <slot :click="click"></slot>
+    </form>
+  </div>
 </template>
 <script>
 export default {
@@ -41,7 +44,7 @@ export default {
         resp = await this.$auth.axios.post('/v1/upload/', formData)
       } catch(e) {
         console.error({...e})
-        alert(e.response.data.error || "Unexpected server response")
+        await this.$refs.msgbox.alert(e.response.data.error || "Unexpected server response")
       } finally {
         this.$emit("load_end")
       }

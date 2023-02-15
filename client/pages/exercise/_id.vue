@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <MsgBox ref="msgbox"></MsgBox>
     <v-row>
       <v-col>
         <h1>{{ exercise.name }}</h1>
@@ -179,7 +180,7 @@ export default {
   methods: {
     async remove() {
 
-      if (!confirm(
+      if (!await this.$refs.msgbox.confirm(
         'Are you sure you want to delete this exercise?'
       )) return;
 
@@ -187,8 +188,8 @@ export default {
         await this.$auth.axios.delete(`/v1/sheets/${this.id}`)
         this.$router.push('/')
       } catch(e) {
-        console.error(e)
-        alert(`Error ${e.response.status}`)
+        console.error({...e})
+        await this.$refs.msgbox.alert(`Error ${e.response.status}`)
       }
     },
     submit() {
