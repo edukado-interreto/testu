@@ -43,7 +43,7 @@ RUN chown -R 1000:1000 $POETRY_HOME $PYSETUP_PATH
 # USER 1000
 
 # Install Poetry - respects $POETRY_VERSION & $POETRY_HOME
-ENV POETRY_VERSION=1.2.0
+ENV POETRY_VERSION=1.3.2
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # We copy our Python requirements here to cache them
@@ -52,7 +52,7 @@ WORKDIR $PYSETUP_PATH
 COPY ./poetry.lock ./pyproject.toml ./
 
 # POETRY_CACHE_DIR is not recognised by Poetry
-RUN XDG_CACHE_HOME="/opt/poetry/.cache" poetry install --no-dev
+RUN XDG_CACHE_HOME="/opt/poetry/.cache" poetry install --only main
 
 
 ### STAGE development installs all dev deps and can be used to develop code
