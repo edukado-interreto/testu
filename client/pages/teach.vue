@@ -58,7 +58,7 @@ export default {
   async fetch() {
     this.exercises = (
       await this.$auth.axios.get('/v1/sheets/')
-    ).data
+    ).data.results // FIXME: pagination
   },
   fetchOnServer: true,
   fetchKey: 'exercises',

@@ -240,8 +240,8 @@ export default {
   },
   async fetch() {
     this.exercises = (
-      await this.$auth.axios('/v1/sheets/')
-    ).data;
+      await this.$auth.axios.get('/v1/sheets/')
+    ).data.results; // FIXME: pagination
     this.update_filtered_exercises()
   },
   fetchOnServer: true,
