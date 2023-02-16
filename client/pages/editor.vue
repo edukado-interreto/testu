@@ -164,7 +164,7 @@ export default {
   methods: {
     async load_exercise(id) {
       const exercise = (
-        await this.$auth.axios.get(`/v1/sheets/${id}/`)
+        await this.$auth.axios.get(`/v1/exercises/${id}/`)
       ).data
       this.sheet = exercise.data.sheet
       this.details.title = exercise.name
@@ -232,11 +232,11 @@ export default {
       // contains an exercise id, or a POST request if
       // creating a new one otherwise
       const api = {
-        path: '/v1/sheets/',
+        path: '/v1/exercises/',
         method: 'POST'
       }
       if (this.overwrite_id !== undefined) {
-        api.path = `/v1/sheets/${this.overwrite_id}/`
+        api.path = `/v1/exercises/${this.overwrite_id}/`
         api.method = 'PUT'
       }
 

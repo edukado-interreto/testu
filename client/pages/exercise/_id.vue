@@ -203,7 +203,7 @@ export default {
     let exercise;
     if (id) {
       exercise = (
-        await $auth.axios.get(`/v1/sheets/${id}/`)
+        await $auth.axios.get(`/v1/exercises/${id}/`)
       ).data
     }
     return {
@@ -236,7 +236,7 @@ export default {
       )) return;
 
       try {
-        await this.$auth.axios.delete(`/v1/sheets/${this.id}`)
+        await this.$auth.axios.delete(`/v1/exercises/${this.id}`)
         this.$router.push('/')
       } catch(e) {
         console.error({...e})
