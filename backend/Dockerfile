@@ -59,6 +59,9 @@ RUN XDG_CACHE_HOME="/opt/poetry/.cache" poetry install --no-dev
 # For example using docker-compose to mount local volume under /code
 FROM python-base AS development
 
+RUN mkdir /.cache && touch /.pythonhist && \
+    chown 1000:1000 /.cache /.pythonhist
+
 # Copying poetry and venv into image
 COPY --from=builder-base $POETRY_HOME $POETRY_HOME
 COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
