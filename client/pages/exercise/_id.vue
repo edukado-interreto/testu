@@ -121,6 +121,8 @@
       :disabled="submitted"
     >Check results</v-btn>
     
+    <!--
+    <pre>{{ submission }}</pre>
     <v-sheet
       v-for="(unit, i) in submission.exercise?.data?.sheet"
       :key="`submitted_${unit._key}`"
@@ -140,17 +142,6 @@
         >
         </RichContent>
       </div>
-      <!--
-      <component
-        :is="unit_component(unit.type)"
-        :code="unit.code"
-        :shuffle="unit.shuffle"
-        :ignore_case="unit.ignore_case"
-        :silent="all_silent"
-        :readonly="all_readonly"
-        ref="unit"
-      />
-      -->
       <UnitMultipleChoice
         v-if="unit.type == 'multiple_choice'"
         :key="i"
@@ -177,6 +168,7 @@
         :ignore_case="unit.ignore_case"
       ></UnitOpenAnswer>
     </v-sheet>
+    -->
 
     </v-sheet>
   </v-container>
@@ -193,7 +185,7 @@ export default {
     unit_component,
   ],
   data: () => ({
-    submission: {},
+    //submission: {},
     all_readonly: false,
     all_silent: true,
     submitted: false,
@@ -250,12 +242,14 @@ export default {
 
       const username = this.$store.getters['authenticator/authUser'].username
       if (username) {
-        submission.created_by_user = username
+        //submission.created_by = username
+        // this field will be written by the backend
       } else {
-        submission.created_by_guest = 'x' // TODO: display name
+        submission.guest = 'x' // TODO: display name
       }
 
       submission.created = new Date()
+      submission.exercise_lid = this.id
       submission.exercise = { ...this.exercise }
       submission.exercise.data.sheet = this.exercise.data.sheet.map(
         (unit, i) => ({
@@ -266,18 +260,25 @@ export default {
 
       return submission
     },
-    submit() {
+    async submit() {
       // show the results of the quiz
-
-      // TODO: submit only if logged user or exam
-      this.submission = this.create_submission()
-      // send to the server...
 
       this.submitted = true
       window.scrollTo({ top:0, behavior: 'smooth'})
 
       this.all_silent = false
       this.all_readonly = true
+
+      if (!this.user_logged_in) return
+
+      const submission = this.create_submission()
+      try {
+        await this.$auth.axios.post('/v1/submissions/', submission)
+      } catch(e) {
+        console.error({...e})
+        await this.$refs.msgbox.alert("An error occurred while saving the exercise submission")
+      }
+
     },
   },
   head() {
