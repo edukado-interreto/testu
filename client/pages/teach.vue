@@ -51,9 +51,16 @@ export default {
   ],
   data: () => ({
     exercises: [],
-    tab: 0,
   }),
   computed: {
+    tab: {
+      get() {
+        return this.$route.hash == '#exams' ? 1 : 0
+      },
+      set(val) {
+        this.$router.replace({ hash: val === 1 ? '#exams' : ''})
+      }
+    },
     current_username() {
       const authUser = this.$store.getters['authenticator/authUser']
       if (!authUser) return null

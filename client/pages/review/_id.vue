@@ -1,40 +1,72 @@
 <template>
   <v-container>
-    <v-row align="center">
-      <v-col>
+
+    <v-breadcrumbs
+      class="pt-0 pl-0"
+      :items='breadcrumbs'
+    >
+      <template v-slot:divider>
+        <v-icon>mdi-chevron-right</v-icon>
+      </template>
+    </v-breadcrumbs>
+
+    <div
+      class="d-flex justify-space-between flex-column flex-sm-row"
+    >
+      <div>
         <h1>{{ exam.name }}</h1>
-          <a
-            :href="localePath(`/exercise/${exam.exercise_id}`)"
-            target="blank"
-          >
-            <v-icon class="pb-1">mdi-file-outline</v-icon>
-            Exercise
-          </a>
+        <div class="text-caption">
+          Created: {{ exam.created.toLocaleString('en-US') }}
+        </div>
+      </div>
+      <div class="d-flex my-3 my-sm-0 ml-0 ml-sm-4 pt-1">
+        <v-btn class="mr-2">
+          <v-icon class="me-1">mdi-eye</v-icon>
+          View exam
         </v-btn>
-      </v-col>
-      <v-col cols="auto">
-        <v-btn>
-          <v-icon>mdi-link</v-icon>
-        </v-btn>
-        <v-btn class="error">
-          <v-icon>mdi-delete</v-icon>
-        </v-btn>
-      </v-col>
-    </v-row>
+        <v-menu offset-y>
+          <template v-slot:activator="{on, attrs}">
+            <v-btn icon v-bind="attrs" v-on="on">
+              <v-icon>mdi-dots-vertical</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>mdi-link-variant</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>
+                Copy exam link
+              </v-list-item-title>
+            </v-list-item><v-list-item color="error">
+              <v-list-item-icon>
+                <v-icon class="error--text">mdi-delete</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="error--text font-weight-bold">
+                Delete
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
+    </div>
 
-    <v-row class="mt-0" align="center" mb="0">
-      <v-col>
-        <v-switch
-          label="Accepting submissions"
-          v-model="exam.accepts_submissions"
-        >
-        </v-switch>
-      </v-col>
-      <v-col cols="auto" class="text-caption">
-        Created: {{ exam.created.toLocaleString('en-US') }}
-      </v-col>
-    </v-row>
 
+    <div class="mt-4 mb-10">
+      <nuxt-link
+        :to="localePath(`/exercise/${id}`)"
+      >
+        <v-icon>mdi-file-outline</v-icon>
+        Go to the exercise
+      </nuxt-link>
+    </div>
+
+    <v-switch
+      label="Accepting submissions"
+      v-model="exam.accepts_submissions"
+    >
+    </v-switch>
+    
     <v-row>
       <v-col>
         <v-select
@@ -120,6 +152,13 @@ export default {
     }
   },
   computed: {
+    breadcrumbs() {
+      return [
+        { text: this.$t('main.my_teaching'), href: this.localePath('teach'), disabled: false },
+        { text: 'Exams', href: this.localePath('teach')+'#exams', disabled: false },
+        { text: this.exam.name, disabled: true },
+      ]
+    },
     nth_of_total() {
       const of = 'of'
       const len = this.submissions_items.length
