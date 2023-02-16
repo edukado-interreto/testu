@@ -1,12 +1,17 @@
-from django.http import Http404, JsonResponse
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.viewsets import ModelViewSet
 
 from .file_upload_functions import FileUploadException, handle_uploaded_file
-from .models import Exercise
-from .serializers import ExerciseSerializer
+from .models import Exam, Exercise, Submission
+from .serializers import (
+    ExamSerializer,
+    ExerciseSerializer,
+    SheetSerializer,
+    SubmissionSerializer,
+)
 
 
 class ExerciseViewSet(ModelViewSet):
@@ -16,13 +21,26 @@ class ExerciseViewSet(ModelViewSet):
     lookup_field = "lid"
 
     def get_object(self):
-        try:
-            return super().get_object()
-        except Http404:
-            return get_object_or_404(
-                self.filter_queryset(self.get_queryset()),
-                pk=self.kwargs.get(self.lookup_field),
-            )
+        self.kwargs[self.lookup_field] = self.kwargs[self.lookup_field].lower()
+        return super().get_object()
+
+
+class SheetViewSet(ExerciseViewSet):  # deprecated
+    lookup_field = "pk"
+    serializer_class = SheetSerializer
+
+
+class ExamViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    queryset = Exam.objects.all()
+    serializer_class = ExamSerializer
+    lookup_field = "lid"
+
+
+class SubmissionViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    queryset = Submission.objects.all()
+    serializer_class = SubmissionSerializer
 
 
 @csrf_exempt  # TODO: ĉu eblas fari tion pli bone?

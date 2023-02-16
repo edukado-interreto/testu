@@ -24,7 +24,6 @@ class ExerciseSerializer(serializers.ModelSerializer):
         model = Exercise
         fields = [
             "pk",
-            "id",
             "lid",
             "created",
             "modified",
@@ -48,6 +47,12 @@ class ExerciseSerializer(serializers.ModelSerializer):
         user = self.context["request"].user
         validated_data["created_by"] = user
         return super().create(validated_data)
+
+
+class SheetSerializer(ExerciseSerializer):  # deprecated
+    def get_field_names(self, declared_fields, info):
+        fields = super().get_field_names(declared_fields, info)
+        return ["id"] + [f for f in fields if f not in ("pk", "lid")]
 
 
 class ExamSerializer(serializers.ModelSerializer):
