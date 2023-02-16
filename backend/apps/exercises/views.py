@@ -1,12 +1,12 @@
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from rest_framework.viewsets import ModelViewSet
-from django.http import JsonResponse, Http404
+from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.viewsets import ModelViewSet
 
+from .file_upload_functions import FileUploadException, handle_uploaded_file
 from .models import Exercise
 from .serializers import ExerciseSerializer
-from .file_upload_functions import handle_uploaded_file, FileUploadException
 
 
 class ExerciseViewSet(ModelViewSet):

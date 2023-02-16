@@ -55,8 +55,10 @@ class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
     is_active = models.BooleanField(
         "Active",
         default=True,
-        help_text="Designates whether this user should be treated as active. "
-        "Unselect this instead of deleting accounts.",
+        help_text=(
+            "Designates whether this user should be treated as active. "
+            "Unselect this instead of deleting accounts."
+        ),
     )
     date_joined = models.DateTimeField("date joined", default=timezone.now)
 

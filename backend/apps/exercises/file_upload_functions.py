@@ -1,5 +1,6 @@
-from .models import UploadedFile
 from django.utils.text import slugify
+
+from .models import UploadedFile
 
 
 class FileUploadException(Exception):

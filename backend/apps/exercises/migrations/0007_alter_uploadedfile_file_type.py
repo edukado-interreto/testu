@@ -4,15 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('exercises', '0006_remove_uploadedfile_slug_uploadedfile_file_name'),
+        ("exercises", "0006_remove_uploadedfile_slug_uploadedfile_file_name"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='uploadedfile',
-            name='file_type',
-            field=models.CharField(choices=[('image', 'image'), ('audio', 'audio')], default='image', max_length=5),
+            model_name="uploadedfile",
+            name="file_type",
+            field=models.CharField(
+                choices=[("image", "image"), ("audio", "audio")],
+                default="image",
+                max_length=5,
+            ),
         ),
     ]

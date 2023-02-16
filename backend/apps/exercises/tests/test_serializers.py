@@ -1,9 +1,10 @@
 from http import HTTPStatus
 
 import pytest
-from apps.exercises.models import Tag
 from django.urls import reverse
 from freezegun import freeze_time
+
+from apps.exercises.models import Tag
 
 
 @freeze_time("2023/01/01")

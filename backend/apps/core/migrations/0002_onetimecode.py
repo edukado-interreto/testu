@@ -9,7 +9,6 @@ import apps.core.models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("core", "0001_initial"),
     ]

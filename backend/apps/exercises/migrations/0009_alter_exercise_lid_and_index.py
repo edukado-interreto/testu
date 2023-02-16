@@ -15,7 +15,6 @@ def create_long_id(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("exercises", "0008_rename_sheet_exercise"),
     ]

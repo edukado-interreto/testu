@@ -1,6 +1,3 @@
-from django.urls import path
-from django.views.generic import TemplateView
-
 from dj_rest_auth.registration.views import (
     RegisterView,
     ResendEmailVerificationView,
@@ -12,7 +9,8 @@ from dj_rest_auth.views import (
     PasswordResetView,
     UserDetailsView,
 )
-
+from django.urls import path
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path("user/", UserDetailsView.as_view(), name="account"),
