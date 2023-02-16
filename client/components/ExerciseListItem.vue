@@ -1,6 +1,6 @@
 <template>
   <v-card
-    :to="localePath(`/exercise/${item.id}`)"
+    :to="localePath(`/exercise/${item.lid}`)"
     nuxt
     class="mb-5"
   >
