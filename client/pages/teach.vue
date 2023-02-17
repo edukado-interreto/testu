@@ -26,7 +26,7 @@
 
       <!-- exams -->
       <v-tab-item>
-        <v-card :to="localePath(`/review/0`)">
+        <v-card :to="localePath(`/exam_editor?exam=0`)">
           <v-card-title>
             Exams list item
           </v-card-title>

@@ -61,48 +61,40 @@
       </nuxt-link>
     </div>
 
+    <div v-if="false">
+      <v-row>
+        <v-col>
+          <v-select
+            outlined
+            dense
+            :items="submissions_items"
+            v-model="submissions_index"
+          ></v-select>
+        </v-col>
+        <v-col>
+          <v-btn
+            icon
+            @click="submissions_index -= 1"
+            :disabled="submissions_index == 0"
+          ><v-icon>mdi-chevron-left</v-icon></v-btn>
+          {{ nth_of_total }}
+          <v-btn
+            icon
+            @click="submissions_index += 1"
+            :disabled="submissions_index == submissions_items.length-1"
+          ><v-icon>mdi-chevron-right</v-icon></v-btn>
+        </v-col>
+      </v-row>
+    </div>
+    <div v-else>
+      No submissions
+    </div>
+
     <v-switch
       label="Accepting submissions"
       v-model="exam.accepts_submissions"
     >
     </v-switch>
-    
-    <v-row>
-      <v-col>
-        <v-select
-          outlined
-          dense
-          :items="submissions_items"
-          v-model="submissions_index"
-        ></v-select>
-      </v-col>
-      <v-col>
-        <v-btn
-          icon
-          @click="submissions_index -= 1"
-          :disabled="submissions_index == 0"
-        ><v-icon>mdi-chevron-left</v-icon></v-btn>
-        {{ nth_of_total }}
-        <v-btn
-          icon
-          @click="submissions_index += 1"
-          :disabled="submissions_index == submissions_items.length-1"
-        ><v-icon>mdi-chevron-right</v-icon></v-btn>
-      </v-col>
-    </v-row>
-
-    <p class="text-caption">
-      Right answers:
-      <v-progress-circular
-        :value="current_submission.score*100"
-        :rotate="270"
-        :size="25"
-        :width="6"
-        color="primary"
-      >
-      </v-progress-circular>
-      {{ current_submission.score * 100 }}%
-    </p>
 
   </v-container>
 </template>
@@ -146,9 +138,11 @@ export default {
     }
   }),
   async asyncData({ route, params }) {
-    const id = (process.server) ? route.params.id : params.id
+    const exam_id = (process.server) ? route.params.exam : params.exam
+    const new_from = (process.server) ? route.params.new_from : params.new_from
     return {
-      id
+      exam_id,
+      new_from
     }
   },
   computed: {
