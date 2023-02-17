@@ -182,7 +182,6 @@
           nuxt
           router
           exact
-          disabled
         >
           <v-list-item-action>
             <v-icon>mdi-chart-bar</v-icon>
