@@ -1,7 +1,8 @@
-from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from .file_upload_functions import FileUploadException, handle_uploaded_file
@@ -31,25 +32,44 @@ class SheetViewSet(ExerciseViewSet):  # deprecated
 
 
 class ExamViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Exam.objects.all()
     serializer_class = ExamSerializer
     lookup_field = "lid"
 
+    def get_permissions(self):
+        if self.action == "submissions":
+            permission_classes = [IsAuthenticated]
+        else:
+            permission_classes = [IsAuthenticatedOrReadOnly]
+        return [permission() for permission in permission_classes]
+
+    @action(detail=True, methods=["get"])
+    def submissions(self, request, lid=None):
+        exam = self.get_object()
+        if request.user != exam.created_by:
+            return Response(None, status=403)
+        return Response(
+            SubmissionSerializer(Submission.objects.filter(exam=exam), many=True).data
+        )
+
 
 class SubmissionViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]
-    queryset = Submission.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = SubmissionSerializer
+
+    def get_queryset(self):
+        if self.request.user.is_anonymous:
+            return Submission.objects.none()
+        return Submission.objects.filter(created_by=self.request.user)
 
 
 @csrf_exempt  # TODO: ĉu eblas fari tion pli bone?
 def UploadView(request):
     if request.method == "POST":
         if "file" not in request.FILES:
-            return JsonResponse({"error": "Missing parameter: file"}, status=400)
+            return Response({"error": "Missing parameter: file"}, status=400)
         if "type" not in request.POST:
-            return JsonResponse({"error": "Missing parameter: type"}, status=400)
+            return Response({"error": "Missing parameter: type"}, status=400)
 
         try:
             uploaded_file = handle_uploaded_file(

@@ -6,6 +6,13 @@ from .models import Exam, Exercise, Submission, Tag
 User = get_user_model()
 
 
+class LidField(serializers.SlugRelatedField):
+    def __init__(self, model, **kwargs):
+        return super().__init__(
+            slug_field="lid", queryset=model._default_manager.all(), **kwargs
+        )
+
+
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
@@ -17,7 +24,7 @@ class TagSerializer(serializers.ModelSerializer):
 
 class ExerciseSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, required=False)
-    created_by = serializers.SlugRelatedField(read_only=True, slug_field="username")
+    created_by = serializers.SlugRelatedField("username", read_only=True)
     url = serializers.URLField(source="get_absolute_url")
 
     class Meta:
@@ -56,7 +63,7 @@ class SheetSerializer(ExerciseSerializer):  # deprecated
 
 
 class ExamSerializer(serializers.ModelSerializer):
-    created_by = serializers.SlugRelatedField(read_only=True, slug_field="username")
+    created_by = serializers.SlugRelatedField("username", read_only=True)
     url = serializers.URLField(source="get_absolute_url")
 
     class Meta:
@@ -81,6 +88,11 @@ class ExamSerializer(serializers.ModelSerializer):
 
 
 class SubmissionSerializer(serializers.ModelSerializer):
+    created_by = serializers.SlugRelatedField("username", read_only=True)
+    exercise = serializers.JSONField(source="data")
+    exercise_lid = LidField(Exercise, source="exercise", allow_null=True)
+    exam_lid = LidField(Exam, source="exam", allow_null=True)
+
     class Meta:
         model = Submission
         fields = [
@@ -89,9 +101,9 @@ class SubmissionSerializer(serializers.ModelSerializer):
             "modified",
             "created_by",
             "guest",
-            "exam",
+            "exam_lid",
+            "exercise_lid",
             "exercise",
-            "data",
             "score",
         ]
 
