@@ -21,7 +21,18 @@
           <v-list>
             <v-list-item
               nuxt
-              :to="`/editor?new_from=${exercise.id}`"
+              :to="localePath(`/exam_editor?new_from=${exercise.lid}`)"
+            >
+              <v-list-item-icon>
+                <v-icon>mdi-school</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>
+                Create an exam
+              </v-list-item-title>
+            </v-list-item>
+            <v-list-item
+              nuxt
+              :to="localePath(`/editor?new_from=${exercise.lid}`)"
             >
               <v-list-item-icon>
                 <v-icon>mdi-content-copy</v-icon>
@@ -33,7 +44,7 @@
             <v-list-item
               v-if="user_is_creator"
               nuxt
-              :to="`/editor?edit=${exercise.id}`"
+              :to="localePath(`/editor?edit=${exercise.lid}`)"
             >
               <v-list-item-icon>
                 <v-icon>mdi-pencil</v-icon>
@@ -250,6 +261,7 @@ export default {
 
       submission.created = new Date()
       submission.exercise_lid = this.id
+      submission.exam_lid = null
       submission.exercise = { ...this.exercise }
       submission.exercise.data.sheet = this.exercise.data.sheet.map(
         (unit, i) => ({
