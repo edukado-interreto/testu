@@ -43,7 +43,7 @@
                 <v-icon class="error--text">mdi-delete</v-icon>
               </v-list-item-icon>
               <v-list-item-title class="error--text font-weight-bold">
-                Delete
+                Delete exam
               </v-list-item-title>
             </v-list-item>
           </v-list>
