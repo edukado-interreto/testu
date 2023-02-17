@@ -1,6 +1,8 @@
 Django:
   stage: build
   image: docker:20.10.16
+  rules:
+    - if: $CI_COMMIT_BRANCH == "sandbox"
   services:
     - docker:20.10.16-dind
   variables:
@@ -26,6 +28,8 @@ Django:
 Vue:
   stage: build
   image: node:16
+  rules:
+    - if: $CI_COMMIT_BRANCH == "sandbox"
   script:
     - npm --prefix client install
     - npm --prefix client run generate
@@ -37,6 +41,8 @@ Vue:
 Nginx:
   stage: build
   needs: ["Vue"]
+  rules:
+    - if: $CI_COMMIT_BRANCH == "sandbox"
   image: docker:20.10.16
   services:
     - docker:20.10.16-dind
