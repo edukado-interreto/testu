@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <MsgBox ref="msgbox"></MsgBox>
 
     <v-breadcrumbs
       class="pt-0 pl-0"
@@ -14,19 +15,21 @@
       class="d-flex justify-space-between flex-column flex-sm-row"
     >
       <div>
-        <h1>{{ exam.name }}</h1>
-        <div class="text-caption">
-          Created: {{ exam.created.toLocaleString('en-US') }}
+        <h1 :class="{ 'font-italic': !exam.name }">
+          {{ exam.name || 'Untitled exam' }}
+        </h1>
+        <div class="text-caption" v-if="exam.created">
+          Created: {{ exam.created?.toLocaleString('en-US') }}
         </div>
       </div>
       <div class="d-flex my-3 my-sm-0 ml-0 ml-sm-4 pt-1">
-        <v-btn class="mr-2">
+        <v-btn class="mr-2" :disabled="!exam.lid">
           <v-icon class="me-1">mdi-eye</v-icon>
           View exam
         </v-btn>
         <v-menu offset-y>
           <template v-slot:activator="{on, attrs}">
-            <v-btn icon v-bind="attrs" v-on="on">
+            <v-btn icon v-bind="attrs" v-on="on" :disabled="!exam.lid">
               <v-icon>mdi-dots-vertical</v-icon>
             </v-btn>
           </template>
@@ -54,95 +57,73 @@
 
     <div class="mt-4 mb-10">
       <nuxt-link
-        :to="localePath(`/exercise/${id}`)"
+        :to="localePath(`/exercise/${exam.exercise}`)"
       >
         <v-icon>mdi-file-outline</v-icon>
         Go to the exercise
       </nuxt-link>
     </div>
 
-    <div v-if="false">
-      <v-row>
-        <v-col>
-          <v-select
-            outlined
-            dense
-            :items="submissions_items"
-            v-model="submissions_index"
-          ></v-select>
-        </v-col>
-        <v-col>
-          <v-btn
-            icon
-            @click="submissions_index -= 1"
-            :disabled="submissions_index == 0"
-          ><v-icon>mdi-chevron-left</v-icon></v-btn>
-          {{ nth_of_total }}
-          <v-btn
-            icon
-            @click="submissions_index += 1"
-            :disabled="submissions_index == submissions_items.length-1"
-          ><v-icon>mdi-chevron-right</v-icon></v-btn>
-        </v-col>
-      </v-row>
-    </div>
-    <div v-else>
-      No submissions
-    </div>
-
     <v-switch
-      label="Accepting submissions"
-      v-model="exam.accepts_submissions"
+      :disabled="!exam.lid"
+      label="Accept new submissions"
+      v-model="exam.accept_submission"
     >
     </v-switch>
 
+    <div v-if="exam.submissions">
+      <ExamSubmissions
+        :submissions="exam.submissions"
+      ></ExamSubmissions>
+    </div>
+    <div
+      v-if="exam.lid && !exam.submissions"
+      class="pa-9 text--disabled text-h6 grey lighten-4 rounded"
+    >
+      No submissions
+    </div>
+
+    <v-sheet elevation="2" rounded class="pa-4 mt-5">
+      <v-text-field
+        label="Name"
+        v-model="exam.name"
+      ></v-text-field>
+      <v-textarea
+        label="Description"
+        v-model="exam.description"
+        auto-grow
+        rows="1"
+      ></v-textarea>
+
+      <v-btn
+        class="my-3 primary--text"
+        large
+        @click="save"
+      >
+        <v-icon class="mr-2">mdi-content-save</v-icon>
+        Save
+      </v-btn>
+
+    </v-sheet>
   </v-container>
 </template>
 <script>
 export default {
   data: () => ({
-    submissions_index: 0,
     exam: {
-      name: 'Examination Esperanto B1, classroom A',
-      exercise_id: 24,
-      created: new Date(),
-      exam_url: 'https://example.org',
-      created_by: 'etuardu',
-      accepts_submissions: true,
-      submissions: [
-        {
-          submitted: new Date(2023, 1, 2, 9, 11, 13),
-          score: 0.65,
-          author: {
-            display_name: 'edoardo',
-            user_id: 'edoardo'
-          },
-        },
-        {
-          submitted: new Date(2023, 1, 2, 16, 4, 5),
-          score: 0.4,
-          author: {
-            display_name: 'Mario',
-            user_id: null
-          },
-        },
-        {
-          submitted: new Date(2023, 1, 2, 9, 11, 13),
-          score: 0.5,
-          author: {
-            display_name: 'edoardo',
-            user_id: 'edoardo'
-          },
-        },
-      ]
-    }
+      accept_submission: true,
+    },
   }),
-  async asyncData({ route, params }) {
-    const exam_id = (process.server) ? route.params.exam : params.exam
-    const new_from = (process.server) ? route.params.new_from : params.new_from
-    return {
-      exam_id,
-      new_from
+  async fetch() {
+    const exam_id = this.$route.query.exam
+    const new_from = this.$route.query.new_from
+    if (new_from) {
+      //const exercise = (
+      //  await this.$auth.axios.get(`/v1/exercises/${new_from}/`)
+      //).data
+      //console.log(exercise)
+      this.$set(this.exam, 'exercise', new_from)
+      // FIXME: should be: this.exam.exercise_lid
     }
   },
   computed: {
@@ -150,30 +131,42 @@ export default {
       return [
         { text: this.$t('main.my_teaching'), href: this.localePath('teach'), disabled: false },
         { text: 'Exams', href: this.localePath('teach')+'#exams', disabled: false },
-        { text: this.exam.name, disabled: true },
+        { text: this.exam.name || 'Untitled exam', disabled: true },
       ]
     },
-    nth_of_total() {
-      const of = 'of'
-      const len = this.submissions_items.length
-      if (len == 0) return `0 ${of} 0`
-      return `${this.submissions_index+1} ${of} ${len}`
-    },
-    current_submission() {
-        return this.submissions_items[this.submissions_index].data
-    },
-    submissions_items() {
-      return this.exam.submissions.sort(
-        (a, b) => b.submitted - a.submitted
-      ).map((e, i) => ({
-        value: i,
-        text: (
-          e.author.display_name + ' (' +
-          e.submitted.toLocaleString('en-US') +
-          ')'
-        ),
-        data: e,
-      }))
+  },
+  methods: {
+    async save() {
+      console.log("saving:", this.exam)
+
+      const api = {
+        path: '/v1/exams/',
+        method: 'POST'
+      }
+      if (this.exam.lid) {
+        api.path = `/v1/exams/${this.exam.lid}/`
+        api.method = 'PUT'
+      }
+
+      console.log("request:", api)
+
+      try {
+        const ret = await this.$auth.axios({
+          url: api.path,
+          method: api.method,
+          data: this.exam,
+        })
+        console.log(ret.data)
+        if (!this.exam.lid) {
+          // this.$router.replace... // query.id=lid
+        }
+      } catch(e) {
+        console.error({...e});
+        if (e.response.status >= 400) {
+          await this.$refs.msgbox.alert(`Server error (${e.response.status})`)
+        }
+      }
+
     }
   }
 }
