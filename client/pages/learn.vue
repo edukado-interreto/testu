@@ -48,6 +48,10 @@ export default {
       ]
       return { headers, items }
     }
+  },
+  middleware: 'redirects',
+  meta: {
+    requiresAuth: true
   }
 }
 </script>
