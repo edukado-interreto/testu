@@ -25,7 +25,7 @@ class TagSerializer(serializers.ModelSerializer):
 class ExerciseSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, required=False)
     created_by = serializers.SlugRelatedField("username", read_only=True)
-    url = serializers.URLField(source="get_absolute_url")
+    url = serializers.URLField(source="get_absolute_url", read_only=True)
 
     class Meta:
         model = Exercise
@@ -63,8 +63,10 @@ class SheetSerializer(ExerciseSerializer):  # deprecated
 
 
 class ExamSerializer(serializers.ModelSerializer):
+    lid = serializers.CharField(read_only=True)
+    exercise_lid = LidField(Exercise, source="exercise", allow_null=True)
     created_by = serializers.SlugRelatedField("username", read_only=True)
-    url = serializers.URLField(source="get_absolute_url")
+    url = serializers.URLField(source="get_absolute_url", read_only=True)
 
     class Meta:
         model = Exam
@@ -76,7 +78,7 @@ class ExamSerializer(serializers.ModelSerializer):
             "created_by",
             "name",
             "description",
-            "exercise",
+            "exercise_lid",
             "accept_submission",
             "url",
         ]
