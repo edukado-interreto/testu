@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <MsgBox ref="msgbox"></MsgBox>
     <v-alert
       icon="mdi-school"
       text
@@ -23,7 +24,7 @@
       </p>
       <v-row justify="center" class="mt-3">
         <v-col cols="12" sm="4" md="2" align="center">
-          <v-btn color="primary" block>Log in</v-btn>
+          <v-btn color="primary" block @click="login">Log in</v-btn>
         </v-col>
         <v-col cols="12" sm="1" md="1" align="center">
           or
@@ -44,27 +45,123 @@
         </v-col>
       </v-row>
     </div>
+    <div v-else>
+      
+      <v-row>
+        <v-col>
+          <h1>{{ exam.name }}</h1>
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col cols="auto">
+          <v-btn
+            class="primary--text"
+            v-if="current_username == exam.created_by"
+            text
+            nuxt
+            :to="localePath(`/exam_editor?exam=${id}`)"
+          >
+            <v-icon class="me-1">mdi-pencil</v-icon>
+            Edit
+          </v-btn>
+        </v-col>
+      </v-row>
+
+      <v-row dense class="text-caption mb-6">
+      <v-col cols="auto">
+        <v-icon small>mdi-account</v-icon> {{ exam.created_by || 'anonymous' }}
+      </v-col>
+      <v-col cols="auto">
+        <v-icon small>mdi-clock</v-icon> {{ exam.created.toLocaleString('en-US')  }}
+      </v-col>
+    </v-row>
+
+      <v-sheet v-if="exam.description" class="mb-7">
+        {{ exam.description }}
+      </v-sheet>
+
+      <h2>{{ exercise.name }}</h2>
+
+      <v-sheet v-if="exercise.description" class="mt-3 mb-7">
+        {{ exercise.description }}
+      </v-sheet>
+
+      <v-sheet
+        v-for="(unit, i) in exercise.data.sheet"
+        :key="unit._key"
+      >
+        <div class="headline my-4"> 
+          {{ i+1 }}. {{ unit.title }}
+          <span v-if="unit.title === ''" class="font-italic">
+            Untitled unit
+          </span>
+        </div>
+        <div
+          v-if="unit.description"
+          class="body-2 mb-4 pre-line"
+        >
+          <RichContent
+            :text="unit.description"
+          >
+          </RichContent>
+        </div>
+        <component
+          :is="unit_component(unit.type)"
+          :code="unit.code"
+          :shuffle="unit.shuffle"
+          :ignore_case="unit.ignore_case"
+          :silent="all_silent"
+          :readonly="all_readonly"
+          ref="unit"
+        />
+      </v-sheet>
+
+      <v-alert
+        text
+        color="primary"
+        class="mb-0 mt-10"
+        v-if="submitted"
+      >
+        Well done, your exam has been submitted to the examinator!
+      </v-alert>
+
+      <v-btn
+        @click="submit"
+        class="mt-9 primary"
+        :disabled="submitted"
+        :loading="is_submitting"
+      >Submit</v-btn>
+
+    </div>
 
   </v-container>
 </template>
 <script>
+import unit_component from '~/mixins/unit_component.js'
 export default {
+  mixins: [
+    unit_component,
+  ],
   data: () => ({
+    is_submitting: false,
     submitter_display_name: "",
     display_name_vmodel: "",
-    exam: {
-      name: 'Examination Esperanto B1, classroom A',
-      exercise_id: 24,
-      created: new Date(),
-      exam_url: 'https://example.org',
-      created_by: 'etuardu',
-      accepts_submissions: true,
-    }
+    submitted: false,
+    all_silent: true,
+    all_readonly: false,
   }),
-  async asyncData({ route, params }) {
+  async asyncData({ $auth, route, params }) {
     const id = (process.server) ? route.params.id : params.id
+    const exam = (
+      await $auth.axios.get(`/v1/exams/${id}`)
+    ).data
+    exam.created = new Date(exam.created)
+    const exercise = (
+      await $auth.axios.get(`/v1/exercises/${exam.exercise_lid}`)
+    ).data
     return {
-      id
+      id,
+      exam,
+      exercise,
     }
   },
   computed: {
@@ -73,7 +170,71 @@ export default {
     },
     authUser() {
       return this.$store.getters['authenticator/authUser']
-    }
+    },
+    current_username() {
+      const authUser = this.$store.getters['authenticator/authUser']
+      if (!authUser) return null
+      return authUser.username
+    },
   },
+  methods: {
+    login() {
+      // navigate to the login screen, setting
+      // the current route as post-login redirect url
+      this.$store.commit(
+        "authenticator/updateRedirectUrl", 
+        this.$route.path
+      )
+      this.$router.push(this.localePath('/login'))
+    },
+    create_submission() {
+      // create the submission object to be sent to the server
+
+      const submission = {}
+
+      if (this.current_username) {
+        submission.created_by = this.current_username
+      } else {
+        submission.guest = this.submitter_display_name
+      }
+
+      submission.created = new Date()
+      submission.exercise_lid = this.exam.exercise_lid
+      submission.exam_lid = this.exam.lid
+      submission.exercise = { ...this.exercise }
+      submission.exercise.data.sheet = this.exercise.data.sheet.map(
+        (unit, i) => ({
+          ...unit,
+          solved: this.$refs.unit[i].get_solved()
+        })
+      )
+
+      return submission
+    },
+    async submit() {
+
+      if (!(await this.$refs.msgbox.confirm(
+        "This operation cannot be undone. Proceed?"
+      ))) return 
+
+      this.is_submitting = true
+      this.all_readonly = true
+
+      const submission = this.create_submission()
+
+      try {
+        await this.$auth.axios.post('/v1/submissions/', submission)
+      } catch(e) {
+        console.error({...e})
+        await this.$refs.msgbox.alert("An error occurred while submittind the exam.")
+        return
+      } finally {
+        this.is_submitting = false
+      }
+
+      this.submitted = true
+      
+    }
+  }
 }
 </script>

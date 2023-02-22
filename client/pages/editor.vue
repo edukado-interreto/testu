@@ -247,7 +247,7 @@ export default {
           data: payload,
         })
         console.log(ret.data)
-        this.$router.push(`/exercise/${ret.data.id}`)
+        this.$router.push(`/exercise/${ret.data.lid}`)
       } catch(e) {
         console.error({...e});
         if (e.response.status >= 400) {

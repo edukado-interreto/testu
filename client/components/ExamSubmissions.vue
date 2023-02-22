@@ -1,27 +1,34 @@
 <template>
-  <v-row>
-    <v-col>
-      <v-select
-        outlined
-        dense
-        :items="submissions_items"
-        v-model="submissions_index"
-      ></v-select>
-    </v-col>
-    <v-col>
-      <v-btn
-        icon
-        @click="submissions_index -= 1"
-        :disabled="submissions_index == 0"
-      ><v-icon>mdi-chevron-left</v-icon></v-btn>
-      {{ nth_of_total }}
-      <v-btn
-        icon
-        @click="submissions_index += 1"
-        :disabled="submissions_index == submissions_items.length-1"
-      ><v-icon>mdi-chevron-right</v-icon></v-btn>
-    </v-col>
-  </v-row>
+  <div>
+    <v-row>
+      <v-col>
+        <v-select
+          outlined
+          dense
+          :items="submissions_items"
+          v-model="submissions_index"
+        ></v-select>
+      </v-col>
+      <v-col>
+        <v-btn
+          icon
+          @click="submissions_index -= 1"
+          :disabled="submissions_index == 0"
+        ><v-icon>mdi-chevron-left</v-icon></v-btn>
+        {{ nth_of_total }}
+        <v-btn
+          icon
+          @click="submissions_index += 1"
+          :disabled="submissions_index == submissions_items.length-1"
+        ><v-icon>mdi-chevron-right</v-icon></v-btn>
+      </v-col>
+    </v-row>
+
+    <SheetReview
+      :submission="current_submission"
+    ></SheetReview>
+
+  </div>
 </template>
 <script>
 export default {
@@ -45,8 +52,9 @@ export default {
       ).map((e, i) => ({
         value: i,
         text: (
-          e.author.display_name + ' (' +
-          e.submitted.toLocaleString('en-US') +
+          (e.created_by || `${e.guest} (guest)`) +
+          ' (' +
+          e.created.toLocaleString('en-US') +
           ')'
         ),
         data: e,

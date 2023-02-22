@@ -17,7 +17,7 @@
             <ExerciseListItem
               v-for="item in props.items"
               :item="item"
-              :key="item.id"
+              :key="item.lid"
             >
             </ExerciseListItem>
           </template>
@@ -26,11 +26,9 @@
 
       <!-- exams -->
       <v-tab-item>
-        <v-card :to="localePath(`/exam_editor?exam=0`)">
-          <v-card-title>
-            Exams list item
-          </v-card-title>
-        </v-card>
+        
+        <ExamList></ExamList>
+
       </v-tab-item>
     </v-tabs-items>
   </v-container>

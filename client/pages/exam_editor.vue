@@ -23,7 +23,13 @@
         </div>
       </div>
       <div class="d-flex my-3 my-sm-0 ml-0 ml-sm-4 pt-1">
-        <v-btn class="mr-2" :disabled="!exam.lid">
+        <v-btn
+          class="mr-2 primary--text"
+          :disabled="!exam.lid"
+          nuxt
+          :to="localePath(`/exam/${exam.lid}`)"
+          text
+        >
           <v-icon class="me-1">mdi-eye</v-icon>
           View exam
         </v-btn>
@@ -55,30 +61,35 @@
     </div>
 
 
-    <div class="mt-4 mb-10">
+    <div class="mt-4 mb-5">
       <nuxt-link
-        :to="localePath(`/exercise/${exam.exercise}`)"
+        :to="localePath(`/exercise/${exam.exercise_lid}`)"
       >
         <v-icon>mdi-file-outline</v-icon>
         Go to the exercise
       </nuxt-link>
     </div>
 
-    <v-switch
-      :disabled="!exam.lid"
-      label="Accept new submissions"
-      v-model="exam.accept_submission"
-    >
-    </v-switch>
+    <v-row no-gutters>
+      <v-col cols="auto">
+        <v-switch
+          :disabled="!exam.lid"
+          label="Accept new submissions"
+          v-model="exam.accept_submission"
+        >
+        </v-switch>
+      </v-col>
+      <v-spacer></v-spacer>
+    </v-row>
 
-    <div v-if="exam.submissions">
+    <div v-if="submissions">
       <ExamSubmissions
-        :submissions="exam.submissions"
+        :submissions="submissions"
       ></ExamSubmissions>
     </div>
     <div
-      v-if="exam.lid && !exam.submissions"
-      class="pa-9 text--disabled text-h6 grey lighten-4 rounded"
+      v-if="exam.lid && !submissions"
+      class="pa-9 text--disabled text-h6 grey lighten-4 rounded mb-10"
     >
       No submissions
     </div>
@@ -98,6 +109,7 @@
       <v-btn
         class="my-3 primary--text"
         large
+        :loading="is_saving"
         @click="save"
       >
         <v-icon class="mr-2">mdi-content-save</v-icon>
@@ -110,9 +122,11 @@
 <script>
 export default {
   data: () => ({
+    is_saving: false,
     exam: {
       accept_submission: true,
     },
+    submissions: undefined,
   }),
   async fetch() {
     const exam_id = this.$route.query.exam
@@ -122,8 +136,15 @@ export default {
       //  await this.$auth.axios.get(`/v1/exercises/${new_from}/`)
       //).data
       //console.log(exercise)
-      this.$set(this.exam, 'exercise', new_from)
-      // FIXME: should be: this.exam.exercise_lid
+      this.$set(this.exam, 'exercise_lid', new_from)
+    }
+    if (exam_id) {
+      this.exam = (
+        await this.$auth.axios.get(`/v1/exams/${exam_id}/`)
+      ).data
+      this.exam.created = new Date(this.exam.created)
+      console.log("loaded exam", this.exam)
+      this.fetch_exam_submissions(exam_id)
     }
   },
   computed: {
@@ -136,7 +157,20 @@ export default {
     },
   },
   methods: {
+    async fetch_exam_submissions(id) {
+      const submissions = (
+        await this.$auth.axios.get(`/v1/exams/${id}/submissions/`)
+      ).data
+      submissions.forEach(s => s.created = new Date(s.created))
+      this.submissions = submissions
+    },
     async save() {
+      if (!this.exam.name) {
+        await this.$refs.msgbox.alert("Please choose a name for the exam")
+        return
+      }
+
+      this.is_saving = true
       console.log("saving:", this.exam)
 
       const api = {
@@ -150,22 +184,32 @@ export default {
 
       console.log("request:", api)
 
+      let ret = undefined
       try {
-        const ret = await this.$auth.axios({
+        ret = await this.$auth.axios({
           url: api.path,
           method: api.method,
           data: this.exam,
         })
-        console.log(ret.data)
-        if (!this.exam.lid) {
-          // this.$router.replace... // query.id=lid
-        }
       } catch(e) {
         console.error({...e});
-        if (e.response.status >= 400) {
-          await this.$refs.msgbox.alert(`Server error (${e.response.status})`)
-        }
+        await this.$refs.msgbox.alert(`Server error (${e.response.status})`)
+        return
+      } finally {
+        this.is_saving = false
       }
+
+      console.log(ret.data)
+
+      if (!this.exam.lid) {
+        // the exercise was just created.
+        // We replace the url /?new_from=...
+        // with /?exam=<lid>
+        this.$router.replace({ query: { exam: ret.data.lid } })
+      }
+      this.exam = ret.data
+
+      window.scrollTo({ top:0, behavior: 'smooth'})
 
     }
   }
