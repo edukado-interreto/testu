@@ -30,10 +30,7 @@ router.register("submissions", SubmissionViewSet, basename="submission")
 urlpatterns = [
     path(
         "api/auth/register/",
-        include(
-            ("dj_rest_auth.registration.urls", "rest_auth_registration"),
-            namespace="registration",
-        ),
+        include("dj_rest_auth.registration.urls"),
     ),
     path("api/auth/", include(("dj_rest_auth.urls", "rest_auth"), namespace="auth")),
     path("api/v1/", include((router.urls, "api"), namespace="api")),
