@@ -1,12 +1,13 @@
 <template>
   <div>
-    <v-row>
+    <v-row class="sticky mb-6">
       <v-col>
         <v-select
           outlined
           dense
           :items="submissions_items"
           v-model="submissions_index"
+          hide-details
         ></v-select>
       </v-col>
       <v-col>
@@ -25,8 +26,16 @@
     </v-row>
 
     <SheetReview
+      :key="current_submission.pk"
       :submission="current_submission"
     ></SheetReview>
+    <!--
+      We use 'key' to force reload the component 
+      when changing current_submission,
+      otherwise some fields may not get updated
+      showing answers belonging to the first
+      reviewed submission
+    -->
 
   </div>
 </template>
@@ -44,11 +53,11 @@ export default {
       return `${this.submissions_index+1} ${of} ${len}`
     },
     current_submission() {
-        return this.submissions_items[this.submissions_index].data
+        return this.submissions_items[this.submissions_index]?.data
     },
     submissions_items() {
       return this.submissions.sort(
-        (a, b) => b.submitted - a.submitted
+        (a, b) => b.created - a.created
       ).map((e, i) => ({
         value: i,
         text: (
@@ -63,3 +72,10 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .sticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+</style>

@@ -82,25 +82,30 @@
       <v-spacer></v-spacer>
     </v-row>
 
-    <div v-if="submissions">
+    <div
+      v-if="submissions.length > 0"
+      class="mt-5 mb-15"
+    >
       <ExamSubmissions
         :submissions="submissions"
       ></ExamSubmissions>
     </div>
-    <div
-      v-if="exam.lid && !submissions"
-      class="pa-9 text--disabled text-h6 grey lighten-4 rounded mb-10"
-    >
-      No submissions
-    </div>
+    <template v-else>
+      <div
+        v-if="exam.lid"
+        class="pa-9 text--disabled text-h6 grey lighten-4 rounded mb-10"
+      >
+        No submissions
+      </div>
+    </template>
 
     <v-sheet elevation="2" rounded class="pa-4 mt-5">
       <v-text-field
-        label="Name"
+        label="Exam name"
         v-model="exam.name"
       ></v-text-field>
       <v-textarea
-        label="Description"
+        label="Exam description"
         v-model="exam.description"
         auto-grow
         rows="1"
@@ -110,6 +115,7 @@
         class="my-3 primary--text"
         large
         :loading="is_saving"
+        text
         @click="save"
       >
         <v-icon class="mr-2">mdi-content-save</v-icon>
@@ -126,7 +132,7 @@ export default {
     exam: {
       accept_submission: true,
     },
-    submissions: undefined,
+    submissions: [],
   }),
   async fetch() {
     const exam_id = this.$route.query.exam
