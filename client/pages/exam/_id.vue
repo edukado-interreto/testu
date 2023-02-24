@@ -8,16 +8,27 @@
       prominent
       class="mb-8 pa-sm-12"
     >
-      <div class="text-h6">
-        This is an exam
-      </div>
-      <div>
-        The results of this exercise will be visible to the examinator <strong>{{ exam.created_by }}</strong>.
-      </div>
+      <template
+        v-if="exam.accept_submission"
+      >
+        <div class="text-h6">
+          This is an exam
+        </div>
+        <div>
+          The results of this exercise will be visible to the examinator <strong>{{ exam.created_by }}</strong>.
+        </div>
+      </template>
+      <template
+        v-else
+      >
+        <div class="text-h6">
+          This exam does not accept new submissions
+        </div>
+      </template>
     </v-alert>
 
     <div
-      v-if="!submitter_display_name && !logged_in"
+      v-if="!submitter_display_name && !logged_in && exam.accept_submission"
     >
       <p class="text-center text-body-2 mt-12 mb-7">
         To proceed to the exam, please log in or choose a display name.
@@ -45,7 +56,8 @@
         </v-col>
       </v-row>
     </div>
-    <div v-else>
+
+    <div v-if="should_exercise_be_shown">
       
       <v-row>
         <v-col>
@@ -127,7 +139,7 @@
       <v-btn
         @click="submit"
         class="mt-9 primary"
-        :disabled="submitted"
+        :disabled="submitted || !exam.accept_submission"
         :loading="is_submitting"
       >Submit</v-btn>
 
@@ -176,6 +188,12 @@ export default {
       if (!authUser) return null
       return authUser.username
     },
+    should_exercise_be_shown() {
+      if (this.current_username == this.exam.created_by) return true
+      if (!this.exam.accept_submission) return false
+      if (this.submitter_display_name || this.logged_in) return true
+      return false
+    }
   },
   methods: {
     login() {
@@ -226,7 +244,7 @@ export default {
         await this.$auth.axios.post('/v1/submissions/', submission)
       } catch(e) {
         console.error({...e})
-        await this.$refs.msgbox.alert("An error occurred while submittind the exam.")
+        await this.$refs.msgbox.alert("An error occurred while submitting the exam.")
         return
       } finally {
         this.is_submitting = false
