@@ -40,14 +40,15 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item>
+            <v-list-item @click="copy_link">
               <v-list-item-icon>
                 <v-icon>mdi-link-variant</v-icon>
               </v-list-item-icon>
               <v-list-item-title>
                 Copy exam link
               </v-list-item-title>
-            </v-list-item><v-list-item color="error">
+            </v-list-item>
+            <v-list-item color="error" @click="delete_exam">
               <v-list-item-icon>
                 <v-icon class="error--text">mdi-delete</v-icon>
               </v-list-item-icon>
@@ -74,8 +75,10 @@
       <v-col cols="auto">
         <v-switch
           :disabled="!exam.lid"
-          label="Accept new submissions"
+          label="Accept submissions"
           v-model="exam.accept_submission"
+          @change="toggle_accept_submission"
+          :loading="is_toggling_accept_submission"
         >
         </v-switch>
       </v-col>
@@ -93,8 +96,9 @@
     <template v-else>
       <div
         v-if="exam.lid"
-        class="pa-9 text--disabled text-h6 grey lighten-4 rounded mb-10"
+        class="pa-9 text-h5 grey--text grey lighten-4 rounded mb-10"
       >
+        <v-icon large class="grey--text me-1 pb-1">mdi-inbox</v-icon>
         No submissions
       </div>
     </template>
@@ -129,6 +133,7 @@
 export default {
   data: () => ({
     is_saving: false,
+    is_toggling_accept_submission: false,
     exam: {
       accept_submission: true,
     },
@@ -163,12 +168,68 @@ export default {
     },
   },
   methods: {
+    async copy_link() {
+      if (!this.exam.lid) return
+      const full_url = new URL(
+        this.localePath(`/exam/${this.exam.lid}`),
+        window.location.origin
+      ).href
+      // https://testu.eu/.../exam/nd0k03e
+      try {
+        await navigator.clipboard.writeText(full_url)
+      } catch(e) {
+        // will work only if localhost or https
+        console.error({...e})
+        await this.$refs.msgbox.alert("Cannot write to clipboard!")
+      }
+    },
+    async delete_exam() {
+      if (!this.exam.lid) return
+      if (!(await this.$refs.msgbox.confirm("Are you sure you want to delete this exam?"))) return
+      try {
+        await this.$auth.axios.delete(`/v1/exams/${this.exam.lid}/`)
+      } catch(e) {
+        console.error({...e});
+        await this.$refs.msgbox.alert(`Server error (${e.response.status})`)
+        return
+      }
+      this.$router.push(this.localePath('teach')+'#exams')
+    },
     async fetch_exam_submissions(id) {
       const submissions = (
         await this.$auth.axios.get(`/v1/exams/${id}/submissions/`)
       ).data
       submissions.forEach(s => s.created = new Date(s.created))
       this.submissions = submissions
+    },
+    async toggle_accept_submission(value) {
+
+      if (!this.exam.lid) return
+
+      const confirm_text = (value
+        ? "New submissions to the exam will be accepted. Proceed?"
+        : "This exam will no longer accept new submissions. Proceed?"
+      )
+
+      if (!(await this.$refs.msgbox.confirm(confirm_text))) {
+        this.exam.accept_submission = !value
+        return
+      }
+
+      this.is_toggling_accept_submission = true
+      try {
+        await this.$auth.axios.patch(`/v1/exams/${this.exam.lid}/`, {
+          accept_submission: value
+        })
+      } catch(e) {
+        this.exam.accept_submission = !value
+        console.error({...e});
+        await this.$refs.msgbox.alert(`Server error (${e.response.status})`)
+      } finally {
+        this.is_toggling_accept_submission = false
+      }
+
+
     },
     async save() {
       if (!this.exam.name) {
