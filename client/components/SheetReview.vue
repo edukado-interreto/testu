@@ -24,18 +24,21 @@
         :key="i"
         :solved="unit.solved"
         :readonly="true"
+        :silent="silent"
       ></UnitMultipleChoice>
       <UnitPairing
         v-if="unit.type == 'pairing'"
         :key="i"
         :solved="unit.solved"
         :readonly="true"
+        :silent="silent"
       ></UnitPairing>
       <UnitDefault
         v-if="unit.type == 'default'"
         :key="i"
         :solved="unit.solved"
         :readonly="true"
+        :silent="silent"
       ></UnitDefault>
       <UnitOpenAnswer
         v-if="unit.type == 'open_answer'"
@@ -43,6 +46,7 @@
         :solved="unit.solved"
         :readonly="true"
         :ignore_case="unit.ignore_case"
+        :silent="silent"
       ></UnitOpenAnswer>
     </v-sheet>
   </div>
@@ -51,6 +55,6 @@
 // load a solved, submitted exercise and
 // display it for review
 export default {
-  props: [ 'submission' ]
+  props: [ 'submission', 'silent' ]
 }
 </script>
