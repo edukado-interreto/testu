@@ -7,7 +7,11 @@
     <v-card-title
       class="subheading font-weight-bold"
     >
-      {{ item.name }}
+      <span>
+        {{ item.name }}
+      </span>
+      <v-spacer></v-spacer>
+      <v-chip v-if="item.accept_submission" small color="primary">Accepts submissions</v-chip>
     </v-card-title>
     <v-card-subtitle v-if="item.description">
       {{ item.description }}
