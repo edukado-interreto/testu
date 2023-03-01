@@ -74,9 +74,9 @@ export default {
         exercise_name: s.exercise.name,
       }))
       const headers = [
-        { text: 'Exercise', value: 'exercise_name' },
+        { text: 'Exercise', value: 'exercise_name', sortable: false },
         { text: '', value: 'is_exam', sortable: false },
-        { text: 'Date', value: 'created' },
+        { text: 'Date', value: 'created', sortable: false },
         { text: '', value: 'actions', sortable: false },
       ]
       return { headers, items }
