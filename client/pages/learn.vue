@@ -85,7 +85,9 @@ export default {
       const days = {}
 
       this.submissions.forEach(s => {
-        const dateWithoutTime = s.created.setHours(0,0,0,0) // as int
+        const dateWithoutTime = (
+          new Date(s.created)
+        ).setHours(0,0,0,0) // as int
         days[dateWithoutTime] = days[dateWithoutTime]+1 || 1
       })
       // days = {1676588400000: 2, 1677106800000: 9}
