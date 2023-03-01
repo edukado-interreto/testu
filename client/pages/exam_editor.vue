@@ -275,6 +275,7 @@ export default {
         this.$router.replace({ query: { exam: ret.data.lid } })
       }
       this.exam = ret.data
+      this.exam.created = new Date(this.exam.created)
 
       window.scrollTo({ top:0, behavior: 'smooth'})
 
