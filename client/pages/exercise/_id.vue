@@ -21,7 +21,7 @@
           <v-list>
             <v-list-item
               nuxt
-              :to="localePath(`/exam_editor?new_from=${exercise.lid}`)"
+              @click="create_exam"
             >
               <v-list-item-icon>
                 <v-icon>mdi-school</v-icon>
@@ -232,6 +232,15 @@ export default {
     }
   },
   methods: {
+    async create_exam() {
+      if (
+        (!this.user_is_creator)
+        && (!(await this.$refs.msgbox.confirm("The creator of this exercise may edit or delete it while the exam is running. Proceed anyway?")))
+      ) return
+      this.$router.push(
+        this.localePath(`/exam_editor?new_from=${this.exercise.lid}`)
+      )
+    },
     async remove() {
 
       if (!await this.$refs.msgbox.confirm(
