@@ -56,20 +56,31 @@ export default {
   data: () => ({
   }),
   async asyncData({ $auth }) {
-    const submissions = (
-      await $auth.axios.get('/v1/submissions/')
-    ).data.results
 
-    submissions.forEach(s => s.created = new Date(s.created))
+    const ret = (
+      await $auth.axios.get('/v1/submissions/')
+    ).data
+
+    // ret = {
+    //   "count": 16, // total amount of items
+    //   "next": "http://testu.local/api/v1/submissions/?limit=2&offset=6", // null if unavailable
+    //   "previous": "http://testu.local/api/v1/submissions/?limit=2&offset=2", // null if unavailable
+    //   "results": [
+    //     …
+    //   ]
+    // }
+
+    const submissions = ret.results
+
     return {
-      submissions
+      submissions,
     }
   },
   computed: {
     table() {
       const items = this.submissions.map( s => ({
         pk: s.pk,
-        created: s.created,
+        created: new Date(s.created),
         is_exam: !!s.exam_lid,
         exercise_name: s.exercise.name,
       }))
