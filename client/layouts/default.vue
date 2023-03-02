@@ -260,10 +260,13 @@ export default {
       this.$router.push('/')
     },
   },
-  mounted: async function() {
-    await this.$store.dispatch("authenticator/CHECK_TOKENS");
+  created: async function() {
+    //await this.$store.dispatch("authenticator/CHECK_TOKENS");
+    await this.$auth.checkTokens()
     try {
-      await this.$auth.user(true)
+      const ret = await this.$auth.user(true)
+      console.log("this.$auth.user:", ret)
+      console.log("computed authUser", this.authUser)
     } catch(e) {
       if (e.response.status) {
         // unauthorized: the user is not logged in
@@ -281,7 +284,7 @@ export default {
   },
   computed: {
     logged_in() {
-      return this.authUser && this.authUser.username !== undefined
+      return this.authUser?.username !== undefined
     },
     authUser() {
       return this.$store.getters['authenticator/authUser']
