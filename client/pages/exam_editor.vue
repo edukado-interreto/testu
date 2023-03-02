@@ -10,29 +10,14 @@
         <v-icon>mdi-chevron-right</v-icon>
       </template>
     </v-breadcrumbs>
-
-    <div
-      class="d-flex justify-space-between flex-column flex-sm-row"
-    >
-      <div>
+    <v-row>
+      <v-col>
         <h1 :class="{ 'font-italic': !exam.name }">
           {{ exam.name || 'Untitled exam' }}
         </h1>
-        <div class="text-caption" v-if="exam.created">
-          Created: {{ exam.created?.toLocaleString('en-US') }}
-        </div>
-      </div>
-      <div class="d-flex my-3 my-sm-0 ml-0 ml-sm-4 pt-1">
-        <v-btn
-          class="mr-2 primary--text"
-          :disabled="!exam.lid"
-          nuxt
-          :to="localePath(`/exam/${exam.lid}`)"
-          text
-        >
-          <v-icon class="me-1">mdi-eye</v-icon>
-          View exam
-        </v-btn>
+      </v-col>
+      <v-spacer></v-spacer>
+      <v-col cols="auto">
         <v-menu offset-y>
           <template v-slot:activator="{on, attrs}">
             <v-btn icon v-bind="attrs" v-on="on" :disabled="!exam.lid">
@@ -40,14 +25,6 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item @click="copy_link">
-              <v-list-item-icon>
-                <v-icon>mdi-link-variant</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>
-                Copy exam link
-              </v-list-item-title>
-            </v-list-item>
             <v-list-item color="error" @click="delete_exam">
               <v-list-item-icon>
                 <v-icon class="error--text">mdi-delete</v-icon>
@@ -58,18 +35,41 @@
             </v-list-item>
           </v-list>
         </v-menu>
-      </div>
+      </v-col>
+    </v-row>
+    <div class="text-caption" v-if="exam.created">
+      Created: {{ exam.created?.toLocaleString('en-US') }}
     </div>
 
 
-    <div class="mt-4 mb-5">
-      <nuxt-link
-        :to="localePath(`/exercise/${exam.exercise_lid}`)"
-      >
-        <v-icon>mdi-file-outline</v-icon>
-        Go to the exercise
-      </nuxt-link>
-    </div>
+    <v-row no-gutters class="mt-4">
+      <v-col cols="12" sm="6">
+        <nuxt-link
+          :to="localePath(`/exercise/${exam.exercise_lid}`)"
+        >
+          <v-icon>mdi-file-outline</v-icon>
+          Go to the exercise
+        </nuxt-link>
+      </v-col>
+      <v-col v-if="exam.lid">
+        <t-CopyTextField
+          :value="sharable_link"
+          label="Link"
+        >
+        </t-CopyTextField>
+      </v-col>
+      <v-col v-if="exam.lid" class="flex-shrink-1 flex-grow-0">
+        <v-btn
+          class="primary--text"
+          :disabled="!exam.lid"
+          nuxt
+          :to="localePath(`/exam/${exam.lid}`)"
+          text
+        >
+          View
+        </v-btn>
+      </v-col>
+    </v-row>
 
     <v-row no-gutters>
       <v-col cols="auto">
@@ -166,23 +166,14 @@ export default {
         { text: this.exam.name || 'Untitled exam', disabled: true },
       ]
     },
-  },
-  methods: {
-    async copy_link() {
-      if (!this.exam.lid) return
-      const full_url = new URL(
+    sharable_link() {
+      return new URL(
         this.localePath(`/exam/${this.exam.lid}`),
         window.location.origin
       ).href
-      // https://testu.eu/.../exam/nd0k03e
-      try {
-        await navigator.clipboard.writeText(full_url)
-      } catch(e) {
-        // will work only if localhost or https
-        console.error({...e})
-        await this.$refs.msgbox.alert("Cannot write to clipboard!")
-      }
-    },
+    }
+  },
+  methods: {
     async delete_exam() {
       if (!this.exam.lid) return
       if (!(await this.$refs.msgbox.confirm("Are you sure you want to delete this exam?"))) return
