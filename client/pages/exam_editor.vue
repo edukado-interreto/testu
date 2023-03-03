@@ -103,30 +103,42 @@
       </div>
     </template>
 
-    <v-sheet elevation="2" rounded class="pa-4 mt-5">
-      <v-text-field
-        label="Exam name"
-        v-model="exam.name"
-      ></v-text-field>
-      <v-textarea
-        label="Exam description"
-        v-model="exam.description"
-        auto-grow
-        rows="1"
-      ></v-textarea>
+    <v-expansion-panels class="mt-9" v-model="infobox">
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          <template v-slot:default="{ open }">
+            Exam details
+            <span class="ml-5 text--disabled" v-if="!open">
+              <span v-if="exam.name">{{ exam.name }}</span>
+              <span v-else class="font-italic">Untitled exam</span>
+            </span>
+          </template>
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-text-field
+            label="Exam name"
+            v-model="exam.name"
+          ></v-text-field>
+          <v-textarea
+            label="Exam description"
+            v-model="exam.description"
+            auto-grow
+            rows="1"
+          ></v-textarea>
 
-      <v-btn
-        class="my-3 primary--text"
-        large
-        :loading="is_saving"
-        text
-        @click="save"
-      >
-        <v-icon class="mr-2">mdi-content-save</v-icon>
-        Save
-      </v-btn>
-
-    </v-sheet>
+          <v-btn
+            class="my-3 primary--text"
+            large
+            :loading="is_saving"
+            text
+            @click="save"
+          >
+            <v-icon class="mr-2">mdi-content-save</v-icon>
+            Save
+          </v-btn>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
   </v-container>
 </template>
 <script>
@@ -138,6 +150,7 @@ export default {
       accept_submission: true,
     },
     submissions: [],
+    infobox: 0, // 0 = open, undefined = closed
   }),
   async fetch() {
     const exam_id = this.$route.query.exam
@@ -150,6 +163,7 @@ export default {
       this.$set(this.exam, 'exercise_lid', new_from)
     }
     if (exam_id) {
+      this.infobox = undefined // expansion panel closed
       this.exam = (
         await this.$auth.axios.get(`/v1/exams/${exam_id}/`)
       ).data
@@ -264,6 +278,7 @@ export default {
         // We replace the url /?new_from=...
         // with /?exam=<lid>
         this.$router.replace({ query: { exam: ret.data.lid } })
+        this.infobox = undefined
       }
       this.exam = ret.data
       this.exam.created = new Date(this.exam.created)
