@@ -129,7 +129,7 @@ REST_FRAMEWORK = {
         "rest_framework.filters.SearchFilter",
     ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
-    "PAGE_SIZE": 100,
+    "PAGE_SIZE": 300,
 }
 
 REST_USE_JWT = True
