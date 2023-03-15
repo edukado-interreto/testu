@@ -21,6 +21,7 @@
           <v-text-field
             label="Title"
             v-model="details.title"
+            maxlength="100"
           ></v-text-field>
           <v-text-field
             label="Description"
@@ -250,8 +251,17 @@ export default {
         this.$router.push(`/exercise/${ret.data.lid}`)
       } catch(e) {
         console.error({...e});
-        if (e.response.status >= 400) {
-          await this.$refs.msgbox.alert(`Server error (${e.response.status})`)
+        const resp = e.response
+        if (resp.status == 400) {
+          const details = Object.entries(resp.data).map(
+            ([k, v]) => `${k}: ${v.join(' ')}`
+          ).join("\n")
+          // { name: ['Field missing.', 'Other error.'], field2: ['Field too long.'] }
+          // => 'name: Field missing. Other error.\nfield2: Field too long.'
+          await this.$refs.msgbox.alert(`Server error:\n${details}`)
+        }
+        if (resp.status > 400) {
+          await this.$refs.msgbox.alert(`Server error (${resp.status})`)
         }
       }
 

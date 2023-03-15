@@ -118,6 +118,7 @@
           <v-text-field
             label="Exam name"
             v-model="exam.name"
+            maxlength="100"
           ></v-text-field>
           <v-textarea
             label="Exam description"
@@ -265,7 +266,18 @@ export default {
         })
       } catch(e) {
         console.error({...e});
-        await this.$refs.msgbox.alert(`Server error (${e.response.status})`)
+        const resp = e.response
+        if (resp.status == 400) {
+          const details = Object.entries(resp.data).map(
+            ([k, v]) => `${k}: ${v.join(' ')}`
+          ).join("\n")
+          // { name: ['Field missing.', 'Other error.'], field2: ['Field too long.'] }
+          // => 'name: Field missing. Other error.\nfield2: Field too long.'
+          await this.$refs.msgbox.alert(`Server error:\n${details}`)
+        }
+        if (resp.status > 400) {
+          await this.$refs.msgbox.alert(`Server error (${e.response.status})`)
+        }
         return
       } finally {
         this.is_saving = false
