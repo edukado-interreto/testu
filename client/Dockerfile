@@ -1,4 +1,4 @@
-FROM node:lts-slim
+FROM node:16-slim
 
 RUN yarn global add http-server
 
