@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
@@ -5,9 +6,10 @@ from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
+from django_filters import rest_framework as filters
 
 from .file_upload_functions import FileUploadException, handle_uploaded_file
-from .models import Exam, Exercise, Submission
+from .models import Exam, Exercise, Submission, CEFR
 from .serializers import (
     ExamSerializer,
     ExerciseSerializer,
@@ -16,11 +18,50 @@ from .serializers import (
 )
 
 
+class CharInFilter(filters.BaseInFilter):
+    lookup_expr = "in"
+
+
+class ExerciseFilter(filters.FilterSet):
+    name = filters.CharFilter(lookup_expr="icontains")
+    created_by = filters.CharFilter(method="created_by_username")
+    src_lang = CharInFilter(field_name="src_lang")
+    lang_learn_lang = CharInFilter(field_name="lang_learn_lang")
+    cefr_level_min = filters.TypedChoiceFilter(
+        field_name="lang_learn_cefr_level_min",
+        choices=CEFR.choices,
+        lookup_expr="gte",
+    )
+    cefr_level_max = filters.TypedChoiceFilter(
+        field_name="lang_learn_cefr_level_max",
+        choices=CEFR.choices,
+        lookup_expr="lte",
+    )
+
+    class Meta:
+        model = Exercise
+        fields = [
+            "name",
+            "created_by",
+            "src_lang",
+            "lang_learn_lang",
+        ]
+
+    def created_by_username(self, queryset, name, value):
+        return queryset.filter(created_by__username=value)
+
+
 class ExerciseViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
-    queryset = Exercise.objects.all()
     serializer_class = ExerciseSerializer
+    filterset_class = ExerciseFilter
     lookup_field = "lid"
+
+    def get_queryset(self):
+        lookup = Q(searchable=True)
+        if self.request.user.is_authenticated:
+            lookup |= Q(searchable=False) & Q(created_by=self.request.user)
+        return Exercise.objects.filter(lookup).order_by("-created")
 
     def get_object(self):
         self.kwargs[self.lookup_field] = self.kwargs[self.lookup_field].lower()
