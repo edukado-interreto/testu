@@ -111,8 +111,13 @@
 
       <v-data-iterator
         class="mt-5"
-        :items="filtered_exercises"
-        :items-per-page="15"
+        :key="iterator_key"
+        :items="exercises.results"
+        :items-per-page="page_length"
+        :server-items-length="exercises.count"
+        :footer-props="{ 'disable-items-per-page': true }"
+        @update:page="on_page_update"
+        :loading="loading"
       >
         <template v-slot:default="props">
           <ExerciseListItem
@@ -135,9 +140,17 @@ export default {
     cefr
   ],
   data: () => ({
-    exercises: [],
-    filtered_exercises: [],
+    iterator_key: '',
+    page_length: 3,
+    loading: false,
+    exercises: {
+      count: 0,
+      next: null,
+      prev: null,
+      results: [],
+    },
     search: {
+      offset: 0,
       text: '',
       tags: [],
       src_langs: ['en'], // TODO: current interface language
@@ -163,43 +176,7 @@ export default {
       });
     },
     tags_available() {
-      return this.exercises.flatMap(e => e.tags).filter(t => !!t)
-    }
-  },
-  mixins: [
-    langs_available,
-    cefr
-  ],
-  data: () => ({
-    exercises: [],
-    filtered_exercises: [],
-    search: {
-      text: '',
-      tags: [],
-      src_langs: ['en'], // TODO: current interface language
-      lang_learn: {
-        langs: [],
-        levels: [1, 6],
-      },
-      sort: 'recent'
-    },
-    //langs_available: [
-    //  'en',
-    //  'eo',
-    //  'fr',
-    //  'it'
-    //]
-  }),
-  computed: {
-    current_cefr_label() {
-      const [min, max] = this.search.lang_learn.levels;
-      return this.cefr_info({
-        lang_learn_cefr_level_min: min,
-        lang_learn_cefr_level_max: max,
-      });
-    },
-    tags_available() {
-      return this.exercises.flatMap(e => e.tags).filter(t => !!t)
+      return this.exercises.results.flatMap(e => e.tags).filter(t => !!t)
     }
   },
   methods: {
@@ -208,7 +185,27 @@ export default {
         new Date(d)
       ).toLocaleString("en-US") // TODO: i18n 
     },
-    update_filtered_exercises() {
+    async update_filtered_exercises(preserve_offset) {
+      // FIXME: the parameter 'preserve_offset' may be an event
+      // if the function is called from a component e.g. @click="update_filtered_exercises"
+      if (preserve_offset !== 'preserve_offset') { 
+        this.$set(this.search, 'offset', 0)
+        console.log("reset to page 0")
+        // FIXME: the v-data-iterator does not reset to page 0!
+      }
+      const params = {
+        name: this.search.text,
+        src_lang: this.search.src_langs,
+        lang_learn_lang: this.search.lang_learn.langs,
+        offset: this.search.offset,
+      }
+      if (params.lang_learn_lang?.length) {
+        params.cefr_level_min = this.search.lang_learn.levels[0]
+        params.cefr_level_max = this.search.lang_learn.levels[1]
+      }
+      await this.get_exercises_from_api(params)
+      return
+
       // TODO: fetch from api + debounce
       console.log("update_filtered_exercises")
       console.log(this.search.lang_learn.langs)
@@ -237,12 +234,48 @@ export default {
         (a, b) => new Date(b.created) - new Date(a.created)
       )
     },
+    async get_exercises_from_api(params_obj) {
+      const query = new URLSearchParams()
+      query.set('limit', this.page_length)
+      for (const k in params_obj) query.set(k, params_obj[k])
+      const url = `/v1/exercises/?${query.toString()}`
+      console.log(`fetching ${url}`)
+
+      // --
+      query.delete('offset')
+      this.iterator_key = query.toString()
+      // ^ these two lines are a workaround.
+      // The problem they solve is this:
+      // the v-data-iterator does not roll back to page 1
+      // when it is at page 2-N and an update of the items
+      // occours, example changing a search parameter.
+      // The workaround is to force the refresh of the
+      // component changing its key when any search
+      // parameter change. As a key we use the
+      // query string of the api URL, stripping the
+      // page number, i.e. `offset`.
+      // --
+
+      this.loading = true
+      const resp = await this.$auth.axios.get(url)
+      this.loading = false
+      this.exercises = resp.data
+      // {
+      //   "count": 7,
+      //   "next": "http://…/api/v1/exercises/?limit=2&offset=2",
+      //   "previous": null,
+      //   "results": [ … ]
+      // }
+    },
+    on_page_update(page) {
+      const new_offset = (page-1) * this.page_length
+      if (new_offset == this.search.offset) return
+      this.search.offset = new_offset
+      this.update_filtered_exercises('preserve_offset')
+    },
   },
   async fetch() {
-    this.exercises = (
-      await this.$auth.axios.get('/v1/exercises/')
-    ).data.results; // FIXME: pagination
-    this.update_filtered_exercises()
+    await this.update_filtered_exercises()
   },
   fetchOnServer: true,
   fetchKey: 'exercises'
