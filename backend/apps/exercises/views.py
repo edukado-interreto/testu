@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import action
@@ -67,9 +68,9 @@ class SubmissionViewSet(ModelViewSet):
 def UploadView(request):
     if request.method == "POST":
         if "file" not in request.FILES:
-            return Response({"error": "Missing parameter: file"}, status=400)
+            return JsonResponse({"error": "Missing parameter: file"}, status=400)
         if "type" not in request.POST:
-            return Response({"error": "Missing parameter: type"}, status=400)
+            return JsonResponse({"error": "Missing parameter: type"}, status=400)
 
         try:
             uploaded_file = handle_uploaded_file(
