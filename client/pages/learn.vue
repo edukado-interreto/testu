@@ -8,10 +8,10 @@
     >
       <v-card-text class="d-block d-sm-flex align-baseline">
         <div class="text-h6 font-weight-light grey--text text--darken-3">
-          Recent activity
+          {{ $t('learn.recent') }}
         </div>
         <div class="subheading ms-0 ms-sm-4 grey--text">
-          Submitted exercises per day
+          {{ $t('learn.submitted') }}
         </div>
       </v-card-text>
       <v-sheet
@@ -41,14 +41,14 @@
       :loading="loading"
     >
       <template v-slot:item.is_exam="{ item }">
-        <v-chip class="primary" v-if="item.is_exam">Exam</v-chip>
+        <v-chip class="primary" v-if="item.is_exam">{{ $t('learn.exam') }}</v-chip>
       </template>
       <template v-slot:item.created="{ item }">
         {{ item.created.toLocaleString("en-US") }}
       </template>
       <template v-slot:item.actions="{ item }">
         <v-btn small depressed nuxt :to="localePath(`/review/${item.pk}`)">
-          Review
+          {{ $t('learn.review') }}
         </v-btn>
       </template>
     </v-data-table>
@@ -56,6 +56,11 @@
 </template>
 <script>
 export default {
+  head() {
+    return {
+      title: this.$t('main.my_learning')
+    }
+  },
   data: () => ({
     page_length: 30,
     submissions: {
@@ -95,9 +100,9 @@ export default {
         exercise_name: s.exercise.name,
       }))
       const headers = [
-        { text: 'Exercise', value: 'exercise_name', sortable: false },
+        { text: this.$t('learn.exercise'), value: 'exercise_name', sortable: false },
         { text: '', value: 'is_exam', sortable: false },
-        { text: 'Date', value: 'created', sortable: false },
+        { text: this.$t('learn.date'), value: 'created', sortable: false },
         { text: '', value: 'actions', sortable: false },
       ]
       return { headers, items }

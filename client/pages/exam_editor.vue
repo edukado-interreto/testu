@@ -135,7 +135,7 @@
             @click="save"
           >
             <v-icon class="mr-2">mdi-content-save</v-icon>
-            Save
+            {{ $t('editor.save') }}
           </v-btn>
         </v-expansion-panel-content>
       </v-expansion-panel>

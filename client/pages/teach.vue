@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <v-tabs v-model="tab">
-      <v-tab>Exercises</v-tab>
-      <v-tab>Exams</v-tab>
+      <v-tab>{{ $t('teach.exercises') }}</v-tab>
+      <v-tab>{{ $t('teach.exams') }}</v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab" class="pa-1 mt-5">
@@ -30,7 +30,7 @@
 
       <!-- exams -->
       <v-tab-item>
-        
+
         <ExamList></ExamList>
 
       </v-tab-item>
@@ -44,7 +44,7 @@ export default {
   name: 'Teach',
   head() {
     return {
-      title: 'My teaching'
+      title: this.$t('main.my_teaching')
     }
   },
   mixins: [

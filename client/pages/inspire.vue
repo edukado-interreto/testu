@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <blockquote class="blockquote">This page is available only for signed in users</blockquote>
+      <blockquote class="blockquote">{{ $t('main.only_logged_in') }}</blockquote>
       {{ user.email }}
     </v-col>
   </v-row>

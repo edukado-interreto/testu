@@ -6,10 +6,10 @@
       cols="7"
     >
       <p>
-        Thank you for signing up.
+        {{ $t('login.signup_thanks') }}
       </p>
       <p>
-        Please check your inbox to confirm your registration.
+        {{ $t('login.check_inbox') }}
       </p>
     </v-col>
     <v-col
@@ -22,35 +22,35 @@
         :lazy-validation="true"
         @submit.prevent="register_new_user"
       >
-        <h1 class="text-h5 mb-5">Register to TestU</h1>
+        <h1 class="text-h5 mb-5">{{ $t('login.signup') }}</h1>
         <v-text-field
           outlined
           dense
           v-model="username"
-          label="User name"
-          :rules="[ v => v !== '' || 'Required field' ]"
+          :label="$t('login.username')"
+          :rules="[ v => v !== '' || $t('login.required_field') ]"
           required
         ></v-text-field><v-text-field
           outlined
           dense
           v-model="email"
-          label="E-mail"
-          :rules="[ v => /.+@.+\..+/.test(v) || 'E-mail must be valid' ]"
+          :label="$t('login.email')"
+          :rules="[ v => /.+@.+\..+/.test(v) || $t('login.mail_invalid') ]"
           required
         ></v-text-field>
         <v-text-field
           outlined
           dense
           v-model="password"
-          label="Password"
+          :label="$t('login.password')"
           type="password"
-          :rules="[ v => v !== '' || 'Required field' ]"
+          :rules="[ v => v !== '' || $t('login.required_field') ]"
           required
         ></v-text-field>
         <v-btn
           type="submit"
           class="primary mt-2"
-        >Sign up</v-btn>
+        >{{ $t('main.signup') }}</v-btn>
         <v-alert
           class="mt-2 alert-pre-line"
           type="error"
@@ -65,8 +65,8 @@
       </v-form>
 
       <div class="text--secondary mt-8">
-      Already have an account?
-      <NuxtLink to="/login">Log in</NuxtLink>
+        {{ $t('login.already_registered') }}
+      <NuxtLink to="/login">{{ $t('main.login') }}</NuxtLink>
       </div>
 
     </v-col>
@@ -86,7 +86,7 @@
     name: 'Signup',
     head() {
       return {
-        title: 'SignUp'
+        title: this.$t('login.signup')
       }
     },
     methods: {
@@ -104,7 +104,7 @@
           })
           this.submitted = true
         } catch(e) {
-          if (e.response.status == 400) {
+          if (e.response.status === 400) {
             this.error_messages = Object.values(e.response.data).flat()
             return
           }

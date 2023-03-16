@@ -27,7 +27,7 @@
                 <v-icon>mdi-school</v-icon>
               </v-list-item-icon>
               <v-list-item-title>
-                Create an exam
+                {{ $t('exercise.create_exam') }}
               </v-list-item-title>
             </v-list-item>
             <v-list-item
@@ -38,7 +38,7 @@
                 <v-icon>mdi-content-copy</v-icon>
               </v-list-item-icon>
               <v-list-item-title>
-                Create a copy
+                {{ $t('exercise.create_copy') }}
               </v-list-item-title>
             </v-list-item>
             <v-list-item
@@ -50,7 +50,7 @@
                 <v-icon>mdi-pencil</v-icon>
               </v-list-item-icon>
               <v-list-item-title>
-                Edit exercise
+                {{ $t('exercise.edit') }}
               </v-list-item-title>
             </v-list-item>
             <v-list-item
@@ -62,7 +62,7 @@
                 <v-icon color="error">mdi-delete</v-icon>
               </v-list-item-icon>
               <v-list-item-title>
-                Delete exercise
+                {{ $t('exercise.delete') }}
               </v-list-item-title>
             </v-list-item>
           </v-list>
@@ -82,10 +82,10 @@
       v-for="(unit, i) in exercise.data.sheet"
       :key="unit._key"
     >
-      <div class="headline my-4"> 
+      <div class="headline my-4">
         {{ i+1 }}. {{ unit.title }}
         <span v-if="unit.title === ''" class="font-italic">
-          Untitled unit
+          {{ $t('sheet_editor.untitled_unit') }}
         </span>
       </div>
       <div
@@ -112,15 +112,15 @@
       @click="submit"
       class="mt-9 primary"
       :disabled="submitted"
-    >Check results</v-btn>
-    
+    >{{ $t('exercise.check') }}</v-btn>
+
     <!--
     <pre>{{ submission }}</pre>
     <v-sheet
       v-for="(unit, i) in submission.exercise?.data?.sheet"
       :key="`submitted_${unit._key}`"
     >
-      <div class="headline my-4"> 
+      <div class="headline my-4">
         {{ i+1 }}. {{ unit.title }}
         <span v-if="unit.title === ''" class="font-italic">
           Untitled unit
@@ -200,7 +200,7 @@ export default {
     date_formatted() {
       return (
         new Date(this.exercise.modified)
-      ).toLocaleString("en-US") // TODO: i18n 
+      ).toLocaleString("en-US") // TODO: i18n
     },
     user_logged_in() {
       const authUser = this.$store.getters['authenticator/authUser']
@@ -217,7 +217,7 @@ export default {
     async create_exam() {
       if (
         (!this.user_is_creator)
-        && (!(await this.$refs.msgbox.confirm("The creator of this exercise may edit or delete it while the exam is running. Proceed anyway?")))
+        && (!(await this.$refs.msgbox.confirm(this.$t('exercise.create_exam_confirm'))))
       ) return
       this.$router.push(
         this.localePath(`/exam_editor?new_from=${this.exercise.lid}`)
@@ -226,7 +226,7 @@ export default {
     async remove() {
 
       if (!await this.$refs.msgbox.confirm(
-        'Are you sure you want to delete this exercise?'
+        this.$t('exercise.delete_confirm')
       )) return;
 
       try {
@@ -279,7 +279,7 @@ export default {
         await this.$auth.axios.post('/v1/submissions/', submission)
       } catch(e) {
         console.error({...e})
-        await this.$refs.msgbox.alert("An error occurred while saving the exercise submission")
+        await this.$refs.msgbox.alert(this.$t('exercise.error'))
       }
 
     },

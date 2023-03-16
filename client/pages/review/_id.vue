@@ -3,10 +3,11 @@
 
     <v-chip small class="info mb-4">
       <template v-if="submission.exam_lid">
-        <v-icon small dark class="me-2">mdi-school</v-icon> Exam review
+        <v-icon small dark class="me-2">mdi-school</v-icon>
+        {{ $t('review.exam') }}
       </template>
       <template v-else>
-        Exercise review
+        {{ $t('review.exercise') }}
       </template>
     </v-chip>
 
@@ -22,14 +23,13 @@
     ></SheetReview>
 
     <v-alert type="info" text class="mt-12">
-      These are the exercise solutions you submitted on
-      {{ submission_formatted_date }}.
+      {{ $t('review.submitted_on', { date: submission_formatted_date }) }}
       <ul class="my-3">
         <li v-if="submission.exam_lid">
-          <NuxtLink :to="localePath(`/exam/${submission.exam_lid}`)">Go to the exam</NuxtLink>
+          <NuxtLink :to="localePath(`/exam/${submission.exam_lid}`)">{{ $t('review.go_exam') }}</NuxtLink>
         </li>
         <li v-else>
-          <NuxtLink :to="localePath(`/exercise/${submission.exercise.lid}`)">Go to the exercise</NuxtLink>
+          <NuxtLink :to="localePath(`/exercise/${submission.exercise.lid}`)">{{ $t('review.go_exercise') }}</NuxtLink>
         </li>
       </ul>
     </v-alert>

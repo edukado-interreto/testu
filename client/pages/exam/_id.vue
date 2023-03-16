@@ -12,17 +12,17 @@
         v-if="exam.accept_submission"
       >
         <div class="text-h6">
-          This is an exam
+          {{ $t('exams.is_exam') }}
         </div>
         <div>
-          The results of this exercise will be visible to the examinator <strong>{{ exam.created_by }}</strong>.
+          {{ $t('exams.visible_by', {name: exam.created_by}) }}
         </div>
       </template>
       <template
         v-else
       >
         <div class="text-h6">
-          This exam does not accept new submissions
+          {{ $t('exams.now_new_submissions') }}
         </div>
       </template>
     </v-alert>
@@ -31,14 +31,14 @@
       v-if="!submitter_display_name && !logged_in && exam.accept_submission"
     >
       <p class="text-center text-body-2 mt-12 mb-7">
-        To proceed to the exam, please log in or choose a display name.
+        {{ $t('exams.please_log_in') }}
       </p>
       <v-row justify="center" class="mt-3">
         <v-col cols="12" sm="4" md="2" align="center">
-          <v-btn color="primary" block @click="login">Log in</v-btn>
+          <v-btn color="primary" block @click="login">{{ $t('main.login') }}</v-btn>
         </v-col>
         <v-col cols="12" sm="1" md="1" align="center">
-          or
+          {{ $t('exam.or') }}
         </v-col>
         <v-col cols="12" sm="6" md="4" align="center">
           <v-text-field
@@ -50,7 +50,7 @@
             persistent-placeholder
           >
             <template v-slot:append-outer>
-              <v-btn small @click="submitter_display_name = display_name_vmodel">Ok</v-btn>
+              <v-btn small @click="submitter_display_name = display_name_vmodel">{{ $t('main.ok') }}</v-btn>
             </template>
           </v-text-field>
         </v-col>
@@ -58,7 +58,7 @@
     </div>
 
     <div v-if="should_exercise_be_shown">
-      
+
       <v-row>
         <v-col>
           <h1>{{ exam.name }}</h1>
@@ -73,19 +73,19 @@
             :to="localePath(`/exam_editor?exam=${id}`)"
           >
             <v-icon class="me-1">mdi-pencil</v-icon>
-            Edit
+            {{ $t('main.edit') }}
           </v-btn>
         </v-col>
       </v-row>
 
       <v-row dense class="text-caption mb-6">
-      <v-col cols="auto">
-        <v-icon small>mdi-account</v-icon> {{ exam.created_by || 'anonymous' }}
-      </v-col>
-      <v-col cols="auto">
-        <v-icon small>mdi-clock</v-icon> {{ exam.created.toLocaleString('en-US')  }}
-      </v-col>
-    </v-row>
+        <v-col cols="auto">
+          <v-icon small>mdi-account</v-icon> {{ exam.created_by || 'anonymous' }}
+        </v-col>
+        <v-col cols="auto">
+          <v-icon small>mdi-clock</v-icon> {{ exam.created.toLocaleString('en-US')  }}
+        </v-col>
+      </v-row>
 
       <v-sheet v-if="exam.description" class="mb-7">
         {{ exam.description }}
@@ -101,10 +101,10 @@
         v-for="(unit, i) in exercise.data.sheet"
         :key="unit._key"
       >
-        <div class="headline my-4"> 
+        <div class="headline my-4">
           {{ i+1 }}. {{ unit.title }}
           <span v-if="unit.title === ''" class="font-italic">
-            Untitled unit
+            {{ $t('sheet_editor.untitled_unit') }}
           </span>
         </div>
         <div
@@ -133,7 +133,7 @@
         class="mb-0 mt-10"
         v-if="submitted"
       >
-        Well done, your exam has been submitted to the examinator!
+        {{ $t('exam.well_done') }}
       </v-alert>
 
       <v-btn
@@ -141,7 +141,7 @@
         class="mt-9 primary"
         :disabled="submitted || !exam.accept_submission"
         :loading="is_submitting"
-      >Submit</v-btn>
+      >{{ $t('main.submit') }}</v-btn>
 
     </div>
 
@@ -200,7 +200,7 @@ export default {
       // navigate to the login screen, setting
       // the current route as post-login redirect url
       this.$store.commit(
-        "authenticator/updateRedirectUrl", 
+        "authenticator/updateRedirectUrl",
         this.$route.path
       )
       this.$router.push(this.localePath('/login'))
@@ -232,8 +232,8 @@ export default {
     async submit() {
 
       if (!(await this.$refs.msgbox.confirm(
-        "This operation cannot be undone. Proceed?"
-      ))) return 
+        this.$t('exam.confirm')
+      ))) return
 
       this.is_submitting = true
       this.all_readonly = true
@@ -244,14 +244,14 @@ export default {
         await this.$auth.axios.post('/v1/submissions/', submission)
       } catch(e) {
         console.error({...e})
-        await this.$refs.msgbox.alert("An error occurred while submitting the exam.")
+        await this.$refs.msgbox.alert(this.$t('exam.confirm'))
         return
       } finally {
         this.is_submitting = false
       }
 
       this.submitted = true
-      
+
     }
   }
 }
