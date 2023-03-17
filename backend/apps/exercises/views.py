@@ -18,24 +18,20 @@ from .serializers import (
 )
 
 
-class CharInFilter(filters.BaseInFilter):
-    lookup_expr = "in"
-
-
 class ExerciseFilter(filters.FilterSet):
     name = filters.CharFilter(lookup_expr="icontains")
     created_by = filters.CharFilter(method="created_by_username")
-    src_lang = CharInFilter(field_name="src_lang")
-    lang_learn_lang = CharInFilter(field_name="lang_learn_lang")
+    src_lang = filters.BaseInFilter(field_name="src_lang")
+    lang_learn_lang = filters.BaseInFilter(field_name="lang_learn_lang")
     cefr_level_min = filters.TypedChoiceFilter(
         field_name="lang_learn_cefr_level_min",
         choices=CEFR.choices,
-        lookup_expr="gte",
+        method="cefr",
     )
     cefr_level_max = filters.TypedChoiceFilter(
         field_name="lang_learn_cefr_level_max",
         choices=CEFR.choices,
-        lookup_expr="lte",
+        method="cefr",
     )
 
     class Meta:
@@ -48,7 +44,18 @@ class ExerciseFilter(filters.FilterSet):
         ]
 
     def created_by_username(self, queryset, name, value):
+        """Lookup field `created_by` with username instead of pk."""
         return queryset.filter(created_by__username=value)
+
+    def cefr(self, queryset, name, value):
+        """
+        Filter `lang_learn_cefr_level_max` against `cefr_level_min`
+        and `lang_learn_cefr_level_min` against `cefr_level_max`.
+        """
+        minmax = name[-3:]
+        field_name = name.replace(minmax, {"min": "max", "max": "min"}[minmax])
+        lookup_expr = {"min": "gte", "max": "lte"}[minmax]
+        return queryset.filter(**{f"{field_name}__{lookup_expr}": value})
 
 
 class ExerciseViewSet(ModelViewSet):
