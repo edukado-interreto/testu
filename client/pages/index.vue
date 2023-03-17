@@ -141,7 +141,7 @@ export default {
   ],
   data: () => ({
     iterator_key: '',
-    page_length: 3,
+    page_length: 15,
     loading: false,
     exercises: {
       count: 0,
