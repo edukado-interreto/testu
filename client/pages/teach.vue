@@ -10,8 +10,12 @@
       <v-tab-item>
         <v-data-iterator
           class="mt-5"
-          :items="filtered_exercises"
-          :items-per-page="15"
+          :items="exercises.results"
+          :items-per-page="page_length"
+          :server-items-length="exercises.count"
+          :footer-props="{ 'disable-items-per-page': true }"
+          @update:page="on_page_update"
+          :loading="loading"
         >
           <template v-slot:default="props">
             <ExerciseListItem
@@ -49,6 +53,8 @@ export default {
   ],
   data: () => ({
     exercises: [],
+    page_length: 15,
+    loading: false,
   }),
   computed: {
     tab: {
@@ -64,14 +70,6 @@ export default {
       if (!authUser) return null
       return authUser.username
     },
-    filtered_exercises() {
-      return this.exercises.filter(
-        e => e.created_by == this.current_username
-      ).sort(
-        // newest to oldest
-        (a, b) => new Date(b.created) - new Date(a.created)
-      )
-    }
   },
   methods: {
     date_formatted(d) {
@@ -79,11 +77,33 @@ export default {
         new Date(d)
       ).toLocaleString("en-US") // TODO: i18n
     },
+    async get_exercises_from_api(params_obj) {
+      const query = new URLSearchParams()
+
+      query.set('limit', this.page_length)
+      query.set('created_by', this.current_username)
+      for (const k in params_obj) query.set(k, params_obj[k])
+      const url = `/v1/exercises/?${query.toString()}`
+      console.log(`fetching ${url}`)
+
+      this.loading = true
+      const resp = await this.$auth.axios.get(url)
+      this.loading = false
+      this.exercises = resp.data
+      // {
+      //   "count": 7,
+      //   "next": "http://…/api/v1/exercises/?limit=2&offset=2",
+      //   "previous": null,
+      //   "results": [ … ]
+      // }
+    },
+    on_page_update(page) {
+      const offset = (page-1) * this.page_length
+      this.get_exercises_from_api({ offset })
+    },
   },
   async fetch() {
-    this.exercises = (
-      await this.$auth.axios.get('/v1/exercises/')
-    ).data.results // FIXME: pagination
+    await this.get_exercises_from_api()
   },
   fetchOnServer: true,
   fetchKey: 'exercises',
