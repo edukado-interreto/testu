@@ -32,9 +32,11 @@
   </div>
 </template>
 <script>
+import tokenize from '~/mixins/tokenize.js'
 export default {
   name: 'UnitMultipleChoice',
   props: [ 'code', 'shuffle', 'solved', 'readonly', 'silent' ],
+  mixins: [ tokenize ],
   data: () => ({
     score_awarded: 0
   }),
@@ -88,50 +90,7 @@ export default {
 
       if (!this.code) return []
 
-      let ret = this.code.split(
-        "\n\n"
-      ).map(s => {
-        return s.split(/[\[\]]/gi).map((value, i) => {
-          if (i % 2 == 0) {
-            // is text
-            return { token: 'text', value }
-          } else {
-            // is gap
-            if (!value) return { value: "" }
-            let ret = {
-              token: 'gap',
-              options: []
-            }
-            value.split("|").forEach((v, i, a) => {
-
-              // a prepending '+' in an option marks
-              // a right answer: set ret.right accordingly
-              // and remove the leading '+' from the option
-              let right = false
-              if (v[0] == '+') {
-                right = true
-                v = v.slice(1)
-              }
-
-              // a '~' in the last option introduces a
-              // message to show when a wrong answer is given,
-              // e.g. [cat|+fish|dog~It can swim!]
-              // remove that message from the option and use
-              // it as ret.errorExplanation
-              if (i === a.length-1) {
-                [ v, ret.errorExplanation ] = v.split("~")
-              }
-
-              ret.options.push({
-                value: v,
-                right
-              })
-            })
-            return ret
-          }
-        }).filter(t => t.value != "")
-      });
-      return ret
+      return this.tokenize(this.code)
     }
   }
 }
