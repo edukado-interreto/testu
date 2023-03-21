@@ -34,8 +34,11 @@
     <v-data-table
       :items="table.items"
       :headers="table.headers"
-      sort-by="created"
-      :sort-desc="true"
+      :items-per-page="page_length"
+      :server-items-length="submissions.count"
+      :footer-props="{ 'disable-items-per-page': true }"
+      @update:page="on_page_update"
+      :loading="loading"
     >
       <template v-slot:item.is_exam="{ item }">
         <v-chip class="primary" v-if="item.is_exam">Exam</v-chip>
@@ -54,31 +57,38 @@
 <script>
 export default {
   data: () => ({
+    page_length: 30,
+    submissions: {
+      results: [],
+      count: 0,
+    },
+    loading: false,
   }),
-  async asyncData({ $auth }) {
+  methods: {
+    async get_submissions_from_api(params_obj) {
+      const query = new URLSearchParams()
 
-    const ret = (
-      await $auth.axios.get('/v1/submissions/')
-    ).data
+      query.set('limit', this.page_length)
+      for (const k in params_obj) query.set(k, params_obj[k])
+      const url = `/v1/submissions/?${query.toString()}`
+      console.log(`fetching ${url}`)
 
-    // ret = {
-    //   "count": 16, // total amount of items
-    //   "next": "http://testu.local/api/v1/submissions/?limit=2&offset=6", // null if unavailable
-    //   "previous": "http://testu.local/api/v1/submissions/?limit=2&offset=2", // null if unavailable
-    //   "results": [
-    //     …
-    //   ]
-    // }
-
-    const submissions = ret.results
-
-    return {
-      submissions,
-    }
+      this.loading = true
+      const resp = await this.$auth.axios.get(url)
+      this.loading = false
+      this.submissions = resp.data
+    },
+    on_page_update(page) {
+      const offset = (page-1) * this.page_length
+      this.get_submissions_from_api({ offset })
+    },
+  },
+  async fetch() {
+    await this.get_submissions_from_api()
   },
   computed: {
     table() {
-      const items = this.submissions.map( s => ({
+      const items = this.submissions.results.map( s => ({
         pk: s.pk,
         created: new Date(s.created),
         is_exam: !!s.exam_lid,
@@ -95,7 +105,7 @@ export default {
     stats() {
       const days = {}
 
-      this.submissions.forEach(s => {
+      this.submissions.results.forEach(s => {
         const dateWithoutTime = (
           new Date(s.created)
         ).setHours(0,0,0,0) // as int
