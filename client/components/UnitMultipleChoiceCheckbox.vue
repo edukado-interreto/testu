@@ -15,7 +15,7 @@
         <span class="black--text">{{ choice.value }}</span>
         <template v-if="!silent">
           <v-icon
-            v-if="success[i] === true"
+            v-if="show_success_feedback[i]"
             class="mx-1"
             color="success"
           >mdi-check-bold</v-icon>
@@ -92,6 +92,7 @@ export default {
     },
     success: function() {
       /**
+       * The correctness status of each checkbox
        * @returns: [ true | false ]
        */
       return this.choices.map(c => {
@@ -100,6 +101,17 @@ export default {
         if (!checked && c.right === false) return true
         return false
       })
+    },
+    show_success_feedback() {
+      /**
+       * Whether provide success feedback for each checkbox.
+       * It is true if the option is correctly checked and all
+       * other right options are checked as well. False otherwise.
+       * @returns: [ true | false ]
+       */
+      return this.choices.map(
+        (c, i) => this.success[i] && c.right && this.success.every(Boolean)
+      )
     }
   },
   methods: {
@@ -109,7 +121,7 @@ export default {
 
       if (this.silent) return
       if (process.server) return
-      if (this.success[i] === true) {
+      if (this.show_success_feedback[i] === true) {
         this.confetti_shoot(
           this.$refs.checkbox[i].$el.querySelector('input')
         )
