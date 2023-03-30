@@ -10,10 +10,10 @@
           @change="update_filtered_exercises"
         >
           <v-chip
-            v-for="tag in tags_used"
-            :key="tag"
-            :value="tag"
-            v-text="tag"
+            v-for="tag in tags_used_localized"
+            :key="tag.value"
+            :value="tag.value"
+            v-text="tag.text"
           ></v-chip>
         </v-chip-group>
       </v-col>
@@ -174,6 +174,12 @@ export default {
     //]
   }),
   computed: {
+    tags_used_localized() {
+      return this.tags_used.map(t => ({
+        value: t,
+        text: this.$t(`tags.${t}`),
+      }))
+    },
     current_cefr_label() {
       const [min, max] = this.search.lang_learn.levels;
       return this.cefr_info({

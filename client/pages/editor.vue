@@ -33,7 +33,7 @@
             deletable-chips
             multiple
             v-model="details.tags"
-            :items="tags_available"
+            :items="tags_available_localized"
           ></v-autocomplete>
           <v-autocomplete
             label="Language"
@@ -128,6 +128,7 @@ export default {
     }
   },
   data: () => ({
+    tags_available: [],
     overwrite_id: undefined,
     user: {},
     sheet: [],
@@ -148,6 +149,12 @@ export default {
     infobox: undefined
   }),
   computed: {
+    tags_available_localized() {
+      return this.tags_available.map(t => ({
+        value: t,
+        text: this.$t(`tags.${t}`),
+      }))
+    },
     current_cefr_label() {
       console.log('in cefr label')
       const [min, max] = this.details.lang_learn.cefr_level_range.map(this.n2cefr);

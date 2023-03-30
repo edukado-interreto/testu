@@ -25,7 +25,7 @@
       v-if="exercise.tags?.length > 0"
     >
       <v-icon small>mdi-tag</v-icon>
-      {{ exercise.tags.join(", ") }} <!-- TODO: i18n -->
+      {{ tags_localized.join(", ") }} <!-- TODO: i18n -->
     </v-col>
   </v-row>
 </template>
@@ -39,6 +39,11 @@ export default {
     cefr,
   ],
   computed: {
+    tags_localized() {
+      return (this.exercise.tags || []).map(
+        t => this.$t(`tags.${t}`)
+      )
+    },
     date_formatted() {
       return (
         new Date(this.exercise.modified)
