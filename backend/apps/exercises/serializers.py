@@ -13,19 +13,12 @@ class LidField(serializers.SlugRelatedField):
         )
 
 
-class TagSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Tag
-        fields = ["name"]
-
-    def create(self, validated_data):
-        return super().create(validated_data)
-
-
 class ExerciseSerializer(serializers.ModelSerializer):
-    tags = TagSerializer(many=True, required=False)
     created_by = serializers.SlugRelatedField("username", read_only=True)
     url = serializers.URLField(source="get_absolute_url", read_only=True)
+    tags = serializers.SlugRelatedField(
+        "name", many=True, required=False, queryset=Tag.objects.only("name")
+    )
 
     class Meta:
         model = Exercise

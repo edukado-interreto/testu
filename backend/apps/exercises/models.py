@@ -16,6 +16,9 @@ CEFR = models.IntegerChoices("CEFR", "A1 A2 B1 B2 C1 C2")
 class Tag(TimeStampedModel):
     name = models.CharField("name", max_length=100)
 
+    def __str__(self):
+        return self.name
+
 
 class Exercise(TimeStampedModel):
     CEFR = CEFR

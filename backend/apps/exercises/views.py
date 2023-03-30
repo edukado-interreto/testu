@@ -23,6 +23,7 @@ class ExerciseFilter(filters.FilterSet):
     created_by = filters.CharFilter(method="created_by_username")
     src_lang = filters.BaseInFilter(field_name="src_lang")
     lang_learn_lang = filters.BaseInFilter(field_name="lang_learn_lang")
+    tags = filters.BaseInFilter(field_name="tags__name")
     cefr_level_min = filters.TypedChoiceFilter(
         field_name="lang_learn_cefr_level_min",
         choices=CEFR.choices,

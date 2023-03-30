@@ -1,6 +1,11 @@
 from django.contrib import admin
 
-from .models import Exam, Exercise, Submission, UploadedFile
+from .models import Exam, Exercise, Submission, Tag, UploadedFile
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    pass
 
 
 @admin.register(Exercise)
