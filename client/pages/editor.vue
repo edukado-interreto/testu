@@ -98,7 +98,6 @@
   </div>
 </template>
 <script>
-import tags_available from '~/data/tags_available.json'
 import langs_available from '~/mixins/langs_available.js'
 import cefr from '~/mixins/cefr.js'
 export default {
@@ -113,6 +112,12 @@ export default {
     }
   },
   async fetch() {
+    this.tags_available = (
+      await this.$auth.axios.get(
+        "/v1/tags/?limit=999"
+      )
+    ).data.results.map(e => e.name)
+
     if (this.$route.query.new_from) {
       await this.load_exercise(this.$route.query.new_from)
       this.$set(this.details, 'title', 'Copy of ' + this.details.title) // TODO i18n
@@ -121,9 +126,6 @@ export default {
       await this.load_exercise(this.$route.query.edit)
       this.overwrite_id = this.$route.query.edit
     }
-  },
-  async asyncData({params, route}) {
-    return { tags_available }
   },
   data: () => ({
     overwrite_id: undefined,

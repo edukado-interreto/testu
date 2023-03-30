@@ -10,7 +10,7 @@
           @change="update_filtered_exercises"
         >
           <v-chip
-            v-for="tag in tags_available"
+            v-for="tag in tags_used"
             :key="tag"
             :value="tag"
             v-text="tag"
@@ -136,7 +136,6 @@
   </v-container>
 </template>
 <script>
-import tags_available from '~/data/tags_available.json'
 import langs_available from '~/mixins/langs_available.js'
 import cefr from '~/mixins/cefr.js'
 export default {
@@ -146,6 +145,7 @@ export default {
     cefr
   ],
   data: () => ({
+    tags_used: [],
     iterator_key: '',
     page_length: 15,
     loading: false,
@@ -278,11 +278,13 @@ export default {
       this.update_filtered_exercises('preserve_offset')
     },
   },
-  async asyncData({params, route}) {
-    return { tags_available }
-  },
   async fetch() {
     await this.update_filtered_exercises()
+    this.tags_used = (
+      await this.$auth.axios.get(
+        "/v1/tags/used/?limit=999"
+      )
+    ).data.results.map(e => e.name)
   },
   fetchOnServer: true,
   fetchKey: 'exercises'
