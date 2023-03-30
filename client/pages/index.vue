@@ -7,6 +7,7 @@
           active-class="primary"
           show-arrows
           v-model="search.tags"
+          @change="update_filtered_exercises"
         >
           <v-chip
             v-for="tag in tags_available"
@@ -200,6 +201,7 @@ export default {
         src_lang: this.search.src_langs,
         lang_learn_lang: this.search.lang_learn.langs,
         offset: this.search.offset,
+        tags: this.search.tags,
       }
       if (params.lang_learn_lang?.length) {
         params.cefr_level_min = this.search.lang_learn.levels[0]
