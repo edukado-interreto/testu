@@ -14,9 +14,11 @@ class LidField(serializers.SlugRelatedField):
 
 
 class TagSerializer(serializers.ModelSerializer):
+    count = serializers.IntegerField()
+
     class Meta:
         model = Tag
-        fields = ["pk", "name"]
+        fields = ["pk", "name", "count"]
 
 
 class ExerciseSerializer(serializers.ModelSerializer):

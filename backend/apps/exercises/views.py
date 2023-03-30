@@ -1,10 +1,12 @@
+from collections import Counter
+
 from django.db.models import Count, Q
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ModelViewSet, ViewSet
 from django_filters import rest_framework as filters
 
 from .file_upload_functions import FileUploadException, handle_uploaded_file
@@ -118,17 +120,40 @@ class TagViewSet(ModelViewSet):
     serializer_class = TagSerializer
 
     def get_queryset(self):
+        queryset = Tag.objects.annotate(count=Count("exercise")).order_by("-count")
         if self.action == "used":
-            return (
-                Tag.objects.annotate(count=Count("exercise"))
-                .filter(count__gt=0)
-                .order_by("-count")
-            )
-        return Tag.objects.all()
+            return queryset.filter(count__gt=0)
+        return queryset
 
-    @action(detail=False, methods=["get"])
+    @action(detail=False)
     def used(self, request):
         return self.list(request)
+
+
+class LanguageViewSet(ViewSet):
+    http_method_names = ["get", "options"]
+
+    def list(self, request):
+        uri = request._request.build_absolute_uri()
+        return Response({"learn": f"{uri}learn/", "source": f"{uri}source/"})
+
+    def _list(self, field):
+        return Response(
+            [
+                {"code": code, "count": count}
+                for code, count in Counter(
+                    Exercise.objects.values_list(field, flat=True)
+                ).items()
+            ]
+        )
+
+    @action(detail=False)
+    def learn(self, request):
+        return self._list("lang_learn_lang")
+
+    @action(detail=False)
+    def source(self, request):
+        return self._list("src_lang")
 
 
 @csrf_exempt  # TODO: ĉu eblas fari tion pli bone?

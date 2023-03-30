@@ -15,6 +15,7 @@ from rest_framework_simplejwt.views import (
 from apps.exercises.views import (
     ExamViewSet,
     ExerciseViewSet,
+    LanguageViewSet,
     SheetViewSet,
     SubmissionViewSet,
     TagViewSet,
@@ -26,6 +27,7 @@ router = DefaultRouter()
 router.register("sheets", SheetViewSet, basename="sheet")  # deprecated
 router.register("exercises", ExerciseViewSet, basename="exercise")
 router.register("exams", ExamViewSet, basename="exam")
+router.register("languages", LanguageViewSet, basename="language")
 router.register("submissions", SubmissionViewSet, basename="submission")
 router.register("tags", TagViewSet, basename="tag")
 
