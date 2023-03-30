@@ -24,19 +24,11 @@
     <v-card-subtitle v-if="item.description">
       {{ item.description }}
     </v-card-subtitle>
-    <v-card-text class="text-caption">
-      <div v-if="item.age_min > 0 || item.age_max < 18">
-        Age: {{ item.age_min }} - {{ (item.age_max == 18) ? '18+' : item.age_max  }}
-      </div>
-      <div v-if="item.lang_learn === true">
-        Language learning: {{ langs_table[item.lang_learn_lang].name }} {{ cefr_info(item) }}
-      </div>
-    </v-card-text>
     <v-divider></v-divider>
-    <v-card-text>
-      <v-icon small>mdi-account</v-icon> {{ item.created_by || 'anonymous' }}
-      <span>·</span>
-      <v-icon small>mdi-clock</v-icon> {{ date_formatted(item.created) }}
+    <v-card-text class="pa-2">
+      <ExerciseFooterAttributes
+        :exercise="item"
+      ></ExerciseFooterAttributes>
     </v-card-text>
   </v-card>
 
