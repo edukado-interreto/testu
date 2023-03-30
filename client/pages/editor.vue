@@ -28,7 +28,6 @@
             v-model="details.description"
           ></v-text-field>
           <v-autocomplete
-            v-if="false"
             label="Tags"
             small-chips
             deletable-chips
@@ -198,7 +197,7 @@ export default {
       const payload = {};
       payload.name = this.details.title;
       payload.description = this.details.description;
-      // payload.tags = [...this.details.tags]; // TODO: uncomment this
+      payload.tags = [...this.details.tags]; // TODO: uncomment this
       payload.src_lang = this.details.src_lang;
       payload.lang_learn = false;
       if (this.details.lang_learn.lang) {

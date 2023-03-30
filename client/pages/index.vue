@@ -1,16 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12" md="7">
-        <v-text-field
-          :label="$t('home.search_exercise')"
-          append-icon="mdi-magnify"
-          v-model="search.text"
-          @keyup.enter="update_filtered_exercises"
-          hide-details
-        ></v-text-field>
-      </v-col>
-      <v-col cols="12" md="5">
+      <v-col cols="12">
         <v-chip-group
           multiple
           active-class="primary"
@@ -24,6 +15,17 @@
             v-text="tag"
           ></v-chip>
         </v-chip-group>
+      </v-col>
+    </v-row>
+    <v-row no-gutters>
+      <v-col cols="12" md="7">
+        <v-text-field
+          :label="$t('home.search_exercise')"
+          append-icon="mdi-magnify"
+          v-model="search.text"
+          @keyup.enter="update_filtered_exercises"
+          hide-details
+        ></v-text-field>
       </v-col>
     </v-row>
 
@@ -88,6 +90,7 @@
         </v-autocomplete>
       </v-col>
       <v-spacer></v-spacer>
+      <!--
       <v-col>
         <v-select
           dense
@@ -99,6 +102,7 @@
         >
         </v-select>
       </v-col>
+      -->
     </v-row>
 
       <v-btn
@@ -131,6 +135,7 @@
   </v-container>
 </template>
 <script>
+import tags_available from '~/data/tags_available.json'
 import langs_available from '~/mixins/langs_available.js'
 import cefr from '~/mixins/cefr.js'
 export default {
@@ -175,9 +180,6 @@ export default {
         lang_learn_cefr_level_max: max,
       });
     },
-    tags_available() {
-      return this.exercises.results.flatMap(e => e.tags).filter(t => !!t)
-    }
   },
   methods: {
     date_formatted(d) {
@@ -273,6 +275,9 @@ export default {
       this.search.offset = new_offset
       this.update_filtered_exercises('preserve_offset')
     },
+  },
+  async asyncData({params, route}) {
+    return { tags_available }
   },
   async fetch() {
     await this.update_filtered_exercises()
