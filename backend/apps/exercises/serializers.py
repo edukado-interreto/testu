@@ -13,6 +13,12 @@ class LidField(serializers.SlugRelatedField):
         )
 
 
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ["pk", "name"]
+
+
 class ExerciseSerializer(serializers.ModelSerializer):
     created_by = serializers.SlugRelatedField("username", read_only=True)
     url = serializers.URLField(source="get_absolute_url", read_only=True)

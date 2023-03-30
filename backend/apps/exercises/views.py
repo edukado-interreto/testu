@@ -1,6 +1,5 @@
-from django.db.models import Q
+from django.db.models import Count, Q
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
@@ -9,12 +8,13 @@ from rest_framework.viewsets import ModelViewSet
 from django_filters import rest_framework as filters
 
 from .file_upload_functions import FileUploadException, handle_uploaded_file
-from .models import Exam, Exercise, Submission, CEFR
+from .models import Exam, Exercise, Submission, Tag, CEFR
 from .serializers import (
     ExamSerializer,
     ExerciseSerializer,
     SheetSerializer,
     SubmissionSerializer,
+    TagSerializer,
 )
 
 
@@ -69,7 +69,7 @@ class ExerciseViewSet(ModelViewSet):
         lookup = Q(searchable=True)
         if self.request.user.is_authenticated:
             lookup |= Q(searchable=False) & Q(created_by=self.request.user)
-        return Exercise.objects.filter(lookup).order_by("-created")
+        return Exercise.objects.filter(lookup).distinct().order_by("-created")
 
     def get_object(self):
         self.kwargs[self.lookup_field] = self.kwargs[self.lookup_field].lower()
@@ -111,6 +111,24 @@ class SubmissionViewSet(ModelViewSet):
         if self.request.user.is_anonymous:
             return Submission.objects.none()
         return Submission.objects.filter(created_by=self.request.user)
+
+
+class TagViewSet(ModelViewSet):
+    http_method_names = ["get", "options"]
+    serializer_class = TagSerializer
+
+    def get_queryset(self):
+        if self.action == "used":
+            return (
+                Tag.objects.annotate(count=Count("exercise"))
+                .filter(count__gt=0)
+                .order_by("-count")
+            )
+        return Tag.objects.all()
+
+    @action(detail=False, methods=["get"])
+    def used(self, request):
+        return self.list(request)
 
 
 @csrf_exempt  # TODO: ĉu eblas fari tion pli bone?

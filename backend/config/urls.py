@@ -17,6 +17,7 @@ from apps.exercises.views import (
     ExerciseViewSet,
     SheetViewSet,
     SubmissionViewSet,
+    TagViewSet,
     UploadView,
 )
 
@@ -26,6 +27,7 @@ router.register("sheets", SheetViewSet, basename="sheet")  # deprecated
 router.register("exercises", ExerciseViewSet, basename="exercise")
 router.register("exams", ExamViewSet, basename="exam")
 router.register("submissions", SubmissionViewSet, basename="submission")
+router.register("tags", TagViewSet, basename="tag")
 
 urlpatterns = [
     path(
