@@ -13,8 +13,12 @@
             v-for="tag in tags_used_localized"
             :key="tag.value"
             :value="tag.value"
-            v-text="tag.text"
-          ></v-chip>
+          >
+            {{ tag.text }}
+            <!--
+            &nbsp;<span class="text-caption">({{ tag.count }})</span>
+            -->
+          </v-chip>
         </v-chip-group>
       </v-col>
     </v-row>
@@ -41,7 +45,7 @@
           clearable
           multiple
           v-model="search.src_langs"
-          :items="langs_available"
+          :items="source_langs_localized"
           @change="update_filtered_exercises"
         >
           <template v-slot:selection="{ item, index }">
@@ -60,7 +64,7 @@
           hide-details
           multiple
           v-model="search.lang_learn.langs"
-          :items="langs_available"
+          :items="learn_langs_localized"
           clearable
         >
           <template v-slot:prepend-item>
@@ -145,7 +149,9 @@ export default {
     cefr
   ],
   data: () => ({
-    tags_used: [],
+    tags_used: [], // from api [ { name: "art", pk: 9, count: 5 }, … ]
+    source_langs_used: [], // from api [ { code: "en", count: 11 }, … ]
+    learn_langs_used: [],  // from api [ { code: "en", count: 11 }, … ]
     iterator_key: '',
     page_length: 15,
     loading: false,
@@ -159,7 +165,7 @@ export default {
       offset: 0,
       text: '',
       tags: [],
-      src_langs: ['en'], // TODO: current interface language
+      src_langs: [],
       lang_learn: {
         langs: [],
         levels: [1, 6],
@@ -174,10 +180,25 @@ export default {
     //]
   }),
   computed: {
+    source_langs_localized() {
+      // [ { text: "English", value: "en" }, … ]
+      // to be used in v-autocomplete items
+      const codes = this.source_langs_used.map(e => e.code)
+      return this.langs_available.filter(e => codes.includes(e.value))
+    },
+    learn_langs_localized() {
+      // [ { text: "English", value: "en" }, … ]
+      // to be used in v-autocomplete items
+      const codes = this.learn_langs_used.map(e => e.code)
+      return this.langs_available.filter(e => codes.includes(e.value))
+    },
     tags_used_localized() {
+      // [ { text: "Scienco", value: "science", count: 1 }, … ]
+      // to be used in v-chip-group
       return this.tags_used.map(t => ({
-        value: t,
-        text: this.$t(`tags.${t}`),
+        value: t.name,
+        text: this.$t(`tags.${t.name}`),
+        count: t.count
       }))
     },
     current_cefr_label() {
@@ -195,12 +216,12 @@ export default {
       ).toLocaleString("en-US") // TODO: i18n 
     },
     async update_filtered_exercises(preserve_offset) {
-      // FIXME: the parameter 'preserve_offset' may be an event
+      // TODO: debounce?
+      // Note: the parameter 'preserve_offset' may be an event
       // if the function is called from a component e.g. @click="update_filtered_exercises"
       if (preserve_offset !== 'preserve_offset') { 
         this.$set(this.search, 'offset', 0)
         console.log("reset to page 0")
-        // FIXME: the v-data-iterator does not reset to page 0!
       }
       const params = {
         name: this.search.text,
@@ -214,35 +235,6 @@ export default {
         params.cefr_level_max = this.search.lang_learn.levels[1]
       }
       await this.get_exercises_from_api(params)
-      return
-
-      // TODO: fetch from api + debounce
-      console.log("update_filtered_exercises")
-      console.log(this.search.lang_learn.langs)
-      console.log(this.search.lang_learn.levels)
-      this.filtered_exercises = this.exercises.filter(
-        e => e.searchable !== false
-      ).filter(
-        e => e.name.toLowerCase().includes(
-          this.search.text.toLowerCase() || ""
-        )
-      ).filter(
-        e => (
-          this.search.src_langs.length == 0
-          || this.search.src_langs.includes(e.src_lang)
-        )
-      ).filter(e => {
-        const langs = this.search.lang_learn.langs
-        if (langs.length == 0) return true
-        if (!langs.includes(e.lang_learn_lang)) return false
-        const [min, max] = this.search.lang_learn.levels
-        if (min > e.lang_learn_cefr_level_max) return false
-        if (max < e.lang_learn_cefr_level_min) return false
-        return true
-      }).sort(
-        // newest to oldest
-        (a, b) => new Date(b.created) - new Date(a.created)
-      )
     },
     async get_exercises_from_api(params_obj) {
       const query = new URLSearchParams()
@@ -257,8 +249,8 @@ export default {
       // ^ these two lines are a workaround.
       // The problem they solve is this:
       // the v-data-iterator does not roll back to page 1
-      // when it is at page 2-N and an update of the items
-      // occours, example changing a search parameter.
+      // when an update of the items occours, example
+      // after changing a search parameter.
       // The workaround is to force the refresh of the
       // component changing its key when any search
       // parameter change. As a key we use the
@@ -288,9 +280,19 @@ export default {
     await this.update_filtered_exercises()
     this.tags_used = (
       await this.$auth.axios.get(
-        "/v1/tags/used/?limit=999"
+        "/v1/tags/used/?limit=9999"
       )
-    ).data.results.map(e => e.name)
+    ).data?.results
+    this.source_langs_used = (
+      await this.$auth.axios.get(
+        "/v1/languages/source/"
+      )
+    ).data?.filter(l => !!l.code)
+    this.learn_langs_used = (
+      await this.$auth.axios.get(
+        "/v1/languages/learn/"
+      )
+    ).data?.filter(l => !!l.code)
   },
   fetchOnServer: true,
   fetchKey: 'exercises'

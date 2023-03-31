@@ -256,7 +256,9 @@ export default {
           data: payload,
         })
         console.log(ret.data)
-        this.$router.push(`/exercise/${ret.data.lid}`)
+        this.$router.push(
+          this.localePath(`/exercise/${ret.data.lid}`)
+        )
       } catch(e) {
         console.error({...e});
         const resp = e.response
