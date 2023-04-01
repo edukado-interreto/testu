@@ -49,7 +49,7 @@ export default {
           } else {
             // is a match of the capture group, i.e. the content
             // of a gap without the enclosing [ … ] brakets.
-            if (!value) return { value: "" }
+            //if (!value) return { value: "" }
             let ret = {
               token: 'gap',
               options: []
