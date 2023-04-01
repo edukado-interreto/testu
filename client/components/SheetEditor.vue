@@ -497,15 +497,35 @@
           </div>
       </v-slide-y-transition>
 
-      <v-btn
-        @click="add('default')"
-        class="mt-3"
-        :elevation="0"
-      >
-        <v-icon class="me-2">mdi-plus</v-icon>
-        Add unit
-      </v-btn>
-
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            class="mt-3"
+            :elevation="0"
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon class="me-2">mdi-plus</v-icon>
+            Add unit
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item
+            v-for="(item, index) in snippets"
+            :key="index"
+            @click="add(item.unit)"
+          >
+            <v-list-item-icon>
+              <v-img
+                width="80"
+                contain
+                :src="require(`@/assets/snippet_thumb/${item.img}`)"
+              ></v-img>
+            </v-list-item-icon>
+            <v-list-item-title>{{ item.name }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
     </v-container>
   </div>
@@ -561,6 +581,112 @@ export default {
       }
     ] */
   }),
+  computed: {
+    snippets() {
+      return [
+        {
+          name: "Blank unit",
+          img: "blank.svg",
+          unit: {
+            type: 'default'
+          },
+        },
+        {
+          name: "Gap filling, dropdown",
+          img: "fill_gap_dropdown.svg",
+          unit: {
+            type: 'default',
+            code: 'The book is [+on|in] the table.'
+          },
+        },
+        {
+          name: "Gap filling, open answer",
+          img: "fill_gap_open.svg",
+          unit: {
+            type: 'open_answer',
+            code: 'The book is [+on|in] the table.'
+          },
+        },
+        {
+          name: "Multiple choice",
+          img: "choice.svg",
+          unit: {
+            type: 'multiple_choice',
+            code: 'Where is the book?\n[+on the table|in the table]'
+          },
+        },
+        {
+          name: "Pairing text with text",
+          img: "match_text.svg",
+          unit: {
+            type: 'pairing',
+            code: 'Cherry == Red\n\nLemon == Yellow\n\nBroccoli == Green'
+          },
+        },
+        {
+          name: "Pairing text with pictures",
+          img: "match_pic.svg",
+          unit: {
+            type: 'pairing',
+            code: 'Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}',
+          },
+        },
+        {
+          name: "Sorting pictures",
+          img: "sort_pic.svg",
+          unit: {
+            type: 'pairing',
+            code: '{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}',
+            shuffle: true,
+          },
+        },
+        {
+          name: "Pairing pictures with sounds",
+          img: "match_pic_sound.svg",
+          unit: {
+            type: 'pairing',
+            code: '{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}'
+          },
+        },
+        {
+          name: "Questions about a picture, true or false",
+          img: "true_false_pic.svg",
+          unit: {
+            type: 'multiple_choice',
+            description: '{img:cat.jpeg}',
+            code: 'The animal in the picture is: [A dog|+A cat|An elephant]\n\nIs it a wild animal or a pet? [+A pet|A wild animal]',
+          },
+        },
+        {
+          name: "Questions about a text, multiple choice",
+          img: "choice_paragraph.svg",
+          unit: {
+            type: 'multiple_choice',
+            description: 'Once upon a time, a hare and a tortoise were always arguing about who was faster.\nThe tortoise challenged the hare to a race, and the hare accepted, thinking it would be an easy win.\n\nThe race began, and the hare took off quickly, leaving the tortoise behind. The hare became overconfident and decided to take a nap. Meanwhile, the tortoise kept moving steadily towards the finish line.\n\nWhen the hare woke up, he realized the tortoise was almost at the finish line. The hare tried to catch up, but it was too late. The tortoise had won the race.',
+            code: 'Who challenged the hare to a race? [The hare|+The tortoise|A bird]\n\nWhy did the hare take a nap during the race? [He was tired|He wanted to give the tortoise a chance to catch up|+He was confident in his victory]\n\nWho won the race? [The hare|+The tortoise|A bird]'
+          }
+        },
+        {
+          name: "Questions about a video, open answer",
+          img: "open_video.svg",
+          unit: {
+            type: 'open_answer',
+            description: 'Watch the video and answer the questions.\n\n{video:https://www.youtube.com/watch?v=chii_rEU30g}',
+            code: 'Where is this place located?\n[]\n\nWho built it?\n[]'
+          },
+        },
+        {
+          name: "Questions about a sound, dropdown",
+          img: "dropdown_sound.svg",
+          unit: {
+            type: 'multiple_choice',
+            description: 'Listen to the audio and aswer the questions:\n\n{sound:cat.mp3}',
+            code: 'Which animal makes this sound?\n[+Cat|Dog|Elephant]\n\nWhat is the term used to describe the sound this animal makes?\n[+Meowing|Barking|Trumpeting]'
+          },
+        },
+      ]
+    }
+  },
   methods: {
     append_new_sentence() {
       const input = this.$refs.textarea.$refs.input
@@ -710,11 +836,14 @@ export default {
         // be arrays anyway, so then we scroll to their first and only item.
       })
     },
-    add(type) {
-      this.sheet.push({
+    add(unit) {
+      const base_unit = {
         type: 'default',
         title: '',
-        code: '' //This is an [example|eksample] phrase.\n\n[This|These] is another one.',
+        code: '',
+      }
+      this.sheet.push({
+        ...base_unit, ...unit
       })
       this.edit(this.sheet.length - 1)
     },
