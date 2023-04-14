@@ -55,11 +55,11 @@ services:
         - traefik.enable=true
         - traefik.docker.network=traefik-public
         - traefik.constraint-label=traefik-public
-        - traefik.http.routers.nginx-http.rule=Host(`sandbox.testu.eu`)
+        - traefik.http.routers.nginx-http.rule=Host(`www.testu.eu`)
         - traefik.http.routers.nginx-http.entrypoints=http
         - traefik.http.routers.nginx-http.middlewares=https-redirect
         - traefik.http.routers.nginx-https.entrypoints=https
-        - traefik.http.routers.nginx-https.rule=Host(`sandbox.testu.eu`)
+        - traefik.http.routers.nginx-https.rule=Host(`www.testu.eu`)
         - traefik.http.routers.nginx-https.tls=true
         - traefik.http.routers.nginx-https.tls.certresolver=le
         - traefik.http.services.nginx.loadbalancer.server.port=80
