@@ -36,26 +36,9 @@
             :key="lang"
           >
             <v-list-item-content>
-              <v-list-item-title>{{ lang.toUpperCase() }}</v-list-item-title>
+              <v-list-item-title>{{ locale_names[lang] }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <!--
-          <v-list-item @click="">
-            <v-list-item-content>
-              <v-list-item-title>Esperanto</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item @click="">
-            <v-list-item-content>
-              <v-list-item-title>French</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item @click="">
-            <v-list-item-content>
-              <v-list-item-title>Italian</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-          -->
         </v-list>
       </v-menu>
 
@@ -188,6 +171,8 @@
 </template>
 
 <script>
+import locale_names from "~/i18n/locale_names.json";
+
 export default {
   name: "default",
   data: () => ({
@@ -195,6 +180,7 @@ export default {
       show: true,
     },
     title: "testu.eu",
+    locale_names,
   }),
   methods: {
     async logout() {
