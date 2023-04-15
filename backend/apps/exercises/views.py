@@ -68,6 +68,9 @@ class ExerciseViewSet(ModelViewSet):
     lookup_field = "lid"
 
     def get_queryset(self):
+        if self.action == "retrieve":
+            return Exercise.objects.all()
+
         lookup = Q(searchable=True)
         if self.request.user.is_authenticated:
             lookup |= Q(searchable=False) & Q(created_by=self.request.user)
