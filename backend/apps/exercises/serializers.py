@@ -51,6 +51,13 @@ class ExerciseSerializer(serializers.ModelSerializer):
             "url",
         ]
 
+    def get_fields(self):
+        """Remove field `data` on list view."""
+        fields = super().get_fields()
+        if self._context["view"].action == "list":
+            fields.pop("data")
+        return fields
+
     def create(self, validated_data):
         user = self.context["request"].user
         validated_data["created_by"] = user
