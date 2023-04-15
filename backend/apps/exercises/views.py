@@ -3,14 +3,14 @@ from collections import Counter
 from django.db.models import Count, Q
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django_filters import rest_framework as filters
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet, ViewSet
-from django_filters import rest_framework as filters
 
 from .file_upload_functions import FileUploadException, handle_uploaded_file
-from .models import Exam, Exercise, Submission, Tag, CEFR
+from .models import CEFR, Exam, Exercise, Submission, Tag
 from .serializers import (
     ExamSerializer,
     ExerciseSerializer,

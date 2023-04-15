@@ -114,6 +114,9 @@ class Submission(TimeStampedModel):
         user = self.created_by.get_username() if self.created_by else self.guest
         return f"{user} for {name}"
 
+    class Meta:
+        ordering = ["-created"]
+
 
 class UploadedFile(TimeStampedModel):
     file_name = models.CharField("file_name", max_length=100, unique=True)
