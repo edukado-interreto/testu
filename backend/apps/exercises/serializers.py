@@ -64,12 +64,6 @@ class ExerciseSerializer(serializers.ModelSerializer):
         return super().create(validated_data)
 
 
-class SheetSerializer(ExerciseSerializer):  # deprecated
-    def get_field_names(self, declared_fields, info):
-        fields = super().get_field_names(declared_fields, info)
-        return ["id"] + [f for f in fields if f not in ("pk", "lid")]
-
-
 class ExamSerializer(serializers.ModelSerializer):
     lid = serializers.CharField(read_only=True)
     exercise_lid = LidField(Exercise, source="exercise", allow_null=True)

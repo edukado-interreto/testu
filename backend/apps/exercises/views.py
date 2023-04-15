@@ -14,7 +14,6 @@ from .models import Exam, Exercise, Submission, Tag, CEFR
 from .serializers import (
     ExamSerializer,
     ExerciseSerializer,
-    SheetSerializer,
     SubmissionSerializer,
     TagSerializer,
 )
@@ -79,11 +78,6 @@ class ExerciseViewSet(ModelViewSet):
     def get_object(self):
         self.kwargs[self.lookup_field] = self.kwargs[self.lookup_field].lower()
         return super().get_object()
-
-
-class SheetViewSet(ExerciseViewSet):  # deprecated
-    lookup_field = "pk"
-    serializer_class = SheetSerializer
 
 
 class ExamViewSet(ModelViewSet):

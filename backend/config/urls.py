@@ -16,7 +16,6 @@ from apps.exercises.views import (
     ExamViewSet,
     ExerciseViewSet,
     LanguageViewSet,
-    SheetViewSet,
     SubmissionViewSet,
     TagViewSet,
     UploadView,
@@ -24,7 +23,6 @@ from apps.exercises.views import (
 
 router = DefaultRouter()
 
-router.register("sheets", SheetViewSet, basename="sheet")  # deprecated
 router.register("exercises", ExerciseViewSet, basename="exercise")
 router.register("exams", ExamViewSet, basename="exam")
 router.register("languages", LanguageViewSet, basename="language")
