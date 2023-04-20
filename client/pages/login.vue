@@ -2,6 +2,7 @@
   <v-row class="mt-5">
     <v-spacer></v-spacer>
     <v-col cols="7">
+    <v-alert type="success" v-if="'verified' in $route.query" v-text="$t('login.email_is_verified')" />
       <v-form
         ref="login_form"
         v-model="valid"
@@ -10,9 +11,12 @@
       >
         <v-text-field
           v-model="email"
+          name="email"
+          type="email"
           :label="$t('login.email')"
           prepend-icon="mdi-account"
           :rules="[ v => /.+@.+\..+/.test(v) || $t('login.mail_invalid') ]"
+          validate-on-blur
           required
         ></v-text-field>
         <v-text-field

@@ -1,20 +1,21 @@
-from apps.exercises.views import (
-    CreatedByViewSet,
-    ExamViewSet,
-    ExerciseViewSet,
-    LanguageViewSet,
-    SubmissionViewSet,
-    ReportViewSet,
-    TagViewSet,
-    UploadView,
-)
 from dj_rest_auth.registration.views import VerifyEmailView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic import RedirectView
+from django.views.generic import RedirectView, TemplateView
 from rest_framework.routers import DefaultRouter
+
+from apps.exercises.views import (
+    CreatedByViewSet,
+    ExamViewSet,
+    ExerciseViewSet,
+    LanguageViewSet,
+    ReportViewSet,
+    SubmissionViewSet,
+    TagViewSet,
+    UploadView,
+)
 
 router = DefaultRouter()
 
@@ -41,4 +42,6 @@ urlpatterns = [
     path("api/v1/upload/", UploadView),
     path("api/", RedirectView.as_view(url="/api/v1/")),
     path("admin/", admin.site.urls),
+    path("~/", TemplateView.as_view(), name="account_email_verification_sent"),
+    path("verify/<str:key>", TemplateView.as_view(), name="account_confirm_email"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

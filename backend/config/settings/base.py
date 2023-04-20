@@ -25,6 +25,7 @@ ACCOUNT_USER_DISPLAY = lambda user: user.__str__()
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_SUBJECT_PREFIX = ""
 
 DEFAULT_FROM_EMAIL = "Testu team <noreply@testu.eu>"
 SERVER_EMAIL = DEFAULT_FROM_EMAIL  # For mail_admins()
@@ -58,15 +59,16 @@ INSTALLED_APPS = [
     "django_filters",
     "rest_framework",
     "rest_framework.authtoken",
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
     "dj_rest_auth",
     "dj_rest_auth.registration",
     "corsheaders",
     "django.contrib.staticfiles",
     "apps.core",
     "apps.exercises",
+    # allauth is at the end so that we can easily override its templates
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
 ]
 
 MIDDLEWARE = [

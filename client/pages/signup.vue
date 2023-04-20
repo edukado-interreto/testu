@@ -36,6 +36,9 @@
           v-model="email"
           :label="$t('login.email')"
           :rules="[ v => /.+@.+\..+/.test(v) || $t('login.mail_invalid') ]"
+          type="email"
+          name="email"
+          validate-on-blur
           required
         ></v-text-field>
         <v-text-field
