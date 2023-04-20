@@ -134,7 +134,7 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item :to="localePath('/about')" nuxt router exact disabled>
+        <v-list-item :to="localePath('/about')" nuxt router exact>
           <v-list-item-action>
             <v-icon>mdi-information</v-icon>
           </v-list-item-action>
@@ -147,6 +147,15 @@
     <v-main>
       <v-container>
         <Nuxt />
+
+        <v-footer class="white pb-0 px-3">
+          <div class="d-sm-flex align-center">
+            <img src="/partners/erasmus.png" class="mx-3" height="26" alt="" />
+            <p class="grey--text text--darken-1 ma-3" style="font-size: .9em;">
+              {{ $t("about.partners.european_commission") }}
+            </p>
+          </div>
+        </v-footer>
       </v-container>
     </v-main>
     <v-footer app class="grey lighten-5">

@@ -1,4 +1,25 @@
 {
+  "about": {
+    "about": "À propos du projet",
+    "about_text": "TestU Online est une plate-forme d'apprentissage en ligne gratuite et multilingue permettant la création facile et rapide de divers quiz, tests et exercices principalement destinés à l'apprentissage des langues. Les utilisateurs de la plateforme seront principalement des enseignants, des entraîneurs/conférenciers ainsi que leurs élèves, qui fréquentent des écoles élémentaires ou d'autres formes d'éducation, qu'elles soient formelles ou informelles. Les raisons de la création d'une telle plateforme s'expliquent par la nécessité de permettre à une jeune génération d'accéder à une éducation gratuite en dépit de leurs origines socio-économiques, religieuses ou de leur nationalité, des limites géographiques, voire de leurs divers handicaps.",
+    "partners_title": "Partenaires",
+    "partners": {
+      "bit_description": "bit (best in training, ou « meilleur en formation ») schulungscenter (= centre de formation), fondé en 1986, est l'un des principaux prestataires de formation dans le domaine des projets sur le marché du travail, de la formation professionnelle et de la formation et de l'employabilité en Autriche. Leur atout principal est leur expérience et leur savoir-faire dans la conception (didactique, méthodologie, conception pédagogique) et la réalisation de divers projets nationaux et internationaux. Ils ont une expérience substantielle du travail avec différents groupes cibles, par ex. les jeunes, les jeunes adultes au chômage et leurs besoins éducatifs à travers leurs activités quotidiennes.",
+      "bit_location": "Graz, Autriche",
+      "european_commission": "Ce projet a été financé avec le soutien de la Commission Européenne. Cette publication reflète uniquement les opinions de l'auteur, la Commission ne peut être tenue responsable de l'utilisation qui pourrait être faite des informations qu'elle contient.",
+      "ikso_description": "L'organisation internationale E@I, s'appuyant sur environ 250 bénévoles, soutient l'apprentissage interculturel sur internet. Leur projets, qui servent de base d’élaboration pour deutsch.info, sont des sites web multilingues où l'on peut apprendre l'espéranto ({1}) et le slovaque ({2}). Outre le développement de portails d'apprentissage, E@I organise également diverses actions de formation, notamment dans les domaines des langues et des nouvelles technologies.",
+      "ikso_location": "Partizánske, Slovaquie",
+      "leipzig_description": "L'Université de Leipzig, fondée en 1409, est une université de recherche qui offre un enseignement dans un environnement de recherche riche et diversifié, avec un corps professoral d’environ 400 membres qui enseigne à environ 30 000 étudiants. La diversité de ses 14 facultés (couvrant des disciplines allant de la médecine aux sciences naturelles, des mathématiques à la théologie et des sciences sociales aux sports) offre d'excellentes opportunités de travail interdisciplinaire. Son Institut d'études sorabes, chargé de la recherche sur le sorabe et d’autres langues minoritaires, leur littérature et leur culture, ainsi que sur la formation des enseignants, est unique au monde. Au cours des années qui ont suivi les changements politiques de 1989, des sommes importantes ont été investies dans l'infrastructure de recherche, de sorte que l'Université de Leipzig est aujourd'hui une institution de premier plan en matière de bâtiments et d'équipement.",
+      "leipzig_location": "Leipzig, Allemagne",
+      "leipzig_name": "Université de Leipzig",
+      "uam_description": "L’Université Adam Mickiewicz à Poznań, nommée d’après le célèbre poète romantique polonais, est l’une des meilleures universités de Pologne et l’une des institutions académiques les plus importantes de Poznań. Elle a été fondée en 1919, mais sa réputation, issue d’une longue tradition d’éducation supérieure dans la ville de Poznań, remonte au XVI<sup>e</sup> siècle (Akademia Lubrańskiego, français : Académie de Lubrański, latin: Collegium Lubranscianum, établie à Poznań en 1518). Aujourd’hui, un personnel académique de plus de 3 000 personnes offre 193 matières et spécialités à environ 40 000 étudiants, dont plus de 1 300 doctorants. Elle est à l’origine de plus de 8 000 publications scientifiques par an et participe à plus de 600 projets nationaux et internationaux. L’université est divisée en 20 facultés couvrant un large éventail de sciences naturelles et sociales et de sciences humaines. Trois d’entre elles sont axées sur les études de langues et proposent un enseignement pratique d’une cinquantaine de langues. De nombreux cours de langues se sont vus attribuer la catégorie de qualité la plus élevée par la commission d’accréditation polonaise, ce qui atteste à la fois de l’excellente compétence disciplinaire des enseignants et de l’utilisation des méthodes d’enseignement les plus récentes, ainsi que d’excellents résultats universitaires. La faculté des langues et littératures modernes est l’une des plus grandes de l’université et propose le plus grand nombre de cours de langues. L’institut d’ethnolinguistique, au sein de la faculté, enseigne plus d’une douzaine de langues dans six spécialités, avec un personnel originaire de plus de 15 pays différents.",
+      "uam_location": "Poznań, Pologne",
+      "uam_name": "Université Adam Mickiewicz",
+      "vu_description": "L'Université de Vilnius a été fondée au XVI<sup>e</sup> siècle et est considérée comme l'une des plus anciennes universités d'Europe Centrale et d’Europe de l’Est. Les études de langues font partie intégrante du programme d'études de l'Université de Vilnius. À l'époque, la langue principale enseignée était le latin aux côtés du grec ancien et de l'hébreu. Ainsi, même si la Faculté de Philologie a été créée seulement en 1944, les études de langues étaient enseignées avant même que le Collège des Jésuites ne devienne une université en 1579. L'Institut des langues et des cultures de la Baltique rassemble des chercheurs en linguistique générale et en études baltes,  germaniques, polonaises, russes, scandinaves, ainsi que bien d'autres. De fortes traditions d'étude de la langue, de la littérature et de la culture russes (le département de philologie russe a été fondé en 1803) coexistent avec succès avec les méthodes d'enseignement les plus avancées et les plus modernes, ce qui se traduit par la participation active des membres de ce département à des projets internationaux et à des événements scientifiques.",
+      "vu_location": "Vilnius, Lituanie",
+      "vu_name": "Université de Vilnius"
+    }
+  },
   "editor": {
     "age_range": "Tranche d’âge",
     "description": "Description",
@@ -8,14 +29,7 @@
     "unlisted": "Non listé dans les résultats de recherche"
   },
   "exam": {
-    "confirm": "This operation cannot be undone. Proceed?",
-    "error": "An error occurred while submitting the exam.",
-    "is_exam": "This is an exam",
-    "no_new_submissions": "This exam does not accept new submissions",
-    "or": "ou",
-    "please_log_in": "To proceed to the exam, please log in or choose a display name.",
-    "visible_by": "The results of this exercise will be visible to the examinator {name}.",
-    "well_done": "Well done, your exam has been submitted to the examinator!"
+    "or": "ou"
   },
   "exercise": {
     "age": "Âge :",
@@ -86,34 +100,6 @@
     "go_exercise": "Aller à l’exercice",
     "submitted_on": "Ce sont les solutions aux exercices que vous avez envoyées le {date}."
   },
-  "sheet_editor": {
-    "add_matching_pair": "Add matching pair",
-    "add_sentence": "Add sentence",
-    "add_unit": "Add unit",
-    "add_unit_to_begin": "Add a new unit to begin",
-    "close": "Close editor",
-    "delete": "Delete",
-    "edit_next": "Edit next",
-    "edit_previous": "Edit previous",
-    "empty_exercise": "Empty exercise",
-    "first_item": "First item",
-    "ignore_case": "Ignore case",
-    "insert_gap": "Insert gap",
-    "insert_image": "Insert image",
-    "insert_pair": "Insert pair",
-    "insert_sound": "Insert sound",
-    "insert_video": "Insert video",
-    "move_down": "Move down",
-    "move_up": "Move up",
-    "new_gap": "New gap",
-    "new_matching_pair": "New matching pair",
-    "second_item": "Second item",
-    "shuffle_options": "Shuffle options",
-    "start_typing": "Start typing a sentence…",
-    "title": "Title",
-    "untitled_unit": "Untitled unit",
-    "valid_url": "Please type a valid URL"
-  },
   "sort": {
     "rated": "Mieux notés",
     "recent": "Plus récents",
@@ -125,32 +111,7 @@
     "astronomy": "Astronomie",
     "biology": "Biologie",
     "business": "Affaires",
-    "chemistry": "Chimie",
-    "computing": "Computing",
-    "crafting": "Crafting",
-    "economics": "Economics",
-    "engineering": "Engineering",
-    "geography": "Geography",
-    "grammar": "Grammar",
-    "history": "History",
-    "languages": "Languages",
-    "literature": "Literature",
-    "logic": "Logic",
-    "math": "Math",
-    "medicine": "Medicine",
-    "miscellaneous": "Miscellaneous",
-    "music": "Music",
-    "pedagogy": "Pedagogy",
-    "philosophy": "Philosophy",
-    "physics": "Physics",
-    "politics": "Politics",
-    "psychology": "Psychology",
-    "religion": "Religion",
-    "science": "Science",
-    "sport": "Sport",
-    "technology": "Technology",
-    "trivia": "Trivia",
-    "zoology": "Zoology"
+    "chemistry": "Chimie"
   },
   "teach": {
     "exams": "Examens",

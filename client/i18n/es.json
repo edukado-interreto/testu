@@ -1,0 +1,50 @@
+{
+  "about": {
+    "about": "Sobre el proyecto",
+    "partners_title": "Colaboradores",
+    "partners": {
+      "bit_description": "bit (= best in training) schulungscenter (=centro de formación), fundado en 1986, es uno de los principales proveedores de educación en el área de proyectos para el mercado laboral, educación vocacional, capacitación y empleabilidad en Austria. Su clara fortaleza es su experiencia y saber hacer en el diseño (didáctica, metodología, diseño instruccional) y en la realización de diversos proyectos nacionales e internacionales. Tienen una experiencia sustancial en el trabajo con diferentes grupos destinatarios, por ejemplo, jóvenes, jóvenes adultos desempleados y sus necesidades educativas a través de sus actividades regulares.",
+      "bit_location": "Graz, Austria",
+      "ikso_description": "La organización internacional E@I, que cuenta con unos 250 voluntarios, apoya el aprendizaje intercultural en Internet. Sus proyectos, que proporcionan la base para deutsch.info, son sitios web multilingües donde se puede aprender esperanto ({1}) y eslovaco ({2}). Además de desarrollar portales de aprendizaje, E@I también organiza diversas iniciativas de formación, especialmente en las áreas de idiomas y nuevas tecnologías.",
+      "ikso_location": "Partizánske, Eslovaquia",
+      "leipzig_location": "Leipzig, Alemania",
+      "leipzig_name": "Universidad de Leipzig",
+      "uam_location": "Poznań, Polonia",
+      "uam_name": "Universidad Adam Mickiewicz",
+      "vu_location": "Vilnius, Lituania",
+      "vu_name": "Universidad de Vilnius"
+    }
+  },
+  "exercise": {
+    "language": "Idioma"
+  },
+  "home": {
+    "create_exercise": "Crear un nuevo ejercicio",
+    "search_exercise": "Buscar ejercicio"
+  },
+  "langs": {
+    "en": "Inglés",
+    "eo": "Esperanto"
+  },
+  "login": {
+    "email": "Correo electrónico",
+    "login": "Iniciar sesión",
+    "mail_invalid": "El correo electrónico debe ser válido",
+    "page_title": "Iniciar sesión",
+    "password": "Contraseña",
+    "required_field": "Campo obligatorio"
+  },
+  "main": {
+    "about": "Acerca de",
+    "home": "Inicio",
+    "lang_menu_header": "Lenguaje de la interface",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "my_learning": "Mi aprendizaje",
+    "my_teaching": "Mi enseñanza",
+    "privacy": "Aviso de privacidad",
+    "settings": "Configuración de la cuenta",
+    "signup": "Regístrate",
+    "terms": "Términos de uzo"
+  }
+}

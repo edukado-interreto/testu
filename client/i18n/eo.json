@@ -1,4 +1,24 @@
 {
+  "about": {
+    "about": "Pri la projekto",
+    "about_text": "TestU Online estas senpaga multlingva retlerna platformo, kiu ebligas facilan kaj rapidan kreadon de diversaj kvizoj, testoj kaj ekzercoj, ĉefe por lingvolernado. La uzantoj de la platformo estos ĉefe instruistoj, trejnistoj/prelegistoj kaj iliaj lernantoj, kiuj lernas en bazlernejo aŭ alimaniere lernas, ĉu formale aŭ neformale. La kialo de kreo de tia platformo estas la bezono ebligi al juna generacio aliri senpagan edukadon sendepende de soci-ekonomia, religia aŭ nacia fono, geografiaj limigoj aŭ diversspecaj handikapoj.",
+    "partners_title": "Partneroj",
+    "partners": {
+      "bit_description": "bit (= best in training, t.e. plej bona en trejnado) schulungscenter (= trejncentro), fondita en 1986, estas unu el la ĉefaj edukaj provizantoj en la tereno de labormerkataj projektoj, profesia edukado, trejnado kaj dungiteco en Aŭstrio. Ilia klara forto estas ilia sperto kaj scipovo en projektado (didaktiko, metodaro, instrua dezajno) kaj efektivigo de diversaj naciaj kaj internaciaj projektoj. Ili havas grandan sperton pri laborado kun malsamaj celgrupoj, ekz. junuloj, junaj senlaboraj plenkreskuloj, kaj iliaj edukaj bezonoj per siaj regulaj agadoj.",
+      "bit_location": "Graz, Aŭstrio",
+      "european_commission": "Tiu ĉi projekto estas financata per subteno de Eŭropa Komisiono. Tiu ĉi publikaĵo respegulas nur vidpunkton de la aŭtoro, pro tio la Komisiono ne povas esti respondeca pri ajna uzado de informoj, kiuj aperas ĉi tie.",
+      "ikso_description": "La internacia organizo E@I, kun helpo de ĉirkaŭ 250 volontuloj, subtenas interkulturan lernadon en la Interreto, Ĝiaj projektoj, kiuj provizas la bazon de deutsch.info, estas multingvaj retejoj, kie oni povas lerni Esperanton ({1}) kaj la slovakan ({2}). Krom evoluigo de edukaj portaloj, E@I ankaŭ organizas diversajn trejnadojn, ĉefe en la fakoj lingvoj kaj novaj teknologioj.",
+      "ikso_location": "Partizánske, Slovakio",
+      "leipzig_description": "La Universitato de Leipzig, fondita en 1409, estas esplora universitato kiu ofertas edukadon en riĉa kaj diversa esplora medio por ĉirkaŭ 30,000 studentoj instruitaj de proksimume 400 fakultatanoj. La granda vario de 14 fakultatoj (kovrantaj fakojn de medicino ĝis natursciencoj, de matematiko ĝis teologio kaj de sociaj sciencoj ĝis sportoj) ofertas bonegajn ŝancojn por interfaka laboro. Ĝia Instituto de Sorabaj Studoj, okupita pri esplorado pri la soraba kaj aliaj minoritataj lingvoj, ties literaturo kaj kulturo, kaj ankaŭ pri la trejnado de lernejaj instruistoj, estas unika en la mondo. En la jaroj ekde la politikaj ŝanĝoj en 1989 signifaj monsumoj estis investitaj en la esplora infrastrukturo, tiel ke la Universitato de Leipzig estas plej alta institucio kaj en konstruaĵoj kaj ekipaĵo hodiaŭ.",
+      "leipzig_location": "Lepsiko, Germanio",
+      "leipzig_name": "Universitato de Lepsiko",
+      "uam_location": "Poznano, Pollando",
+      "uam_name": "Universitato Adam Mickiewicz",
+      "vu_description": "La Universitato de Vilno estis fondita en la 16-a jarcento kaj estas konsiderata kiel unu el la plej malnovaj universitatoj en Centra kaj Orienta Eŭropo. Lingvostudoj ĉiam estis integrita parto de la instruplano de la Universitato de Vilno. Tiam, la ĉefa lingvo instruita estis la latina kune kun la malnovgreka kaj la hebrea. Tiel, kvankam la Fakultato de Filologio estis establita same lastatempe kiel 1944, lingvostudoj estis instruitaj eĉ antaŭ ol la Jezuita Kolegio iĝis universitato en 1579. La Instituto por la Lingvoj kaj Kulturoj de la Baltiko kunigas esploristojn de Ĝenerala Lingvistiko, Balta, ĝermanaj, polaj, rusaj, skandinavaj studoj, same kiel multaj aliaj. Fortaj tradicioj pri studado de la rusa lingvo, literaturo kaj kulturo (rusa filologio-fako estis fondita en 1803) sukcese kunekzistas kun la plej altnivelaj kaj modernaj instrumetodoj, kio montriĝas en la aktiva partopreno de la membroj de tiu ĉi fako en internaciaj projektoj kaj sciencaj aranĝoj.",
+      "vu_location": "Vilno, Litovio",
+      "vu_name": "Universitato de Vilno"
+    }
+  },
   "editor": {
     "age_range": "Aĝogrupo",
     "description": "Priskribo",
