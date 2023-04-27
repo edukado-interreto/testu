@@ -73,14 +73,18 @@
     "already_registered": "Máte už účet?",
     "check_inbox": "Zkontrolujte si prosím doručenou e-mailovou poštu a potvrďte svoji registraci.",
     "email": "E-mail",
+    "email_is_verified": "",
     "login": "Přihlášení",
     "mail_invalid": "E-mailová adresa musí být platná",
     "page_title": "Přihlášení",
     "password": "Heslo",
     "required_field": "Povinné pole",
+    "resend_link": "",
     "signup": "Zaregistrujte se v TestU",
     "signup_thanks": "Děkujeme za registraci.",
-    "username": "Uživatelské jméno"
+    "username": "Uživatelské jméno",
+    "verify_email": "",
+    "verify_token_used_or_invalid": ""
   },
   "main": {
     "about": "O",
@@ -170,7 +174,8 @@
     "science": "Věda",
     "sport": "Sport",
     "technology": "Technologie",
-    "trivia": "Zajímavosti"
+    "trivia": "Zajímavosti",
+    "zoology": ""
   },
   "teach": {
     "exams": "Zkoušky",

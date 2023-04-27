@@ -73,14 +73,18 @@
     "already_registered": "Masz już konto ?",
     "check_inbox": "Prosimy o sprawdzenie skrzynki pocztowej w celu potwierdzenia rejestracji.",
     "email": "E-mail",
+    "email_is_verified": "Twój e-mail został zweryfikowany! Możesz się teraz zalogować.",
     "login": "Logowanie",
     "mail_invalid": "E-mail musi być ważny",
     "page_title": "Login",
     "password": "Hasło",
     "required_field": "Pole wymagane",
+    "resend_link": "Prześlij ponownie link",
     "signup": "Zarejestruj się w TestU",
     "signup_thanks": "Dziękuję, że się zapisałeś.",
-    "username": "Nazwa użytkownika"
+    "username": "Nazwa użytkownika",
+    "verify_email": "Weryfikacja adresu e-mail",
+    "verify_token_used_or_invalid": "Wygląda na to, że ten link został już użyty lub jest nieważny."
   },
   "main": {
     "about": "O nas",
@@ -119,7 +123,7 @@
     "empty_exercise": "Puste ćwiczenie",
     "first_item": "Pierwsza pozycja",
     "ignore_case": "Zignoruj przypadek",
-    "insert_gap": "Wstaw lukę",
+    "insert_gap": "Wstaw spację",
     "insert_image": "Wstaw obrazek",
     "insert_pair": "Wstaw parę",
     "insert_sound": "Wstaw dźwięk",

@@ -73,14 +73,18 @@
     "already_registered": "Máte už účet?",
     "check_inbox": "Skontrolujte si prosím doručenú e-mailovú poštu a potvrďte svoju registráciu.",
     "email": "E-mail",
+    "email_is_verified": "Vaša emailová adresa bola overená! Teraz sa môžete prihlásiť.",
     "login": "Prihlásiť sa",
     "mail_invalid": "E-mail musí byť platný",
     "page_title": "Prihlásiť sa",
     "password": "Heslo",
     "required_field": "Požadované pole",
+    "resend_link": "Opäť odoslať odkaz",
     "signup": "Zaregistrujte sa v TestU",
     "signup_thanks": "Ďakujeme za registráciu.",
-    "username": "Používateľské meno"
+    "username": "Používateľské meno",
+    "verify_email": "Overujeme vašu emailovú adresu!",
+    "verify_token_used_or_invalid": "Zdá sa, že tento odkaz už bol použitý alebo je neplatný."
   },
   "main": {
     "about": "O stránke",

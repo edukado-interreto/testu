@@ -73,14 +73,18 @@
     "already_registered": "Haben Sie bereits ein Konto?",
     "check_inbox": "Bitte prüfen Sie Ihren Posteingang, um Ihre Anmeldung zu bestätigen.",
     "email": "E-Mail",
+    "email_is_verified": "",
     "login": "Login",
     "mail_invalid": "Gültige Email-Adresse erforderlich",
     "page_title": "Login",
     "password": "Passwort",
     "required_field": "Erforderliches Feld",
+    "resend_link": "",
     "signup": "bei TestU anmelden",
     "signup_thanks": "Vielen Dank für Ihre Anmeldung.",
-    "username": "Nutzername"
+    "username": "Nutzername",
+    "verify_email": "",
+    "verify_token_used_or_invalid": ""
   },
   "main": {
     "about": "Über uns",
