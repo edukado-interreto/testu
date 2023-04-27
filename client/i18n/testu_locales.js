@@ -13,5 +13,6 @@ export default {
     { code: "pl", file: "pl.json" },
     { code: "ru", file: "ru.json" },
     { code: "sk", file: "sk.json" },
+    { code: "uk", file: "uk.json" },
   ],
 };
