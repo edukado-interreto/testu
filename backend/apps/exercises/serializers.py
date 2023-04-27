@@ -112,6 +112,7 @@ class SubmissionSerializer(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        if user := self.context["request"].user:
+        user = self.context["request"].user
+        if user.is_authenticated:
             validated_data["created_by"] = user
         return super().create(validated_data)

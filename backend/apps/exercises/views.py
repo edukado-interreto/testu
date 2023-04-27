@@ -5,7 +5,11 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django_filters import rest_framework as filters
 from rest_framework.decorators import action
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import (
+    BasePermission,
+    IsAuthenticated,
+    IsAuthenticatedOrReadOnly,
+)
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet, ViewSet
 
@@ -60,6 +64,17 @@ class ExerciseFilter(filters.FilterSet):
         return queryset.filter(**{f"{field_name}__{lookup_expr}": value})
 
 
+class IsAuthenticatedOrGuest(IsAuthenticated):
+    def has_permission(self, request, view):
+        has_guest = bool(request.data.get("guest"))
+
+        if view.action == "create":
+            if has_guest:
+                return True
+
+        return super().has_permission(request, view)
+
+
 class ExerciseViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_class = ExerciseSerializer
@@ -103,7 +118,7 @@ class ExamViewSet(ModelViewSet):
 
 
 class SubmissionViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticatedOrGuest]
     serializer_class = SubmissionSerializer
 
     def get_queryset(self):
