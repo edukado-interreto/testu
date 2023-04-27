@@ -12,17 +12,17 @@
         v-if="exam.accept_submission"
       >
         <div class="text-h6">
-          {{ $t('exams.is_exam') }}
+          {{ $t('exam.is_exam') }}
         </div>
         <div>
-          {{ $t('exams.visible_by', {name: exam.created_by}) }}
+          {{ $t('exam.visible_by', {name: exam.created_by}) }}
         </div>
       </template>
       <template
         v-else
       >
         <div class="text-h6">
-          {{ $t('exams.now_new_submissions') }}
+          {{ $t('exam.now_new_submissions') }}
         </div>
       </template>
     </v-alert>
@@ -31,7 +31,7 @@
       v-if="!submitter_display_name && !logged_in && exam.accept_submission"
     >
       <p class="text-center text-body-2 mt-12 mb-7">
-        {{ $t('exams.please_log_in') }}
+        {{ $t('exam.please_log_in') }}
       </p>
       <v-row justify="center" class="mt-3">
         <v-col cols="12" sm="4" md="2" align="center">
