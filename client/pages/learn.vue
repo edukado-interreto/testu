@@ -44,7 +44,7 @@
         <v-chip class="primary" v-if="item.is_exam">{{ $t('learn.exam') }}</v-chip>
       </template>
       <template v-slot:item.created="{ item }">
-        {{ item.created.toLocaleString("en-US") }}
+        {{ $d(new Date(item.created), 'dt') }}
       </template>
       <template v-slot:item.actions="{ item }">
         <v-btn small depressed nuxt :to="localePath(`/review/${item.pk}`)">

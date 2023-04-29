@@ -197,11 +197,6 @@ export default {
     }
   },
   computed: {
-    date_formatted() {
-      return (
-        new Date(this.exercise.modified)
-      ).toLocaleString("en-US") // TODO: i18n
-    },
     user_logged_in() {
       const authUser = this.$store.getters['authenticator/authUser']
       if (!authUser) return false

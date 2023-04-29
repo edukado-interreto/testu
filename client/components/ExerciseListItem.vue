@@ -25,10 +25,5 @@ export default {
   name: "ExerciseListItem",
   mixins: [langs_available, cefr],
   props: ["item"],
-  methods: {
-    date_formatted(d) {
-      return new Date(d).toLocaleString("en-US"); // TODO: i18n
-    },
-  },
 };
 </script>

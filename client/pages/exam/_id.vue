@@ -83,7 +83,7 @@
           <v-icon small>mdi-account</v-icon> {{ exam.created_by || $t('exercise.anonymous') }}
         </v-col>
         <v-col cols="auto">
-          <v-icon small>mdi-clock</v-icon> {{ exam.created.toLocaleString('en-US')  }}
+          <v-icon small>mdi-clock</v-icon> {{ $d(new Date(exam.created), 'dt')  }}
         </v-col>
       </v-row>
 

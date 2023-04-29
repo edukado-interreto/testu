@@ -38,7 +38,7 @@
       </v-col>
     </v-row>
     <p class="text-caption" v-if="exam.created">
-      {{ $t('exam.created', { date: exam.created?.toLocaleString('en-US') }) }}
+      {{ $t('exam.created', { date: $d(new Date(exam.created), 'dt') }) }}
     </p>
 
     <v-row no-gutters class="mt-4">

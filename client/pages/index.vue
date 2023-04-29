@@ -206,9 +206,6 @@ export default {
     },
   },
   methods: {
-    date_formatted(d) {
-      return new Date(d).toLocaleString("en-US"); // TODO: i18n
-    },
     async update_filtered_exercises(preserve_offset) {
       // TODO: debounce?
       // Note: the parameter 'preserve_offset' may be an event

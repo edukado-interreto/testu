@@ -72,11 +72,6 @@ export default {
     },
   },
   methods: {
-    date_formatted(d) {
-      return (
-        new Date(d)
-      ).toLocaleString("en-US") // TODO: i18n
-    },
     async get_exercises_from_api(params_obj) {
       const query = new URLSearchParams()
 

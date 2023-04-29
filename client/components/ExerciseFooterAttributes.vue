@@ -4,8 +4,8 @@
       <v-icon small>mdi-account</v-icon>
       {{ exercise.created_by || $t('exercise.anonymous') }}
     </v-col>
-    <v-col cols="auto">
-      <v-icon small>mdi-clock</v-icon> {{ date_formatted }}
+    <v-col cols="auto" v-if="exercise.modified">
+      <v-icon small>mdi-clock</v-icon> {{ $d(new Date(exercise.modified), 'dt') }}
     </v-col>
     <v-spacer></v-spacer>
     <v-col cols="auto" v-if="exercise.age_min > 0 || exercise.age_max < 18">
@@ -33,9 +33,6 @@ export default {
   computed: {
     tags_localized() {
       return (this.exercise.tags || []).map((t) => this.$t(`tags.${t}`));
-    },
-    date_formatted() {
-      return new Date(this.exercise.modified).toLocaleString("en-US"); // TODO: i18n
     },
   },
 };

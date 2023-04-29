@@ -61,7 +61,20 @@ export default {
     lazy: true,
     vueI18n: {
       fallbackLocale: ['en-GB', 'en'],
-    }
+      dateTimeFormats: Object.fromEntries(
+        Object.entries(testu_locales.locales).map(([, locale]) => [
+          locale['code'],
+          {
+            dt: Object.fromEntries(
+              ['year', 'month', 'day', 'hour', 'minute'].map((el) => [
+                el,
+                'numeric',
+              ])
+            ),
+          },
+        ])
+      ),
+    },
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

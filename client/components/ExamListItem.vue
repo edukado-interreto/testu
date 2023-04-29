@@ -20,7 +20,7 @@
     <v-card-text>
       <v-icon small>mdi-account</v-icon> {{ item.created_by || $t('exercise.anonymous') }}
       <span>·</span>
-      <v-icon small>mdi-clock</v-icon> {{ date_formatted(item.created) }}
+      <v-icon small>mdi-clock</v-icon> {{ $d(new Date(item.created), 'dt') }}
     </v-card-text>
   </v-card>
 
@@ -29,12 +29,5 @@
 export default {
   name: 'ExamListItem',
   props: [ 'item' ],
-  methods: {
-    date_formatted(d) {
-      return (
-        new Date(d)
-      ).toLocaleString("en-US") // TODO: i18n 
-    },
-  }
 }
 </script>

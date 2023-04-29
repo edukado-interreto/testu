@@ -26,11 +26,6 @@ export default {
     page_length: 15,
   }),
   methods: {
-    date_formatted(d) {
-      return (
-        new Date(d)
-      ).toLocaleString("en-US") // TODO: i18n
-    },
     async get_exams_from_api(params_obj) {
       const query = new URLSearchParams()
 

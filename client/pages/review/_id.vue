@@ -23,7 +23,7 @@
     ></SheetReview>
 
     <v-alert type="info" text class="mt-12">
-      {{ $t('review.submitted_on', { date: submission_formatted_date }) }}
+      {{ $t('review.submitted_on', { date: $d(new Date(submission.created), 'dt') }) }}
       <ul class="my-3">
         <li v-if="submission.exam_lid">
           <NuxtLink :to="localePath(`/exam/${submission.exam_lid}`)">{{ $t('review.go_exam') }}</NuxtLink>
@@ -48,11 +48,6 @@ export default {
     return {
       id,
       submission
-    }
-  },
-  computed: {
-    submission_formatted_date() {
-      return (new Date(this.submission.created)).toLocaleString('en-US')
     }
   }
 }
