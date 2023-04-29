@@ -1,6 +1,6 @@
 export default {
   locales: [
-    { code: "en", file: "en.json" },
+    { code: "en-GB", file: "en.json" },
     { code: "cs", file: "cs.json" },
     { code: "cy", file: "cy.json" },
     { code: "de", file: "de.json" },

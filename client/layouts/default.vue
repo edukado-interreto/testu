@@ -19,7 +19,7 @@
         <template v-slot:activator="{ on, attrs }">
           <v-btn text v-bind="attrs" v-on="on" class="text-none px-1 mr-1">
             <v-icon class="mr-1">mdi-translate</v-icon>
-            {{ $i18n.locale }}
+            <span class="d-none d-sm-inline">{{ locale_names[$i18n.locale] }}</span>
             <v-icon class="ml-1">mdi-chevron-down</v-icon>
           </v-btn>
         </template>

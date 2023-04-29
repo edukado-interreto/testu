@@ -55,12 +55,12 @@ export default {
   ],
 
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'en-GB',
     langDir: 'i18n/',
     locales: testu_locales.locales,
     lazy: true,
     vueI18n: {
-      fallbackLocale: 'en',
+      fallbackLocale: ['en-GB', 'en'],
     }
   },
 
