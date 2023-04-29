@@ -145,22 +145,17 @@
       </v-list>
     </v-navigation-drawer>
     <v-main>
-      <v-container>
-        <Nuxt />
-
-        <v-footer class="white pb-0 px-3">
-          <div class="d-sm-flex align-center">
-            <img src="/partners/erasmus.png" class="mx-3" height="26" alt="" />
-            <p class="grey--text text--darken-1 ma-3" style="font-size: .9em;">
-              {{ $t("about.partners.european_commission") }}
-            </p>
-          </div>
-        </v-footer>
-      </v-container>
+      <Nuxt />
     </v-main>
-    <v-footer app class="grey lighten-5">
+    <v-footer absolute app padless class="grey lighten-4">
+      <div id="erasmus" class="white d-sm-flex align-center" :class="(nav_drawer.show) ? 'drawer-open' : ''">
+        <img src="/partners/erasmus.png" class="mx-3" height="26" alt="" />
+        <p class="grey--text text--darken-1 ma-3" style="font-size: .9em;">
+          {{ $t("about.partners.european_commission") }}
+        </p>
+      </div>
       <v-spacer></v-spacer>
-      <div>
+      <div class="px-4 py-2">
         <NuxtLink
           :to="localePath('/terms')"
           class="grey--text caption text-decoration-none font-weight-bold"
@@ -228,12 +223,28 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
+@import '~vuetify/src/styles/settings/_variables';
+
 #toc .active {
   font-weight: bold;
   color: red;
 }
 .rotated {
   transform: rotate(-180deg);
+}
+
+.v-navigation-drawer {
+  max-height: 100vh !important;
+}
+
+#erasmus {
+  padding: 4rem 6rem 1rem;
+
+  &.drawer-open {
+    @media #{map-get($display-breakpoints, 'md-and-up')} {
+      padding-left: calc(256px + 6rem);
+    }
+  }
 }
 </style>
