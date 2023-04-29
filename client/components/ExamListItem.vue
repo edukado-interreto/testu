@@ -18,7 +18,7 @@
     </v-card-subtitle>
     <v-divider></v-divider>
     <v-card-text>
-      <v-icon small>mdi-account</v-icon> {{ item.created_by || 'anonymous' }}
+      <v-icon small>mdi-account</v-icon> {{ item.created_by || $t('exercise.anonymous') }}
       <span>·</span>
       <v-icon small>mdi-clock</v-icon> {{ date_formatted(item.created) }}
     </v-card-text>

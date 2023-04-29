@@ -2,7 +2,7 @@
   <v-row dense class="text-caption">
     <v-col cols="auto">
       <v-icon small>mdi-account</v-icon>
-      {{ exercise.created_by || "anonymous" }}
+      {{ exercise.created_by || $t('exercise.anonymous') }}
     </v-col>
     <v-col cols="auto">
       <v-icon small>mdi-clock</v-icon> {{ date_formatted }}

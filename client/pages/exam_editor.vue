@@ -13,7 +13,7 @@
     <v-row>
       <v-col>
         <h1 :class="{ 'font-italic': !exam.name }">
-          {{ exam.name || 'Untitled exam' }}
+          {{ exam.name || $t('exam.untitled') }}
         </h1>
       </v-col>
       <v-spacer></v-spacer>
@@ -30,17 +30,16 @@
                 <v-icon class="error--text">mdi-delete</v-icon>
               </v-list-item-icon>
               <v-list-item-title class="error--text font-weight-bold">
-                Delete exam
+                {{ $t('exam.delete') }}
               </v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
       </v-col>
     </v-row>
-    <div class="text-caption" v-if="exam.created">
-      Created: {{ exam.created?.toLocaleString('en-US') }}
-    </div>
-
+    <p class="text-caption" v-if="exam.created">
+      {{ $t('exam.created', { date: exam.created?.toLocaleString('en-US') }) }}
+    </p>
 
     <v-row no-gutters class="mt-4">
       <v-col cols="12" sm="6">
@@ -48,25 +47,25 @@
           :to="localePath(`/exercise/${exam.exercise_lid}`)"
         >
           <v-icon>mdi-file-outline</v-icon>
-          Go to the exercise
+          {{ $t('exam.goto_exercise') }}
         </nuxt-link>
       </v-col>
       <v-col v-if="exam.lid">
         <t-CopyTextField
           :value="sharable_link"
-          label="Link"
+          :label="$t('exam.link')"
         >
         </t-CopyTextField>
       </v-col>
       <v-col v-if="exam.lid" class="flex-shrink-1 flex-grow-0">
         <v-btn
-          class="primary--text"
           :disabled="!exam.lid"
-          nuxt
           :to="localePath(`/exam/${exam.lid}`)"
+          class="primary--text"
+          nuxt
           text
         >
-          View
+          {{ $t('exam.view') }}
         </v-btn>
       </v-col>
     </v-row>
@@ -75,7 +74,7 @@
       <v-col cols="auto">
         <v-switch
           :disabled="!exam.lid"
-          label="Accept submissions"
+          :label="$t('exam.accept_submissions')"
           v-model="exam.accept_submission"
           @change="toggle_accept_submission"
           :loading="is_toggling_accept_submission"
@@ -99,7 +98,7 @@
         class="pa-9 text-h5 grey--text grey lighten-4 rounded mb-10"
       >
         <v-icon large class="grey--text me-1 pb-1">mdi-inbox</v-icon>
-        No submissions
+        {{ $t('exam.no_submissions' )}}
       </div>
     </template>
 
@@ -107,21 +106,21 @@
       <v-expansion-panel>
         <v-expansion-panel-header>
           <template v-slot:default="{ open }">
-            Exam details
+            {{ $t('exam.details') }}
             <span class="ml-5 text--disabled" v-if="!open">
               <span v-if="exam.name">{{ exam.name }}</span>
-              <span v-else class="font-italic">Untitled exam</span>
+              <span v-else class="font-italic">{{ $t('exam.untitled') }}</span>
             </span>
           </template>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-text-field
-            label="Exam name"
+            :label="$t('exam.name')"
             v-model="exam.name"
             maxlength="100"
           ></v-text-field>
           <v-textarea
-            label="Exam description"
+            :label="$t('exam.description')"
             v-model="exam.description"
             auto-grow
             rows="1"

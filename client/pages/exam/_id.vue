@@ -80,7 +80,7 @@
 
       <v-row dense class="text-caption mb-6">
         <v-col cols="auto">
-          <v-icon small>mdi-account</v-icon> {{ exam.created_by || 'anonymous' }}
+          <v-icon small>mdi-account</v-icon> {{ exam.created_by || $t('exercise.anonymous') }}
         </v-col>
         <v-col cols="auto">
           <v-icon small>mdi-clock</v-icon> {{ exam.created.toLocaleString('en-US')  }}

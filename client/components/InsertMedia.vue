@@ -44,7 +44,9 @@ export default {
         resp = await this.$auth.axios.post('/v1/upload/', formData)
       } catch(e) {
         console.error({...e})
-        await this.$refs.msgbox.alert(e.response.data.error || "Unexpected server response")
+        await this.$refs.msgbox.alert(
+          e.response.data.error || this.$t("editor.unexpected_response")
+        )
       } finally {
         this.$emit("load_end")
       }
