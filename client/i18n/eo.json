@@ -12,7 +12,6 @@
       "leipzig_description": "La Universitato de Leipzig, fondita en 1409, estas esplora universitato kiu ofertas edukadon en riĉa kaj diversa esplora medio por ĉirkaŭ 30,000 studentoj instruitaj de proksimume 400 fakultatanoj. La granda vario de 14 fakultatoj (kovrantaj fakojn de medicino ĝis natursciencoj, de matematiko ĝis teologio kaj de sociaj sciencoj ĝis sportoj) ofertas bonegajn ŝancojn por interfaka laboro. Ĝia Instituto de Sorabaj Studoj, okupita pri esplorado pri la soraba kaj aliaj minoritataj lingvoj, ties literaturo kaj kulturo, kaj ankaŭ pri la trejnado de lernejaj instruistoj, estas unika en la mondo. En la jaroj ekde la politikaj ŝanĝoj en 1989 signifaj monsumoj estis investitaj en la esplora infrastrukturo, tiel ke la Universitato de Leipzig estas plej alta institucio kaj en konstruaĵoj kaj ekipaĵo hodiaŭ.",
       "leipzig_location": "Lepsiko, Germanio",
       "leipzig_name": "Universitato de Lepsiko",
-      "uam_description": "",
       "uam_location": "Poznano, Pollando",
       "uam_name": "Universitato Adam Mickiewicz",
       "vu_description": "La Universitato de Vilno estis fondita en la 16-a jarcento kaj estas konsiderata kiel unu el la plej malnovaj universitatoj en Centra kaj Orienta Eŭropo. Lingvostudoj ĉiam estis integrita parto de la instruplano de la Universitato de Vilno. Tiam, la ĉefa lingvo instruita estis la latina kune kun la malnovgreka kaj la hebrea. Tiel, kvankam la Fakultato de Filologio estis establita same lastatempe kiel 1944, lingvostudoj estis instruitaj eĉ antaŭ ol la Jezuita Kolegio iĝis universitato en 1579. La Instituto por la Lingvoj kaj Kulturoj de la Baltiko kunigas esploristojn de Ĝenerala Lingvistiko, Balta, ĝermanaj, polaj, rusaj, skandinavaj studoj, same kiel multaj aliaj. Fortaj tradicioj pri studado de la rusa lingvo, literaturo kaj kulturo (rusa filologio-fako estis fondita en 1803) sukcese kunekzistas kun la plej altnivelaj kaj modernaj instrumetodoj, kio montriĝas en la aktiva partopreno de la membroj de tiu ĉi fako en internaciaj projektoj kaj sciencaj aranĝoj.",
@@ -26,17 +25,29 @@
     "details": "Detaloj de la ekzerco",
     "save": "Konservi",
     "tags": "Etikedoj",
+    "unexpected_response": "Neatendita respondo de la servilo",
     "unlisted": "Nelistigita en serĉrezultoj"
   },
   "exam": {
+    "accept_submissions": "Akcepti provojn",
     "confirm": "Ĉi tiu operacio ne estas malfarebla. Ĉu daŭrigi?",
+    "created": "Kreita: {date}",
+    "delete": "Forigi ekzamenon",
+    "description": "Priskribo de la ekzameno",
+    "details": "Detaloj de la ekzameno",
     "error": "Eraro okazis dum sendado de la ekzameno.",
+    "goto_exercise": "Iri al la ekzerco",
     "is_exam": "Ĉi tio estas ekzameno",
+    "link": "Ligilo",
+    "name": "Nomo de ekzameno",
     "no_new_submissions": "Ĉi tiu ekzameno ne plu akceptas novajn provojn",
+    "no_submissions": "Neniu provo",
     "or": "aŭ",
     "please_log_in": "Por komenci la ekzamenon, bonvolu ensaluti aŭ elekti uzantnomon.",
+    "untitled": "Sen Titolo",
+    "view": "Vidi",
     "visible_by": "La rezultoj de ĉi tiu ekzerco estos videblaj de la ekzamenanto {name}.",
-    "well_done": "Gratulon, via ekzameno estis sendita al la ekzamenanto!"
+    "well_done": "Via ekzameno estis sukcese sendita al la ekzamenanto!"
   },
   "exercise": {
     "age": "Aĝo:",

@@ -35,8 +35,7 @@
     "no_new_submissions": "Diese Prüfung erlaubt keine neuen Eingaben.",
     "or": "oder",
     "please_log_in": "Um mit der Prüfung fortzufahren, melden Sie sich bitte an oder wählen Sie einen Anzeigenamen.",
-    "visible_by": "Die Ergebnisse dieser Übung werden für den Prüfer {Name} sichtbar sein.",
-    "well_done": "Gut gemacht, Ihre Prüfung ist beim Prüfer eingereicht worden!"
+    "visible_by": "Die Ergebnisse dieser Übung werden für den Prüfer {Name} sichtbar sein."
   },
   "exercise": {
     "age": "Alter:",
@@ -73,18 +72,14 @@
     "already_registered": "Haben Sie bereits ein Konto?",
     "check_inbox": "Bitte prüfen Sie Ihren Posteingang, um Ihre Anmeldung zu bestätigen.",
     "email": "E-Mail",
-    "email_is_verified": "",
     "login": "Login",
     "mail_invalid": "Gültige Email-Adresse erforderlich",
     "page_title": "Login",
     "password": "Passwort",
     "required_field": "Erforderliches Feld",
-    "resend_link": "",
     "signup": "bei TestU anmelden",
     "signup_thanks": "Vielen Dank für Ihre Anmeldung.",
-    "username": "Nutzername",
-    "verify_email": "",
-    "verify_token_used_or_invalid": ""
+    "username": "Nutzername"
   },
   "main": {
     "about": "Über uns",

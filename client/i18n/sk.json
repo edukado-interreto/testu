@@ -35,8 +35,7 @@
     "no_new_submissions": "Táto skúška neprijíma nové pokusy.",
     "or": "alebo",
     "please_log_in": "Ak chcete prejsť ku skúške, prosím, prihláste sa alebo si vyberte zobrazované meno.",
-    "visible_by": "Výsledky tohto cvičenia budú viditeľné pre skúšajúceho {meno}.",
-    "well_done": "Výborne, vaša skúška bola odoslaná skúšajúcemu!"
+    "visible_by": "Výsledky tohto cvičenia budú viditeľné pre skúšajúceho {meno}."
   },
   "exercise": {
     "age": "Vek:",

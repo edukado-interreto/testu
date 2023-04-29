@@ -25,18 +25,25 @@
     "description": "Leírás",
     "details": "A feladat részletei",
     "save": "Mentés",
-    "tags": "Címkék",
-    "unlisted": "Ne jelenjen meg a keresési eredményeknél"
+    "unexpected_response": "Váratlan szerver válasz"
   },
   "exam": {
     "confirm": "Ez a művelet visszavonhatatlan. Folytatja mégis?",
+    "created": "Létrehozva: {date}",
+    "delete": "Vizsga törlése",
+    "description": "Vizsga leírása",
+    "details": "Vizsga részletei",
     "error": "A vizsgalap beküldésekor hiba lépett fel.",
+    "goto_exercise": "Ugrás a feladatra",
     "is_exam": "Ez egy vizsgalap",
-    "no_new_submissions": "Erre a vizsgára már nem lehet új vizsgalapot beküldeni.",
+    "link": "Hivatkozás",
+    "name": "Vizsga neve",
+    "no_submissions": "Nincs beküldés",
     "or": "vagy",
     "please_log_in": "A vizsgához való továbblépéshez kérjük, jelentkezzen be, vagy adja meg a megjelenítendő nevet!",
-    "visible_by": "Ennek a feladatnak az eredményét a vizsgáztató látni fogja.{name}",
-    "well_done": "Remek! A vizsgalapot sikeresen elküldte a vizsgáztatónak."
+    "untitled": "Cím nélküli vizsga",
+    "view": "Megtekintés",
+    "visible_by": "Ennek a feladatnak az eredményét a vizsgáztató látni fogja.{name}"
   },
   "exercise": {
     "age": "Életkor:",
@@ -49,8 +56,6 @@
     "edit": "Feladat szerkesztése",
     "error": "Hiba történt a feladat elküldése közben",
     "language": "Nyelv",
-    "target_language": "Tanult nyelv",
-    "target_language_is": "Tanult nyelv",
     "unlisted": "Ez a feladat nem fog megjelenni a keresési eredmények között"
   },
   "home": {
@@ -65,9 +70,7 @@
     "date": "Dátum",
     "exam": "Vizsga",
     "exercise": "Feladat",
-    "recent": "Legutóbbi tevékenységek",
-    "review": "",
-    "submitted": ""
+    "recent": "Legutóbbi tevékenységek"
   },
   "login": {
     "already_registered": "Már van fiókja?",
@@ -154,7 +157,6 @@
     "computing": "Számítástechnika",
     "crafting": "Kézműveskedés",
     "economics": "Közgazdaságtan",
-    "engineering": "Mérnöki tevékenység",
     "geography": "Földrajz",
     "grammar": "Nyelvtan",
     "history": "Történelem",
@@ -173,8 +175,6 @@
     "religion": "Vallás",
     "science": "Tudomány",
     "sport": "Sport",
-    "technology": "Technika",
-    "trivia": "",
     "zoology": "Állattan"
   },
   "teach": {

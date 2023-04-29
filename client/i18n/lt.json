@@ -35,8 +35,7 @@
     "no_new_submissions": "Egzaminas nepriima naujų paraiškų.",
     "or": "arba",
     "please_log_in": "Norėdami tęsti egzaminą, prisijunkite arba pasirinkite vartotojo vardą.",
-    "visible_by": "Užduoties rezultatai bus matomi egzaminatoriui  {name}.",
-    "well_done": "Puiku, jūsų egzaminas perduotas egzaminatoriui!"
+    "visible_by": "Užduoties rezultatai bus matomi egzaminatoriui  {name}."
   },
   "exercise": {
     "age": "Amžius:",

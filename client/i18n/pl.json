@@ -35,8 +35,7 @@
     "no_new_submissions": "Egzamin ten nie przyjmuje nowych zgłoszeń",
     "or": "lub",
     "please_log_in": "Aby przejść do egzaminu, proszę się zalogować lub wybrać nazwę wyświetlaną.",
-    "visible_by": "Wyniki tego ćwiczenia będą widoczne dla egzaminatora {nazwa}.",
-    "well_done": "Dobra robota, Twój egzamin został przesłany do egzaminatora!"
+    "visible_by": "Wyniki tego ćwiczenia będą widoczne dla egzaminatora {nazwa}."
   },
   "exercise": {
     "age": "Wiek:",
