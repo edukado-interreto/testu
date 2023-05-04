@@ -1,7 +1,8 @@
 from collections import Counter
 
-from django.db.models import Count, Q
+from django.db.models import Count, Q, Sum
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django_filters import rest_framework as filters
 from rest_framework.decorators import action
@@ -14,7 +15,15 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet, ViewSet
 
 from .file_upload_functions import FileUploadException, handle_uploaded_file
-from .models import CEFR, Exam, Exercise, Submission, Tag
+from .models import (
+    CEFR,
+    Exam,
+    ExamReaction,
+    Exercise,
+    ExerciseReaction,
+    Submission,
+    Tag,
+)
 from .serializers import (
     ExamSerializer,
     ExerciseSerializer,
@@ -82,21 +91,37 @@ class ExerciseViewSet(ModelViewSet):
     lookup_field = "lid"
 
     def get_queryset(self):
+        queryset = Exercise.objects.annotate(
+            likes=Sum("exercisereaction__weight", default=0)
+        )
         if self.action == "retrieve":
-            return Exercise.objects.all()
+            return queryset
 
         lookup = Q(searchable=True)
         if self.request.user.is_authenticated:
             lookup |= Q(searchable=False) & Q(created_by=self.request.user)
-        return Exercise.objects.filter(lookup).distinct().order_by("-created")
+        return queryset.filter(lookup).distinct().order_by("-created")
 
     def get_object(self):
+        # Make the long ID non case sensitive:
         self.kwargs[self.lookup_field] = self.kwargs[self.lookup_field].lower()
         return super().get_object()
 
+    @action(methods=["post"], detail=True, permission_classes=[IsAuthenticated])
+    def like(self, request, **kwargs):
+        lookup = {"user": request.user, "exercise": self.get_object()}
+        reaction = ExerciseReaction.objects.filter(**lookup).first()
+        
+        if reaction:
+            ExerciseReaction.objects.filter(pk=reaction.pk).delete()
+            return Response({"liked": None})
+
+        weight = ExerciseReaction.objects.get_or_create(**lookup)[0].weight
+        return Response({"liked": weight})
+
 
 class ExamViewSet(ModelViewSet):
-    queryset = Exam.objects.all()
+    queryset = Exam.objects.annotate(likes=Sum("examreaction__weight", default=0))
     serializer_class = ExamSerializer
     lookup_field = "lid"
 
@@ -115,6 +140,19 @@ class ExamViewSet(ModelViewSet):
         return Response(
             SubmissionSerializer(Submission.objects.filter(exam=exam), many=True).data
         )
+
+
+    @action(methods=["post"], detail=True, permission_classes=[IsAuthenticated])
+    def like(self, request, **kwargs):
+        lookup = {"user": request.user, "exam": self.get_object()}
+        reaction = ExamReaction.objects.filter(**lookup).first()
+        
+        if reaction:
+            ExamReaction.objects.filter(pk=reaction.pk).delete()
+            return Response({"liked": None})
+
+        weight = ExamReaction.objects.get_or_create(**lookup)[0].weight
+        return Response({"liked": weight})
 
 
 class SubmissionViewSet(ModelViewSet):

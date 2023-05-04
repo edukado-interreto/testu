@@ -51,6 +51,9 @@ class Exercise(TimeStampedModel):
     age_min = models.PositiveSmallIntegerField("minimum age", null=True, blank=True)
     age_max = models.PositiveSmallIntegerField("maximum age", null=True, blank=True)
     searchable = models.BooleanField("searchable", default=True)
+    reactions = models.ManyToManyField(
+        User, through="ExerciseReaction", related_name="exercises_liked", blank=True
+    )
 
     class Meta:
         indexes = [
@@ -83,6 +86,9 @@ class Exam(TimeStampedModel):
         Exercise, on_delete=models.SET_NULL, null=True, blank=True
     )
     accept_submission = models.BooleanField("accept submission", default=False)
+    reactions = models.ManyToManyField(
+        User, through="ExamReaction", related_name="exams_liked", blank=True
+    )
 
     def __str__(self):
         return self.name
@@ -135,6 +141,40 @@ class UploadedFile(TimeStampedModel):
 
     def __str__(self):
         return self.file_name
+
+
+class ExerciseReaction(TimeStampedModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
+    weight = models.SmallIntegerField(default=1)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "exercise"],
+                name="unique_user_exercise_reaction",
+            )
+        ]
+
+    def __str__(self):
+        return f"{self.user} liked: {self.exercise}"
+
+
+class ExamReaction(TimeStampedModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
+    weight = models.SmallIntegerField(default=1)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "exam"],
+                name="unique_user_exam_reaction",
+            )
+        ]
+
+    def __str__(self):
+        return f"{self.user} liked: {self.exam}"
 
 
 @receiver(post_delete, sender=UploadedFile)

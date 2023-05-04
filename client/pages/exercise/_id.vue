@@ -7,6 +7,7 @@
       </v-col>
       <v-spacer></v-spacer>
       <v-col cols="auto">
+        <LikeButton icon :item="exercise" @liked="liked" />
         <v-menu offset-y>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
@@ -257,6 +258,9 @@ export default {
       )
 
       return submission
+    },
+    async liked() {
+      await this.$nuxt.refresh();
     },
     async submit() {
       // show the results of the quiz
