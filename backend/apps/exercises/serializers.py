@@ -13,6 +13,14 @@ class LidField(serializers.SlugRelatedField):
         )
 
 
+class CreatedBySerializer(serializers.ModelSerializer):
+    count = serializers.IntegerField()
+
+    class Meta:
+        model = User
+        fields = ["id", "username", "count"]
+
+
 class TagSerializer(serializers.ModelSerializer):
     count = serializers.IntegerField()
 
@@ -27,7 +35,7 @@ class ExerciseSerializer(serializers.ModelSerializer):
     tags = serializers.SlugRelatedField(
         "name", many=True, required=False, queryset=Tag.objects.only("name")
     )
-    likes = serializers.IntegerField()
+    likes = serializers.IntegerField(read_only=True)
     liked = serializers.SerializerMethodField()
 
     class Meta:

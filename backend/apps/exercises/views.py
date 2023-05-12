@@ -1,13 +1,12 @@
 from collections import Counter
 
+from django.contrib.auth import get_user_model
 from django.db.models import Count, Q, Sum
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django_filters import rest_framework as filters
 from rest_framework.decorators import action
 from rest_framework.permissions import (
-    BasePermission,
     IsAuthenticated,
     IsAuthenticatedOrReadOnly,
 )
@@ -25,11 +24,15 @@ from .models import (
     Tag,
 )
 from .serializers import (
+    CreatedBySerializer,
     ExamSerializer,
     ExerciseSerializer,
     SubmissionSerializer,
     TagSerializer,
 )
+
+
+User = get_user_model()
 
 
 class ExerciseFilter(filters.FilterSet):
@@ -89,6 +92,8 @@ class ExerciseViewSet(ModelViewSet):
     serializer_class = ExerciseSerializer
     filterset_class = ExerciseFilter
     lookup_field = "lid"
+    ordering_fields = ["likes", "created", "modified"]
+    ordering = ["-likes", "-created"]
 
     def get_queryset(self):
         queryset = Exercise.objects.annotate(
@@ -111,7 +116,7 @@ class ExerciseViewSet(ModelViewSet):
     def like(self, request, **kwargs):
         lookup = {"user": request.user, "exercise": self.get_object()}
         reaction = ExerciseReaction.objects.filter(**lookup).first()
-        
+
         if reaction:
             ExerciseReaction.objects.filter(pk=reaction.pk).delete()
             return Response({"liked": None})
@@ -141,12 +146,11 @@ class ExamViewSet(ModelViewSet):
             SubmissionSerializer(Submission.objects.filter(exam=exam), many=True).data
         )
 
-
     @action(methods=["post"], detail=True, permission_classes=[IsAuthenticated])
     def like(self, request, **kwargs):
         lookup = {"user": request.user, "exam": self.get_object()}
         reaction = ExamReaction.objects.filter(**lookup).first()
-        
+
         if reaction:
             ExamReaction.objects.filter(pk=reaction.pk).delete()
             return Response({"liked": None})
@@ -165,19 +169,16 @@ class SubmissionViewSet(ModelViewSet):
         return Submission.objects.filter(created_by=self.request.user)
 
 
-class TagViewSet(ModelViewSet):
+class CreatedByViewSet(ModelViewSet):
     http_method_names = ["get", "options"]
-    serializer_class = TagSerializer
+    serializer_class = CreatedBySerializer
 
     def get_queryset(self):
-        queryset = Tag.objects.annotate(count=Count("exercise")).order_by("-count")
-        if self.action == "used":
-            return queryset.filter(count__gt=0)
-        return queryset
-
-    @action(detail=False)
-    def used(self, request):
-        return self.list(request)
+        return (
+            User.objects.annotate(count=Count("exercise"))
+            .order_by("-count")
+            .filter(count__gt=0)
+        )
 
 
 class LanguageViewSet(ViewSet):
@@ -204,6 +205,21 @@ class LanguageViewSet(ViewSet):
     @action(detail=False)
     def source(self, request):
         return self._list("src_lang")
+
+
+class TagViewSet(ModelViewSet):
+    http_method_names = ["get", "options"]
+    serializer_class = TagSerializer
+
+    def get_queryset(self):
+        queryset = Tag.objects.annotate(count=Count("exercise")).order_by("-count")
+        if self.action == "used":
+            return queryset.filter(count__gt=0)
+        return queryset
+
+    @action(detail=False)
+    def used(self, request):
+        return self.list(request)
 
 
 @csrf_exempt  # TODO: ĉu eblas fari tion pli bone?

@@ -53,6 +53,7 @@
   "exercise": {
     "age": "Age:",
     "anonymous": "anonymous",
+    "author": "Author",
     "check": "Check result",
     "create_copy": "Create a copy",
     "create_exam": "Create exam",

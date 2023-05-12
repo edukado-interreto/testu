@@ -1,18 +1,5 @@
-from dj_rest_auth.registration.views import VerifyEmailView
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib import admin
-from django.http import HttpResponseRedirect
-from django.urls import include, path, reverse
-from django.views.generic import RedirectView
-from rest_framework.routers import DefaultRouter
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-    TokenVerifyView,
-)
-
 from apps.exercises.views import (
+    CreatedByViewSet,
     ExamViewSet,
     ExerciseViewSet,
     LanguageViewSet,
@@ -20,9 +7,17 @@ from apps.exercises.views import (
     TagViewSet,
     UploadView,
 )
+from dj_rest_auth.registration.views import VerifyEmailView
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import include, path
+from django.views.generic import RedirectView
+from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 
+router.register("authors", CreatedByViewSet, basename="authors")
 router.register("exercises", ExerciseViewSet, basename="exercise")
 router.register("exams", ExamViewSet, basename="exam")
 router.register("languages", LanguageViewSet, basename="language")
