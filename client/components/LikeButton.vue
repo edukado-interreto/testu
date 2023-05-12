@@ -1,5 +1,5 @@
 <template>
-  <v-btn v-bind="$attrs" @click="click" :disabled="!user">
+  <v-btn v-bind="$attrs" @click="click" :disabled="!user" class="d-print-none">
     <v-hover v-slot="{ hover }">
       <v-icon
         class="icon"

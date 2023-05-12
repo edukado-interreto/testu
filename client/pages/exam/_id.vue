@@ -6,7 +6,7 @@
       text
       color="primary"
       prominent
-      class="mb-8 pa-sm-12"
+      class="mb-8 pa-sm-12 d-print-none"
     >
       <template v-if="exam.accept_submission">
         <div class="text-h6">
@@ -62,8 +62,8 @@
         <v-col>
           <h1>{{ exam.name }}</h1>
         </v-col>
-        <v-spacer></v-spacer>
-        <v-col cols="auto">
+        <v-spacer class="d-print-none"></v-spacer>
+        <v-col cols="auto" class="d-print-none">
           <LikeButton icon :item="exam" @liked="liked" />
           <v-btn
             class="primary--text"
@@ -78,7 +78,7 @@
         </v-col>
       </v-row>
 
-      <v-row dense class="text-caption mb-6">
+      <v-row dense class="text-caption mb-6 d-print-none">
         <v-col cols="auto">
           <v-icon small>mdi-account</v-icon>
           {{ exam.created_by || $t('exercise.anonymous') }}
@@ -126,7 +126,7 @@
 
       <v-btn
         @click="submit"
-        class="mt-9 primary"
+        class="mt-9 primary d-print-none"
         :disabled="submitted || !exam.accept_submission"
         :loading="is_submitting"
         >{{ $t('main.submit') }}</v-btn

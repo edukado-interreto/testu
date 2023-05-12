@@ -1,5 +1,5 @@
 <template>
-  <v-row dense class="text-caption">
+  <v-row dense class="text-caption d-print-none">
     <v-col cols="auto">
       <v-icon small>mdi-account</v-icon>
       {{ exercise.created_by || $t('exercise.anonymous') }}

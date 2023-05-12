@@ -8,6 +8,7 @@
       outlined
       style="border-bottom: 1px solid #d2d2d2 !important"
       color="white"
+      class="d-print-none"
     >
       <v-app-bar-nav-icon @click.stop="nav_drawer.show = !nav_drawer.show" />
 
@@ -19,14 +20,16 @@
         <template v-slot:activator="{ on, attrs }">
           <v-btn text v-bind="attrs" v-on="on" class="text-none px-1 mr-1">
             <v-icon class="mr-1">mdi-translate</v-icon>
-            <span class="d-none d-sm-inline">{{ locale_names[$i18n.locale] }}</span>
+            <span class="d-none d-sm-inline">{{
+              locale_names[$i18n.locale]
+            }}</span>
             <v-icon class="ml-1">mdi-chevron-down</v-icon>
           </v-btn>
         </template>
 
         <v-list dense rounded>
           <v-subheader class="text--primary font-weight-black text-uppercase">{{
-            $t("main.lang_menu_header")
+            $t('main.lang_menu_header')
           }}</v-subheader>
           <v-list-item
             v-for="lang in $i18n.localeCodes"
@@ -48,10 +51,10 @@
           text
           nuxt
           :to="localePath('/login')"
-          >{{ $t("main.login") }}</v-btn
+          >{{ $t('main.login') }}</v-btn
         >
         <v-btn class="text-none amber" text nuxt :to="localePath('/signup')">{{
-          $t("main.signup")
+          $t('main.signup')
         }}</v-btn>
       </div>
 
@@ -85,7 +88,7 @@
               <v-icon>mdi-cog</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>{{ $t("main.settings") }}</v-list-item-title>
+              <v-list-item-title>{{ $t('main.settings') }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -94,7 +97,7 @@
               <v-icon>mdi-logout</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>{{ $t("main.logout") }}</v-list-item-title>
+              <v-list-item-title>{{ $t('main.logout') }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -102,6 +105,7 @@
     </v-app-bar>
     <v-navigation-drawer
       v-model="nav_drawer.show"
+      class="d-print-none"
       disable-resize-watcher
       app
       clipped
@@ -112,7 +116,7 @@
             <v-icon>mdi-home</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ $t("main.home") }}</v-list-item-title>
+            <v-list-item-title>{{ $t('main.home') }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -121,7 +125,7 @@
             <v-icon>mdi-chart-bar</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ $t("main.my_learning") }}</v-list-item-title>
+            <v-list-item-title>{{ $t('main.my_learning') }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -130,7 +134,7 @@
             <v-icon>mdi-briefcase</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ $t("main.my_teaching") }}</v-list-item-title>
+            <v-list-item-title>{{ $t('main.my_teaching') }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -139,7 +143,7 @@
             <v-icon>mdi-information</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ $t("main.about") }}</v-list-item-title>
+            <v-list-item-title>{{ $t('main.about') }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -147,11 +151,15 @@
     <v-main>
       <Nuxt />
     </v-main>
-    <v-footer absolute app padless class="grey lighten-4">
-      <div id="erasmus" class="white d-sm-flex align-center" :class="(nav_drawer.show) ? 'drawer-open' : ''">
+    <v-footer absolute app padless class="grey lighten-4 d-print-none">
+      <div
+        id="erasmus"
+        class="white d-sm-flex align-center"
+        :class="nav_drawer.show ? 'drawer-open' : ''"
+      >
         <img src="/partners/erasmus.png" class="mx-3" height="26" alt="" />
-        <p class="grey--text text--darken-1 ma-3" style="font-size: .9em;">
-          {{ $t("about.partners.european_commission") }}
+        <p class="grey--text text--darken-1 ma-3" style="font-size: 0.9em">
+          {{ $t('about.partners.european_commission') }}
         </p>
       </div>
       <v-spacer></v-spacer>
@@ -160,14 +168,14 @@
           :to="localePath('/terms')"
           class="grey--text caption text-decoration-none font-weight-bold"
         >
-          {{ $t("main.terms") }}
+          {{ $t('main.terms') }}
         </NuxtLink>
         <span class="caption mx-1">·</span>
         <NuxtLink
           :to="localePath('/privacy')"
           class="caption text-decoration-none font-weight-bold"
         >
-          {{ $t("main.privacy") }}
+          {{ $t('main.privacy') }}
         </NuxtLink>
       </div>
     </v-footer>
@@ -175,21 +183,21 @@
 </template>
 
 <script>
-import locale_names from "~/i18n/locale_names.json";
+import locale_names from '~/i18n/locale_names.json';
 
 export default {
-  name: "default",
+  name: 'default',
   data: () => ({
     nav_drawer: {
       show: true,
     },
-    title: "testu.eu",
+    title: 'testu.eu',
     locale_names,
   }),
   methods: {
     async logout() {
       await this.$auth.logout();
-      this.$router.push("/");
+      this.$router.push('/');
     },
   },
   created: async function () {
@@ -197,14 +205,14 @@ export default {
     await this.$auth.checkTokens();
     try {
       const ret = await this.$auth.user(true);
-      console.log("this.$auth.user:", ret);
-      console.log("computed authUser", this.authUser);
+      console.log('this.$auth.user:', ret);
+      console.log('computed authUser', this.authUser);
     } catch (e) {
       if (e.response.status) {
         // unauthorized: the user is not logged in
-        console.log("user not logged in");
+        console.log('user not logged in');
       } else {
-        console.error("this.$auth.user raised an exception");
+        console.error('this.$auth.user raised an exception');
         console.error({ ...e });
         throw e;
       }
@@ -218,13 +226,20 @@ export default {
       return this.authUser?.username !== undefined;
     },
     authUser() {
-      return this.$store.getters["authenticator/authUser"];
+      return this.$store.getters['authenticator/authUser'];
     },
   },
 };
 </script>
 <style scoped lang="scss">
 @import '~vuetify/src/styles/settings/_variables';
+
+@media print {
+  .v-main {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}
 
 #toc .active {
   font-weight: bold;

@@ -5,12 +5,13 @@
       <v-col>
         <h1>{{ exercise.name }}</h1>
       </v-col>
-      <v-spacer></v-spacer>
-      <v-col cols="auto">
+      <v-spacer class="d-print-none"></v-spacer>
+      <v-col cols="auto" class="d-print-none">
         <LikeButton icon :item="exercise" @liked="liked" />
         <v-menu offset-y>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
+              class="d-print-none"
               icon
               v-bind="attrs"
               v-on="on"
@@ -20,10 +21,7 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item
-              nuxt
-              @click="create_exam"
-            >
+            <v-list-item nuxt @click="create_exam">
               <v-list-item-icon>
                 <v-icon>mdi-school</v-icon>
               </v-list-item-icon>
@@ -79,24 +77,15 @@
       {{ exercise.description }}
     </v-sheet>
 
-    <v-sheet
-      v-for="(unit, i) in exercise.data.sheet"
-      :key="unit._key"
-    >
+    <v-sheet v-for="(unit, i) in exercise.data.sheet" :key="unit._key">
       <div class="headline my-4">
-        {{ i+1 }}. {{ unit.title }}
+        {{ i + 1 }}. {{ unit.title }}
         <span v-if="unit.title === ''" class="font-italic">
           {{ $t('sheet_editor.untitled_unit') }}
         </span>
       </div>
-      <div
-        v-if="unit.description"
-        class="body-2 mb-4 pre-line"
-      >
-        <RichContent
-          :text="unit.description"
-        >
-        </RichContent>
+      <div v-if="unit.description" class="body-2 mb-4 pre-line">
+        <RichContent :text="unit.description"> </RichContent>
       </div>
       <component
         :is="unit_component(unit.type)"
@@ -111,9 +100,10 @@
 
     <v-btn
       @click="submit"
-      class="mt-9 primary"
+      class="mt-9 primary d-print-none"
       :disabled="submitted"
-    >{{ $t('exercise.check') }}</v-btn>
+      >{{ $t('exercise.check') }}</v-btn
+    >
 
     <!--
     <pre>{{ submission }}</pre>
@@ -163,21 +153,15 @@
       ></UnitOpenAnswer>
     </v-sheet>
     -->
-
-    </v-sheet>
   </v-container>
 </template>
 <script>
-import cefr from '~/mixins/cefr.js'
-import langs_available from '~/mixins/langs_available.js'
-import unit_component from '~/mixins/unit_component.js'
+import cefr from '~/mixins/cefr.js';
+import langs_available from '~/mixins/langs_available.js';
+import unit_component from '~/mixins/unit_component.js';
 export default {
   name: 'Exercise',
-  mixins: [
-    langs_available,
-    cefr,
-    unit_component,
-  ],
+  mixins: [langs_available, cefr, unit_component],
   data: () => ({
     //submission: {},
     all_readonly: false,
@@ -185,79 +169,80 @@ export default {
     submitted: false,
   }),
   async asyncData({ route, params, $auth }) {
-    const id = (process.server) ? route.params.id : params.id;
+    const id = process.server ? route.params.id : params.id;
     let exercise;
     if (id) {
-      exercise = (
-        await $auth.axios.get(`/v1/exercises/${id}/`)
-      ).data
+      exercise = (await $auth.axios.get(`/v1/exercises/${id}/`)).data;
     }
     return {
       id,
-      exercise
-    }
+      exercise,
+    };
   },
   computed: {
     user_logged_in() {
-      const authUser = this.$store.getters['authenticator/authUser']
-      if (!authUser) return false
-      return true
+      const authUser = this.$store.getters['authenticator/authUser'];
+      if (!authUser) return false;
+      return true;
     },
     user_is_creator() {
-      const authUser = this.$store.getters['authenticator/authUser']
-      if (!authUser) return false
-      return this.exercise.created_by === authUser.username
-    }
+      const authUser = this.$store.getters['authenticator/authUser'];
+      if (!authUser) return false;
+      return this.exercise.created_by === authUser.username;
+    },
   },
   methods: {
     async create_exam() {
       if (
-        (!this.user_is_creator)
-        && (!(await this.$refs.msgbox.confirm(this.$t('exercise.create_exam_confirm'))))
-      ) return
+        !this.user_is_creator &&
+        !(await this.$refs.msgbox.confirm(
+          this.$t('exercise.create_exam_confirm')
+        ))
+      )
+        return;
       this.$router.push(
         this.localePath(`/exam_editor?new_from=${this.exercise.lid}`)
-      )
+      );
     },
     async remove() {
-
-      if (!await this.$refs.msgbox.confirm(
-        this.$t('exercise.delete_confirm')
-      )) return;
+      if (
+        !(await this.$refs.msgbox.confirm(this.$t('exercise.delete_confirm')))
+      )
+        return;
 
       try {
-        await this.$auth.axios.delete(`/v1/exercises/${this.id}`)
-        this.$router.push('/')
-      } catch(e) {
-        console.error({...e})
-        await this.$refs.msgbox.alert(`Error ${e.response.status}`)
+        await this.$auth.axios.delete(`/v1/exercises/${this.id}`);
+        this.$router.push('/');
+      } catch (e) {
+        console.error({ ...e });
+        await this.$refs.msgbox.alert(`Error ${e.response.status}`);
       }
     },
     create_submission() {
       // create the submission object to be sent to the server
 
-      const submission = {}
+      const submission = {};
 
-      const username = this.$store.getters['authenticator/authUser'].username
+      const username = this.$store.getters['authenticator/authUser'].username;
       if (username) {
         //submission.created_by = username
         // this field will be written by the backend
       } else {
-        submission.guest = 'x' // TODO: display name
+        submission.guest = 'x'; // TODO: display name
       }
 
-      submission.created = new Date()
-      submission.exercise_lid = this.id
-      submission.exam_lid = null
-      submission.exercise = { ...this.exercise }
+      submission.created = new Date();
+      submission.exercise_lid = this.id;
+      submission.exam_lid = null;
+      submission.exercise = { ...this.exercise };
       submission.exercise.data.sheet = this.exercise.data.sheet.map(
         (unit, i) => ({
           ...unit,
-          solved: this.$refs.unit[i].get_solved()
+          solved: this.$refs.unit[i].get_solved(),
         })
-      )
+      );
 
-      return submission
+      return submission;
     },
     async liked() {
       await this.$nuxt.refresh();
@@ -265,31 +250,32 @@ export default {
     async submit() {
       // show the results of the quiz
 
-      this.submitted = true
-      window.scrollTo({ top:0, behavior: 'smooth'})
+      this.submitted = true;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      this.all_silent = false
-      this.all_readonly = true
+      this.all_silent = false;
+      this.all_readonly = true;
 
-      if (!this.user_logged_in) return
+      if (!this.user_logged_in) return;
 
-      const submission = this.create_submission()
+      const submission = this.create_submission();
       try {
-        await this.$auth.axios.post('/v1/submissions/', submission)
-      } catch(e) {
-        console.error({...e})
-        await this.$refs.msgbox.alert(this.$t('exercise.error'))
+        await this.$auth.axios.post('/v1/submissions/', submission);
+      } catch (e) {
+        console.error({ ...e });
+        await this.$refs.msgbox.alert(this.$t('exercise.error'));
       }
-
     },
   },
   head() {
     return {
-      title: this.exercise.name
-    }
+      title: this.exercise.name,
+    };
   },
-}
+};
 </script>
 <style scoped>
-  .pre-line { white-space: pre-line; }
+.pre-line {
+  white-space: pre-line;
+}
 </style>
