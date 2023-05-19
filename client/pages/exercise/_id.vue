@@ -7,6 +7,10 @@
       </v-col>
       <v-spacer class="d-print-none"></v-spacer>
       <v-col cols="auto" class="d-print-none">
+        <v-btn @click="window_print" plain>
+          <v-icon left color="primary">mdi-printer</v-icon>
+          {{ $t('exercise.pdf') }}
+        </v-btn>
         <LikeButton icon :item="exercise" @liked="liked" />
         <v-menu offset-y>
           <template v-slot:activator="{ on, attrs }">
@@ -265,6 +269,9 @@ export default {
         console.error({ ...e });
         await this.$refs.msgbox.alert(this.$t('exercise.error'));
       }
+    },
+    window_print() {
+      window.print();
     },
   },
   head() {
