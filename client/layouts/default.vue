@@ -178,6 +178,7 @@
           {{ $t('main.privacy') }}
         </NuxtLink>
       </div>
+      <CookieConsent />
     </v-footer>
   </v-app>
 </template>
