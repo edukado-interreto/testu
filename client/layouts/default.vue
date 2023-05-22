@@ -15,6 +15,11 @@
       <img src="/favicon.png" class="mx-3" height="40" />
       <v-toolbar-title class="accent--text" v-text="title" />
       <v-spacer />
+      <h6
+        class="catchphrase d-none d-md-block accent--text"
+        v-text="$t('main.catchphrase')"
+      />
+      <v-spacer />
       <!-- {{ authUser }} -->
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
@@ -234,12 +239,22 @@ export default {
 </script>
 <style scoped lang="scss">
 @import '~vuetify/src/styles/settings/_variables';
+@import '~vuetify/src/styles/settings/_colors';
 
 @media print {
   .v-main {
     padding: 0 !important;
     width: 100% !important;
   }
+}
+
+.v-main {
+  margin-bottom: 4em;
+}
+.catchphrase {
+  font-family: 'Roboto Slab', Roboto, serif;
+  font-size: 120%;
+  font-weight: 700;
 }
 
 #toc .active {
