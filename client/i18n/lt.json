@@ -1,7 +1,7 @@
 {
   "about": {
     "about": "Apie projektą",
-    "about_text": "TestU Online yra nemokama, daugiakalbė internetinė e. mokymo platforma, kurioje galima paprastai ir greitai ruošti pratybas, testus ir užduotis kalbos mokymui. Pagrindiniai šios platformos naudotojai - mokytojai, lektoriai, taip pat jų mokiniai, kurie mokosi pagrindinio lavinimo mokyklose arba kitose formaliojo ar neformaliojo mokymosi įstaigose. Ši platforma kuriama tam, kad jaunoji karta turėtų prieigą prie nemokamo ugdymo, nepriklausomai nuo jų socialinės, ekonominės padėties, religijos ar tautybės, geografinės padėties ar neįgalumo.",
+    "about_text": "TestU Online yra nemokama, daugiakalbė internetinė e. mokymo platforma, kurioje galima paprastai ir greitai ruošti pratybas, testus ir užduotis kalbos mokymui. Pagrindiniai šios platformos naudotojai - mokytojai, lektoriai, taip pat jų mokiniai, kurie mokosi pagrindinio lavinimo mokyklose arba kitose formaliojo ar neformaliojo mokymosi įstaigose. Ši platforma kuriama tam, kad jaunoji karta turėtų prieigą prie nemokamo ugdymo, nepriklausomai nuo jų socialinės, ekonominės padėties, religijos ar tautybės, geografinės padėties ar negalios.",
     "partners_title": "Partneriai",
     "partners": {
       "bit_description": "\"bit\" schulungscenter (= geriausias mokymo centras) įkurtas  1986 m. yra vienas iš pirmaujančių švietimo paslaugų teikėjų Austrijoje darbo rinkos projektų, profesinio švietimo, mokymo ir įsidarbinimo galimybių srityje. Akivaizdi jų stiprybė - patirtis ir žinios rengiant (didaktika, metodika, mokymo dizainas) ir vykdant įvairius nacionalinius ir tarptautinius projektus. Jie turi nemažai patirties dirbant su įvairiomis tikslinėmis grupėmis, tokiomis kaip, pavyzdžiui, jaunimas, jauni suaugę bedarbiai, atsižvelgdami į jų švietimo poreikius.",
@@ -26,19 +26,34 @@
     "details": "Pratimo informacija",
     "save": "Išsaugoti",
     "tags": "Žymos",
+    "unexpected_response": "Nenumatytas serverio atsakymas",
     "unlisted": "Neįtraukta į paieškų rezultatus"
   },
   "exam": {
+    "accept_submissions": "Priimti pateiktus dokumentus",
     "confirm": "Operacijos atšaukti negalima. Tęsti?",
+    "created": "Sukurta: {data}",
+    "delete": "Ištrinti egzaminą",
+    "description": "Egzamino aprašymas",
+    "details": "Egzamino detalės",
     "error": "Pateikiant egzaminą įvyko klaida.",
+    "goto_exercise": "Eiti į užduotį",
     "is_exam": "Tai egzaminas",
+    "link": "Nuoroda",
+    "name": "Egzamino pavadinimas",
     "no_new_submissions": "Egzaminas nepriima naujų paraiškų.",
+    "no_submissions": "Nėra pateiktų dokumentų",
     "or": "arba",
     "please_log_in": "Norėdami tęsti egzaminą, prisijunkite arba pasirinkite vartotojo vardą.",
-    "visible_by": "Užduoties rezultatai bus matomi egzaminatoriui  {name}."
+    "untitled": "Egzaminas be pavadinimo",
+    "view": "Peržiūra",
+    "visible_by": "Užduoties rezultatai bus matomi egzaminatoriui  {name}.",
+    "well_done": "Jūsų egzaminas perduotas egzaminatoriui!"
   },
   "exercise": {
     "age": "Amžius:",
+    "anonymous": "Anonimas",
+    "author": "Autorius",
     "check": "Patikrinti rezultatą",
     "create_copy": "Kopijuoti",
     "create_exam": "Rengti egzaminą",
@@ -47,7 +62,16 @@
     "delete_confirm": "Ar tikrai norite ištrinti šią užduotį?",
     "edit": "Redaguoti užduotį",
     "error": "Išsaugant užduotį įvyko klaida",
+    "flag": "Pranešti apie netinkamą naudojimą",
+    "flag_explanation": "Paaiškinimas",
+    "flag_to_administrators": "Pranešti administracijai apie netinkamą naudojimą",
     "language": "Kalba",
+    "mistake": "Pranešti apie klaidą",
+    "mistake_explanation": "Paaiškinimas",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Pranešti apie klaidą {autoriui}",
+    "submit_flag_confirm": "Ačiū, kad padedate palaikyti Testu.eu tinkamumą.",
+    "submit_mistake_confirm": "Ačiū! Autorius bus informuotas pranešimu.",
     "target_language": "Mokomoji kalba",
     "target_language_is": "Mokomoji kalba:",
     "unlisted": "Pratimas nėra įtrauktas į paieškos rezultatų sąrašą"
@@ -87,7 +111,10 @@
   },
   "main": {
     "about": "Apie",
+    "accept": "Sutikti",
     "cancel": "Atšaukti",
+    "catchphrase": "Kurkite savo kalbos viktorinas",
+    "cookie_consent": "Ši svetainė veikimui naudoja minimalų slapukų kiekį. Manome, kad naudodamiesi šia svetaine, sutinkate su funkcinių slapukų naudojimu.",
     "edit": "Redaguoti",
     "home": "Pagrindinis puslapis",
     "lang_menu_header": "Sąsajos kalba",

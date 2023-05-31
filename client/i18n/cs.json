@@ -35,7 +35,8 @@
     "no_new_submissions": "Tuto zkoušku již nelze odevzdat, uplynul časový limit",
     "or": "nebo",
     "please_log_in": "Chcete-li přejít ke zkoušce, přihlaste se nebo si zvolte zobrazované jméno.",
-    "visible_by": "Výsledky tohoto cvičení budou viditelné pro zkoušejícího {name}."
+    "visible_by": "Výsledky tohoto cvičení budou viditelné pro zkoušejícího {name}.",
+    "well_done": "Výborně, vaše zkouška byla odeslána zkoušejícímu!"
   },
   "exercise": {
     "age": "Věk:",

@@ -1,7 +1,7 @@
 {
   "about": {
     "about": "O projekte",
-    "about_text": "TestU Online je bezplatná, viacjazyčná online e-learningová platforma, ktorá umožňuje jednoduché a rýchle vytváranie rôznych druhov kvízov, testov a cvičení, ktoré sú primárne zamerané na učenie sa cudzích jazykov. Táto platforma je určená najmä učiteľom, lektorom či trénerom cudzích jazykov a ich žiakom, ktorí navštevujú základné školy či iné formy formálneho a neformálneho vzdelávania. Dôvod, prečo vzniká táto platforma je ten, aby sme umožnili mladým ľuďom vzdelávať sa bezplatne odhliadnuc od ich socálno-ekonomických, náboženských, národných rozdielností či geografických vzdialeností alebo rôznych typov postihnutí.",
+    "about_text": "TestU Online je bezplatná, viacjazyčná online e-learningová platforma, ktorá umožňuje jednoduché a rýchle vytváranie kvízov, testov a cvičení, ktoré sú určené predovšetkým na učenie sa cudzích jazykov. Používateľmi platformy budú predovšetkým učitelia, lektori a ich žiaci, ktorí navštevujú základné školy či iné formy formálneho a neformálneho vzdelávania. Cieľom platformy je umožniť mladej generácii prístup k bezplatnému vzdelávaniu napriek ich socálno-ekonomickému, náboženskému alebo národnostnému pôvodu, geografickým obmedzeniam alebo rôznym typom postihnutia.",
     "partners_title": "Partneri",
     "partners": {
       "bit_description": "bit (= best in training) schulungcenter (= tréningové centrum) bolo založené v roku 1986 a je jedným z hlavných poskytovateľov vzdelávania v oblasti projektov zameraných na pracovný trh, odborné vzdelávanie, tréning a zamestnateľnosť v Rakúsku. Najväčšou hybnou silou tohto centra sú skúsenosti a know-how v dizajnovaní (didaktika, metodológa, dizajn výučby) a realizácii rôznych národných a nadnárodných projektov. bitschulungcenter má veľké skúsenosti s prácou s rôznymi cieľovými skupinami (napr. mladí ľudia, mladí nezamestnaní dospelí, a pod.) a ich vzdelávacími potrebami.",
@@ -26,19 +26,34 @@
     "details": "Podrobnosti cvičenia",
     "save": "Uložiť",
     "tags": "Štítky",
+    "unexpected_response": "Neočakávaná odpoveď servera",
     "unlisted": "Nezaradené vo výsledkoch vyhľadávania"
   },
   "exam": {
+    "accept_submissions": "Prijať príspevky",
     "confirm": "Túto operáciu nie je možné vrátiť. Pokračovať?",
+    "created": "Vytvorené: {date}",
+    "delete": "Vymazať test",
+    "description": "Popis testu",
+    "details": "Podrobnosti testu",
     "error": "Pri odoslaní skúšky došlo k chybe.",
+    "goto_exercise": "Ísť k cvičeniu",
     "is_exam": "Toto je skúška.",
+    "link": "Odkaz",
+    "name": "Názov testu",
     "no_new_submissions": "Táto skúška neprijíma nové pokusy.",
+    "no_submissions": "Žiadne príspevky",
     "or": "alebo",
     "please_log_in": "Ak chcete prejsť ku skúške, prosím, prihláste sa alebo si vyberte zobrazované meno.",
-    "visible_by": "Výsledky tohto cvičenia budú viditeľné pre skúšajúceho {meno}."
+    "untitled": "Test bez názvu",
+    "view": "Náhľad",
+    "visible_by": "Výsledky tohto cvičenia budú viditeľné pre skúšajúceho {meno}.",
+    "well_done": "Vaša skúška bola úspešne odoslaná skúšajúcemu!"
   },
   "exercise": {
     "age": "Vek:",
+    "anonymous": "anonymný",
+    "author": "Autor",
     "check": "Skontrolujte výsledok",
     "create_copy": "Vytvoriť kópiu",
     "create_exam": "Vytvoriť test",
@@ -47,7 +62,16 @@
     "delete_confirm": "Naozaj chcete odstrániť toto cvičenie?",
     "edit": "Upraviť cvičenie",
     "error": "Pri ukladaní zadania cvičenia sa vyskytla chyba",
+    "flag": "Nahlásiť zneužitie",
+    "flag_explanation": "Vysvetlenie:",
+    "flag_to_administrators": "Nahlásiť zneužitie správcom",
     "language": "Jazyk",
+    "mistake": "Nahlásiť chybu",
+    "mistake_explanation": "Vysvetlenie:",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Nahlásiť chybu {creator}",
+    "submit_flag_confirm": "Ďakujeme, že pomáhate udržiavať Testu.eu vhodné.",
+    "submit_mistake_confirm": "Ďakujem! Tvorca dostane upozornenie.",
     "target_language": "Študovaný jazyk",
     "target_language_is": "Študovaný jazyk:",
     "unlisted": "Toto cvičenie nie je uvedené vo výsledkoch vyhľadávania"
@@ -87,7 +111,10 @@
   },
   "main": {
     "about": "O stránke",
+    "accept": "Prijať",
     "cancel": "Zrušiť",
+    "catchphrase": "Vytvoriť vlastné jazykové kvízy",
+    "cookie_consent": "Táto webová stránka používa pre svoje fungovanie minimálne množstvo cookies. Pokračovaním v používaní tejto webovej stránky predpokladáme, že súhlasíte s používaním funkčných cookies.",
     "edit": "Upraviť",
     "home": "Domovská stránka",
     "lang_menu_header": "Jazyk stránky",

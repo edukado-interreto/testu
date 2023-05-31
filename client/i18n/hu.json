@@ -25,7 +25,9 @@
     "description": "Leírás",
     "details": "A feladat részletei",
     "save": "Mentés",
-    "unexpected_response": "Váratlan szerver válasz"
+    "tags": "Címkék",
+    "unexpected_response": "Váratlan szerver válasz",
+    "unlisted": "Ne jelenjen meg a keresési eredményeknél"
   },
   "exam": {
     "confirm": "Ez a művelet visszavonhatatlan. Folytatja mégis?",
@@ -38,15 +40,18 @@
     "is_exam": "Ez egy vizsgalap",
     "link": "Hivatkozás",
     "name": "Vizsga neve",
+    "no_new_submissions": "Erre a vizsgára már nem lehet új vizsgalapot beküldeni.",
     "no_submissions": "Nincs beküldés",
     "or": "vagy",
     "please_log_in": "A vizsgához való továbblépéshez kérjük, jelentkezzen be, vagy adja meg a megjelenítendő nevet!",
     "untitled": "Cím nélküli vizsga",
     "view": "Megtekintés",
-    "visible_by": "Ennek a feladatnak az eredményét a vizsgáztató látni fogja.{name}"
+    "visible_by": "Ennek a feladatnak az eredményét a vizsgáztató látni fogja.{name}",
+    "well_done": "Remek! A vizsgalapot sikeresen elküldte a vizsgáztatónak."
   },
   "exercise": {
     "age": "Életkor:",
+    "anonymous": "Névtelen",
     "check": "Eredmény megtekintése",
     "create_copy": "Másolat készítése",
     "create_exam": "Vizsga létrehozása",
@@ -56,6 +61,8 @@
     "edit": "Feladat szerkesztése",
     "error": "Hiba történt a feladat elküldése közben",
     "language": "Nyelv",
+    "target_language": "Tanult nyelv",
+    "target_language_is": "Tanult nyelv",
     "unlisted": "Ez a feladat nem fog megjelenni a keresési eredmények között"
   },
   "home": {
@@ -70,7 +77,9 @@
     "date": "Dátum",
     "exam": "Vizsga",
     "exercise": "Feladat",
-    "recent": "Legutóbbi tevékenységek"
+    "recent": "Legutóbbi tevékenységek",
+    "review": "Áttekintés",
+    "submitted": "Az adott napon beküldött feladatok"
   },
   "login": {
     "already_registered": "Már van fiókja?",
@@ -91,7 +100,10 @@
   },
   "main": {
     "about": "Rólunk",
+    "accept": "Elfogadom",
     "cancel": "Mégsem",
+    "catchphrase": "Készítsen saját nyelvi kvízeket",
+    "cookie_consent": "Ez a weboldal a működéséhez minimális mennyiségű sütit használ. A weboldal további használatával feltételezzük, hogy elfogadja a funkcionális sütik használatát.",
     "edit": "Szerkesztés",
     "home": "Főoldal",
     "lang_menu_header": "A kezelőfelület nyelve",
@@ -117,8 +129,8 @@
   "sheet_editor": {
     "add_matching_pair": "Párosítás hozzáadása",
     "add_sentence": "Mondat hozzáadása",
-    "add_unit": "Egység hozzáadása",
-    "add_unit_to_begin": "Új egység hozzáadása a kezdéshez",
+    "add_unit": "Feladat hozzáadása",
+    "add_unit_to_begin": "Új feladat hozzáadása a kezdéshez",
     "close": "Szerkesztő bezárása",
     "delete": "Törlés",
     "edit_next": "Következő szerkesztése",
@@ -126,21 +138,21 @@
     "empty_exercise": "Üres gyakorlat",
     "first_item": "Első elem",
     "ignore_case": "Kis- és nagybetűk figyelmen kívül hagyása",
-    "insert_gap": "Gap beszúrása",
+    "insert_gap": "Üres hely beszúrása",
     "insert_image": "Kép beszúrása",
     "insert_pair": "Párosítás beszúrása",
     "insert_sound": "Hang beszúrása",
     "insert_video": "Videó beszúrása",
     "move_down": "Mozgatás lefelé",
     "move_up": "Mozgatás felfelé",
-    "new_gap": "Új gap",
+    "new_gap": "Új üres hely",
     "new_matching_pair": "Új párosítás",
     "second_item": "Második elem",
-    "shuffle_options": "Lehetőségek összekeverése",
+    "shuffle_options": "Véletlenszerű rendezés",
     "start_typing": "Kezdjen el gépelni egy mondatot...",
     "title": "Cím",
-    "untitled_unit": "Cím nélküli egység",
-    "valid_url": "Kérjük, adjon meg érvényes URL-t"
+    "untitled_unit": "Cím nélküli feladat",
+    "valid_url": "Kérjük, érvényes URL-t adjon meg!"
   },
   "sort": {
     "rated": "Legjobb értékelés",
@@ -157,6 +169,7 @@
     "computing": "Számítástechnika",
     "crafting": "Kézműveskedés",
     "economics": "Közgazdaságtan",
+    "engineering": "Mérnöki tevékenység",
     "geography": "Földrajz",
     "grammar": "Nyelvtan",
     "history": "Történelem",
@@ -175,6 +188,8 @@
     "religion": "Vallás",
     "science": "Tudomány",
     "sport": "Sport",
+    "technology": "Technológia",
+    "trivia": "Érdekességek",
     "zoology": "Állattan"
   },
   "teach": {
