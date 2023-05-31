@@ -36,7 +36,7 @@ class ExerciseSerializer(serializers.ModelSerializer):
         "name", many=True, required=False, queryset=Tag.objects.only("name")
     )
     likes = serializers.IntegerField(read_only=True)
-    liked = serializers.SerializerMethodField()
+    liked = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Exercise
@@ -89,8 +89,8 @@ class ExamSerializer(serializers.ModelSerializer):
     exercise_lid = LidField(Exercise, source="exercise", allow_null=True)
     created_by = serializers.SlugRelatedField("username", read_only=True)
     url = serializers.URLField(source="get_absolute_url", read_only=True)
-    likes = serializers.IntegerField()
-    liked = serializers.SerializerMethodField()
+    likes = serializers.IntegerField(read_only=True)
+    liked = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Exam
