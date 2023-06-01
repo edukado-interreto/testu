@@ -21,7 +21,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
-DEFAULT_FROM_EMAIL = "Testu Staging <testu@em9073.kond.uk.to>"
+DEFAULT_FROM_EMAIL = "Testu team <noreply@testu.eu>"
 
 STATIC_URL = "/assets/static/"
 STATIC_ROOT = config("STATIC_ROOT", default=str(BASE_DIR / "assets/static/"))
