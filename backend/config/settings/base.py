@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
-    # "django.contrib.sites",  # migrate socialaccount zero
+    "django.contrib.sites",  # migrate socialaccount zero
     "django.contrib.messages",
     "django_extensions",
     "django_filters",
