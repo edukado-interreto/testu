@@ -2,8 +2,49 @@
   <v-container>
     <h1>About</h1>
 
-    <h2 class="mb-3">{{ $t('about.about') }}</h2>
-    <p class="text-justify">{{ $t('about.about_text') }}</p>
+    <v-row>
+      <v-col class="col-12 col-smX-8 col-md-9">
+        <h2 class="mb-3">{{ $t('about.about') }}</h2>
+        <p class="text-justify">{{ $t('about.about_text') }}</p>
+      </v-col>
+
+      <v-col class="ma-8 mt-0">
+        <v-sheet elevation="3" class="pa-4">
+          <v-container>
+            <v-row>
+              <v-col class="col-6 col-md-12">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100086451753450"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <v-img
+                    contain
+                    src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
+                    max-height="80"
+                  />
+                  <p class="text-center mt-2 mb-0">Facebook Page</p>
+                </a>
+              </v-col>
+              <v-col class="">
+                <a
+                  href="https://t.me/+8Z1dtayqGzk2Yzk0"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <v-img
+                    contain
+                    src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"
+                    max-height="80"
+                  />
+                  <p class="text-center mt-2 mb-0">Telegram chat</p>
+                </a>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-sheet>
+      </v-col>
+    </v-row>
 
     <h2>{{ $t('about.partners_title') }}</h2>
 
