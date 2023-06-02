@@ -11,7 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
-ADMINS = config("ADMINS", cast=Csv(NamedEmail()))
+
+ADMINS = config("ADMINS", cast=Csv(NamedEmail()), default=None)
 
 USE_TZ = True
 TIME_ZONE = "Europe/Bratislava"
