@@ -30,6 +30,7 @@
     "unlisted": "Ne jelenjen meg a keresési eredményeknél"
   },
   "exam": {
+    "accept_submissions": "Válaszok fogadása",
     "confirm": "Ez a művelet visszavonhatatlan. Folytatja mégis?",
     "created": "Létrehozva: {date}",
     "delete": "Vizsga törlése",
@@ -47,11 +48,12 @@
     "untitled": "Cím nélküli vizsga",
     "view": "Megtekintés",
     "visible_by": "Ennek a feladatnak az eredményét a vizsgáztató látni fogja.{name}",
-    "well_done": "Remek! A vizsgalapot sikeresen elküldte a vizsgáztatónak."
+    "well_done": "A vizsgalapot sikeresen elküldte a vizsgáztatónak."
   },
   "exercise": {
     "age": "Életkor:",
     "anonymous": "Névtelen",
+    "author": "Szerző",
     "check": "Eredmény megtekintése",
     "create_copy": "Másolat készítése",
     "create_exam": "Vizsga létrehozása",
@@ -60,9 +62,18 @@
     "delete_confirm": "Biztos benne, hogy törölni szeretné ezt a feladatot?",
     "edit": "Feladat szerkesztése",
     "error": "Hiba történt a feladat elküldése közben",
+    "explanation": "Leírás:",
     "language": "Nyelv",
-    "target_language": "Tanult nyelv",
-    "target_language_is": "Tanult nyelv",
+    "mistake": "Hiba jelentése",
+    "mistake_explanation": "Leírás:",
+    "misuse": "Visszaélés bejelentése",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Hiba jelentése {creator} részére",
+    "report_misuse_to_administrators": "Visszaélés jelentése az adminisztrátoroknak",
+    "submit_mistake_confirm": "Köszönjük! Elküldtük az értesítést a feladat készítőjének.",
+    "submit_misuse_confirm": "Köszönjük, hogy segít nekünk rendben tartani a Testu.eu oldalt.",
+    "target_language": "Tanulandó nyelv",
+    "target_language_is": "Tanulandó nyelv:",
     "unlisted": "Ez a feladat nem fog megjelenni a keresési eredmények között"
   },
   "home": {
@@ -78,7 +89,7 @@
     "exam": "Vizsga",
     "exercise": "Feladat",
     "recent": "Legutóbbi tevékenységek",
-    "review": "Áttekintés",
+    "review": "Megtekintés",
     "submitted": "Az adott napon beküldött feladatok"
   },
   "login": {
@@ -169,7 +180,7 @@
     "computing": "Számítástechnika",
     "crafting": "Kézműveskedés",
     "economics": "Közgazdaságtan",
-    "engineering": "Mérnöki tevékenység",
+    "engineering": "Műszaki tudomány",
     "geography": "Földrajz",
     "grammar": "Nyelvtan",
     "history": "Történelem",
