@@ -56,11 +56,12 @@
           text
           nuxt
           :to="localePath('/login')"
-          >{{ $t('main.login') }}</v-btn
         >
-        <v-btn class="text-none amber" text nuxt :to="localePath('/signup')">{{
-          $t('main.signup')
-        }}</v-btn>
+          {{ $t('main.login') }}
+        </v-btn>
+        <v-btn class="text-none amber" text nuxt :to="localePath('/signup')">
+          {{ $t('main.signup') }}
+        </v-btn>
       </div>
 
       <v-menu v-if="logged_in" offset-y>
@@ -156,19 +157,37 @@
     <v-main>
       <Nuxt />
     </v-main>
-    <v-footer absolute app padless class="grey lighten-4 d-print-none">
+    <v-footer
+      absolute
+      app
+      padless
+      class="grey lighten-4 flex-column d-print-none"
+    >
       <div
         id="erasmus"
         class="white d-sm-flex align-center"
         :class="nav_drawer.show ? 'drawer-open' : ''"
       >
+        <v-spacer />
         <img src="/partners/erasmus.png" class="mx-3" height="26" alt="" />
         <p class="grey--text text--darken-1 ma-3" style="font-size: 0.9em">
           {{ $t('about.partners.european_commission') }}
         </p>
+        <v-spacer />
       </div>
-      <v-spacer></v-spacer>
+
       <div class="px-4 py-2">
+        <v-icon>mdi-creative-commons</v-icon>
+        <a
+          rel="license"
+          href="http://creativecommons.org/publicdomain/zero/1.0/"
+          target="_blank"
+          style="font-family: monospace; font-weight: bold"
+          class="grey--text caption text-decoration-none font-weight-bold"
+        >
+          CC0
+        </a>
+        <span class="caption mx-1">·</span>
         <NuxtLink
           :to="localePath('/terms')"
           class="grey--text caption text-decoration-none font-weight-bold"
@@ -271,6 +290,11 @@ export default {
 
 #erasmus {
   padding: 4rem 6rem 1rem;
+  width: 100vw;
+
+  p {
+    max-width: 50rem;
+  }
 
   &.drawer-open {
     @media #{map-get($display-breakpoints, 'md-and-up')} {
