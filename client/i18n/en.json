@@ -1,7 +1,7 @@
 {
   "about": {
     "about": "About the project",
-    "about_text": "TestU Online es una plataforma de e-learning gratuita, multilingüe y en línea que permite la creación fácil y rápida de varios cuestionarios, pruebas y ejercicios destinados principalmente al aprendizaje de idiomas. Los usuarios de la plataforma serán principalmente profesores, entrenadores/profesores, así como sus alumnos, que asisten a escuelas primarias, u otras formas de educación, ya sea formal o informal. Las razones para crear una plataforma de este tipo pueden explicarse por la necesidad de permitir que una generación joven acceda a la educación gratuita a pesar de su origen socioeconómico, religioso o nacional, limitaciones geográficas o incluso diversos tipos de discapacidades.",
+    "about_text": "TestU Online is a free, multilingual, online e-learning platform enabling easy and fast creation of various quizzes, tests, and exercises primarily intended for learning languages. The platform users will be mainly teachers, coaches/lecturers as well as their pupils, who are attending elementary schools, or other forms of education, whether formal or informal. The reasons for creating such a platform can be explained by the necessity for allowing a young generation to access free education despite their socio-economic, religious, or national background, geographical limitations, or even various kinds of disabilities.",
     "partners_title": "Partners",
     "partners": {
       "bit_description": "bit (= best in training) schulungscenter (= training centre), founded in 1986, is one of the leading education providers in the area of labour-market projects, vocational education, training and employability in Austria. Their clear strength is their experience and know-how in designing (didactics, methodology, instructional design) and carrying out diverse national and international projects. They have substantial experience in working with different target groups, e.g. young people, young unemployed adults, and their educational needs through their regular activities.",
@@ -68,7 +68,7 @@
     "mistake_explanation": "Explanation:",
     "misuse": "Report a misuse",
     "pdf": "PDF",
-    "report_mistake_to_creator": "Report a mistake to {creator}",
+    "report_mistake_to_creator": "Report a mistake to {username}",
     "report_misuse_to_administrators": "Report misusage to administrators",
     "submit_mistake_confirm": "Thank you! The creator will receive a notification.",
     "submit_misuse_confirm": "Thank you for helping keeping Testu.eu appropriate.",

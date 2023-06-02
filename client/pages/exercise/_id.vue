@@ -145,7 +145,7 @@
       </v-icon>
       {{
         $t('exercise.report_mistake_to_creator', {
-          creator: exercise.created_by,
+          username: exercise.created_by,
         })
       }}
     </ReportDialog>

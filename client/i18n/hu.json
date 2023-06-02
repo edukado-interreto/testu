@@ -68,7 +68,7 @@
     "mistake_explanation": "Leírás:",
     "misuse": "Visszaélés bejelentése",
     "pdf": "PDF",
-    "report_mistake_to_creator": "Hiba jelentése {creator} részére",
+    "report_mistake_to_creator": "Hiba jelentése {username} részére",
     "report_misuse_to_administrators": "Visszaélés jelentése az adminisztrátoroknak",
     "submit_mistake_confirm": "Köszönjük! Elküldtük az értesítést a feladat készítőjének.",
     "submit_misuse_confirm": "Köszönjük, hogy segít nekünk rendben tartani a Testu.eu oldalt.",
