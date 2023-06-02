@@ -57,21 +57,36 @@ services:
         - traefik.enable=true
         - traefik.docker.network=traefik-public
         - traefik.constraint-label=traefik-public
+
         - traefik.http.routers.nginx-http.rule=Host(`www.testu.eu`)
         - traefik.http.routers.nginx-http.entrypoints=http
         - traefik.http.routers.nginx-http.middlewares=https-redirect
+
         - traefik.http.routers.nginx-https.entrypoints=https
         - traefik.http.routers.nginx-https.rule=Host(`www.testu.eu`)
         - traefik.http.routers.nginx-https.tls=true
         - traefik.http.routers.nginx-https.tls.certresolver=le
+
         - traefik.http.services.nginx.loadbalancer.server.port=80
+
+        - traefik.http.routers.root-http.rule=Host(`testu.eu`)
+        - traefik.http.routers.root-http.entrypoints=http
+        - traefik.http.routers.root-http.middlewares=force-redirect
+
+        - traefik.http.routers.root-https.entrypoints=https
+        - traefik.http.routers.root-https.rule=Host(`testu.eu`)
+        - traefik.http.routers.root-https.tls=true
+        - traefik.http.routers.root-https.tls.certresolver=le
+        - traefik.http.routers.root-https.middlewares=force-redirect
+
         - traefik.http.routers.sandbox.entrypoints=https
         - traefik.http.routers.sandbox.rule=Host(`sandbox.testu.eu`)
         - traefik.http.routers.sandbox.tls=true
         - traefik.http.routers.sandbox.tls.certresolver=le
-        - traefik.http.middlewares.force-redirect.redirectregex.regex=^https?://sandbox.testu.eu(/.*)?
-        - traefik.http.middlewares.force-redirect.redirectregex.replacement=https://www.testu.eu$${1}
         - traefik.http.routers.sandbox.middlewares=force-redirect
+
+        - traefik.http.middlewares.force-redirect.redirectregex.regex=^https?://(?:sandbox.)?testu.eu(/.*)?
+        - traefik.http.middlewares.force-redirect.redirectregex.replacement=https://www.testu.eu$${1}
 
 networks:
   traefik-public: 
