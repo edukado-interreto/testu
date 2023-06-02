@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <Toast ref="toasts" />
     <MsgBox ref="msgbox"></MsgBox>
     <v-row>
       <v-col>
@@ -84,7 +83,7 @@
             </v-list-item>
             <v-list-item
               v-if="!user_is_creator"
-              @click="() => (flag_dialog = !flag_dialog)"
+              @click="() => (misuse_dialog = !misuse_dialog)"
             >
               <v-list-item-icon>
                 <v-icon>mdi-alert-box</v-icon>
@@ -131,76 +130,35 @@
       @click="submit"
       class="mt-9 primary d-print-none"
       :disabled="submitted"
-      >{{ $t('exercise.check') }}</v-btn
     >
+      {{ $t('exercise.check') }}
+    </v-btn>
 
-    <v-dialog v-model="mistake_dialog" max-width="500px">
-      <v-card>
-        <v-form ref="mistake_form">
-          <v-card-title>
-            <v-icon class="pe-3" color="warning">
-              mdi-format-strikethrough-variant
-            </v-icon>
-            {{
-              $t('exercise.report_mistake_to_creator', {
-                creator: exercise.created_by,
-              })
-            }}
-          </v-card-title>
-          <v-card-text>
-            <v-textarea
-              @keypress.ctrl.enter="submit_mistake"
-              v-model="mistake_explanation"
-              rows="2"
-              outlined
-              :label="$t('exercise.mistake_explanation')"
-            />
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer />
-            <v-btn @click="() => (mistake_dialog = false)">
-              {{ $t('main.cancel') }}
-            </v-btn>
-            <v-btn
-              type="submit"
-              color="primary"
-              @click.prevent="submit_mistake"
-            >
-              {{ $t('main.submit') }}
-            </v-btn>
-          </v-card-actions>
-        </v-form>
-      </v-card>
-    </v-dialog>
+    <ReportDialog
+      nature="mistake"
+      v-if="exercise"
+      :exercise="exercise.lid"
+      v-model="mistake_dialog"
+    >
+      <v-icon class="pe-3" color="warning">
+        mdi-format-strikethrough-variant
+      </v-icon>
+      {{
+        $t('exercise.report_mistake_to_creator', {
+          creator: exercise.created_by,
+        })
+      }}
+    </ReportDialog>
 
-    <v-dialog v-model="flag_dialog" max-width="500px">
-      <v-card>
-        <v-form ref="flag_form">
-          <v-card-title>
-            <v-icon class="pe-3" color="error"> mdi-alert-box </v-icon>
-            {{ $t('exercise.flag_to_administrators') }}
-          </v-card-title>
-          <v-card-text>
-            <v-textarea
-              @keypress.ctrl.enter="submit_flag"
-              v-model="flag_explanation"
-              rows="2"
-              outlined
-              :label="$t('exercise.flag_explanation')"
-            />
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer />
-            <v-btn @click="() => (flag_dialog = false)">
-              {{ $t('main.cancel') }}
-            </v-btn>
-            <v-btn type="submit" color="primary" @click.prevent="submit_flag">
-              {{ $t('main.submit') }}
-            </v-btn>
-          </v-card-actions>
-        </v-form>
-      </v-card>
-    </v-dialog>
+    <ReportDialog
+      nature="misuse"
+      v-if="exercise"
+      :exercise="exercise.lid"
+      v-model="misuse_dialog"
+    >
+      <v-icon class="pe-3" color="error"> mdi-alert-box </v-icon>
+      {{ $t('exercise.report_misuse_to_administrators') }}
+    </ReportDialog>
 
     <!--
     <pre>{{ submission }}</pre>
@@ -263,11 +221,9 @@ export default {
     //submission: {},
     all_readonly: false,
     all_silent: true,
-    submitted: false,
     mistake_dialog: false,
-    mistake_explanation: '',
-    flag_dialog: false,
-    flag_explanation: '',
+    misuse_dialog: false,
+    submitted: false,
   }),
   async asyncData({ route, params, $auth }) {
     const id = process.server ? route.params.id : params.id;
@@ -293,20 +249,6 @@ export default {
     },
   },
   methods: {
-    async submit_mistake() {
-      this.mistake_dialog = false;
-      this.mistake_explanation = '';
-      setTimeout(() => {
-        this.$refs.toasts.success(this.$t('exercise.submit_mistake_confirm'));
-      }, 800);
-    },
-    async submit_flag() {
-      this.flag_dialog = false;
-      this.flag_explanation = '';
-      setTimeout(() => {
-        this.$refs.toasts.success(this.$t('exercise.submit_flag_confirm'));
-      }, 800);
-    },
     async create_exam() {
       if (
         !this.user_is_creator &&

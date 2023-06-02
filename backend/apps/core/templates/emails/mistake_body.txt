@@ -1,0 +1,6 @@
+{% load i18n %}{% blocktranslate with title=report.exercise.name url=report.exercise.get_absolute_url reporter=report.user.username message=report.description %}Hi,
+The user {{ reporter }} think there is a mistake in the exercise {{ title }} (https://www.testu.eu{{ url }}).
+Here’s their message:
+
+{{ message }}
+{% endblocktranslate %}

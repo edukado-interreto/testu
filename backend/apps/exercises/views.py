@@ -6,10 +6,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django_filters import rest_framework as filters
 from rest_framework.decorators import action
-from rest_framework.permissions import (
-    IsAuthenticated,
-    IsAuthenticatedOrReadOnly,
-)
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet, ViewSet
 
@@ -20,6 +17,7 @@ from .models import (
     ExamReaction,
     Exercise,
     ExerciseReaction,
+    Report,
     Submission,
     Tag,
 )
@@ -28,9 +26,9 @@ from .serializers import (
     ExamSerializer,
     ExerciseSerializer,
     SubmissionSerializer,
+    ReportSerializer,
     TagSerializer,
 )
-
 
 User = get_user_model()
 
@@ -220,6 +218,13 @@ class TagViewSet(ModelViewSet):
     @action(detail=False)
     def used(self, request):
         return self.list(request)
+
+
+class ReportViewSet(ModelViewSet):
+    http_method_names = ["post", "options"]
+    permission_classes = [IsAuthenticated]
+    serializer_class = ReportSerializer
+    queryset = Report.objects.all()
 
 
 @csrf_exempt  # TODO: ĉu eblas fari tion pli bone?

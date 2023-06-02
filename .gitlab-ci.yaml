@@ -88,4 +88,6 @@ Deploy:
       printf $ALLOWED_HOSTS | docker secret create ALLOWED_HOSTS - || true
     - |
       printf $SENDGRID_API_KEY | docker secret create SENDGRID_API_KEY - || true
+    - |
+      printf $ADMINS | docker secret create ADMINS - || true
     - docker stack deploy -c swarm.yaml testu --with-registry-auth

@@ -15,7 +15,6 @@ ADMINS = config("ADMINS", cast=Csv(NamedEmail()))
 
 USE_TZ = True
 TIME_ZONE = "Europe/Bratislava"
-USE_I18N = False
 
 AUTH_USER_MODEL = "core.User"
 AUTHENTICATION_BACKENDS = ["apps.core.auth.EmailBackend"]
@@ -27,6 +26,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
 DEFAULT_FROM_EMAIL = "Testu team <noreply@testu.eu>"
+SERVER_EMAIL = DEFAULT_FROM_EMAIL  # For mail_admins()
+EMAIL_SUBJECT_PREFIX = ""  # Instead of "[Django] "
 
 STATIC_URL = "/assets/static/"
 STATIC_ROOT = config("STATIC_ROOT", default=str(BASE_DIR / "assets/static/"))
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
+    # "django.contrib.sites",  # migrate socialaccount zero
     "django.contrib.messages",
     "django_extensions",
     "django_filters",

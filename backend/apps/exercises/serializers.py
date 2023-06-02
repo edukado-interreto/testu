@@ -1,7 +1,15 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from .models import Exam, ExamReaction, Exercise, ExerciseReaction, Submission, Tag
+from .models import (
+    Exam,
+    ExamReaction,
+    Exercise,
+    ExerciseReaction,
+    Report,
+    Submission,
+    Tag,
+)
 
 User = get_user_model()
 
@@ -147,4 +155,21 @@ class SubmissionSerializer(serializers.ModelSerializer):
         user = self.context["request"].user
         if user.is_authenticated:
             validated_data["created_by"] = user
+        return super().create(validated_data)
+
+
+class ReportSerializer(serializers.ModelSerializer):
+    exercise = LidField(Exercise)
+
+    class Meta:
+        model = Report
+        fields = [
+            "user",
+            "exercise",
+            "nature",
+            "description",
+        ]
+
+    def create(self, validated_data):
+        validated_data["user"] = self.context["request"].user
         return super().create(validated_data)

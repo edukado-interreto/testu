@@ -45,7 +45,7 @@ services:
       sh -c "npm install && npm run dev"
 
   nginx:
-    image: nginx:1.20.2-alpine
+    image: nginx:1.25.0-alpine-slim
     restart: on-failure
     volumes:
       - ./etc/nginx/default.conf:/etc/nginx/templates/default.conf.template:z

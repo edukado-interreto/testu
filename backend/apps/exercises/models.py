@@ -1,8 +1,11 @@
 from django.contrib.auth import get_user_model
+from django.core.mail import mail_admins, send_mail
 from django.db import models
-from django.db.models.signals import post_delete
+from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
-from django.utils.timezone import now
+from django.template.loader import render_to_string
+from django.utils import translation
+from django.utils.translation import gettext as _
 from django_extensions.db.models import TimeStampedModel
 
 from apps.core.utils import long_id
@@ -143,10 +146,16 @@ class UploadedFile(TimeStampedModel):
         return self.file_name
 
 
-class ExerciseReaction(TimeStampedModel):
+class Reaction(TimeStampedModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
     weight = models.SmallIntegerField(default=1)
+
+    class Meta:
+        abstract = True
+
+
+class ExerciseReaction(Reaction):
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
 
     class Meta:
         constraints = [
@@ -160,10 +169,8 @@ class ExerciseReaction(TimeStampedModel):
         return f"{self.user} liked: {self.exercise}"
 
 
-class ExamReaction(TimeStampedModel):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+class ExamReaction(Reaction):
     exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
-    weight = models.SmallIntegerField(default=1)
 
     class Meta:
         constraints = [
@@ -175,6 +182,48 @@ class ExamReaction(TimeStampedModel):
 
     def __str__(self):
         return f"{self.user} liked: {self.exam}"
+
+
+class Report(TimeStampedModel):
+    class ReportType(models.TextChoices):
+        MISTAKE = "mistake", _("mistake")
+        MISUSE = "misuse", _("misuse")
+
+    user = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, related_name="reports"
+    )
+    exercise = models.ForeignKey(
+        Exercise, on_delete=models.SET_NULL, null=True, related_name="reports"
+    )
+    nature = models.CharField(
+        choices=ReportType.choices, max_length=7, default=ReportType.MISTAKE
+    )
+    description = models.TextField(default="", blank=True)
+
+    def send_for_mistake(self):
+        author = self.exercise.created_by
+        text = render_to_string("emails/mistake_body.txt", {"report": self})
+        return send_mail(
+            subject=f"{ self.user.username } think you made a mistake",
+            message=text,
+            from_email=None,
+            recipient_list=[f"{author.username} <{ author.email }>"],
+            fail_silently=False,
+        )
+
+    def send_for_misuse(self):
+        with translation.override("eo"):
+            text = render_to_string("emails/misuse_body.txt", {"report": self})
+            return mail_admins(
+                subject=f"Misuse: { self.user.username } reported an exercise",
+                message=text,
+                fail_silently=False,
+            )
+
+
+@receiver(post_save, sender=Report)
+def report_by_email(sender, instance, *args, **kwargs):
+    getattr(instance, f"send_for_{instance.nature}")()
 
 
 @receiver(post_delete, sender=UploadedFile)

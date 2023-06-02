@@ -13,8 +13,9 @@ services:
     networks:
       - main
     secrets:
-      - POSTGRES_PASSWORD
+      - ADMINS
       - ALLOWED_HOSTS
+      - POSTGRES_PASSWORD
       - SENDGRID_API_KEY
     command: |
       sh -c "ls -lAh /code/ &&

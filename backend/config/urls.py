@@ -4,6 +4,7 @@ from apps.exercises.views import (
     ExerciseViewSet,
     LanguageViewSet,
     SubmissionViewSet,
+    ReportViewSet,
     TagViewSet,
     UploadView,
 )
@@ -21,6 +22,7 @@ router.register("authors", CreatedByViewSet, basename="authors")
 router.register("exercises", ExerciseViewSet, basename="exercise")
 router.register("exams", ExamViewSet, basename="exam")
 router.register("languages", LanguageViewSet, basename="language")
+router.register("reports", ReportViewSet, basename="report")
 router.register("submissions", SubmissionViewSet, basename="submission")
 router.register("tags", TagViewSet, basename="tag")
 
