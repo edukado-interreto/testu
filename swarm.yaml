@@ -84,9 +84,11 @@ volumes:
   postgres-production:
 
 secrets:
-  POSTGRES_PASSWORD:
-    external: true
   ALLOWED_HOSTS:
+    external: true
+  ADMINS:
+    external: true
+  POSTGRES_PASSWORD:
     external: true
   SENDGRID_API_KEY:
     external: true

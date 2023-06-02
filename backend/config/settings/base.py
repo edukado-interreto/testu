@@ -2,12 +2,17 @@ from pathlib import Path
 
 from decouple import AutoConfig, Config, Csv, RepositorySecret
 
+from config.decouple import NamedEmail
+
 config = Config(RepositorySecret()) if Path("/run/secrets/").exists() else AutoConfig()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
+ADMINS = config("ADMINS", cast=Csv(NamedEmail()))
+
 USE_TZ = True
 TIME_ZONE = "Europe/Bratislava"
 USE_I18N = False
