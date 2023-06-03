@@ -10,71 +10,56 @@
       ref="checkbox"
       :key="choice.value"
       :readonly="readonly"
+      :color="silent ? 'primary' : is_correct_answer(i) ? 'green' : 'grey'"
     >
       <template v-slot:label>
-        <span class="black--text">{{ choice.value }}</span>
+        <span
+          class="black--text"
+          :class="{
+            'text-decoration-line-through': is_checked(i) && is_error(i),
+            'font-weight-bold': is_correct_answer(i),
+            'success--text': is_correct_answer(i),
+          }"
+          >{{ choice.value }}</span
+        >
         <template v-if="!silent">
-          <v-icon
-            v-if="show_success_feedback[i]"
-            class="mx-1"
-            color="success"
-          >mdi-check-bold</v-icon>
-          <v-icon
-            v-if="success[i] === false"
-            class="mx-1"
-            color="error"
-          >mdi-close-thick</v-icon>
+          <v-icon v-if="show_success_feedback[i]" class="mx-1" color="success"
+            >mdi-check-bold</v-icon
+          >
+          <v-icon v-if="is_checked(i) && is_error(i)" class="mx-1" color="error"
+            >mdi-close-thick</v-icon
+          >
         </template>
       </template>
     </v-checkbox>
   </div>
-  <!--v-select
-    ref="select"
-    dense
-    :style="'display:inline-block; width: ' + gap_width"
-    :items="choices"
-    item-text="value"
-    item-value="value"
-    return-object
-    v-model="answer"
-    :success="success === true"
-    :error-messages="success === false ? errorExplanation : undefined"
-    hide-details="auto"
-    :error="success === false"
-    :prepend-inner-icon="success === undefined ? undefined : (success ? 'mdi-check-bold' : 'mdi-close-thick')"
-    @change="on_change"
-    :readonly="once && success !== undefined"
-  >
-  </v-select-->
 </template>
 <script>
-import confetti_shoot from '~/mixins/confetti_shoot.js'
+import confetti_shoot from '~/mixins/confetti_shoot.js';
 export default {
   name: 'UnitMultipleChoiceCheckbox',
   props: [
-    "value",
-    "options",
-    "shuffle", // bool: wether shuffle the options
-    "once", // bool: if true, allow only one try
-    "error-explanation", // string: message to display when picked answer is wrong 
-    "readonly",
-    "silent",
+    'value',
+    'options',
+    'shuffle', // bool: whether shuffle the options
+    'once', // bool: if true, allow only one try
+    'error-explanation', // string: message to display when picked answer is wrong
+    'readonly',
+    'silent',
   ],
-  mixins: [
-    confetti_shoot
-  ],
+  mixins: [confetti_shoot],
   data: () => ({
-    answer: []
+    answer: [],
   }),
   created() {
     // This will preload the answer on create.
     // Note that if the parent component changes
     // the prop 'value' afterwards, it will not
     // update the internal 'answer' variable.
-    this.answer = this.value || []
+    this.answer = this.value || [];
   },
   computed: {
-    choices: function() {
+    choices: function () {
       /**
        * Return the array of the possible answers to choose from.
        + The array contains objects in the form:
@@ -82,25 +67,25 @@ export default {
        */
 
       if (this.shuffle) {
-        return this.shuffle_array(
-          this.options
-        )
+        return this.shuffle_array(this.options);
       }
 
-      return this.options
-
+      return this.options;
     },
-    success: function() {
+    success: function () {
       /**
        * The correctness status of each checkbox
        * @returns: [ true | false ]
        */
-      return this.choices.map(c => {
-        const checked = this.answer.includes(c.value)
-        if (checked && c.right === true) return true
-        if (!checked && c.right === false) return true
-        return false
-      })
+      return this.choices.map((c) => {
+        const checked = this.answer.includes(c.value);
+        if (checked && c.right === true) return true;
+        if (!checked && c.right === false) return true;
+        return false;
+      });
+    },
+    correct_answers: function () {
+      return this.choices.map((c) => c.right);
     },
     show_success_feedback() {
       /**
@@ -111,23 +96,31 @@ export default {
        */
       return this.choices.map(
         (c, i) => this.success[i] && c.right && this.success.every(Boolean)
-      )
-    }
+      );
+    },
   },
   methods: {
-    on_change: function(i) {
+    is_correct_answer: function (i) {
+      if (this.silent === true) return false;
+      return this.correct_answers[i];
+    },
+    is_checked: function (i) {
+      return this.answer.includes(this.choices[i].value);
+    },
+    is_error: function (i) {
+      if (this.silent) return false;
+      return this.success[i] === false;
+    },
+    on_change: function (i) {
+      this.$emit('update:answer', this.answer);
 
-      this.$emit('update:answer', this.answer)
-
-      if (this.silent) return
-      if (process.server) return
+      if (this.silent) return;
+      if (process.server) return;
       if (this.show_success_feedback[i] === true) {
-        this.confetti_shoot(
-          this.$refs.checkbox[i].$el.querySelector('input')
-        )
+        this.confetti_shoot(this.$refs.checkbox[i].$el.querySelector('input'));
       }
     },
-    shuffle_array: function(in_array) {
+    shuffle_array: function (in_array) {
       /**
        * Shuffle an array using the Fisher-Yates algorithm,
        * O(n), un-biased.
@@ -136,7 +129,8 @@ export default {
       const out_array = in_array.slice();
       // clone the input array
 
-      let currentIndex = out_array.length, randomIndex;
+      let currentIndex = out_array.length,
+        randomIndex;
 
       // While there remain elements to shuffle...
       while (currentIndex != 0) {
@@ -145,7 +139,9 @@ export default {
         currentIndex--;
         // And swap it with the current element.
         [out_array[currentIndex], out_array[randomIndex]] = [
-          out_array[randomIndex], out_array[currentIndex]];
+          out_array[randomIndex],
+          out_array[currentIndex],
+        ];
       }
 
       return out_array;
@@ -153,8 +149,13 @@ export default {
   },
   watch: {
     answer(v) {
-      this.$emit('input', v)
-    }
-  }
-}
+      this.$emit('input', v);
+    },
+    silent() {
+      this.answer.map((v) =>
+        this.on_change(this.choices.findIndex((c) => c.value === v))
+      );
+    },
+  },
+};
 </script>
