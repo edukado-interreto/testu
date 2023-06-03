@@ -83,11 +83,11 @@ Deploy:
     - echo $CI_JOB_TOKEN | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
   script:
     - |
-      printf $POSTGRES_PASSWORD | docker secret create POSTGRES_PASSWORD - || true
+      echo -n $POSTGRES_PASSWORD | docker secret create POSTGRES_PASSWORD - || true
     - |
-      printf $ALLOWED_HOSTS | docker secret create ALLOWED_HOSTS - || true
+      echo -n $ALLOWED_HOSTS | docker secret create ALLOWED_HOSTS - || true
     - |
-      printf $SENDGRID_API_KEY | docker secret create SENDGRID_API_KEY - || true
+      echo -n $SENDGRID_API_KEY | docker secret create SENDGRID_API_KEY - || true
     - |
-      printf $ADMINS | docker secret create ADMINS - || true
+      echo -n $ADMINS | docker secret create ADMINS - || true
     - docker stack deploy -c swarm.yaml testu --with-registry-auth
