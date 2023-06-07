@@ -20,7 +20,29 @@
         v-text="$t('main.catchphrase')"
       />
       <v-spacer />
-      <!-- {{ authUser }} -->
+
+      <v-sheet id="top-social-icons" class="mx-2 d-none d-md-flex">
+        <v-btn icon href="https://t.me/+8Z1dtayqGzk2Yzk0" target="_blank">
+          <v-img
+            contain
+            src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"
+            max-height="32"
+          />
+        </v-btn>
+
+        <v-btn
+          icon
+          href="https://www.facebook.com/profile.php?id=100086451753450"
+          target="_blank"
+        >
+          <v-img
+            contain
+            src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
+            max-height="32"
+          />
+        </v-btn>
+      </v-sheet>
+
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-btn text v-bind="attrs" v-on="on" class="text-none px-1 mr-1">
@@ -150,6 +172,40 @@
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>{{ $t('main.about') }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-subheader class="d-md-none">{{ $t('main.social') }}</v-subheader>
+        <v-list-item
+          class="d-md-none"
+          href="https://www.facebook.com/profile.php?id=100086451753450"
+          target="_blank"
+        >
+          <v-list-item-action>
+            <v-img
+              contain
+              src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"
+              max-height="32"
+            />
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Telegram</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          class="d-md-none"
+          href="https://www.facebook.com/profile.php?id=100086451753450"
+          target="_blank"
+        >
+          <v-list-item-action>
+            <v-img
+              contain
+              src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
+              max-height="32"
+            />
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Facebook</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
