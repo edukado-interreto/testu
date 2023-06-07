@@ -21,8 +21,5 @@
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.12.1"
-  },
-  "prettier": {
-    "singleQuote": true
   }
 }
