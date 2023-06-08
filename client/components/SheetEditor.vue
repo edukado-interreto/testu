@@ -22,7 +22,7 @@
                 ><v-icon>mdi-chevron-up</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t("sheet_editor.edit_previous") }}</span>
+            <span>{{ $t('sheet_editor.edit_previous') }}</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -36,7 +36,7 @@
                 ><v-icon>mdi-chevron-down</v-icon></v-btn
               >
             </template>
-            <span>{{ $t("sheet_editor.edit_next") }}</span>
+            <span>{{ $t('sheet_editor.edit_next') }}</span>
           </v-tooltip>
 
           <v-divider vertical class="mx-2"></v-divider>
@@ -47,7 +47,7 @@
                 ><v-icon>mdi-delete</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t("sheet_editor.delete") }}</span>
+            <span>{{ $t('sheet_editor.delete') }}</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -61,7 +61,7 @@
                 ><v-icon>mdi-transfer-up</v-icon></v-btn
               >
             </template>
-            <span>{{ $t("sheet_editor.move_up") }}</span>
+            <span>{{ $t('sheet_editor.move_up') }}</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -75,7 +75,7 @@
                 ><v-icon>mdi-transfer-down</v-icon></v-btn
               >
             </template>
-            <span>{{ $t("sheet_editor.move_down") }}</span>
+            <span>{{ $t('sheet_editor.move_down') }}</span>
           </v-tooltip>
 
           <v-spacer></v-spacer>
@@ -90,7 +90,7 @@
                 ><v-icon>mdi-close</v-icon></v-btn
               >
             </template>
-            <span>{{ $t("sheet_editor.close") }}</span>
+            <span>{{ $t('sheet_editor.close') }}</span>
           </v-tooltip>
         </v-toolbar>
       </template>
@@ -141,7 +141,7 @@
                       <v-icon>mdi-image</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>
-                      {{ $t("sheet_editor.insert_image") }}
+                      {{ $t('sheet_editor.insert_image') }}
                     </v-list-item-title>
                   </v-list-item>
                 </InsertMedia>
@@ -162,7 +162,7 @@
                       <v-icon>mdi-volume-high</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>
-                      {{ $t("sheet_editor.insert_sound") }}
+                      {{ $t('sheet_editor.insert_sound') }}
                     </v-list-item-title>
                   </v-list-item>
                 </InsertMedia>
@@ -171,7 +171,7 @@
                     <v-icon>mdi-movie</v-icon>
                   </v-list-item-icon>
                   <v-list-item-title>
-                    {{ $t("sheet_editor.insert_video") }}
+                    {{ $t('sheet_editor.insert_video') }}
                   </v-list-item-title>
                 </v-list-item>
               </v-list>
@@ -190,7 +190,7 @@
                 <v-icon>mdi-playlist-plus</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t("sheet_editor.add_sentence") }}</span>
+            <span>{{ $t('sheet_editor.add_sentence') }}</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -205,7 +205,7 @@
                 <v-icon>mdi-tray-plus</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t("sheet_editor.insert_gap") }}</span>
+            <span>{{ $t('sheet_editor.insert_gap') }}</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -220,7 +220,7 @@
                 <v-icon>mdi-code-equal</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t("sheet_editor.add_matching_pair") }}</span>
+            <span>{{ $t('sheet_editor.add_matching_pair') }}</span>
           </v-tooltip>
           <v-dialog v-model="add_pair_dialog" max-width="750">
             <v-card>
@@ -230,7 +230,7 @@
                 @submit.prevent="add_pair_insert_click"
               >
                 <v-card-title>{{
-                  $t("sheet_editor.new_matching_pair")
+                  $t('sheet_editor.new_matching_pair')
                 }}</v-card-title>
                 <v-card-text>
                   <v-text-field
@@ -248,10 +248,10 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="primary" type="submit">{{
-                    $t("sheet_editor.insert_pair")
+                    $t('sheet_editor.insert_pair')
                   }}</v-btn>
                   <v-btn text @click="add_pair_dialog = false">{{
-                    $t("main.cancel")
+                    $t('main.cancel')
                   }}</v-btn>
                 </v-card-actions>
               </v-form>
@@ -281,7 +281,7 @@
                   <v-icon>mdi-image</v-icon>
                 </v-btn>
               </template>
-              <span>{{ $t("sheet_editor.insert_image") }}</span>
+              <span>{{ $t('sheet_editor.insert_image') }}</span>
             </v-tooltip>
           </InsertMedia>
 
@@ -306,7 +306,7 @@
                   <v-icon>mdi-volume-high</v-icon>
                 </v-btn>
               </template>
-              <span>{{ $t("sheet_editor.sound") }}</span>
+              <span>{{ $t('sheet_editor.sound') }}</span>
             </v-tooltip>
           </InsertMedia>
 
@@ -322,7 +322,7 @@
                 <v-icon>mdi-movie</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t("sheet_editor.insert_video") }}</span>
+            <span>{{ $t('sheet_editor.insert_video') }}</span>
           </v-tooltip>
 
           <v-dialog v-model="insert_video_dialog" max-width="750">
@@ -333,7 +333,7 @@
                 ref="insert_video_form"
               >
                 <v-card-title>{{
-                  $t("sheet_editor.insert_video")
+                  $t('sheet_editor.insert_video')
                 }}</v-card-title>
                 <v-card-text>
                   <v-text-field
@@ -351,10 +351,10 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="primary" type="submit">{{
-                    $t("sheet_editor.insert_video")
+                    $t('sheet_editor.insert_video')
                   }}</v-btn>
                   <v-btn text @click="insert_video_dialog = false">{{
-                    $t("main.cancel")
+                    $t('main.cancel')
                   }}</v-btn>
                 </v-card-actions>
               </v-form>
@@ -364,7 +364,7 @@
           <v-dialog v-model="add_gap_dialog" max-width="750">
             <v-card>
               <v-form ref="new_gap_form">
-                <v-card-title>{{ $t("sheet_editor.new_gap") }}</v-card-title>
+                <v-card-title>{{ $t('sheet_editor.new_gap') }}</v-card-title>
                 <v-card-text>
                   <OptionsSelector
                     v-model="new_gap_options"
@@ -381,10 +381,10 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="primary" @click="insert_gap_click">{{
-                    $t("sheet_editor.insert_gap")
+                    $t('sheet_editor.insert_gap')
                   }}</v-btn>
                   <v-btn text @click="add_gap_dialog_show(false)">{{
-                    $t("main.cancel")
+                    $t('main.cancel')
                   }}</v-btn>
                 </v-card-actions>
               </v-form>
@@ -426,10 +426,10 @@
         style="border: 4px dashed #e7e7e7"
       >
         <div class="text--disabled text-h6">
-          {{ $t("sheet_editor.empty_exercise") }}
+          {{ $t('sheet_editor.empty_exercise') }}
         </div>
         <span class="text--disabled">{{
-          $t("sheet_editor.add_unit_to_begin")
+          $t('sheet_editor.add_unit_to_begin')
         }}</span>
       </div>
 
@@ -460,7 +460,7 @@
                   style="height: 100%; border-radius: 4px 0 0 4px"
                 >
                   <v-icon small>
-                    {{ i != current.index ? "mdi-pencil" : "mdi-check-bold" }}
+                    {{ i != current.index ? 'mdi-pencil' : 'mdi-check-bold' }}
                   </v-icon>
                 </v-btn>
               </v-col>
@@ -468,7 +468,7 @@
                 <div class="headline my-4">
                   {{ i + 1 }}. {{ section.title }}
                   <span v-if="section.title === ''" class="font-italic">
-                    {{ $t("sheet_editor.untitled_unit") }}
+                    {{ $t('sheet_editor.untitled_unit') }}
                   </span>
                 </div>
                 <div v-if="section.description" class="body-2 mb-4 pre-line">
@@ -483,19 +483,6 @@
                 />
               </v-col>
             </v-row>
-            <!--
-            <v-card-actions>
-              <v-spacer />
-              <v-btn @click="edit_drawer.show = true">Edit</v-btn>
-              <v-btn
-                color="primary"
-                nuxt
-                to="/inspire"
-              >
-                Next
-              </v-btn>
-            </v-card-actions>
-            -->
           </v-sheet>
         </div>
       </v-slide-y-transition>
@@ -504,7 +491,7 @@
         <template v-slot:activator="{ on, attrs }">
           <v-btn class="mt-3" :elevation="0" v-bind="attrs" v-on="on">
             <v-icon class="me-2">mdi-plus</v-icon>
-            {{ $t("sheet_editor.add_unit") }}
+            {{ $t('sheet_editor.add_unit') }}
           </v-btn>
         </template>
         <v-list>
@@ -516,9 +503,14 @@
             <v-list-item-icon>
               <v-img
                 width="80"
+                height="60"
                 contain
                 :src="require(`@/assets/snippet_thumb/${item.img}`)"
-              ></v-img>
+              >
+                <template #placeholder>
+                  <v-sheet class="grey lighten-3" height="60"></v-sheet>
+                </template>
+              </v-img>
             </v-list-item-icon>
             <v-list-item-title>{{ item.name }}</v-list-item-title>
           </v-list-item>
@@ -528,28 +520,28 @@
   </div>
 </template>
 <script>
-import { nanoid } from "nanoid";
-import unit_component from "~/mixins/unit_component.js";
+import { nanoid } from 'nanoid';
+import unit_component from '~/mixins/unit_component.js';
 export default {
-  name: "SheetEditor",
+  name: 'SheetEditor',
   mixins: [unit_component],
-  props: ["sheet"],
+  props: ['sheet'],
   data: () => ({
     available_types: [
-      { text: "Default", value: "default" },
-      { text: "Open answer", value: "open_answer" },
-      { text: "Multiple choice", value: "multiple_choice" },
-      { text: "Sort and match", value: "pairing" },
+      { text: 'Default', value: 'default' },
+      { text: 'Open answer', value: 'open_answer' },
+      { text: 'Multiple choice', value: 'multiple_choice' },
+      { text: 'Sort and match', value: 'pairing' },
     ],
     new_gap_options: [],
     add_gap_dialog: false,
 
     add_pair_dialog: false,
-    add_pair_first_item: "",
-    add_pair_second_item: "",
+    add_pair_first_item: '',
+    add_pair_second_item: '',
 
     insert_video_dialog: false,
-    insert_video_url: "",
+    insert_video_url: '',
 
     description_loading: false,
 
@@ -580,106 +572,136 @@ export default {
     snippets() {
       return [
         {
-          name: "Blank unit",
-          img: "blank.svg",
+          name: this.$t('sheet_editor.snippets.blank_unit.name'),
+          img: 'blank.svg',
           unit: {
-            type: "default",
+            type: 'default',
+            code: this.$t('sheet_editor.snippets.blank_unit.code'),
           },
         },
         {
-          name: "Gap filling, dropdown",
-          img: "fill_gap_dropdown.svg",
+          name: this.$t('sheet_editor.snippets.gap_filling_dropdown.name'),
+          img: 'fill_gap_dropdown.svg',
           unit: {
-            type: "default",
-            code: "The book is [+on|in] the table.",
+            type: 'default',
+            code: this.$t('sheet_editor.snippets.gap_filling_dropdown.code'),
           },
         },
         {
-          name: "Gap filling, open answer",
-          img: "fill_gap_open.svg",
+          name: this.$t('sheet_editor.snippets.gap_filling_open_answer.name'),
+          img: 'fill_gap_open.svg',
           unit: {
-            type: "open_answer",
-            code: "The book is [+on|in] the table.",
+            type: 'open_answer',
+            code: this.$t('sheet_editor.snippets.gap_filling_open_answer.code'),
           },
         },
         {
-          name: "Multiple choice",
-          img: "choice.svg",
+          name: this.$t('sheet_editor.snippets.multiple_choice.name'),
+          img: 'choice.svg',
           unit: {
-            type: "multiple_choice",
-            code: "Where is the book?\n[+on the table|in the table]",
+            type: 'multiple_choice',
+            code: this.$t('sheet_editor.snippets.multiple_choice.code'),
           },
         },
         {
-          name: "Pairing text with text",
-          img: "match_text.svg",
+          name: this.$t('sheet_editor.snippets.pairing_text_with_text.name'),
+          img: 'match_text.svg',
           unit: {
-            type: "pairing",
-            code: "Cherry == Red\n\nLemon == Yellow\n\nBroccoli == Green",
+            type: 'pairing',
+            code: this.$t('sheet_editor.snippets.pairing_text_with_text.code'),
           },
         },
         {
-          name: "Pairing text with pictures",
-          img: "match_pic.svg",
+          name: this.$t(
+            'sheet_editor.snippets.pairing_text_with_pictures.name'
+          ),
+          img: 'match_pic.svg',
           unit: {
-            type: "pairing",
-            code: "Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",
+            type: 'pairing',
+            code: this.$t(
+              'sheet_editor.snippets.pairing_text_with_pictures.code'
+            ),
           },
         },
         {
-          name: "Sorting pictures",
-          img: "sort_pic.svg",
+          name: this.$t('sheet_editor.snippets.sorting_pictures.name'),
+          img: 'sort_pic.svg',
           unit: {
-            type: "pairing",
-            code: "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
+            type: 'pairing',
+            code: this.$t('sheet_editor.snippets.sorting_pictures.code'),
             shuffle: true,
           },
         },
         {
-          name: "Pairing pictures with sounds",
-          img: "match_pic_sound.svg",
+          name: this.$t(
+            'sheet_editor.snippets.pairing_pictures_with_sounds.name'
+          ),
+          img: 'match_pic_sound.svg',
           unit: {
-            type: "pairing",
-            code: "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
+            type: 'pairing',
+            code: this.$t(
+              'sheet_editor.snippets.pairing_pictures_with_sounds.code'
+            ),
           },
         },
         {
-          name: "Questions about a picture, true or false",
-          img: "true_false_pic.svg",
+          name: this.$t(
+            'sheet_editor.snippets.questions_about_a_picture_true_or_false.name'
+          ),
+          img: 'true_false_pic.svg',
           unit: {
-            type: "multiple_choice",
-            description: "{img:cat.jpeg}",
-            code: "The animal in the picture is: [A dog|+A cat|An elephant]\n\nIs it a wild animal or a pet? [+A pet|A wild animal]",
+            type: 'multiple_choice',
+            description: this.$t(
+              'sheet_editor.snippets.questions_about_a_picture_true_or_false.description'
+            ),
+            code: this.$t(
+              'sheet_editor.snippets.questions_about_a_picture_true_or_false.code'
+            ),
           },
         },
         {
-          name: "Questions about a text, multiple choice",
-          img: "choice_paragraph.svg",
+          name: this.$t(
+            'sheet_editor.snippets.questions_about_a_text_multiple_choice.name'
+          ),
+          img: 'choice_paragraph.svg',
           unit: {
-            type: "multiple_choice",
-            description:
-              "Once upon a time, a hare and a tortoise were always arguing about who was faster.\nThe tortoise challenged the hare to a race, and the hare accepted, thinking it would be an easy win.\n\nThe race began, and the hare took off quickly, leaving the tortoise behind. The hare became overconfident and decided to take a nap. Meanwhile, the tortoise kept moving steadily towards the finish line.\n\nWhen the hare woke up, he realized the tortoise was almost at the finish line. The hare tried to catch up, but it was too late. The tortoise had won the race.",
-            code: "Who challenged the hare to a race? [The hare|+The tortoise|A bird]\n\nWhy did the hare take a nap during the race? [He was tired|He wanted to give the tortoise a chance to catch up|+He was confident in his victory]\n\nWho won the race? [The hare|+The tortoise|A bird]",
+            type: 'multiple_choice',
+            description: this.$t(
+              'sheet_editor.snippets.questions_about_a_text_multiple_choice.description'
+            ),
+            code: this.$t(
+              'sheet_editor.snippets.questions_about_a_text_multiple_choice.code'
+            ),
           },
         },
         {
-          name: "Questions about a video, open answer",
-          img: "open_video.svg",
+          name: this.$t(
+            'sheet_editor.snippets.questions_about_a_video_open_answer.name'
+          ),
+          img: 'open_video.svg',
           unit: {
-            type: "open_answer",
-            description:
-              "Watch the video and answer the questions.\n\n{video:https://www.youtube.com/watch?v=chii_rEU30g}",
-            code: "Where is this place located?\n[]\n\nWho built it?\n[]",
+            type: 'open_answer',
+            description: this.$t(
+              'sheet_editor.snippets.questions_about_a_video_open_answer.description'
+            ),
+            code: this.$t(
+              'sheet_editor.snippets.questions_about_a_video_open_answer.code'
+            ),
           },
         },
         {
-          name: "Questions about a sound, dropdown",
-          img: "dropdown_sound.svg",
+          name: this.$t(
+            'sheet_editor.snippets.questions_about_a_sound_dropdown.name'
+          ),
+          img: 'dropdown_sound.svg',
           unit: {
-            type: "multiple_choice",
-            description:
-              "Listen to the audio and aswer the questions:\n\n{sound:cat.mp3}",
-            code: "Which animal makes this sound?\n[+Cat|Dog|Elephant]\n\nWhat is the term used to describe the sound this animal makes?\n[+Meowing|Barking|Trumpeting]",
+            type: 'multiple_choice',
+            description: this.$t(
+              'sheet_editor.snippets.questions_about_a_sound_dropdown.description'
+            ),
+            code: this.$t(
+              'sheet_editor.snippets.questions_about_a_sound_dropdown.code'
+            ),
           },
         },
       ];
@@ -690,8 +712,8 @@ export default {
       const input = this.$refs.textarea.$refs.input;
       const code = this.current.data.code.trimEnd();
 
-      if (code !== "") {
-        this.current.data.code = code + "\n\n";
+      if (code !== '') {
+        this.current.data.code = code + '\n\n';
       }
 
       requestAnimationFrame(() => {
@@ -730,11 +752,11 @@ export default {
       // ensure ltr string concatenanion
       // http://stackoverflow.com/q/29988144/
       const new_gap =
-        "[" +
+        '[' +
         this.new_gap_options
-          .map((opt) => (opt.right ? "+" + opt.value : opt.value))
-          .join("|") +
-        "]";
+          .map((opt) => (opt.right ? '+' + opt.value : opt.value))
+          .join('|') +
+        ']';
 
       this.inject_snippet(new_gap);
 
@@ -746,8 +768,8 @@ export default {
       const input = this.$refs.textarea.$refs.input;
       let code = this.current.data.code.trimEnd();
 
-      if (code !== "") {
-        code += "\n\n";
+      if (code !== '') {
+        code += '\n\n';
       }
 
       code += `${this.add_pair_first_item} == ${this.add_pair_second_item}`;
@@ -784,7 +806,7 @@ export default {
       });
     },
     keyed(iterable, i) {
-      if ("_key" in iterable[i]) {
+      if ('_key' in iterable[i]) {
         return iterable[i]._key;
       }
       iterable[i]._key = nanoid();
@@ -826,9 +848,9 @@ export default {
     },
     add(unit) {
       const base_unit = {
-        type: "default",
-        title: "",
-        code: "",
+        type: 'default',
+        title: '',
+        code: '',
       };
       this.sheet.push({
         ...base_unit,
@@ -849,8 +871,8 @@ export default {
     },
     add_pair_dialog: function (val) {
       if (val) {
-        this.add_pair_first_item = "";
-        this.add_pair_second_item = "";
+        this.add_pair_first_item = '';
+        this.add_pair_second_item = '';
       } else {
         this.$refs.add_pair_form.resetValidation();
         requestAnimationFrame(() => {
@@ -860,7 +882,7 @@ export default {
     },
     insert_video_dialog: function (val) {
       if (val) {
-        this.insert_video_url = "";
+        this.insert_video_url = '';
       } else {
         this.$refs.insert_video_form.resetValidation();
         requestAnimationFrame(() => {
@@ -868,7 +890,7 @@ export default {
         });
       }
     },
-    "edit_drawer.show": function (val) {
+    'edit_drawer.show': function (val) {
       if (val === false) {
         this.current.index = undefined;
       }

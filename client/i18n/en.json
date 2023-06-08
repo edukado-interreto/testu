@@ -164,7 +164,60 @@
     "start_typing": "Start typing a sentence…",
     "title": "Title",
     "untitled_unit": "Untitled unit",
-    "valid_url": "Please type a valid URL"
+    "valid_url": "Please type a valid URL",
+    "snippets": {
+      "blank_unit": {
+        "name": "Blank unit"
+      },
+      "gap_filling_dropdown": {
+        "code": "The book is [+on|in] the table.",
+        "name": "Gap filling, dropdown"
+      },
+      "gap_filling_open_answer": {
+        "code": "The book is [+on|in] the table.",
+        "name": "Gap filling, open answer"
+      },
+      "multiple_choice": {
+        "code": "Where is the book?\n[+on the table|in the table]",
+        "name": "Multiple choice"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
+        "name": "Pairing pictures with sounds"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",
+        "name": "Pairing text with pictures"
+      },
+      "pairing_text_with_text": {
+        "code": "Cherry == Red\n\nLemon == Yellow\n\nBroccoli == Green",
+        "name": "Pairing text with text"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "The animal in the picture is: [A dog|+A cat|An elephant]\n\nIs it a wild animal or a pet? [+A pet|A wild animal]",
+        "description": "{img:cat.jpeg}",
+        "name": "Questions about a picture, true or false"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Which animal makes this sound?\n[+Cat|Dog|Elephant]\n\nWhat is the term used to describe the sound this animal makes?\n[+Meowing|Barking|Trumpeting]",
+        "description": "Listen to the audio and aswer the questions:\n\n{sound:cat.mp3}",
+        "name": "Questions about a sound, dropdown"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Who challenged the hare to a race? [The hare|+The tortoise|A bird]\n\nWhy did the hare take a nap during the race? [He was tired|He wanted to give the tortoise a chance to catch up|+He was confident in his victory]\n\nWho won the race? [The hare|+The tortoise|A bird]",
+        "description": "Once upon a time, a hare and a tortoise were always arguing about who was faster.\nThe tortoise challenged the hare to a race, and the hare accepted, thinking it would be an easy win.\n\nThe race began, and the hare took off quickly, leaving the tortoise behind. The hare became overconfident and decided to take a nap. Meanwhile, the tortoise kept moving steadily towards the finish line.\n\nWhen the hare woke up, he realized the tortoise was almost at the finish line. The hare tried to catch up, but it was too late. The tortoise had won the race.",
+        "name": "Questions about a text, multiple choice"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Where is this place located?\n[]\n\nWho built it?\n[]",
+        "description": "Watch the video and answer the questions.\n\n{video:https://www.youtube.com/watch?v=chii_rEU30g}",
+        "name": "Questions about a video, open answer"
+      },
+      "sorting_pictures": {
+        "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
+        "name": "Sorting pictures"
+      }
+    }
   },
   "sort": {
     "rated": "Best rated",
