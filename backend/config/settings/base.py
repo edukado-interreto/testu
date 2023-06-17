@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import timedelta
 
 from decouple import AutoConfig, Config, Csv, RepositorySecret
 
@@ -142,7 +143,9 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 300,
 }
-
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=1),
+}
 REST_USE_JWT = True
 
 JWT_AUTH_COOKIE = "jwt-access"
