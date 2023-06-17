@@ -576,13 +576,13 @@ files = [
 
 [[package]]
 name = "dj-rest-auth"
-version = "2.2.8"
+version = "3.0.0"
 description = "Authentication and Registration in Django Rest Framework"
 category = "main"
 optional = false
 python-versions = ">=3.5"
 files = [
-    {file = "dj-rest-auth-2.2.8.tar.gz", hash = "sha256:9fb3492888185ede8b2064ad6803120c7b0b83ab08e2347a02e9b44282374242"},
+    {file = "dj-rest-auth-3.0.0.tar.gz", hash = "sha256:ee792c6b380dac20ecacb79769681cc30896f56ddf8212d370f7c220a5c6a0cf"},
 ]
 
 [package.dependencies]
@@ -595,19 +595,19 @@ with-social = ["django-allauth (>=0.40.0,<0.53.0)"]
 
 [[package]]
 name = "django"
-version = "4.1.7"
+version = "4.2.2"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "Django-4.1.7-py3-none-any.whl", hash = "sha256:f2f431e75adc40039ace496ad3b9f17227022e8b11566f4b363da44c7e44761e"},
-    {file = "Django-4.1.7.tar.gz", hash = "sha256:44f714b81c5f190d9d2ddad01a532fe502fa01c4cb8faf1d081f4264ed15dcd8"},
+    {file = "Django-4.2.2-py3-none-any.whl", hash = "sha256:672b3fa81e1f853bb58be1b51754108ab4ffa12a77c06db86aa8df9ed0c46fe5"},
+    {file = "Django-4.2.2.tar.gz", hash = "sha256:2a6b6fbff5b59dd07bef10bcb019bee2ea97a30b2a656d51346596724324badf"},
 ]
 
 [package.dependencies]
-asgiref = ">=3.5.2,<4"
-sqlparse = ">=0.2.2"
+asgiref = ">=3.6.0,<4"
+sqlparse = ">=0.3.1"
 tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 
 [package.extras]
@@ -1821,4 +1821,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "b229b5d74a31ef9ec71ea5ee3ce100ddd859cdb52e8c4721df3a64efb7f8a367"
+content-hash = "c867853c0c732379eabb1bca2a8d0641c608f53bce79b9673f303a1386f6d762"
