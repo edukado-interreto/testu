@@ -5,7 +5,7 @@ from .models import Exam, Exercise, Submission, Tag, UploadedFile
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    pass
+    list_display = ["__str__", "pk", "created", "modified"]
 
 
 @admin.register(Exercise)
