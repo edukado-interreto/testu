@@ -22,6 +22,7 @@
   },
   "editor": {
     "age_range": "Age range",
+    "confirm_leave": "This page is asking you to confirm that you want to leave - data you have entered may not be saved.",
     "description": "Description",
     "details": "Exercise details",
     "save": "Save",
