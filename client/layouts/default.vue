@@ -178,7 +178,7 @@
         <v-subheader class="d-md-none">{{ $t('main.social') }}</v-subheader>
         <v-list-item
           class="d-md-none"
-          href="https://www.facebook.com/profile.php?id=100086451753450"
+          href="https://t.me/+8Z1dtayqGzk2Yzk0"
           target="_blank"
         >
           <v-list-item-action>
