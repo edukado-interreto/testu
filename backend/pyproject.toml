@@ -10,7 +10,7 @@ profile = "black"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-dj-rest-auth = {extras = ["with-social"], version = "^3"}
+dj-rest-auth = {extras = ["with-social"], version = "<3"}
 django = "~4.2"
 django-allauth = "^0.51.0"
 django-anymail = {extras = ["sendgrid"], version = "^8.5"}
