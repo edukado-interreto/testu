@@ -117,6 +117,7 @@
     "catchphrase": "Create your own language quizzes",
     "cookie_consent": "This website uses the minimal amount of cookies for it functionment. By continuing using this website we suppose you accept the usage of the functional cookies.",
     "edit": "Edit",
+    "guide": "How To",
     "home": "Home",
     "lang_menu_header": "Interface language",
     "login": "Log in",
@@ -261,5 +262,26 @@
   "teach": {
     "exams": "Exams",
     "exercises": "Exercises"
+  },
+  "guide": {
+    "about": "How to create exercises",
+    "about_text": "To create new exercice, you'll first need to register and login in the website.",
+    "exercice": {
+      "name": "New exercise",
+      "explanation1": "To create a new exercise, you have to be in the Home menu (1), then you can select \"+ CREATE A NEW EXERCISE\" (2). Once created, they'll appear on this page. But for now you will be moved to the next page as you can see just below.",
+      "explanation2": "An exercise can be composed in multiple units. You can add units by clicking on \"+ ADD UNIT\" (3). There are different kinds of exercises but in each unit you can only use the same kind. If you want to mix different types of questions in an exercise, you'll have to do separate units for each type of questions you want.",
+      "explanation3": "As you can see on the left, there are a lot of different types of units. But mainly, we can group them in 3 families: gap filling questions, multiple choices and match or sort questions.",
+      "explanation4": "Gap filling question is a text or a sentence where you choose to remove a word or a few words. For theses questions, you can choose to give some answers (at least one right answer and some false ones) or you can let the field open and the person answering the question will have to complete by typing the answer. In each case, you'll indicate the right answer(s) when creating the question.",
+      "explanation5": "Multiple choices allow you to create question with a choice of answers. It can be one or more right answers and as for the gap filling questions, you'll have to give the right answer(s) when creating the question.",
+      "explanation6": "For match or sort questions, you'll have the choice to give descriptions or questions or pictures or even sounds and words or answers related to the given items. The learners will have to pair the items with the answers or if you chose the sort question, they'll have to sort them in the right order.",
+      "explanation7": "git You can find more explanations for each family by clicking on the tabs on the top of this page."
+    },
+    "gap_filling": "Gap Filling",
+    "multiple_choice": "Multiple choice",
+    "sort_and_match": "Sort and Match",
+    "video": "about a video",
+    "sound": "add sounds",
+    "construction": "Under construction"
   }
 }
+

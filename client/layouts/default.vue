@@ -175,6 +175,15 @@
           </v-list-item-content>
         </v-list-item>
 
+        <v-list-item :to="localePath('/guide')" nuxt router exact>
+          <v-list-item-action>
+            <v-icon>mdi-help-circle</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{ $t('main.guide') }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
         <v-subheader class="d-md-none">{{ $t('main.social') }}</v-subheader>
         <v-list-item
           class="d-md-none"
