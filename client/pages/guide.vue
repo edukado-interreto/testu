@@ -12,7 +12,7 @@
       <v-tab >{{ $t('guide.multiple_choice') }}</v-tab>
       <v-tab >{{ $t('guide.sort_and_match') }}</v-tab>
       <v-tab >{{ $t('guide.video') }}</v-tab>
-      <v-tab >{{ $t('guide.sound') }}</v-tab>
+
     </v-tabs>
 
     <v-tabs-items v-model="tab" class="pa-1 mt-5">
@@ -48,13 +48,13 @@
           <v-col >
             <br>
             <p>{{ $t('guide.exercice.explanation3') }}</p>
-            <br>
+
             <p>{{ $t('guide.exercice.explanation4') }}</p>
-            <br>
+
             <p>{{ $t('guide.exercice.explanation5') }}</p>
-            <br>
+
             <p>{{ $t('guide.exercice.explanation6') }}</p>
-            <br>
+
             <p>{{ $t('guide.exercice.explanation7') }}</p>
           </v-col>
         </v-row>
@@ -65,9 +65,45 @@
       <!-- 2_gap_filling -->
       <v-tab-item>
 
-        {{$t('guide.construction')}}
+          <v-img
+            :src="`/guide/2_gap_filling_1.png`"
+            height="300px"
+            contain
+          ></v-img>
+          {{ $t('guide.exercice.gap_filling_1') }}
+          <br>
+        {{ $t('guide.exercice.gap_filling_2') }}
+          <br>
+        {{ $t('guide.exercice.gap_filling_3') }}
+        <br>
+        {{ $t('guide.exercice.gap_filling_4') }}
+        <br>
+        <br>
+        <v-img
+          :src="`/guide/2_gap_filling_tool.png`"
+          height="100px"
+          contain
+        ></v-img>
+        {{ $t('guide.exercice.gap_filling_5') }}
+        <br>
 
-      </v-tab-item>
+
+        <br>
+        {{ $t('guide.exercice.gap_filling_open_answer_1') }}
+        <br>
+
+          <v-img
+            :src="`/guide/2_gap_filling_open_answer.png`"
+            height="300px"
+            contain
+          ></v-img>
+        <br>
+          <br>
+          {{ $t('guide.exercice.gap_filling_open_answer_2') }}
+          <br>
+          <br>
+
+</v-tab-item>
 
 
       <!-- 3_multiple_choice -->
@@ -89,12 +125,7 @@
 
       </v-tab-item>
 
-      <!-- 6_sound -->
-      <v-tab-item>
 
-        {{$t('guide.construction')}}
-
-      </v-tab-item>
     </v-tabs-items>
 
   </v-container>
@@ -117,7 +148,7 @@
 },
   set(val) {
     let list_of_contents = ["#1_exercice", "#2_gap_filling",
-      "#3_multiple_choice", "#4_sort_and_match", "#5_video", "#6_sound"];
+      "#3_multiple_choice", "#4_sort_and_match", "#5_video"];
 
       this.$router.replace(list_of_contents[val])
 
