@@ -6,7 +6,10 @@
         <p class="text-justify">{{ $t('guide.about_text') }}</p>
 
 
-    <v-tabs v-model="tab">
+    <v-tabs v-model="tab"
+            center-active
+            show-arrows
+    >
       <v-tab >{{ $t('guide.exercice.name') }}</v-tab>
       <v-tab >{{ $t('guide.gap_filling') }}</v-tab>
       <v-tab >{{ $t('guide.multiple_choice') }}</v-tab>
