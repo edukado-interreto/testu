@@ -1,7 +1,6 @@
 {
   "about": {
     "about": "O projektu",
-    "about_text": "TestU Online je bezplatná vícejazyčná online e-learningová platforma umožňující snadné a rychlé vytváření kvízů, testů a cvičení určených především pro výuku jazyků. Uživateli platformy budou především učitelé, lektoři a také jejich žáci, kteří navštěvují základní školy nebo jiné formy vzdělávání, ať už formální nebo neformální. Cílem platformy je umožnit mladé generaci přístup k bezplatnému vzdělávání navzdory jejich socioekonomickému, náboženskému či národnostnímu původu, geografickým omezením nebo různým druhům postižení.",
     "partners_title": "Partneři",
     "partners": {
       "bit_description": "bit (= best in traininig = nejlepší vzdělávací) schulungscenter (= školicí středisko), založené v roce 1986, je jedním z významných poskytovatelů vzdělávání zaměřeného na projekty z oblasti trhu práce, odborného vzdělávání, odborné přípravy a zaměstnatelnosti v Rakousku. Nespornou předností instituce jsou kompetence a zkušenosti jejich zaměstnanců v oblasti navrhování (didaktiky, metodiky, přípravy výuky) a realizace národních i mezinárodních projektů, a také značné zkušenosti s prací s různými cílovými skupinami (např. mladými lidmi, mladými nezaměstnanými dospělými) a jejich vzdělávacími potřebami.",
@@ -35,8 +34,7 @@
     "no_new_submissions": "Tuto zkoušku již nelze odevzdat, uplynul časový limit",
     "or": "nebo",
     "please_log_in": "Chcete-li přejít ke zkoušce, přihlaste se nebo si zvolte zobrazované jméno.",
-    "visible_by": "Výsledky tohoto cvičení budou viditelné pro zkoušejícího {name}.",
-    "well_done": "Výborně, vaše zkouška byla odeslána zkoušejícímu!"
+    "visible_by": "Výsledky tohoto cvičení budou viditelné pro zkoušejícího {name}."
   },
   "exercise": {
     "age": "Věk:",
@@ -176,5 +174,79 @@
   "teach": {
     "exams": "Zkoušky",
     "exercises": "Cvičení"
+  },
+  "terms": {
+    "last_update": "Datum poslední aktualizace: {date}",
+    "section1": {
+      "text1": "Některé z našich služeb můžete využívat bez přihlášení na portálu. Abyste mohli využívat všechny služby portálu, musíte si zřídit osobní uživatelský účet. Registrace je bezplatná.",
+      "text2": "Registrace je povolena osobám ve věku od 13 let. Nezletilé osoby smějí portál používat výhradně se souhlasem zákonného zástupce.",
+      "text3": "Potvrzujete, že údaje vámi zadané při registraci jsou pravdivé a správné, a že je budete v případě změn včas aktualizovat.",
+      "text5": "Při registraci si volíte heslo, které jste povinni držet v tajnosti.",
+      "text6": "Souhlasíte s veřejným zobrazením svých profilových údajů (např. vašeho uživatelského jména, učebního pokroku, stavu „on-line“, zvolené jazykové verze, data registrace a data posledního přihlášení, jakož i dalších dobrovolně uváděných informací včetně profilové fotografie). E-mailová adresa a heslo se veřejně nezobrazují.",
+      "text7": "Registrace na portálu se dokončuje kliknutím na aktivační odkaz. Za tímto účelem obdržíte po registraci od poskytovatele portálu automatické potvrzení v podobě e-mailu, jehož součástí tento aktivační odkaz je.",
+      "text8": "V případě registrace nedokončené aktivováním účtu si poskytovatel vyhrazuje právo neaktivovaný uživatelský účet smazat.",
+      "text9": "Poskytovatel portálu nezaručuje, že identity uživatelů jsou skutečné. Každý uživatel se musí sám přesvědčit o identitě jiného uživatele. Poskytovatel si však vyhrazuje právo vyžádat si příslušné doklady o identitě a věku uživatele za účelem ověření zadaných údajů. Pokud údaje nebudou doloženy ve lhůtě stanovené poskytovatelem portálu, poskytovatel příslušný uživatelský účet smaže.",
+      "title": "Registrace"
+    },
+    "section2": {
+      "text1": "Poskytovatel portálu si je vědom důležitosti ochrany osobních údajů. Z tohoto důvodu se portál přísně řídí pravidly stanovenými zákony o ochraně osobních údajů. Zpracování dat uživatelů se řídí Zásadami ochrany osobních údajů.",
+      "title": "Ochrana osobních údajů"
+    },
+    "section3": {
+      "text1": "Portál je povoleno používat výhradně pro účely neporušující zákon.",
+      "text2": "Jako uživatel jste povinni:",
+      "text2_1": "ve svém profilu a ve své komunikaci s jinými uživateli uvádět výhradně pravdivé a nezavádějící údaje;",
+      "text2_2": "své přihlašovací údaje držet v tajnosti a neposkytovat je třetím stranám;",
+      "text2_3": "neprodleně informovat poskytovatele portálu v případě vzniku podezření, že třetí strana získala přístup k přihlašovacím údajům a/nebo zneužívá uživatelský účet.",
+      "text3": "Jste zodpovědní za vámi zveřejněný obsah a rovněž za svou komunikaci s ostatními uživateli (veřejnou i neveřejnou). Jste také povinni chránit práva a zájmy ostatních uživatelů nebo jiných třetích stran, především pak jejich osobnostní práva.",
+      "text4_1": "zákonem chráněný obsah, který je chráněn např. autorskými právy s ním souvisejícími, právem na název, ochrannou známkou, patentem, průmyslovým vzorem, užitným vzorem, vlastnickými nebo osobnostními právy, pokud k tomu nejste oprávněni;",
+      "text4_2": "pornografický obsah, obsah propagující násilí, obscénní, sexistický, hanlivý, pomlouvačný, rasistický obsah, obsah poškozující příslušníky menšin nebo náboženství, jakož i obsah porušující zákony na ochranu mládeže;",
+      "text4_3": "propagační materiály a označení protiústavních organizací;",
+      "text4_4": "obtěžující, urážlivý, hanlivý nebo výhrůžný obsah a diskriminující výroky;",
+      "text4_5": "soukromé údaje jiných uživatelů (např. adresu, telefonní číslo, bankovní spojení), příp. citace ze soukromé komunikace s jinými uživateli, poskytovateli či administrátory portálu nebo třetími stranami;",
+      "text4_6": "odkazy na internetové stránky s protiprávním obsahem;",
+      "text4_7": "jakoukoliv nevyžádanou nebo neoprávněnou reklamu, reklamní materiály, hromadné zprávy (\"junk mail\"), spam, řetězové zprávy, pyramidové systémy nebo jakýkoli jiný druh zákaznické reklamy;",
+      "text4_8": "jakýkoli materiál obsahující viry, červy, trojské koně nebo jiné programy, které mohou ohrozit nebo poškodit fungování nebo stav této nebo jiné internetové stránky;",
+      "text5": "Uživateli je zakázáno následující:",
+      "text5_1": "používat nebo pokusit se používat účet jiného uživatele nebo systém bez povolení poskytovatele;",
+      "text5_2": "vydávat se za jinou osobu nebo uvádět o sobě falešné informace;",
+      "text5_3": "blokovat funkce portálu, přepisovat, měnit nebo kopírovat obsah, programový kód a/nebo data portálu, jakož i provádět automatické volání obsahu, pokud to není nezbytné pro řádné používání služeb portálu;",
+      "title": "Povinnosti uživatele"
+    },
+    "section4": {
+      "text1": "Poskytovatel je dále oprávněn kdykoliv podle vlastního uvážení a bez upozornění měnit či zastavit provoz nabízených služeb.",
+      "title": "Změna služeb"
+    },
+    "section5": {
+      "text1": "Poskytovatel portálu vám jako uživateli přiznává osobní, celosvětově platné, nepřenosné a nevýlučné právo používat služby v souladu s těmito Podmínkami používání.",
+      "text2": "Jako uživatel přiznáváte portálu celosvětové, nevýlučné, bezplatné, přenosné, časově, obsahově a prostorově neomezené právo používat vámi zveřejněný obsah ve všech médiích používaných poskytovatelem. Poskytovatel portálu je oprávněn zejména používat, zveřejňovat, kopírovat, reprodukovat a šířit tento obsah ve všech médiích, jakož i přizpůsobovat, měnit a upravovat ho pro tento účel.",
+      "text3": "Jako uživatel zaručujete, že na vámi zveřejněném obsahu neváznou autorská práva třetích stran a může tak být použito ve smyslu bodu 5.2. Zaručujete, že vlastníte všechna práva, plné moci a pověření nezbytná k tomu, aby bylo možné přiznat portálu výše uvedená práva na vámi zprostředkovaný obsah.",
+      "text4": "Práva, která portálu přiznáte, a výše popsané nároky na poskytnutí práv zůstávají v platnosti i po ukončení používání portálu.",
+      "title": "Přiznání práv"
+    },
+    "section6": {
+      "title": "Vlastnická práva"
+    },
+    "section7": {
+      "text1": "Doba platnosti členství na portálu začíná běžet okamžikem registrace a souhlasu s těmito Podmínkami používání a se Zásadami ochrany osobních údajů, a to po dobu neurčitou.",
+      "text2": "Tuto službu můžete vypovědět kdykoliv bez udání důvodu na adrese {link}. Po vypovězení služby ztratíte přístup ke svému profilu a všechny informace, které obsahuje, budou poskytovatelem portálu smazány. Souhlasíte s tím, že část obsahu (jako například komentáře, příspěvky v diskusním fóru nebo zprávy), která není přímo spojena s vaším profilem, může zůstat zachována. Nevzniká vám nárok na navrácení vámi zveřejněného obsahu ani na jeho postoupení jiným způsobem.",
+      "text3": "Právo na mimořádné vypovězení služby z vážných důvodů zůstává tímto nedotčeno. Za vážný důvod lze považovat zejména situaci, kdy se jedna ze stran proviní proti povinnostem vyplývajícím z těchto Podmínek používání. V případě mimořádného vypovězení služby poskytovatelem jste ze zásady natrvalo vyloučeni z dalšího používání portálu, přičemž není povolena ani nová registrace.",
+      "text4": "Poskytovatel portálu si vyhrazuje právo smazat účet uživatele, který službu nevyužil během více než 6 měsíců.",
+      "title": "Doba a ukončení platnosti"
+    },
+    "section8": {
+      "text1": "Poskytovatel usiluje udržovat portál v provozu, bez chyb a bezpečný, avšak nezaručuje jeho bezpečnost, spolehlivost ani bezchybnost po celou dobu, ani jeho neustálé fungování bez přerušení, zpoždění či nedostatků.",
+      "text2": "Poskytovatel nenese odpovědnost za lehčí porušení závazků, pokud v důsledku tohoto porušení nevznikly žádné škody na životě, těle nebo zdraví a pokud nejsou dotčeny žádné záruky nebo nároky podle Zákona o ručení za škodu způsobenou vadným výrobkem („Produkthaftungsgesetz“). Odpovědnost za porušení povinností, jejichž plnění je vůbec předpokladem řádného plnění uživatelského vztahu a jejichž dodržování smí uživatel důvěřovat, zůstává nedotčena. To platí i pro porušení povinností našich zástupců.",
+      "text3": "Podle zákonných ustanovení není poskytovatel portálu jako poskytovatel služby povinen monitorovat zprostředkované nebo uložené informace, ani pátrat po okolnostech, které ukazují na protiprávní činnost. Nepřebírá tak žádnou odpovědnost za obsah, údaje a/nebo informace poskytnuté uživateli portálu, za zveřejněné výroky ani za obsah externích internetových stránek, na které se na portálu odkazuje.",
+      "text4": "Přestože poskytovatel portálu obsah pečlivě kontroluje, nepřebírá odpovědnost za obsah externích odkazů. Za obsah externích internetových stránek, na které se na portálu odkazuje, je zodpovědný výlučně jejich poskytovatel.",
+      "text5": "Poskytovatel neodpovídá za obsah a správnost reklamy. Za obsah reklamních inzerátů je odpovědný jedině jejich autor. To platí i pro obsah propagovaných internetových stránek. Zveřejněním reklamního inzerátu na portálu poskytovatel nevyjadřuje současně souhlas s protiprávním obsahem. Odpovědným je v takovém případě výhradně zákazník, který si zveřejnění reklamy objednal.",
+      "text6": "Jako uživatel osvobozujete poskytovatele portálu od plnění jakýchkoli nároků, včetně nároků na náhradu škody, které ostatní uživatelé nebo jiné třetí strany uplatní vůči poskytovateli, pokud porušíte jejich práva prostřednictvím vámi zveřejněného obsahu. Uživatel, který daný obsah zveřejnil, přebírá veškeré náklady, které vzniknou poskytovateli portálu v důsledku porušení práv třetích stran, včetně přiměřených nákladů na právní obhajobu. Všechna další práva i nároky poskytovatele na náhradu škody zůstávají nedotčeny.",
+      "title": "Vymezení odpovědnosti"
+    },
+    "section9": {
+      "text3": "Poskytovatel portálu si vyhrazuje právo kdykoliv a bez udání důvodu tyto Podmínky používání změnit. Aktuální verze se vždy nachází na adrese {link}. Uživatelé nejsou na změnu Podmínek používání výslovně upozorňováni, zobrazení a přečtení aktuální verze Podmínek používání je na zodpovědnosti každého uživatele. Pokračováním v používání portálu po změně Podmínek používání vyjadřuje uživatel souhlas s těmito změnami.",
+      "text4": "Poskytovatel je oprávněn zcela nebo zčásti převést svá práva a povinnosti vyplývající z tohoto uživatelského vztahu na třetí stranu, a to do 4 týdnů od oznámení formou e-mailu.",
+      "title": "Závěrečná ustanovení"
+    }
   }
 }

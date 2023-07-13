@@ -20,8 +20,61 @@
       "vu_name": "Uniwersita we Wilniusu"
     }
   },
+  "editor": {
+    "age_range": "Starstwo",
+    "description": "Wopisanje",
+    "details": "Informacije k zwucowanju",
+    "save": "Skłaź",
+    "tags": "Tags",
+    "unexpected_response": "Njewócakowane wótegrono servera",
+    "unlisted": "Njejo se namakało."
+  },
+  "exam": {
+    "accept_submissions": "Pśiwześ zapósłanki",
+    "confirm": "Ta operacija njedajo se wótwróśiś. Pókšacowaś?",
+    "created": "Stwórjone: {date}",
+    "delete": "Wulašuj pśespytowanje",
+    "description": "Wopisanje pśespytowanja",
+    "details": "Informacije k pśespytowanju",
+    "error": "Zmólka pśi zapósłanju pśespytowanja.",
+    "goto_exercise": "Źi k zwucowanju",
+    "is_exam": "To jo pśespytowanje.",
+    "link": "Wótkaz",
+    "name": "Titel pśespytowanja",
+    "no_new_submissions": "Toś to pśespytowanje njeakceptěrujo nowe zapósłanki.",
+    "no_submissions": "Žedne zapósłanki",
+    "or": "abo",
+    "please_log_in": "Aby se dostali k pśespytowanju, pšosym zalogujśo se abo wuzwólśo mě, ak dej se pokazowaś.",
+    "untitled": "Pśespytowanje bźez titla",
+    "view": "Póglědaj",
+    "visible_by": "Wuslědki togo zwucowanja móžo wiźeś pśespytowaŕ / pśespytowaŕka {Name}.",
+    "well_done": "Wašo pśespytowanje jo se zapósłało pśespytowarju / pśespytowaŕce."
+  },
   "exercise": {
-    "language": "rěc"
+    "age": "Starstwo:",
+    "anonymous": "anonymnje",
+    "author": "Awtor(ka)",
+    "check": "Pśespytaj wuslědk",
+    "create_copy": "Napóraj kopiju",
+    "create_exam": "Napóraj pśespytowanje",
+    "create_exam_confirm": "Stwóriśel(ka) toś togo zwucowanja smějo jo wobźěłaś abo wulašowaś, mjaztym až pśespytowanje běžy. Cośo weto pókšacowaś?",
+    "delete": "Wulašuj zwucowanje",
+    "delete_confirm": "Sćo se wěste, až cośo zwucowanje wulašowaś?",
+    "edit": "Wobźěłaj zwucowanje",
+    "error": "Zmólka pśi składowanju zapósłanego zwucowanja.",
+    "explanation": "Rozjasnjenje:",
+    "language": "rěc",
+    "mistake": "Daj powěsć wó zmólce",
+    "mistake_explanation": "Rozjasnjenje:",
+    "misuse": "Daj powěsć wó znjewužywanju",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Daj {username} powěsć wó zmólce",
+    "report_misuse_to_administrators": "Daj administrator(k)am powěsć wó znjewužywanju",
+    "submit_mistake_confirm": "Mějśo źěk! Stwóriśel(k)a dostanjo powěsć.",
+    "submit_misuse_confirm": "Mějśo źěk za pomoc pśi pólěpšenju TestU.eu.",
+    "target_language": "Wuknjona rěc",
+    "target_language_is": "Wuknjona rěc:",
+    "unlisted": "To zwucowanje njejo se namakało"
   },
   "home": {
     "create_exercise": "Wugótuj nowe zwucowanje.",
@@ -31,25 +84,181 @@
     "en": "engelski",
     "eo": "esperanto"
   },
+  "learn": {
+    "date": "Datum",
+    "exam": "Pśespytowanje",
+    "exercise": "Zwucowanje",
+    "recent": "Gatnjejša aktiwnosć",
+    "review": "Pśespytaj",
+    "submitted": "Licba za źeń zapódanych zwucowanjow"
+  },
   "login": {
+    "already_registered": "Maśo južo konto?",
+    "check_inbox": "Pšosym póglědajśo do swójogo postowego kašćika, aby registrěrowanje wobtwarźili.",
     "email": "mejlka",
+    "email_is_verified": "Waša mejlowa adresa jo werificěrowana! Móžośo se zalogowaś.",
     "login": "login",
     "mail_invalid": "Mejlka musy byś walidna.",
     "page_title": "login",
     "password": "kodowe słowo",
-    "required_field": "pominane pólo"
+    "required_field": "pominane pólo",
+    "resend_link": "Pósćel wótkaz hyšći raz",
+    "signup": "Registrěrujśo se pla TestU",
+    "signup_thanks": "Mějśo źěk za pśizjawjenje.",
+    "username": "Wužywaŕske mě",
+    "verify_email": "Werificěrujśo swóju mejlowu adresu",
+    "verify_token_used_or_invalid": "Wótkaz jo se zazdaśim južo wužywał abo njejo wěcej walidny."
   },
   "main": {
     "about": "Wopśimjeśe",
+    "accept": "Akceptěrowaś",
+    "cancel": "Wulašowaś",
+    "catchphrase": "Wugótujśo swójske rěcne kwise",
+    "cookie_consent": "Toś ta website wužywa minimalnu licbu cookiejow za funkcioněrowanje. Wužywaśo-li website dalej, wuchadamy z togo, až akceptěrujośo wužywanje funkcionalnych cookiejow.",
+    "edit": "Wobźěłaś",
     "home": "Domoj",
     "lang_menu_header": "Rěc menija",
     "login": "Zalogowanje",
     "logout": "Wulogowanje",
     "my_learning": "Mójo wuknjenje",
     "my_teaching": "Mójo wucenje",
+    "ok": "OK",
+    "only_logged_in": "Toś ten bok jo jano pśistupny pśizjawjonym wužywarjam.",
     "privacy": "Wuzjawjenje wó šćisé datow",
     "settings": "Kontowe nastajenja",
     "signup": "Pśizjawjenje",
+    "social": "Social",
+    "submit": "Zapódaś",
     "terms": "Wuměnjenja za wužywanje"
+  },
+  "review": {
+    "exam": "Pśespytowanje wóspjetowaś",
+    "exercise": "Zwucowanje wóspjetowaś",
+    "go_exam": "Źi k pśespytowanju",
+    "go_exercise": "Źi k zwucowanju",
+    "submitted_on": "To su rozwězanja zwucowanja, ako sćo zapódali dnja {date}."
+  },
+  "sheet_editor": {
+    "add_matching_pair": "Dodaś pasujucy pórik",
+    "add_sentence": "Dodaś sadu",
+    "add_unit": "Dodaś jadnotku",
+    "add_unit_to_begin": "Dodaś nowu jadnotku ako zachopjeńk",
+    "close": "Editor zacyniś",
+    "delete": "Wulašowaś",
+    "edit_next": "Pśiducu jadnotku wobźěłaś",
+    "edit_previous": "Slědnu jadnotku wobźěłaś",
+    "empty_exercise": "Prozne zwucowanje",
+    "first_item": "Prědny zapisk",
+    "ignore_case": "Wjelikopisanje ignorěrowaś",
+    "insert_gap": "Zasajźiś proznotku",
+    "insert_image": "Zasajźiś wobraz",
+    "insert_pair": "Zasajźiś pórik",
+    "insert_sound": "Zasajźiś zuk",
+    "insert_video": "Zasajźiś wideo",
+    "move_down": "Dołoj",
+    "move_up": "Górjej",
+    "new_gap": "Nowa proznotka",
+    "new_matching_pair": "Nowy pasujucy pórik",
+    "second_item": "Drugi zapisk",
+    "shuffle_options": "Shuffle-opcija",
+    "start_typing": "Zachopśo sadu ...",
+    "title": "Titel",
+    "untitled_unit": "Jadnotka bźez titla",
+    "valid_url": "Pšosym zapódajśo walidnu URL",
+    "snippets": {
+      "blank_unit": {
+        "name": "Prozna jadnotka"
+      },
+      "gap_filling_dropdown": {
+        "code": "Knigły su [+na|w] bliźe.",
+        "name": "Wupołnjenje proznotkow, dropdown"
+      },
+      "gap_filling_open_answer": {
+        "code": "Knigły su [+na|w] bliźe.",
+        "name": "Wupołnjenje proznotkow, wótwórjone wótegrono"
+      },
+      "multiple_choice": {
+        "code": "Źo su knigły? \n[+na bliźe|w bliźe]",
+        "name": "Wěcej móžnosćow"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
+        "name": "Zwězaś wobraze ze zukami"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",
+        "name": "Zwězaś tekst z wobrazami"
+      },
+      "pairing_text_with_text": {
+        "code": "wišnja == cerwjena\n\ncitrona == žołta\n\nbrokoli == zeleny",
+        "name": "Zwězaś tekst z tekstom"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "Zwěrje na wobrazu jo: [pjas|+kócka|elefant]\n\nJo to źiwe zwěrje abo domacne zwěrje? [+domacne zwěrje|źiwe zwěrje]",
+        "description": "{img:cat.jpeg}",
+        "name": "Pšašanja wó wobrazu, pšawje abo wopaki"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Kótare zwěrje gótujo ten zuk?\n[+kócka|pjas|elefant]\n\nZ kótarym słowom wopisujomy zuk, kótaryž to zwěrje gótujo?\n[+mjawcaś|łajaś|tšubiś]",
+        "description": "Słuchaj nagraśe a wótegroń na pšašanja:\n\n{sound:cat.mp3}",
+        "name": "Pšašanja wó zuku, dropdown"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Chto jo wuchaca wupominał na wuběgowanje? [Wuchac|+Nopawa|Ptašk]\n\nCogodla jo wuchac za cas wuběgowanja pódrěmnuł? [Wón jo był mucny|Wón jo kśěł nopawje daś móžnosć, aby jogo dogóniła|+Wón jo wěrił na swójo dobyśe]\n\nChto jo pśi wuběgowanju dobył? [Wuchac|+Nopawa|Ptašk]",
+        "description": "Něga stej se waźiłej wuchac a nopawa, chto z njeju by był malsnjejšy. Nopawa jo wuchaca wupominała na wuběgowanje a wuchac, se myslecy, až by zlažkim dobydnuł, jo był wobjadny.\n\nWuběgowanje jo se zachopiło a wuchac jo malsnje zastartował a wóstajił nopawu za sobu. Wuchac jo był pśeliš sebjewědobny a jo se rozsuźił pódrěmnuś. Mjaztym pak jo nopawa se pśecej wěcej celowej cerje bližyła.\n\nAko wuchac jo wócuśeł, jo pytnuł, až nopawa jo južo pśisamem pśi celowej cerje. Wuchac jo wopytał ju dogóniś, ale jo było pśepózdźe. Nopawa jo dobydnuła.",
+        "name": "Pšašanja wó teksće, wěcej móžnosćow"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Źo jo to městno?\n[]\n\nChto jo jo stwórił?\n[]",
+        "description": "Glědaj wideo a wótegroń na pšašanja.\n\n{video:https://www.youtube.com/watch?v=chii_rEU30g}",
+        "name": "Pšašanja wó wideo, wótwórjone wótegrono"
+      },
+      "sorting_pictures": {
+        "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
+        "name": "Sortěrowanje wobrazow"
+      }
+    }
+  },
+  "sort": {
+    "rated": "Nejlěpše pógódnośenja",
+    "recent": "Nejnowše",
+    "sort": "Sortěrowaś"
+  },
+  "tags": {
+    "agriculture": "Rolnikaŕstwo",
+    "art": "Wuměłstwo",
+    "astronomy": "Astronomija",
+    "biology": "Biologija",
+    "business": "Pśedewześa",
+    "chemistry": "Chemija",
+    "computing": "Informatika",
+    "crafting": "Rucnikaŕstwo",
+    "economics": "Góspodarśtwo",
+    "engineering": "Technika",
+    "geography": "Geografija",
+    "grammar": "Gramatika",
+    "history": "Stawizny",
+    "languages": "Rěcy",
+    "literature": "Literatura",
+    "logic": "Logika",
+    "math": "Matematika",
+    "medicine": "Medicina",
+    "miscellaneous": "Wšake",
+    "music": "Muzika",
+    "pedagogy": "Pedagogika",
+    "philosophy": "Filozofija",
+    "physics": "Fyzika",
+    "politics": "Politika",
+    "psychology": "Psychologija",
+    "religion": "Nabóžnina",
+    "science": "Pśirodowěda",
+    "sport": "Sport",
+    "technology": "Technologija",
+    "trivia": "Zajmnostki",
+    "zoology": "Coologija"
+  },
+  "teach": {
+    "exams": "Pśespytowanja",
+    "exercises": "Zwucowanja"
   }
 }

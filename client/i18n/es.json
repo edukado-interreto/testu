@@ -183,5 +183,79 @@
   "teach": {
     "exams": "Exámenes",
     "exercises": "Ejercicios"
+  },
+  "terms": {
+    "last_update": "Últimamente actualizado el: {date}",
+    "section1": {
+      "text1": "Algunos de nuestros servicios puedes usarlos sin registrarte en la página web. Para poder usar todas las funciones de la página web, tienes que establecer una cuenta personal de usuario. Es gratis registrarse.",
+      "text2": "Para registrarse tienes que ser una persona de 13 años o mayor. El uso de la página web por menores de edad únicamente es pertinente con la aprobación de los titulares del derecho de educación.",
+      "text3": "Aseguras que todos los datos que dejaste al registrarte son ciertos y correctos y que siempre los mantendrás al nivel más actual.",
+      "text5": "Al registrarte elijes una contraseña y estás obligado a mantener tu contraseña secreta.",
+      "text6": "Estas de acuerdo con la comunicación al público de tus datos de perfil (por ejemplo de tu nombre de usuario, del avance lingüístico, del estado online, de la versión de idioma elegida, de la fecha del primer registro y de la fecha del último registro como con los datos adicionales voluntarios, incluyendo la imagen de perfil). El correo electrónico y la contraseña no serán publicados.",
+      "text7": "El registro en la página web se termina por un link de activación. Para ello después de del registro obtendrás una verificación automática del sitio web a tu correo electrónico (e-mail), que contiene el link de activación.",
+      "text8": "Sí el registro no se termina con la activación de la cuenta, el oferente se reserva el derecho de borrar la cuenta incompleta.",
+      "text9": "El oferente de la página web no garantiza que un usuario sea de identidad real. Por eso cada usuario tiene que persuadirse el mismo de la identidad de los otros usuarios. El oferente eso sí que para revisar los datos al respecto de la identidad y de la edad se reserva pedir comprobantes. Si es que los comprobantes correspondientes no se dan dentro del período determinado por el oferente de la página web, el oferente borrará la cuenta respectiva.",
+      "title": "Registración"
+    },
+    "section2": {
+      "text1": "El oferente de la página web está consiente de que la protección de datos personales es muy importante. Por eso la página web estrictamente cumple con las reglas de las leyes de protección de datos. Detalles sobre el procesamiento de datos de los usuarios están concertados en la Declaración de protección de datos.",
+      "title": "Protección de datos"
+    },
+    "section3": {
+      "text1": "La página web se debe usar exclusivamente para objetivos legalmente permitidos.",
+      "text2": "Como usuario estás obligado a:",
+      "text2_1": "dar datos exclusivamente verdaderos y no engañosos en tu perfil y en tu comunicación con otros usuarios;",
+      "text2_2": "mantener secretos los datos de acceso y no darse los a terceros;",
+      "text2_3": "informar el oferente de la página web en caso o sospecha de que un tercero se haya enterado de los datos de acceso y/o abuse de una cuenta de usuario.",
+      "text3": "Únicamente tu eres responsable por los contenidos colocados como para la (pública como no pública) comunicación con otros. Además estás obligado/a de salvaguardar los derechos y intereses de los otros usuarios u de otros terceros, sobre todo los derechos personales.",
+      "text4_1": "contenidos legalmente protegidos como por ejemplo por el derecho de la propiedad intelectual, los derechos afines a los derechos de autor, el derecho al nombre, el derecho de marca, el derecho de patentes, el derecho de protección de dibujos y modelos industriales, el derecho de modelo de utilidad, el derecho de propiedad o el derecho de persona, si no estás autorizado a ellos;",
+      "text4_2": "representaciones pornográficas, glorificando violencia, obscenas, sexistas, difames, infamatorias, racistas, representaciones ofensivas contra minorías o religiones como contenidos que atenten contra las leyes de protección de menores;",
+      "text4_3": "Medios de propaganda y señales de organizaciones anticonstitucionales;",
+      "text4_4": "manifestaciones discriminatorias o contenidos molestos, injuriosos, infamatorios, amenazadores;",
+      "text4_5": "datos privados de otros usuarios (por ejemplo el correo, número de teléfono, la cuenta bancaria) como citas de comunicaciones privadas con otros usuarios, los oferentes/ administradores de la página web o terceros;",
+      "text4_6": "Links de páginas web con contenidos ilegales;",
+      "text4_7": "cualquier publicidad no solicitada o no autorizada, materiales promocionales, \"correo basura\", correo no deseado, mensajes en cadena, esquemas piramidales o cualquier otro tipo de publicidad al cliente;",
+      "text4_8": "cualquier material que contenga virus, gusanos, caballos troyanos u otros programas que puedan poner o dañar la operación o condición de este o cualquier otro sitio web;",
+      "text5": "Para el usuario está prohibido:",
+      "text5_1": "usar o intentar usar la cuenta de otro usuario o sistema sin la autorización del proveedor;",
+      "text5_2": "hacerse pasar por otra persona así como entregar información falsa acerca de sí mismo;",
+      "text5_3": "bloquear las funciones del portal, modificar o copiar el contenido p el código del programa y / o los datos del portal, así como realizar llamados automáticos del contenido, a menos que sea necesario para el uso correcto de los servicios del portal;",
+      "title": "Obligaciones del usuario"
+    },
+    "section4": {
+      "text1": "El proveedor tiene el derecho de cambiar o detener el funcionamiento de los servicios ofrecidos en cualquier momento y a su sola discreción y sin previo aviso.",
+      "title": "Cambios de servicios"
+    },
+    "section5": {
+      "text1": "El proveedor del portal le concede a usted personalmente como usuario todos los derechos validos en todo el mundo, no transferibles y no exclusivos, para usar este servicio de acuerdo a estas condiciones de uso.",
+      "text2": "Como usuario, usted le entrega al portal el derecho ilimitado a utilizar su contenido público en todos los medios utilizados por el proveedor a nive mundial, de forma no exclusiva, gratuita y transferible. El proveedor del portal está especialmente facultado para utilizar, divulgar, copiar, reproducir o distribuir el contenido en todos los medios, y adaptarse, cambiar y modificar para ese propósito.",
+      "text3": "Como usuario usted garantiza que el contenido que se le entrega no está protegido por los derechos de terceros y se puede utilizar para los fines en el punto 5.2. Usted garantiza que es propietario de todos los derechos, poderes notariales y poderes necesarios para que pueda admitir al portal los derechos descritos anteriormente.",
+      "text4": "Los derechos que le otorga al portal, además de los derechos descritos anteriormente para su uso se mantienen en vigor incluso después del uso del portal.",
+      "title": "Concesión de derechos"
+    },
+    "section6": {
+      "title": "Derechos de autor"
+    },
+    "section7": {
+      "text1": "La membresía en el portal comienza por un período indefinido en el momento de inscripción y aceptación de los Términos de Uso y Política de Privacidad.",
+      "text2": "Este servicio se puede cancelar en cualquier momento sin dar una razón en {link}. A la terminación del servicio usted pierde el acceso a su perfil y toda la información de su contenido se borrará del proveedor del portal. Usted acepta que algunos de los contenidos (como comentarios, mensajes en el foro o mensaje) que no esten directamente asociado a su perfil se pueden mantener. Usted no tiene derecho a un reembolso de su contenido público ni a su acceso de alguna otra manera.",
+      "text3": "El derecho a la terminación extraordinaria del servicio por razones graves no se ve afectado. Como razón seria puede considerarse, en particular, la situación en la que uno de las partes sea culpable de violar las obligaciones derivadas de estas condiciones de uso. En caso de terminación extraordinaria los proveedores del servicios se reservan el derecho ha excluirlo permanentemente del uso del portal y no le está permitido hacer una nueva inscripción.",
+      "text4": "El proveedor del portal se reserva el derecho a borrar la cuenta de cualquier usuario que no haga uso de este servicio por más de 6 meses.",
+      "title": "tiempo y duración de la validez"
+    },
+    "section8": {
+      "text1": "El proveedor se esfuerza en mantener el portal en funcionamiento, libre de errores y seguro, pero no garantiza que el sitio web es seguro, fiable y libre de errores en todo momento o que funciona constantemente y sin interrupciones, demoras o defectos.",
+      "text2": "El proveedor no es responsable por el incumplimiento de las obligaciones si la infracción no incurre ningún daño a la vida, el cuerpo o la salud y si no perjudica las garantías o reclamaciones en virtud de la Ley sobre responsabilidad civil por daños causados por productos defectuosos (\"Produkthaftungsgesetz\"). La responsabilidad por incumplimiento de las obligaciones permanece intacta, su cumplimiento es un requisito previo para por parte del usuario. Esto también se aplica a la violación del deber de nuestros representantes.",
+      "text3": "De acuerdo con disposiciones legales, el proveedor del portal o proveedor de servicios no está obligado a monitorear la información entregada o almacenada, o tampoco investigar las circunstancias que indiquen actividades ilícitas. No acepta entonces ninguna responsabilidad por el contenido, datos y / o información proporcionada en este sitio web por los usuarios como declaraciones públicas ni por el contenido de sitios externos en Internet a la que el sitio web se refiera.",
+      "text4": "A pesar de que el proveedor del portal controla cuidadosamente su contenido, este no asume responsabilidad del contenido de los enlaces externos. Por el contenido de las páginas externas a los que el portal se refiere el único responsable es ese proveedor.",
+      "text5": "El proveedor no se hace responsable del contenido y la exactitud de la publicidad. Los únicos responsables por el contenido de los anuncios son sus autores. Esto también se aplica a los contenidos de las páginas web que anuncia el portal. Al mismo tiempo el proveedor no expresa consentimiento por el contenido ilegal de publicidad de terceros. En este caso el responsable es el cliente que hace pedidos de la publicación de los anuncios.",
+      "text6": "Como usuario usted liebera al proveedor del portal de cualquier ajuste de reclamos por daños y perjuicios que otros usuarios o terceros apliquen al proveedor, si se rompe la ley, a través de su contenido público. El usuario que publica el contenido, asume todos los gastos efectuados por el sitio web del proveedor, debido a la violación de los derechos de terceros, incluyendo los costos razonables de defensa jurídica. Todos los demás derechos, así como el derecho del proveedor a compensación por daños no se verán afectados.",
+      "title": "Definición de responsabilidades"
+    },
+    "section9": {
+      "text3": "El oferente de la página web a todo tiempo y sin nombrar las motivaciones se reserva poder cambiar estas condiciones de uso. La versión más actual va a estar puesta bajo {link}. Una indicación explícita que hayan cambiado las condiciones de uso no se realizará, mas es la responsabilidad del usuario a demandar y contemplar las correspondientes condiciones actuales de uso. Después de que cambien las condiciones de uso, el usuario declarará su consentimiento a los cambios con no dejar de usar la página web.",
+      "text4": "El oferente después de anunciar por e-mail, dentro de 4 semanas está autorizado a transmitir sus derechos y obligaciones de esta relación de uso por completo o parcialmente a un tercero.",
+      "title": "Determinaciones finales"
+    }
   }
 }

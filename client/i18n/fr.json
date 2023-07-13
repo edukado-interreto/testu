@@ -188,5 +188,85 @@
   "teach": {
     "exams": "Examens",
     "exercises": "Exercices"
+  },
+  "terms": {
+    "last_update": "Dernière mise à jour : {date}",
+    "section1": {
+      "text1": "Vous pouvez utiliser certains de nos services sans être inscrit au site. Pour pouvoir profiter de toutes les fonctions du site, vous devez créer un compte d’utilisateur. L’inscription est gratuite.",
+      "text2": "Les personnes âgées de plus de 13 ans sont autorisées à s’inscrire. L’utilisation du site par des mineurs est autorisée uniquement avec l’accord de son tuteur légal.",
+      "text3": "Vous devez vous assurer que les informations que vous entrez en vous inscrivant sont vraies et que vous les mettrez toujours à jour.",
+      "text5": "Vous devez garder secret le mot de passe que vous choisissez à l’inscription.",
+      "text6": "Vous consentez à ce que les données de votre profil (telles que votre nom d’utilisateur, les progrès linguistiques, le statut de connexion, la langue utilisée, la date d’inscription et la dernière date de connexion et d’autres informations que vous indiquez volontairement, y compris la photo de profil) soient publiques. L’adresse électronique et le mot de passe ne seront pas rendus publics.",
+      "text7": "L’inscription au site est finalisée au moyen d’un lien d’activation. Après inscription, vous recevrez automatiquement un courriel du site qui contient ce lien d’activation.",
+      "text8": "Si l’inscription n’est pas finalisée par l’activation du compte, le fournisseur se réserve le droit de supprimer le compte inactivé.",
+      "text9": "Le fournisseur du site ne garantie pas la véritable identité des utilisateurs. Chaque utilisateur est responsable de la vérification de l’identité des autres utilisateurs. Le fournisseur se réserve le droit de demander une preuve de l’identité et de l’âge. Si les pièces justificatives ne sont pas fournies dans un délai fixé par le fournisseur du site, le fournisseur supprimera le compte de l’utilisateur en question.",
+      "title": "Inscription"
+    },
+    "section2": {
+      "text1": "Le fournisseur de ce site est conscient du fait que la protection des données personnelles a une grande importance. Pour cette raison, il adhère strictement aux règles établies dans les lois sur la protection des données. Les détails concernant le traitement des données des utilisateurs sont fixés par la politique de confidentialité.",
+      "title": "Protection des données"
+    },
+    "section3": {
+      "text1": "Le site Internet ne peut être utilisé à des fins autorisées par la loi.",
+      "text2": "En tant qu’utilisateur, vous êtes obligé de :",
+      "text2_1": "ne donner que des informations correctes et non mensongères dans votre profil et lorsque vous communiquez avec les autres utilisateurs ;",
+      "text2_2": "garder secrètes vos données de connexion et de ne pas les divulguer à un tiers ;",
+      "text2_3": "informer immédiatement le fournisseur du site si vous avez des raisons de soupçonner qu’un tiers a eu connaissances de données de connexion et/ou a abusé du compte d’un utilisateur.",
+      "text3": "Vous êtes seul responsable du contenu que vous publiez et des communication avec les autres (aussi bien publiques que privées). Vous êtes également tenus de protéger les droits et les intérêts des autres utilisateurs ou des tiers, en particulier leurs droits personnels.",
+      "text4_1": "les contenus protégées par la loi, par exemple les contenus protégés par les droits d’auteur, la protection des prestations, noms déposés, marques déposés, brevets, dessins industriels, modèles déposés, bien ou droits personnels si vous n’en avez pas le droit ;",
+      "text4_2": "les contenus pornographiques, violents, obscènes, sexistes, diffamatoires, calomnieux, racistes, offensants pour les minorités ou les religions, ainsi que les contenus qui violent les lois de protection de l’enfance ;",
+      "text4_3": "la propagande et les symboles d’organisation anticonstitutionnelles ;",
+      "text4_4": "le harcèlement, les propos offensants, diffamatoires, menaçants ou discriminatoires ;",
+      "text4_5": "les données privées d’autres utilisateurs (par exemple adresse, numéro de téléphone, compte bancaire) ou les citations de communications privées avec d’autres utilisateurs, les fournisseurs ou administrateurs du site ou des tiers ;",
+      "text4_6": "les liens vers des sites Internet au contenu illégal ;",
+      "text4_7": "toute publicité non sollicitée ou non autorisée, matériel promotionnel, messages indésirables, spam, chaînes de lettres, système en boule de neige ou pyramidal ou toute autre forme de publicité ;",
+      "text4_8": "tout fichier qui contient des virus, vers, chevaux de Troie ou d’autres programmes qui pourraient compromettre ou nuire au fonctionnement ou à l’existence de ce site.",
+      "text5": "Les actions suivantes sont interdites aux utilisateurs :",
+      "text5_1": "utiliser ou essayer d’utiliser le compte d’un autre utilisateur ou le système sans autorisation du fournisseur ;",
+      "text5_2": "se faire passer pour une autre personne ou donner de fausses informations à propos de soi ;",
+      "text5_3": "bloquer les fonctions du site, écraser, modifier ou copier le contenu du code source ou des données du site, ainsi que récupérer automatiquement le contenu du site, à moins que ce soit nécessaire à la bonne utilisation des services du site.",
+      "text6": "Le fournisseur du site se réserve le droit de supprimer les messages non autorisés (y compris les tests, exercices, textes et images) le compte des utilisateurs qui ne respectent pas ces conditions d’utilisation, à tout moment et sans préavis.",
+      "title": "Devoirs de l’utilisateur"
+    },
+    "section4": {
+      "text1": "Le fournisseur a également le droit de modifier ou d’arrêter les services proposés à tout moment, à sa discrétion et sans préavis.",
+      "title": "Modification des services"
+    },
+    "section5": {
+      "text1": "Le fournisseur du site donne à l’utilisateur le droit personnel, mondial, non transmissible et non exclusif d’utiliser ces services en accord avec ces conditions d’utilisation.",
+      "text2": "En tant qu’utilisateur, vous accordez au site le droit mondial, non exclusif, libre de redevance, transmissible, illimité dans en temps, contenu ou espace d’utiliser le contenu que vous publiez dans tous les médias utilisés par le fournisseur. Le propriétaire de ce site est expressément autorisé à utiliser ce contenu dans tous les médias, ainsi que de le publier, copier, reproduire, modifier, éditer, distribuer et adapter dans ce but.",
+      "text3": "Vous l’utilisateur, garantissez que votre contenu peut être utilisé librement dans les contextes définis au paragraphe 5.2. Vous certifiez que vous possédez tous les droits et l’autorité nécessaires pour octroyer ces droits concernant le contenu que vous avez soumis.",
+      "text4": "Les droits que vous accordent le site et les garanties et indemnités stipulées ci-dessus ne se terminent pas à la fin du rapport de jouissance.",
+      "title": "Concession des droits"
+    },
+    "section6": {
+      "text1": "Tous les textes, images et autres contenus publiés sur le site, y compris les contenus fournis par les utilisateurs sont, sauf indication contraire, publiés sous la {license}.",
+      "text1_license": "licence Creative Commons CC0 1.0 universel",
+      "title": "Droits de propriété"
+    },
+    "section7": {
+      "text1": "La durée de l’appartenance au site commence à l’inscription et par l’acceptation de ces conditions d’utilisation et de la politique de confidentialité et continue indéfiniment.",
+      "text2": "Vous pouvez résilier votre inscription aux services à tout moment et sans préavis, pour quelque raison que ce soit, à l’adresse {link}. En cas de résiliation, vous n’aurez plus accès à votre profil et toutes les informations qu’il contient sont supprimés par le fournisseur du site. Vous acceptez que certains contenus (tels les commentaires ou les messages) qui ne sont pas directement associés à votre profil puissent persister même après la suppression de votre profil. Vous n’avez pas droit à la restitution ou au transfert du contenu que vous avez publié.",
+      "text3": "Le droit de résiliation exceptionnelle pour une raison valable reste inchangée. Une raison importante serait que l’une des parties ait manqué à ses obligations en vertu de ces conditions d'utilisation. Dans le cas d’une résiliation exceptionnelle par le fournisseur, vous êtes exclus du site pour une durée indéterminée. Cela signifie aussi que vous n’êtes pas autorisé à vous réinscrire.",
+      "text4": "Le propriétaire de ce site se réserve le droit de supprimer le compte de l’utilisateur si un utilisateur n’a pas utilisé le service pendant plus de 6 mois.",
+      "title": "Durée de validité et fin du contrat"
+    },
+    "section8": {
+      "text1": "Le fournisseur s’efforce d’assurer le fonctionnement du site sans erreurs et en sécurité, mais il ne garantit pas que le site est sûr, sécurisé et sans erreur à tout moment, ni qu’il fonctionne en permanence sans interruptions, retards ou défauts.",
+      "text2": "Le fournisseur décline toute responsabilité pour les manquements légers à ses obligations dus à une imprudence, à moins que cette violation porte atteinte à la vie, au corps ou à la santé, du moment que les garanties et les exigences de la loi sur la responsabilité du fait des produits défectueux ont été respectées. Cela n’affecte pas la responsabilité pour les manquements aux obligations qui empêchent la mise en œuvre correcte de la relation contractuelle et sur laquelle l’utilisateur peut compter. La même chose s’applique aux manquements de nos agents à leurs obligations.",
+      "text3": "Selon la loi, le fournisseur de ce site en tant que fournisseur de services n’est pas tenu de surveiller les informations transmises ou stockées, ni d’enquêter sur les circonstances qui indiquent une activité illégale. Il n’accepte donc aucune responsabilité en ce qui concerne les informations fournies par les utilisateurs du contenu du site, les données et/ou des informations, les déclarations faites ou le contenu des sites externes liés.",
+      "text4": "En dépit des vérifications minutieuses du contenu, le fournisseur du site n’est pas responsables du contenu des liens externes. Seuls les administrateurs des pages liées en sont responsables.",
+      "text5": "Le fournisseur n’est pas responsable du contenu et de la véracité des publicités. Seul l’auteur de la publicité en est responsable. La même chose s’applique au contenu des site promus par les publicités. Permettre l’affichage de publicités sur le site ne signifie pas que le fournisseur approuve un éventuel contenu illégal. Par conséquent, la responsabilité incombe exclusivement aux annonceurs.",
+      "text6": "En tant qu’utilisateur, vous renoncez à toute réclamation au fournisseur, y compris les réclamations pour dommages et intérêts que peuvent faire les autres utilisateurs ou un tiers contre le fournisseur pour une violation de leur droits due à vous ou au contenu que vous avez créé. L’utilisateur qui a publié ces contenus sur le site assume tous les coûts engagés par le prestataire du site en raison d’une violation des droits, y compris les coûts pour les frais de défense juridique. Tous les autres droits, y compris les demandes d’indemnisation du fournisseur, demeurent inchangés.",
+      "title": "Responsabilité"
+    },
+    "section9": {
+      "text1": "Ces conditions d’utilisation et tout différend relatif à ces conditions sont soumis aux lois de la République slovaque. Le lieu d’exécution et le tribunal compétent exclusif sont, dans la mesure où la loi l’autorise, en Slovaquie.",
+      "text2": "La version juridiquement valable de ces conditions d’utilisation est la version en langue anglaise.",
+      "text3": "Le propriétaire de ce site se réserve le droit de modifier ces conditions d’utilisation à tout moment et sans donner de raisons. La version actuelle est toujours disponible à l’adresse {link}. Les modifications apportées aux conditions d’utilisation ne sont pas explicitement indiquées, mais il est de la responsabilité de l’utilisateur de consulter et d’examiner les présentes conditions d’utilisation. En continuant à utiliser le site après une modification des conditions d’utilisation, l’utilisateur accepte les modifications.",
+      "text4": "Le fournisseur a le droit de transférer ses droits et ses obligations, en entier ou en partie, à un tiers, après un préavis de quatre semaines envoyé par courrier électronique.",
+      "text5": "Les coordonnées pour contacter le fournisseur ou les administrateurs du site se trouvent sur la page {link}.",
+      "title": "Dispositions finales"
+    }
   }
 }

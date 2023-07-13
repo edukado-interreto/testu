@@ -1,7 +1,6 @@
 {
   "about": {
     "about": "A projektről",
-    "about_text": "A TestU Online egy ingyenes, többnyelvű, online e-learning platform, amely lehetővé teszi elsősorban nyelvtanulásra szánt különböző kvízek, tesztek és gyakorlatok egyszerű és gyors létrehozását. A platform elsősorban általános iskolai tanárok és diákok, valamint az oktatásban más módon részt vevők számára készül, legyen szó akár intézményes keretek között vagy azon kívül zajló tanulásról/tanításról. Egy ilyen platform létrehozását az indokolja, hogy társadalmi-gazdasági, vallási vagy nemzeti hátterük, földrajzi korlátaik vagy akár különféle fogyatékosságuk ellenére is lehetővé kell tenni a fiatal generációk számára az ingyenes oktatást.",
     "partners_title": "Partnereink",
     "partners": {
       "bit_description": "Az 1986-ban alapított Bit (= best in training) Schulungscenter (= képzési központ) Ausztria egyik vezető oktatásszervező cége a munkaerő-piaci projektek, a szakképzés, az oktatás és a foglalkoztathatóság területén. Egyértelmű erősségük a tervezés (didaktika, módszertan, oktatástervezés) és a különböző nemzeti és nemzetközi projektek megvalósítása terén szerzett tapasztalatuk és know-how-juk. Rendszeres tevékenységeik révén jelentős tapasztalattal rendelkeznek a különböző célcsoportokkal, pl. fiatalokkal, fiatal munkanélküli felnőttekkel és azok oktatási igényeivel kapcsolatban.",
@@ -206,5 +205,79 @@
   "teach": {
     "exams": "Vizsgák",
     "exercises": "Feladatok"
+  },
+  "terms": {
+    "last_update": "Utolsó frissítés: {date}",
+    "section1": {
+      "text1": "Egyes szolgáltatásainkat bejelentkezés nélkül használhatja a portálon. Ahhoz, hogy valamennyi szolgáltatást használatba tudjon venni, egy személyes felhasználói fiókot szükséges létrehozni. A regisztráció ingyenes.",
+      "text2": "A regisztráció a 13 éves kórtól megengedett. Kiskorúak a portált kizárólag szülői vagy törvényes képviselői beleegyezéssel használhatják.",
+      "text3": "A beírt információ pontosságát és helyességét, valamint azok gyakori firssítését biztosítja a regisztráció során",
+      "text5": "Regisztrációkor olyan jelszót használjon, melyet titokban tart.",
+      "text6": "Ön egyetért azzal, hogy a felhasználói fiókjában közölt adatok mások számára is megjelenjenek (pl. felhasználónév, tanulási folyamat, \"bejelentkezett\" státusz, kiválasztott nyelv, regisztráció napja és az utolsó bejelentkezés időpontja, valamint egyéb önként felvitt adat, a profilképet beleértve). Az e-mail cím és a jelszó nem jelenik meg nyilvánosan.",
+      "text7": "A regisztrációt az aktiváló linkre kattintva véglegesíti. A regisztráció után a portál szolgáltatója automatikusan visszaigazoló e-mailt küld, amely tartalmazza az aktivációs linket.",
+      "text8": "Hiányos regisztráció esetében a szolgáltató fenntartja a jogot, hogy törölje a nem aktivált felhasználói fiókot.",
+      "text9": "A portál szolgáltatója nem garantálja, hogy a felhasználók személyazonossága valódi. A másik felhasználó személyazonosságáról minden felhasználónak meg kell győződnie. Szolgáltató fenntartja a jogot, hogy a felhasználók személyazonosságáról és életkoráról releváns kérdéseket tegyen fel a megadott információk ellenőrzése érdekében. Ha a releváns bizonyítékok meghatározott határidőn belül nem kerülnek felmutatásra, a portál szolgáltatója törli a felhasználói fiókot.",
+      "title": "Regisztráció"
+    },
+    "section2": {
+      "text1": "A portál szolgáltatója nagy hangsúlyt fektet a személyes adatok védelmére. A portál szigorúan betartja a a személyes adatok védelmének törvényben lefektetett jogszabályait. A felhasználók adatainak feldolgozását a Pravidlami ochrany osobných údajov szabályozza.",
+      "title": "Adatvédelem"
+    },
+    "section3": {
+      "text1": "A portál használata kizárólag nem törvénysértő célból megengedett.",
+      "text2": "Mint felhasználó, Ön köteles:",
+      "text2_1": "saját fiókjában, valamint más felhasználókkal folytatott kommunikációkor igaz és nem félrevezető információkat közölni;",
+      "text2_2": "a bejelentkezéshez szükséges adatokat bizalmasan kezelni, és azokat harmadik fél számára nem kiadni;",
+      "text2_3": "haladéktalanul tájékoztatni a szolgáltatót, ha felmerül annak a gyanúja, hogy egy harmadik fél hozzáférést nyer a felhasználói adatokhoz és/vagy visszaélnek felhasználói fiókjával.",
+      "text3": "Ön felel az Ön által közzétett tartalomért, valamint más felhasználókkal fennálló (nyilvános vagy nem nyilvános) kommunikációért. Más felhasználók vagy harmadik személy jogait és érdekeit is köteles védeni, különösen a személyhez fűződő jogokat.",
+      "text4_1": "a törvény által védett tartalom, amely pl. szerzői vagy releváns jogok által védett, mint a név-, védjegy-, szabadalom-, design jog, a használati minták joga, a saját vagy személyes jogok, amennyiben Ön nem jogosult használatukra;",
+      "text4_2": "pornográf tartalom, az erőszakot propagáló, obszcén, szexista, becsületsértő, rágalmazó, rasszista tartalom, a kisebbséghez vagy valláshoz tartozókat sértő tartalom, valamint a kiskorúak védelmét sértő tartalom;",
+      "text4_3": "promóciós anyagok és alkotmányellenes szervezetek megjelölése;",
+      "text4_4": "zaklató, rágalmazó, gyalázkodó, fenyegető tartalom és diszkriminatív nyilatkozatokat;",
+      "text4_5": "más felhasználók személyes adatai (pl. cím, telefonszám, banki adatok), esetlegesen más felhasználókkal, szolgálati/portál adminisztrátorral vagy harmadik személyekkel való kommunikációból származó idézetek;",
+      "text4_6": "jogellenes tartalommal rendelkező weboldalakra mutató hivatkozások;",
+      "text4_7": "ismétlődő vagy kéretlen reklám, promóciós anyag, \"junk mail\", spam, lánc üzenetek, piramisjáték vagy bármilyen más típusú fogyasztói reklám;",
+      "text4_8": "bármilyen vírusokat, férgeket, trójai lovakat tartalmazó anyagok vagy más programok, amelyek veszélyeztethetik e vagy bármely más honlap üzemeltetését vagy állapotát;",
+      "text5": "A felhasználó számára tilos a következő:",
+      "text5_1": "egy másik felhasználói fiók vagy a rendszer használata, használatának megkísérlése a szolgáltató engedélye nélkül;",
+      "text5_2": "magát más személynek kiadni, valamint személyéről hamis információkat feltüntetni;",
+      "text5_3": "A honlap funkcióinak blokkolása, a tartalom, programkód és/vagy a webhelyadatok felülírása, módosítása vagy másolása, valamint a tartalom automatikus lehívása, kivéve, ha utóbbi szükséges a megfelelő szolgáltatások igénybevételéhez;",
+      "title": "Felhasználó kötelezettségei"
+    },
+    "section4": {
+      "text1": "A szolgáltatónak továbbá jogában áll a kínált szolgáltatásokat bármikor, saját belátása szerint, előzetes figyelmeztetés nélkül megváltoztatni és működését leállítani.",
+      "title": "Szolgáltatások változása"
+    },
+    "section5": {
+      "text1": "A szolgáltató Önnek mint felhasználónak megadja a személyes, világszerte érvényes, nem átruházható, nem kizárólagos jogot a szolgáltatások jelen Felhasználási Feltételeknek megfelelő használatához.",
+      "text2": "Mint felhasználó, Ön elismeri a portál globális, nem kizárólagos, ingyenes, átruházható, időben, tartalomban és térben korlátlan használati jogát az Ön által közzétett nyilvános tartalom használatát a szolgáltató által használt valamennyi médiában. A szolgáltató jogosult a tartalmat valamennyi médiában használni, nyilvánosságra hozni, másolni, reprodukálni vagy terjeszteni, és azt ebből a célból megváltoztatni és módosítani.",
+      "text3": "Mint felhasználó Ön biztosítja, hogy az Ön által közzétett tartalom nem védett harmadik felek szerzői joga által, így használható a 5.2. pont szerint. Ön garantálja, hogy Ön illet meg valamennyi jog, meghatalmazás és hatáskör, mely szükséges ahhoz, hogy a portál fent leírtak szerint végezhesse a tartalomszolgáltatást.",
+      "text4": "A jogok, amelyeket Ön a portálnak tulajdonít, a fent leírt jogi követelések hatályban maradnak a portál használatának befejezését követően is.",
+      "title": "Jogok megadása"
+    },
+    "section6": {
+      "title": "Tulajdonjogok"
+    },
+    "section7": {
+      "text1": "A tagság érvényességi ideje a regisztrációval, valamint jelen Felhasználási Feltételekkel és az Adatkezelési Szabályzattal való egyetértés pillanatában kezdődik el, és határozatlan időre szól.",
+      "text2": "Bármikor indoklás nélkül felmondhatja a szolgáltatást az alábbi linkre kattintva: {link}. Felmondás esetén a szolgáltatás elérhetetlenné válik az Ön számára, mint ahogy valamennyi olyan információ, amelyet töröl szolgáltató. Ön elfogadja, hogy bizonyos tartalmak (például kommentek, hozzászólások a fórumon, vagy üzenetek), amely közvetlenül nem profiljához kapcsolódnak, fenntarthatók. Nem tartja fenn a jogot az Ön által közzétett tartalom visszatérítésére.",
+      "text3": "A jogviszony rendkívüli megszüntetésének joga komoly okok miatt érinthetetlen marad ezáltal. Komoly oknak lehet tekinteni különösen azt a helyzetet, amikor az egyik fél megszegi jelen Felhasználási Feltételeket. Rendkívüli felmondás esetén a szolgáltató véglegesen kizárja a további felhasználás alól a portál, és új regisztráció sem megengedett.",
+      "text4": "Szolgáltató fenntartja a jogot a felhasználói fiók törlésére, amennyiben a felhasználó nem használja a portált több, mint 6 hónapig.",
+      "title": "Érvényesség ideje és lejárata"
+    },
+    "section8": {
+      "text1": "Szolgáltató igyekszik fenntartani a portál rendes, hibamentes és biztonságos működését, de nem garantálja, hogy a honlap biztonságos, megbízható és hibamentes mindenkor, vagy hogy folyamatosan és megszakítás, késések vagy hibák nélkül működik.",
+      "text2": "Szolgáltató nem vonható felelősségre a könnyebb kötelezettségszegésért, amennyiben a jogsértés következtében élet, testi épség vagy egészség nem kerül megsértésre, és ha a hibás termékek által okozott kártérítési felelősségről szóló jogszabály (\"Produkthaftungsgesetz\") szerinti semmilyen garanciát vagy követelést nem érint. A kötelezettségek megszegésének felelőssége, amelyek teljesítése a megfelelő végrehajtás előfeltétele felhasználói tekintetben, és amelynek betartásában a felhasználó megbízik, érintetlen marad. Ez képviselőink kötelességszegésére is érvényes.",
+      "text3": "Jogi rendelkezések alapján a portál szolgáltatója mint szolgáltató nem köteles nyomon követni a közvetített vagy tárolt információkat, vagy feltárni az illegális tevékenység körülményeit. Nem vállal felelősséget a felhasználók által közzétett tartalomért, adatokért és/vagy információkért, sem a külső internetes oldalakért, amelyekre a weboldalon hivatkoznak.",
+      "text4": "Annak ellenére, hogy a szolgáltató a tartalmat gondosan ellenőrzi, nem vállal felelősséget a külső linkek tartalmáért. A külső internetes oldalak tartalmáért, amelyekre a portálon hivatkoznak, kizárólagosan azok szolgáltatója felel.",
+      "text5": "Szolgáltató nem vállal felelősséget a reklám tartalmáért és pontosságáért. A hirdetések tartalmáért kizárólagosan a szerző a felelős. Ez a reklámozott internetes oldalak tartalmára is vonatkozik. A hirdetések honlapon való megjelenítésével a szolgáltató nem ért egyet az illegális tartalmakkal. Felelős ebben az esetben mindig az ügyfél, aki elrendelte a hirdetések megjelenítését.",
+      "text6": "Mint felhasználó, Ön mentesíti a szolgáltatót valamennyi követelés alól, ideértve a kártérítési igényeket, amelyeket más felhasználók vagy harmadik felek alkalmaznak a szolgáltató felé, amennyiben megszegi jogaikat az Ön által közzétett tartalom által. A tartalmat közzétevő felhasználó vállalja a szolgáltató valamennyi felmerülő költségét harmadik személyek jogainak megsértése esetén, beleértve a jogi védelem ésszerű költségeit. Minden egyéb jog vagy a szolgáltató érintő kártérítési követelése érintetlen marad.",
+      "title": "Felelősségi körök meghatározása"
+    },
+    "section9": {
+      "text3": "Szolgáltató fenntartja a jogot, hogy bármikor és minden ok nélkül megváltozhassa jelen Felhasználási Feltételeket. Az aktuális verzió mindig az alábbi linken található meg {link}. A felhasználók nem kerülnek tájékoztatásra a Feltételek módosítása alkalmával, a Felhasználási Feltételek jelenlegi változatának megjelenítése és elolvasása minden felhasználó felelőssége. A portál használatának folytonosságával a felhasználó kifejezi egyetértését a változásokkal.",
+      "text4": "Szolgáltató jogosult részben vagy egészben átruházhatja jogait és kötelezettségeit harmadik fél részére a felhasználói jogviszonyból adódóan, méghozzá az e-mailben való kiértesítést követően négy héten belül.",
+      "title": "Záró rendelkezések"
+    }
   }
 }

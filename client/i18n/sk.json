@@ -127,6 +127,7 @@
     "privacy": "Vyhlásenie o ochrane osobných údajov",
     "settings": "Nastavenia účtu",
     "signup": "Prihlásiť sa",
+    "social": "Sociálny",
     "submit": "Odoslať",
     "terms": "Podmienky používania"
   },
@@ -163,7 +164,60 @@
     "start_typing": "Začnite písať vetu...",
     "title": "Názov",
     "untitled_unit": "Jednotka bez názvu",
-    "valid_url": "Zadajte, prosím, platnú URL"
+    "valid_url": "Zadajte, prosím, platnú URL",
+    "snippets": {
+      "blank_unit": {
+        "name": "Prázdna jednotka"
+      },
+      "gap_filling_dropdown": {
+        "code": "Kniha je [+na|na] stole.",
+        "name": "Vyplnenie medzier, rozbaľovacia ponuka"
+      },
+      "gap_filling_open_answer": {
+        "code": "Kniha je [+na|na] stole.",
+        "name": "Vyplnenie medzier, otvorená odpoveď"
+      },
+      "multiple_choice": {
+        "code": "Kde je kniha?\n[+na stole|v stole]",
+        "name": "Viac možností"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
+        "name": "Spárovať obrázky so zvukmi"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Pes == {img:dog.jpeg}\n\nSlon == {img:elephant.jpeg}\n\nMačka == {img:cat.jpeg}",
+        "name": "Spárovať text s obrázkami"
+      },
+      "pairing_text_with_text": {
+        "code": "Čerešňa == Červená\n\nCitrón == Žltý\n\nBrokolica == Zelená",
+        "name": "Spárovať text s textom"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "Zviera na obrázku je: [pes|+mačka|slon]\n\nJe to divoké zviera alebo domáce zviera? [+Domáce zviera|Divoké zviera]",
+        "description": "{img:cat.jpeg}",
+        "name": "Otázky o obrázku, pravdivé alebo nepravdivé"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Ktoré zviera vydáva tento zvuk?\n[+Mačka|Pes|Slon]\n\nAký výraz sa používa na opis zvuku, ktorý toto zviera vydáva?\n[+Mňaukanie|Štekanie|Trúbenie]",
+        "description": "Vypočujte si zvuk a odpovedzte na otázky:\n{sound:cat.mp3}",
+        "name": "Otázky týkajúce sa zvuku, rozbaľovacia ponuka"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Kto vyzval zajaca na preteky? [Zajac|+korytnačka|Vták]\n\nPrečo si zajac počas pretekov zdriemol? [Bol unavený|Chcel dať korytnačke šancu, aby ho dobehla|+Veril vo svoje víťazstvo]\n\nKto vyhral preteky? [Zajac|+korytnačka|Vták]",
+        "description": "Kde bolo, tam bolo, zajac a korytnačka sa vždy hádali, kto je rýchlejší.\nKorytnačka vyzvala zajaca na preteky a zajac to prijal. Myslel si, že to bude ľahké víťazstvo.\n\nPreteky sa začali a zajac rýchlo vyštartoval a nechal korytnačku za sebou. Zajac začal byť príliš sebavedomý a rozhodol sa zdriemnuť si. Korytnačka sa medzitým neustále pohybovala k  cieľovej čiare.\n\nKeď sa zajac prebudil, uvedomil si, že korytnačka je takmer v cieli. Zajac sa ju snažil dobehnúť, ale už bolo neskoro. Korytnačka preteky vyhrala.",
+        "name": "Otázky o texte, viac možností"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Kde sa toto miesto nachádza?\n[]\n\nKto to postavil?\n[]",
+        "description": "Pozrite si video a odpovedzte na otázky.\n\n{video:https://www.youtube.com/watch?v=chii_rEU30g}",
+        "name": "Otázky o videu, otvorená odpoveď"
+      },
+      "sorting_pictures": {
+        "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
+        "name": "Triedenie obrázkov"
+      }
+    }
   },
   "sort": {
     "rated": "Najlepšie hodnotené",
@@ -206,5 +260,79 @@
   "teach": {
     "exams": "Testy",
     "exercises": "Cvičenia"
+  },
+  "terms": {
+    "last_update": "Dátum poslednej aktualizácie: {date}",
+    "section1": {
+      "text1": "Niektoré z našich služieb môžete využívať bez prihlásenia na portáli. Aby ste mohli využívať všetky služby portálu, musíte si zriadiť osobné používateľské konto. Registrácia je bezplatná.",
+      "text2": "Registrácia je povolená pre osoby vo veku od 13 rokov. Neplnoleté osoby smú portál používať výlučne so súhlasom zákonného zástupcu.",
+      "text3": "Zabezpečujete pravdivosť a správnosť vami zadaných údajov pri registrácii, ako aj ich včasnú aktualizáciu.",
+      "text5": "Pri registrácii si volíte heslo, ktoré ste povinní držať v tajnosti.",
+      "text6": "Súhlasíte s verejným zobrazením vašich profilových údajov (napr. vášho používateľského mena, učebného pokroku, stavu „prihlásený“, zvolenej jazykovej verzie, dátumu registrácie a dátumu posledného prihlásenia, ako aj ďalších dobrovoľne uvádzaných informácií vrátane profilovej fotografie). E-mailová adresa a heslo sa verejne nezobrazujú.",
+      "text7": "Registráciu na portáli dokončíte kliknutím na aktivačný odkaz. Za týmto účelom dostanete po registrácii od poskytovateľa portálu automatické potvrdenie formou e-mailu, ktorý obsahuje tento aktivačný odkaz.",
+      "text8": "V prípade nedokončenia registrácie aktivovaním konta si poskytovateľ vyhradzuje právo neaktivované používateľské konto zmazať.",
+      "text9": "Poskytovateľ portálu neručí za to, že identity používateľov sú skutočné. Každý používateľ sa musí sám presvedčiť o identite iného používateľa. Poskytovateľ si však vyhradzuje právo vyžiadať si príslušné dôkazy o identite a veku používateľa s cieľom overiť zadané údaje. Ak príslušné dôkazy nebudú poskytnuté v lehote stanovenej poskytovateľom portálu, poskytovateľ dané používateľské konto zmaže.",
+      "title": "Registrácia"
+    },
+    "section2": {
+      "text1": "Poskytovateľ portálu si je vedomý dôležitosti ochrany osobných údajov. Z toho dôvodu sa portál prísne riadi pravidlami stanovenými zákonmi o ochrane osobných údajov. Spracovanie údajov používateľov sa riadi Pravidlami ochrany osobných údajov.",
+      "title": "Ochrana osobných údajov"
+    },
+    "section3": {
+      "text1": "Portál je povolené používať výlučne na účely neporušujúce zákon.",
+      "text2": "Ako používateľ ste povinní:",
+      "text2_1": "vo svojom profile a vo svojej komunikácii s inými používateľmi uvádzať výlučne pravdivé a nezavádzajúce údaje;",
+      "text2_2": "prihlasovacie údaje držať v tajnosti a neposkytovať ich tretím stranám;",
+      "text2_3": "neodkladne informovať poskytovateľa portálu v prípade vzniku podozrenia, že tretia strana získala prístup k prihlasovacím údajom a/alebo zneužíva používateľské konto.",
+      "text3": "Ste zodpovední za vami zverejnený obsah, ako aj za (verejnú aj neverejnú) komunikáciu s ostatnými používateľmi. Tiež ste povinní chrániť práva a záujmy ostatných používateľov alebo ostatných tretích strán, predovšetkým ich osobnostné práva.",
+      "text4_1": "zákonom chránený obsah, ktorý je chránený napr. autorskými a s nimi súvisiacimi právami, právom na názov, ochrannou známkou, patentovými, dizajnovými právami, právami na úžitkové vzory, vlastníckymi alebo osobnostnými právami, ak na to nie ste oprávnení;",
+      "text4_2": "pornografický obsah, obsah propagujúci násilie, obscénny, sexistický, hanlivý, ohovárajúci, rasistický obsah, obsah poškodzujúci príslušníkov menšín alebo náboženstiev, ako aj obsah porušujúci zákon na ochranu mládeže;",
+      "text4_3": "propagačné materiály a označenia protiústavných organizácií;",
+      "text4_4": "obťažujúci, urážlivý, hanlivý, ohrozujúci obsah a diskriminujúce výroky;",
+      "text4_5": "súkromné údaje iných používateľov (napr. adresu, telefónne číslo, bankové spojenie), príp. citácie zo súkromnej komunikácie s inými používateľmi, poskytovateľmi/administrátormi portálu alebo tretími stranami;",
+      "text4_6": "odkazy na internetové stránky s protiprávnym obsahom;",
+      "text4_7": "akúkoľvek nevyžiadanú alebo neoprávnenú reklamu, reklamné materiály, „junk mail“, spam, reťazové správy, pyramídové systémy alebo akýkoľvek iný druh zákazníckej reklamy;",
+      "text4_8": "akýkoľvek materiál obsahujúci vírusy, červy, trójske kone alebo iné programy, ktoré môžu ohroziť alebo poškodiť fungovanie alebo stav tejto alebo inej internetovej stránky;",
+      "text5": "Používateľovi je zakázané nasledovné:",
+      "text5_1": "používať alebo pokúsiť sa používať konto iného používateľa alebo systém bez povolenia poskytovateľa;",
+      "text5_2": "vydávať sa za inú osobu, ako aj uvádzať o sebe falošné informácie;",
+      "text5_3": "blokovať funkcie portálu, prepisovať, meniť alebo kopírovať obsah, programový kód a/alebo dáta portálu, ako aj vykonávať automatické volanie obsahu, pokiaľ to nie je nevyhnutné na riadne používanie služieb portálu;",
+      "title": "Povinnosti používateľa"
+    },
+    "section4": {
+      "text1": "Poskytovateľ je ďalej oprávnený kedykoľvek podľa vlastného uváženia a bez upozornenia meniť a zastaviť prevádzku ponúkaných služieb.",
+      "title": "Zmena služieb"
+    },
+    "section5": {
+      "text1": "Poskytovateľ portálu vám ako používateľovi priznáva osobné, celosvetovo platné, neprenosné a nie výlučné právo používať služby v súlade s týmito Podmienkami používania.",
+      "text2": "Ako používateľ priznávate portálu celosvetové, nie výlučné, bezplatné, prenosné, časovo, obsahovo a priestorovo neobmedzené právo používať vami zverejnený obsah vo všetkých médiách používaných poskytovateľom. Poskytovateľ portálu je oprávnený najmä používať, zverejňovať, kopírovať, reprodukovať a šíriť tento obsah vo všetkých médiách, ako aj prispôsobovať, meniť a upravovať ho na tento účel.",
+      "text3": "Ako používateľ zaručujete, že vami zverejnený obsah nie je chránený autorskými právami tretích strán a môže byť tak použitý v zmysle bodu 5.2. Zaručujete, že vlastníte všetky práva, plnú moc a právomoci potrebné na to, aby bolo možné priznať portálu vyššie uvedené práva na vami sprostredkovaný obsah.",
+      "text4": "Práva, ktoré priznáte portálu, a vyššie opísané nároky na poskytnutie práv zostávajú v platnosti aj po ukončení používania portálu.",
+      "title": "Priznanie práv"
+    },
+    "section6": {
+      "title": "Vlastnícke práva"
+    },
+    "section7": {
+      "text1": "Doba platnosti členstva na portáli začína plynúť okamihom registrácie a súhlasu s týmito Podmienkami používania a s Pravidlami ochrany osobných údajov, a to na dobu neurčitú.",
+      "text2": "Túto službu môžete vypovedať kedykoľvek bez udania dôvodu na adrese {link}. Po vypovedaní služby stratíte prístup k svojmu profilu a všetky informácie, ktoré obsahuje, budú zmazané poskytovateľom portálu. Súhlasíte s tým, že časť obsahu (ako napríklad komentáre, príspevky v diskusnom fóre alebo správy), ktorá nie je priamo spojená s vaším profilom, môže zostať zachovaná. Nevzniká vám nárok na vrátenie vami zverejneného obsahu, ani na jeho postúpenie iným spôsobom.",
+      "text3": "Právo na mimoriadne vypovedanie služby z vážnych dôvodov zostáva týmto nedotknuté. Za vážny dôvod možno považovať najmä situáciu, keď sa jedna zo strán previní proti povinnostiam vyplývajúcim z týchto Podmienok používania. V prípade mimoriadneho vypovedania služby poskytovateľom ste zásadne natrvalo vylúčení z ďalšieho používania portálu, pričom nie je povolená ani nová registrácia.",
+      "text4": "Poskytovateľ portálu si vyhradzuje právo zmazať konto používateľa, ktorý túto službu nevyužil počas viac ako 6 mesiacov.",
+      "title": "Doba a ukončenie platnosti"
+    },
+    "section8": {
+      "text1": "Poskytovateľ sa usiluje udržiavať portál v prevádzke, bez chýb a bezpečný, avšak nezaručuje to, že portál je bezpečný, spoľahlivý a bez chýb po celý čas, alebo že funguje neustále bez prerušení, oneskorení či nedostatkov.",
+      "text2": "Poskytovateľ nenesie zodpovednosť za ľahšie porušenie povinností, pokiaľ v dôsledku tohto porušenia nevznikli žiadne škody na živote, tele alebo zdraví a pokiaľ nie sú dotknuté žiadne záruky alebo nároky podľa Zákona o ručení za škodu spôsobenú chybným výrobkom („Produkthaftungsgesetz“). Zodpovednosť za porušenie povinností, ktorých plnenie je vôbec predpokladom riadneho plnenia používateľského vzťahu a dodržiavaniu ktorých smie používateľ dôverovať, zostáva naďalej nedotknutá. To platí aj pre porušenie povinností našich zástupcov.",
+      "text3": "Podľa zákonných ustanovení nie je poskytovateľ portálu ako poskytovateľ služby povinný monitorovať sprostredkované alebo uložené informácie, ani pátrať po okolnostiach, ktoré ukazujú na protiprávnu činnosť. Nepreberá tak žiadnu zodpovednosť za obsah, údaje a/alebo informácie poskytnuté používateľmi portálu, zverejnené výroky ani za obsah externých internetových stránok, na ktoré sa na portáli odkazuje.",
+      "text4": "Napriek tomu, že poskytovateľ portálu obsah starostlivo kontroluje, nepreberá zodpovednosť za obsah externých odkazov. Za obsah externých internetových stránok, na ktoré sa na portáli odkazuje, je zodpovedný výlučne ich poskytovateľ.",
+      "text5": "Poskytovateľ nezodpovedá za obsah a správnosť reklamy. Za obsah reklamných inzerátov je zodpovedný jedine ich autor. To platí aj pre obsah propagovaných internetových stránok. Zverejnením reklamného inzerátu na portáli poskytovateľ nevyjadruje zároveň súhlas s protiprávnym obsahom. Zodpovedným je v takom prípade výlučne zákazník, ktorý si zverejnenie reklamy objednal.",
+      "text6": "Ako používateľ oslobodzujete poskytovateľa portálu od plnenia akýchkoľvek nárokov, vrátane nárokov na náhradu škody, ktoré si ostatní používatelia alebo iné tretie strany uplatnia voči poskytovateľovi, ak porušíte ich práva prostredníctvom vami zverejneného obsahu. Používateľ, ktorý daný obsah zverejnil, preberá všetky náklady, ktoré vzniknú poskytovateľovi portálu v dôsledku porušenia práv tretích strán, vrátane primeraných nákladov na právnu obhajobu. Všetky ďalšie práva, ako aj nároky poskytovateľa na náhradu škody zostávajú nedotknuté.",
+      "title": "Vymedzenie zodpovednosti"
+    },
+    "section9": {
+      "text3": "Poskytovateľ portálu si vyhradzuje právo kedykoľvek a bez udania dôvodu tieto Podmienky používania zmeniť. Aktuálna verzia sa vždy nachádza na adrese {link}. Používatelia nie sú na zmenu Podmienok používania výslovne upozornení, zobrazenie a prečítanie aktuálnej verzie Podmienok používania je na zodpovednosti každého používateľa. Pokračovaním v používaní portálu po zmene Podmienok používania vyjadruje používateľ súhlas s týmito zmenami.",
+      "text4": "Poskytovateľ je oprávnený úplne alebo čiastočne previesť svoje práva a povinnosti vyplývajúce z tohto používateľského vzťahu na tretiu stranu, a to do 4 týždňov od oznámenia formou e-mailu.",
+      "title": "Záverečné ustanovenia"
+    }
   }
 }

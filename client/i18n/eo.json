@@ -204,5 +204,79 @@
   "teach": {
     "exams": "Ekzamenoj",
     "exercises": "Ekzercoj"
+  },
+  "terms": {
+    "last_update": "Laste aktualigita: {date}",
+    "section1": {
+      "text1": "Kelkaj el niaj servoj uzeblas sen registriĝo ĉe la retpaĝo. Por uzi ĉiujn funkciojn de la retpaĝo, vi devas krei personan uzantkonton. La registriĝo estas senkosta.",
+      "text2": "Nur personoj, kiuj minimume havas 13 jarojn rajtas registriĝi. La uzo de la retpaĝo por personoj sub 18 jaraj (en kelkaj landoj 21 jaraj) nur eblas kun la konsento de la edukrajtaj personoj.",
+      "text3": "Vi garantias, ke ĉiuj informoj donitaj de vi ĉe la registriĝo estas veraj kaj korektaj kaj ke vi ilin ĉiam aktualigos.",
+      "text5": "Ĉe la registriĝo vi elektas pasvorton kaj vi devas teni tiun pasvorton sekrete.",
+      "text6": "Vi konsentas pri la publikigo de la profilinformoj (ekz. via uzantnomo, la lingva progreso, la retstatuso, la elektita lingvoversio, la registriĝodato, la dato de la lasta ensaluto kaj pliaj libervolaj informoj, inkluzive de via profilbildo). La retpoŝtadreso kaj la pasvorto ne estos publikigitaj.",
+      "text7": "La registriĝo ĉe la retpaĝo nur finiĝas per klako al aktiviga ligilo. Por aktivigi la konton, vi ricevos post la ricevo de la registriĝo aŭtomatan konfirmon per retpoŝto, kiu enhavos la aktivigan ligilon.",
+      "text8": "Se vi ne finas la aktivigon de la konto, la ofertanto rajtas forigi la nekomplete registritan uzantkonton.",
+      "text9": "La ofertanto de la retpaĝo ne garantias la veran identecon de uzantoj. Ĉiu uzanto do mem devas kontroli la identecon de iu alia uzanto. La ofertanto rezervas al si la rajton peti dokumentojn aŭ pruvojn rilate al la identeco kaj al aĝo por kontroli informojn. Se iu ne liveras la petitajn pruvojn ene de tempo definita de la ofertanto de la retpaĝo, ĝi forigos la koncernan uzantkonton.",
+      "title": "Registriĝo"
+    },
+    "section2": {
+      "text1": "La ofertanto de la retpaĝo konscias, ke la protekto de la personaj informoj estas ege grava. Pro tio la retpaĝo strikte atentas la regulojn de la leĝoj pri protekto de datenoj. Detalojn pri la uzo kaj prilaboro de datenoj vi trovas en la Reguloj pri protekto de datenoj .",
+      "title": "Protekto de informoj"
+    },
+    "section3": {
+      "text1": "La retpaĝo nur povas esti uzata por la leĝe permesitaj celoj.",
+      "text2": "Kiel uzanto vi devas:",
+      "text2_1": "nur doni verajn kaj ne erarigajn informojn en via profilo kaj ĉe via komunikado kun aliaj uzantoj;",
+      "text2_2": "teni la alirinformojn sekrete kaj ne doni ilin al aliaj;",
+      "text2_3": "informi la ofertanton de la retpaĝo tuj, kiam ekzistas la supozo, ke aliulo ekhavis informojn pri la alirinformoj kaj/aŭ misuzas uzantkonton.",
+      "text3": "Nur vi respondecas pri la enmetita enhavo kaj (la publika kaj la nepublika) komunikado kun aliaj. Vi ankaŭ devas atenti pri la rajtoj kaj interesoj de aliaj uzantoj aŭ aliuloj, speciale pri la personaj rajtoj.",
+      "text4_1": "leĝe protektitaj enhavoj, ekzemple enhavo kiu estas protektita pro kopirajto, nomrajtoj, markorajtoj, patentoj, rajtoj pri industria dezajno, aŭ personaj rajtoj, se vi ne havas la permeson pri tio.",
+      "text4_2": "pornografiaj, perfortgloraj, obscenaj, seksistaj, kalumniaj, rasismaj, anoj de malplimultoj aŭ religioj ofendantaj prezentoj kaj enhavoj, kiuj malobservas la junularprotektan leĝon (Jugendschutzgesetz);",
+      "text4_3": "Propagandiloj kaj insignoj de organizaĵoj kontraŭleĝaj;",
+      "text4_4": "ĝenaj, ofendaj, kalumniaj, minacantaj enhavoj kaj diskriminaciaj eldiroj;",
+      "text4_5": "privataj informoj de aliaj uzantoj (ekz. adreso, telefonnumero, bankinformoj) respektive citaĵoj el privata komunikado kun aliaj uzantoj, la ofertantoj/administrantoj de la retpaĝo aŭ aliuloj.",
+      "text4_6": "Ligiloj al retpaĝoj kun kontraŭleĝaj enhavoj;",
+      "text4_7": "ĉiu nepetita aŭ nepermesita reklamo, reklammaterialoj, rubmesaĝoj, ĉenleteroj, neĝbul- aŭ piramidaj sistemoj kaj ĉiuspeca klientreklamo;",
+      "text4_8": "ĉiuj materialoj, kiu enhavas virusojn, vermojn, trojanojn aŭ aliajn programetojn, kiuj minacas aŭ malhelpas la ekziston aŭ la funkciadon de ĉi tiu aŭ aliaj retpaĝoj;",
+      "text5": "Sekvaj agoj ne estas permesitaj al la uzanto:",
+      "text5_1": "uzi la konton de alia uzanto aŭ uzi aŭ provi uzi la sistemon sen permeso de la ofertanto;",
+      "text5_2": "ŝajnigi esti alia persono aŭ enmeti falsajn informojn pri si",
+      "text5_3": "la blokadon de la retpaĝfunkcioj, la surskribo, ŝanĝo aŭ kopiado de la enhavo, de la programkodo kaj/aŭ de la datenoj de la retpaĝo, kaj la aŭtomatigita elpreno de enhavo, se ĝi ne estas necesa por la normala uzo de la servo de la retpaĝo;",
+      "title": "Devoj de la uzanto"
+    },
+    "section4": {
+      "text1": "La ofertanto havas la rajton, laŭ propra decido, ŝanĝi aŭ ne plu oferti la servon en iu ajn momento.",
+      "title": "Ŝanĝo de la oferto"
+    },
+    "section5": {
+      "text1": "La ofertanto de la retpaĝo donas al vi, kiel uzanto, personigitan, tutmonde validan, ne transdoneblan kaj en-ekskluzivan rajton, uzi la servojn laŭ la priskribitaj uzkondiĉoj.",
+      "text2": "Kiel uzanto vi donas al la retpaĝo, la tutmondan, ne ekskluzivan, senpagan, transdoneblan, tempe, enhave kaj loke nelimigitan rajton, uzi la de vi enmetitajn enhavojn en ĉiuj medioj, kiun uzas la ofertanto. La ofertanto de la retpaĝo speciale havas la rajton uzi tiujn enhavojn en ĉiuj medioj, publikigi, plimultigi, kopii kaj disvastigi ilin kaj adapti, ŝanĝi aŭ prilabori ilin.",
+      "text3": "Kiel uzanto vi garantias, ke la de vi alŝutitaj enhavoj estas liberaj de rajtoj de aliaj kaj povas esti uzitaj kadre de 5.2. Vi garantias, ke vi havas ĉiujn rajtojn kaj permesojn, kiuj estas bezonataj, por garantii la transdonon de la rajtoj de la de vi alŝutitaj enhavoj.",
+      "text4": "La rajtojn, kiujn vi transdonis al la retpaĝo kaj la antaŭe klarigitaj garanti- kaj kompenspostuloj ne ĉesas per la fino de la uzantrilato.",
+      "title": "Transdono de rajtoj"
+    },
+    "section6": {
+      "title": "Rajto je posedo"
+    },
+    "section7": {
+      "text1": "La membreco ĉe la retpaĝo komenciĝas ĉe la registriĝo, la akcepto de la uzantkondiĉoj kaj de la deklaro pri privateco. Ĝi daŭras je nedifinita tempo.",
+      "text2": "Vi povas malaboni la servon en iu ajn momento kaj sen mencii kaŭzojn ĉe {link}. Post la malabono vi ne plu havos aliron a lla profiloj kaj ĉiuj en ĝi ekzistantaj informoj estos forigitaj. Vi akceptas, ke kelkaj enhavoj (kiel ekz. komentoj, forumkontribuoj, kaj novaĵoj), kiuj ne estas rekte ligita kun la profilo, daŭre estos alireblaj por aliuloj. Vi ne havas la rajton pri transdono aŭ uzo de la de vi kreitaj enhavoj.",
+      "text3": "Tio ne tuŝas la rajton je eksterordinara fino de la kontrakto pro grava kaŭzo. Estus grava kaŭzo, se iu el la kontraktpartioj agus kontraŭ la devoj de tiuj uzantkondiĉoj. Kaze de eksterordinara fino de la kontrakto fare de la ofertanto vi tute estos ekskluditaj de la plua uzo de la retpaĝo. Tiel ankaŭ novregistriĝo ne estas permesita.",
+      "text4": "La ofertanto de la retpaĝo rezervas al si la rajton, forigi konton de uzanto, se la konto ne estas uzita dum daŭro de pli ol 6 monatoj.",
+      "title": "Tempodaŭro kaj fino"
+    },
+    "section8": {
+      "text1": "La ofertanto klopodas teni la funkciadon de la retpaĝo sendanĝera, senerara kaj sekura, tamen ĝi ne garantias, ke la retpaĝo en iu ajn momento estas sendanĝera, sekura kaj senerara. Krome ne estas garantio, ke ĝi ĉiam funkcias sen interrompoj, malfruoj aŭ eraretoj.",
+      "text2": "La ofertanto ekskludas la respondecon por leĝera neglekto de devoj, se el ĝi ne rezultas damaĝoj de vivo, korpo aŭ sano aŭ se ne estas tuŝitaj postuloj el la leĝo pri produktrespondeco (Produkthaftungsgesetz). Netuŝita de tio krome restas la respondeco pri lezo de devoj, kiuj nur ebligas la laŭordan realigon de la uzantrilato kaj je kies priatento la uzanto rajtas fidi. La samo validas por lezo de devoj fare de likvida helpanto.",
+      "text3": "Laŭ la leĝaj reguloj la ofertanto de tiu retpaĝo, kiel servoofertanto ne estas devigata inspekti la transdonitajn kaj konservitajn informojn aŭ esplori cirkonstancojn, kiuj indikas kontraŭleĝan agadon. Ĝi ne transprenas la respondecon rilate al enhavoj enmetitaj de la uzantoj, datenoj kaj/aŭ informoj, faritaj eldiroj aŭ enhavoj sur ekstere ligitaj retpaĝoj.",
+      "text4": "Kvankam ni zorge kontrolas la enhavon, la ofertanto de la retpaĝo ne transprenas la respondecon pri la enhavo de eksteraj ligiloj. Por la enhavo de ligitaj paĝoj nur respondecas ties funkciiganto.",
+      "text5": "La ofertanto de la retpaĝo ne estas respondeca pri enhavo kaj ĝusteco de reklamanoncoj. Nur la aŭtoro de la reklamanonco respondecas sola pri la enhavo. La samo validas por la enhavo de la privarbata retpaĝo. Ĉe montro de reklamanonco en la retpaĝo, la ofertanto ne samtempe kunakordas kun eventuala kontraŭleĝa enhavo. Pro tio la respondeco pri ĝi nur estas ĉe la kliento, kiu mendis la reklamon.",
+      "text6": "Kiel uzanto vi liberigas la ofertanton de la retpaĝo de ĉiuj postuloj, inkluzive de postuloj pro damaĝkompenso, kiuj aliaj uzantoj aŭ ceteraj aliuloj validigas kontraŭ la ofertanto pro lezo de rajtoj fare de vi, respektive kaŭze de la de vi kreitaj enhavoj. La uzanto, kiu publikigis la koncernajn enhavojn en la retpaĝo, transprenas ĉiujn kostojn, estigitajn ala ofertanto pro lezo de rajtoj de aliuloj, inkluzive de normalaj kostoj por jura defendo. Ĉiuj aldonaj rajtoj pro damaĝkompenso de la ofertanto restas netuŝitaj.",
+      "title": "Respondeco"
+    },
+    "section9": {
+      "text3": "La ofertanto de la retpaĝo rezervas al si la rajton, ŝanĝi tiujn uzantkondiĉojn en iu ajn momento, sen mencii kaŭzojn. La plej aktuala versio ĉiam estas trovebla ĉe {link}. Ni ne informos la uzantojn post ŝanĝo de la uzantkondiĉoj, sed la uzantoj mem havas la respondecon legi kaj esplori la aktualajn uzantkondiĉojn. Pluuzo de la retpaĝo post ŝanĝo de la uzantkondiĉoj signifas, ke la uzanto konsentas pri la ŝanĝoj kaj akceptas ilin.",
+      "text4": "La ofertanto povas, informante la uzantojn per retpoŝto, transdoni la rajtojn kaj devojn el tiu uzantrilato, komplete aŭ parte al aliuloj.",
+      "title": "Finaj rimarkoj"
+    }
   }
 }

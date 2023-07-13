@@ -54,7 +54,7 @@
     "age": "Amžius:",
     "anonymous": "Anonimas",
     "author": "Autorius",
-    "check": "Patikrinti rezultatą",
+    "check": "Tikrinti",
     "create_copy": "Kopijuoti",
     "create_exam": "Rengti egzaminą",
     "create_exam_confirm": "Egzamino rengėjas viso egzamino metu gali redaguoti arba ištrinti egzaminą. Vis tiek tęsti?",
@@ -127,6 +127,7 @@
     "privacy": "Asmens duomenų apsauga",
     "settings": "Paskyros nustatymai",
     "signup": "Registracija",
+    "social": "Socialinis",
     "submit": "Pateikti",
     "terms": "Naudojimo taisyklės"
   },
@@ -163,7 +164,57 @@
     "start_typing": "Pradėti rašyti sakinį",
     "title": "Pavadinimas",
     "untitled_unit": "Skyrius be pavadinimo",
-    "valid_url": "Įveskite galiojantį URL adresą"
+    "valid_url": "Įveskite galiojantį URL adresą",
+    "snippets": {
+      "blank_unit": {
+        "name": "Tuščia"
+      },
+      "gap_filling_dropdown": {
+        "name": "Išskleidžiamas tarpo užpildymas"
+      },
+      "gap_filling_open_answer": {
+        "name": "tarpo užpildymas, atviras atsakymas"
+      },
+      "multiple_choice": {
+        "name": "Pasirinkti iš kelių variantų"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{img:suo.jpeg} == {sound:suo.mp3}\n\n{img:dramblys.jpeg} == {sound:dramblys.mp3}\n\n{img:kate.jpeg} == {sound:kate.mp3}",
+        "name": "Paveikslų susiejimas su garsais"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Šuo == {img:suo.jpeg}\n\nDramblys == {img:dramblys.jpeg}\n\nKatė == {img:kate.jpeg}",
+        "name": "Teksto susiejimas su paveikslais"
+      },
+      "pairing_text_with_text": {
+        "code": "Vyšnia == Raudona\n\nCitrina == Geltona\n\nBrokolis == Žalia",
+        "name": "Teksto susiejimas su tekstu"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "Nuotraukoje pavaizduotas gyvūnas: [Šuo|+Katė|Dramblys]\n\nAr tai laukinis, ar naminis gyvūnas? [+Naminis|Laukinis]",
+        "description": "{img:kate.jpeg}",
+        "name": "Klausimai apie paveikslą, tiesa ar melas"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Koks gyvūnas skleidžia šį garsą?\n[+Katė|Šuo|Dramblys]\n\nKaip apibūdintumėte šio gyvūno skleidžiamą garsą?\n[+Miaukimas|Lojimas|Trimitavimas]",
+        "description": "Išklausykite garso įrašo ir atsakykite į klausimus:\n\n{sound:cat.mp3}",
+        "name": "Klausimai apie garso įrašus, įterpiamieji"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Kas pakvietė kiškį lenktynių? [Kiškis|+Vėžlys|Paukštis]\n\nKodėl kiškis per lenktynes nusprendė pasnausti? [Jis buvo pavargęs|Norėjo suteikti vėžliui galimybę pasivyti|+Buvo įsitikinęs savo pergale]\n\nKas laimėjo lenktynes? [Kiškis|+Vėžlys|Paukštis]",
+        "description": "Seniai seniai kiškis ir vėžlys nuolat ginčydavosi, kuris gi iš jų greitesnis.\nVėžlys pakvietė kiškį lenktynių, kiškis sutiko, nes manė, kad bus lengva laimėti.\n\nPrasidėjo lenktynės, ir kiškis greitai nušuoliavo, palikdamas vėžlį už nugaros. Kiškis ėmė pernelyg pasitikėti savimi ir nutarė išsimiegoti. Tuo tarpu vėžlys vis nesustodamas judėjo finišo link.\n\nPabudęs kiškis suprato, kad vėžlys jau beveik pasiekė finišo liniją. Kiškis bandė pasivyti vėžlį, bet jau buvo per vėlu. Vėžlys laimėjo lenktynes.",
+        "name": "Klausimai apie tekstą, daugybinis pasirinkimas"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Kur yra ši vieta?\n[]\n\nKas ją pastatė?\n[]",
+        "description": "Peržiūrėkite vaizdo įrašą ir atsakykite į klausimus.\n{video:https://www.youtube.com/watch?v=chii_rEU30g}",
+        "name": "Klausimai apie vaizdo įrašą, atviras atsakymas"
+      },
+      "sorting_pictures": {
+        "code": "{img:vienas_apskritimas.png}\n\n{img:du_apskritimai.png}\n\n{img:trys_apskritimai.png}",
+        "name": "Paveikslų rūšiavimas"
+      }
+    }
   },
   "sort": {
     "rated": "Geriausiai įvertinti",
@@ -206,5 +257,79 @@
   "teach": {
     "exams": "Egzaminai",
     "exercises": "Užduotys"
+  },
+  "terms": {
+    "last_update": "Paskutinį kartą atnaujinta: {date}",
+    "section1": {
+      "text1": "Kai kuriomis svetainės funkcijomis galima naudotis be registracijos. Tačiau norint naudotis visomis svetainės funkcijomis, reikia sukurti asmeninę paskyrą. Registracija yra nemokama.",
+      "text2": "Registruotis svetainėje gali tik asmenys nuo 13 metų. Nepilnamečių naudojimasis šia interneto svetaine yra galimas tik su globėjo sutikimu.",
+      "text3": "Jūs garantuojate, kad visi registracijos metu pateikti duomenys yra išsamūs ir teisingi. Taip pat garantuojate, kad jie visada bus aktualūs.",
+      "text5": "Registruojantis svetainėje jums reikia pasirinkti slaptažodį. Jūs esate atsakingas už to slaptažodžio išlaikymą paslaptyje.",
+      "text6": "Jūs sutinkate su jūsų profilio duomenų (pvz., jūsų vartotojo vardo, pažangos, prisijungimo būsenos, pasirinktos kalbos, registracijos ir paskutinio prisijungimo datos bei kitų savanoriškai pateikiamų duomenų, įskaitant profilio nuotrauką) paviešinimu šioje interneto svetainėje. Elektroninio pašto adresas ir slaptažodis neviešinami.",
+      "text7": "Registracija svetainėje yra baigiama paspaudus paskyros aktyvacijos nuorodą. Paskyros aktyvacijos nuoroda yra automatiškai atsiunčiama elektroniniu paštu po registracijos svetainėje.",
+      "text8": "Jeigu vartotojo paskyra neaktyvuojama, teikėjas pasilieka teisę pašalinti neaktyvuotas sąskaitas.",
+      "text9": "Svetainės savininkas negarantuoja tikrosios vartotojų tapatybės. Todėl kiekvienas vartotojas turi pats įsitikinti dėl kito vartotojo tapatybės. Tačiau tiekėjas pasilieka sau teisę patikrinti informaciją ir paprašyti pateikti įrodymus apie tapatybė ir amžių. Jeigu tokie įrodymai nėra pateikiami per svetainės tiekėjo pateiktą laikotarpį, tiekėjas pasilieka teisę pašalinti vartotojo paskyrą.",
+      "title": "Registracija"
+    },
+    "section2": {
+      "text1": "Svetainės savininkas supranta, kad asmens duomenų apsauga yra labai svarbi. Būtent todėl svetainėje griežtai laikomasi duomenų apsaugos teisės normų. Detalesnė informacija apie vartotojų duomenų apdorojimą yra apibrėžta Privatumo politikoje.",
+      "title": "Duomenų apsauga"
+    },
+    "section3": {
+      "text1": "Svetainė gali būti naudojama išskirtinai tik teisėtais tikslais.",
+      "text2": "Kaip vartotojas esate įpareigotas:",
+      "text2_1": "pateikti tik teisingus ir neklaidinančius įrašus savo profilyje bei ryšiuose su kitais vartotojais;",
+      "text2_2": "išlaikyti prisijungimo duomenis paslaptyje ir neatskleisti jų tretiesiems asmenims;",
+      "text2_3": "nedelsiant informuoti svetainės tiekėją, jeigu kilo įtarimas, kad prisijungimo duomenys buvo perduoti tretiesiems asmenims ir/arba buvo netinkamai panaudota vartotojo paskyra.",
+      "text3": "Jūs esate atsakingi už jūsų pateiktą turinį bei už bendravimą (viešąjį ir privatų) su kitais vartotojais. Jūs taip pat privalote saugoti kitų vartotojų ar trečiojo asmens teises ir interesus, ypatingai asmenines teises.",
+      "text4_1": "nuosavybės turinį, kuris yra saugomas įstatymų, pavyzdžiui, autorinių teisių, prekės ženklų, registruotų pavadinimų, gretutinių teisių, patentų, dizaino patento, naudingojo patento, nuosavybės ar asmeninių teisių, nebent jūs turite teises jų panaudojimui;",
+      "text4_2": "pornografinio, propaguojančio smurtą, seksualinio pobūdžio, nešvankų, įžeidžiantį, šmeižiantį, rasistišką, religijas ar įvairias mažumas įžeidžiantį turinį, taip pat turinį, kuris pažeidžia jaunimo apsaugos įstatymus;",
+      "text4_3": "propagandos priemones ir neteisėtų organizacijų simbolius;",
+      "text4_4": "įžeidžiančio, šmeižiančio, grasinančio, priekabiavimo ar diskriminacinio pobūdžio turinį;",
+      "text4_5": "privačius kitų vartotojų duomenis (pvz., adresas, telefono numeris, banko sąskaita) arba citatas iš privataus bendravimo su kitais vartotojais, svetainės paslaugų teikėju/administratoriais arba trečiuoju asmeniu;",
+      "text4_6": "nuorodas į interneto svetaines su neteisėtu turiniu;",
+      "text4_7": "bet kokią neprašytą ar neleistiną reklamą, reklaminę medžiagą, \"junk mail\", šlamštą, grandininius laiškus, finansinės piramidės arba tinklo schemos ar bet kokią kitą paslaugas siūlančios formą;",
+      "text4_8": "bet kokią medžiagą, kurioje yra virusų, kirminų, Trojos arklių ar kitų programų, kurios gali sukelti pavojų, įtakoti ar sutrukdyti šios arba kitų interneto svetainių funkcionalumą arba egzistavimą;",
+      "text5": "Vartotojui draudžiama:",
+      "text5_1": "naudotis arba mėginti pasinaudoti kito vartotojo paskyra arba sistema be tiekėjo leidimo;",
+      "text5_2": "apsimesti kitu asmeniu, taip pat pateikti apie save klaidingą informaciją;",
+      "text5_3": "blokuoti interneto svetainės funkcijas, perrašyti, keisti ar kopijuoti į programos kodą ir/ar svetainės duomenis, taip pat automatizuotai išgauti turinį, nebent tai yra būtina tinkamam naudojimuisi svetainės paslaugomis;",
+      "title": "Vartotojo pareigos"
+    },
+    "section4": {
+      "text1": "Paslaugų tiekėjas turi teisę bet kuriuo metu savo nuožiūra be išankstinio įspėjimo pakeisti ar nutraukti siūlomas paslaugas.",
+      "title": "Paslaugų turinio pasikeitimas"
+    },
+    "section5": {
+      "text1": "Svetainė suteikia jums kaip vartotojui asmeninę, visame pasaulyje galiojančią, neperduodamą ir neišimtinę teisę naudotis svetainės paslaugomis pagal šias naudojimosi sąlygas.",
+      "text2": "Jūs kaip vartotojas suteikiate svetainei pasaulinę, neišimtinę, nemokamą, perduodamą, laike, erdvėje ir turiniu neribotą teisę panaudoti jūsų sukurtą turinį svetainės naudojamose žiniasklaidos priemonėse. Svetainės savininkui taip pat suteikiama teisė žiniasklaidos tikslais naudoti, skelbti, platinti, kopijuoti, taip pat pritaikyti bei redaguoti jūsų sukurtą turinį.",
+      "text3": "Jūs kaip vartotojas garantuojate, kad jūsų paskelbtas turinys nepažeidžia trečiųjų asmenų teisių ir gali būti panaudotas pagal 5.2. punktą. Jūs patvirtinate, kad turite visas teises ir įgaliojimus, reikalingus norint apsaugoti jūsų pateikto apsaugoto turinio teises.",
+      "text4": "Jūsų suteiktos svetainei teisės bei aukščiau nurodytos garantijos ir atleidimo nuo žalos atlyginimas nesibaigia net su sutartinių santykių nutraukimu.",
+      "title": "Teisių perdavimas"
+    },
+    "section6": {
+      "title": "Nuosavybės teisės"
+    },
+    "section7": {
+      "text1": "Narystė svetainėje prasideda jūsų registracija svetainėje ir sutikimu su šiomis naudojimosi sąlygomis bei privatumo politika ir gali tęstis neribotą laiką.",
+      "text2": "Jūs galite bet kuriuo metu ir nenurodydami priežasties nutraukti svetainės naudojimą. Pašalinti paskyrą galite šiame puslapyje: {link}. Pašalinę paskyrą nebeturėsite prieigos prie savo profilio; visa su juo susijusi informacija bus pašalinta iš svetainės. Jūs sutinkate, kad kai kuris turinys (pvz., komentarai, forumo žinutės ar pranešimai), kurie nėra tiesiogiai sujungti su jūsų profiliu, galės likti net ir po jūsų profilio pašalinimo. Jūs neturite jokių pretenzijų dėl jūsų sukurto turinio paviešinimo ar kitokio perleidimo.",
+      "text3": "Teisė į ypatingą sutarties nutraukimą dėl svarbios priežasties išlieka neliečiama. Svarbi priežastis gali būti, ypač jei viena iš šalių pažeidė šiose naudojimosi sąlygose nurodytus įsipareigojimus. Jeigu svetainės administratoriai pašalino vartotojo paskyrą dėl svarbių priežasčių, šiam vartotojui visam laikui uždraudžiama naudotis svetaine. Taip pat neleidžiama prisiregistruoti iš naujo.",
+      "text4": "Svetainė pasilieka teisę pašalinti vartotojų paskyrą, jeigu svetainė nebuvo naudojama daugiau nei 6 mėnesius.",
+      "title": "Narystė svetainėje ir paskyros pašalinimas"
+    },
+    "section8": {
+      "text1": "Tiekėjas rūpinasi, kad svetainė būtų visada pasiekiama, saugi ir be klaidų, tačiau negarantuoja, kad svetainė bet kuriuo metu bus saugi, patikima ir be klaidų arba kad ji visada veiks nepriekaištingai, be vėlavimų ar trūkumų.",
+      "text2": "Paslaugų teikėjas neatsako už nedidelius nesklandumus, kilusius dėl neatsargumo, jeigu tai nesukėlė pavojaus gyvybei arba sveikatai ir jeigu instrukcijos ar Įstatymas nebuvo pažeistas. Aukščiau paminėti teiginiai neliečia atsakomybės dėl įsipareigojimų nevykdymo, teikiant paslaugas. Tas pats galioja mūsų agentų pažeidimams.",
+      "text3": "Pagal teisines nuostatas paslaugų tiekėjas neprivalo stebėti perduodos arba saugomos informacijos ar tirti neteisėtos veiklos aplinkybes. Todėl jis neprisiima atsakomybės už vartotojų svetainei pateiktą turinį, duomenis ir/ar informaciją, pareiškimus, taip pat išorinių svetainių informaciją.",
+      "text4": "Nepaisant kruopščios turinio kontrolės, svetainė nėra atsakinga už kitų interneto svetainių siūlomą turinį. Už tokių interneto svetainių turinį yra atsakingi jų savininkai.",
+      "text5": "Paslaugų tiekėjas nėra atsakingas už reklamos turinį ir jos tikslumą. Už reklamos turinį yra atsakingas atitinkamos reklamos autorius. Tai galioja ir reklamuojamos interneto svetainės turiniui. Reklamos rodymas svetainėje nereiškia, kad slovake.eu automatiškai sutinka su galimai neteisėtu reklamuojamu turiniu. Todėl atsakomybė už reklamą tenka tik reklamos klientams.",
+      "text6": "Kaip vartotojas jūs atleidžiate svetainės savininką nuo bet kokių pretenzijų, įskaitant ieškinius dėl žalos, kuri gali kilti dėl kitų vartotojų ar trečiojo asmens teisių pažeidimų dėl tiesioginės jūsų kaltės arba dėl jūsų sukurto/įkelto turinio, atlyginimo. Vartotojas, paviešinęs svetainėje teises pažeidžiantį turinį, turi padengti visas išlaidas, patirtas svetainės savininko dėl trečiojo asmens teisių pažeidimo, įskaitant teisines išlaidas. Visos kitos teisės, įskaitant ieškinius svetainei dėl žalos, išlieka nepakitę.",
+      "title": "Atsakomybė"
+    },
+    "section9": {
+      "text3": "Svetainės savininkas pasilieka teisę bet kuriuo metu ir be priežasčių nurodymo keisti šias sąlygas. Naujausia naudojimosi sąlygų versija visada prieinama šiame puslapyje: {link}. Aiški nuoroda į naudojimosi sąlygų pasikeitimus nėra pateikiama, tad vartotojai privalo patys nuolatos ateiti į šį puslapį ir patikrinti naudojimosi sąlygas. Tolesnis svetainės naudojimasis po sąlygų pasikeitimo reiškia vartotojo sutikimą su sąlygų pasikeitimais.",
+      "text4": "Svetainės savininkas turi teisę visiškai arba iš dalies perleisti savo teises ir pareigas trečiajam asmeniui pagal šią sutartį apie tai pranešdamas elektroniniu paštu prieš 4 savaites.",
+      "title": "Baigiamosios nuostatos"
+    }
   }
 }

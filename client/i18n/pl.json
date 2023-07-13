@@ -206,5 +206,79 @@
   "teach": {
     "exams": "Egzaminy",
     "exercises": "Ćwiczenia"
+  },
+  "terms": {
+    "last_update": "Ostatnia aktualizacja: {date}",
+    "section1": {
+      "text1": "Z niektórych funkcji mogą Państwo korzystać bez rejestracji na portalu. By korzystać z wszystkich funkcji portalu, należy założyć osobiste konto użytkownika. Rejestracja jest bezpłatna.",
+      "text2": "Rejestracja jest dozwolona dla osób od 13 roku życia. Korzystanie ze strony przez osoby niepełnoletnie jest możliwa wyłącznie za zgodą ich rodziców / prawnych opiekunów.",
+      "text3": "Rejestrując się, gwarantują Państwo, że wszystkie podane dane są prawdziwe i poprawne, oraz że będą je Państwo w razie zmian aktualizować.",
+      "text5": "Podczas rejestracji wybierają Państwo hasło, oraz zobowiązują się Państwo do zabezpieczenia go przed użyciem przez osoby trzecie.",
+      "text6": "Użytkownicy zgadzają się na upublicznienie ich danych profilowych (np. nazwy użytkownika, postępów w nauce, statusu bycia on-line, wybranej wersji językowej portalu, danych rejestracyjnych, daty ostatniego logowania, oraz dalszych podanych opcjonalnie informacji łącznie ze zdjęciem profilowym). Adres e-mail oraz hasło nie będą upubliczniane.",
+      "text7": "Rejestracja na portalu zostanie zakończona przez wykorzystanie linku aktywacyjnego. Po wpłynięciu danych rejestracyjnych do administratora portalu otrzymają Państwo automatyczne potwierdzenie rejestracji w mailu zawierającym link aktywacyjny.",
+      "text8": "Jeśli rejestracja nie zostanie zakończona przez aktywację, administrator zastrzega sobie prawo do usunięcia nie w pełni zarejestrowanego konta.",
+      "text9": "Administrator portalu nie gwarantuje faktycznej tożsamości użytkowników. Każdy użytkownik może sam samodzielnie przekonać się o zgodności tożsamości innych użytkowników z prawdą. Administrator portalu zastrzega sobie jednak prawo do żądania udokumentowania podanych informacji odnośnie tożsamości i wieku użytkowników. W przypadku, gdy w podanym przez administratora terminie odpowiednie potwierdzenie nie zostanie przesłane, zastrzega sobie on prawo do usunięcia konta użytkownika.",
+      "title": "Rejestracja"
+    },
+    "section2": {
+      "text1": "Administrator platformy jest świadomy wagi ochrony danych osobowych. Dlatego też portal ściśle przestrzega przepisów dotyczących ochrony danych osobowych. Szczegóły dot. przetwarzania danych użytkowników są zapisane w Ochronie danych.",
+      "title": "Ochrona danych"
+    },
+    "section3": {
+      "text1": "Portal może być wykorzystywany wyłącznie w celach zgodnych z prawem.",
+      "text2": "Użytkownicy są zobowiązani do:",
+      "text2_1": "używania w treści profilu i komunikacji z innymi użytkownikami wyłącznie danych prawdziwych i niewprowadzających w błąd;",
+      "text2_2": "trzymania danych dostępowych w tajemnicy i nie udostępniania ich osobom trzecim;",
+      "text2_3": "niezwłocznego informowania administratora portalu, w przypadku zaistnienia podejrzenia, że osoby trzecie uzyskały dostęp do haseł i / lub korzystają z konta użytkownika.",
+      "text3": "Użytkownicy są odpowiedzialni za treść zamieszczanych danych (zarówno tych dostępnych publicznie, jak i niepublicznie) oraz komunikacji z innymi użytkownikami. Użytkownicy są zobowiązani do ochrony praw i interesów innych użytkowników oraz osób trzecich, w szczególności jeśli chodzi o ich prawa do prywatności.",
+      "text4_1": "treści chronionych prawnie przez prawa autorskie, do nazwy, marki, patentowe, do stylu, użytkownika, własności, prywatności, jeśli użytkownicy nie mają do nich uprawnień;",
+      "text4_2": "treści pornograficznych, epatujących przemocą, obscenicznych, seksistowskich, oszczerczych, rasistowskich, naruszających prawa mniejszości, obrażających uczucia religijne, sprzecznych z przepisami chroniącymi nieletnich;",
+      "text4_3": "treści propagandowych, symboli organizacji, których działalność jest niezgodna z prawem;",
+      "text4_4": "wypowiedzi nękających, obrażających, oszczerczych, zawierających groźby, dyskryminujących;",
+      "text4_5": "prywatnych danych innych użytkowników (np. adresów, numerów telefonów, numerów kont bankowych) lub cytatów z prywatnej korespondencji z innymi użytkownikami, administratorem platformy i osobami trzecimi;",
+      "text4_6": "linków do stron internetowych zawierających treści niezgodne z prawem;",
+      "text4_7": "wszelkich wysyłanych bez zamówienia reklam, materiałów reklamowych, treści spamowych, \"maili łańcuszkowych\", \"kul śnieżnych\", \"piramid\" oraz pozostałych mających na celu pozyskiwanie klientów;",
+      "text4_8": "wszelkich treści zawierających wirusy, \"robaki\", trojany i pozostałe programy, które zagrażają lub wpływają negatywnie na funkcjonalność i treść tej oraz innych stron internetowych;",
+      "text5": "Użytkownikom zabrania następujących działań:",
+      "text5_1": "korzystania lub prób korzystania z konta innego użytkownika oraz systemu bez zezwolenia administratora;",
+      "text5_2": "podawania się za inne osoby, jak również podawania fałszywych informacji o sobie;",
+      "text5_3": "blokowania funkcjonowania strony, nadpisywania, modyfikowania, kopiowania treści, kodu programu, automatycznego wywoływania treści, o ile nie jest to konieczne do korzystania z funkcji portalu zgodnego z regulaminem;",
+      "title": "Obowiązki użytkowników"
+    },
+    "section4": {
+      "text1": "Dostawca jest uprawniony do zmiany lub zaprzestania oferowania usług w dowolnym czasie, według własnego uznania, bez wcześniejszego powiadomienia.",
+      "title": "Zmiana oferty"
+    },
+    "section5": {
+      "text1": "Administrator tej strony przekazuje użytkownikom, osobiste, ważne na całym świecie, niezbywalne i niewyłączne prawo do korzystania z usług zgodnie z niniejszymi warunkami.",
+      "text2": "Użytkownicy przekazują administratorowi portalu niewyłączne, nieodpłatne, niezbywalne, nieograniczone w czasie, treści i przestrzeni prawo do korzystania z treści zamieszczonych przez siebie we wszystkich mediach wykorzystywanych przez administratora. Właściciel tej strony jest przede wszystkim upoważniony do używania tej zawartości w mediach, publikowania jej, kopiowania, powielania, rozpowszechniania, modyfikowania i edytowania.",
+      "text3": "Użytkownik gwarantuje, że udostępniona zawartość może być wykorzystywana w sposób wolny od praw osób trzecich (patrz pkt. 5.2.). Użytkownik zaświadcza, że dysponuje wszelkimi prawami, prawomoctwami i upoważnieniami konieczne w celu przekazania praw do udostępnianych przez siebie treści.",
+      "text4": "Prawa udzielone portalowi i wyżej wymienione gwarancje nie kończą się wraz z zaprzestaniem korzystania z portalu.",
+      "title": "Przekazanie praw"
+    },
+    "section6": {
+      "title": "Prawa własności"
+    },
+    "section7": {
+      "text1": "Okres członkostwa i korzystania z portalu zaczyna się od rejestracji i akceptacji niniejszego Regulaminu i Polityki Prywatności i trwa na czas nieokreślony.",
+      "text2": "Użytkownik może zrezygnować z usług portalu w dowolnym czasie i bez podawania przyczyn {link}. Po rozwiązaniu umowy, nie będzie już on miał dostępu do swojego profilu, a wszystkie zawarte na nim informacje zostaną usunięte przez administratora. Użytkownik wyraża zgodę, by niektóre treści (takie jak komentarze, posty lub wiadomości), które nie są bezpośrednio połączone z profilem, pozostały dostępne na portalu nawet po usunięciu profilu. Użytkownik nie jeste uprawniony do żądania zwrotu lub innego przekazaniu udostępnionych treści.",
+      "text3": "Prawo do wypowiedzenia umowy z ważnego powodu pozostaje nienaruszone. Ważnym powodem określa się sytuację, gdy jedna ze stron nie wypełniła zobowiązań wynikających z niniejszych warunków użytkowania. W przypadku wypowiedzenia umowy przez administratora, użytkownik jest na stałe wyłączony z dalszego korzystania z portalu. Ponowna rejestracja nie jest dozwolona.",
+      "text4": "Administrator portalu zastrzega sobie prawo do usunięcia konta użytkownika, jeśli użytkownik nie korzystał z usługi przez więcej niż 6 miesięcy.",
+      "title": "Czas trwania i zakończenie"
+    },
+    "section8": {
+      "text1": "Administrator portalu dołoży wszelkich starań, aby utrzymać jego funkcjonowanie, wolnym od błędów w sposób bezpieczny, ale to nie gwarantuje, że w każdym momencie portal jest bezpieczne i wolne od błędów lub że będzie zawsze działać bez zakłóceń, opóźnień lub wad.",
+      "text2": "Dostawca nie ponosi odpowiedzialności za niewielkie niedopełnienie obowiązków, pod warunkiem, że sytuacje te nie prowadzą do uszkodzenia życia, ciała lub zdrowia i nie dotyczą roszczeń z tytułu gwarancji lub rękojmi. Nie ma to wpływu na dalszą odpowiedzialność za naruszenie obowiązków, których wypełnienie powoduje właściwą realizację umowy i na których przestrzeganie użytkownik może się regularnie powoływać. To samo odnosi się do naruszenia obowiązków przez podwykonawców.",
+      "text3": "Zgodnie z przepisami prawa administrator portalu nie jest zobowiązany jako dostawca usług do monitorowania przekazywanych lub przechowywanych informacji, lub do zbadania okoliczności, które wskazują na bezprawną działalność. Dlatego też nie ponosi odpowiedzialności za informacje dostarczone przez użytkowników portalu, danych i / lub informacji, oświadczeń lub za zawartość linkowanych zewnętrznych stron internetowych.",
+      "text4": "Pomimo starannej kontroli treści administrator portalu nie ponosi żadnej odpowiedzialności za treści zewnętrznych linków. Wyłączną odpowiedzialność za treść linkowanych stron ponoszą ich administratorzy.",
+      "text5": "Dostawca nie ponosi odpowiedzialności za treści i prawdziwość zamieszczanych reklamy. Za treść ogłoszeń odpowiedzialni są ich autorzy. Dotyczy to zawartości reklamowanej strony. W przypadku zamieszczonej reklamy na portalu administrator portalu nie zgadzają automatycznie treściami, które nie są zgodne z prawem. Dlatego odpowiedzialność spoczywa wyłącznie na reklamodawcach.",
+      "text6": "Użytkownik zwalnia właściciela portalu z wszelkich roszczeń, w tym roszczeń odszkodowawczych dochodzonych przez innych użytkowników lub osób trzecich z tytułu naruszenia ich praw przez Użytkownika lub na podstawie zawartości stworzonej przez niego. Użytkownik, który opublikował treści na portalu, ponosi wszystkie koszty żądane przez stronę trzecią z powodu naruszenia jej praw, w tym kosztów na koszty obrony prawnej. Wszelkie inne prawa administratora portalu, w tym roszczenia odszkodowawcze pozostają bez zmian.",
+      "title": "Odpowiedzialność"
+    },
+    "section9": {
+      "text3": "Właściciel tego portalu zastrzega sobie prawo do zmiany tego Regulaminu w każdej chwili i bez podania przyczyny.Najnowsza wersja jest zawsze dostępna na stronie {link}.Wyraźne odniesienie do zmian w Regulaminie nie będzie miało miejsca, pobranie i zapoznanie się z bieżącym Regulaminem leży w gestii użytkownika. Poprzez dalsze korzystanie z portalu po zmianie Regulaminu użytkownik oświadcza swą zgodę na zmiany.",
+      "text4": "Administrator portalu jest uprawniony do przeniesienia praw i obowiązków wynikających z niniejszego Regulaminu w całości lub w części na rzecz osoby trzeciej po ogłoszeniu tego przez e-mail w ciągu 4 tygodni.",
+      "title": "Postanowienia końcowe"
+    }
   }
 }

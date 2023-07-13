@@ -22,7 +22,7 @@
   },
   "editor": {
     "age_range": "Age range",
-    "confirm_leave": "This page is asking you to confirm that you want to leave - data you have entered may not be saved.",
+    "confirm_leave": "This page is asking you to confirm that you want to leave – data you have entered may not be saved.",
     "description": "Description",
     "details": "Exercise details",
     "save": "Save",
@@ -115,7 +115,7 @@
     "accept": "Accept",
     "cancel": "Cancel",
     "catchphrase": "Create your own language quizzes",
-    "cookie_consent": "This website uses the minimal amount of cookies for it functionment. By continuing using this website we suppose you accept the usage of the functional cookies.",
+    "cookie_consent": "This website uses the minimal amount of cookies for its functioning. By continuing using this website we assume you accept the use of the functional cookies.",
     "edit": "Edit",
     "guide": "How To",
     "home": "Home",
@@ -267,7 +267,6 @@
     "about": "How to create exercises",
     "about_text": "To create new exercice, you'll first need to register and login in the website.",
     "exercice": {
-      "name": "New exercise",
       "explanation1": "To create a new exercise, you have to be in the Home menu (1), then you can select \"+ CREATE A NEW EXERCISE\" (2). Once created, they'll appear on this page. But for now you will be moved to the next page as you can see just below.",
       "explanation2": "An exercise can be composed in multiple units. You can add units by clicking on \"+ ADD UNIT\" (3). There are different kinds of exercises but in each unit you can only use the same kind. If you want to mix different types of questions in an exercise, you'll have to do separate units for each type of questions you want.",
       "explanation3": "As you can see on the left, there are a lot of different types of units. But mainly, we can group them in 3 families: gap filling questions, multiple choices and match or sort questions.",
@@ -275,19 +274,102 @@
       "explanation5": "Multiple choices allow you to create question with a choice of answers. It can be one or more right answers and as for the gap filling questions, you'll have to give the right answer(s) when creating the question.",
       "explanation6": "For match or sort questions, you'll have the choice to give descriptions or questions or pictures or even sounds and words or answers related to the given items. The learners will have to pair the items with the answers or if you chose the sort question, they'll have to sort them in the right order.",
       "explanation7": "git You can find more explanations for each family by clicking on the tabs on the top of this page.",
-      "gap_filling_1" : "The default type of exercise is a gap filling question. There are two kinds of gap filling exercises. The first one (1) is called \"Default\", and gives given answers when you click on the gap. The second type is the \"Open answer\" (8), there is no anwser given, the learner has to write it directly. We will see how to write the questions and how to give the answer, some wrong ones and the right one(s).",
-      "gap_filling_2" : "In the fields (2), you can write the title of the exercises and in the field (3) a short description to explain the instructions fo the following questions or give some context.",
-      "gap_filling_3" : "The questions themselves are written in the box (4). There are always two ways to do it. You can write directly the questions and the answers in the box or you can use the tools in the upper left corner (6). The result will be the same, you will see the same text in the field (4).",
-      "gap_filling_4" : "If you write the questions directly in the box, every questions have to be separated by a blank line and the answer has to be given between brackets [ ] and separated by a vertical separator |. And you have to put a + before the right answer(s). If there is more than one right answer, any of them will be considered as correct for the result. You can also choose to shuffle the proposed answers by clicking on the \"Shuffle options\" (7).",
-      "gap_filling_5" : "If you use the tools to create the questions (6), the one on the left will pass a blank line to start a new question. You'll have to write the question or text and where you want to put a gap, you click on the tool on the right. A pop up window will open, as showed in the image. You can type the answers one by one. They'll be validated when you type \"enter\". By default, the first one will automatically be considered as the right one, and a green \"v\" will show in front of it, but you can select the correct answer(s) by clicking on the small button in front of each answer (8). You can also choose to add a \"leave blank\" option by clicking on the dashed square on the right (9).",
-      "gap_filling_open_answer_1" : "The other type of gap filling exercise is the \"Open answer\" (10). As you can see below, for this kind of exercise, there is no proposed answer. You can give expected answers, one or more, the same ways as we just explained, with the tool or directly in the box (11). You can proposed wrong answers, they will not appear but during the correction, it will show a red X if someone filled with one of these answers, nothing if they wrote another answer et a green V if they have one of the right answers.",
-      "gap_filling_open_answer_2" : "You can add other questions, the same ways as before, by passing a blank line or by clicking on the button on the left (6). When you are happy with your questions, don't forget to click on the \"Save\" button to save your work. You can always come back to add questions or to make some changes."
+      "gap_filling_1": "The default type of exercise is a gap filling question. There are two kinds of gap filling exercises. The first one (1) is called \"Default\", and gives given answers when you click on the gap. The second type is the \"Open answer\" (8), there is no anwser given, the learner has to write it directly. We will see how to write the questions and how to give the answer, some wrong ones and the right one(s).",
+      "gap_filling_2": "In the fields (2), you can write the title of the exercises and in the field (3) a short description to explain the instructions fo the following questions or give some context.",
+      "gap_filling_3": "The questions themselves are written in the box (4). There are always two ways to do it. You can write directly the questions and the answers in the box or you can use the tools in the upper left corner (6). The result will be the same, you will see the same text in the field (4).",
+      "gap_filling_4": "If you write the questions directly in the box, every questions have to be separated by a blank line and the answer has to be given between brackets [ ] and separated by a vertical separator |. And you have to put a + before the right answer(s). If there is more than one right answer, any of them will be considered as correct for the result. You can also choose to shuffle the proposed answers by clicking on the \"Shuffle options\" (7).",
+      "gap_filling_5": "If you use the tools to create the questions (6), the one on the left will pass a blank line to start a new question. You'll have to write the question or text and where you want to put a gap, you click on the tool on the right. A pop up window will open, as showed in the image. You can type the answers one by one. They'll be validated when you type \"enter\". By default, the first one will automatically be considered as the right one, and a green \"v\" will show in front of it, but you can select the correct answer(s) by clicking on the small button in front of each answer (8). You can also choose to add a \"leave blank\" option by clicking on the dashed square on the right (9).",
+      "gap_filling_open_answer_1": "The other type of gap filling exercise is the \"Open answer\" (10). As you can see below, for this kind of exercise, there is no proposed answer. You can give expected answers, one or more, the same ways as we just explained, with the tool or directly in the box (11). You can proposed wrong answers, they will not appear but during the correction, it will show a red X if someone filled with one of these answers, nothing if they wrote another answer et a green V if they have one of the right answers.",
+      "gap_filling_open_answer_2": "You can add other questions, the same ways as before, by passing a blank line or by clicking on the button on the left (6). When you are happy with your questions, don't forget to click on the \"Save\" button to save your work. You can always come back to add questions or to make some changes.",
+      "name": "New exercise"
     },
     "gap_filling": "Gap Filling",
     "multiple_choice": "Multiple choice",
     "sort_and_match": "Sort and Match",
     "video": "about a video",
     "construction": "Under construction"
+  },
+  "terms": {
+    "intro": "A warm welcome to TestU Online, a free, multilingual, online e-learning platform enabling easy and fast creation of various quizzes, tests, and exercises primarily intended for learning languages! Accessing and using the website testu.eu (“the website”, “the service”, “the provider”) implies that you (the “user”) have read, understood and accepted the following terms and conditions, regardless of whether you are registered as a member on testu.eu. Therefore, please read the following text thoroughly.",
+    "last_update": "Last updated: {date}",
+    "section1": {
+      "text1": "You can use some of our services without registration on the website. In order to use all the features of the website, you need to set up a personal account. Registration is free.",
+      "text2": "Only people over the age of 13 are eligible to register. The use of this website by minors is permitted only with the consent of the guardian.",
+      "text3": "You guarantee that all data provided by you at registration are true and correct and that you will always keep it up to date.",
+      "text4": "When registering, the use of data (e.g., username, name, exercise texts, pictures, audio and video files, etc.) that infringe third party rights, including trademarks or registered rights, is forbidden. Unlawful data or data contrary to these terms of use may also not be used.",
+      "text5": "During registration you will choose a password; you are responsible for keeping this password secret.",
+      "text6": "You agree that certain data from your user profile may be publicly available (such as your username, linguistic progress, online status, selected language, registration date and last date of activity and other voluntary disclosures, including your profile picture). Your e-mail address and password will not be accessible by other users.",
+      "text7": "Registration on the website is completed via an activation link. Upon registration on the website, you will receive an automatic confirmation email from the Provider, containing this link.",
+      "text8": "If an account is registered but never activated, the provider reserves the right to delete the incomplete registered account.",
+      "text9": "The provider of this site does not guarantee the true identity of a user. Each user is responsible for checking the identity of other users. The provider reserves the right to request proof of the information relevant as evidence of identity and age. If supporting documents are not provided within the period specified by the provider of this website, the provider will delete the user account in question.",
+      "title": "Registration"
+    },
+    "section2": {
+      "text1": "The provider of this site is aware that the protection of personal data is very important. That is why the site adheres strictly to the rules of data protection law. Details concerning the processing of user data are governed by the Privacy Policy.",
+      "title": "Data protection"
+    },
+    "section3": {
+      "text1": "The website may only be used for purposes permitted by law.",
+      "text2": "As a user you are required to:",
+      "text2_1": "only to make truthful and non-misleading statements in your profile and your communications with other users;",
+      "text2_2": "to keep registration data secret and not disclose it to third parties;",
+      "text2_3": "immediately inform the supplier of the website if there is reason to suspect that a third party has gained knowledge of access data for and/or has abused a user account.",
+      "text3": "You are solely responsible for the content posted by you and for communication with others, both public and private. You are also obliged to protect the rights and interests of other users or third parties, in particular their personal rights.",
+      "text4": "It is strictly prohibited to upload the following content (as images, links, photos, exercises, audio and video files or other content) on the Website and to post, send, link, transmit, promote, offer or otherwise provide it:",
+      "text4_1": "legally protected content, for example content that is protected by copyright, related/neighbouring rights, naming rights, branding, trademarks, patents (including utility and industrial design), proprietary or personal rights if you are not entitled to these rights;",
+      "text4_2": "content which is pornographic, violent, obscene, sexist, defamatory, libelous, racist, abusive of members of minority religions or hurtful representations as well as content that violates child protection laws;",
+      "text4_3": "propaganda and symbols of banned organizations;",
+      "text4_4": "harassment or abusive, slanderous, threatening and discriminatory statements;",
+      "text4_5": "private data from other users (e.g. address, phone number, bank account) or quotations from private communication with other users, providers/administrators of the website or third parties;",
+      "text4_6": "links to websites with illegal content;",
+      "text4_7": "any unsolicited or unauthorized advertising, promotional materials, \"junk mail\", spam, chain letters, pyramid or pyramid schemes or any other form of solicitation;",
+      "text4_8": "any material which contains viruses, worms, Trojan horses or other programs that may jeopardize or impair the functionality or existence of this or other websites.",
+      "text5": "The following acts are prohibited to the user:",
+      "text5_1": "using, or trying to use, the account of another user or the system without the authorization of the provider;",
+      "text5_2": "impersonating another person or providing false information about yourself;",
+      "text5_3": "the blocking of website functions, overwriting, modifying or copying of the content, of the program code and/or data of the website, as well as the automated retrieval of content, unless this is necessary for the proper use of the services of the website.",
+      "text6": "The owner of this site reserves the right to delete unauthorized posts (including tests, exercises, texts and images) that do not meet these terms and conditions, or the user’s account, at any time and without notice.",
+      "title": "Responsibilities of the user"
+    },
+    "section4": {
+      "text1": "The provider is also entitled to change or discontinue the services offered at any time, at its discretion without prior notice.",
+      "title": "Changes to service"
+    },
+    "section5": {
+      "text1": "The provider of the website gives you, as a user, a personal, worldwide, non-transferable and non-exclusive right to use these services in accordance with these terms and conditions.",
+      "text2": "As a user, you grant the website a worldwide, non-exclusive, royalty-free, transferable, temporally, content and spatially unrestricted right to use the content posted by you in all media used by the provider. The owner of this site is specifically authorized to use this content in any media, as well as to publish, copy, reproduce, modify, edit, distribute, and adapt it for this purpose.",
+      "text3": "As a user, you guarantee that your content can be used freely by third-parties in the context of 5.2. You certify that you own all the rights and authority necessary for the rights granted herein relating to content submitted by you.",
+      "text4": "The rights granted to you by the website, and the above stated warranties and indemnities do not end with the termination of the contractual relationship.",
+      "title": "Granting of rights"
+    },
+    "section6": {
+      "text1": "All text, images and other content published on the website including the content provided by users are – unless indicated otherwise – published under the {license}.",
+      "text1_license": "CC0 1.0 Universal Creative Commons license",
+      "title": "Property rights"
+    },
+    "section7": {
+      "text1": "The term of the membership of the website begins with the registration and agreement to these terms of use and privacy rules, and continues indefinitely.",
+      "text2": "You can cancel the service at any time without notice for any reason at {link}. Upon termination, you will no longer have access to your profile and all information it contains will be deleted by the website provider. You agree that some content (such as comments, posts or messages) that are not directly connected to your profile, may remain even after the deletion of your profile. You are not entitled to restitution or other transfer of the content posted by you.",
+      "text3": "The right to extraordinary termination for good cause remains unaffected. An important reason would be if one of the parties has breached obligations under these terms of use. In the case of an extraordinary termination by the provider you are excluded from further use of the website permanently. This also means that re-registration is not permitted.",
+      "text4": "The owner of this site reserves the right to delete the user's account if a user has not used the service for more than 6 months.",
+      "title": "Contract period and termination"
+    },
+    "section8": {
+      "text1": "The provider tries to keep the website running, error free and secure, but it does not guarantee that the website is safe, secure or error free at any time, nor that it always works without disruptions, delays or deficiencies.",
+      "text2": "The provider does not accept liability for slight, negligent breaches of duty, unless this breach leads to damage to life, body or health, and as long as no regulations under the Product Liability Act have been breached. The liability for breaches of obligations, which prevent the proper execution of the contractual relationship and on whose observance the user regularly relies, remain unaffected by this. The same applies to violations by our agents.",
+      "text3": "According to the law, the supplier of the website as a service provider is not obliged to monitor the transmitted or stored information or to investigate circumstances that indicate illegal activity. It therefore accepts no responsibility for the information provided by users of the website content, data and/or information, statements made or the content of linked external websites.",
+      "text4": "Despite careful checking of content, the providers of the site are not liable for the contents of external links. Their creators are solely responsible for the content of linked pages.",
+      "text5": "The provider is not responsible for the content and accuracy of advertising. The author is solely responsible for the content of the advertisements. The same applies to the content of the advertised website. Allowing an advertisement to appear on the website does not mean that the provider is agreeing to the legality of its content. The responsibility for this rests solely with the advertisers.",
+      "text6": "As a user, you free the website provider from all claims, including claims for damages, which other users or other third parties bring against the provider for breach of their rights by you or due to the content created by you. A user who posts such content on the website assumes all costs incurred by the third party provider of the site due to a violation of rights, including costs for legal defense costs. All other rights, including damage claims by the party remain unaffected.",
+      "title": "Liability"
+    },
+    "section9": {
+      "text1": "These terms and conditions and any disputes related to them are subject to the laws of the Slovak Republic. The location of performance and exclusive place of jurisdiction, as far as legally possible, is Slovakia.",
+      "text2": "The English version of the agreement is legally binding.",
+      "text3": "The owner of this site reserves the right to modify these terms at any time without giving reasons. The latest version is always available at {link}. Users will not be informed when there is a change in the terms of use; it is the responsibility of the user to retrieve and view the current terms of use. By continuing to use the website after a change in the conditions of use, the user agrees to the changes.",
+      "text4": "The provider is entitled to transfer its rights and obligations under these terms, entirely or in part, to a third party, within a four week period following notice via e-mail.",
+      "text5": "Contact information for the provider or the administrators of the website can be found on the page {link}.",
+      "title": "Closing conditions"
+    }
   }
 }
-

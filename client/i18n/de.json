@@ -206,5 +206,79 @@
   "teach": {
     "exams": "Tests",
     "exercises": "Übungen"
+  },
+  "terms": {
+    "last_update": "Zuletzt aktualisiert: {date}",
+    "section1": {
+      "text1": "Einige unserer Dienste kannst du ohne eine Anmeldung auf der Webseite nutzen. Um alle Funktionen der Webseite nutzen zu können, musst du ein persönliches Benutzerkonto einrichten. Die Registrierung ist kostenlos.",
+      "text2": "Zur Registrierung sind Personen ab 13 Jahren zugelassen. Die Nutzung der Webseite durch Minderjährige ist ausschließlich mit Zustimmung der Erziehungsberechtigten zulässig.",
+      "text3": "Du sicherst zu, dass alle von dir bei der Registrierung angegebenen Daten wahr und korrekt sind sowie, dass du sie immer auf dem neuesten Stand halten wirst.",
+      "text5": "Bei der Registrierung wählst du ein Passwort und bist verpflichtet, dieses Passwort geheim zu halten.",
+      "text6": "Du bist mit der öffentlichen Wiedergabe deiner Profildaten (z.B. deines Benutzernamens, des sprachlichen Fortschritts, des Online-Status, der gewählten Sprachversion, des Registrierungsdatums und des Datums der letzten Anmeldung sowie weiterer freiwilliger Angaben, einschließlich des Profilbildes) einverstanden. Die E-Mail-Adresse und das Passwort werden nicht veröffentlicht.",
+      "text7": "Die Registrierung auf der Webseite wird über einen Aktivierungslink abgeschlossen. Dafür bekommst du nach dem Eingang der Registrierung vom Anbieter der Webseite eine automatische Bestätigung per E-Mail, die diesen Aktivierungslink enthält.",
+      "text8": "Wenn die Registrierung nicht durch die Aktivierung des Kontos abgeschlossen wird, behält sich der Anbieter vor, das unvollständig registrierte Benutzerkonto zu löschen.",
+      "text9": "Der Anbieter der Webseite leistet keine Gewähr für die tatsächliche Identität eines Nutzers. Jeder Nutzer hat sich daher selbst von der Identität eines anderen Nutzers zu überzeugen. Der Anbieter behält sich jedoch vor, zur Überprüfung der Angaben entsprechende Nachweise hinsichtlich der Identität und des Alters anzufordern. Sollten entsprechende Nachweise nicht innerhalb eines von dem Anbieter der Webseite hierfür bestimmten Zeitraums erbracht werden, wird der Anbieter das betreffende Benutzerkonto löschen.",
+      "title": "Registrierung"
+    },
+    "section2": {
+      "text1": "Der Anbieter der Webseite ist sich bewusst, dass der Schutz der persönlichen Daten sehr wichtig ist. Deswegen hält sich die Webseite strikt an die Regeln der Datenschutzgesetze. Einzelheiten zur Verarbeitung der Daten der Nutzer sind in den Datenschutzbestimmungen geregelt.",
+      "title": "Datenschutz"
+    },
+    "section3": {
+      "text1": "Die Webseite darf ausschließlich zu rechtlich erlaubten Zwecken genutzt werden.",
+      "text2": "Als Nutzer bist du verpflichtet:",
+      "text2_1": "ausschließlich wahrheitsgemäße und nicht irreführende Angaben in deinem Profil und deiner Kommunikation mit anderen Nutzern zu machen;",
+      "text2_2": "die Zugangsdaten geheim zu halten und sie nicht an Dritte weiterzugeben;",
+      "text2_3": "die Anbieter der Webseite umgehend darüber zu informieren, wenn Anlass zu der Vermutung besteht, dass ein Dritter Kenntnis von den Zugangsdaten erlangt hat und/oder ein Benutzerkonto missbraucht.",
+      "text3": "Du bist allein für die von dir eingestellten Inhalte sowie für die (sowohl öffentliche als auch nicht öffentliche) Kommunikation mit anderen verantwortlich. Du bist auch verpflichtet, die Rechte und Interessen der anderen Nutzer oder sonstiger Dritter, insbesondere deren Persönlichkeitsrechte, zu wahren.",
+      "text4_1": "gesetzlich geschützte Inhalte, die z. B. durch das Urheber-, Leistungsschutz-, Namens-, Marken-, Patent-, Geschmacksmuster-, Gebrauchsmuster-, Eigentums- oder Persönlichkeitsrecht geschützt sind, wenn du nicht dazu berechtigt bist;",
+      "text4_2": "pornografische, gewaltverherrlichende, obszöne, sexistische, diffamierende, verleumderische, rassistische, Angehörige von Minderheiten oder Religionen verletzende Darstellungen sowie Inhalte, die gegen die Jugendschutzgesetze verstoßen;",
+      "text4_3": "Propagandamittel und Kennzeichen verfassungswidriger Organisationen;",
+      "text4_4": "belästigende, beleidigende, verleumderische, bedrohende Inhalte und diskriminierende Äußerungen;",
+      "text4_5": "private Daten von anderen Nutzern (z.B. Anschrift, Telefonnummer, Bankverbindung) bzw. Zitate aus privater Kommunikation mit anderen Nutzern, den Anbietern/Administratoren der Webseite oder Dritten;",
+      "text4_6": "Links auf Internetseiten mit rechtswidrigen Inhalten;",
+      "text4_7": "jegliche unaufgeforderte oder unberechtigte Werbung, Werbematerialien, „Junk Mail“, Spam, Kettenbriefe, Schneeball- oder Pyramidensysteme oder jegliche andere Art von Kundenwerbung;",
+      "text4_8": "jegliches Material, welches Viren, Würmer, Trojaner oder sonstige Programme enthält, die die Funktionsfähigkeit oder den Bestand dieser oder anderer Webseiten gefährden oder beeinträchtigen können;",
+      "text5": "Folgende Handlungen sind dem Nutzer untersagt:",
+      "text5_1": "das Konto eines anderen Nutzers oder das System ohne Genehmigung des Anbieters zu verwenden oder versuchen zu verwenden;",
+      "text5_2": "sich als eine andere Person auszugeben sowie falsche Informationen über sich anzugeben;",
+      "text5_3": "das Blockieren der Webseitenfunktionen, das Überschreiben, Modifizieren oder Kopieren des Inhalts, des Programmcodes und/oder der Daten der Webseite sowie das automatisierte Abrufen von Inhalten, soweit dies nicht für die ordnungsgemäße Nutzung der Dienste der Webseite erforderlich ist;",
+      "title": "Pflichten des Nutzers"
+    },
+    "section4": {
+      "text1": "Der Anbieter ist ferner berechtigt, die angebotenen Dienste und Leistungen jederzeit nach eigenem Ermessen ohne Ankündigung zu ändern oder einzustellen.",
+      "title": "Leistungsänderung"
+    },
+    "section5": {
+      "text1": "Der Anbieter der Webseite räumt dir als Nutzer ein persönliches, weltweit gültiges, nicht übertragbares und nicht ausschließliches Recht zur Nutzung der Dienste gemäß den vorliegenden Nutzungsbedingungen ein.",
+      "text2": "Als Nutzer räumst du der Webseite das weltweite, nicht ausschließliche, unentgeltliche, übertragbare, zeitlich, inhaltlich und räumlich unbeschränkte Recht ein, die von dir eingestellten Inhalte in allen Medien zu nutzen, die der Anbieter verwendet. Der Anbieter der Webseite ist insbesondere dazu berechtigt, diese Inhalte in sämtlichen Medien zu verwenden, zu veröffentlichen, zu vervielfältigen, zu reproduzieren und zu verbreiten sowie sie dafür anzupassen, abzuändern und zu bearbeiten.",
+      "text3": "Als Nutzer garantierst du, dass die von dir eingestellten Inhalte frei von Rechten Dritter im Rahmen von 5.2 genutzt werden können. Du versicherst, dass du über alle Rechte, Vollmachten und Befugnisse verfügst, die erforderlich sind, um die hiermit eingeräumten Rechte an den von dir übermittelten Inhalten zu gewähren.",
+      "text4": "Die der Webseite von dir eingeräumten Rechte und die vorstehend erklärten Gewährleistungs- und Freistellungsansprüche enden nicht mit Beendigung des Nutzungsverhältnisses.",
+      "title": "Rechteeinräumung"
+    },
+    "section6": {
+      "title": "Eigentumsrechte"
+    },
+    "section7": {
+      "text1": "Die Laufzeit der Mitgliedschaft bei der Webseite beginnt mit der Registrierung und dem Einverständnis mit diesen Nutzungsbedingungen und der Datenschutzbestimmung und bleibt auf eine unbestimmte Zeit bestehen.",
+      "text2": "Du kannst den Dienst jederzeit ohne Angabe von Gründen unter {link} kündigen. Nach der Kündigung wirst du keinen Zugang mehr zu deinem Profil haben und alle darin enthaltenen Informationen werden vom Anbieter der Webseite gelöscht. Du stimmst zu, dass einige Inhalte (wie zum Beispiel Kommentare, Posts oder Nachrichten), die nicht direkt mit deinem Profil verbunden sind, auch nach der Löschung deines Profils erhalten bleiben können. Du hast keinen Anspruch auf Herausgabe oder sonstige Überlassung der von dir eingestellten Inhalte.",
+      "text3": "Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt hiervon unberührt. Ein wichtiger Grund liegt insbesondere dann vor, wenn eine der Parteien gegen Verpflichtungen aus diesen Nutzungsbedingungen verstoßen hat. Im Falle einer außerordentlichen Kündigung durch den Anbieter bist du grundsätzlich von einer weiteren Nutzung der Webseite dauerhaft ausgeschlossen. Damit ist auch eine erneute Registrierung unzulässig.",
+      "text4": "Der Anbieter der Webseite behält sich das Recht vor, das Konto des Nutzers löschen zu dürfen, wenn ein Nutzer den Dienst länger als 6 Monate nicht in Anspruch genommen hat.",
+      "title": "Laufzeit und Beendigung"
+    },
+    "section8": {
+      "text1": "Der Anbieter ist bemüht, die Webseite in Betrieb, fehlerfrei und sicher zu halten, jedoch garantiert er nicht, dass die Webseite zu jedem Zeitpunkt ungefährlich, sicher und fehlerfrei ist, oder dass sie immer ohne Unterbrechungen, Verzögerungen oder Mängel funktioniert.",
+      "text2": "Der Anbieter schließt die Haftung für leicht fahrlässige Pflichtverletzung aus, sofern aus dieser Verletzung keine Schäden des Lebens, des Körpers oder der Gesundheit aufgetreten sind sowie keine Garantien oder Ansprüche nach dem Produkthaftungsgesetz berührt sind. Unberührt davon bleibt ferner die Haftung für die Verletzung von Pflichten, deren Erfüllung die ordnungsgemäße Durchführung des Nutzungsverhältnisses überhaupt erst ermöglicht und auf deren Einhaltung der Nutzer regelmäßig vertrauen darf. Gleiches gilt für Pflichtverletzungen unserer Erfüllungsgehilfen.",
+      "text3": "Nach den gesetzlichen Bestimmungen ist der Anbieter der Webseite als Dienstanbieter nicht dazu verpflichtet, die übermittelten oder gespeicherten Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Er übernimmt daher keine Verantwortung für die von den Nutzern der Webseite bereitgestellten Inhalte, Daten und/oder Informationen, getätigten Aussagen sowie für Inhalte auf verlinkten externen Webseiten.",
+      "text4": "Trotz sorgfältiger inhaltlicher Kontrolle übernimmt der Anbieter der Webseite keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.",
+      "text5": "Der Anbieter ist nicht für den Inhalt und die Richtigkeit der Werbung verantwortlich. Für den Inhalt der Werbeanzeigen ist der jeweilige Autor einzig und allein verantwortlich. Gleiches gilt für den Inhalt der beworbenen Webseite. Bei einer Darstellung einer Werbeanzeige auf der Webseite ist der Anbieter nicht gleichzeitig mit dem rechtswidrigen Inhalt einverstanden. Daher liegt die Haftung ausschließlich bei dem Werbekunden.",
+      "text6": "Als Nutzer stellst du den Anbieter der Webseite von sämtlichen Ansprüchen, einschließlich Schadensersatzansprüche, frei, die andere Nutzer oder sonstige Dritte gegen den Anbieter wegen Verletzung ihrer Rechte durch dich beziehungsweise auf Grund der von dir erstellten Inhalte geltend machen. Der Nutzer, der die betreffenden Inhalte auf der Webseite veröffentlicht hat, übernimmt alle Kosten, die dem Anbieter der Webseite aufgrund einer Verletzung von Rechten Dritter entstehen, einschließlich der für die Rechtsverteidigung entstehenden angemessenen Kosten. Alle weitergehenden Rechte sowie Schadensersatzansprüche des Anbieters bleiben unberührt.",
+      "title": "Haftung"
+    },
+    "section9": {
+      "text3": "Der Anbieter der Webseite behält sich vor, diese Nutzungsbedingungen jederzeit und ohne Nennung von Gründen zu ändern. Die aktuellste Version wird immer unter {link} bereitgestellt. Ein ausdrücklicher Hinweis auf die Änderung der Nutzungsbedingungen erfolgt nicht, sondern es liegt im Verantwortungsbereich des Nutzers, die jeweils aktuellen Nutzungsbedingungen abzurufen und einzusehen. Mit der Weiternutzung der Webseite nach einer Änderung der Nutzungsbedingungen erklärt der Nutzer sein Einverständnis zu den Änderungen.",
+      "text4": "Der Anbieter ist berechtigt, nach Ankündigung per E-Mail innerhalb von 4 Wochen seine Rechte und Pflichten aus diesem Nutzungsverhältnis ganz oder teilweise auf einen Dritten zu übertragen.",
+      "title": "Schlussbestimmungen"
+    }
   }
 }
