@@ -146,12 +146,10 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(hours=1),
 }
-REST_USE_JWT = True
-
-JWT_AUTH_COOKIE = "jwt-access"
-JWT_AUTH_REFRESH_COOKIE = "jwt-refresh"
-
-REST_AUTH_SERIALIZERS = {
+REST_AUTH = {
+    "USE_JWT": True,
+    "JWT_AUTH_COOKIE": "jwt-access",
+    "JWT_AUTH_REFRESH_COOKIE": "jwt-refresh",
     "USER_DETAILS_SERIALIZER": "apps.core.serializers.UserSerializer",
 }
 
