@@ -73,9 +73,11 @@ export default {
 }
 </script>
 <style scoped>
-  .sticky {
-    position: sticky;
-    top: 0;
-    z-index: 5;
-  }
+.sticky {
+  position: sticky;
+  top: 56px;
+  z-index: 1;
+  background: white;
+  box-shadow: 0 12px 12px white;
+}
 </style>
