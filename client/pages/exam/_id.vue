@@ -116,7 +116,7 @@
           :ignore_case="unit.ignore_case"
           :silent="all_silent"
           :readonly="all_readonly"
-          ref="unit"
+          :ref="`unit-${unit._key}`"
         />
       </v-sheet>
 
@@ -200,12 +200,10 @@ export default {
       submission.exercise_lid = this.exam.exercise_lid;
       submission.exam_lid = this.exam.lid;
       submission.exercise = { ...this.exercise };
-      submission.exercise.data.sheet = this.exercise.data.sheet.map(
-        (unit, i) => ({
-          ...unit,
-          solved: this.$refs.unit[i].get_solved(),
-        })
-      );
+      submission.exercise.data.sheet = this.exercise.data.sheet.map((unit) => ({
+        ...unit,
+        solved: this.$refs[`unit-${unit._key}`][0].get_solved(),
+      }));
 
       return submission;
     },
