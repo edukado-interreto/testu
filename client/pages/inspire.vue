@@ -1,7 +1,9 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <blockquote class="blockquote">{{ $t('main.only_logged_in') }}</blockquote>
+      <blockquote class="blockquote">
+        {{ $t("main.only_logged_in") }}
+      </blockquote>
       {{ user.email }}
     </v-col>
   </v-row>
@@ -9,14 +11,14 @@
 <script>
 export default {
   data: () => ({
-    user: {}
+    user: {},
   }),
-  mounted: async function() {
+  mounted: async function () {
     this.user = await this.$auth.user(true)
   },
-  middleware: 'redirects',
+  middleware: "redirects",
   meta: {
-    requiresAuth: true
-  }
+    requiresAuth: true,
+  },
 }
 </script>

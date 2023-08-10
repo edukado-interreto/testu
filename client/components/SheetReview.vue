@@ -4,20 +4,12 @@
       v-for="(unit, i) in submission.exercise?.data?.sheet"
       :key="`submitted_${unit._key}`"
     >
-      <div class="headline my-4"> 
-        {{ i+1 }}. {{ unit.title }}
-        <span v-if="unit.title === ''" class="font-italic">
-          Untitled unit
-        </span>
+      <div class="headline my-4">
+        {{ i + 1 }}. {{ unit.title }}
+        <span v-if="unit.title === ''" class="font-italic">Untitled unit</span>
       </div>
-      <div
-        v-if="unit.description"
-        class="body-2 mb-4 pre-line"
-      >
-        <RichContent
-          :text="unit.description"
-        >
-        </RichContent>
+      <div v-if="unit.description" class="body-2 mb-4 pre-line">
+        <RichContent :text="unit.description"></RichContent>
       </div>
       <UnitMultipleChoice
         v-if="unit.type == 'multiple_choice'"
@@ -55,6 +47,6 @@
 // load a solved, submitted exercise and
 // display it for review
 export default {
-  props: [ 'submission', 'silent' ]
+  props: ["submission", "silent"],
 }
 </script>

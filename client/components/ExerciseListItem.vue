@@ -6,7 +6,7 @@
         <template v-slot:activator="{ on, attrs }">
           <v-icon v-bind="attrs" v-on="on" class="ml-2">mdi-link</v-icon>
         </template>
-        <span>{{ $t('exercise.unlisted') }}</span>
+        <span>{{ $t("exercise.unlisted") }}</span>
       </v-tooltip>
     </v-card-title>
     <v-card-subtitle v-if="item.description">
@@ -19,11 +19,11 @@
   </v-card>
 </template>
 <script>
-import langs_available from '~/mixins/langs_available.js';
-import cefr from '~/mixins/cefr.js';
+import langs_available from "~/mixins/langs_available.js"
+import cefr from "~/mixins/cefr.js"
 export default {
-  name: 'ExerciseListItem',
+  name: "ExerciseListItem",
   mixins: [langs_available, cefr],
-  props: ['item'],
-};
+  props: ["item"],
+}
 </script>

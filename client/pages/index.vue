@@ -82,9 +82,9 @@
           </template>
           <template v-slot:selection="{ item, index }">
             <span>{{ item.text }}</span>
-            <span v-if="index < search.lang_learn.langs.length - 1"
-              >,&nbsp;</span
-            >
+            <span v-if="index < search.lang_learn.langs.length - 1">
+              ,&nbsp;
+            </span>
             <span v-else class="grey--text">
               &nbsp;{{ current_cefr_label }}
             </span>
@@ -106,8 +106,7 @@
           v-model="search.created_by"
           :items="authors_used"
           @change="update_filtered_exercises"
-        >
-        </v-autocomplete>
+        ></v-autocomplete>
       </v-col>
       <v-spacer></v-spacer>
       <v-col>
@@ -121,8 +120,7 @@
             { value: '-created', text: $t('sort.recent') },
           ]"
           @change="update_filtered_exercises"
-        >
-        </v-select>
+        ></v-select>
       </v-col>
     </v-row>
 
@@ -132,9 +130,10 @@
       text
       :to="localePath('/editor')"
       nuxt
-      ><v-icon class="mr-1">mdi-plus</v-icon>
-      {{ $t('home.create_exercise') }}</v-btn
     >
+      <v-icon class="mr-1">mdi-plus</v-icon>
+      {{ $t("home.create_exercise") }}
+    </v-btn>
 
     <v-data-iterator
       class="mt-5"
@@ -151,24 +150,23 @@
           v-for="item in props.items"
           :item="item"
           :key="item.id"
-        >
-        </ExerciseListItem>
+        ></ExerciseListItem>
       </template>
     </v-data-iterator>
   </v-container>
 </template>
 <script>
-import langs_available from '~/mixins/langs_available.js';
-import cefr from '~/mixins/cefr.js';
+import langs_available from "~/mixins/langs_available.js"
+import cefr from "~/mixins/cefr.js"
 export default {
-  name: 'Index',
+  name: "Index",
   mixins: [langs_available, cefr],
   data: () => ({
     authors_used: [], // from api [ { name: "art", pk: 9, count: 5 }, … ]
     tags_used: [], // from api [ { name: "art", pk: 9, count: 5 }, … ]
     source_langs_used: [], // from api [ { code: "en", count: 11 }, … ]
     learn_langs_used: [], // from api [ { code: "en", count: 11 }, … ]
-    iterator_key: '',
+    iterator_key: "",
     page_length: 15,
     loading: false,
     exercises: {
@@ -179,29 +177,29 @@ export default {
     },
     search: {
       offset: 0,
-      text: '',
+      text: "",
       tags: [],
-      created_by: '',
+      created_by: "",
       src_langs: [],
       lang_learn: {
         langs: [],
         levels: [1, 6],
       },
-      sort: '-likes,-created',
+      sort: "-likes,-created",
     },
   }),
   computed: {
     source_langs_localized() {
       // [ { text: "English", value: "en" }, … ]
       // to be used in v-autocomplete items
-      const codes = this.source_langs_used.map((e) => e.code);
-      return this.langs_available.filter((e) => codes.includes(e.value));
+      const codes = this.source_langs_used.map((e) => e.code)
+      return this.langs_available.filter((e) => codes.includes(e.value))
     },
     learn_langs_localized() {
       // [ { text: "English", value: "en" }, … ]
       // to be used in v-autocomplete items
-      const codes = this.learn_langs_used.map((e) => e.code);
-      return this.langs_available.filter((e) => codes.includes(e.value));
+      const codes = this.learn_langs_used.map((e) => e.code)
+      return this.langs_available.filter((e) => codes.includes(e.value))
     },
     tags_used_localized() {
       // [ { text: "Scienco", value: "science", count: 1 }, … ]
@@ -210,14 +208,14 @@ export default {
         value: t.name,
         text: this.$t(`tags.${t.name}`),
         count: t.count,
-      }));
+      }))
     },
     current_cefr_label() {
-      const [min, max] = this.search.lang_learn.levels;
+      const [min, max] = this.search.lang_learn.levels
       return this.cefr_info({
         lang_learn_cefr_level_min: min,
         lang_learn_cefr_level_max: max,
-      });
+      })
     },
   },
   methods: {
@@ -225,9 +223,9 @@ export default {
       // TODO: debounce?
       // Note: the parameter 'preserve_offset' may be an event
       // if the function is called from a component e.g. @click="update_filtered_exercises"
-      if (preserve_offset !== 'preserve_offset') {
-        this.$set(this.search, 'offset', 0);
-        console.log('reset to page 0');
+      if (preserve_offset !== "preserve_offset") {
+        this.$set(this.search, "offset", 0)
+        console.log("reset to page 0")
       }
       const params = {
         name: this.search.text,
@@ -237,23 +235,23 @@ export default {
         created_by: this.search.created_by,
         tags: this.search.tags,
         ordering: this.search.sort,
-      };
-      if (params.lang_learn_lang?.length) {
-        params.cefr_level_min = this.search.lang_learn.levels[0];
-        params.cefr_level_max = this.search.lang_learn.levels[1];
       }
-      await this.get_exercises_from_api(params);
+      if (params.lang_learn_lang?.length) {
+        params.cefr_level_min = this.search.lang_learn.levels[0]
+        params.cefr_level_max = this.search.lang_learn.levels[1]
+      }
+      await this.get_exercises_from_api(params)
     },
     async get_exercises_from_api(params_obj) {
-      const query = new URLSearchParams();
-      query.set('limit', this.page_length);
-      for (const k in params_obj) query.set(k, params_obj[k]);
-      const url = `/v1/exercises/?${query.toString()}`;
-      console.log(`fetching ${url}`);
+      const query = new URLSearchParams()
+      query.set("limit", this.page_length)
+      for (const k in params_obj) query.set(k, params_obj[k])
+      const url = `/v1/exercises/?${query.toString()}`
+      console.log(`fetching ${url}`)
 
       // --
-      query.delete('offset');
-      this.iterator_key = query.toString();
+      query.delete("offset")
+      this.iterator_key = query.toString()
       // ^ these two lines are a workaround.
       // The problem they solve is this:
       // the v-data-iterator does not roll back to page 1
@@ -266,10 +264,10 @@ export default {
       // page number, i.e. `offset`.
       // --
 
-      this.loading = true;
-      const resp = await this.$auth.axios.get(url);
-      this.loading = false;
-      this.exercises = resp.data;
+      this.loading = true
+      const resp = await this.$auth.axios.get(url)
+      this.loading = false
+      this.exercises = resp.data
       // {
       //   "count": 7,
       //   "next": "http://…/api/v1/exercises/?limit=2&offset=2",
@@ -278,28 +276,28 @@ export default {
       // }
     },
     on_page_update(page) {
-      const new_offset = (page - 1) * this.page_length;
-      if (new_offset == this.search.offset) return;
-      this.search.offset = new_offset;
-      this.update_filtered_exercises('preserve_offset');
+      const new_offset = (page - 1) * this.page_length
+      if (new_offset == this.search.offset) return
+      this.search.offset = new_offset
+      this.update_filtered_exercises("preserve_offset")
     },
   },
   async fetch() {
-    await this.update_filtered_exercises();
+    await this.update_filtered_exercises()
     this.authors_used = (
-      await this.$auth.axios.get('/v1/authors/?limit=999')
-    ).data?.results;
+      await this.$auth.axios.get("/v1/authors/?limit=999")
+    ).data?.results
     this.tags_used = (
-      await this.$auth.axios.get('/v1/tags/used/?limit=999')
-    ).data?.results;
+      await this.$auth.axios.get("/v1/tags/used/?limit=999")
+    ).data?.results
     this.source_langs_used = (
-      await this.$auth.axios.get('/v1/languages/source/')
-    ).data?.filter((l) => !!l.code);
+      await this.$auth.axios.get("/v1/languages/source/")
+    ).data?.filter((l) => !!l.code)
     this.learn_langs_used = (
-      await this.$auth.axios.get('/v1/languages/learn/')
-    ).data?.filter((l) => !!l.code);
+      await this.$auth.axios.get("/v1/languages/learn/")
+    ).data?.filter((l) => !!l.code)
   },
   fetchOnServer: true,
-  fetchKey: 'exercises',
-};
+  fetchKey: "exercises",
+}
 </script>

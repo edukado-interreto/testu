@@ -15,20 +15,19 @@
 </template>
 <script>
 export default {
-  props: [ 'type', 'input_el', 'model' ],
+  props: ["type", "input_el", "model"],
   computed: {
     snippet_prefix() {
-      if (this.type === 'audio') return 'sound'
-      if (this.type === 'image') return 'img'
+      if (this.type === "audio") return "sound"
+      if (this.type === "image") return "img"
       throw `InsertMedia: type must be 'audio' or 'image', was: '${this.type}'`
-    }
+    },
   },
   methods: {
     click() {
       this.$refs.uploader.click()
     },
     async change(e) {
-
       const file = e.target.files[0]
       if (!file) return // canceled by user
 
@@ -41,11 +40,11 @@ export default {
       let resp = undefined
 
       try {
-        resp = await this.$auth.axios.post('/v1/upload/', formData)
-      } catch(e) {
-        console.error({...e})
+        resp = await this.$auth.axios.post("/v1/upload/", formData)
+      } catch (e) {
+        console.error({ ...e })
         await this.$refs.msgbox.alert(
-          e.response.data.error || this.$t("editor.unexpected_response")
+          e.response.data.error || this.$t("editor.unexpected_response"),
         )
       } finally {
         this.$emit("load_end")
@@ -53,9 +52,7 @@ export default {
 
       if (!resp) return
 
-      this.inject_snippet(
-        `{${this.snippet_prefix}:${resp.data.name}}`
-      )
+      this.inject_snippet(`{${this.snippet_prefix}:${resp.data.name}}`)
       this.$refs.form.reset()
     },
     inject_snippet(snippet) {
@@ -72,18 +69,19 @@ export default {
       const start = input.selectionStart
 
       //this.model[0][this.model[1]] = code.slice(
-      this.$set(this.model[0], this.model[1], code.slice(
-          0, input.selectionStart
-        ) + snippet + code.slice(
-          input.selectionEnd
-        )
+      this.$set(
+        this.model[0],
+        this.model[1],
+        code.slice(0, input.selectionStart) +
+          snippet +
+          code.slice(input.selectionEnd),
       )
       requestAnimationFrame(() => {
         input.selectionStart = start + snippet.length
-        input.selectionEnd   = start + snippet.length
+        input.selectionEnd = start + snippet.length
         input.focus()
       })
-    }
-  }
+    },
+  },
 }
 </script>

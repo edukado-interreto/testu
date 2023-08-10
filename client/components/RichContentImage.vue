@@ -14,15 +14,15 @@
   </div>
 </template>
 <script>
-  export default {
-    props: [ 'src', 'content' ],
-    data: () => ({
-      broken: false
-    }),
-    watch: {
-      src() {
-        this.broken = false
-      }
-    }
-  }
+export default {
+  props: ["src", "content"],
+  data: () => ({
+    broken: false,
+  }),
+  watch: {
+    src() {
+      this.broken = false
+    },
+  },
+}
 </script>

@@ -47,17 +47,17 @@
         <template v-slot:activator="{ on, attrs }">
           <v-btn text v-bind="attrs" v-on="on" class="text-none px-1 mr-1">
             <v-icon class="mr-1">mdi-translate</v-icon>
-            <span class="d-none d-sm-inline">{{
-              locale_names[$i18n.locale]
-            }}</span>
+            <span class="d-none d-sm-inline">
+              {{ locale_names[$i18n.locale] }}
+            </span>
             <v-icon class="ml-1">mdi-chevron-down</v-icon>
           </v-btn>
         </template>
 
         <v-list dense rounded>
-          <v-subheader class="text--primary font-weight-black text-uppercase">{{
-            $t('main.lang_menu_header')
-          }}</v-subheader>
+          <v-subheader class="text--primary font-weight-black text-uppercase">
+            {{ $t("main.lang_menu_header") }}
+          </v-subheader>
           <v-list-item
             v-for="lang in $i18n.localeCodes"
             nuxt
@@ -79,10 +79,10 @@
           nuxt
           :to="localePath('/login')"
         >
-          {{ $t('main.login') }}
+          {{ $t("main.login") }}
         </v-btn>
         <v-btn class="text-none amber" text nuxt :to="localePath('/signup')">
-          {{ $t('main.signup') }}
+          {{ $t("main.signup") }}
         </v-btn>
       </div>
 
@@ -116,7 +116,7 @@
               <v-icon>mdi-cog</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>{{ $t('main.settings') }}</v-list-item-title>
+              <v-list-item-title>{{ $t("main.settings") }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -125,7 +125,7 @@
               <v-icon>mdi-logout</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>{{ $t('main.logout') }}</v-list-item-title>
+              <v-list-item-title>{{ $t("main.logout") }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -144,7 +144,7 @@
             <v-icon>mdi-home</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ $t('main.home') }}</v-list-item-title>
+            <v-list-item-title>{{ $t("main.home") }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -153,7 +153,7 @@
             <v-icon>mdi-chart-bar</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ $t('main.my_learning') }}</v-list-item-title>
+            <v-list-item-title>{{ $t("main.my_learning") }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -162,7 +162,7 @@
             <v-icon>mdi-briefcase</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ $t('main.my_teaching') }}</v-list-item-title>
+            <v-list-item-title>{{ $t("main.my_teaching") }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -171,7 +171,7 @@
             <v-icon>mdi-information</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ $t('main.about') }}</v-list-item-title>
+            <v-list-item-title>{{ $t("main.about") }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -180,11 +180,11 @@
             <v-icon>mdi-help-circle</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ $t('main.guide') }}</v-list-item-title>
+            <v-list-item-title>{{ $t("main.guide") }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
-        <v-subheader class="d-md-none">{{ $t('main.social') }}</v-subheader>
+        <v-subheader class="d-md-none">{{ $t("main.social") }}</v-subheader>
         <v-list-item
           class="d-md-none"
           href="https://t.me/+8Z1dtayqGzk2Yzk0"
@@ -236,7 +236,7 @@
         <v-spacer />
         <img src="/partners/erasmus.png" class="mx-3" height="26" alt="" />
         <p class="grey--text text--darken-1 ma-3" style="font-size: 0.9em">
-          {{ $t('about.partners.european_commission') }}
+          {{ $t("about.partners.european_commission") }}
         </p>
         <v-spacer />
       </div>
@@ -257,14 +257,14 @@
           :to="localePath('/terms')"
           class="grey--text caption text-decoration-none font-weight-bold"
         >
-          {{ $t('main.terms') }}
+          {{ $t("main.terms") }}
         </NuxtLink>
         <span class="caption mx-1">·</span>
         <NuxtLink
           :to="localePath('/privacy')"
           class="caption text-decoration-none font-weight-bold"
         >
-          {{ $t('main.privacy') }}
+          {{ $t("main.privacy") }}
         </NuxtLink>
       </div>
       <CookieConsent />
@@ -273,57 +273,57 @@
 </template>
 
 <script>
-import locale_names from '~/i18n/locale_names.json';
+import locale_names from "~/i18n/locale_names.json"
 
 export default {
-  name: 'default',
+  name: "default",
   data: () => ({
     nav_drawer: {
       show: true,
     },
-    title: 'testu.eu',
+    title: "testu.eu",
     locale_names,
   }),
   methods: {
     async logout() {
-      await this.$auth.logout();
-      this.$router.push('/');
+      await this.$auth.logout()
+      this.$router.push("/")
     },
   },
   created: async function () {
     //await this.$store.dispatch("authenticator/CHECK_TOKENS");
-    await this.$auth.checkTokens();
+    await this.$auth.checkTokens()
     try {
-      const ret = await this.$auth.user(true);
-      console.log('this.$auth.user:', ret);
-      console.log('computed authUser', this.authUser);
+      const ret = await this.$auth.user(true)
+      console.log("this.$auth.user:", ret)
+      console.log("computed authUser", this.authUser)
     } catch (e) {
       if (e.response.status) {
         // unauthorized: the user is not logged in
-        console.log('user not logged in');
+        console.log("user not logged in")
       } else {
-        console.error('this.$auth.user raised an exception');
-        console.error({ ...e });
-        throw e;
+        console.error("this.$auth.user raised an exception")
+        console.error({ ...e })
+        throw e
       }
     }
 
     // set the initial value for the vuetify language.
-    this.$vuetify.lang.current = this.$i18n.locale;
+    this.$vuetify.lang.current = this.$i18n.locale
   },
   computed: {
     logged_in() {
-      return this.authUser?.username !== undefined;
+      return this.authUser?.username !== undefined
     },
     authUser() {
-      return this.$store.getters['authenticator/authUser'];
+      return this.$store.getters["authenticator/authUser"]
     },
   },
-};
+}
 </script>
 <style scoped lang="scss">
-@import '~vuetify/src/styles/settings/_variables';
-@import '~vuetify/src/styles/settings/_colors';
+@import "~vuetify/src/styles/settings/_variables";
+@import "~vuetify/src/styles/settings/_colors";
 
 @media print {
   .v-main {
@@ -336,7 +336,7 @@ export default {
   margin-bottom: 4em;
 }
 .catchphrase {
-  font-family: 'Roboto Slab', Roboto, serif;
+  font-family: "Roboto Slab", Roboto, serif;
   font-size: 120%;
   font-weight: 700;
 }

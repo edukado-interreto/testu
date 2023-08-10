@@ -10,18 +10,17 @@
     :label="label"
     readonly
     hide-details
-  >
-  </v-text-field>
+  ></v-text-field>
 </template>
 <script>
 export default {
-  props: [ 'value', 'label' ],
+  props: ["value", "label"],
   methods: {
     copy_text() {
-      const input = this.$refs.field.$el.querySelector('input')
+      const input = this.$refs.field.$el.querySelector("input")
       input.select()
-      document.execCommand('copy')
-    }
-  }
+      document.execCommand("copy")
+    },
+  },
 }
 </script>

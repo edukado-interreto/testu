@@ -1,21 +1,15 @@
 <template>
   <v-container>
-
-    <v-card
-      max-width="600"
-      elevation="1"
-      class="mb-4"
-    >
+    <v-card max-width="600" elevation="1" class="mb-4">
       <v-card-text class="d-block d-sm-flex align-baseline">
         <div class="text-h6 font-weight-light grey--text text--darken-3">
-          {{ $t('learn.recent') }}
+          {{ $t("learn.recent") }}
         </div>
         <div class="subheading ms-0 ms-sm-4 grey--text">
-          {{ $t('learn.submitted') }}
+          {{ $t("learn.submitted") }}
         </div>
       </v-card-text>
-      <v-sheet
-      >
+      <v-sheet>
         <v-sparkline
           :labels="stats.labels"
           :value="stats.values"
@@ -41,14 +35,16 @@
       :loading="loading"
     >
       <template v-slot:item.is_exam="{ item }">
-        <v-chip class="primary" v-if="item.is_exam">{{ $t('learn.exam') }}</v-chip>
+        <v-chip class="primary" v-if="item.is_exam">
+          {{ $t("learn.exam") }}
+        </v-chip>
       </template>
       <template v-slot:item.created="{ item }">
-        {{ $d(new Date(item.created), 'dt') }}
+        {{ $d(new Date(item.created), "dt") }}
       </template>
       <template v-slot:item.actions="{ item }">
         <v-btn small depressed nuxt :to="localePath(`/review/${item.pk}`)">
-          {{ $t('learn.review') }}
+          {{ $t("learn.review") }}
         </v-btn>
       </template>
     </v-data-table>
@@ -58,7 +54,7 @@
 export default {
   head() {
     return {
-      title: this.$t('main.my_learning')
+      title: this.$t("main.my_learning"),
     }
   },
   data: () => ({
@@ -73,7 +69,7 @@ export default {
     async get_submissions_from_api(params_obj) {
       const query = new URLSearchParams()
 
-      query.set('limit', this.page_length)
+      query.set("limit", this.page_length)
       for (const k in params_obj) query.set(k, params_obj[k])
       const url = `/v1/submissions/?${query.toString()}`
       console.log(`fetching ${url}`)
@@ -84,7 +80,7 @@ export default {
       this.submissions = resp.data
     },
     on_page_update(page) {
-      const offset = (page-1) * this.page_length
+      const offset = (page - 1) * this.page_length
       this.get_submissions_from_api({ offset })
     },
   },
@@ -93,43 +89,56 @@ export default {
   },
   computed: {
     table() {
-      const items = this.submissions.results.map( s => ({
+      const items = this.submissions.results.map((s) => ({
         pk: s.pk,
         created: new Date(s.created),
         is_exam: !!s.exam_lid,
         exercise_name: s.exercise.name,
       }))
       const headers = [
-        { text: this.$t('learn.exercise'), value: 'exercise_name', sortable: false },
-        { text: '', value: 'is_exam', sortable: false },
-        { text: this.$t('learn.date'), value: 'created', sortable: false },
-        { text: '', value: 'actions', sortable: false },
+        {
+          text: this.$t("learn.exercise"),
+          value: "exercise_name",
+          sortable: false,
+        },
+        { text: "", value: "is_exam", sortable: false },
+        {
+          text: this.$t("learn.date"),
+          value: "created",
+          sortable: false,
+        },
+        { text: "", value: "actions", sortable: false },
       ]
       return { headers, items }
     },
     stats() {
       const days = {}
 
-      this.submissions.results.forEach(s => {
-        const dateWithoutTime = (
-          new Date(s.created)
-        ).setHours(0,0,0,0) // as int
-        days[dateWithoutTime] = days[dateWithoutTime]+1 || 1
+      this.submissions.results.forEach((s) => {
+        const dateWithoutTime = new Date(s.created).setHours(0, 0, 0, 0) // as int
+        days[dateWithoutTime] = days[dateWithoutTime] + 1 || 1
       })
       // days = {1676588400000: 2, 1677106800000: 9}
 
-      const days_array = Object.entries(days).sort(
-        (a, b) => a[0]-b[0] // oldest to newest
-      ).map(a => ({
-        day: (new Date(a[0]*1)).toLocaleString('en-US', { dateStyle: 'short' }),
-        value: a[1],
-      }))
+      const days_array = Object.entries(days)
+        .sort(
+          (a, b) => a[0] - b[0], // oldest to newest
+        )
+        .map((a) => ({
+          day: new Date(a[0] * 1).toLocaleString("en-US", {
+            dateStyle: "short",
+          }),
+          value: a[1],
+        }))
       // days_array = [
       //   { "day": "2/17/23", "value": 2 },
       //   { "day": "2/23/23", "value": 9 }
       // ]
 
-      const empties = [...Array(7 - days_array.length)].map(a => ({ day: "·", value: 0 }))
+      const empties = [...Array(7 - days_array.length)].map((a) => ({
+        day: "·",
+        value: 0,
+      }))
       days_array.unshift(...empties)
       // pad the array to 7 elements, prepending empty values if needed
       // days_array = [
@@ -145,19 +154,18 @@ export default {
       console.log(days_array)
 
       return {
-        labels: days_array.map(a => a.day),
-        values: days_array.map(a => a.value),
+        labels: days_array.map((a) => a.day),
+        values: days_array.map((a) => a.value),
       }
       // {
       //   "labels": [ "2/17/23", "2/23/23" ],
       //   "values": [ 2, 9 ]
       // }
-
     },
   },
-  middleware: 'redirects',
+  middleware: "redirects",
   meta: {
-    requiresAuth: true
-  }
+    requiresAuth: true,
+  },
 }
 </script>

@@ -55,7 +55,7 @@
 </template>
 <script>
 export default {
-  props: ['value', 'label', 'autofocus', 'rules', 'firstchecked'],
+  props: ["value", "label", "autofocus", "rules", "firstchecked"],
   data: () => ({
     checkedModel: [],
     optionsModel: [],
@@ -70,35 +70,31 @@ export default {
         return ""
       }
       return "Toggle the switches to change the options' rightness or start typing a new option."
-    }
+    },
   },
   mounted() {
     const combobox = this.$refs.combobox
 
-    combobox.$refs.input.addEventListener(
-      'input',
-      (e) => {
-        // NOTE: this may not be bulletproof
+    combobox.$refs.input.addEventListener("input", (e) => {
+      // NOTE: this may not be bulletproof
 
-        if (combobox.$el.classList.contains(
-          'v-autocomplete--is-selecting-index'
-        )) {
-          // when the v-combobox has the class
-          // 'v-autocomplete--is-selecting-index',
-          // VueJS sets the <input> (e.target) opacity
-          // to 0 and read its key events so that the user
-          // can traverse the chips using the arrow keys.
-          // This means that the user may actually
-          // type some text in it, which VueJS would
-          // remove when setting back the opacity to 1.
-          this.input_is_blank = true
-          return
-        }
-
-        this.input_is_blank = e.target.value === ''
-
+      if (
+        combobox.$el.classList.contains("v-autocomplete--is-selecting-index")
+      ) {
+        // when the v-combobox has the class
+        // 'v-autocomplete--is-selecting-index',
+        // VueJS sets the <input> (e.target) opacity
+        // to 0 and read its key events so that the user
+        // can traverse the chips using the arrow keys.
+        // This means that the user may actually
+        // type some text in it, which VueJS would
+        // remove when setting back the opacity to 1.
+        this.input_is_blank = true
+        return
       }
-    )
+
+      this.input_is_blank = e.target.value === ""
+    })
   },
   methods: {
     insert_blank() {
@@ -114,18 +110,13 @@ export default {
       // other option get removed too.
       // Using '\0' instead is a workaround for
       // this issue.
-      this.optionsModel = [
-        ...(this.optionsModel.filter(
-          e => e != '\0'
-        )),
-        '\0'
-      ]
+      this.optionsModel = [...this.optionsModel.filter((e) => e != "\0"), "\0"]
     },
     keydown(e) {
       // append an empty string to the model on Ctrl+Enter
 
       if (!e.ctrlKey) return
-      if (e.code != 'Enter') return
+      if (e.code != "Enter") return
       if (!this.input_is_blank) return
 
       this.insert_blank()
@@ -139,83 +130,70 @@ export default {
       this[k] = val
     },
     unescapeEmpty(arr) {
-      return arr.map(e => e == '\0' ? '' : e)
+      return arr.map((e) => (e == "\0" ? "" : e))
     },
   },
   watch: {
     optionsModel(val) {
-
       if (this.firstchecked !== undefined) {
         // automatically set the inserted item
         // as checked (i.e. right option), if
         // it's the first and only one.
-        if (
-          (this.optionsModel.length == 1)
-          && (this.checkedModel.length == 0)
-        ) {
-          this.checkedModel.push(
-            this.optionsModel[0]
-          )
+        if (this.optionsModel.length == 1 && this.checkedModel.length == 0) {
+          this.checkedModel.push(this.optionsModel[0])
         }
       }
 
       const u_val = this.unescapeEmpty(val)
-      const u_checkedModel = this.unescapeEmpty(
-        this.checkedModel
-      )
+      const u_checkedModel = this.unescapeEmpty(this.checkedModel)
 
       this.$emit(
-        'input',
-        u_val.map(e => ({
+        "input",
+        u_val.map((e) => ({
           value: e,
-          right: u_checkedModel.includes(e)
-        }))
+          right: u_checkedModel.includes(e),
+        })),
       )
-
     },
     checkedModel(val) {
-
       const u_val = this.unescapeEmpty(val)
-      const u_optionsModel = this.unescapeEmpty(
-        this.optionsModel
-      )
+      const u_optionsModel = this.unescapeEmpty(this.optionsModel)
 
       this.$emit(
-        'input',
-        u_optionsModel.map(e => ({
+        "input",
+        u_optionsModel.map((e) => ({
           value: e,
-          right: u_val.includes(e)
-        }))
+          right: u_val.includes(e),
+        })),
       )
     },
     value: {
       handler(val) {
-
-        val = val.map(e => ({
-          right: e.right, 
-          value: e.value == '' ? '\0' : e.value
+        val = val.map((e) => ({
+          right: e.right,
+          value: e.value == "" ? "\0" : e.value,
         }))
 
         this.updateData(
-          'optionsModel',
-          val.map(e => e.value)
+          "optionsModel",
+          val.map((e) => e.value),
         )
         this.updateData(
-          'checkedModel',
-          val.filter(e => e.right).map(e => e.value)
+          "checkedModel",
+          val.filter((e) => e.right).map((e) => e.value),
         )
       },
       deep: true,
-      immediate: true
-    }
-  }
+      immediate: true,
+    },
+  },
 }
 </script>
 <style>
-  .v-input--switch__thumb.success--text::after {
-    content: '\002714'; /* heavy check mark */
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 0 5px rgb(0,0,0,.5);
-  }
+.v-input--switch__thumb.success--text::after {
+  content: "\002714"; /* heavy check mark */
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 5px rgb(0, 0, 0, 0.5);
+}
 </style>

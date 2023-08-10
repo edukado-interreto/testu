@@ -3,13 +3,10 @@
     <audio
       v-if="!broken"
       controls
-      style="max-height:150px; max-width:100%;"
+      style="max-height: 150px; max-width: 100%"
       :key="src"
     >
-      <source
-        :src="src"
-        @error="broken = true"
-      ></source>
+      <source :src="src" @error="broken = true" />
     </audio>
     <div v-else class="grey--text">
       <v-icon small>mdi-alert-outline</v-icon>
@@ -18,16 +15,15 @@
   </div>
 </template>
 <script>
-  export default {
-    props: [ 'src', 'content' ],
-    data: () => ({
-      broken: false
-    }),
-    watch: {
-      src() {
-        this.broken = false
-      },
-    }
-  }
+export default {
+  props: ["src", "content"],
+  data: () => ({
+    broken: false,
+  }),
+  watch: {
+    src() {
+      this.broken = false
+    },
+  },
+}
 </script>
-

@@ -1,6 +1,6 @@
 import axios from "axios"
-import Vue from 'vue'
-import Auth from 'vue-auth-jwt'
+import Vue from "vue"
+import Auth from "vue-auth-jwt"
 
 const config = {
   API_BASE_URL: "/api",
@@ -13,14 +13,12 @@ const config = {
 }
 
 export default (context, inject) => {
-  Vue.use(
-    Auth, {
-      config,
-      router: context.app.router,
-      store: context.store,
-    }
-  )
+  Vue.use(Auth, {
+    config,
+    router: context.app.router,
+    store: context.store,
+  })
 
-  inject('auth', Vue.prototype.$auth)
+  inject("auth", Vue.prototype.$auth)
   // make $auth available in asyncData
 }

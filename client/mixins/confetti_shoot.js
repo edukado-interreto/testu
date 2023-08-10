@@ -6,14 +6,12 @@ export default {
         spread: 110,
         particleCount: 60,
         //origin: { x: 0.5, y: 0.5 },
-        origin: this.confetti_calculate_coords(
-          element
-        ),
+        origin: this.confetti_calculate_coords(element),
         decay: 0.8,
-        disableForReducedMotion: true
-      });
+        disableForReducedMotion: true,
+      })
     },
-    confetti_calculate_coords: function(element) {
+    confetti_calculate_coords: function (element) {
       /**
        * Calculate the coordinates x and y in order
        * to shoot some confetti from the given html element.
@@ -23,8 +21,8 @@ export default {
       const rect = element.getBoundingClientRect()
 
       // coordinates in pixels
-      const px_x = rect.left + rect.width  / 2  // center
-      const px_y = rect.top  + rect.height + 15 // underneath
+      const px_x = rect.left + rect.width / 2 // center
+      const px_y = rect.top + rect.height + 15 // underneath
       // since we shoot the confetti straight upwards,
       // it is more pretty if the confetti come from
       // below the element, hence the offset added in px_y.
@@ -33,8 +31,8 @@ export default {
       // as required by the confetti api
       return {
         x: px_x / window.innerWidth,
-        y: px_y / window.innerHeight
+        y: px_y / window.innerHeight,
       }
-    }
-  }
+    },
+  },
 }

@@ -19,10 +19,11 @@
                 @click="edit(current.index - 1)"
                 :disabled="current.index == 0"
                 icon
-                ><v-icon>mdi-chevron-up</v-icon>
+              >
+                <v-icon>mdi-chevron-up</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t('sheet_editor.edit_previous') }}</span>
+            <span>{{ $t("sheet_editor.edit_previous") }}</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -33,21 +34,22 @@
                 @click="edit(current.index + 1)"
                 :disabled="current.index == sheet.length - 1"
                 icon
-                ><v-icon>mdi-chevron-down</v-icon></v-btn
               >
+                <v-icon>mdi-chevron-down</v-icon>
+              </v-btn>
             </template>
-            <span>{{ $t('sheet_editor.edit_next') }}</span>
+            <span>{{ $t("sheet_editor.edit_next") }}</span>
           </v-tooltip>
 
           <v-divider vertical class="mx-2"></v-divider>
 
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
-              <v-btn v-bind="attrs" v-on="on" @click="remove" icon
-                ><v-icon>mdi-delete</v-icon>
+              <v-btn v-bind="attrs" v-on="on" @click="remove" icon>
+                <v-icon>mdi-delete</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t('sheet_editor.delete') }}</span>
+            <span>{{ $t("sheet_editor.delete") }}</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -58,10 +60,11 @@
                 @click="move(-1)"
                 :disabled="current.index == 0"
                 icon
-                ><v-icon>mdi-transfer-up</v-icon></v-btn
               >
+                <v-icon>mdi-transfer-up</v-icon>
+              </v-btn>
             </template>
-            <span>{{ $t('sheet_editor.move_up') }}</span>
+            <span>{{ $t("sheet_editor.move_up") }}</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -72,10 +75,11 @@
                 @click="move(+1)"
                 :disabled="current.index == sheet.length - 1"
                 icon
-                ><v-icon>mdi-transfer-down</v-icon></v-btn
               >
+                <v-icon>mdi-transfer-down</v-icon>
+              </v-btn>
             </template>
-            <span>{{ $t('sheet_editor.move_down') }}</span>
+            <span>{{ $t("sheet_editor.move_down") }}</span>
           </v-tooltip>
 
           <v-spacer></v-spacer>
@@ -87,10 +91,11 @@
                 v-on="on"
                 @click="edit_drawer.show = false"
                 icon
-                ><v-icon>mdi-close</v-icon></v-btn
               >
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
             </template>
-            <span>{{ $t('sheet_editor.close') }}</span>
+            <span>{{ $t("sheet_editor.close") }}</span>
           </v-tooltip>
         </v-toolbar>
       </template>
@@ -119,9 +124,13 @@
           <template v-slot:append>
             <v-menu offset-y>
               <template v-slot:activator="{ on, attrs }">
-                <v-icon v-bind="attrs" v-on="on" :disabled="description_loading"
-                  >mdi-dots-vertical</v-icon
+                <v-icon
+                  v-bind="attrs"
+                  v-on="on"
+                  :disabled="description_loading"
                 >
+                  mdi-dots-vertical
+                </v-icon>
               </template>
               <v-list>
                 <InsertMedia
@@ -141,7 +150,7 @@
                       <v-icon>mdi-image</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>
-                      {{ $t('sheet_editor.insert_image') }}
+                      {{ $t("sheet_editor.insert_image") }}
                     </v-list-item-title>
                   </v-list-item>
                 </InsertMedia>
@@ -162,7 +171,7 @@
                       <v-icon>mdi-volume-high</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>
-                      {{ $t('sheet_editor.insert_sound') }}
+                      {{ $t("sheet_editor.insert_sound") }}
                     </v-list-item-title>
                   </v-list-item>
                 </InsertMedia>
@@ -171,7 +180,7 @@
                     <v-icon>mdi-movie</v-icon>
                   </v-list-item-icon>
                   <v-list-item-title>
-                    {{ $t('sheet_editor.insert_video') }}
+                    {{ $t("sheet_editor.insert_video") }}
                   </v-list-item-title>
                 </v-list-item>
               </v-list>
@@ -190,7 +199,7 @@
                 <v-icon>mdi-playlist-plus</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t('sheet_editor.add_sentence') }}</span>
+            <span>{{ $t("sheet_editor.add_sentence") }}</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -205,7 +214,7 @@
                 <v-icon>mdi-tray-plus</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t('sheet_editor.insert_gap') }}</span>
+            <span>{{ $t("sheet_editor.insert_gap") }}</span>
           </v-tooltip>
 
           <v-tooltip bottom>
@@ -220,7 +229,7 @@
                 <v-icon>mdi-code-equal</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t('sheet_editor.add_matching_pair') }}</span>
+            <span>{{ $t("sheet_editor.add_matching_pair") }}</span>
           </v-tooltip>
           <v-dialog v-model="add_pair_dialog" max-width="750">
             <v-card>
@@ -229,9 +238,9 @@
                 lazy-validation
                 @submit.prevent="add_pair_insert_click"
               >
-                <v-card-title>{{
-                  $t('sheet_editor.new_matching_pair')
-                }}</v-card-title>
+                <v-card-title>
+                  {{ $t("sheet_editor.new_matching_pair") }}
+                </v-card-title>
                 <v-card-text>
                   <v-text-field
                     v-model="add_pair_first_item"
@@ -247,12 +256,12 @@
                 </v-card-text>
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn color="primary" type="submit">{{
-                    $t('sheet_editor.insert_pair')
-                  }}</v-btn>
-                  <v-btn text @click="add_pair_dialog = false">{{
-                    $t('main.cancel')
-                  }}</v-btn>
+                  <v-btn color="primary" type="submit">
+                    {{ $t("sheet_editor.insert_pair") }}
+                  </v-btn>
+                  <v-btn text @click="add_pair_dialog = false">
+                    {{ $t("main.cancel") }}
+                  </v-btn>
                 </v-card-actions>
               </v-form>
             </v-card>
@@ -281,7 +290,7 @@
                   <v-icon>mdi-image</v-icon>
                 </v-btn>
               </template>
-              <span>{{ $t('sheet_editor.insert_image') }}</span>
+              <span>{{ $t("sheet_editor.insert_image") }}</span>
             </v-tooltip>
           </InsertMedia>
 
@@ -306,7 +315,7 @@
                   <v-icon>mdi-volume-high</v-icon>
                 </v-btn>
               </template>
-              <span>{{ $t('sheet_editor.sound') }}</span>
+              <span>{{ $t("sheet_editor.sound") }}</span>
             </v-tooltip>
           </InsertMedia>
 
@@ -322,7 +331,7 @@
                 <v-icon>mdi-movie</v-icon>
               </v-btn>
             </template>
-            <span>{{ $t('sheet_editor.insert_video') }}</span>
+            <span>{{ $t("sheet_editor.insert_video") }}</span>
           </v-tooltip>
 
           <v-dialog v-model="insert_video_dialog" max-width="750">
@@ -332,9 +341,9 @@
                 @submit.prevent="insert_video_insert_click"
                 ref="insert_video_form"
               >
-                <v-card-title>{{
-                  $t('sheet_editor.insert_video')
-                }}</v-card-title>
+                <v-card-title>
+                  {{ $t("sheet_editor.insert_video") }}
+                </v-card-title>
                 <v-card-text>
                   <v-text-field
                     v-model="insert_video_url"
@@ -350,12 +359,12 @@
                 </v-card-text>
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn color="primary" type="submit">{{
-                    $t('sheet_editor.insert_video')
-                  }}</v-btn>
-                  <v-btn text @click="insert_video_dialog = false">{{
-                    $t('main.cancel')
-                  }}</v-btn>
+                  <v-btn color="primary" type="submit">
+                    {{ $t("sheet_editor.insert_video") }}
+                  </v-btn>
+                  <v-btn text @click="insert_video_dialog = false">
+                    {{ $t("main.cancel") }}
+                  </v-btn>
                 </v-card-actions>
               </v-form>
             </v-card>
@@ -364,7 +373,7 @@
           <v-dialog v-model="add_gap_dialog" max-width="750">
             <v-card>
               <v-form ref="new_gap_form">
-                <v-card-title>{{ $t('sheet_editor.new_gap') }}</v-card-title>
+                <v-card-title>{{ $t("sheet_editor.new_gap") }}</v-card-title>
                 <v-card-text>
                   <OptionsSelector
                     v-model="new_gap_options"
@@ -380,12 +389,12 @@
                 </v-card-text>
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn color="primary" @click="insert_gap_click">{{
-                    $t('sheet_editor.insert_gap')
-                  }}</v-btn>
-                  <v-btn text @click="add_gap_dialog_show(false)">{{
-                    $t('main.cancel')
-                  }}</v-btn>
+                  <v-btn color="primary" @click="insert_gap_click">
+                    {{ $t("sheet_editor.insert_gap") }}
+                  </v-btn>
+                  <v-btn text @click="add_gap_dialog_show(false)">
+                    {{ $t("main.cancel") }}
+                  </v-btn>
                 </v-card-actions>
               </v-form>
             </v-card>
@@ -426,11 +435,11 @@
         style="border: 4px dashed #e7e7e7"
       >
         <div class="text--disabled text-h6">
-          {{ $t('sheet_editor.empty_exercise') }}
+          {{ $t("sheet_editor.empty_exercise") }}
         </div>
-        <span class="text--disabled">{{
-          $t('sheet_editor.add_unit_to_begin')
-        }}</span>
+        <span class="text--disabled">
+          {{ $t("sheet_editor.add_unit_to_begin") }}
+        </span>
       </div>
 
       <v-slide-y-transition group>
@@ -460,7 +469,7 @@
                   style="height: 100%; border-radius: 4px 0 0 4px"
                 >
                   <v-icon small>
-                    {{ i != current.index ? 'mdi-pencil' : 'mdi-check-bold' }}
+                    {{ i != current.index ? "mdi-pencil" : "mdi-check-bold" }}
                   </v-icon>
                 </v-btn>
               </v-col>
@@ -468,11 +477,11 @@
                 <div class="headline my-4">
                   {{ i + 1 }}. {{ section.title }}
                   <span v-if="section.title === ''" class="font-italic">
-                    {{ $t('sheet_editor.untitled_unit') }}
+                    {{ $t("sheet_editor.untitled_unit") }}
                   </span>
                 </div>
                 <div v-if="section.description" class="body-2 mb-4 pre-line">
-                  <RichContent :text="section.description"> </RichContent>
+                  <RichContent :text="section.description"></RichContent>
                 </div>
                 <component
                   :is="unit_component(section.type)"
@@ -491,7 +500,7 @@
         <template v-slot:activator="{ on, attrs }">
           <v-btn class="mt-3" :elevation="0" v-bind="attrs" v-on="on">
             <v-icon class="me-2">mdi-plus</v-icon>
-            {{ $t('sheet_editor.add_unit') }}
+            {{ $t("sheet_editor.add_unit") }}
           </v-btn>
         </template>
         <v-list>
@@ -520,28 +529,28 @@
   </div>
 </template>
 <script>
-import { nanoid } from 'nanoid';
-import unit_component from '~/mixins/unit_component.js';
+import { nanoid } from "nanoid"
+import unit_component from "~/mixins/unit_component.js"
 export default {
-  name: 'SheetEditor',
+  name: "SheetEditor",
   mixins: [unit_component],
-  props: ['sheet'],
+  props: ["sheet"],
   data: () => ({
     available_types: [
-      { text: 'Default', value: 'default' },
-      { text: 'Open answer', value: 'open_answer' },
-      { text: 'Multiple choice', value: 'multiple_choice' },
-      { text: 'Sort and match', value: 'pairing' },
+      { text: "Default", value: "default" },
+      { text: "Open answer", value: "open_answer" },
+      { text: "Multiple choice", value: "multiple_choice" },
+      { text: "Sort and match", value: "pairing" },
     ],
     new_gap_options: [],
     add_gap_dialog: false,
 
     add_pair_dialog: false,
-    add_pair_first_item: '',
-    add_pair_second_item: '',
+    add_pair_first_item: "",
+    add_pair_second_item: "",
 
     insert_video_dialog: false,
-    insert_video_url: '',
+    insert_video_url: "",
 
     description_loading: false,
 
@@ -572,154 +581,154 @@ export default {
     snippets() {
       return [
         {
-          name: this.$t('sheet_editor.snippets.blank_unit.name'),
-          img: 'blank.svg',
+          name: this.$t("sheet_editor.snippets.blank_unit.name"),
+          img: "blank.svg",
           unit: {
-            type: 'default',
-            code: this.$t('sheet_editor.snippets.blank_unit.code'),
+            type: "default",
+            code: this.$t("sheet_editor.snippets.blank_unit.code"),
           },
         },
         {
-          name: this.$t('sheet_editor.snippets.gap_filling_dropdown.name'),
-          img: 'fill_gap_dropdown.svg',
+          name: this.$t("sheet_editor.snippets.gap_filling_dropdown.name"),
+          img: "fill_gap_dropdown.svg",
           unit: {
-            type: 'default',
-            code: this.$t('sheet_editor.snippets.gap_filling_dropdown.code'),
+            type: "default",
+            code: this.$t("sheet_editor.snippets.gap_filling_dropdown.code"),
           },
         },
         {
-          name: this.$t('sheet_editor.snippets.gap_filling_open_answer.name'),
-          img: 'fill_gap_open.svg',
+          name: this.$t("sheet_editor.snippets.gap_filling_open_answer.name"),
+          img: "fill_gap_open.svg",
           unit: {
-            type: 'open_answer',
-            code: this.$t('sheet_editor.snippets.gap_filling_open_answer.code'),
+            type: "open_answer",
+            code: this.$t("sheet_editor.snippets.gap_filling_open_answer.code"),
           },
         },
         {
-          name: this.$t('sheet_editor.snippets.multiple_choice.name'),
-          img: 'choice.svg',
+          name: this.$t("sheet_editor.snippets.multiple_choice.name"),
+          img: "choice.svg",
           unit: {
-            type: 'multiple_choice',
-            code: this.$t('sheet_editor.snippets.multiple_choice.code'),
+            type: "multiple_choice",
+            code: this.$t("sheet_editor.snippets.multiple_choice.code"),
           },
         },
         {
-          name: this.$t('sheet_editor.snippets.pairing_text_with_text.name'),
-          img: 'match_text.svg',
+          name: this.$t("sheet_editor.snippets.pairing_text_with_text.name"),
+          img: "match_text.svg",
           unit: {
-            type: 'pairing',
-            code: this.$t('sheet_editor.snippets.pairing_text_with_text.code'),
+            type: "pairing",
+            code: this.$t("sheet_editor.snippets.pairing_text_with_text.code"),
           },
         },
         {
           name: this.$t(
-            'sheet_editor.snippets.pairing_text_with_pictures.name'
+            "sheet_editor.snippets.pairing_text_with_pictures.name",
           ),
-          img: 'match_pic.svg',
+          img: "match_pic.svg",
           unit: {
-            type: 'pairing',
+            type: "pairing",
             code: this.$t(
-              'sheet_editor.snippets.pairing_text_with_pictures.code'
+              "sheet_editor.snippets.pairing_text_with_pictures.code",
             ),
           },
         },
         {
-          name: this.$t('sheet_editor.snippets.sorting_pictures.name'),
-          img: 'sort_pic.svg',
+          name: this.$t("sheet_editor.snippets.sorting_pictures.name"),
+          img: "sort_pic.svg",
           unit: {
-            type: 'pairing',
-            code: this.$t('sheet_editor.snippets.sorting_pictures.code'),
+            type: "pairing",
+            code: this.$t("sheet_editor.snippets.sorting_pictures.code"),
             shuffle: true,
           },
         },
         {
           name: this.$t(
-            'sheet_editor.snippets.pairing_pictures_with_sounds.name'
+            "sheet_editor.snippets.pairing_pictures_with_sounds.name",
           ),
-          img: 'match_pic_sound.svg',
+          img: "match_pic_sound.svg",
           unit: {
-            type: 'pairing',
+            type: "pairing",
             code: this.$t(
-              'sheet_editor.snippets.pairing_pictures_with_sounds.code'
+              "sheet_editor.snippets.pairing_pictures_with_sounds.code",
             ),
           },
         },
         {
           name: this.$t(
-            'sheet_editor.snippets.questions_about_a_picture_true_or_false.name'
+            "sheet_editor.snippets.questions_about_a_picture_true_or_false.name",
           ),
-          img: 'true_false_pic.svg',
+          img: "true_false_pic.svg",
           unit: {
-            type: 'multiple_choice',
+            type: "multiple_choice",
             description: this.$t(
-              'sheet_editor.snippets.questions_about_a_picture_true_or_false.description'
+              "sheet_editor.snippets.questions_about_a_picture_true_or_false.description",
             ),
             code: this.$t(
-              'sheet_editor.snippets.questions_about_a_picture_true_or_false.code'
+              "sheet_editor.snippets.questions_about_a_picture_true_or_false.code",
             ),
           },
         },
         {
           name: this.$t(
-            'sheet_editor.snippets.questions_about_a_text_multiple_choice.name'
+            "sheet_editor.snippets.questions_about_a_text_multiple_choice.name",
           ),
-          img: 'choice_paragraph.svg',
+          img: "choice_paragraph.svg",
           unit: {
-            type: 'multiple_choice',
+            type: "multiple_choice",
             description: this.$t(
-              'sheet_editor.snippets.questions_about_a_text_multiple_choice.description'
+              "sheet_editor.snippets.questions_about_a_text_multiple_choice.description",
             ),
             code: this.$t(
-              'sheet_editor.snippets.questions_about_a_text_multiple_choice.code'
+              "sheet_editor.snippets.questions_about_a_text_multiple_choice.code",
             ),
           },
         },
         {
           name: this.$t(
-            'sheet_editor.snippets.questions_about_a_video_open_answer.name'
+            "sheet_editor.snippets.questions_about_a_video_open_answer.name",
           ),
-          img: 'open_video.svg',
+          img: "open_video.svg",
           unit: {
-            type: 'open_answer',
+            type: "open_answer",
             description: this.$t(
-              'sheet_editor.snippets.questions_about_a_video_open_answer.description'
+              "sheet_editor.snippets.questions_about_a_video_open_answer.description",
             ),
             code: this.$t(
-              'sheet_editor.snippets.questions_about_a_video_open_answer.code'
+              "sheet_editor.snippets.questions_about_a_video_open_answer.code",
             ),
           },
         },
         {
           name: this.$t(
-            'sheet_editor.snippets.questions_about_a_sound_dropdown.name'
+            "sheet_editor.snippets.questions_about_a_sound_dropdown.name",
           ),
-          img: 'dropdown_sound.svg',
+          img: "dropdown_sound.svg",
           unit: {
-            type: 'multiple_choice',
+            type: "multiple_choice",
             description: this.$t(
-              'sheet_editor.snippets.questions_about_a_sound_dropdown.description'
+              "sheet_editor.snippets.questions_about_a_sound_dropdown.description",
             ),
             code: this.$t(
-              'sheet_editor.snippets.questions_about_a_sound_dropdown.code'
+              "sheet_editor.snippets.questions_about_a_sound_dropdown.code",
             ),
           },
         },
-      ];
+      ]
     },
   },
   methods: {
     append_new_sentence() {
-      const input = this.$refs.textarea.$refs.input;
-      const code = this.current.data.code.trimEnd();
+      const input = this.$refs.textarea.$refs.input
+      const code = this.current.data.code.trimEnd()
 
-      if (code !== '') {
-        this.current.data.code = code + '\n\n';
+      if (code !== "") {
+        this.current.data.code = code + "\n\n"
       }
 
       requestAnimationFrame(() => {
-        input.selectionStart = this.current.data.code.length;
-        input.focus();
-      });
+        input.selectionStart = this.current.data.code.length
+        input.focus()
+      })
     },
     doubleRequestAnimationFrame(f) {
       // force the browser to re-render the DOM before
@@ -727,15 +736,13 @@ export default {
       // See:
       // https://github.com/vuejs/vue/issues/9200
       // https://github.com/twickstrom/vue-force-next-tick
-      return window.requestAnimationFrame(() =>
-        window.requestAnimationFrame(f)
-      );
+      return window.requestAnimationFrame(() => window.requestAnimationFrame(f))
     },
     add_gap_dialog_show(show) {
       if (show) {
-        this.add_gap_dialog = true;
+        this.add_gap_dialog = true
       } else {
-        this.add_gap_dialog = false;
+        this.add_gap_dialog = false
       }
     },
     insert_gap_click() {
@@ -743,100 +750,100 @@ export default {
       // the value of the OptionsSelectors is updated even
       // if the user doesn't press Enter or blurs the input.
       this.doubleRequestAnimationFrame(() => {
-        if (!this.$refs.new_gap_form.validate()) return;
-        this.insert_gap();
-      });
+        if (!this.$refs.new_gap_form.validate()) return
+        this.insert_gap()
+      })
     },
     insert_gap() {
       // TODO:
       // ensure ltr string concatenanion
       // http://stackoverflow.com/q/29988144/
       const new_gap =
-        '[' +
+        "[" +
         this.new_gap_options
-          .map((opt) => (opt.right ? '+' + opt.value : opt.value))
-          .join('|') +
-        ']';
+          .map((opt) => (opt.right ? "+" + opt.value : opt.value))
+          .join("|") +
+        "]"
 
-      this.inject_snippet(new_gap);
+      this.inject_snippet(new_gap)
 
-      this.add_gap_dialog = false;
+      this.add_gap_dialog = false
     },
     add_pair_insert_click() {
-      if (!this.$refs.add_pair_form.validate()) return;
+      if (!this.$refs.add_pair_form.validate()) return
 
-      const input = this.$refs.textarea.$refs.input;
-      let code = this.current.data.code.trimEnd();
+      const input = this.$refs.textarea.$refs.input
+      let code = this.current.data.code.trimEnd()
 
-      if (code !== '') {
-        code += '\n\n';
+      if (code !== "") {
+        code += "\n\n"
       }
 
-      code += `${this.add_pair_first_item} == ${this.add_pair_second_item}`;
+      code += `${this.add_pair_first_item} == ${this.add_pair_second_item}`
 
-      this.current.data.code = code;
+      this.current.data.code = code
 
       requestAnimationFrame(() => {
-        input.selectionStart = this.current.data.code.length;
-        input.focus();
-      });
+        input.selectionStart = this.current.data.code.length
+        input.focus()
+      })
 
-      this.add_pair_dialog = false;
+      this.add_pair_dialog = false
     },
     insert_video_insert_click() {
-      if (!this.$refs.insert_video_form.validate()) return;
-      this.inject_snippet(`{video:${this.insert_video_url}}`);
-      this.insert_video_dialog = false;
+      if (!this.$refs.insert_video_form.validate()) return
+      this.inject_snippet(`{video:${this.insert_video_url}}`)
+      this.insert_video_dialog = false
     },
     inject_snippet(snippet) {
       // insert in the current code a snippet at the
       // current cursor position, move the cursor
       // after the snippet and focus the textarea
-      const input = this.$refs.textarea.$refs.input;
-      const start = input.selectionStart;
-      const code = this.current.data.code;
+      const input = this.$refs.textarea.$refs.input
+      const start = input.selectionStart
+      const code = this.current.data.code
       this.current.data.code =
         code.slice(0, input.selectionStart) +
         snippet +
-        code.slice(input.selectionEnd);
+        code.slice(input.selectionEnd)
       requestAnimationFrame(() => {
-        input.selectionStart = start + snippet.length;
-        input.selectionEnd = start + snippet.length;
-        input.focus();
-      });
+        input.selectionStart = start + snippet.length
+        input.selectionEnd = start + snippet.length
+        input.focus()
+      })
     },
     keyed(iterable, i) {
-      if ('_key' in iterable[i]) {
-        return iterable[i]._key;
+      if ("_key" in iterable[i]) {
+        return iterable[i]._key
       }
-      iterable[i]._key = nanoid();
-      return iterable[i]._key;
+      iterable[i]._key = nanoid()
+      return iterable[i]._key
     },
     move(offset) {
-      const from = this.current.index;
-      const to = from + offset;
-      this.sheet[from] = this.sheet.splice(to, 1, this.sheet[from])[0];
+      const from = this.current.index
+      const to = from + offset
+      this.sheet[from] = this.sheet.splice(to, 1, this.sheet[from])[0]
       // swap array[from] with array[to]
-      this.edit(to);
+      this.edit(to)
     },
     remove() {
-      this.sheet.splice(this.current.index, 1);
+      this.sheet.splice(this.current.index, 1)
       if (this.sheet.length === 0) {
-        this.edit_drawer.show = false;
-        return;
+        this.edit_drawer.show = false
+        return
       }
-      this.edit(Math.min(this.current.index, this.sheet.length - 1));
+      this.edit(Math.min(this.current.index, this.sheet.length - 1))
     },
     edit(i) {
-      this.current.index = i;
-      this.edit_drawer.show = true;
-      this.current.data = this.sheet[i];
+      this.current.index = i
+      this.edit_drawer.show = true
+      this.current.data = this.sheet[i]
       this.$nextTick(function () {
         // scroll to the currently edited section
         this.$vuetify.goTo(
           this.$refs[`section-${this.keyed(this.sheet, i)}`][0],
-          { offset: 15 }
-        );
+          { offset: 15 },
+        )
         // Ideally we could just use this.$refs.sheet[i], since we can have
         // something like <v-sheet ref="sheet" v-for="..."> in the template.
         // Unfortunately this would break when reordering the items, because
@@ -844,55 +851,55 @@ export default {
         // (https://github.com/vuejs/vue/issues/4952#issuecomment-280661367)
         // so we are using the sections' key to build unique refs, that will
         // be arrays anyway, so then we scroll to their first and only item.
-      });
+      })
     },
     add(unit) {
       const base_unit = {
-        type: 'default',
-        title: '',
-        code: '',
-      };
+        type: "default",
+        title: "",
+        code: "",
+      }
       this.sheet.push({
         ...base_unit,
         ...unit,
-      });
-      this.edit(this.sheet.length - 1);
+      })
+      this.edit(this.sheet.length - 1)
     },
   },
   watch: {
     add_gap_dialog: function (val) {
       if (val) {
-        this.new_gap_options = [];
+        this.new_gap_options = []
       } else {
         requestAnimationFrame(() => {
-          this.$refs.textarea.focus();
-        });
+          this.$refs.textarea.focus()
+        })
       }
     },
     add_pair_dialog: function (val) {
       if (val) {
-        this.add_pair_first_item = '';
-        this.add_pair_second_item = '';
+        this.add_pair_first_item = ""
+        this.add_pair_second_item = ""
       } else {
-        this.$refs.add_pair_form.resetValidation();
+        this.$refs.add_pair_form.resetValidation()
         requestAnimationFrame(() => {
-          this.$refs.textarea.focus();
-        });
+          this.$refs.textarea.focus()
+        })
       }
     },
     insert_video_dialog: function (val) {
       if (val) {
-        this.insert_video_url = '';
+        this.insert_video_url = ""
       } else {
-        this.$refs.insert_video_form.resetValidation();
+        this.$refs.insert_video_form.resetValidation()
         requestAnimationFrame(() => {
-          this.$refs.textarea.focus();
-        });
+          this.$refs.textarea.focus()
+        })
       }
     },
-    'edit_drawer.show': function (val) {
+    "edit_drawer.show": function (val) {
       if (val === false) {
-        this.current.index = undefined;
+        this.current.index = undefined
       }
     },
     //'current.data': {
@@ -911,7 +918,7 @@ export default {
     //  deep: true
     //}
   },
-};
+}
 </script>
 <style scoped>
 .pre-line {

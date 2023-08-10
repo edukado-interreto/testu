@@ -6,28 +6,28 @@ export default {
   }),
   methods: {
     success(text) {
-      return this.spawn(text, { color: 'success' });
+      return this.spawn(text, { color: "success" })
     },
     warning(text) {
-      return this.spawn(text, { color: 'warning' });
+      return this.spawn(text, { color: "warning" })
     },
     error(text) {
-      return this.spawn(text, { color: 'error' });
+      return this.spawn(text, { color: "error" })
     },
     spawn(text, attrs) {
-      const uid = this._getUid();
-      setTimeout(() => this.remove(uid), this.timeout + 10);
-      this.toasts.push({ text, open: true, uid, attrs });
+      const uid = this._getUid()
+      setTimeout(() => this.remove(uid), this.timeout + 10)
+      this.toasts.push({ text, open: true, uid, attrs })
     },
     remove(uid) {
-      const idx = this.toasts.findIndex((t) => (t.uid = uid));
-      this.toasts.splice(idx, 1);
+      const idx = this.toasts.findIndex((t) => (t.uid = uid))
+      this.toasts.splice(idx, 1)
     },
     _getUid() {
-      return new Date().toISOString();
+      return new Date().toISOString()
     },
   },
-};
+}
 </script>
 
 <template>

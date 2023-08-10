@@ -1,4 +1,4 @@
-import Vue from 'vue';
-import CanvasConfetti from 'canvas-confetti';
+import Vue from "vue"
+import CanvasConfetti from "canvas-confetti"
 
 Vue.prototype.$confetti = CanvasConfetti

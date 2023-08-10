@@ -14,7 +14,7 @@
         <v-icon x-large>{{ opts.icon }}</v-icon>
         <div
           class="ml-5"
-          style="white-space: pre-line;"
+          style="white-space: pre-line"
           v-text="opts.text"
         ></div>
       </v-card-text>
@@ -54,17 +54,17 @@ export default {
     promise_resolve: null,
     promise_reject: null,
     original_opts: {
-      text: '',
-      title: 'TestU',
+      text: "",
+      title: "TestU",
       max_width: 700,
       modal: true,
-      icon: 'mdi-alert-circle-outline',
-      color: 'secondary',
-      buttons: [ { text: 'Ok', value: true } ],
+      icon: "mdi-alert-circle-outline",
+      color: "secondary",
+      buttons: [{ text: "Ok", value: true }],
     },
   }),
   created() {
-    this.opts = {...this.original_opts}
+    this.opts = { ...this.original_opts }
   },
   async mounted() {
     // // usage example
@@ -79,11 +79,11 @@ export default {
       })
     },
     hide() {
-      this.display = false 
+      this.display = false
     },
     show(opts) {
       this.hide()
-      this.opts = {...this.original_opts, ...opts}
+      this.opts = { ...this.original_opts, ...opts }
       this.display = true
       return new Promise((resolve, reject) => {
         this.promise_resolve = resolve
@@ -100,11 +100,14 @@ export default {
       return this.show({
         text,
         title: title || this.original_opts.title,
-        icon: 'mdi-help-circle-outline',
-        color: 'primary',
-        buttons: [ { text: 'Cancel', value: false }, { text: 'Ok', value: true } ],
+        icon: "mdi-help-circle-outline",
+        color: "primary",
+        buttons: [
+          { text: "Cancel", value: false },
+          { text: "Ok", value: true },
+        ],
       })
-    }
-  }
+    },
+  },
 }
 </script>

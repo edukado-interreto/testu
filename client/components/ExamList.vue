@@ -9,8 +9,11 @@
     :loading="loading"
   >
     <template v-slot:default="props">
-      <ExamListItem v-for="item in props.items" :item="item" :key="item.lid">
-      </ExamListItem>
+      <ExamListItem
+        v-for="item in props.items"
+        :item="item"
+        :key="item.lid"
+      ></ExamListItem>
     </template>
   </v-data-iterator>
 </template>
@@ -23,34 +26,34 @@ export default {
   }),
   computed: {
     user() {
-      const authUser = this.$store.getters['authenticator/authUser'];
-      if (!authUser) return null;
-      return authUser;
+      const authUser = this.$store.getters["authenticator/authUser"]
+      if (!authUser) return null
+      return authUser
     },
   },
   methods: {
     async get_exams_from_api(params_obj) {
-      const query = new URLSearchParams();
+      const query = new URLSearchParams()
 
-      query.set('limit', this.page_length);
-      for (const k in params_obj) query.set(k, params_obj[k]);
-      const url = `/v1/exams/?${query.toString()}`;
-      console.log(`fetching ${url}`);
+      query.set("limit", this.page_length)
+      for (const k in params_obj) query.set(k, params_obj[k])
+      const url = `/v1/exams/?${query.toString()}`
+      console.log(`fetching ${url}`)
 
-      this.loading = true;
-      const resp = await this.$auth.axios.get(url);
-      this.loading = false;
-      this.exams = resp.data;
+      this.loading = true
+      const resp = await this.$auth.axios.get(url)
+      this.loading = false
+      this.exams = resp.data
     },
     on_page_update(page) {
-      const offset = (page - 1) * this.page_length;
-      this.get_exams_from_api({ offset });
+      const offset = (page - 1) * this.page_length
+      this.get_exams_from_api({ offset })
     },
   },
   async fetch() {
-    await this.get_exams_from_api({ created_by: this.user.username });
+    await this.get_exams_from_api({ created_by: this.user.username })
   },
   fetchOnServer: true,
-  fetchKey: 'exams',
-};
+  fetchKey: "exams",
+}
 </script>

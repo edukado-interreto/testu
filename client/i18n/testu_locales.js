@@ -15,4 +15,4 @@ export default {
     { code: "sk", file: "sk.json" },
     { code: "uk", file: "uk.json" },
   ],
-};
+}

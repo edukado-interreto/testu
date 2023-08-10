@@ -10,31 +10,31 @@
     >
       <template v-if="exam.accept_submission">
         <div class="text-h6">
-          {{ $t('exam.is_exam') }}
+          {{ $t("exam.is_exam") }}
         </div>
         <div>
-          {{ $t('exam.visible_by', { name: exam.created_by }) }}
+          {{ $t("exam.visible_by", { name: exam.created_by }) }}
         </div>
       </template>
       <template v-else>
         <div class="text-h6">
-          {{ $t('exam.now_new_submissions') }}
+          {{ $t("exam.now_new_submissions") }}
         </div>
       </template>
     </v-alert>
 
     <div v-if="!submitter_display_name && !logged_in && exam.accept_submission">
       <p class="text-center text-body-2 mt-12 mb-7">
-        {{ $t('exam.please_log_in') }}
+        {{ $t("exam.please_log_in") }}
       </p>
       <v-row justify="center" class="mt-3">
         <v-col cols="12" sm="4" md="2" align="center">
-          <v-btn color="primary" block @click="login">{{
-            $t('main.login')
-          }}</v-btn>
+          <v-btn color="primary" block @click="login">
+            {{ $t("main.login") }}
+          </v-btn>
         </v-col>
         <v-col cols="12" sm="1" md="1" align="center">
-          {{ $t('exam.or') }}
+          {{ $t("exam.or") }}
         </v-col>
         <v-col cols="12" sm="6" md="4" align="center">
           <v-text-field
@@ -49,8 +49,9 @@
               <v-btn
                 small
                 @click="submitter_display_name = display_name_vmodel"
-                >{{ $t('main.ok') }}</v-btn
               >
+                {{ $t("main.ok") }}
+              </v-btn>
             </template>
           </v-text-field>
         </v-col>
@@ -73,7 +74,7 @@
             :to="localePath(`/exam_editor?exam=${id}`)"
           >
             <v-icon class="me-1">mdi-pencil</v-icon>
-            {{ $t('main.edit') }}
+            {{ $t("main.edit") }}
           </v-btn>
         </v-col>
       </v-row>
@@ -81,11 +82,11 @@
       <v-row dense class="text-caption mb-6 d-print-none">
         <v-col cols="auto">
           <v-icon small>mdi-account</v-icon>
-          {{ exam.created_by || $t('exercise.anonymous') }}
+          {{ exam.created_by || $t("exercise.anonymous") }}
         </v-col>
         <v-col cols="auto">
           <v-icon small>mdi-clock</v-icon>
-          {{ $d(new Date(exam.created), 'dt') }}
+          {{ $d(new Date(exam.created), "dt") }}
         </v-col>
       </v-row>
 
@@ -103,11 +104,11 @@
         <div class="headline my-4">
           {{ i + 1 }}. {{ unit.title }}
           <span v-if="unit.title === ''" class="font-italic">
-            {{ $t('sheet_editor.untitled_unit') }}
+            {{ $t("sheet_editor.untitled_unit") }}
           </span>
         </div>
         <div v-if="unit.description" class="body-2 mb-4 pre-line">
-          <RichContent :text="unit.description"> </RichContent>
+          <RichContent :text="unit.description"></RichContent>
         </div>
         <component
           :is="unit_component(unit.type)"
@@ -121,7 +122,7 @@
       </v-sheet>
 
       <v-alert text color="primary" class="mb-0 mt-10" v-if="submitted">
-        {{ $t('exam.well_done') }}
+        {{ $t("exam.well_done") }}
       </v-alert>
 
       <v-btn
@@ -129,107 +130,108 @@
         class="mt-9 primary d-print-none"
         :disabled="submitted || !exam.accept_submission"
         :loading="is_submitting"
-        >{{ $t('main.submit') }}</v-btn
       >
+        {{ $t("main.submit") }}
+      </v-btn>
     </div>
   </v-container>
 </template>
 <script>
-import unit_component from '~/mixins/unit_component.js';
+import unit_component from "~/mixins/unit_component.js"
 export default {
   mixins: [unit_component],
   data: () => ({
     is_submitting: false,
-    submitter_display_name: '',
-    display_name_vmodel: '',
+    submitter_display_name: "",
+    display_name_vmodel: "",
     submitted: false,
     all_silent: true,
     all_readonly: false,
   }),
   async asyncData({ $auth, route, params }) {
-    const id = process.server ? route.params.id : params.id;
-    const exam = (await $auth.axios.get(`/v1/exams/${id}`)).data;
-    exam.created = new Date(exam.created);
+    const id = process.server ? route.params.id : params.id
+    const exam = (await $auth.axios.get(`/v1/exams/${id}`)).data
+    exam.created = new Date(exam.created)
     const exercise = (
       await $auth.axios.get(`/v1/exercises/${exam.exercise_lid}`)
-    ).data;
+    ).data
     return {
       id,
       exam,
       exercise,
-    };
+    }
   },
   computed: {
     logged_in() {
-      return this.authUser && this.authUser.username !== undefined;
+      return this.authUser && this.authUser.username !== undefined
     },
     authUser() {
-      return this.$store.getters['authenticator/authUser'];
+      return this.$store.getters["authenticator/authUser"]
     },
     current_username() {
-      const authUser = this.$store.getters['authenticator/authUser'];
-      if (!authUser) return null;
-      return authUser.username;
+      const authUser = this.$store.getters["authenticator/authUser"]
+      if (!authUser) return null
+      return authUser.username
     },
     should_exercise_be_shown() {
-      if (this.current_username == this.exam.created_by) return true;
-      if (!this.exam.accept_submission) return false;
-      if (this.submitter_display_name || this.logged_in) return true;
-      return false;
+      if (this.current_username == this.exam.created_by) return true
+      if (!this.exam.accept_submission) return false
+      if (this.submitter_display_name || this.logged_in) return true
+      return false
     },
   },
   methods: {
     login() {
       // navigate to the login screen, setting
       // the current route as post-login redirect url
-      this.$store.commit('authenticator/updateRedirectUrl', this.$route.path);
-      this.$router.push(this.localePath('/login'));
+      this.$store.commit("authenticator/updateRedirectUrl", this.$route.path)
+      this.$router.push(this.localePath("/login"))
     },
     create_submission() {
       // create the submission object to be sent to the server
 
-      const submission = {};
+      const submission = {}
 
       if (this.current_username) {
-        submission.created_by = this.current_username;
+        submission.created_by = this.current_username
       } else {
-        submission.guest = this.submitter_display_name;
+        submission.guest = this.submitter_display_name
       }
 
-      submission.created = new Date();
-      submission.exercise_lid = this.exam.exercise_lid;
-      submission.exam_lid = this.exam.lid;
-      submission.exercise = { ...this.exercise };
+      submission.created = new Date()
+      submission.exercise_lid = this.exam.exercise_lid
+      submission.exam_lid = this.exam.lid
+      submission.exercise = { ...this.exercise }
       submission.exercise.data.sheet = this.exercise.data.sheet.map((unit) => ({
         ...unit,
         solved: this.$refs[`unit-${unit._key}`][0].get_solved(),
-      }));
+      }))
 
-      return submission;
+      return submission
     },
     async liked() {
-      await this.$nuxt.refresh();
+      await this.$nuxt.refresh()
     },
     async submit() {
-      if (!(await this.$refs.msgbox.confirm(this.$t('exam.confirm')))) return;
+      if (!(await this.$refs.msgbox.confirm(this.$t("exam.confirm")))) return
 
-      this.is_submitting = true;
-      this.all_readonly = true;
+      this.is_submitting = true
+      this.all_readonly = true
 
-      const submission = this.create_submission();
+      const submission = this.create_submission()
 
       try {
-        await this.$auth.axios.post('/v1/submissions/', submission);
+        await this.$auth.axios.post("/v1/submissions/", submission)
       } catch (e) {
-        console.error({ ...e });
-        await this.$refs.msgbox.alert(this.$t('exam.confirm'));
-        return;
+        console.error({ ...e })
+        await this.$refs.msgbox.alert(this.$t("exam.confirm"))
+        return
       } finally {
-        this.is_submitting = false;
+        this.is_submitting = false
       }
 
-      this.submitted = true;
+      this.submitted = true
     },
   },
-};
+}
 </script>
