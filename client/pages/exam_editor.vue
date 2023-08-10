@@ -147,14 +147,12 @@ export default {
       //const exercise = (
       //  await this.$auth.axios.get(`/v1/exercises/${new_from}/`)
       //).data
-      //console.log(exercise)
       this.$set(this.exam, "exercise_lid", new_from)
     }
     if (exam_id) {
       this.infobox = undefined // expansion panel closed
       this.exam = (await this.$auth.axios.get(`/v1/exams/${exam_id}/`)).data
       this.exam.created = new Date(this.exam.created)
-      console.log("loaded exam", this.exam)
       this.fetch_exam_submissions(exam_id)
     }
   },
@@ -238,7 +236,6 @@ export default {
       }
 
       this.is_saving = true
-      console.log("saving:", this.exam)
 
       const api = {
         path: "/v1/exams/",
@@ -248,8 +245,6 @@ export default {
         api.path = `/v1/exams/${this.exam.lid}/`
         api.method = "PUT"
       }
-
-      console.log("request:", api)
 
       let ret = undefined
       try {
@@ -276,8 +271,6 @@ export default {
       } finally {
         this.is_saving = false
       }
-
-      console.log(ret.data)
 
       if (!this.exam.lid) {
         // the exercise was just created.

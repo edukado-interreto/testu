@@ -42,7 +42,6 @@ export default {
       // right answers. We access the computed
       // 'success' prop of each child component
       // to get the amount of successful answers.
-      console.log(answer.value, i, j)
       this.score_awarded = this.$refs.gap.filter((c) => !!c.success).length
     },
     get_solved() {

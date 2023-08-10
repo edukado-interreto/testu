@@ -32,7 +32,6 @@ export default {
     async click() {
       if (!this.user) return
 
-      console.info(this.$nuxt)
       const model = this.item.url.includes("exercise") ? "exercises" : "exams"
       const url = `/v1/${model}/${this.item.lid}/like/`
       const resp = await this.$auth.axios.post(url)

@@ -73,7 +73,6 @@ export default {
       query.set("created_by", this.current_username)
       for (const k in params_obj) query.set(k, params_obj[k])
       const url = `/v1/exercises/?${query.toString()}`
-      console.log(`fetching ${url}`)
 
       this.loading = true
       const resp = await this.$auth.axios.get(url)

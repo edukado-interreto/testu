@@ -38,7 +38,6 @@ export default {
       query.set("limit", this.page_length)
       for (const k in params_obj) query.set(k, params_obj[k])
       const url = `/v1/exams/?${query.toString()}`
-      console.log(`fetching ${url}`)
 
       this.loading = true
       const resp = await this.$auth.axios.get(url)

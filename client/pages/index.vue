@@ -225,7 +225,6 @@ export default {
       // if the function is called from a component e.g. @click="update_filtered_exercises"
       if (preserve_offset !== "preserve_offset") {
         this.$set(this.search, "offset", 0)
-        console.log("reset to page 0")
       }
       const params = {
         name: this.search.text,
@@ -247,7 +246,6 @@ export default {
       query.set("limit", this.page_length)
       for (const k in params_obj) query.set(k, params_obj[k])
       const url = `/v1/exercises/?${query.toString()}`
-      console.log(`fetching ${url}`)
 
       // --
       query.delete("offset")

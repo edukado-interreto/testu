@@ -142,12 +142,10 @@ export default {
       if (!this.solved.drags) return
       this.$nextTick(() => {
         this.drags = [...this.solved.drags]
-        console.log("drags loaded from solved prop")
       })
     },
     on_dragstart(e, src_row, src_col) {
       if (this.readonly === true) return
-      console.log("dragstart, component", this._uid)
       e.dataTransfer.setData(
         "text/plain",
         JSON.stringify({
@@ -270,7 +268,6 @@ export default {
           if (!dst) {
             dst = `${i + 1}`
           }
-          console.log(src, dst)
           return [src, dst]
         })
         .filter(([src, dst]) => !!src)

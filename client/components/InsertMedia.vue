@@ -63,9 +63,6 @@ export default {
       const input = this.input_el[0][this.input_el[1]]
       const code = this.model[0][this.model[1]] || ""
 
-      console.log("content:", code)
-      //console.log("input_el:", this.input_el[0][this.input_el[1]])
-
       const start = input.selectionStart
 
       //this.model[0][this.model[1]] = code.slice(

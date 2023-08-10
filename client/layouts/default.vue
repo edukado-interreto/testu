@@ -295,12 +295,9 @@ export default {
     await this.$auth.checkTokens()
     try {
       const ret = await this.$auth.user(true)
-      console.log("this.$auth.user:", ret)
-      console.log("computed authUser", this.authUser)
     } catch (e) {
       if (e.response.status) {
         // unauthorized: the user is not logged in
-        console.log("user not logged in")
       } else {
         console.error("this.$auth.user raised an exception")
         console.error({ ...e })

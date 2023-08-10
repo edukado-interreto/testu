@@ -4,14 +4,8 @@
    then redirects the user to the login route if needed. */
 
 export default async ({ route, store, redirect, app }) => {
-  console.log("route: ", route)
-
   if (route.meta && route.meta[0].requiresAuth) {
     await store.dispatch("authenticator/CHECK_TOKENS")
-    console.log(
-      "!!store.state.authenticator.authUser = ",
-      !!store.state.authenticator.authUser,
-    )
     if (!!store.state.authenticator.authUser) {
       //next();
     } else {

@@ -72,7 +72,6 @@ export default {
       query.set("limit", this.page_length)
       for (const k in params_obj) query.set(k, params_obj[k])
       const url = `/v1/submissions/?${query.toString()}`
-      console.log(`fetching ${url}`)
 
       this.loading = true
       const resp = await this.$auth.axios.get(url)
@@ -150,8 +149,6 @@ export default {
       //   { "day": "2/17/23", "value": 2 },
       //   { "day": "2/23/23", "value": 9 }
       // ]
-
-      console.log(days_array)
 
       return {
         labels: days_array.map((a) => a.day),

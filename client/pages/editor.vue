@@ -156,11 +156,9 @@ export default {
       }))
     },
     current_cefr_label() {
-      console.log("in cefr label")
       const [min, max] = this.details.lang_learn.cefr_level_range.map(
         this.n2cefr,
       )
-      console.log("cefr label min max:", min, max)
       if (min == "A1" && max == "C2") return "" // any level
       let ret = min
       if (min != max) ret += ` - ${max}`
@@ -229,9 +227,6 @@ export default {
       payload.created_by =
         this.$store.getters["authenticator/authUser"].username
 
-      console.log("data:", payload)
-
-      console.log("checking tokens")
       await this.$auth.checkTokens()
 
       // setup the api call: a PUT request if editing
