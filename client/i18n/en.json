@@ -25,6 +25,7 @@
     "confirm_leave": "This page is asking you to confirm that you want to leave – data you have entered may not be saved.",
     "description": "Description",
     "details": "Exercise details",
+    "cefr_levels_label": "CEFR levels",
     "save": "Save",
     "tags": "Tags",
     "unexpected_response": "Unexpected server response",

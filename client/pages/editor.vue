@@ -43,31 +43,30 @@
             :items="langs_available"
             clearable
           >
-            <template v-slot:prepend-item>
-              <v-list-item @mousedown.prevent>
-                <v-range-slider
-                  dense
-                  :min="cefr_lbound"
-                  :max="cefr_ubound"
-                  :value="[cefr_lbound, cefr_ubound]"
-                  :tick-labels="cefr_levels"
-                  v-model="details.lang_learn.cefr_level_range"
-                ></v-range-slider>
-              </v-list-item>
-            </template>
             <template v-slot:selection="{ item, index }">
               <span>{{ item.text }}</span>
               <span class="grey--text">&nbsp;{{ current_cefr_label }}</span>
             </template>
           </v-autocomplete>
           <v-range-slider
+            v-model="details.lang_learn.cefr_level_range"
+            :label="$t('editor.cefr_levels_label')"
+            :min="cefr_lbound"
+            :max="cefr_ubound"
+            :value="[cefr_lbound, cefr_ubound]"
+            :tick-labels="cefr_levels"
+            class="my-3"
+            dense
+          />
+          <v-range-slider
+            v-model="details.age_range"
             :label="`${$t('editor.age_range')} (${age_range_label[0]} – ${
               age_range_label[1]
             })`"
-            v-model="details.age_range"
             min="0"
             max="18"
-          ></v-range-slider>
+            class="my-3"
+          />
           <v-checkbox
             :label="$t('editor.unlisted')"
             v-model="details.unlisted"
