@@ -585,7 +585,7 @@ export default {
           img: "blank.svg",
           unit: {
             type: "default",
-            code: this.$t("sheet_editor.snippets.blank_unit.code"),
+            code: "",
           },
         },
         {
