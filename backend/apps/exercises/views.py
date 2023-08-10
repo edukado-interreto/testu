@@ -74,6 +74,22 @@ class ExerciseFilter(filters.FilterSet):
         return queryset.filter(**{f"{field_name}__{lookup_expr}": value})
 
 
+class ExamFilter(filters.FilterSet):
+    name = filters.CharFilter(lookup_expr="icontains")
+    created_by = filters.CharFilter(method="created_by_username")
+
+    class Meta:
+        model = Exam
+        fields = [
+            "name",
+            "created_by",
+        ]
+
+    def created_by_username(self, queryset, name, value):
+        """Lookup field `created_by` with username instead of pk."""
+        return queryset.filter(created_by__username=value)
+
+
 class IsAuthenticatedOrGuest(IsAuthenticated):
     def has_permission(self, request, view):
         has_guest = bool(request.data.get("guest"))
@@ -126,6 +142,7 @@ class ExerciseViewSet(ModelViewSet):
 class ExamViewSet(ModelViewSet):
     queryset = Exam.objects.annotate(likes=Sum("examreaction__weight", default=0))
     serializer_class = ExamSerializer
+    filterset_class = ExamFilter
     lookup_field = "lid"
 
     def get_permissions(self):
