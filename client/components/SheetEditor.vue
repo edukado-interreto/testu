@@ -536,12 +536,6 @@ export default {
   mixins: [unit_component],
   props: ["sheet"],
   data: () => ({
-    available_types: [
-      { text: "Default", value: "default" },
-      { text: "Open answer", value: "open_answer" },
-      { text: "Multiple choice", value: "multiple_choice" },
-      { text: "Sort and match", value: "pairing" },
-    ],
     new_gap_options: [],
     add_gap_dialog: false,
 
@@ -564,20 +558,22 @@ export default {
       index: undefined,
       data: {},
     },
-    /* sheet: [
-      {
-        type: "default",
-        title: "Fill in the gaps",
-        code: "To [be|is] or not to be, [that|those] is the question\n\nThe dog [has|is|gives] eaten [its|it's] food"
-      },
-      {
-        type: "default",
-        title: "Another time",
-        code: "The [book|bok|buuk|boock] is on the [table|teble|thable]\n\n[|The] Jupiter and [the|] Earth are planets.\n\nLorem [ipsum|!@#] dolor sit amet."
-      }
-    ] */
   }),
   computed: {
+    available_types() {
+      return [
+        { value: "default", text: this.$t("sheet_editor.types.default") },
+        {
+          value: "open_answer",
+          text: this.$t("sheet_editor.types.open_answer"),
+        },
+        {
+          value: "multiple_choice",
+          text: this.$t("sheet_editor.types.multiple_choice"),
+        },
+        { value: "pairing", text: this.$t("sheet_editor.types.pairing") },
+      ]
+    },
     snippets() {
       return [
         {

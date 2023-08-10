@@ -165,6 +165,12 @@
     "shuffle_options": "Shuffle options",
     "start_typing": "Start typing a sentence…",
     "title": "Title",
+    "types": {
+      "default": "Dropdown list",
+      "open_answer": "Open answer",
+      "multiple_choice": "Multiple choice",
+      "pairing": "Sort and match"
+    },
     "untitled_unit": "Untitled unit",
     "valid_url": "Please type a valid URL",
     "snippets": {
