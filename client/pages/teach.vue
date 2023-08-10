@@ -8,6 +8,17 @@
     <v-tabs-items v-model="tab" class="pa-1 mt-5">
       <!-- exercises -->
       <v-tab-item>
+        <v-btn
+          class="primary--text mt-3"
+          :to="localePath('/editor')"
+          large
+          text
+          nuxt
+        >
+          <v-icon class="mr-1">mdi-plus</v-icon>
+          {{ $t("home.create_exercise") }}
+        </v-btn>
+
         <v-data-iterator
           class="mt-5"
           :items="exercises.results"
