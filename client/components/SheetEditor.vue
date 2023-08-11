@@ -315,7 +315,7 @@
                   <v-icon>mdi-volume-high</v-icon>
                 </v-btn>
               </template>
-              <span>{{ $t("sheet_editor.sound") }}</span>
+              <span>{{ $t("sheet_editor.insert_sound") }}</span>
             </v-tooltip>
           </InsertMedia>
 
