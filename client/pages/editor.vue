@@ -19,11 +19,12 @@
             label="Title"
             v-model="details.title"
             maxlength="100"
-          ></v-text-field>
+            ref="exercise_title_field"
+          />
           <v-text-field
             :label="$t('editor.description')"
             v-model="details.description"
-          ></v-text-field>
+          />
           <v-autocomplete
             :label="$t('editor.tags')"
             small-chips
@@ -31,12 +32,12 @@
             multiple
             v-model="details.tags"
             :items="tags_available_localized"
-          ></v-autocomplete>
+          />
           <v-autocomplete
             :label="$t('exercise.language')"
             v-model="details.src_lang"
             :items="langs_available"
-          ></v-autocomplete>
+          />
           <v-autocomplete
             :label="$t('exercise.target_language')"
             v-model="details.lang_learn.lang"
@@ -194,7 +195,9 @@ export default {
         return
       }
       if (!this.details.title) {
+        this.infobox = 0 // $refs.exercise_title_field doesn’t exist if alrealy expanded
         await this.$refs.msgbox.alert("Please provide a title for the exercise")
+        this.$refs.exercise_title_field?.focus()
         return
       }
       const payload = {}
