@@ -6,6 +6,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django_filters import rest_framework as filters
 from rest_framework.decorators import action
+from rest_framework.filters import OrderingFilter
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -25,8 +26,8 @@ from .serializers import (
     CreatedBySerializer,
     ExamSerializer,
     ExerciseSerializer,
-    SubmissionSerializer,
     ReportSerializer,
+    SubmissionSerializer,
     TagSerializer,
 )
 
@@ -187,13 +188,12 @@ class SubmissionViewSet(ModelViewSet):
 class CreatedByViewSet(ModelViewSet):
     http_method_names = ["get", "options"]
     serializer_class = CreatedBySerializer
+    filter_backends = [OrderingFilter]
+    ordering_fields = ["username", "count"]
+    ordering = ["username"]
 
     def get_queryset(self):
-        return (
-            User.objects.annotate(count=Count("exercise"))
-            .order_by("-count")
-            .filter(count__gt=0)
-        )
+        return User.objects.annotate(count=Count("exercise")).filter(count__gt=0)
 
 
 class LanguageViewSet(ViewSet):
@@ -225,9 +225,12 @@ class LanguageViewSet(ViewSet):
 class TagViewSet(ModelViewSet):
     http_method_names = ["get", "options"]
     serializer_class = TagSerializer
+    filter_backends = [OrderingFilter]
+    ordering_fields = ["name", "count"]
+    ordering = ["-count"]
 
     def get_queryset(self):
-        queryset = Tag.objects.annotate(count=Count("exercise")).order_by("-count")
+        queryset = Tag.objects.annotate(count=Count("exercise"))
         if self.action == "used":
             return queryset.filter(count__gt=0)
         return queryset

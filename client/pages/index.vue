@@ -283,7 +283,7 @@ export default {
   async fetch() {
     await this.update_filtered_exercises()
     this.authors_used = (
-      await this.$auth.axios.get("/v1/authors/?limit=999")
+      await this.$auth.axios.get("/v1/authors/?limit=999&ordering=username")
     ).data?.results
     this.tags_used = (
       await this.$auth.axios.get("/v1/tags/used/?limit=999")
