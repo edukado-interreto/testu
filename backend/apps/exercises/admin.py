@@ -10,7 +10,7 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(Exercise)
 class ExerciseAdmin(admin.ModelAdmin):
-    list_display = ["__str__", "created_by", "created"]
+    list_display = ["__str__", "created_by", "searchable", "created"]
 
 
 @admin.register(Exam)

@@ -193,7 +193,9 @@ class CreatedByViewSet(ModelViewSet):
     ordering = ["username"]
 
     def get_queryset(self):
-        return User.objects.annotate(count=Count("exercise")).filter(count__gt=0)
+        return User.objects.annotate(
+            count=Count("exercise", filter=Q(exercise__searchable=True))
+        ).filter(count__gt=0)
 
 
 class LanguageViewSet(ViewSet):
