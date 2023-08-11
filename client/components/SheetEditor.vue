@@ -700,7 +700,7 @@ export default {
           ),
           img: "dropdown_sound.svg",
           unit: {
-            type: "multiple_choice",
+            type: "default",
             description: this.$t(
               "sheet_editor.snippets.questions_about_a_sound_dropdown.description",
             ),
