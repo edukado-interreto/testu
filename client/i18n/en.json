@@ -22,10 +22,10 @@
   },
   "editor": {
     "age_range": "Age range",
+    "cefr_levels_label": "CEFR levels",
     "confirm_leave": "This page is asking you to confirm that you want to leave – data you have entered may not be saved.",
     "description": "Description",
     "details": "Exercise details",
-    "cefr_levels_label": "CEFR levels",
     "save": "Save",
     "tags": "Tags",
     "unexpected_response": "Unexpected server response",
@@ -77,6 +77,32 @@
     "target_language": "Studied language",
     "target_language_is": "Studied language:",
     "unlisted": "This exercise is unlisted in search results"
+  },
+  "guide": {
+    "about": "How to create exercises",
+    "about_text": "To create new exercice, you'll first need to register and login in the website.",
+    "construction": "Under construction",
+    "gap_filling": "Gap Filling",
+    "multiple_choice": "Multiple choice",
+    "sort_and_match": "Sort and Match",
+    "video": "about a video",
+    "exercice": {
+      "explanation1": "To create a new exercise, you have to be in the Home menu (1), then you can select \"+ CREATE A NEW EXERCISE\" (2). Once created, they'll appear on this page. But for now you will be moved to the next page as you can see just below.",
+      "explanation2": "An exercise can be composed in multiple units. You can add units by clicking on \"+ ADD UNIT\" (3). There are different kinds of exercises but in each unit you can only use the same kind. If you want to mix different types of questions in an exercise, you'll have to do separate units for each type of questions you want.",
+      "explanation3": "As you can see on the left, there are a lot of different types of units. But mainly, we can group them in 3 families: gap filling questions, multiple choices and match or sort questions.",
+      "explanation4": "Gap filling question is a text or a sentence where you choose to remove a word or a few words. For theses questions, you can choose to give some answers (at least one right answer and some false ones) or you can let the field open and the person answering the question will have to complete by typing the answer. In each case, you'll indicate the right answer(s) when creating the question.",
+      "explanation5": "Multiple choices allow you to create question with a choice of answers. It can be one or more right answers and as for the gap filling questions, you'll have to give the right answer(s) when creating the question.",
+      "explanation6": "For match or sort questions, you'll have the choice to give descriptions or questions or pictures or even sounds and words or answers related to the given items. The learners will have to pair the items with the answers or if you chose the sort question, they'll have to sort them in the right order.",
+      "explanation7": "You can find more explanations for each family by clicking on the tabs on the top of this page.",
+      "gap_filling_1": "The default type of exercise is a gap filling question. There are two kinds of gap filling exercises. The first one (1) is called \"Default\", and gives given answers when you click on the gap. The second type is the \"Open answer\" (8), there is no anwser given, the learner has to write it directly. We will see how to write the questions and how to give the answer, some wrong ones and the right one(s).",
+      "gap_filling_2": "In the fields (2), you can write the title of the exercises and in the field (3) a short description to explain the instructions fo the following questions or give some context.",
+      "gap_filling_3": "The questions themselves are written in the box (4). There are always two ways to do it. You can write directly the questions and the answers in the box or you can use the tools in the upper left corner (6). The result will be the same, you will see the same text in the field (4).",
+      "gap_filling_4": "If you write the questions directly in the box, every questions have to be separated by a blank line and the answer has to be given between brackets [ ] and separated by a vertical separator |. And you have to put a + before the right answer(s). If there is more than one right answer, any of them will be considered as correct for the result. You can also choose to shuffle the proposed answers by clicking on the \"Shuffle options\" (7).",
+      "gap_filling_5": "If you use the tools to create the questions (6), the one on the left will pass a blank line to start a new question. You'll have to write the question or text and where you want to put a gap, you click on the tool on the right. A pop up window will open, as showed in the image. You can type the answers one by one. They'll be validated when you type \"enter\". By default, the first one will automatically be considered as the right one, and a green \"v\" will show in front of it, but you can select the correct answer(s) by clicking on the small button in front of each answer (8). You can also choose to add a \"leave blank\" option by clicking on the dashed square on the right (9).",
+      "gap_filling_open_answer_1": "The other type of gap filling exercise is the \"Open answer\" (10). As you can see below, for this kind of exercise, there is no proposed answer. You can give expected answers, one or more, the same ways as we just explained, with the tool or directly in the box (11). You can proposed wrong answers, they will not appear but during the correction, it will show a red X if someone filled with one of these answers, nothing if they wrote another answer et a green V if they have one of the right answers.",
+      "gap_filling_open_answer_2": "You can add other questions, the same ways as before, by passing a blank line or by clicking on the button on the left (6). When you are happy with your questions, don't forget to click on the \"Save\" button to save your work. You can always come back to add questions or to make some changes.",
+      "name": "New exercise"
+    }
   },
   "home": {
     "create_exercise": "Create a new exercise",
@@ -166,12 +192,6 @@
     "shuffle_options": "Shuffle options",
     "start_typing": "Start typing a sentence…",
     "title": "Title",
-    "types": {
-      "default": "Dropdown list",
-      "open_answer": "Open answer",
-      "multiple_choice": "Multiple choice",
-      "pairing": "Sort and match"
-    },
     "untitled_unit": "Untitled unit",
     "valid_url": "Please type a valid URL",
     "snippets": {
@@ -226,6 +246,12 @@
         "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
         "name": "Sorting pictures"
       }
+    },
+    "types": {
+      "default": "Dropdown list",
+      "multiple_choice": "Multiple choice",
+      "open_answer": "Open answer",
+      "pairing": "Sort and match"
     }
   },
   "sort": {
@@ -269,32 +295,6 @@
   "teach": {
     "exams": "Exams",
     "exercises": "Exercises"
-  },
-  "guide": {
-    "about": "How to create exercises",
-    "about_text": "To create new exercice, you'll first need to register and login in the website.",
-    "exercice": {
-      "explanation1": "To create a new exercise, you have to be in the Home menu (1), then you can select \"+ CREATE A NEW EXERCISE\" (2). Once created, they'll appear on this page. But for now you will be moved to the next page as you can see just below.",
-      "explanation2": "An exercise can be composed in multiple units. You can add units by clicking on \"+ ADD UNIT\" (3). There are different kinds of exercises but in each unit you can only use the same kind. If you want to mix different types of questions in an exercise, you'll have to do separate units for each type of questions you want.",
-      "explanation3": "As you can see on the left, there are a lot of different types of units. But mainly, we can group them in 3 families: gap filling questions, multiple choices and match or sort questions.",
-      "explanation4": "Gap filling question is a text or a sentence where you choose to remove a word or a few words. For theses questions, you can choose to give some answers (at least one right answer and some false ones) or you can let the field open and the person answering the question will have to complete by typing the answer. In each case, you'll indicate the right answer(s) when creating the question.",
-      "explanation5": "Multiple choices allow you to create question with a choice of answers. It can be one or more right answers and as for the gap filling questions, you'll have to give the right answer(s) when creating the question.",
-      "explanation6": "For match or sort questions, you'll have the choice to give descriptions or questions or pictures or even sounds and words or answers related to the given items. The learners will have to pair the items with the answers or if you chose the sort question, they'll have to sort them in the right order.",
-      "explanation7": "You can find more explanations for each family by clicking on the tabs on the top of this page.",
-      "gap_filling_1": "The default type of exercise is a gap filling question. There are two kinds of gap filling exercises. The first one (1) is called \"Default\", and gives given answers when you click on the gap. The second type is the \"Open answer\" (8), there is no anwser given, the learner has to write it directly. We will see how to write the questions and how to give the answer, some wrong ones and the right one(s).",
-      "gap_filling_2": "In the fields (2), you can write the title of the exercises and in the field (3) a short description to explain the instructions fo the following questions or give some context.",
-      "gap_filling_3": "The questions themselves are written in the box (4). There are always two ways to do it. You can write directly the questions and the answers in the box or you can use the tools in the upper left corner (6). The result will be the same, you will see the same text in the field (4).",
-      "gap_filling_4": "If you write the questions directly in the box, every questions have to be separated by a blank line and the answer has to be given between brackets [ ] and separated by a vertical separator |. And you have to put a + before the right answer(s). If there is more than one right answer, any of them will be considered as correct for the result. You can also choose to shuffle the proposed answers by clicking on the \"Shuffle options\" (7).",
-      "gap_filling_5": "If you use the tools to create the questions (6), the one on the left will pass a blank line to start a new question. You'll have to write the question or text and where you want to put a gap, you click on the tool on the right. A pop up window will open, as showed in the image. You can type the answers one by one. They'll be validated when you type \"enter\". By default, the first one will automatically be considered as the right one, and a green \"v\" will show in front of it, but you can select the correct answer(s) by clicking on the small button in front of each answer (8). You can also choose to add a \"leave blank\" option by clicking on the dashed square on the right (9).",
-      "gap_filling_open_answer_1": "The other type of gap filling exercise is the \"Open answer\" (10). As you can see below, for this kind of exercise, there is no proposed answer. You can give expected answers, one or more, the same ways as we just explained, with the tool or directly in the box (11). You can proposed wrong answers, they will not appear but during the correction, it will show a red X if someone filled with one of these answers, nothing if they wrote another answer et a green V if they have one of the right answers.",
-      "gap_filling_open_answer_2": "You can add other questions, the same ways as before, by passing a blank line or by clicking on the button on the left (6). When you are happy with your questions, don't forget to click on the \"Save\" button to save your work. You can always come back to add questions or to make some changes.",
-      "name": "New exercise"
-    },
-    "gap_filling": "Gap Filling",
-    "multiple_choice": "Multiple choice",
-    "sort_and_match": "Sort and Match",
-    "video": "about a video",
-    "construction": "Under construction"
   },
   "terms": {
     "intro": "A warm welcome to TestU Online, a free, multilingual, online e-learning platform enabling easy and fast creation of various quizzes, tests, and exercises primarily intended for learning languages! Accessing and using the website testu.eu (“the website”, “the service”, “the provider”) implies that you (the “user”) have read, understood and accepted the following terms and conditions, regardless of whether you are registered as a member on testu.eu. Therefore, please read the following text thoroughly.",
