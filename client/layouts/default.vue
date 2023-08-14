@@ -27,6 +27,7 @@
             contain
             src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"
             max-height="32"
+            max-width="32"
           />
         </v-btn>
 
@@ -39,6 +40,7 @@
             contain
             src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
             max-height="32"
+            max-width="32"
           />
         </v-btn>
       </v-sheet>
