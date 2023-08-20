@@ -3,12 +3,12 @@
     <h2 class="mb-3">{{ $t("guide.about") }}</h2>
     <p class="text-justify">{{ $t("guide.about_text") }}</p>
 
-    <v-tabs v-model="tab" center-active show-arrows>
-      <v-tab>{{ $t("guide.exercice.name") }}</v-tab>
-      <v-tab>{{ $t("guide.gap_filling") }}</v-tab>
-      <v-tab>{{ $t("guide.multiple_choice") }}</v-tab>
-      <v-tab>{{ $t("guide.sort_and_match") }}</v-tab>
-      <v-tab>{{ $t("guide.video") }}</v-tab>
+    <v-tabs v-model="tab" center-active show-arrows    >
+      <v-tab >{{ $t('guide.exercice.name') }}</v-tab>
+      <v-tab >{{ $t('guide.gap_filling') }}</v-tab>
+      <v-tab >{{ $t('guide.multiple_choice.name') }}</v-tab>
+      <v-tab >{{ $t('guide.sort_and_match.name') }}</v-tab>
+      <v-tab >{{ $t('guide.video') }}</v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab" class="pa-1 mt-5">
@@ -50,6 +50,8 @@
             <p>{{ $t("guide.exercice.explanation7") }}</p>
           </v-col>
         </v-row>
+
+
       </v-tab-item>
 
       <!-- 2_gap_filling -->
@@ -92,21 +94,122 @@
         <br />
       </v-tab-item>
 
+
       <!-- 3_multiple_choice -->
       <v-tab-item>
-        {{ $t("guide.construction") }}
+        {{$t('guide.multiple_choice.explanation1')}}
+        <br>
+
+        {{$t('guide.multiple_choice.explanation2')}}
+        <br>
+
+        <br>
+
+      <v-img
+        :src="`/guide/3_multiple_choices.png`"
+        height="300px"
+        contain
+      ></v-img>
+
+        {{$t('guide.multiple_choice.explanation3')}}
+      <br>
+
+        <br>
+        {{$t('guide.multiple_choice.explanation4')}}
+
+        <br>
+
+        <br>
+        <v-img
+          :src="`/guide/3_multiple_choices_img.png`"
+          height="300px"
+          contain
+        ></v-img>
+
+        <br>
+
+        {{$t('guide.multiple_choice.explanation5')}}
+      <br>
+
+        <br>
+      <v-img
+          :src="`/guide/3_multiple_choice_sound.png`"
+          height="300px"
+          contain
+      ></v-img>
+
+
       </v-tab-item>
 
       <!-- 4_sort_and_match -->
       <v-tab-item>
-        {{ $t("guide.construction") }}
+
+        {{$t('guide.sort_and_match.explanation1')}}
+
+        <br>
+
+        <br>
+        {{$t('guide.sort_and_match.explanation1_1')}}
+
+        <br>
+
+        <br>
+        {{$t('guide.sort_and_match.explanation2')}}
+        <br>
+
+        <br>
+
+        <v-img
+          :src="`/guide/4_sort_and_match.png`"
+          height="300px"
+          contain
+        ></v-img>
+
+        {{$t('guide.sort_and_match.explanation3')}}
+
+        <br>
+
+        <br>
+        <v-img
+          :src="`/guide/4_sort_and_match_img.png`"
+          height="300px"
+          contain
+        ></v-img>
+
+        <br>
+
+        {{$t('guide.sort_and_match.explanation4')}}
+        <br>
+
+        <br>
+        <v-img
+          :src="`/guide/4_sort_and_match_sounds.png`"
+          height="300px"
+          contain
+        ></v-img>
+
+        <br>
+
+        {{$t('guide.sort_and_match.explanation5')}}
+        <br>
+
+        <br>
+        <v-img
+          :src="`/guide/4_sort_and_match_order.png`"
+          height="300px"
+          contain
+        ></v-img>
+
       </v-tab-item>
 
       <!-- 5_video -->
       <v-tab-item>
         {{ $t("guide.construction") }}
       </v-tab-item>
+
+
     </v-tabs-items>
+
   </v-container>
 </template>
 
