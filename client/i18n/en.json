@@ -106,19 +106,21 @@
       "explanation3": "As before, you can give a title for the series of questions. You can also add a description, for instance a text about which you want to ask questions or an introduction about the questions... ",
       "explanation4": "The questions and the answers can be added as before, by writing them directly in the text box (13) or with de buttons as explained before for the gap filling questions (6). The correct answer must have \"+\" before it and the answers must be separated by \"|\". If there are more than one correct answers, the question will be marked as correct when all the correct answers are checked.",
       "explanation5": "You also have te possibility to add pictures or sounds in the description, by clicking on the three dots (14) and selecting them on your computer. You can then ask questions about the sound or the image. You can add as many as you want and choose where you want them to be in the text by moving the element between curly braces {} (15)."
+
     },
     "sort_and_match": {
       "name" :"Sort and Match",
       "explanation1": "The last family of exercises is the \"sort and match\" also called pairing (text with text, text with pictures, pictures with sounds and sorting pictures). You can select this type of exercices in the type box (16) or in the list of new units.",
       "explanation1_1":" The simplest one consists in matching words. To create them, you can use the button (17) or write them in the text box (18).",
       "explanation2": "Each match has to be written with one part on the left and one part on the right of the \"==\" symbol, with one blank line between them. In this example, there are fruits in one column and colors in the other one. But it can be translations, numbers, or even pictures, sounds or videos. The most important thing is to put the same type in the same column. The propositions will be mixed for the exercise.",
-      "explanation3": "To add pictures or sound, you have to use the buttons (19) and select the file on your computer. It will then create the elements between curly braces {} as before. After that, you can move them on the place you want. To add a video, you have to select the third button (19) and you have to write the url address of the video (for instance on youtube or vimeo...). You can't directly upload a file from your computer.",
+      "explanation3": "To add pictures or sound, you have to use the buttons (19) and select the file on your computer. It will then create the elements between curly braces {} as before. After that, you can move them on the place you want. To add a video, you have to select the third button (19) and you have to write the url address of the video (for instance on youtube or vimeo...). You can't directly upload a video from your computer.",
       "explanation4": "You can associate text with text, or with picture or sound, or associate pictures with sounds as shown in (20).",
-      "explanation5": "If you don't write the \"==\" symbol to pair something with the proposition, as shown in (21), the exercise become a sorting exercise where you have to put the proposition in the right order. You can do it with pictures, text, sounds or video.  "
+      "explanation5": "If you don't write the \"==\" symbol to pair something with the proposition, as shown in (21), the exercise become a sorting exercise where you have to put the proposition in the right order. You can do it with pictures, text, sounds or video.  ",
+      "video": "You can also add a video, directly in the description box, by writing the url address of the video between curly brackets and with \"video:\" before it, as shown in (22). There is no button to do it but you can have a written example by selecting the type of unit: \"Questions about a video, open answer\". "
     },
 
 
-    "video": "about a video",
+
     "construction": "Under construction"
   },
   "home": {
