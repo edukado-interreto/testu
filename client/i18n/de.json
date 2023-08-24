@@ -22,6 +22,7 @@
   },
   "editor": {
     "age_range": "Altersspanne",
+    "confirm_leave": "Diese Seite bittet Sie zu bestätigen, dass Sie die Seite verlassen möchten - die von Ihnen eingegebenen Daten werden möglicherweise nicht gespeichert.",
     "description": "Beschreibung",
     "details": "Details der Übung",
     "save": "Speichern",
@@ -127,6 +128,7 @@
     "privacy": "Datenschutzbestimmungen",
     "settings": "Konto-Einstellungen",
     "signup": "Einschreiben",
+    "social": "Soziales",
     "submit": "Einreichen",
     "terms": "Nutzungsbedingungen"
   },
@@ -163,7 +165,60 @@
     "start_typing": "Beginnen Sie einen Satz einzugeben.",
     "title": "Titel",
     "untitled_unit": "Einheit ohne Titel",
-    "valid_url": "Geben Sie einen gültigen URL ein."
+    "valid_url": "Geben Sie einen gültigen URL ein.",
+    "snippets": {
+      "blank_unit": {
+        "name": "Leerfeld"
+      },
+      "gap_filling_dropdown": {
+        "code": "Das Buch ist [+auf|in] dem Tisch.",
+        "name": "Lückenfüller, Dropdown"
+      },
+      "gap_filling_open_answer": {
+        "code": "Das Buch ist [+auf|in] dem Tisch.",
+        "name": "Lückenfüller, offene Antworten"
+      },
+      "multiple_choice": {
+        "code": "Wo ist das Buch?\n[+auf dem Tisch|im Tisch]",
+        "name": "Multiple choice"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
+        "name": "Bild mit Ton verbinden"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",
+        "name": "Text mit Bild verbinden"
+      },
+      "pairing_text_with_text": {
+        "code": "Kirsche == Rot\n\nZitrone == Gelb\n\nBrokkoli == Grün",
+        "name": "Text mit Text verbinden"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "Das Tier auf dem Bild ist: [Ein Hund|+Eine Katze|Ein Elefant]\n\nIst es ein Wildtier oder ein Haustier? [+Ein Haustier|Ein Wildtier]",
+        "description": "{img:cat.jpeg}",
+        "name": "Fragen zu einem Bild, richtig oder falsch"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Welches Tier macht diesen Laut?\n[+Katze|Hund|Elefant]\n\nWie bezeichnet man den Laut, den dieses Tier macht?\n[+Miauen|Bellen|Trompeten]",
+        "description": "Höre Dir die Tonaufnahme an und beantworte die Fragen.\n\n{sound:cat.mp3}",
+        "name": "Fragen zu einer Tonaufnahme, Dropdown"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Wer hat den Hasen zum einem Wettrennen herausgefordert? [Der Hase|+Die Schildkröte|Ein Vogel]\nWarum hat der Hase während des Wettrennens ein Schläfchen gemacht? [Er war müde|Er wollte der Schildkröte eine Chance geben aufzuholen|+Er war von seinem Sieg überzeugt]\nWer hat das Wettrennen gewonnen? [Der Hase|+Die Schildkröte|Ein Vogel]",
+        "description": "Es waren einmal eine Schildkröte und ein Hase, die darüber in Streit gerieten, wer von ihnen der schnellste sei. Die Schildkröte forderte den Hasen zu einem Wettlauf heraus, und der Hase nahm die Wette an, weil er sicher war sie zu gewinnen.\nDer Wettlauf begann und der Hase lag schnell vorn und ließ die Schildkröte hinter sich zurück. Der Hase wurde übermütig und beschloss ein Schläfchen zu machen. In der Zwischenzeit bewegte sich die Schildkröte stetig weiter in Richtung Ziellinie.\nAls der Hase erwachte, bemerkte er, dass die Schildkröte die Ziellinie fast erreicht hat. Er versuchte sie einzuholen, aber es war zu spät. Die Schildkröte hatte das Wettrennen bereits gewonnen.",
+        "name": "Fragen zu einem Text, Multiple choice"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Wo liegt dieser Ort?\n[]\n\nWer errichtete ihn?\n[]",
+        "description": "Schau Dir das Video an und beantworte die Fragen.\n{video:https://www.youtube.com/watch?v=chii_rEU30g}",
+        "name": "Fragen zu einem Video, offene Antworten"
+      },
+      "sorting_pictures": {
+        "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
+        "name": "Bilder sortieren"
+      }
+    }
   },
   "sort": {
     "rated": "bestbewertet",
@@ -208,11 +263,13 @@
     "exercises": "Übungen"
   },
   "terms": {
+    "intro": "Herzlich willkommen bei TestU Online, einer kostenlosen, mehrsprachigen E-Learning-Plattform, die die einfache und schnelle Erstellung verschiedener Quiz, Tests und Übungen ermöglicht, die in erster Linie für das Erlernen von Sprachen gedacht sind! Der Zugang und die Nutzung der Website testu.eu (\"die Website\", \"der Dienst\", \"der Anbieter\") setzt voraus, dass Sie (der \"Nutzer\") die folgenden Bedingungen gelesen, verstanden und akzeptiert haben, unabhängig davon, ob Sie als Nutzer:in auf testu.eu registriert sind. Bitte lesen Sie daher den folgenden Text sorgfältig durch.",
     "last_update": "Zuletzt aktualisiert: {date}",
     "section1": {
       "text1": "Einige unserer Dienste kannst du ohne eine Anmeldung auf der Webseite nutzen. Um alle Funktionen der Webseite nutzen zu können, musst du ein persönliches Benutzerkonto einrichten. Die Registrierung ist kostenlos.",
       "text2": "Zur Registrierung sind Personen ab 13 Jahren zugelassen. Die Nutzung der Webseite durch Minderjährige ist ausschließlich mit Zustimmung der Erziehungsberechtigten zulässig.",
       "text3": "Du sicherst zu, dass alle von dir bei der Registrierung angegebenen Daten wahr und korrekt sind sowie, dass du sie immer auf dem neuesten Stand halten wirst.",
+      "text4": "Bei der Registrierung ist die Nutzung von Daten (z.B. Benutzername, Name, Profilbilder usw.), die die Rechte Dritter, insbesondere Marken- oder Namensrechte verletzen, unzulässig. Rechtswidrige oder gegen diese Nutzungsbedingungen verstoßende Daten sind (ebenfalls) nicht zulässig.",
       "text5": "Bei der Registrierung wählst du ein Passwort und bist verpflichtet, dieses Passwort geheim zu halten.",
       "text6": "Du bist mit der öffentlichen Wiedergabe deiner Profildaten (z.B. deines Benutzernamens, des sprachlichen Fortschritts, des Online-Status, der gewählten Sprachversion, des Registrierungsdatums und des Datums der letzten Anmeldung sowie weiterer freiwilliger Angaben, einschließlich des Profilbildes) einverstanden. Die E-Mail-Adresse und das Passwort werden nicht veröffentlicht.",
       "text7": "Die Registrierung auf der Webseite wird über einen Aktivierungslink abgeschlossen. Dafür bekommst du nach dem Eingang der Registrierung vom Anbieter der Webseite eine automatische Bestätigung per E-Mail, die diesen Aktivierungslink enthält.",
@@ -231,6 +288,7 @@
       "text2_2": "die Zugangsdaten geheim zu halten und sie nicht an Dritte weiterzugeben;",
       "text2_3": "die Anbieter der Webseite umgehend darüber zu informieren, wenn Anlass zu der Vermutung besteht, dass ein Dritter Kenntnis von den Zugangsdaten erlangt hat und/oder ein Benutzerkonto missbraucht.",
       "text3": "Du bist allein für die von dir eingestellten Inhalte sowie für die (sowohl öffentliche als auch nicht öffentliche) Kommunikation mit anderen verantwortlich. Du bist auch verpflichtet, die Rechte und Interessen der anderen Nutzer oder sonstiger Dritter, insbesondere deren Persönlichkeitsrechte, zu wahren.",
+      "text4": "Es ist strengstens untersagt, die folgenden Inhalte (als Bilder, Links, Fotos, Übungen, Audio- und Videodateien oder andere Inhalte) auf die Website hochzuladen und zu posten, zu versenden, zu verlinken, zu übertragen, zu bewerben, anzubieten oder anderweitig bereitzustellen:",
       "text4_1": "gesetzlich geschützte Inhalte, die z. B. durch das Urheber-, Leistungsschutz-, Namens-, Marken-, Patent-, Geschmacksmuster-, Gebrauchsmuster-, Eigentums- oder Persönlichkeitsrecht geschützt sind, wenn du nicht dazu berechtigt bist;",
       "text4_2": "pornografische, gewaltverherrlichende, obszöne, sexistische, diffamierende, verleumderische, rassistische, Angehörige von Minderheiten oder Religionen verletzende Darstellungen sowie Inhalte, die gegen die Jugendschutzgesetze verstoßen;",
       "text4_3": "Propagandamittel und Kennzeichen verfassungswidriger Organisationen;",
@@ -243,6 +301,7 @@
       "text5_1": "das Konto eines anderen Nutzers oder das System ohne Genehmigung des Anbieters zu verwenden oder versuchen zu verwenden;",
       "text5_2": "sich als eine andere Person auszugeben sowie falsche Informationen über sich anzugeben;",
       "text5_3": "das Blockieren der Webseitenfunktionen, das Überschreiben, Modifizieren oder Kopieren des Inhalts, des Programmcodes und/oder der Daten der Webseite sowie das automatisierte Abrufen von Inhalten, soweit dies nicht für die ordnungsgemäße Nutzung der Dienste der Webseite erforderlich ist;",
+      "text6": "Der Eigentümer dieser Website behält sich das Recht vor, nicht autorisierte Beiträge (einschließlich Tests, Übungen, Texte und Bilder), die gegen diese Bedingungen verstoßen, oder das Konto des:der Benutzer:in jederzeit und ohne Vorankündigung zu löschen.",
       "title": "Pflichten des Nutzers"
     },
     "section4": {
@@ -257,6 +316,8 @@
       "title": "Rechteeinräumung"
     },
     "section6": {
+      "text1": "Alle auf der Website veröffentlichten Texte, Bilder und sonstigen Inhalte, einschließlich der von den Nutzer:innen bereitgestellten Inhalte, werden - sofern nicht anders angegeben - unter der {Lizenz} veröffentlicht.",
+      "text1_license": "CC0 1.0 Universal Creative Commons Lizenz",
       "title": "Eigentumsrechte"
     },
     "section7": {
@@ -276,8 +337,11 @@
       "title": "Haftung"
     },
     "section9": {
+      "text1": "Diese Bedingungen und alle damit zusammenhängenden Streitigkeiten unterliegen dem Recht der Slowakischen Republik. Erfüllungsort und ausschließlicher Gerichtsstand ist, soweit gesetzlich zulässig, die Slowakei.",
+      "text2": "Die englische Fassung der Vereinbarung ist rechtsverbindlich.",
       "text3": "Der Anbieter der Webseite behält sich vor, diese Nutzungsbedingungen jederzeit und ohne Nennung von Gründen zu ändern. Die aktuellste Version wird immer unter {link} bereitgestellt. Ein ausdrücklicher Hinweis auf die Änderung der Nutzungsbedingungen erfolgt nicht, sondern es liegt im Verantwortungsbereich des Nutzers, die jeweils aktuellen Nutzungsbedingungen abzurufen und einzusehen. Mit der Weiternutzung der Webseite nach einer Änderung der Nutzungsbedingungen erklärt der Nutzer sein Einverständnis zu den Änderungen.",
       "text4": "Der Anbieter ist berechtigt, nach Ankündigung per E-Mail innerhalb von 4 Wochen seine Rechte und Pflichten aus diesem Nutzungsverhältnis ganz oder teilweise auf einen Dritten zu übertragen.",
+      "text5": "Kontaktinformationen für den Anbieter oder die Administratoren der Website finden Sie auf der folgenden Seite {link}.",
       "title": "Schlussbestimmungen"
     }
   }

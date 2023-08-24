@@ -22,6 +22,7 @@
   },
   "editor": {
     "age_range": "Starstwo",
+    "confirm_leave": "Na tom boce dejśo wobkšuśiś, až cośo bok spušćiś - zapódane daty mógu se zgubiś.",
     "description": "Wopisanje",
     "details": "Informacije k zwucowanju",
     "save": "Skłaź",
@@ -260,5 +261,88 @@
   "teach": {
     "exams": "Pśespytowanja",
     "exercises": "Zwucowanja"
+  },
+  "terms": {
+    "intro": "Wutšobnje Was witamy na TestU Online - dermotnu, wěcejrěcnu internetowu platformu za e-learning, ako zmóžnja napóranje rozdźělnych kwisow, testow a zwucowanjow za wuknjenje rěcow! Aby mógali wužywaś website testu.eu („website“, „słužba“, „póbitowaŕ“), musyśo Wy („wužywaŕ(ka)“) pśecytaś, wurozměś a akceptěrowaś slědujuce wužywańske wuměnjenja, njewótwisnje wót togo, lěc sćo ako cłonk na slovake.eu registrěrowane abo nic. Pśecytajśo togodla slědujucy tekst kradosćiwje.",
+    "last_update": "Datum slědnego aktualizěrowanja: {date}",
+    "section1": {
+      "text1": "Wy móžośo wužywaś někotare z našych słužbow bźez pśizjawjenja na website. Aby mógali wužywaś wšykne funkcije website, musyśo załožyś wósobinske wužywaŕske konto. Registrěrowanje jo dermotne.",
+      "text2": "Registrěrowaś směju se luźe wót 13 lět. Wužywanje website pśez njedolětne jo jano móžne, pśigłosyju-li za wótkubłanje wopšawnjone wósoby.",
+      "text3": "Wy garantěrujośo, až wšykne daty, kenž zapódajośo pśi registrěrowanju, su pšawe a až je aktualizěrujośo, jo-li to trjeba.",
+      "text4": "Pśi registrěrowanju njejo dowólone wužywanje datow (na pś. wužywaŕske mě, mě, zwucowańske teksty, wobraze, awdiodataje abo wideodataje), ako zraniju pšawa tśeśich wósobow, pśedewšym pšawa na markach abo mjenjach. Tejerownosći njejsu dowólone pśeśiwokazniske daty abo daty, ako se njemakaju z wužywaŕskimi wuměnjenjami.",
+      "text5": "Pśi registrěrowanju wubjerjośo kodowe słowo. Wy se zawěžośo, aby kodowe słowo šćitowali pśed wužywanim pśez tśeśe wósoby.",
+      "text6": "Wy pśigłosyjośo, až wěste daty Wašogo wužywaŕskego profila směju byś zjawnje pśistupne (na pś. Wašo wužywaŕske mě, rěcny póstup, status „online“, wubrana rěcna wersija, datum registrěrowanja, datum slědnego pśizjawjenja a dalšne dobrowólne daty inkluziwnje profilowego wobraza). Mejlowa adresa a kodowe słowo se njewózjawijotej.",
+      "text7": "Registrěrowanje na website se dokóńcyjo z kliknjenim na aktiwěrowański wótkaz. Za to dostanjośo pó registrěrowanju wót póbitowarja awtomatiske wobkšuśenje w formje mejlki z aktiwěrowańskim wótkazom.",
+      "text8": "W paźe registrěrowanja, ako se njedokóńcyjo z aktiwěrowanim konta, ma póbitowaŕ pšawo wótpowědne konto wulašowaś.",
+      "text9": "Póbitowaŕ toś tych bokow njerukujo za pšawu identitu wužywarjow. Kužda wužywaŕka / kuždy wužywaŕ daś se sama / sam wó identiśe drugich wužywaŕkow / wužywarjow pśeznanijo. Njeglědajucy na to ma póbitowaŕ pšawo pominaś dopokaze, aby mógał identitu a starstwo wužywaŕki / wužywarja pśespytaś. Njezapódajo-li wužywaŕka / wužywaŕ dopokaze za póstajony cas, smějo póbitowaŕ wótpowědne konto wulašowaś.",
+      "title": "Registrěrowanje"
+    },
+    "section2": {
+      "text1": "Póbitowarjeju toś tych bokow jo znate, až jo šćitowanje wósobinskich datow wjelgin wažne. Togodla wótpowěduju boki kšuśe kaznjam wó šćitowanju datow. Drobnosći su rědowane w póstajenjach wó šćitowanju datow.",
+      "title": "Šćitowanje datow"
+    },
+    "section3": {
+      "text1": "Website smějo se jano wužywaś wótpowědnje kaznjam.",
+      "text2": "Ako wužywaŕ(ka) musyśo:",
+      "text2_1": "pódaś wěrne a njetorjece informacije w swójom profilu a w komunikaciji z drugimi wužywaŕ(k)ami;",
+      "text2_2": "registrěrowańske daty zatajiś (njesmějośo je pśedewšym drugim k dispoziciji stajiś);",
+      "text2_3": "póinforměrowaś póbitowarja website naměsće, gaž se Wam zezdajo, až něchten drugi ma pśistup k Wašym zalogowańskim datam abo až něchten drugi jo Wašo konto znjewužywał.",
+      "text3": "Jano Wy sćo zagronite za wopśimjeśa, ako Wy zlodujośo górjej, a za zjawnu ako teke priwatnu komunikaciju z drugimi. Wy se zawěžośo, aby šćitowali pšawa a zajmy drugich wužywaŕ(k)ow abo stronow, pśedewšym jich wósobinske pšawa.",
+      "text4": "Jo wótśe zakazane zlodowaś slědujuce wopśimjeśa (na pś. wobraze, wótkaze, fota, zwucowanja, awdio, wideo abo hynakše) na website resp. je postowaś, pósłaś, na nje wótkazaś, za nje wabiś, je póbitowaś abo je na hynakšu wašnju k dispoziciji stajiś:",
+      "text4_1": "kazniski šćitowane wopśimjeśa, na pśikład wopśimjeśa, ako su šćitowane pśez copyright a pódobne pšawa, mjenjowe, markowe, patentowe, swójstwowe a wósobinske pšawa, njamaśo-li wósebne pšawo na to;",
+      "text4_2": "pornografiske, namóc wuchwalujuce, njepśistojne, seksistiske, difaměrujuce, wobgronjece, rasistiske, pśisłušniki mjeńšynow abo religijow zranjece wopśimjeśa kaž teke wopśimjeśa, ako pśestupiju kazni za šćitowanje młoźiny;",
+      "text4_3": "politisku propagandu a symbole zakazanych organizacijow;",
+      "text4_4": "wobuzujuce, kśiwźece, wobgronjece a wobgrozujuce wopśimjeśa kaž teke diskriminěrujuce wugronjenja;",
+      "text4_5": "priwatne daty drugich wužywaŕ(k)ow (na pś. jich adresu, telefonowy numer, bankowy zwisk) abo wurězki z priwatneje komunikacije z drugimi wužywaŕ(k)ami, póbitowarjami/administratorami website abo tśeśich stronow;",
+      "text4_6": "wótkaze k website z ilegalnym wopśimjeśim;",
+      "text4_7": "kuždežkuli njepominane abo njewopšawnjone wabjenje, wabjeńske materialije, „junk mail“, spam, rjeśazowe listy, pyramidowe systemy a kužda forma wabjenja klientow;",
+      "text4_8": "material, wopśimujucy wiruse, wužeńce, trojanarje abo programy, ako wobgrozuju abo kaze wugbałosć abo wobstaśe toś tych abo drugich bokow.",
+      "text5": "Slědujuce jadnanja su wužywaŕce/wužywarjeju zakazane:",
+      "text5_1": "wužywanje abo wopyt wužywanja konta drugeje wužywaŕki / drugego wužywarja abo systema mimo pśizwólenja póbitowarja;",
+      "text5_2": "wudawaś se za drugu wósobu a pódawaś wopacne informacije wó sebje;",
+      "text5_3": "blokěrowanje funkcijow website, pśepisanje, modificěrowanje abo kopěrowanje wopśimjeśa, programowego koda a/abo datow website kaž teke awtomatizěrowanje wótwołanje wopśimjeśow, tak daloko ako njejo za pórědne wužywanje słužbow website trjeba.",
+      "text6": "Swójstwownik toś tych bokow ma kuždy cas pšawo mimo pśedpśipowěźenja wulašowaś njeawtorizěrowane pśinoski (inkluziwnje testow, zwucowanjow, tekstow a wobrazow), ako pśestupiju how pśedstajone wuměnjenja, abo konto wužywaŕki/wužywarja.",
+      "title": "Zagronitosći wužywarja/wužywaŕki"
+    },
+    "section4": {
+      "text1": "Póbitowaŕ ma wušej togo pšawo póbitowane słužby kuždy cas pó swójom spódobanju a mimo pśedpśipowěźenja změniś abo wěcej njepóbitowaś.",
+      "title": "Změna słužbow"
+    },
+    "section5": {
+      "text1": "Póbitowaŕ toś teje website dajo Wam ako wužywarjeju pó cełem swěśe wósobinske, njepśenosne a njeekskluziwne pšawo na wužywanje słužbow wótpowědnje how pśedstajonym wuměnjenjam.",
+      "text2": "Wužywaŕ(ka) dajo website pó cełem swěśe njeekskluziwne, dermotne, pśenosne, casowje a rumnostnje njewobgranicowane pšawo wužywaś wót wužywaŕki/wužywarja zlodowane wopśimjeśa we wšyknych medijach, kótarež póbitowaŕ wužywa. Póbitowaŕ ma wósebnje pšawo na wužywanje toś tych wopśimjeśow we wšyknych medijach a smějo je wózjawiś, kopěrowaś, reproducěrowaś a rozšyrjaś a je za to změniś a wobźěłaś.",
+      "text3": "Wužywaŕka/wužywaŕ zagarantěrujo, až jeje/jogo wopśimjeśa su za wužywanje liche wót pšawow drugich wótpowědnje 5.2. Wóna/wón wobwěsćijo, až ma wšykne pšawa, połnomócy a dowólnosći, ako su za to trjebne.",
+      "text4": "Pšawa, ako pśizwólijoš toś tej website, a how pśedstajone garantije a wobwěsćenja se njeskóńcyju ze zakóńcenim wužywanja.",
+      "title": "Pśizwólenje pšawow"
+    },
+    "section6": {
+      "text1": "Njejo-lic nic hynakšego pódane, su wše teksty, wobraze a druge na website wózjawjone wopśimjeśa, inkl. wopśimjeśow wužywaŕ(k)ow, su wózjawjone pód {license}.",
+      "text1_license": "CC0 1.0 Universal Creative Commons license",
+      "title": "Swójstwowe pšawa"
+    },
+    "section7": {
+      "text1": "Cłonkojstwo se zachopijo z registraciju a z pśigłosenim k toś tym wuměnjenjam za wužywanje a póstajenjam wó šćitowanju datow na njepóstajony cas.",
+      "text2": "Móžośo słužbu kuždy cas wupowěźeś pód {link}, a to bźez wósebnych pśicynow. Pó wupowěźenju njezmějośo wěcej pśistup k Wašomu profiloju a wšykne tam chowane informacije se wót póbitowarja website wulašuju. Pśigłosyjośo, až směju se někotare wopśimjeśa (ako na pśikład komentary, posty a powěsći), ako njejsu njepósrědnje zwězane z Wašym profilom, wobchowaś. Njamaśo žedno pšawo na wudaśe abo pśewóstajenje wopśimjeśow, kótarež sćo Wy za cas Wašogo cłonkojstwa zlodowali.",
+      "text3": "Pšawo na wurědne wupowěźenje z wažneje pśicyny njejo wót togo dotyknjone. Wažna pśicyna pśedewšym pśedlažy, gaž jadna strona se pśejźo pśeśiwo zawězkam z wuměnjenjow za wužywanje. W paźe wurědnego wupowěźenja pśez póbitowarja sćo zasadnje wót dalšnego wužywanja website wuzamknjone. Z tym teke njejsu nowe registracije dowólone.",
+      "text4": "Swójstwownik togo website ma pšawo konto wužywaŕki/wužywarja wulašowaś, gaž wóna/wón njejo słužbu šesć mjasecow wužywał(a).",
+      "title": "Cas płaśiwosći a zakóńcenje wužywanja"
+    },
+    "section8": {
+      "text1": "Póbitowaŕ wótwardujo website, stara se wó jeje korektnosć a wěstosć, ale žednje njerukujo za jeje korektnosć a wěstosć. Tejerownosći njerukujo za to, až website funkcioněrujo bźez pśetergnjenjow, wótwlacenjow abo hynakšych brachow.",
+      "text2": "Póbitowaŕ wuzamknjo rukowanje za lažko njerozglědniwe zranjenja słušnosćow, njejo-li z togo nastała škóda za žywjenje, śěło abo strowotu a njejsu-li wót togo pótrjefjone garantije abo pšawa pó kazni wó rukowanju za produkty. Wušej togo njejo dotyknjone rukowanje za zranjenje słušnosćow, kótarychž dopołnjenje wužywański poměr akle zmóžnijo a na kótarychž doźaržanje smějo wužywaŕ(ka) dowěriś. To same płaśi za zranjenja słušnosćow našych pomocnikow.",
+      "text3": "Pó kazniskich póstajenjach njejo póbitowaŕ website a słužbow zawězany doglědowaś pósrědnjone abo składowane informacije abo slěźiś za wobstojnosćami, kótarež pokazuju na ilegalnu cynitosć. Dla togo njepśewzejo zagronitosć za wót wužywaŕ(k)ow zlodowane wopśimjeśa, daty a/abo informacije, jich wugronjenja daniž za wopśimjeśa zalinkowanych eksternych website.",
+      "text4": "Njeglědajucy na kradosćiwu kontrolu njerukujo póbitowaŕ website za wopśimjeśa eksternych wótkazow. Za wopśimjeśe zalinkowanych bokow su jano jich wobgóspodarjowarje zagronite.",
+      "text5": "Póbitowaŕ njejo zagronity za wopśimjeśe a korektnosć wabjenja. Za wopśimjeśe wabjeńskich anonsow jo jano wótpowědny awtor zagronity. To same płaśi za wopśimjeśe website, za kótaruž se wabi. Gaž póbitowaŕ pokazujo wabjeńsku anonsu na swójej website, njejo zrownju wobjadny z jeje pśeśiwokazniskim wopśimjeśim. Togodla rukujo jano wabjecy.",
+      "text6": "Ako wužywaŕ(ka) wulichujośo póbitowarja website wót wšyknych pominanjow, inkl. pšawow na zarownanje škódy, ako druge wužywaŕki/wužywarje abo druge maju napśeśiwo póbitowarjeju dla zranjenja jich pšawow pśez Was abo dla wót Was zlodowanych wopśimjeśow. Wužywaŕ(ka), kótaraž jo wótpowědne wopśimjeśa na website wózjawił(a), pśewzejo wšykne košty, kótarež póbitowarjeju website nastanu dla zranjenja pšawo drugich, inkl. pśiměrjonych koštow za pšawniske zašćitowanje. Wšykne dalšne pšawa póbitowarja, na pśikład na zarownanje škódy, njejsu dotyknjone.",
+      "title": "Rukowanje"
+    },
+    "section9": {
+      "text1": "Toś te wuměnjenja a wšykne z nimi zwisujuce zwady stoje pód pšawom Słowakskeje republiki. Městno dopołnjenja a jadnučke sedło sudnistwa, jo-li to kazniski dowólone, jo Słowakska.",
+      "text2": "Engelska wersija dogronjenja jo pšawniski zawězujuca.",
+      "text3": "Póbitowaŕ toś teje website smějo wužywańske wuměnjenja kuždy cas a mimo wósebnych zawinow změniś. Nejaktualnjejša wersija stoj pśecej pód {link} k dispoziciji. Na změnu wužywańskich wuměnjenjow se njepokazujo wuraznje. Wužywaŕ(ka) jo sam(a) zagronity/zagronita, aby głědał(a) za nejaktualnjejšymi wužywańskimi wuměnjenjami. Z dalejwužywanim website pó změnje wužywańskich wuměnjenjow wužywaŕ(ka) wuzjawijo wuẑywaŕ(ka), až jo ze změnami wobjadny/wobjadna.",
+      "text4": "Póbitowaŕ ma pšawo, pó pśipowěźenju z mejlku pó 4 tyźenjach wšykne swóje pšawa a słušnosći abo wubrane pšawa a słušnosći z wužywańskego poměra pśepódaś drugemu.",
+      "text5": "Kontaktowe informacije za póbitowarja abo administratory website namakajośo na slědujucem boce {link}.",
+      "title": "Kóńcne póstajenja"
+    }
   }
 }

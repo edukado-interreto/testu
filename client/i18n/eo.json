@@ -113,7 +113,6 @@
     "cancel": "Nuligi",
     "catchphrase": "Kreu viajn proprajn lingvajn kvizojn",
     "edit": "Redakti",
-    "guide": "Gvidlibro",
     "home": "Ĉefpaĝo",
     "lang_menu_header": "interfaca lingvo",
     "login": "Ensaluti",
@@ -206,11 +205,13 @@
     "exercises": "Ekzercoj"
   },
   "terms": {
+    "intro": "Bonvenon ĉe slovake.eu, multlingva retpaĝo por lerni la slovakan! La aliro kaj la uzo de la retpaĝo slovake.eu (\"la retpaĝo\", \"la servo\", \"la ofertanto\" okazas sub la kondiĉo, ke vi (\"la uzanto\") legis la sekvajn uzkondiĉojn, komprenis kaj akceptis ilin, sendepende ĉu vi ankaŭ registriĝis kiel membro ĉe slovake.eu aŭ ne. Pro tio bv. legi la sekvan tekston tre atente.",
     "last_update": "Laste aktualigita: {date}",
     "section1": {
       "text1": "Kelkaj el niaj servoj uzeblas sen registriĝo ĉe la retpaĝo. Por uzi ĉiujn funkciojn de la retpaĝo, vi devas krei personan uzantkonton. La registriĝo estas senkosta.",
       "text2": "Nur personoj, kiuj minimume havas 13 jarojn rajtas registriĝi. La uzo de la retpaĝo por personoj sub 18 jaraj (en kelkaj landoj 21 jaraj) nur eblas kun la konsento de la edukrajtaj personoj.",
       "text3": "Vi garantias, ke ĉiuj informoj donitaj de vi ĉe la registriĝo estas veraj kaj korektaj kaj ke vi ilin ĉiam aktualigos.",
+      "text4": "Ĉe la registriĝo vi ne rajtas uzi informojn (ekz. uzantnomo, nomo, profilbildo ktp.) kiuj kontraŭas la rajtojn de aliaj personoj, specife marko- kaj nomrajtojn. Kontraŭleĝaj Informoj aŭ informoj, kiuj estas kontraŭ la uzkondiĉoj same ne estas permesitaj.",
       "text5": "Ĉe la registriĝo vi elektas pasvorton kaj vi devas teni tiun pasvorton sekrete.",
       "text6": "Vi konsentas pri la publikigo de la profilinformoj (ekz. via uzantnomo, la lingva progreso, la retstatuso, la elektita lingvoversio, la registriĝodato, la dato de la lasta ensaluto kaj pliaj libervolaj informoj, inkluzive de via profilbildo). La retpoŝtadreso kaj la pasvorto ne estos publikigitaj.",
       "text7": "La registriĝo ĉe la retpaĝo nur finiĝas per klako al aktiviga ligilo. Por aktivigi la konton, vi ricevos post la ricevo de la registriĝo aŭtomatan konfirmon per retpoŝto, kiu enhavos la aktivigan ligilon.",
@@ -229,6 +230,7 @@
       "text2_2": "teni la alirinformojn sekrete kaj ne doni ilin al aliaj;",
       "text2_3": "informi la ofertanton de la retpaĝo tuj, kiam ekzistas la supozo, ke aliulo ekhavis informojn pri la alirinformoj kaj/aŭ misuzas uzantkonton.",
       "text3": "Nur vi respondecas pri la enmetita enhavo kaj (la publika kaj la nepublika) komunikado kun aliaj. Vi ankaŭ devas atenti pri la rajtoj kaj interesoj de aliaj uzantoj aŭ aliuloj, speciale pri la personaj rajtoj.",
+      "text4": "Estas strikte malpermesite alŝuti, publikigi, sendi, ligi, enmeti, privarbi, oferti aŭ alimaniere aldoni la sekvajn enhavojn (kiel bildoj, ligiloj, fotoj, forumkontribuoj aŭ aliaj enhavoj, inkluzive de privataj mesaĝoj kaj profilbildoj):",
       "text4_1": "leĝe protektitaj enhavoj, ekzemple enhavo kiu estas protektita pro kopirajto, nomrajtoj, markorajtoj, patentoj, rajtoj pri industria dezajno, aŭ personaj rajtoj, se vi ne havas la permeson pri tio.",
       "text4_2": "pornografiaj, perfortgloraj, obscenaj, seksistaj, kalumniaj, rasismaj, anoj de malplimultoj aŭ religioj ofendantaj prezentoj kaj enhavoj, kiuj malobservas la junularprotektan leĝon (Jugendschutzgesetz);",
       "text4_3": "Propagandiloj kaj insignoj de organizaĵoj kontraŭleĝaj;",
@@ -241,6 +243,7 @@
       "text5_1": "uzi la konton de alia uzanto aŭ uzi aŭ provi uzi la sistemon sen permeso de la ofertanto;",
       "text5_2": "ŝajnigi esti alia persono aŭ enmeti falsajn informojn pri si",
       "text5_3": "la blokadon de la retpaĝfunkcioj, la surskribo, ŝanĝo aŭ kopiado de la enhavo, de la programkodo kaj/aŭ de la datenoj de la retpaĝo, kaj la aŭtomatigita elpreno de enhavo, se ĝi ne estas necesa por la normala uzo de la servo de la retpaĝo;",
+      "text6": "La ofertanto de la retpaĝo rezervas al si la rajton forigi nepermesitajn kontribuojn (inkluzive de privataj mesaĝoj kaj bildoj) aŭ la konton de la uzanto, kiu kontraŭas la aktualajn uzantkondiĉojn en iu ajn momento ankaŭ sen antaŭ averto.",
       "title": "Devoj de la uzanto"
     },
     "section4": {
@@ -255,6 +258,7 @@
       "title": "Transdono de rajtoj"
     },
     "section6": {
+      "text1": "Ĉiuj tekstoj, bildoj kaj aliaj en la retpaĝo publikigitaj enhavoj, krom la de la uzantoj enmetitaj enhavoj falas – se ne markita alimaniere – sub la kopirajto de slovake.eu kaj ne rajtas esti uzitaj de uzantoj aŭ aliuloj ekstere de la retpaĝo, enrete aŭ eksterrete.",
       "title": "Rajto je posedo"
     },
     "section7": {
@@ -274,8 +278,11 @@
       "title": "Respondeco"
     },
     "section9": {
+      "text1": "Por tiuj uzantkondiĉoj kaj ĉiuj kvereloj kun tiuj uzantkondiĉoj nur validas la leĝaro de Germanujo, Liverloko kaj nura loko de respondeca juĝejo, se leĝe permesita, estas Berlin.",
+      "text2": "Nur la germana versio de la uzantkondiĉoj estas jure valida.",
       "text3": "La ofertanto de la retpaĝo rezervas al si la rajton, ŝanĝi tiujn uzantkondiĉojn en iu ajn momento, sen mencii kaŭzojn. La plej aktuala versio ĉiam estas trovebla ĉe {link}. Ni ne informos la uzantojn post ŝanĝo de la uzantkondiĉoj, sed la uzantoj mem havas la respondecon legi kaj esplori la aktualajn uzantkondiĉojn. Pluuzo de la retpaĝo post ŝanĝo de la uzantkondiĉoj signifas, ke la uzanto konsentas pri la ŝanĝoj kaj akceptas ilin.",
       "text4": "La ofertanto povas, informante la uzantojn per retpoŝto, transdoni la rajtojn kaj devojn el tiu uzantrilato, komplete aŭ parte al aliuloj.",
+      "text5": "Informoj por kontaktigi la ofertanton aŭ la retpaĝadministranton troviĝas ĉe Kontaktseite.",
       "title": "Finaj rimarkoj"
     }
   }

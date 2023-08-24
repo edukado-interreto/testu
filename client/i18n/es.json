@@ -185,11 +185,13 @@
     "exercises": "Ejercicios"
   },
   "terms": {
+    "intro": "Bienvenido en slovake.eu, una página web multilingüe para aprender alemán. El acceso y el uso de la página web slovake.eu (\"la página web\", \"el servicio\", \"el oferente\") requiere que tú (\"el usuario\") hayas leído, comprendido y aceptado las condiciones de uso – independientemente de que te hayas registrado como usuario o no. Por eso por favor lee el texto siguiente con atención.",
     "last_update": "Últimamente actualizado el: {date}",
     "section1": {
       "text1": "Algunos de nuestros servicios puedes usarlos sin registrarte en la página web. Para poder usar todas las funciones de la página web, tienes que establecer una cuenta personal de usuario. Es gratis registrarse.",
       "text2": "Para registrarse tienes que ser una persona de 13 años o mayor. El uso de la página web por menores de edad únicamente es pertinente con la aprobación de los titulares del derecho de educación.",
       "text3": "Aseguras que todos los datos que dejaste al registrarte son ciertos y correctos y que siempre los mantendrás al nivel más actual.",
+      "text4": "Al registrarte, el uso de los datos (por ejemplo Nombre de Usuario, Nombre, Imágenes de Perfil...), que afecte los derechos de terceros, sobre todo derechos de marca y de nombre es inadmisible. Ilégitimos o datos atentando estas condiciones de uso (igúalmente) no son permitidos.",
       "text5": "Al registrarte elijes una contraseña y estás obligado a mantener tu contraseña secreta.",
       "text6": "Estas de acuerdo con la comunicación al público de tus datos de perfil (por ejemplo de tu nombre de usuario, del avance lingüístico, del estado online, de la versión de idioma elegida, de la fecha del primer registro y de la fecha del último registro como con los datos adicionales voluntarios, incluyendo la imagen de perfil). El correo electrónico y la contraseña no serán publicados.",
       "text7": "El registro en la página web se termina por un link de activación. Para ello después de del registro obtendrás una verificación automática del sitio web a tu correo electrónico (e-mail), que contiene el link de activación.",
@@ -208,6 +210,7 @@
       "text2_2": "mantener secretos los datos de acceso y no darse los a terceros;",
       "text2_3": "informar el oferente de la página web en caso o sospecha de que un tercero se haya enterado de los datos de acceso y/o abuse de una cuenta de usuario.",
       "text3": "Únicamente tu eres responsable por los contenidos colocados como para la (pública como no pública) comunicación con otros. Además estás obligado/a de salvaguardar los derechos y intereses de los otros usuarios u de otros terceros, sobre todo los derechos personales.",
+      "text4": "Está estrictamente prohibido a subir, postear, enviar, enlazar, comunicar, dar publicidad, ofrecer o de otra manera movilizando los siguientes contenidos (como imágenes, links, fotos, aportes de foro u otros contenidos, incluyendo mensajes privados e imágenes de perfil) en la página web:",
       "text4_1": "contenidos legalmente protegidos como por ejemplo por el derecho de la propiedad intelectual, los derechos afines a los derechos de autor, el derecho al nombre, el derecho de marca, el derecho de patentes, el derecho de protección de dibujos y modelos industriales, el derecho de modelo de utilidad, el derecho de propiedad o el derecho de persona, si no estás autorizado a ellos;",
       "text4_2": "representaciones pornográficas, glorificando violencia, obscenas, sexistas, difames, infamatorias, racistas, representaciones ofensivas contra minorías o religiones como contenidos que atenten contra las leyes de protección de menores;",
       "text4_3": "Medios de propaganda y señales de organizaciones anticonstitucionales;",
@@ -220,6 +223,7 @@
       "text5_1": "usar o intentar usar la cuenta de otro usuario o sistema sin la autorización del proveedor;",
       "text5_2": "hacerse pasar por otra persona así como entregar información falsa acerca de sí mismo;",
       "text5_3": "bloquear las funciones del portal, modificar o copiar el contenido p el código del programa y / o los datos del portal, así como realizar llamados automáticos del contenido, a menos que sea necesario para el uso correcto de los servicios del portal;",
+      "text6": "El proveedor del portal se guarda el derecho borrar en cualquier momento y sin aviso previo caulquier contribución ilegal (incluyendo mensajes privados e imágenes) si así lo estima necesario sobre la cuenta del usuario que no cumpla con las condiciones de uso.",
       "title": "Obligaciones del usuario"
     },
     "section4": {
@@ -234,6 +238,7 @@
       "title": "Concesión de derechos"
     },
     "section6": {
+      "text1": "A menos que se indique por lo contrario, todos los textos, imagines y el contenido del portal, a excepción del contenido entregado por los usuarios con derechos de autor en slovake.eu , no pueden ser utilizados por terceros en línea o fuera de línea en otro lugar que en este portal si no se tiene el consentimiento por escrito del proveedor",
       "title": "Derechos de autor"
     },
     "section7": {
@@ -253,8 +258,11 @@
       "title": "Definición de responsabilidades"
     },
     "section9": {
+      "text1": "Estas condiciones de uso y todo tipo de disputa relacionada a estas condiciones de uso se rigen por la ley de la República Federal Alemana. Lugar de cumplimiento y jurisdicción privativa es, si es que sea legalmente permisible, Berlin.",
+      "text2": "Como versión legal y válida tiene validez la versión alemana de las condiciones de uso (Nutzungsbedingungen).",
       "text3": "El oferente de la página web a todo tiempo y sin nombrar las motivaciones se reserva poder cambiar estas condiciones de uso. La versión más actual va a estar puesta bajo {link}. Una indicación explícita que hayan cambiado las condiciones de uso no se realizará, mas es la responsabilidad del usuario a demandar y contemplar las correspondientes condiciones actuales de uso. Después de que cambien las condiciones de uso, el usuario declarará su consentimiento a los cambios con no dejar de usar la página web.",
       "text4": "El oferente después de anunciar por e-mail, dentro de 4 semanas está autorizado a transmitir sus derechos y obligaciones de esta relación de uso por completo o parcialmente a un tercero.",
+      "text5": "Informaciones para contactar el oferente o los administradores de la página web se encuentran en Kontaktseite.",
       "title": "Determinaciones finales"
     }
   }

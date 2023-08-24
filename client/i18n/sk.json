@@ -22,6 +22,8 @@
   },
   "editor": {
     "age_range": "Veková kategória",
+    "cefr_levels_label": "CEFR (SERR) úrovne",
+    "confirm_leave": "Na tejto stránke vás žiadame o potvrdenie, že chcete odísť - zadané údaje sa nemusia uložiť.",
     "description": "Popis",
     "details": "Podrobnosti cvičenia",
     "save": "Uložiť",
@@ -76,6 +78,32 @@
     "target_language_is": "Študovaný jazyk:",
     "unlisted": "Toto cvičenie nie je uvedené vo výsledkoch vyhľadávania"
   },
+  "guide": {
+    "about": "Ako vytvárať cvičenia",
+    "about_text": "Ak chcete vytvoriť nové cvičenie, musíte sa najprv zaregistrovať a prihlásiť na stránke.",
+    "construction": "Vo výstavbe",
+    "gap_filling": "Vyplň medzeru",
+    "multiple_choice": "Výber z možností",
+    "sort_and_match": "Zoradiť a priradiť",
+    "video": "o videu",
+    "exercice": {
+      "explanation1": "Ak chcete vytvoriť nové cvičenie, musíte byť v ponuke Home (1), potom môžete vybrať „+ VYTVORIŤ NOVÉ CVIČENIE“ (2). Po vytvorení sa zobrazia na tejto stránke. Ale zatiaľ budete presunutí na ďalšiu stránku, ako môžete vidieť nižšie.",
+      "explanation2": "Cvičenie môže byť zostavené z viacerých jednotiek. Jednotky môžete pridať kliknutím na „+ PRIDAŤ JEDNOTKU“ (3). Existujú rôzne druhy cvičení, ale v každej jednotke môžete použiť len ten istý druh. Ak chcete v cvičení kombinovať rôzne typy otázok, budete musieť urobiť samostatné jednotky pre každý typ požadovaných otázok.",
+      "explanation3": "Ako vidíte vľavo, existuje niekoľko typov jednotiek. Môžeme ich rozdeliť do troch základných skupín: doplňovanie, výber z viacerých možností, triedenie a priraďovanie.",
+      "explanation4": "Otázka na vyplnenie medzier je text alebo veta, kde sa rozhodnete odstrániť slovo alebo niekoľko slov. Pri týchto otázkach si môžete vybrať, či poskytnete nejaké odpovede (aspoň jednu správnu odpoveď a niektoré nepravdivé), alebo môžete pole nechať otvorené a osoba odpovedajúca na otázku bude musieť odpoveď vyplniť napísaním odpovede. V každom prípade pri vytváraní otázky uvediete správnu odpoveď (odpovede).",
+      "explanation5": "Výber z možností vám umožní vytvoriť otázku s výberom odpovedí. Môže to byť jedna alebo viacero správnych odpovedí a pokiaľ ide o otázky na vyplnenie medzier, pri vytváraní otázky budete musieť uviesť správnu odpoveď (odpovede).",
+      "explanation6": "V prípade otázok na spárovanie alebo zoradenie budete mať možnosť zadať popisy alebo otázky alebo obrázky alebo dokonca zvuky a slová alebo odpovede súvisiace s danými položkami. Študenti budú musieť spárovať položky s odpoveďami, alebo ak ste vybrali otázku na triedenie, budú ich musieť zoradiť v správnom poradí.",
+      "explanation7": "Ďalšie vysvetlenia pre každú rodinu nájdete kliknutím na karty v hornej časti tejto stránky.",
+      "gap_filling_1": "Predvoleným typom cvičenia je otázka na vyplnenie medzier. Existujú dva druhy cvičení na vyplnenie medzier. Prvá (1) sa nazýva „Predvolená“ a dáva odpovede, keď kliknete na medzeru. Druhým typom je „otvorená odpoveď“ (8), nie je uvedená žiadna odpoveď, študent ju musí napísať priamo. Uvidíme, ako napísať otázky a ako dať odpovede, niektoré nesprávne a správne.",
+      "gap_filling_2": "Do polí (2) môžete napísať názov cvičení a do políčka (3) krátky popis na vysvetlenie pokynov k nasledujúcim otázkam alebo uvedenie kontextu.",
+      "gap_filling_3": "Samotné otázky sú napísané v rámčeku (4). Vždy existujú dva spôsoby, ako to urobiť. Otázky a odpovede môžete napísať priamo do poľa alebo môžete použiť nástroje v ľavom hornom rohu (6). Výsledok bude rovnaký, v poli (4) uvidíte rovnaký text.",
+      "gap_filling_4": "Ak napíšete otázky priamo do rámčeka, všetky otázky musia byť oddelené prázdnym riadkom a odpoveď musí byť uvedená v zátvorkách [ ] a oddelená zvislým oddeľovačom |. A pred správnu odpoveď (odpovede) musíte dať +. Ak existuje viac ako jedna správna odpoveď, ktorákoľvek z nich sa bude považovať za správnu pre výsledok. Môžete sa tiež rozhodnúť premiešať navrhované odpovede kliknutím na „Možnosti zamiešania“ (7).",
+      "gap_filling_5": "Ak použijete nástroje na vytvorenie otázok (6), tá naľavo prejde prázdnym riadkom na začatie novej otázky. Budete musieť napísať otázku alebo text a tam, kde chcete vložiť medzeru, kliknite na nástroj vpravo. Otvorí sa vyskakovacie okno, ako je znázornené na obrázku. Odpovede môžete písať jednu po druhej. Budú overené, keď zadáte „enter“. V predvolenom nastavení bude prvá automaticky považovaná za správnu a pred ňou sa zobrazí zelené „v“, ale správnu odpoveď (odpovede) môžete vybrať kliknutím na malé tlačidlo pred každou odpoveďou ( 8). Môžete sa tiež rozhodnúť pridať možnosť „nechať prázdne“ kliknutím na prerušovaný štvorec vpravo (9).",
+      "gap_filling_open_answer_1": "Ďalším typom cvičenia na vyplnenie medzier je „Otvorená odpoveď“ (10). Ako vidíte nižšie, pre tento druh cvičenia neexistuje žiadna navrhovaná odpoveď. Očakávané odpovede, jednu alebo viac, môžete poskytnúť rovnakým spôsobom, ako sme práve vysvetlili, pomocou nástroja alebo priamo v rámčeku (11). Môžete navrhnúť nesprávne odpovede, tie sa nezobrazia, ale pri oprave sa zobrazí červené X, ak niekto vyplnil jednu z týchto odpovedí, nič, ak napísal inú odpoveď a zelené V, ak má jednu zo správnych odpovedí.",
+      "gap_filling_open_answer_2": "Ďalšie otázky môžete pridať rovnakým spôsobom ako predtým, prejdením prázdneho riadku alebo kliknutím na tlačidlo vľavo (6). Keď budete spokojní so svojimi otázkami, nezabudnite kliknúť na tlačidlo „Uložiť“ a svoju prácu uložte. Vždy sa môžete vrátiť a pridať otázky alebo vykonať nejaké zmeny.",
+      "name": "Nové cvičenie"
+    }
+  },
   "home": {
     "create_exercise": "Vytvoriť nové cvičenie",
     "search_exercise": "Vyhľadať cvičenie"
@@ -116,6 +144,7 @@
     "catchphrase": "Vytvorte si vlastné jazykové kvízy",
     "cookie_consent": "Táto webová stránka používa pre svoje fungovanie minimálne množstvo cookies. Pokračovaním v používaní tejto webovej stránky predpokladáme, že súhlasíte s používaním funkčných cookies.",
     "edit": "Upraviť",
+    "guide": "Ako na to",
     "home": "Domovská stránka",
     "lang_menu_header": "Jazyk stránky",
     "login": "Prihlásiť sa",
@@ -217,6 +246,12 @@
         "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
         "name": "Triedenie obrázkov"
       }
+    },
+    "types": {
+      "default": "Rozbaľovací zoznam",
+      "multiple_choice": "Výber z možností",
+      "open_answer": "Otvorená odpoveď",
+      "pairing": "Zoradiť a priradiť"
     }
   },
   "sort": {
@@ -262,11 +297,13 @@
     "exercises": "Cvičenia"
   },
   "terms": {
+    "intro": "Srdečne vás vítame na TestU Online, bezplatnej viacjazyčnej online e-learningovej platforme, ktorá umožňuje jednoduché a rýchle vytváranie rôznych kvízov, testov a cvičení určených predovšetkým na výučbu jazykov! Prístup na webovú stránku testu.eu (ďalej len \"webová stránka\", \"služba\", \"poskytovateľ\") a jej používanie znamená, že ste si (ďalej len \"používateľ\") prečítali nasledujúce podmienky, porozumeli im a súhlasíte s nimi, a to bez ohľadu na to, či ste na teste.eu zaregistrovaný ako člen. Preto si prosím dôkladne prečítajte nasledujúci text.",
     "last_update": "Dátum poslednej aktualizácie: {date}",
     "section1": {
       "text1": "Niektoré z našich služieb môžete využívať bez prihlásenia na portáli. Aby ste mohli využívať všetky služby portálu, musíte si zriadiť osobné používateľské konto. Registrácia je bezplatná.",
       "text2": "Registrácia je povolená pre osoby vo veku od 13 rokov. Neplnoleté osoby smú portál používať výlučne so súhlasom zákonného zástupcu.",
       "text3": "Zabezpečujete pravdivosť a správnosť vami zadaných údajov pri registrácii, ako aj ich včasnú aktualizáciu.",
+      "text4": "Pri registrácii je zakázané používať údaje (napr. používateľské meno, meno, texty cvičení, obrázky, audio a video súbory atď.), ktoré porušujú práva tretích strán vrátane ochranných známok alebo registrovaných práv. Takisto sa nesmú používať nezákonné údaje alebo údaje, ktoré sú v rozpore s týmito podmienkami používania.",
       "text5": "Pri registrácii si volíte heslo, ktoré ste povinní držať v tajnosti.",
       "text6": "Súhlasíte s verejným zobrazením vašich profilových údajov (napr. vášho používateľského mena, učebného pokroku, stavu „prihlásený“, zvolenej jazykovej verzie, dátumu registrácie a dátumu posledného prihlásenia, ako aj ďalších dobrovoľne uvádzaných informácií vrátane profilovej fotografie). E-mailová adresa a heslo sa verejne nezobrazujú.",
       "text7": "Registráciu na portáli dokončíte kliknutím na aktivačný odkaz. Za týmto účelom dostanete po registrácii od poskytovateľa portálu automatické potvrdenie formou e-mailu, ktorý obsahuje tento aktivačný odkaz.",
@@ -285,6 +322,7 @@
       "text2_2": "prihlasovacie údaje držať v tajnosti a neposkytovať ich tretím stranám;",
       "text2_3": "neodkladne informovať poskytovateľa portálu v prípade vzniku podozrenia, že tretia strana získala prístup k prihlasovacím údajom a/alebo zneužíva používateľské konto.",
       "text3": "Ste zodpovední za vami zverejnený obsah, ako aj za (verejnú aj neverejnú) komunikáciu s ostatnými používateľmi. Tiež ste povinní chrániť práva a záujmy ostatných používateľov alebo ostatných tretích strán, predovšetkým ich osobnostné práva.",
+      "text4": "Nasledovný obsah (v podobe obrázkov, odkazov, fotografií, cvičení, audio a video súborov alebo iného obsahu) je prísne zakázané nahrávať na portál, zverejňovať, rozposielať, odkazovať naň, sprostredkovávať, propagovať, ponúkať alebo poskytovať iným spôsobom:",
       "text4_1": "zákonom chránený obsah, ktorý je chránený napr. autorskými a s nimi súvisiacimi právami, právom na názov, ochrannou známkou, patentovými, dizajnovými právami, právami na úžitkové vzory, vlastníckymi alebo osobnostnými právami, ak na to nie ste oprávnení;",
       "text4_2": "pornografický obsah, obsah propagujúci násilie, obscénny, sexistický, hanlivý, ohovárajúci, rasistický obsah, obsah poškodzujúci príslušníkov menšín alebo náboženstiev, ako aj obsah porušujúci zákon na ochranu mládeže;",
       "text4_3": "propagačné materiály a označenia protiústavných organizácií;",
@@ -297,6 +335,7 @@
       "text5_1": "používať alebo pokúsiť sa používať konto iného používateľa alebo systém bez povolenia poskytovateľa;",
       "text5_2": "vydávať sa za inú osobu, ako aj uvádzať o sebe falošné informácie;",
       "text5_3": "blokovať funkcie portálu, prepisovať, meniť alebo kopírovať obsah, programový kód a/alebo dáta portálu, ako aj vykonávať automatické volanie obsahu, pokiaľ to nie je nevyhnutné na riadne používanie služieb portálu;",
+      "text6": "Vlastník tohto portálu si vyhradzuje právo kedykoľvek a bez predchádzajúceho upozornenia zmazať nedovolené príspevky (vrátane testov, cvičení, textov a obrázkov) alebo konto používateľa nespĺňajúce tieto podmienky používania.",
       "title": "Povinnosti používateľa"
     },
     "section4": {
@@ -311,6 +350,8 @@
       "title": "Priznanie práv"
     },
     "section6": {
+      "text1": "Všetky texty, obrázky a iný obsah uverejnený na webovej stránke vrátane obsahu poskytnutého používateľmi sú - pokiaľ nie je uvedené inak - uverejnené pod {license}.",
+      "text1_license": "CC0 1.0 Universal Creative Commons license",
       "title": "Vlastnícke práva"
     },
     "section7": {
@@ -330,8 +371,11 @@
       "title": "Vymedzenie zodpovednosti"
     },
     "section9": {
+      "text1": "Tieto podmienky používania a akékoľvek spory v súvislosti s týmito podmienkami používania podliehajú právu Slovenskej republiky. Miestom plnenia a výlučným miestom jurisdikcie, pokiaľ je to právne možné, je Slovensko.",
+      "text2": "Právne záväzným znením tejto dohody je anglická verzia.",
       "text3": "Poskytovateľ portálu si vyhradzuje právo kedykoľvek a bez udania dôvodu tieto Podmienky používania zmeniť. Aktuálna verzia sa vždy nachádza na adrese {link}. Používatelia nie sú na zmenu Podmienok používania výslovne upozornení, zobrazenie a prečítanie aktuálnej verzie Podmienok používania je na zodpovednosti každého používateľa. Pokračovaním v používaní portálu po zmene Podmienok používania vyjadruje používateľ súhlas s týmito zmenami.",
       "text4": "Poskytovateľ je oprávnený úplne alebo čiastočne previesť svoje práva a povinnosti vyplývajúce z tohto používateľského vzťahu na tretiu stranu, a to do 4 týždňov od oznámenia formou e-mailu.",
+      "text5": "Kontaktné informácie na poskytovateľa alebo správcov webovej stránky nájdete na stránke {link}.",
       "title": "Záverečné ustanovenia"
     }
   }

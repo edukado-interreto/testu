@@ -22,18 +22,20 @@
   },
   "editor": {
     "age_range": "Przedział wiekowy",
-    "description": "opis",
+    "cefr_levels_label": "Poziom ESOKJ (CEFR)",
+    "confirm_leave": "Ta strona prosi o potwierdzenie chęci opuszczenia strony - wprowadzone dane mogą nie zostać zapisane.",
+    "description": "Opis",
     "details": "Szczegóły dotyczące ćwiczenia",
     "save": "Zapisz",
     "tags": "Tagi",
     "unexpected_response": "Nieoczekiwana odpowiedź serwera",
-    "unlisted": "Niewidoczny w wynikach wyszukiwania"
+    "unlisted": "Niewidoczne w wynikach wyszukiwania"
   },
   "exam": {
     "accept_submissions": "Przyjmowanie zgłoszeń",
     "confirm": "Tej operacji nie można cofnąć. Kontynuować?",
-    "created": "Utworzony: {date}",
-    "delete": "Usunięcie egzaminu",
+    "created": "Data utworzenia: {date}",
+    "delete": "Usunąć egzamin",
     "description": "Opis egzaminu",
     "details": "Szczegóły egzaminu",
     "error": "Podczas składania egzaminu wystąpił błąd.",
@@ -47,8 +49,8 @@
     "please_log_in": "Aby przejść do egzaminu, proszę się zalogować lub wybrać nazwę wyświetlaną.",
     "untitled": "Egzamin bez tytułu",
     "view": "Zobacz",
-    "visible_by": "Wyniki tego ćwiczenia będą widoczne dla egzaminatora {nazwa}.",
-    "well_done": "Twój egzamin został pomyślnie przekazany do egzaminatora!"
+    "visible_by": "Wyniki tego ćwiczenia będą widoczne dla egzaminatora {name}.",
+    "well_done": "Egzamin został pomyślnie przekazany do egzaminatora!"
   },
   "exercise": {
     "age": "Wiek:",
@@ -68,16 +70,42 @@
     "mistake_explanation": "Wyjaśnienie:",
     "misuse": "Zgłoś nadużycie",
     "pdf": "PDF",
-    "report_mistake_to_creator": "Zgłoś błąd {twórcy}",
-    "report_misuse_to_administrators": "Zgłaszanie niewłaściwego użycia administratorom",
-    "submit_mistake_confirm": "Dziękujemy! Twórca otrzyma powiadomienie.",
-    "submit_misuse_confirm": "Dziękujemy za pomoc w utrzymaniu Testu.eu na odpowiednim poziomie.",
+    "report_mistake_to_creator": "Zgłoś błąd do: {username}",
+    "report_misuse_to_administrators": "Zgłaszanie administratorom niewłaściwego użycia",
+    "submit_mistake_confirm": "Dziękujemy! Autor otrzyma powiadomienie.",
+    "submit_misuse_confirm": "Dziękujemy współpracę pryz doskonaleniu Testu.eu.",
     "target_language": "Studiowany język",
     "target_language_is": "Studiowany język:",
     "unlisted": "To ćwiczenie nie jest wymienione w wynikach wyszukiwania"
   },
+  "guide": {
+    "about": "Jak tworzyć ćwiczenia",
+    "about_text": "Przed utworzeniem nowego ćwiczenia należy zarejestrować się i zalogować na stronie.",
+    "construction": "Strona w przebudowie",
+    "gap_filling": "Wypełnianie luk",
+    "multiple_choice": "Wybór wielokrotny",
+    "sort_and_match": "Dopasowywanie i porządkowanie",
+    "video": "O nagraniu wideo (filmiku)",
+    "exercice": {
+      "explanation1": "W celu utworzenia nowego ćwiczenia należy przejść do menu głównego (1), a następnie wybrać \"+ UTWÓRZ NOWE ĆWICZENIE\" (2). Po utworzeniu się ćwiczeniu pojawi się na stronie. Nastąpi przejście do następnej strony, jak widać poniżej.",
+      "explanation2": "Ćwiczenie może składać się z więcej niż jednej jednostki. Jednostki można dodawać klikając w przycisk \"+ ADD UNIT\" (3). Każda jednostka ćwiczenia musi być tego samego typu. Gdy chcemy w jednym ćwiceniu zadać różne pytania, należy utworzyć osobną jednostkę dla każdego pytania.",
+      "explanation3": "Jak widać po lewej stronie, istnieje kilka typów jednostek. Można je rozdzielić do tří základních skupin: doplňování, výběr z možností, přiřazování a seřazování.\nJak widać po lewej stronie, istnieje wiele różnych typów jednostek. Można je pogrupować w trzy podstawowe rodzaje: wypełnianie luk, wybór wielokrotny wyboru oraz dopasowywanie i porządkowanie.",
+      "explanation4": "Ćwiczenia typu \"wypełnianie luk\" zawierają tekst lub zdanie, w którym usunięto słowo lub kilka słów. Zadanie polega na uzupełnieniu tych luk. Można wybrać jeden z dwóch sposobów odpowiedzi: 1. lista kilku możliwych odpowiedzi do wyboru (co najmniej jedną poprawną i kilka niepoprawnych), 2. puste pole, w którym należy samodzielnie wpisać brakujący wyraz lub wyrazy. W obu przypadkach należy podać prawidłową odpowiedź lub prawidłowe odpowiedzi.",
+      "explanation5": "Ćwiczenia typu \"wielokrotny wybór\" umożliwiają tworzenie pytań wielokrotnego wyboru. Zadanie będzie polegało na wybraniu poprawnej odpowiedzi lub poprawnych odpowiedzi z rozwijanej listy. Wybór odpowiedzi może zawierać jedną lub więcej poprawnych odpowiedzi (w zależności od wyboru autora ćwiczenia). W obu przypadkach należy wskazać prawidłową odpowiedź lub prawidłowe odpowiedzi.",
+      "explanation6": "Ćwiczenia typu \"dopasowywania i porządkowanie\" pozwalają na wprowadzanie opisów, pytań, obrazków, jak również dźwięków, słów lub odpowiedzi związanych z przedstawionymi obiektami. W przypadku ćwiczenia \"dopasowywanie\" zadaniem jest utworzenie par obiekt-poprawna odpowiedź, a w przypadku ćwiczenia \"sortowanie\" zadaniem stanowi ułożenie słów, opisów, pytań, obrazków lub dźwięków we właściwej kolejności.",
+      "explanation7": "Wyjaśnienia dla każdego rodzaju ćwiczeń można znaleźć klikając w odpowiednie zakładki znajdujące się w górnej części strony.",
+      "gap_filling_1": "Ćwiczenia typu \"wypełnianie luk\" mogą mieć dwie odmiany. Pierwsza z nich, nazwana \"Lista rozwijana\" (1), po kliknięciu na lukę wyświetla okno z menu możliwych odpowiedzi. Druga, o nazwie \"Odpowiedź na pytanie otwarte\" (8), nie oferuje odpowiedzi, ponieważ zadaniem jest samodzielne napisanie odpowiedzi. Zademonstrujemy, jak układać pytania i odpowiedzi - zarówno te poprawne, jak i niepoprawne.",
+      "gap_filling_2": "W polu (2) należy podać tytuł ćwiczenia i  w polu (3) krótki opis, wyjaśniający instrukcje do poniższych pytań lub ich kontekst.",
+      "gap_filling_3": "Tekst ćwiczenia należy wpisać w polu (4). Można to zrobić na dwa sposoby. Pytania i odpowiedzi można wpisać bezpośrednio w polu lub użyć narzędzi w lewym górnym rogu (6). Rezultat będzie taki sam, w polu (4) pojawi się ten sam tekst.",
+      "gap_filling_4": "W przypadku wpisywania pytań bezpośrednio w polu, musi zostać każde pytanie oddzielone pustą linią, a odpowiedź musi być podana w nawiasach kwadratowych i oddzielona pionowym separatorem: |. Prawidłowe odpowiedzi należy poprzedzić znakiem +. Jeśli istnieje więcej niż jedna poprawna odpowiedź, podczas oceny wyników zostanie uznana za poprawną każda z nich. Kolejność wprowadzonych odpowiedzi można zmienić, klikając w przycisk \"Wymieszaj odpowiedzi\" (7).",
+      "gap_filling_5": "Korzystając z narzędzi do tworzenia pytań (6) należy najpierw kliknąć w przycisk po lewej stronie, aby utworzyć pustą linię do wpisania nowego pytania lub tekstu. W miejscu, w którym ma pozostać luka w pytaniu lub tekście, należy kliknąć w narzędzie po prawej stronie. Otworzy się wtedy okienko - tak, jak pokazano na rysunku. Odpowiedzi można wpisywać jedną po drugiej. Należ kliknąć w przycisk \"Enter\", aby potwierdzić ich poprawność. Domyślnie zostanie uznana za poprawną pierwsza odpowiedź i pojawi się przed nią zielone \"v\". Można jednak wybrać poprawną odpowiedź (odpowiedzi) klikając w mały przycisk przed każdą odpowiedzią (8). Można również dodać opcję \"Pozostaw puste\" - po kliknięciu w przerywany kwadrat po prawej stronie (9).",
+      "gap_filling_open_answer_1": "Drugą odmianą ćwiczenia typu \"wypełnianie luk\" jest \"Odpowiedź na pytanie otwarte\" (10). Jak widać poniżej, nie ma ona żadnej odpowiedzi. Można jednak wskazać oczekiwane odpowiedzi, jedną lub więcej, w taki sam sposób, jak w przypadku pierwszego podtypu tego ćwiczenia - za pomocą narzędzia lub bezpośrednio w polu (11). Można także zasugerować nieprawidłowe odpowiedzi, które pojawią się dopiero przy ocenie wyników.\nJeśli ktoś wpisze jedną z  podanych niepoprawnych odpowiedzi, podczas oceny pojawi się czerwony znak \"x\"; jeśli zaś wpisze poprawną odpowiedź, pojawi się zielony znak \"v\"; a jeśli podał inną odpowiedź, nie zostanie pokazane nic.",
+      "gap_filling_open_answer_2": "Kolejne pytanie lub tekst można dodać w taki sam sposób, jak poprzednie, tj. po wprowadzeniu pustej linii bezpośrednio w polu lub klikając w przycisk po lewej stronie (6). Po wprowadzeniu wszystkich pytań lub tekstów jednego ćwiczenia należy zapisać ćwiczenie klikając w przycisk \"Zapisz\". Zawsze jednak można powrócić i dodać pytania lub wprowadzić w nich zmiany.",
+      "name": "Nowe ćwiczenie"
+    }
+  },
   "home": {
-    "create_exercise": "Utwórz nowe ćwiczenie",
+    "create_exercise": "Tworzenie nowego ćwiczenia",
     "search_exercise": "Wyszukiwanie ćwiczeń"
   },
   "langs": {
@@ -90,21 +118,21 @@
     "exercise": "Ćwiczenie",
     "recent": "Ostatnia aktywność",
     "review": "Przegląd",
-    "submitted": "Zgłoszone ćwiczenia do wykonania w ciągu dnia"
+    "submitted": "Ćwiczenia zgłoszone do wykonania w ciągu dnia"
   },
   "login": {
-    "already_registered": "Masz już konto ?",
+    "already_registered": "Masz już konto?",
     "check_inbox": "Prosimy o sprawdzenie skrzynki pocztowej w celu potwierdzenia rejestracji.",
     "email": "E-mail",
     "email_is_verified": "Twój e-mail został zweryfikowany! Możesz się teraz zalogować.",
     "login": "Logowanie",
     "mail_invalid": "E-mail musi być ważny",
-    "page_title": "Login",
+    "page_title": "Nazwa użytkownika (login)",
     "password": "Hasło",
     "required_field": "Pole wymagane",
     "resend_link": "Prześlij ponownie link",
     "signup": "Zarejestruj się w TestU",
-    "signup_thanks": "Dziękuję, że się zapisałeś.",
+    "signup_thanks": "Dziękujemy za zapisanie się.",
     "username": "Nazwa użytkownika",
     "verify_email": "Weryfikacja adresu e-mail",
     "verify_token_used_or_invalid": "Wygląda na to, że ten link został już użyty lub jest nieważny."
@@ -114,12 +142,13 @@
     "accept": "Akceptuj",
     "cancel": "Anuluj",
     "catchphrase": "Utwórz własne quizy językowe",
-    "cookie_consent": "Ta strona używa minimalnej ilości plików cookie do jej funkcjonowania. Kontynuując korzystanie z tej witryny, zakładamy, że akceptujesz użycie funkcjonalnych plików cookie.",
+    "cookie_consent": "Ta strona używa do funkcjonowania minimalnej ilości plików cookie. Kontynuując korzystanie z tej witryny, zakładamy, że Pan(i) akceptuje użycie funkcjonalnych plików cookie.",
     "edit": "Edytuj",
+    "guide": "Instrukcje",
     "home": "Strona główna",
     "lang_menu_header": "Język interfejsu",
     "login": "Zaloguj się",
-    "logout": "Wylogowanie",
+    "logout": "Wyloguj się",
     "my_learning": "Moje uczenie się",
     "my_teaching": "Moje nauczanie",
     "ok": "OK",
@@ -127,6 +156,7 @@
     "privacy": "Polityka prywatności",
     "settings": "Ustawienia konta",
     "signup": "Zarejestruj się",
+    "social": "Serwisy społecznościowe",
     "submit": "Prześlij",
     "terms": "Warunki korzystania"
   },
@@ -153,7 +183,7 @@
     "insert_image": "Wstaw obrazek",
     "insert_pair": "Wstaw parę",
     "insert_sound": "Wstaw dźwięk",
-    "insert_video": "Wstaw film",
+    "insert_video": "Wstaw nagranie wideo (filmik)",
     "move_down": "Przesuń się w dół",
     "move_up": "Przesuń się w górę",
     "new_gap": "Nowa luka",
@@ -163,7 +193,66 @@
     "start_typing": "Zacznij pisać zdanie...",
     "title": "Tytuł",
     "untitled_unit": "Jednostka bez tytułu",
-    "valid_url": "Proszę wpisać prawidłowy adres URL"
+    "valid_url": "Proszę wpisać prawidłowy adres URL",
+    "snippets": {
+      "blank_unit": {
+        "name": "Pusta jednostka"
+      },
+      "gap_filling_dropdown": {
+        "code": "Książka jest [na|w] stole.",
+        "name": "Wypełnianie luk, lista rozwijana"
+      },
+      "gap_filling_open_answer": {
+        "code": "Książka jest [na|w] stole.",
+        "name": "Wypełnianie luk, odpowiedź na pytanie otwarte"
+      },
+      "multiple_choice": {
+        "code": "Gdzie jest książka?\n[+na stole| w stole]",
+        "name": "Wielokrotny wybór"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
+        "name": "Łączenie obrazków z dźwiękami"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Pies == {img:pies.jpeg}\n\nSłoń == {img:słoń.jpeg}\n\nKot == {img:kot.jpeg}",
+        "name": "Łączenie tekstu z obrazkami"
+      },
+      "pairing_text_with_text": {
+        "code": "wiśnia == kolor czerwony\n\ncytryna == kolor żółty\n\nbrokuł == kolor zielony",
+        "name": "Łączenie tekstu z tekstem"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "Zwierzę na zdjęciu to: [Pies| +Kot | Słoń]\n\nCzy to dzikie zwierzę, czy zwierzę domowe? [+Zwierzę domowe|Dzikie zwierzę]",
+        "description": "{img:kot.jpeg}",
+        "name": "Pytania dotyczące obrazka, prawda lub fałsz"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Które zwierzę wydaje ten dźwięk?\n[+Kot|Pies|Słoń]\n\nJakim wyrazem określa się dźwięk wydawany przez to zwierzę?\n[+Miauczenie|Szczekanie|Trąbienie]",
+        "description": "Posłuchaj nagrania i odpowiedz na pytania:\n{sound:cat.mp3}",
+        "name": "Pytania dotyczące nagrania, lista rozwijana"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Kto wyzwał zająca na wyścig? [Zając|+Żółw|Ptak]\n\nDlaczego zając zdrzemnął się podczas wyścigu? [Był zmęczony|Chciał dać żółwiowi szansę dogonienia|+Był pewny swojego zwycięstwa]\n\nKto wygrał wyścig? [Zając|+Żółw|Ptak]",
+        "description": "Dawno, dawno temu zając i żółw zawsze kłócili się o to, kto jest szybszy.\nŻółw wyzwał zająca na wyścig, a zając się zgodził, myśląc, że będzie to łatwe zwycięstwo.\n\nWyścig się rozpoczął, a zając szybko wystartował, zostawiając żółwia w tyle. Zając stał się zbyt pewny siebie i postanowił się zdrzemnąć. Tymczasem żółw szedł miarowo w kierunku mety.\n\nKiedy zając się obudził, zdał sobie sprawę, że żółw jest już prawie na mecie. Zając próbował go dogonić, ale było już za późno. Żółw wygrał wyścig.",
+        "name": "Pytania dotyczące tekstu, wielokrotny wybór"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Gdzie znajduje się to miejsce?\n[]\n\nKto go zbudował?\n[]",
+        "description": "Obejrzyj nagranie wideo (filmik) i odpowiedz na pytania.\n\n{video:https://www.youtube.com/watch?v=chii_rEU30g}",
+        "name": "Pytania dotyczące nagrania wideo (filmiku), odpowiedź na pytanie otwarte"
+      },
+      "sorting_pictures": {
+        "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
+        "name": "Porządkowanie obrazków"
+      }
+    },
+    "types": {
+      "default": "Lista rozwijana",
+      "multiple_choice": "Wybór wielokrotny",
+      "open_answer": "Odpowiedź na pytanie otwarte",
+      "pairing": "Dopasowywanie i porządkowanie"
+    }
   },
   "sort": {
     "rated": "Najlepiej oceniane",
@@ -208,11 +297,13 @@
     "exercises": "Ćwiczenia"
   },
   "terms": {
+    "intro": "Serdecznie witamy w TestU Online, bezpłatnej, wielojęzycznej platformie e-learningowej online, umożliwiającej łatwe i szybkie tworzenie różnorodnych quizów, testów i ćwiczeń przeznaczonych przede wszystkim do nauki języków. Dostęp i korzystanie ze strony testu.eu („witryna”, „usługa”, „dostawca”) oznacza, że Pan(i) jako („użytkownik”) przeczytał(a), zrozumiał(a) i zaakceptował(a) poniższe warunki, niezależnie od tego, czy Pan(i) jest użytkownikiem zarejestrowanym/-ą na testu.eu. Prosimy więc o dokładne zapoznanie się z poniższym tekstem.",
     "last_update": "Ostatnia aktualizacja: {date}",
     "section1": {
       "text1": "Z niektórych funkcji mogą Państwo korzystać bez rejestracji na portalu. By korzystać z wszystkich funkcji portalu, należy założyć osobiste konto użytkownika. Rejestracja jest bezpłatna.",
       "text2": "Rejestracja jest dozwolona dla osób od 13 roku życia. Korzystanie ze strony przez osoby niepełnoletnie jest możliwa wyłącznie za zgodą ich rodziców / prawnych opiekunów.",
-      "text3": "Rejestrując się, gwarantują Państwo, że wszystkie podane dane są prawdziwe i poprawne, oraz że będą je Państwo w razie zmian aktualizować.",
+      "text3": "Użytkownik gwarantuje, że wszystkie dane podane przez niego podczas rejestracji są prawdziwe i poprawne oraz że będzie je zawsze aktualizował.",
+      "text4": "Podczas rejestracji zabronione jest wykorzystywanie danych (np. nazwa użytkownika, imię i nazwisko, teksty ćwiczeń, zdjęcia, pliki audio i wideo itp.), które naruszają prawa osób trzecich, w tym znaki towarowe lub prawa z rejestracji. Niedozwolone jest również wykorzystywanie danych niezgodnych z prawem lub danych sprzecznych z niniejszymi warunkami użytkowania.",
       "text5": "Podczas rejestracji wybierają Państwo hasło, oraz zobowiązują się Państwo do zabezpieczenia go przed użyciem przez osoby trzecie.",
       "text6": "Użytkownicy zgadzają się na upublicznienie ich danych profilowych (np. nazwy użytkownika, postępów w nauce, statusu bycia on-line, wybranej wersji językowej portalu, danych rejestracyjnych, daty ostatniego logowania, oraz dalszych podanych opcjonalnie informacji łącznie ze zdjęciem profilowym). Adres e-mail oraz hasło nie będą upubliczniane.",
       "text7": "Rejestracja na portalu zostanie zakończona przez wykorzystanie linku aktywacyjnego. Po wpłynięciu danych rejestracyjnych do administratora portalu otrzymają Państwo automatyczne potwierdzenie rejestracji w mailu zawierającym link aktywacyjny.",
@@ -221,17 +312,18 @@
       "title": "Rejestracja"
     },
     "section2": {
-      "text1": "Administrator platformy jest świadomy wagi ochrony danych osobowych. Dlatego też portal ściśle przestrzega przepisów dotyczących ochrony danych osobowych. Szczegóły dot. przetwarzania danych użytkowników są zapisane w Ochronie danych.",
+      "text1": "Administrator platformy jest świadomy wagi ochrony danych osobowych. Z tego powodu portal ściśle przestrzega przepisów dotyczących ochrony danych osobowych. Szczegóły dotyczące przetwarzania danych użytkowników są zapisane w Ochronie danych.",
       "title": "Ochrona danych"
     },
     "section3": {
       "text1": "Portal może być wykorzystywany wyłącznie w celach zgodnych z prawem.",
       "text2": "Użytkownicy są zobowiązani do:",
       "text2_1": "używania w treści profilu i komunikacji z innymi użytkownikami wyłącznie danych prawdziwych i niewprowadzających w błąd;",
-      "text2_2": "trzymania danych dostępowych w tajemnicy i nie udostępniania ich osobom trzecim;",
+      "text2_2": "zachowania w tajemnicy danych rejestracyjnych i nieudostępniania ich osobom trzecim;",
       "text2_3": "niezwłocznego informowania administratora portalu, w przypadku zaistnienia podejrzenia, że osoby trzecie uzyskały dostęp do haseł i / lub korzystają z konta użytkownika.",
       "text3": "Użytkownicy są odpowiedzialni za treść zamieszczanych danych (zarówno tych dostępnych publicznie, jak i niepublicznie) oraz komunikacji z innymi użytkownikami. Użytkownicy są zobowiązani do ochrony praw i interesów innych użytkowników oraz osób trzecich, w szczególności jeśli chodzi o ich prawa do prywatności.",
-      "text4_1": "treści chronionych prawnie przez prawa autorskie, do nazwy, marki, patentowe, do stylu, użytkownika, własności, prywatności, jeśli użytkownicy nie mają do nich uprawnień;",
+      "text4": "Surowo zabrania się zamieszczania w Serwisie następujących treści (takich jak obrazy, linki, zdjęcia, ćwiczenia, pliki audio i wideo lub inne treści) oraz zamieszczania, wysyłania, linkowania, transmitowania, promowania, oferowania lub dostarczania ich w inny sposób:",
+      "text4_1": "treści prawnie chronionych, na przykład treści chronionych prawem autorskim, prawami pokrewnymi/pokrewnymi, prawami do nazwy, marki, znaków towarowych, patentów (w tym wzorów użytkowych i przemysłowych), praw własności lub praw osobistych, jeśli użytkownikowi nie przysługują te prawa;",
       "text4_2": "treści pornograficznych, epatujących przemocą, obscenicznych, seksistowskich, oszczerczych, rasistowskich, naruszających prawa mniejszości, obrażających uczucia religijne, sprzecznych z przepisami chroniącymi nieletnich;",
       "text4_3": "treści propagandowych, symboli organizacji, których działalność jest niezgodna z prawem;",
       "text4_4": "wypowiedzi nękających, obrażających, oszczerczych, zawierających groźby, dyskryminujących;",
@@ -243,6 +335,7 @@
       "text5_1": "korzystania lub prób korzystania z konta innego użytkownika oraz systemu bez zezwolenia administratora;",
       "text5_2": "podawania się za inne osoby, jak również podawania fałszywych informacji o sobie;",
       "text5_3": "blokowania funkcjonowania strony, nadpisywania, modyfikowania, kopiowania treści, kodu programu, automatycznego wywoływania treści, o ile nie jest to konieczne do korzystania z funkcji portalu zgodnego z regulaminem;",
+      "text6": "Właściciel tej witryny zastrzega sobie prawo do usuwania nieautoryzowanych wpisów (w tym testów, ćwiczeń, tekstów i obrazów), które nie spełniają niniejszego regulaminu, jak również konta użytkownika, w dowolnym momencie i bez powiadomienia.",
       "title": "Obowiązki użytkowników"
     },
     "section4": {
@@ -257,6 +350,8 @@
       "title": "Przekazanie praw"
     },
     "section6": {
+      "text1": "Wszystkie teksty, obrazy i inne treści publikowane w stronie internetowej, w tym treści dostarczane przez użytkowników, są – o ile nie wskazano inaczej – publikowane na podstawie: {license}.",
+      "text1_license": "CC0 1.0 Uniwersalna licencja Creative Commons",
       "title": "Prawa własności"
     },
     "section7": {
@@ -264,20 +359,23 @@
       "text2": "Użytkownik może zrezygnować z usług portalu w dowolnym czasie i bez podawania przyczyn {link}. Po rozwiązaniu umowy, nie będzie już on miał dostępu do swojego profilu, a wszystkie zawarte na nim informacje zostaną usunięte przez administratora. Użytkownik wyraża zgodę, by niektóre treści (takie jak komentarze, posty lub wiadomości), które nie są bezpośrednio połączone z profilem, pozostały dostępne na portalu nawet po usunięciu profilu. Użytkownik nie jeste uprawniony do żądania zwrotu lub innego przekazaniu udostępnionych treści.",
       "text3": "Prawo do wypowiedzenia umowy z ważnego powodu pozostaje nienaruszone. Ważnym powodem określa się sytuację, gdy jedna ze stron nie wypełniła zobowiązań wynikających z niniejszych warunków użytkowania. W przypadku wypowiedzenia umowy przez administratora, użytkownik jest na stałe wyłączony z dalszego korzystania z portalu. Ponowna rejestracja nie jest dozwolona.",
       "text4": "Administrator portalu zastrzega sobie prawo do usunięcia konta użytkownika, jeśli użytkownik nie korzystał z usługi przez więcej niż 6 miesięcy.",
-      "title": "Czas trwania i zakończenie"
+      "title": "Okres obowiązywania i rozwiązanie umowy"
     },
     "section8": {
-      "text1": "Administrator portalu dołoży wszelkich starań, aby utrzymać jego funkcjonowanie, wolnym od błędów w sposób bezpieczny, ale to nie gwarantuje, że w każdym momencie portal jest bezpieczne i wolne od błędów lub że będzie zawsze działać bez zakłóceń, opóźnień lub wad.",
-      "text2": "Dostawca nie ponosi odpowiedzialności za niewielkie niedopełnienie obowiązków, pod warunkiem, że sytuacje te nie prowadzą do uszkodzenia życia, ciała lub zdrowia i nie dotyczą roszczeń z tytułu gwarancji lub rękojmi. Nie ma to wpływu na dalszą odpowiedzialność za naruszenie obowiązków, których wypełnienie powoduje właściwą realizację umowy i na których przestrzeganie użytkownik może się regularnie powoływać. To samo odnosi się do naruszenia obowiązków przez podwykonawców.",
+      "text1": "Dostawca stara się, aby witryna internetowa działała, była wolna od błędów i bezpieczna, ale nie gwarantuje, że witryna internetowa jest zawsze bezpieczna lub wolna od błędów, ani że zawsze działa bez zakłóceń, opóźnień lub braków.",
+      "text2": "Dostawca nie ponosi odpowiedzialności za nieznaczne, niedbałe naruszenia obowiązków, chyba że naruszenie to prowadzi do uszkodzenia życia, ciała lub zdrowia i o ile nie naruszono przepisów ustawy o odpowiedzialności za produkt. Odpowiedzialność za naruszenia obowiązków, które uniemożliwiają prawidłowe wykonanie stosunku umownego i na których przestrzeganiu użytkownik regularnie polega, pozostaje nienaruszona. To samo dotyczy naruszeń popełnionych przez naszych przedstawicieli.",
       "text3": "Zgodnie z przepisami prawa administrator portalu nie jest zobowiązany jako dostawca usług do monitorowania przekazywanych lub przechowywanych informacji, lub do zbadania okoliczności, które wskazują na bezprawną działalność. Dlatego też nie ponosi odpowiedzialności za informacje dostarczone przez użytkowników portalu, danych i / lub informacji, oświadczeń lub za zawartość linkowanych zewnętrznych stron internetowych.",
       "text4": "Pomimo starannej kontroli treści administrator portalu nie ponosi żadnej odpowiedzialności za treści zewnętrznych linków. Wyłączną odpowiedzialność za treść linkowanych stron ponoszą ich administratorzy.",
-      "text5": "Dostawca nie ponosi odpowiedzialności za treści i prawdziwość zamieszczanych reklamy. Za treść ogłoszeń odpowiedzialni są ich autorzy. Dotyczy to zawartości reklamowanej strony. W przypadku zamieszczonej reklamy na portalu administrator portalu nie zgadzają automatycznie treściami, które nie są zgodne z prawem. Dlatego odpowiedzialność spoczywa wyłącznie na reklamodawcach.",
-      "text6": "Użytkownik zwalnia właściciela portalu z wszelkich roszczeń, w tym roszczeń odszkodowawczych dochodzonych przez innych użytkowników lub osób trzecich z tytułu naruszenia ich praw przez Użytkownika lub na podstawie zawartości stworzonej przez niego. Użytkownik, który opublikował treści na portalu, ponosi wszystkie koszty żądane przez stronę trzecią z powodu naruszenia jej praw, w tym kosztów na koszty obrony prawnej. Wszelkie inne prawa administratora portalu, w tym roszczenia odszkodowawcze pozostają bez zmian.",
+      "text5": "Dostawca nie ponosi odpowiedzialności za treść i dokładność reklam. Autor ponosi wyłączną odpowiedzialność za treść reklam. To samo dotyczy treści reklamowanej strony internetowej. Zezwolenie na wyświetlenie reklamy na stronie internetowej nie oznacza, że dostawca wyraża zgodę na legalność jej treści. Odpowiedzialność za to spoczywa wyłącznie na reklamodawcach.",
+      "text6": "Jako użytkownik zwalniasz dostawcę witryny z wszelkich roszczeń, w tym roszczeń odszkodowawczych, które inni użytkownicy lub inne osoby trzecie wnoszą przeciwko dostawcy z powodu naruszenia ich praw przez użytkownika lub z powodu treści stworzonych przez użytkownika. Użytkownik, który publikuje takie treści na stronie internetowej, ponosi wszelkie koszty poniesione przez osobę trzecią będącą dostawcą strony internetowej z powodu naruszenia praw, w tym koszty obrony prawnej. Wszelkie inne prawa, w tym roszczenia odszkodowawcze strony, pozostają nienaruszone",
       "title": "Odpowiedzialność"
     },
     "section9": {
-      "text3": "Właściciel tego portalu zastrzega sobie prawo do zmiany tego Regulaminu w każdej chwili i bez podania przyczyny.Najnowsza wersja jest zawsze dostępna na stronie {link}.Wyraźne odniesienie do zmian w Regulaminie nie będzie miało miejsca, pobranie i zapoznanie się z bieżącym Regulaminem leży w gestii użytkownika. Poprzez dalsze korzystanie z portalu po zmianie Regulaminu użytkownik oświadcza swą zgodę na zmiany.",
+      "text1": "Niniejsze warunki i wszelkie spory z nimi związane podlegają prawu Republiki Słowackiej. Miejscem wykonania i wyłącznym miejscem jurysdykcji, o ile jest to prawnie możliwe, jest Słowacja.",
+      "text2": "Prawnie wiążąca jest angielska wersja umowy.",
+      "text3": "Właściciel tej strony zastrzega sobie prawo do zmiany tych warunków w dowolnym momencie bez podania przyczyny. Najnowsza wersja jest zawsze dostępna pod adresem {link}. Użytkownicy nie będą informowani o zmianach w warunkach użytkowania; obowiązkiem użytkownika jest wyszukanie i zapoznanie się z aktualnymi warunkami użytkowania. Kontynuując korzystanie z witryny po zmianie warunków użytkowania, użytkownik wyraża zgodę na te zmiany.",
       "text4": "Administrator portalu jest uprawniony do przeniesienia praw i obowiązków wynikających z niniejszego Regulaminu w całości lub w części na rzecz osoby trzeciej po ogłoszeniu tego przez e-mail w ciągu 4 tygodni.",
+      "text5": "Dane kontaktowe dostawcy lub administratorów serwisu znajdują się na stronie {link}.",
       "title": "Postanowienia końcowe"
     }
   }

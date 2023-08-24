@@ -22,6 +22,8 @@
   },
   "editor": {
     "age_range": "Amžius",
+    "cefr_levels_label": "Bendrieji Europos kalbų orientaciniai metmenys",
+    "confirm_leave": "Šiame puslapyje prašoma patvirtinti, kad norite išeiti, įvesti duomenys gali būti neišsaugoti.",
     "description": "Aprašymas",
     "details": "Pratimo informacija",
     "save": "Išsaugoti",
@@ -76,6 +78,32 @@
     "target_language_is": "Mokomoji kalba:",
     "unlisted": "Pratimas nėra įtrauktas į paieškos rezultatų sąrašą"
   },
+  "guide": {
+    "about": "Kaip kurti pratimą",
+    "about_text": "Norėdami sukurti naują pratimą, pirmiausia turite užsiregistruoti ir prisijungti prie svetainės.",
+    "construction": "Kuriama",
+    "gap_filling": "Tarpų užpildymas",
+    "multiple_choice": "Pasirinkti iš kelių variantų",
+    "sort_and_match": "Rūšiuoti ir derinti",
+    "video": "apie vaizdo įrašą",
+    "exercice": {
+      "explanation1": "Norėdami sukurti naują pratimą, turite būti Pagrindiniame meniu (1), tada galite pasirinkti \"+ Kurti naują pratimą\" (2). Sukūrus pratimą, jie bus rodomi šiame puslapyje. Tačiau kol kas būsite perkelti į kitą puslapį, ką matote šiek tiek žemiau.",
+      "explanation2": "Pratimą galima sudaryti iš kelių dalių. Skyrius galite pridėti spustelėję \"+ PRIDĖTI SKYRIŲ\" (3). Yra įvairių rūšių pratimų, tačiau viename skyriuje galite naudoti tik tos pačios rūšies pratimus. Jei pratybose norite derinti skirtingų rūšių klausimus, turėsite kurti atskirus skyrius kiekvienai norimai klausimų rūšiai.",
+      "explanation3": "Kaip matote kairėje, yra daug skirtingų tipų skyrių. Tačiau juos galime suskirstyti į 3 grupes: klausimai, skirti spragoms užpildyti, klausimai su keliais atsakymų variantais ir klausimai apie atitikimą arba rūšiavimą.",
+      "explanation4": "Spragų užpildymo klausimas - tai tekstas arba sakinys, iš kurio reikia išbraukti žodį arba kelis žodžius. Šiuose klausimuose galite pasirinkti pateikti keletą atsakymų (bent vieną teisingą ir keletą klaidingų) arba palikti tarpą, o į klausimą atsakantis asmuo turės jį užpildyti. Kiekvienu atveju teisingus atsakymus nurodysite kurdami klausimą.",
+      "explanation5": "Keli atsakymų variantai leidžia sukurti klausimą su pateiktais atsakymų variantais. Tai gali būti vienas ar keli teisingi atsakymai,  ir kaip klausimų su spragomis pildymo atveju, kurdami klausimą turėsite nurodyti teisingą (-us) atsakymą (-us).",
+      "explanation6": "Rūšiavimo ir derinimo klausimus galėsite pateikti aprašymus, klausimus, paveikslėlius ar net garso įrašus arba atsakymus, susijusius su pateiktais daiktais. Mokiniai turės suporuoti daiktus su atsakymais, o jeigu pasirinkote rūšiavimo klausimą, turės juos surūšiuoti tinkama tvarka.",
+      "explanation7": "Daugiau paaiškinimų apie kiekvieną grupę rasite spustelėję šio puslapio viršuje esančius skirtukus.",
+      "gap_filling_1": "Numatytasis užduoties tipas yra spragos užpildymo klausimas. Yra dviejų rūšių spragų užpildymo pratimai. Pirmasis (1) vadinamas \"Numatytuoju\" ir pateikia atsakymų variantus spustelėjus spragą. Antroji rūšis yra \"Atviras atsakymas\" (8), atsakymas nepateikiamas, mokinys turi jį parašyti pats. Pažiūrėkime, kaip rašyti klausimus ir kaip pateikti atsakymus, keletą neteisingų ir teisingą (-us) atsakymą (-us).",
+      "gap_filling_2": "Laukeliuose (2) galite įrašyti užduočių pavadinimus, o laukelyje (3) - trumpą pratimo aprašymą arba pateiktumėte tam tikrą pratimo kontekstą.",
+      "gap_filling_3": "Patys klausimai surašomi į langelį (4). Visada yra du būdai, kaip tai padaryti. Galite tiesiogiai rašyti klausimus ir atsakymus į langelį arba galite pasinaudoti viršutiniame kairiajame kampe esančiomis priemonėmis (6). Rezultatas bus toks pat, matysite tą patį tekstą laukelyje (4).",
+      "gap_filling_4": "Jei klausimus rašote tiesiai į laukelį, visi klausimai turi būti atskirti tuščia eilute, o atsakymas turi būti pateiktas skliausteliuose [ ] ir atskirtas vertikaliu skyrikliu |. Prieš teisingą atsakymą (-us) turite įdėti +. Jei yra daugiau nei vienas teisingas atsakymas, bet kuris iš jų bus laikomas teisingu rezultatui. Taip pat galite pasirinkti maišyti siūlomus atsakymus spustelėdami „Maišyti“ (7).",
+      "gap_filling_5": "Jei naudojate įrankius klausimams kurti (6) esančius kairėje pusėje, įrankis pats sukurs tuščią eilutę naujam klausimui pradėti. Turėsite parašyti klausimą arba tekstą, o ten, kur norite padaryti tarpą, spustelėkite dešinėje esantį įrankį. Atsidarys iššokantis langas, kaip parodyta paveikslėlyje. Atsakymus galite rašyti po vieną. Jie bus patvirtinti, kai paspausite \"Enter\". Pagal numatytuosius nustatymus pirmasis atsakymas bus automatiškai laikomas teisingu ir priešais jį bus rodoma žalia \"v\", tačiau teisingą (-us) atsakymą (-us) galite pasirinkti spustelėję mažą mygtuką priešais kiekvieną atsakymą (8). Taip pat galite pasirinkti, kad būtų pridėta parinktis \"palikti tuščią\", spustelėdami brūkšniuotą kvadratėlį dešinėje (9).",
+      "gap_filling_open_answer_1": "Kitas spragos užpildymo pratimo tipas yra \"Atviras atsakymas\" (10). Kaip matote toliau, šios rūšies pratimui atsakymai nėra siūlomi. Numatomus atsakymus, vieną ar kelis, galite pateikti tais pačiais būdais, kaip ką tik paaiškinome, naudodamiesi priemone arba tiesiogiai langelyje (11). Galite pasiūlyti neteisingus atsakymus, jie nebus rodomi, bet taisymo metu bus rodomas raudonas X, jei kas nors užpildė vieną iš šių atsakymų, nieko, jei parašė kitą atsakymą ir žalia V, jei įrašė vieną iš teisingų atsakymų.",
+      "gap_filling_open_answer_2": "Kitus klausimus galite pridėti tais pačiais būdais, kaip ir anksčiau, įvesdami tuščią eilutę arba spustelėdami kairėje esantį mygtuką (6). Kai būsite pasiruošę pateikti klausimus, nepamirškite spustelėti mygtuko \"Išsaugoti\", kad išsaugotumėte savo darbą. Visada galėsite grįžti ir papildyti klausimus arba padaryti pakeitimus.",
+      "name": "Naujas pratimas"
+    }
+  },
   "home": {
     "create_exercise": "Kurti naują užduotį.",
     "search_exercise": "Ieškoti užduoties"
@@ -116,6 +144,7 @@
     "catchphrase": "Susikurk kalbų testus pats",
     "cookie_consent": "Ši svetainė veikimui naudoja minimalų slapukų kiekį. Manome, kad naudodamiesi šia svetaine, sutinkate su funkcinių slapukų naudojimu.",
     "edit": "Redaguoti",
+    "guide": "Vartotojo gidas",
     "home": "Pagrindinis puslapis",
     "lang_menu_header": "Sąsajos kalba",
     "login": "Prisijungti",
@@ -170,12 +199,15 @@
         "name": "Tuščia"
       },
       "gap_filling_dropdown": {
+        "code": "Knyga yra [+ant|and] stalo.",
         "name": "Išskleidžiamas tarpo užpildymas"
       },
       "gap_filling_open_answer": {
+        "code": "Knyga yra [+ant|and] stalo.",
         "name": "tarpo užpildymas, atviras atsakymas"
       },
       "multiple_choice": {
+        "code": "Kur yra knyga?\n[+ant stalo|stale]",
         "name": "Pasirinkti iš kelių variantų"
       },
       "pairing_pictures_with_sounds": {
@@ -214,6 +246,12 @@
         "code": "{img:vienas_apskritimas.png}\n\n{img:du_apskritimai.png}\n\n{img:trys_apskritimai.png}",
         "name": "Paveikslų rūšiavimas"
       }
+    },
+    "types": {
+      "default": "Pateiktas sąrašas",
+      "multiple_choice": "Pasirinkti iš kelių variantų",
+      "open_answer": "Atvirtas atsakymas",
+      "pairing": "Rūšiuoti ir derinti"
     }
   },
   "sort": {
@@ -259,11 +297,13 @@
     "exercises": "Užduotys"
   },
   "terms": {
+    "intro": "Sveiki atvykę į \"TestU Online\" - nemokamą daugiakalbę internetinę e. mokymosi platformą, kurioje galima lengvai ir greitai kurti įvairias viktorinas, testus ir pratybas, skirtas mokytis kalbų! Prieiga prie svetainės testu.eu (toliau - svetainė, paslauga, paslaugų teikėjas) ir naudojimasis ja reiškia, kad jūs (toliau - naudotojas) perskaitėte, supratote ir sutikote su šiomis sąlygomis, nepriklausomai nuo to, ar esate užsiregistravęs kaip testu.eu narys. Todėl atidžiai perskaitykite pateiktą tekstą.",
     "last_update": "Paskutinį kartą atnaujinta: {date}",
     "section1": {
       "text1": "Kai kuriomis svetainės funkcijomis galima naudotis be registracijos. Tačiau norint naudotis visomis svetainės funkcijomis, reikia sukurti asmeninę paskyrą. Registracija yra nemokama.",
       "text2": "Registruotis svetainėje gali tik asmenys nuo 13 metų. Nepilnamečių naudojimasis šia interneto svetaine yra galimas tik su globėjo sutikimu.",
       "text3": "Jūs garantuojate, kad visi registracijos metu pateikti duomenys yra išsamūs ir teisingi. Taip pat garantuojate, kad jie visada bus aktualūs.",
+      "text4": "Duomenų (pvz. vartotojo vardas, vardas ar pavardė, profilio nuotrauka ir t.t.), pažeidžiančių trečiojo asmens teises, ypatingai prekės ženklų ar registruotų pavadinimų, naudojimas yra neleistinas. Nelegalūs arba šias naudojimosi sąlygas pažeidžiantys duomenys yra neleidžiami.",
       "text5": "Registruojantis svetainėje jums reikia pasirinkti slaptažodį. Jūs esate atsakingas už to slaptažodžio išlaikymą paslaptyje.",
       "text6": "Jūs sutinkate su jūsų profilio duomenų (pvz., jūsų vartotojo vardo, pažangos, prisijungimo būsenos, pasirinktos kalbos, registracijos ir paskutinio prisijungimo datos bei kitų savanoriškai pateikiamų duomenų, įskaitant profilio nuotrauką) paviešinimu šioje interneto svetainėje. Elektroninio pašto adresas ir slaptažodis neviešinami.",
       "text7": "Registracija svetainėje yra baigiama paspaudus paskyros aktyvacijos nuorodą. Paskyros aktyvacijos nuoroda yra automatiškai atsiunčiama elektroniniu paštu po registracijos svetainėje.",
@@ -282,6 +322,7 @@
       "text2_2": "išlaikyti prisijungimo duomenis paslaptyje ir neatskleisti jų tretiesiems asmenims;",
       "text2_3": "nedelsiant informuoti svetainės tiekėją, jeigu kilo įtarimas, kad prisijungimo duomenys buvo perduoti tretiesiems asmenims ir/arba buvo netinkamai panaudota vartotojo paskyra.",
       "text3": "Jūs esate atsakingi už jūsų pateiktą turinį bei už bendravimą (viešąjį ir privatų) su kitais vartotojais. Jūs taip pat privalote saugoti kitų vartotojų ar trečiojo asmens teises ir interesus, ypatingai asmenines teises.",
+      "text4": "Griežtai draudžiama kelti, viešinti, siųsti, įkelti nuorodas, perduoti, siūlyti ar kitu būdu suteikti prieigą prie turinio (tokio kaip paveikslėliai, nuorodos, nuotraukos, forumų žinutės ar kitas turinys, įskaitant privačias žinutes ir profilio nuotraukas):",
       "text4_1": "nuosavybės turinį, kuris yra saugomas įstatymų, pavyzdžiui, autorinių teisių, prekės ženklų, registruotų pavadinimų, gretutinių teisių, patentų, dizaino patento, naudingojo patento, nuosavybės ar asmeninių teisių, nebent jūs turite teises jų panaudojimui;",
       "text4_2": "pornografinio, propaguojančio smurtą, seksualinio pobūdžio, nešvankų, įžeidžiantį, šmeižiantį, rasistišką, religijas ar įvairias mažumas įžeidžiantį turinį, taip pat turinį, kuris pažeidžia jaunimo apsaugos įstatymus;",
       "text4_3": "propagandos priemones ir neteisėtų organizacijų simbolius;",
@@ -294,6 +335,7 @@
       "text5_1": "naudotis arba mėginti pasinaudoti kito vartotojo paskyra arba sistema be tiekėjo leidimo;",
       "text5_2": "apsimesti kitu asmeniu, taip pat pateikti apie save klaidingą informaciją;",
       "text5_3": "blokuoti interneto svetainės funkcijas, perrašyti, keisti ar kopijuoti į programos kodą ir/ar svetainės duomenis, taip pat automatizuotai išgauti turinį, nebent tai yra būtina tinkamam naudojimuisi svetainės paslaugomis;",
+      "text6": "Svetainės savininkas pasilieka teisę be perspėjimo pašalinti draudžiamus įrašus (įskaitant asmenines žinutes ir paveikslėlius)  vartotojo ar paskyrą, jeigu ji neatitinka šių sąlygų.",
       "title": "Vartotojo pareigos"
     },
     "section4": {
@@ -308,6 +350,8 @@
       "title": "Teisių perdavimas"
     },
     "section6": {
+      "text1": "Visi svetainėje skelbiami tekstai, paveikslėliai ir kitas turinys, įskaitant naudotojų pateiktą turinį, jei nenurodyta kitaip, skelbiamas pagal {licenciją}.",
+      "text1_license": "CC0 1.0 Universali Creative Commons licencija",
       "title": "Nuosavybės teisės"
     },
     "section7": {
@@ -327,8 +371,11 @@
       "title": "Atsakomybė"
     },
     "section9": {
+      "text1": "Šioms sąlygoms ir bet kokiems su jomis susijusiems ginčams taikomi Slovakijos Respublikos įstatymai. Sutarties vykdymo vieta ir išimtinė jurisdikcijos vieta, kiek tai teisiškai įmanoma, yra Slovakija.",
+      "text2": "Sutartis anglų kalba turi teisinę galią.",
       "text3": "Svetainės savininkas pasilieka teisę bet kuriuo metu ir be priežasčių nurodymo keisti šias sąlygas. Naujausia naudojimosi sąlygų versija visada prieinama šiame puslapyje: {link}. Aiški nuoroda į naudojimosi sąlygų pasikeitimus nėra pateikiama, tad vartotojai privalo patys nuolatos ateiti į šį puslapį ir patikrinti naudojimosi sąlygas. Tolesnis svetainės naudojimasis po sąlygų pasikeitimo reiškia vartotojo sutikimą su sąlygų pasikeitimais.",
       "text4": "Svetainės savininkas turi teisę visiškai arba iš dalies perleisti savo teises ir pareigas trečiajam asmeniui pagal šią sutartį apie tai pranešdamas elektroniniu paštu prieš 4 savaites.",
+      "text5": "Paslaugų teikėjo arba svetainės administratorių kontaktinę informaciją galima rasti puslapyje {link}.",
       "title": "Baigiamosios nuostatos"
     }
   }
