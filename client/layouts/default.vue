@@ -71,6 +71,15 @@
               <v-list-item-title>{{ locale_names[lang] }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title>
+                <a href="https://tradukejo.ikso.net/project/6/" target="_blank">
+                  {{ $t("langs.help") }}
+                </a>
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
         </v-list>
       </v-menu>
 
