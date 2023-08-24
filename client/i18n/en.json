@@ -81,47 +81,44 @@
   "guide": {
     "about": "How to create exercises",
     "about_text": "To create new exercice, you'll first need to register and login in the website.",
+    "construction": "Under construction",
+    "gap_filling": "Gap Filling",
+    "video": "about a video",
     "exercice": {
-      "name": "New exercise",
-      "explanation1": "To create a new exercise, you have to be in the Home menu (1), then you can select \"+ CREATE A NEW EXERCISE\" (2). Once created, they'll appear on this page. But for now you will be moved to the next page as you can see just below.",
-      "explanation2": "An exercise can be composed in multiple units. You can add units by clicking on \"+ ADD UNIT\" (3). There are different kinds of exercises but in each unit you can only use the same kind. If you want to mix different types of questions in an exercise, you'll have to do separate units for each type of questions you want.",
+      "explanation1": "To create a new exercise, you have to be in the Home menu (1), then you can select ”+ CREATE A NEW EXERCISE” (2). Once created, they'll appear on this page. But for now you will be moved to the next page as you can see just below.",
+      "explanation2": "An exercise can be composed in multiple units. You can add units by clicking on ”+ ADD UNIT” (3). There are different kinds of exercises but in each unit you can only use the same kind. If you want to mix different types of questions in an exercise, you'll have to do separate units for each type of questions you want.",
       "explanation3": "As you can see on the left, there are a lot of different types of units. But mainly, we can group them in 3 families: gap filling questions, multiple choices and match or sort questions.",
       "explanation4": "Gap filling question is a text or a sentence where you choose to remove a word or a few words. For theses questions, you can choose to give some answers (at least one right answer and some false ones) or you can let the field open and the person answering the question will have to complete by typing the answer. In each case, you'll indicate the right answer(s) when creating the question.",
       "explanation5": "Multiple choices allow you to create question with a choice of answers. It can be one or more right answers and as for the gap filling questions, you'll have to give the right answer(s) when creating the question.",
       "explanation6": "For match or sort questions, you'll have the choice to give descriptions or questions or pictures or even sounds and words or answers related to the given items. The learners will have to pair the items with the answers or if you chose the sort question, they'll have to sort them in the right order.",
       "explanation7": "You can find more explanations for each family by clicking on the tabs on the top of this page.",
-      "gap_filling_1" : "The default type of exercise is a gap filling question. There are two kinds of gap filling exercises. The first one (1) is called \"Default\", and gives given answers when you click on the gap. The second type is the \"Open answer\" (8), there is no answer given, the learner has to write it directly. We will see how to write the questions and how to give the answer, some wrong ones and the right one(s).",
-      "gap_filling_2" : "In the fields (2), you can write the title of the exercises and in the field (3) a short description to explain the instructions fo the following questions or give some context.",
-      "gap_filling_3" : "The questions themselves are written in the box (4). There are always two ways to do it. You can write directly the questions and the answers in the box or you can use the tools in the upper left corner (6). The result will be the same, you will see the same text in the field (4).",
-      "gap_filling_4" : "If you write the questions directly in the box, every questions have to be separated by a blank line and the answer has to be given between brackets [ ] and separated by a vertical separator |. And you have to put a + before the right answer(s). If there is more than one right answer, any of them will be considered as correct for the result. You can also choose to shuffle the proposed answers by clicking on the \"Shuffle options\" (7).",
-      "gap_filling_5" : "If you use the tools to create the questions (6), the one on the left will pass a blank line to start a new question. You'll have to write the question or text and where you want to put a gap, you click on the tool on the right. A pop up window will open, as showed in the image. You can type the answers one by one. They'll be validated when you type \"enter\". By default, the first one will automatically be considered as the right one, and a green \"v\" will show in front of it, but you can select the correct answer(s) by clicking on the small button in front of each answer (8). You can also choose to add a \"leave blank\" option by clicking on the dashed square on the right (9).",
-      "gap_filling_open_answer_1" : "The other type of gap filling exercise is the \"Open answer\" (10). As you can see below, for this kind of exercise, there is no proposed answer. You can give expected answers, one or more, the same ways as we just explained, with the tool or directly in the box (11). You can proposed wrong answers, they will not appear but during the correction, it will show a red X if someone filled with one of these answers, nothing if they wrote another answer et a green V if they have one of the right answers.",
-      "gap_filling_open_answer_2" : "You can add other questions, the same ways as before, by passing a blank line or by clicking on the button on the left (6). When you are happy with your questions, don't forget to click on the \"Save\" button to save your work. You can always come back to add questions or to make some changes."
+      "gap_filling_1": "The default type of exercise is a gap filling question. There are two kinds of gap filling exercises. The first one (1) is called ”Default”, and gives given answers when you click on the gap. The second type is the ”Open answer” (8), there is no answer given, the learner has to write it directly. We will see how to write the questions and how to give the answer, some wrong ones and the right one(s).",
+      "gap_filling_2": "In the fields (2), you can write the title of the exercises and in the field (3) a short description to explain the instructions fo the following questions or give some context.",
+      "gap_filling_3": "The questions themselves are written in the box (4). There are always two ways to do it. You can write directly the questions and the answers in the box or you can use the tools in the upper left corner (6). The result will be the same, you will see the same text in the field (4).",
+      "gap_filling_4": "If you write the questions directly in the box, every questions have to be separated by a blank line and the answer has to be given between brackets [ ] and separated by a vertical separator |. And you have to put a + before the right answer(s). If there is more than one right answer, any of them will be considered as correct for the result. You can also choose to shuffle the proposed answers by clicking on the ”Shuffle options” (7).",
+      "gap_filling_5": "If you use the tools to create the questions (6), the one on the left will pass a blank line to start a new question. You'll have to write the question or text and where you want to put a gap, you click on the tool on the right. A pop up window will open, as showed in the image. You can type the answers one by one. They'll be validated when you type ”enter”. By default, the first one will automatically be considered as the right one, and a green ”v” will show in front of it, but you can select the correct answer(s) by clicking on the small button in front of each answer (8). You can also choose to add a ”leave blank” option by clicking on the dashed square on the right (9).",
+      "gap_filling_open_answer_1": "The other type of gap filling exercise is the ”Open answer” (10). As you can see below, for this kind of exercise, there is no proposed answer. You can give expected answers, one or more, the same ways as we just explained, with the tool or directly in the box (11). You can proposed wrong answers, they will not appear but during the correction, it will show a red X if someone filled with one of these answers, nothing if they wrote another answer et a green V if they have one of the right answers.",
+      "gap_filling_open_answer_2": "You can add other questions, the same ways as before, by passing a blank line or by clicking on the button on the left (6). When you are happy with your questions, don't forget to click on the ”Save” button to save your work. You can always come back to add questions or to make some changes.",
+      "name": "New exercise"
     },
-    "gap_filling": "Gap Filling",
     "multiple_choice": {
-      "name": "Multiple choice",
-      "explanation1": "If you prefer to show the answers not as gaps but as a multiple choice with the answers under the question with boxes to check, you can select the \"Multiple choice\" type (12).",
-      "explanation2": "In the list of exercises that appears when you add a unit, the \"Questions about a picture, true or false\" and the \"Questions about a text, multiple choice\" types give you two other examples of how to use this type of questions.",
-      "explanation3": "As before, you can give a title for the series of questions. You can also add a description, for instance a text about which you want to ask questions or an introduction about the questions... ",
-      "explanation4": "The questions and the answers can be added as before, by writing them directly in the text box (13) or with de buttons as explained before for the gap filling questions (6). The correct answer must have \"+\" before it and the answers must be separated by \"|\". If there are more than one correct answers, the question will be marked as correct when all the correct answers are checked.",
-      "explanation5": "You also have te possibility to add pictures or sounds in the description, by clicking on the three dots (14) and selecting them on your computer. You can then ask questions about the sound or the image. You can add as many as you want and choose where you want them to be in the text by moving the element between curly braces {} (15)."
-
+      "explanation1": "If you prefer to show the answers not as gaps but as a multiple choice with the answers under the question with boxes to check, you can select the ”Multiple choice” type (12).",
+      "explanation2": "In the list of exercises that appears when you add a unit, the ”Questions about a picture, true or false” and the ”Questions about a text, multiple choice” types give you two other examples of how to use this type of questions.",
+      "explanation3": "As before, you can give a title for the series of questions. You can also add a description, for instance a text about which you want to ask questions or an introduction about the questions...",
+      "explanation4": "The questions and the answers can be added as before, by writing them directly in the text box (13) or with de buttons as explained before for the gap filling questions (6). The correct answer must have ”+” before it and the answers must be separated by ”|”. If there are more than one correct answers, the question will be marked as correct when all the correct answers are checked.",
+      "explanation5": "You also have te possibility to add pictures or sounds in the description, by clicking on the three dots (14) and selecting them on your computer. You can then ask questions about the sound or the image. You can add as many as you want and choose where you want them to be in the text by moving the element between curly braces {} (15).",
+      "name": "Multiple choice"
     },
     "sort_and_match": {
-      "name" :"Sort and Match",
-      "explanation1": "The last family of exercises is the \"sort and match\" also called pairing (text with text, text with pictures, pictures with sounds and sorting pictures). You can select this type of exercices in the type box (16) or in the list of new units.",
-      "explanation1_1":" The simplest one consists in matching words. To create them, you can use the button (17) or write them in the text box (18).",
-      "explanation2": "Each match has to be written with one part on the left and one part on the right of the \"==\" symbol, with one blank line between them. In this example, there are fruits in one column and colors in the other one. But it can be translations, numbers, or even pictures, sounds or videos. The most important thing is to put the same type in the same column. The propositions will be mixed for the exercise.",
+      "explanation1": "The last family of exercises is the ”sort and match” also called pairing (text with text, text with pictures, pictures with sounds and sorting pictures). You can select this type of exercices in the type box (16) or in the list of new units.",
+      "explanation1_1": "The simplest one consists in matching words. To create them, you can use the button (17) or write them in the text box (18).",
+      "explanation2": "Each match has to be written with one part on the left and one part on the right of the ”==” symbol, with one blank line between them. In this example, there are fruits in one column and colors in the other one. But it can be translations, numbers, or even pictures, sounds or videos. The most important thing is to put the same type in the same column. The propositions will be mixed for the exercise.",
       "explanation3": "To add pictures or sound, you have to use the buttons (19) and select the file on your computer. It will then create the elements between curly braces {} as before. After that, you can move them on the place you want. To add a video, you have to select the third button (19) and you have to write the url address of the video (for instance on youtube or vimeo...). You can't directly upload a video from your computer.",
       "explanation4": "You can associate text with text, or with picture or sound, or associate pictures with sounds as shown in (20).",
-      "explanation5": "If you don't write the \"==\" symbol to pair something with the proposition, as shown in (21), the exercise become a sorting exercise where you have to put the proposition in the right order. You can do it with pictures, text, sounds or video.  ",
-      "video": "You can also add a video, directly in the description box, by writing the url address of the video between curly brackets and with \"video:\" before it, as shown in (22). There is no button to do it but you can have a written example by selecting the type of unit: \"Questions about a video, open answer\". "
-    },
-
-
-
-    "construction": "Under construction"
+      "explanation5": "If you don't write the ”==” symbol to pair something with the proposition, as shown in (21), the exercise become a sorting exercise where you have to put the proposition in the right order. You can do it with pictures, text, sounds or video.",
+      "name": "Sort and Match",
+      "video": "You can also add a video, directly in the description box, by writing the url address of the video between curly brackets and with ”video:” before it, as shown in (22). There is no button to do it but you can have a written example by selecting the type of unit: ”Questions about a video, open answer”."
+    }
   },
   "home": {
     "create_exercise": "Create a new exercise",
@@ -348,7 +345,7 @@
       "text4_4": "harassment or abusive, slanderous, threatening and discriminatory statements;",
       "text4_5": "private data from other users (e.g. address, phone number, bank account) or quotations from private communication with other users, providers/administrators of the website or third parties;",
       "text4_6": "links to websites with illegal content;",
-      "text4_7": "any unsolicited or unauthorized advertising, promotional materials, \"junk mail\", spam, chain letters, pyramid or pyramid schemes or any other form of solicitation;",
+      "text4_7": "any unsolicited or unauthorized advertising, promotional materials, ”junk mail”, spam, chain letters, pyramid or pyramid schemes or any other form of solicitation;",
       "text4_8": "any material which contains viruses, worms, Trojan horses or other programs that may jeopardize or impair the functionality or existence of this or other websites.",
       "text5": "The following acts are prohibited to the user:",
       "text5_1": "using, or trying to use, the account of another user or the system without the authorization of the provider;",
@@ -398,5 +395,3 @@
       "title": "Closing conditions"
     }
   }
-}
-
