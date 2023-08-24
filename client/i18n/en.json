@@ -145,6 +145,9 @@
     "mail_invalid": "E-mail must be valid",
     "page_title": "Login",
     "password": "Password",
+    "password_reset": "Password reset",
+    "password_reset_done": "Your password was successfully reset",
+    "password_reset_sent": "A link was sent to your email address to reset your password.",
     "required_field": "Required field",
     "resend_link": "Resend link",
     "signup": "Register to TestU",
@@ -395,3 +398,4 @@
       "title": "Closing conditions"
     }
   }
+}

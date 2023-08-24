@@ -1,6 +1,6 @@
 <template>
   <v-row class="mt-5">
-    <v-spacer></v-spacer>
+    <v-spacer />
     <v-col cols="7">
       <h2 class="mb-8">{{ $t("login.verify_email") }}</h2>
 
@@ -22,7 +22,7 @@
             :rules="[(v) => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
             validate-on-blur
             required
-          ></v-text-field>
+          />
           <v-btn
             type="submit"
             class="mx-auto my-6 secondary"
@@ -33,7 +33,7 @@
         </v-form>
       </div>
     </v-col>
-    <v-spacer></v-spacer>
+    <v-spacer />
   </v-row>
 </template>
 
@@ -56,7 +56,7 @@ export default {
       const key = this.$route.params.key
 
       try {
-        const ret = await this.$auth.axios.post(url, { key })
+        await this.$auth.axios.post(url, { key })
       } catch (e) {
         if (e.response.status === 404) {
           this.error_messages.push(

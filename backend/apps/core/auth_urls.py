@@ -26,9 +26,4 @@ urlpatterns = [
         name="rest_password_reset_confirm",
     ),
     path("password/change/", PasswordChangeView.as_view(), name="rest_password_change"),
-    path(
-        "change-password/<str:id>:<str:key>",
-        TemplateView.as_view(),
-        name="password_reset_confirm",
-    ),
 ]

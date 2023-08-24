@@ -44,4 +44,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("~/", TemplateView.as_view(), name="account_email_verification_sent"),
     path("verify/<str:key>", TemplateView.as_view(), name="account_confirm_email"),
+    path(
+        "reset-password/<str:uid>:<str:token>",
+        TemplateView.as_view(),
+        name="password_reset_confirm",
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

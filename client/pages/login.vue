@@ -1,12 +1,13 @@
 <template>
   <v-row class="mt-5">
-    <v-spacer></v-spacer>
+    <v-spacer />
     <v-col cols="7">
-      <v-alert
-        type="success"
-        v-if="'verified' in $route.query"
-        v-text="$t('login.email_is_verified')"
-      />
+      <v-alert type="success" v-if="'verified' in $route.query">
+        {{ $t("login.email_is_verified") }}
+      </v-alert>
+      <v-alert type="success" v-if="'reset' in $route.query">
+        {{ $t("login.password_reset_done") }}
+      </v-alert>
       <v-form
         ref="login_form"
         v-model="valid"
@@ -22,7 +23,7 @@
           :rules="[(v) => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
           validate-on-blur
           required
-        ></v-text-field>
+        />
         <v-text-field
           v-model="password"
           :label="$t('login.password')"
@@ -30,18 +31,26 @@
           prepend-icon="mdi-lock"
           :rules="[(v) => v !== '' || $t('login.required_field')]"
           required
-        ></v-text-field>
+        />
         <v-btn type="submit" class="primary mt-2">
           {{ $t("login.login") }}
         </v-btn>
-        <v-alert class="mt-2" type="error" v-show="!!error_message">
+        <v-btn
+          class="secondary mt-2 ms-2"
+          :to="`/reset-password/?email=${email}`"
+          v-show="!!error_message"
+        >
+          {{ $t("login.password_reset") }}
+        </v-btn>
+        <v-alert class="mt-6" type="error" v-show="!!error_message">
           {{ error_message }}
         </v-alert>
       </v-form>
     </v-col>
-    <v-spacer></v-spacer>
+    <v-spacer />
   </v-row>
 </template>
+
 <script>
 export default {
   data: () => ({
