@@ -256,12 +256,22 @@
         <v-icon>mdi-creative-commons</v-icon>
         <a
           rel="license"
-          href="http://creativecommons.org/publicdomain/zero/1.0/"
+          href="https://creativecommons.org/publicdomain/zero/1.0/"
           target="_blank"
           style="font-family: monospace; font-weight: bold"
           class="grey--text caption text-decoration-none font-weight-bold"
         >
           CC0
+        </a>
+        <span class="caption mx-1">·</span>
+        <v-icon>mdi-open-source-initiative</v-icon>
+        <a
+          href="https://gitlab.com/edukado-interreto/testu/"
+          target="_blank"
+          style="font-family: monospace; font-weight: bold"
+          class="grey--text caption text-decoration-none font-weight-bold"
+        >
+          {{ $t("main.source_code") }}
         </a>
         <span class="caption mx-1">·</span>
         <NuxtLink
