@@ -1,7 +1,8 @@
 <template>
   <v-app id="inspire">
     <v-app-bar
-      app
+      v-if="!embedded"
+      :app="!embedded"
       clipped-right
       clipped-left
       flat
@@ -143,10 +144,11 @@
       </v-menu>
     </v-app-bar>
     <v-navigation-drawer
+      v-if="!embedded"
+      :app="!embedded"
       v-model="nav_drawer.show"
       class="d-print-none"
       disable-resize-watcher
-      app
       clipped
     >
       <v-list class="primary--text">
@@ -234,8 +236,8 @@
       <Nuxt />
     </v-main>
     <v-footer
-      absolute
-      app
+      v-if="!embedded"
+      :app="embedded"
       padless
       class="grey lighten-4 flex-column d-print-none"
     >
@@ -330,6 +332,9 @@ export default {
     this.$vuetify.lang.current = this.$i18n.locale
   },
   computed: {
+    embedded() {
+      return window.location !== window.parent.location
+    },
     logged_in() {
       return this.authUser?.username !== undefined
     },
@@ -352,6 +357,7 @@ export default {
 
 .v-main {
   margin-bottom: 4em;
+  min-height: 50vh;
 }
 .catchphrase {
   font-family: "Roboto Slab", Roboto, serif;

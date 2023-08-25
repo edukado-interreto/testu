@@ -24,16 +24,16 @@
     </v-alert>
 
     <div v-if="!submitter_display_name && !logged_in && exam.accept_submission">
-      <p class="text-center text-body-2 mt-12 mb-7">
+      <p v-if="!embedded" class="text-center text-body-2 mt-12 mb-7">
         {{ $t("exam.please_log_in") }}
       </p>
       <v-row justify="center" class="mt-3">
-        <v-col cols="12" sm="4" md="2" align="center">
+        <v-col v-if="!embedded" cols="12" sm="4" md="2" align="center">
           <v-btn color="primary" block @click="login">
             {{ $t("main.login") }}
           </v-btn>
         </v-col>
-        <v-col cols="12" sm="1" md="1" align="center">
+        <v-col v-if="!embedded" cols="12" sm="1" md="1" align="center">
           {{ $t("exam.or") }}
         </v-col>
         <v-col cols="12" sm="6" md="4" align="center">
@@ -162,6 +162,9 @@ export default {
     }
   },
   computed: {
+    embedded() {
+      return window.location !== window.parent.location
+    },
     logged_in() {
       return this.authUser && this.authUser.username !== undefined
     },
