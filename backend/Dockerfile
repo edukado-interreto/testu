@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM python:3.9-slim-buster AS python-base
+FROM python:3.10.12-slim-bookworm AS python-base
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -21,7 +21,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         less \
         make \
-        sqlite \
         git && \
     apt-get autoremove -y && \
     apt-get clean autoclean && \
@@ -43,7 +42,7 @@ RUN chown -R 1000:1000 $POETRY_HOME $PYSETUP_PATH
 # USER 1000
 
 # Install Poetry - respects $POETRY_VERSION & $POETRY_HOME
-ENV POETRY_VERSION=1.3.2
+ENV POETRY_VERSION=1.6.1
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # We copy our Python requirements here to cache them
