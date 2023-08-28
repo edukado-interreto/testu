@@ -14,6 +14,15 @@ class ExerciseAdmin(admin.ModelAdmin):
     list_filter = ["created_by"]
     search_fields = ["name", "description", "created_by__email", "created_by__username"]
     date_hierarchy = "created"
+    actions = ["mark_searchable", "mark_not_searchable"]
+
+    @admin.action(description="Mark as searchable")
+    def mark_searchable(self, request, queryset):
+        queryset.update(searchable=True)
+
+    @admin.action(description="Mark as not searchable")
+    def mark_not_searchable(self, request, queryset):
+        queryset.update(searchable=False)
 
 
 @admin.register(Exam)
