@@ -12,6 +12,7 @@ admin.site.unregister(Group)
 class UserAdmin(DjangoUserAdmin):
     list_display = ["email", "username", "date_joined", "is_active", "is_staff"]
     ordering = ["-id"]
+    search_fields = ["email", "username"]
     fieldsets = [
         (None, {"fields": ("email", "data")}),
         ("Important dates", {"fields": ("last_login", "date_joined")}),
