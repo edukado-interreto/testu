@@ -3,7 +3,7 @@
     <h1>About</h1>
 
     <v-row>
-      <v-col class="col-12 col-smX-8 col-md-9">
+      <v-col class="col-12 col-md-9">
         <h2 class="mb-3">{{ $t("about.about") }}</h2>
         <p class="text-justify">{{ $t("about.about_text") }}</p>
       </v-col>

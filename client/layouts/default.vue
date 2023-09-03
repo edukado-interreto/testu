@@ -188,6 +188,15 @@
           </v-list-item-content>
         </v-list-item>
 
+        <v-list-item :to="localePath('/why')" nuxt router exact>
+          <v-list-item-action>
+            <v-icon>mdi-star-shooting-outline</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{ $t("main.why") }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
         <v-list-item :to="localePath('/guide')" nuxt router exact>
           <v-list-item-action>
             <v-icon>mdi-help-circle</v-icon>

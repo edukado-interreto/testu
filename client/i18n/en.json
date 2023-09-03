@@ -125,6 +125,8 @@
     "search_exercise": "Search exercise"
   },
   "langs": {
+    "en": "English",
+    "eo": "Esperanto",
     "help": "Help us to translate the website"
   },
   "learn": {
@@ -177,7 +179,8 @@
     "social": "Social",
     "source_code": "Source code",
     "submit": "Submit",
-    "terms": "Terms of use"
+    "terms": "Terms of use",
+    "why": "Why"
   },
   "review": {
     "exam": "Exam review",
@@ -396,6 +399,50 @@
       "text4": "The provider is entitled to transfer its rights and obligations under these terms, entirely or in part, to a third party, within a four week period following notice via e-mail.",
       "text5": "Contact information for the provider or the administrators of the website can be found on the page {link}.",
       "title": "Closing conditions"
+    }
+  },
+  "why": {
+    "because": "Because it is:",
+    "more_projects": "More projects at",
+    "point1": {
+      "subtitle": "No subscriptions, no hidden costs or paywalls, seriously!",
+      "title": "Absolutely free"
+    },
+    "point10": {
+      "subtitle": "Thanks to the Erasmus+ program and the Slovak National Agency you can use testu.eu for free!",
+      "title": "Officially supported by the European Commision"
+    },
+    "point2": {
+      "subtitle": "You are free to use and create content, no need for attributions either.",
+      "title": "CC0 licensed content"
+    },
+    "point3": {
+      "subtitle": "Nothing is hidden.",
+      "title": "Open source"
+    },
+    "point4": {
+      "subtitle": "Testu.eu celebrates languages. Missing yours? Add it here:",
+      "title": "Multilingual"
+    },
+    "point5": {
+      "subtitle": "User friendly, fast, intuitive, and easy to navigate.",
+      "title": "Easy to use"
+    },
+    "point6": {
+      "subtitle": "Immerse yourself in online lessons, courses, exercises, and tests – a modern approach to learning!",
+      "title": "Online"
+    },
+    "point7": {
+      "subtitle": "Learning without borders, teaching without limits – dive into content creation or reuse existing resources.",
+      "title": "Useful"
+    },
+    "point8": {
+      "subtitle": "Crafting educational content is a joy – embrace learning through creativity!",
+      "title": "Fun"
+    },
+    "point9": {
+      "subtitle": "Reuse the content of others or your own, reduce the amount of printing, recycle ideas, exercises and questions!",
+      "title": "Eco-friendly"
     }
   }
 }
