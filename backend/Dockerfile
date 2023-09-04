@@ -7,6 +7,7 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=on \
     PIP_DEFAULT_TIMEOUT=100 \
     POETRY_HOME="/opt/poetry" \
+    POETRY_CACHE_DIR="/opt/poetry/cache/pypoetry" \
     POETRY_VIRTUALENVS_IN_PROJECT=true \
     POETRY_NO_INTERACTION=1 \
     PYSETUP_PATH="/opt/pysetup" \
@@ -39,7 +40,7 @@ RUN mkdir -p $POETRY_HOME $PYSETUP_PATH
 
 RUN chown -R 1000:1000 $POETRY_HOME $PYSETUP_PATH
 
-# USER 1000
+USER 1000
 
 # Install Poetry - respects $POETRY_VERSION & $POETRY_HOME
 RUN curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.6.1 python3 -
@@ -53,11 +54,10 @@ RUN poetry install --only main
 
 
 ### STAGE development installs all dev deps and can be used to develop code
-# For example using docker-compose to mount local volume under /code
+# For example using docker-compose to mount local volume under /src
 FROM python-base AS development
 
-RUN mkdir /.cache && touch /.pythonhist && \
-    chown 1000:1000 /.cache /.pythonhist
+RUN touch /.pythonhist && chown 1000:1000 /.pythonhist
 
 # Copying poetry and venv into image
 COPY --from=builder-base $POETRY_HOME $POETRY_HOME
@@ -68,7 +68,7 @@ WORKDIR $PYSETUP_PATH
 
 RUN XDG_CACHE_HOME="/opt/poetry/.cache" poetry install
 
-WORKDIR /code
+WORKDIR /src
 
 
 ### STAGE testing

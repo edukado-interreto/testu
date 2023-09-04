@@ -7,8 +7,8 @@ services:
       target: development
     restart: on-failure
     volumes:
-      - ./backend:/code:z
-    working_dir: /code
+      - ./backend:/src:z
+    working_dir: /src
     environment:
       DJANGO_PORT: "${DJANGO_PORT}"
     depends_on:

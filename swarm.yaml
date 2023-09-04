@@ -2,14 +2,14 @@ version: "3.9"
 
 services:
   django:
-    image: ${CI_REGISTRY_IMAGE}/backend:${CI_COMMIT_SHORT_SHA}
-    working_dir: /code
+    image: batisteo/testu-www-django:${CI_COMMIT_SHORT_SHA}
+    working_dir: /src
     environment:
       - DJANGO_PORT
       - SECRET_KEY
       - DEBUG
     volumes:
-      - backendassets:/code/assets:z
+      - backendassets:/src/assets:z
     networks:
       - main
     secrets:
@@ -18,7 +18,7 @@ services:
       - POSTGRES_PASSWORD
       - SENDGRID_API_KEY
     command: |
-      sh -c "ls -lAh /code/ &&
+      sh -c "ls -lAh /src/ &&
       python manage.py collectstatic --noinput &&
       python manage.py migrate &&
       gunicorn config.wsgi:application --bind 0.0.0.0:8000 --capture-output --access-logfile -
@@ -39,7 +39,7 @@ services:
         constraints: [node.role == manager]
 
   nginx:
-    image: ${CI_REGISTRY_IMAGE}/nginx:${CI_COMMIT_SHORT_SHA}
+    image: batisteo/testu-www-nginx:${CI_COMMIT_SHORT_SHA}
     environment:
       VUE_PORT: "${VUE_PORT}"
       DJANGO_PORT: "${DJANGO_PORT}"

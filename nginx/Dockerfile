@@ -1,4 +1,4 @@
-FROM nginx:1.23-alpine
+FROM nginx:1.25.0-alpine-slim
 
 ENV DJANGO_PORT=8000 
 ENV DJANGO_ADMIN_URL=admin

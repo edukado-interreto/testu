@@ -9,13 +9,13 @@ Django:
     DOCKER_DRIVER: overlay2
     DOCKER_BUILDKIT: 1
     CACHE_IMAGE: $CI_REGISTRY_IMAGE/backend
-    TAG: $CI_REGISTRY_IMAGE/backend:$CI_COMMIT_SHORT_SHA
+    TAG: batisteo/testu-www-django:$CI_COMMIT_SHORT_SHA
   before_script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker login -u batisteo -p $DOCKERHUB_BATISTEO_PASSWORD
+    # - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
     - |
       docker build \
-        --cache-from $CACHE_IMAGE:latest \
         --build-arg BUILDKIT_INLINE_CACHE=1 \
         -t $TAG \
         -t $CACHE_IMAGE:latest \
@@ -47,15 +47,16 @@ Nginx:
   services:
     - docker:20.10.16-dind
   before_script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker login -u batisteo -p $DOCKERHUB_BATISTEO_PASSWORD
+    # - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
     - cp -r client/dist nginx
     - |
       docker build \
-        -t $CI_REGISTRY_IMAGE/nginx:$CI_COMMIT_SHORT_SHA \
+        -t batisteo/testu-www-nginx:$CI_COMMIT_SHORT_SHA \
         -f nginx/Dockerfile \
         ./nginx/
-    - docker push $CI_REGISTRY_IMAGE/nginx:$CI_COMMIT_SHORT_SHA
+    - docker push batisteo/testu-www-nginx:$CI_COMMIT_SHORT_SHA
 
 
 Deploy:
@@ -65,7 +66,7 @@ Deploy:
     url: www.testu.eu
   rules:
     - if: $CI_COMMIT_BRANCH == "www"
-      when: manual
+      # when: manual
   image: docker:20.10.16
   services:
     - docker:20.10.16-dind
