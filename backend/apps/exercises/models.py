@@ -119,7 +119,8 @@ class Submission(TimeStampedModel):
     score = models.PositiveSmallIntegerField("score", null=True, blank=True)
 
     def __str__(self):
-        name = self.exam.name if self.exam else self.exercise.name
+        fallback = _("NO EXAM OR EXERCISE")
+        name = self.exam.name if self.exam else getattr(self.exercise, "name", fallback)
         user = self.created_by.get_username() if self.created_by else self.guest
         return f"{user} for {name}"
 
