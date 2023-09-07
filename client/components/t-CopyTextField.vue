@@ -9,6 +9,7 @@
     :value="value"
     :label="label"
     readonly
+    :title="$t('exam.copy')"
     hide-details
   ></v-text-field>
 </template>

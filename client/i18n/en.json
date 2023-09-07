@@ -35,6 +35,7 @@
   "exam": {
     "accept_submissions": "Accept submissions",
     "confirm": "This operation cannot be undone. Proceed?",
+    "copy": "Copy",
     "created": "Created: {date}",
     "delete": "Delete exam",
     "description": "Exam description",
