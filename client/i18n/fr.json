@@ -22,11 +22,14 @@
   },
   "editor": {
     "age_range": "Tranche d’âge",
+    "cefr_levels_label": "Niveaux CECR",
+    "confirm_leave": "Voulez vous vraiment quitter cette page ? Les informations que vous avez saisies peuvent ne pas être enregistrées.",
     "description": "Description",
     "details": "Détails de l’exercice",
     "save": "Sauvegarder",
     "tags": "Étiquettes",
     "title": "Titre",
+    "unexpected_response": "Réponse inattendue du serveur",
     "unlisted": "Non listé dans les résultats de recherche"
   },
   "exam": {
@@ -74,6 +77,12 @@
     "target_language_is": "Langue cible :",
     "unlisted": "Cet exercice n’est pas listé dans les résultats de recherche"
   },
+  "guide": {
+    "about": "Comment créer des exercices",
+    "about_text": "Pour créer un nouvel exercice, vous devez d'abord vous inscrire et vous connecter.",
+    "construction": "En cours de construction",
+    "video": "à propos d'une vidéo"
+  },
   "home": {
     "create_exercise": "Créer un nouvel exercice",
     "search_exercise": "Rechercher un exercice"
@@ -111,7 +120,10 @@
     "about": "À propos",
     "accept": "Accepter",
     "cancel": "Annuler",
+    "catchphrase": "Créez vos propres quiz linguistiques",
+    "cookie_consent": "Ce site utilise le minimum de cookies pour son fonctionnement. En continuant à utiliser ce site, nous supposons que vous acceptez l'utilisation des cookies fonctionnels.",
     "edit": "Modifier",
+    "guide": "Comment faire",
     "home": "Accueil",
     "lang_menu_header": "Langue de l’interface",
     "login": "Connexion",
@@ -160,7 +172,37 @@
     "start_typing": "Commencez à taper une phrase...",
     "title": "Titre",
     "untitled_unit": "Unité sans titre",
-    "valid_url": "Veuillez saisir une URL valide"
+    "valid_url": "Veuillez saisir une URL valide",
+    "snippets": {
+      "blank_unit": {
+        "name": "Unité vide"
+      },
+      "multiple_choice": {
+        "name": "Choix multiple"
+      },
+      "pairing_pictures_with_sounds": {
+        "name": "Associer des images avec des sons"
+      },
+      "pairing_text_with_pictures": {
+        "name": "Associer du texte à des images"
+      },
+      "pairing_text_with_text": {
+        "name": "Associer du texte avec du texte"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "description": "Il était une fois un lièvre et une tortue, se disputant toujours pour savoir qui était le plus rapide.\nLa tortue défia le lièvre à une course et le lièvre accepta, pensant que ce serait une victoire facile.\n\nLa course commença et le lièvre décolla rapidement, laissant la tortue derrière lui. Le lièvre, devenu trop confiant, décida de faire une sieste. Pendant ce temps, la tortue continuait à avancer régulièrement vers la ligne d'arrivée.\n\nQuand le lièvre se réveilla, il se rendit compte que la tortue était presque à la ligne d'arrivée. Le lièvre essaya de rattraper son retard, mais il était trop tard. La tortue avait gagné la course.",
+        "name": "Questions sur un texte, choix multiple"
+      },
+      "questions_about_a_video_open_answer": {
+        "name": "Questions sur une vidéo, réponse ouverte"
+      }
+    },
+    "types": {
+      "default": "Liste déroulante",
+      "multiple_choice": "Choix multiple",
+      "open_answer": "Réponse ouverte",
+      "pairing": "Trier et faire correspondre"
+    }
   },
   "sort": {
     "rated": "Mieux notés",
@@ -237,7 +279,7 @@
       "text4_4": "le harcèlement, les propos offensants, diffamatoires, menaçants ou discriminatoires ;",
       "text4_5": "les données privées d’autres utilisateurs (par exemple adresse, numéro de téléphone, compte bancaire) ou les citations de communications privées avec d’autres utilisateurs, les fournisseurs ou administrateurs du site ou des tiers ;",
       "text4_6": "les liens vers des sites Internet au contenu illégal ;",
-      "text4_7": "toute publicité non sollicitée ou non autorisée, matériel promotionnel, messages indésirables, spam, chaînes de lettres, système en boule de neige ou pyramidal ou toute autre forme de publicité ;",
+      "text4_7": "toute publicité non sollicitée ou non autorisée, matériel promotionnel, messages indésirables, spam, chaînes de lettres, système de vente pyramidale ou toute autre forme de solicitation;",
       "text4_8": "tout fichier qui contient des virus, vers, chevaux de Troie ou d’autres programmes qui pourraient compromettre ou nuire au fonctionnement ou à l’existence de ce site.",
       "text5": "Les actions suivantes sont interdites aux utilisateurs :",
       "text5_1": "utiliser ou essayer d’utiliser le compte d’un autre utilisateur ou le système sans autorisation du fournisseur ;",
@@ -285,6 +327,16 @@
       "text4": "Le fournisseur a le droit de transférer ses droits et ses obligations, en entier ou en partie, à un tiers, après un préavis de quatre semaines envoyé par courrier électronique.",
       "text5": "Les coordonnées pour contacter le fournisseur ou les administrateurs du site se trouvent sur la page {link}.",
       "title": "Dispositions finales"
+    }
+  },
+  "why": {
+    "more_projects": "Plus de projets sur",
+    "point7": {
+      "title": "Utile"
+    },
+    "point9": {
+      "subtitle": "Réutilisez le contenu des autres ou le vôtre, réduisez la quantité d'impression, recyclez les idées, les exercices et les questions!",
+      "title": "Respectueux de l'environnement"
     }
   }
 }

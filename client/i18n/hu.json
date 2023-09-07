@@ -84,25 +84,41 @@
     "about_text": "Új feladat létrehozásához előbb regisztrálnia kell, és be kell jelentkeznie a weboldalra.",
     "construction": "Fejlesztés alatt",
     "gap_filling": "Kiegészítős feladat",
-    "multiple_choice": "Feleletválasztós teszt",
-    "sort_and_match": "Sorba rendezés és párosítás",
     "video": "Videóhoz kapcsolódó feladat",
     "exercice": {
       "explanation1": "Új feladatot a Főoldal (1) menüpontból tud létrehozni. Itt válassza a \"+ ÚJ FELADAT LÉTREHOZÁSA\" (2) menüpontot. A létrehozott feladatok is ezen az oldalon jelennek meg. Előbb azonban a lenti ábrán látható oldal fog megjelenni.",
-      "explanation2": "Egy gyakorlat több egységből is állhat. Az egységeket a \"+ FELADAT HOZZÁADÁSA\" (3) gombra kattintva adhatja hozzá. Különböző típusú gyakorlatok vannak, de minden egységben csak ugyanazt a fajtát használhatja. Ha egy gyakorlatban különböző típusú kérdéseket szeretne keverni, akkor minden egyes kérdéstípushoz külön egységet kell készítenie.",
+      "explanation2": "Egy gyakorlat több egységből is állhat. Az egységeket a \"+ FELADAT HOZZÁADÁSA\" (3) gombra kattintva adhatja hozzá. Különböző típusú gyakorlatok vannak, de minden egységben csak egy fajtát használhat. Ha egy gyakorlatban keverni szeretné a kérdéstípusokat, akkor minden egyes kérdéstípushoz külön egységet kell készítenie.",
       "explanation3": "Ahogy az a bal oldalon látszik, különböző fajta feladatok vannak, de ezeket három fő csoportba oszthatjuk: kiegészítéses feladatok, feleletválasztós feladatok és csoportosítós/párosítós feladatok.",
       "explanation4": "A kiegészítéses feladat létrehozásakor egy vagy több kifejezést ki kell hagyni a mondatból. A válaszokat meg lehet adni előre (legalább egy helyes választ és több helytelen választ), s ekkor a feladat megoldójának kell kiválasztania közülük a helyeset. Ha üresen hagyjuk a helyet, akkor a feladat megoldójának be kell írnia a választ. A feladat készítésekor mindkét esetben meg kell jelölnünk a helyes válasz(oka)t.",
       "explanation5": "A feleletválasztós kérdés létrehozásakor előre megadjuk a válaszlehetőségeket. Ez lehet egy vagy több helyes válasz, és a kiegészítéses feladathoz hasonlóan a kérdés létrehozásakor meg kell adnia a helyes válasz(oka)t.",
-      "explanation6": "A \"Párosítsd/Rendezd sorba!\" típusú feladatok létrehozásakor választhatunk, hogy leírást, kérdést vagy képet, esetleg hangokat vagy szöveget adunk meg, amelyeket a tanulónak össze kell párosítani vagy sorba kell rendezni (pl. egy képet egy szóval kell párosítani).",
+      "explanation6": "A párosítás és sorba rendezés típusú feladatok létrehozásakor választhatunk, hogy feladatleírást, kérdést, képeket, esetleg hangokat, szavakat vagy ezekhez kapcsolódó válaszokat adunk meg. Ezeket a tanulónak össze kell párosítania, illetve sorba kell rendeznie, amennyiben a sorba rendezés opciót választjuk.",
       "explanation7": "További magyarázatot a feladattípusokhoz az oldal tetején található fülekre kattintva talál.",
-      "gap_filling_1": "Az alapértelmezett feladattípus a kiegészítéses típus. Ennek két fajtája van: az első az \"Alapértelmezett\" (1), ahol a tanulónak előre megadott válaszok közül kell a helyesre kattintania. A másik típus, amikor a tanulónak önállóan kell beírni a választ (8). A továbbiakban végigvezetjük Önt a feladatalkotás folyamatán.",
+      "gap_filling_1": "Az alapértelmezett feladattípus a kiegészítéses típus. Ennek két fajtája van: az első a \"Legördülő menü\" (1), ahol előre megadott válaszok közül választhatunk, amikor az üres mezőre kattintunk. \nA másik típus, amikor a tanulónak önállóan kell beírnia a választ (8). Itt nincsenek előre megadott válaszok, a tanulónak kell azokat beírnia. A továbbiakban megmutatjuk, hogyan kell megírni a kérdéseket és a válaszokat: néhány hibás választ és a helyes(ek)et.",
       "gap_filling_2": "A (2)-es mezőbe a feladat címét, a (3)-as mezőbe a feladat rövid leírását adhatjuk meg (pl. utasítás, kontextus).",
       "gap_filling_3": "A feladat mondatait az ablakban (4) tudjuk megírni. Ezt mindig kétféleképpen tudjuk megtenni. Vagy magunk szerkesztjük a mondatokat, vagy az eszközök (6) segítségével. Az eredmény ugyanaz lesz, az ablakban (4) ugyanazt a szöveget látja.",
-      "gap_filling_4": "Ha magunk szerkesztjük a mondatokat, az egyes mondatok/kérdések között sorköznek kell lennie, a válaszokat pedig szögletes zárójelben [ ] kell megadni függőleges elválasztóval | elválasztva. A helyes válasz(ok) elé + jelet kell tenni. Ha egynél több helyes válasz van, bármelyik helyesnek számít az eredmény szempontjából. A beírt válaszokat a program véletlenszerűen rendezi, ha a \"Véletlenszerű rendezés\"-re kattintunk.",
-      "gap_filling_5": "Amennyiben a mondatokat az eszközök (6) segítségével szerkesztjük, a bal oldali sorközt szúr be új mondat beírásához. A jobb oldali eszköz üres helyet szúr be a mondatba. Amint az a képen látható, egy felugró ablakba kell beírni egyenként a válaszokat, majd az Enter lenyomásával véglegesíteni. Alapértelmezés szerint az elsőként beírt válasz lesz a helyes, amit egy zöld pipa jelez, de ezt erre a jelre (8) kattintva módosítani lehet. Választhatjuk a \"hagyd üresen\" lehetőséget is a (9)-re kattintva.",
-      "gap_filling_open_answer_1": "A kiegészítéses feladat másik típusa, amikor a tanulónak önállóan kell beírni a választ (10). Amint az itt látható, ebben a típusban nincs előre megadott válasz. Ettől függetlenül, az előbbiekben leírtak szerint itt is megadhatunk helyes és helytelen válaszokat a mondatok beírásakor (11).\nHa a tanuló a megadott helyes választ írja be, akkor zöld pipa fog megjelenni, ha a megadott helytelen választ írja be, akkor piros X, ha pedig olyan választ ír be, amit nem adtunk meg, akkor semmi nem jelenik meg.",
-      "gap_filling_open_answer_2": "További mondatokat a fent említett módokon - tehát sorköz manuális beszúrásával vagy az eszközök (6) segítségével - adhat a feladathoz. \nHa elkészült a feladattal, ne felejtse elmenteni azt a \"Mentés\" gombra kattintva!\nKésőbb bármikor szerkesztheti a feladatot.",
+      "gap_filling_4": "Ha közvetlenül a szövegdobozba írjuk a kérdéseket, az egyes mondatok/kérdések között egy üres sornak kell lennie, a válaszokat pedig szögletes zárójelben [ ] kell megadni függőleges elválasztóval | elválasztva. A helyes válasz(ok) elé + jelet kell tenni. Ha egynél több helyes válasz van, bármelyik helyesnek számít az eredmény szempontjából. A beírt válaszokat a program véletlenszerűen rendezi, ha a \"Véletlenszerű rendezés\"-re kattintunk (7).",
+      "gap_filling_5": "Amennyiben a mondatokat az eszközök (6) segítségével szerkesztjük, a bal oldali egy üres sort szúr be új mondat beírásához. Itt be kell írnia az új kérdést vagy szöveget, és ahol a kihagyást szeretnénk, ott a jobb oldali eszközre kell kattintani. Amint az a képen látható, egy felugró ablak fog megjelenni. Ide kell beírni egyesével a válaszokat, majd az Enter lenyomásával véglegesíteni. Alapértelmezés szerint az elsőként beírt válasz lesz a helyes, és egy zölt pipa fog megjelenni előtte. De mi is megjelölhetjük a helyes válasz(oka)t az egyes válaszok előtti gombra kattintva (8). Választhatjuk a \"hagyd üresen\" lehetőséget is a (9)-re kattintva.",
+      "gap_filling_open_answer_1": "A kiegészítéses feladat másik típusa, amikor a tanulónak önállóan kell beírnia a választ (10). Amint az itt látható, ebben a típusban nincsenek előre megadott válaszlehetőségek. Ettől függetlenül, az előbbiekben leírtak szerint itt is megadhatunk helyes válaszokat a mondatok beírásakor (11). Rossz válaszokat is megadhatunk, ezek nem fognak megjelenni, de az ellenőrzéskor egy piros X fog megjelenni, ha valaki ezek közül írt be valamit, semmi nem jelenik meg, ha más választ írt, és zöld pipa jelenik meg, ha a jó válaszok közül adott meg egyet.",
+      "gap_filling_open_answer_2": "További mondatokat a fent említett módokon - tehát üres sor manuális beszúrásával vagy az eszközök (6) segítségével - adhat a feladathoz. Ha elkészült a feladattal, ne felejtse elmenteni azt a \"Mentés\" gombra kattintva! Később bármikor szerkesztheti a feladatot.",
       "name": "Új feladat"
+    },
+    "multiple_choice": {
+      "explanation1": "Ha a kiegészítendő válasz helyett többszörös választási lehetőségként szeretné megjeleníteni a lehetséges válaszokat a kérdés alatt, akkor válassza a \"Feleletválasztós teszt\" típust (12).",
+      "explanation2": "Az egység hozzáadásakor megjelenő feladatlistában az ”Igaz/hamis kérdés képről” és a ”Szövegértés, feleletválasztós feladat” típusnál két további példát találhat ennek a feladattípusnak a használatához.",
+      "explanation3": "Az korábbiakhoz hasonlóan itt is adhat címet a kérdéssorozatnak. Hozzáadhat feladatleírást is, vagy például egy szöveget, amellyel kapcsolatban kérdéseket szeretne feltenni, vagy írhat egy bevezetőt a kérdésekhez...",
+      "explanation4": "A kérdéseket és a válaszokat a korábbiakhoz hasonlóan lehet megadni, közvetlenül a szövegdobozba beírva (13), vagy pedig a gombok segítségével, ahogyan azt korábban a kiegészítős feladatoknál (6) elmagyaráztuk. A helyes válasz előtt \"+\" jelnek kell állnia, a válaszokat pedig a \"|\" karakterrel kell elválasztani egymástól. Egynél több helyes válasz esetén a válasz akkor lesz helyesként elfogadva, amenyiben az összes helyes választ bejelölték.",
+      "explanation5": "Lehetőség van képek vagy hangok hozzáadására is a feladatok leírásához, amelyeket a három pontra (14) kattintva lehet kiválasztani a számítógépről. Ezután kérdéseket tehetünk fel a hanggal vagy a képpel kapcsolatban. A feladathoz tetszőleges számú képet vagy hangot adhatunk hozzá, és ezek helyét is meghatározhatuk a kapcsos zárójelben {} lévő elem helyének módósításával (15).",
+      "name": "Feleletválasztós teszt"
+    },
+    "sort_and_match": {
+      "explanation1": "A feladattípusok utolsó családja a \"sorba rendezés és párosítás\" (szöveget szöveggel, szöveget képpel, képet hanggal, valamint képek rendezése). Ezt a feladattípust a típus mezőben (16) vagy az új egységek listájában választhatja ki.",
+      "explanation1_1": "A legegyszerűbb feladattípus szavak párosításából áll. A párok létrehozásához használja a megfelelő gombot (17), vagy írja be őket közvetlenül a szövegdobozba (18).",
+      "explanation2": "Minden párt úgy kell megadni, hogy a pár egyik tagja az \"==\" szimbólumtól balra, a másik pedig jobbra legyen, és az egyes párokat üres sorral kell elválasztani egymástól. Ebben a példában az egyik oszlopban gyümölcsök vannak, a másikban pedig színek. De ezek lehetnek fordítások, számok, vagy akár képek, hangok vagy videók is. A legfontosabb, hogy ugyanabba az oszlopba ugyanazt a típust tegyük. A feladat megoldásakor a párokat összekeverve mutatjuk.",
+      "explanation3": "Képek vagy hangok hozzáadása a megfelelő gombokra (19) kattintva történik, és ekkor ki kell választani a fájlt a számítógépen. Ezután a program a korábbiakhoz hasonlóan létrehozza a kapcsos zárójelek {} közötti elemeket. Ezután áthelyezheti ezeket a kívánt helyre. Videó hozzáadásához a harmadik gombot (19) kell kiválasztani, és meg kell adni a videó url címét (például a youtube-ról vagy a vimeóról...). Közvetlenül a számítógépről nem lehet videót feltölteni.",
+      "explanation4": "Szöveget lehet szöveggel, képpel vagy hanggal párosítani, illetve lehet képet hanggal, ahogy az a (20)-as szám alatt látható.",
+      "explanation5": "Ha nem használjuk az \"==\" szimbólumot, hogy valamit valamivel összepárosítsunk, ahogyan a (21)-ben látható, akkor a feladat egy sorba rendezési feladattá válik, ahol az egyes tételeket megfelelő sorrendbe kell tennünk. Ezt megtehetjük képekkel, szöveggel, hangokkal vagy videókkal.",
+      "name": "Sorba rendezés és párosítás",
+      "video": "Videót közvetlenül a leírás mezőhöz is hozzáadhat, ha a videó url-címét kapcsos zárójelek közé írja, és előtte a \"video:\" előtagot használja, ahogy az a (22)-es ábrán látható. Ehhez nincs gomb, de a \"Kérdések egy videóval kapcsolatban, önálló válasz\" című egységet kiválasztva találhat példát."
     }
   },
   "home": {
@@ -324,20 +340,20 @@
       "text2_2": "a bejelentkezéshez szükséges adatokat bizalmasan kezelni, és azokat harmadik fél számára nem kiadni;",
       "text2_3": "haladéktalanul tájékoztatni a szolgáltatót, ha felmerül annak a gyanúja, hogy egy harmadik fél hozzáférést nyer a felhasználói adatokhoz és/vagy visszaélnek felhasználói fiókjával.",
       "text3": "Ön felel az Ön által közzétett tartalomért, valamint más felhasználókkal fennálló (nyilvános vagy nem nyilvános) kommunikációért. Más felhasználók vagy harmadik személy jogait és érdekeit is köteles védeni, különösen a személyhez fűződő jogokat.",
-      "text4": "A következő tartalom (képek, linkek, fotók, a fórum vitaanyagainak vagy más formájában, ideértve a magán-üzenetek és profil fényképeket) feltöltése a portálra, közzététele, terjesztése, a rá való hivatkozás, közvetítésének elősegítése, a honlapon vagy más módon való felajánlása szigorúan tilos:",
+      "text4": "Szigorúan tilos az alábbi tartalmakat (képek, linkek, fotók, feladatok, hang- és videófájlok vagy egyéb tartalmak formájában) feltölteni a weboldalra, azokat közzétenni, elküldeni, linkelni, továbbítani, népszerűsíteni, felajánlani vagy más módon rendelkezésre bocsátani:",
       "text4_1": "a törvény által védett tartalom, amely pl. szerzői vagy releváns jogok által védett, mint a név-, védjegy-, szabadalom-, design jog, a használati minták joga, a saját vagy személyes jogok, amennyiben Ön nem jogosult használatukra;",
       "text4_2": "pornográf tartalom, az erőszakot propagáló, obszcén, szexista, becsületsértő, rágalmazó, rasszista tartalom, a kisebbséghez vagy valláshoz tartozókat sértő tartalom, valamint a kiskorúak védelmét sértő tartalom;",
       "text4_3": "Betiltott szervezetek propagandanyagai és jelképei",
       "text4_4": "zaklató, rágalmazó, gyalázkodó, fenyegető tartalom és diszkriminatív megnyilatkozásokat;",
       "text4_5": "más felhasználók személyes adatai (pl. cím, telefonszám, banki adatok), esetlegesen más felhasználókkal, szolgálati/portál adminisztrátorral vagy harmadik személyekkel való kommunikációból származó idézetek;",
       "text4_6": "jogellenes tartalommal rendelkező weboldalakra mutató hivatkozások;",
-      "text4_7": "ismétlődő vagy kéretlen reklám, promóciós anyag, \"junk mail\", spam, lánc üzenetek, piramisjáték vagy bármilyen más típusú fogyasztói reklám;",
+      "text4_7": "bármilyen kéretlen vagy jogosulatlan reklám, promóciós anyag, \"levélszemét\", spam, lánclevél, piramisjáték, vagy bármilyen másfajta megkeresés;",
       "text4_8": "bármilyen vírusokat, férgeket, trójai lovakat tartalmazó anyagok vagy más programok, amelyek veszélyeztethetik e vagy bármely más honlap üzemeltetését vagy állapotát;",
       "text5": "A felhasználó számára tilos a következő:",
       "text5_1": "egy másik felhasználói fiók vagy a rendszer használata, használatának megkísérlése a szolgáltató engedélye nélkül;",
       "text5_2": "magát más személynek kiadni, valamint személyéről hamis információkat feltüntetni;",
       "text5_3": "A honlap funkcióinak blokkolása, a tartalom, programkód és/vagy a webhelyadatok felülírása, módosítása vagy másolása, valamint a tartalom automatikus lehívása, kivéve, ha utóbbi szükséges a megfelelő szolgáltatások igénybevételéhez;",
-      "text6": "A portál szolgáltatója fenntartja a jogot, hogy bármikor, előzetes értesítés nélkül törölje a nem megengedett hozzájárulásokat (beleértve a privát üzeneteket és képeket), illetve azon felhasználói fiókokat, amelyek nem felelnek meg a Felhasználási Feltételeknek.",
+      "text6": "Az oldal tulajdonosa fenntartja a jogot, hogy bármikor és előzetes értesítés nélkül törölje a jelen feltételeknek nem megfelelő, nem engedélyezett bejegyzéseket (beleértve a teszteket, gyakorlatokat, szövegeket és képeket), illetve a felhasználó fiókját.",
       "title": "Felhasználó kötelezettségei"
     },
     "section4": {
@@ -352,7 +368,8 @@
       "title": "Jogok megadása"
     },
     "section6": {
-      "text1": "Eltérő rendelkezés hiányában a honlapon közzétett valamennyi szöveg, kép és más tartalom, a felhasználok által közzétett tartalom kivételével, slovake.eu által jogvédett, és írásos jóváhagyás nélkül nem használható a portálon kívül a felhasználók, illetve harmadik fél által online vagy offline módban.",
+      "text1": "A weboldalon közzétett minden szöveg, kép és egyéb tartalom, beleértve a felhasználók által rendelkezésre bocsátott tartalmakat is, - hacsak másképp nem jelezzük - a {license} alapján kerül közzétételre.",
+      "text1_license": "CC0 1.0 Universal Creative Commons licenc",
       "title": "Tulajdonjogok"
     },
     "section7": {
@@ -372,11 +389,11 @@
       "title": "Felelősségi körök meghatározása"
     },
     "section9": {
-      "text1": "Jelen Felhasználási Feltételek, valamint jelen Felhasználási Feltételek kapcsán felmerülő esetleges viták a Németországi Szövetségi Köztársaság jogi hatálya alá tartoznak. Amennyiben a jogszabályok megengedik, a rendezés és a kizárólagos bírói illetékesség helye Berlin.",
-      "text2": "A Felhasználási Feltételek jogilag kötelező megfogalmazása a német nyelvű változat.",
+      "text1": "A jelen feltételekre és az azokkal kapcsolatos vitákra a Szlovák Köztársaság törvényei vonatkoznak. A teljesítés helye és a kizárólagos joghatóság helye, amennyire ez jogilag lehetséges, Szlovákia.",
+      "text2": "Jelen megállapodás jogilag kötelező érvényű változata az angol nyelvű változat.",
       "text3": "Szolgáltató fenntartja a jogot, hogy bármikor és minden ok nélkül megváltozhassa jelen Felhasználási Feltételeket. Az aktuális verzió mindig az alábbi linken található meg {link}. A felhasználók nem kerülnek tájékoztatásra a Feltételek módosítása alkalmával, a Felhasználási Feltételek jelenlegi változatának megjelenítése és elolvasása minden felhasználó felelőssége. A portál használatának folytonosságával a felhasználó kifejezi egyetértését a változásokkal.",
       "text4": "Szolgáltató jogosult részben vagy egészben átruházhatja jogait és kötelezettségeit harmadik fél részére a felhasználói jogviszonyból adódóan, méghozzá az e-mailben való kiértesítést követően négy héten belül.",
-      "text5": "A szolgáltató vagy adminisztrátor elérhetősége megtalálható a Kontakt oldalon.",
+      "text5": "A szolgáltató vagy adminisztrátor elérhetősége megtalálható a {link} oldalon.",
       "title": "Záró rendelkezések"
     }
   }

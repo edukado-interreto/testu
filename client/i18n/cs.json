@@ -84,8 +84,6 @@
     "about_text": "Chcete-li vytvořit nové cvičení, musíte se nejprve zaregistrovat a přihlásit na našich webových stránkách.",
     "construction": "Stránka v přípravě",
     "gap_filling": "Doplňování",
-    "multiple_choice": "Výběr z možností",
-    "sort_and_match": "Přiřazování a seřazování",
     "video": "O videu",
     "exercice": {
       "explanation1": "Chcete-li vytvořit nové cvičení, musíte přejít do nabídky Domů (1), a pak z nabízených možností vybrat \"+ CREATE A NEW EXERCISE\" (2). Cvičení se po vytvoření objeví na této stránce. Nyní budete přesunuti na další stránku, jak můžete vidět níže.",
@@ -100,9 +98,27 @@
       "gap_filling_3": "Text cvičení se zadává do rámečku (4). Existují dva způsoby, jak to udělat. Buď můžete otázky a odpovědi psát přímo do rámečku, nebo můžete použít nástroje v levém horním rohu (6). Výsledek bude stejný, v políčku (4) uvidíte stejný text.",
       "gap_filling_4": "Pokud píšete otázky přímo do rámečku, musí být každá otázka oddělena prázdným řádkem a odpověď musí být uvedena v hranaté závorce a oddělena tímto svislým oddělovačem: |. Před správnou odpovědí (správnými odpověďmi) musíte uvést znaménko +. Pokud existuje více správných odpovědí, při hodnocení výsledků bude za správnou považována kterákoli z nich. Pořadí odpovědi je možné změnit kliknutím na tlačítko \"Promíchat možnosti\" (7).",
       "gap_filling_5": "Pokud použijete nástroje pro vytváření otázek (6), nejprve klikněte na tlačítko vlevo, abyste vytvořili prázdný řádek pro napsání nové otázky nebo textu. Tam, kde chcete v otázce nebo textu umístit mezeru, kliknete na nástroj vpravo. Otevře se vyskakovací okno, jak je znázorněno na obrázku. Odpovědi můžete psát jednu po druhé. Po stisknutí tlačítka \"Enter\" se potvrdí jejich správnost. Ve výchozím nastavení bude první z nich automaticky považována za správnou a zobrazí se před ní zelené \"v\", ale správnou odpověď (odpovědi) můžete vybrat kliknutím na malé tlačítko před každou odpovědí (8). Můžete také zvolit přidání možnosti \"Ponechat prázdné\" kliknutím na čárkovaný čtvereček vpravo (9).",
-      "gap_filling_open_answer_1": "Druhým podtypem cvičení na doplňování je \"Odpověď na otevřenou otázku\" (10). Jak vidíte níže, u tohoto typu cvičení není navržena žádná odpověď. Můžete uvést očekávané odpovědi, jednu nebo více, stejným způsob jako o prvního podtypu tohoto cvičení - pomocí nástroje nebo přímo v rámečku (11). Můžete také navrhnout nesprávné odpovědi, které se zobrazí až při opravě. \nJestliže někdo vyplní jednu z Vámi uvedených nesprávných odpovědí, při hodnocení se ukáže červené \"x\", napíše-li správnou odpověď, ukáže se zelené \"v\", a jestli uvedl jinou odpověď, nezobrazí se nic.",
-      "gap_filling_open_answer_2": "Další otázku nebo text můžete přidat stejným způsobem jako předešlé, tj. buď prázdném řádku přímo v rámečku nebo kliknutím na tlačítko vlevo (6). Když zadáte všechny otázky nebo texty jednoho cvičení, nezapomeňte svou práci uložit kliknutím na tlačítko \"Uložit\". Kdykoli se můžete vrátit a otázky doplnit nebo v nich provést změny.",
+      "gap_filling_open_answer_1": "Dalším podtypem cvičení na doplňování je \"Odpověď na otevřenou otázku\" (10). Jak vidíte níže, u tohoto typu cvičení není navržena žádná odpověď. Můžete uvést očekávané odpovědi, jednu nebo více, stejným způsobem jako u prvního podtypu tohoto cvičení - pomocí nástroje nebo přímo v rámečku (11). Můžete také navrhnout nesprávné odpovědi, které se zobrazí až při opravě. \nJestliže někdo použil jednu z těch uvedených nesprávných odpovědí, při hodnocení se ukáže červené X, napíše-li správnou odpověď, ukáže se zelené V, a pokud uvedl jinou odpověď, nezobrazí se nic.",
+      "gap_filling_open_answer_2": "Další otázky můžete přidat stejným způsobem vynecháním řádku nebo kliknutím na tlačítko vlevo (6). Když zadáte všechny otázky, nezapomeňte svou práci uložit kliknutím na tlačítko \"Uložit\". Kdykoli se můžete vrátit a otázky doplnit nebo v nich provést změny.",
       "name": "Nové cvičení"
+    },
+    "multiple_choice": {
+      "explanation1": "Pokud chcete ukázat odpovědi ne jako mezery, ale jako Výběr z možností s odpověďmi pod otázkou s rámečky k označení, můžete zvolit ”Výběr z možností” (12).",
+      "explanation2": "V seznamu cvičení, který se objeví, když přidáte jednotku, vám typy otázek \"Otázky k textu, výběr z možností\" a \"Otázky k textu, \nvýběr z možností\" dají další 2 příklady jak tento typ otázek používat.",
+      "explanation3": "Stejně jako předtím můžete přidat název pro sérii otázek. Můžete přidat také popis, například text, ohledně kterého budou otázky, nebo úvod k otázkám.",
+      "explanation4": "Otázky a odpovědi mohou být přidány stejným způsobem, jejich napsáním přímo do textového pole (13) nebo tlačítky jako je vysvětleno pro Doplňování (6). Správná odpověď musí mít před sebou ”+” a odpovědi musí být odděleny pomocí ”|”. Pokud má otázka více správných odpovědí, bude považovaná za správně zodpovězenou, pokud jsou označeny všechny správné odpovědi.",
+      "explanation5": "Kliknutím na 3 tečky (14) a vybráním v počítači můžete do popisu přidat také obrázky a zvuky. Pak se otázky mohou týkat zvuku nebo obrázku. Můžete jich přidat kolik chcete a určit, kde v textu budou, posouváním prvku ve složených závorkách {} (15).",
+      "name": "Výběr z možností"
+    },
+    "sort_and_match": {
+      "explanation1": "Poslední typ cvičení je \"přiřazování a seřazování\" (textu s textem, textu s obrázky, obrázky se zvuky a řazení obrázků). Tento typ cvičení můžete zvolit v textovém poli (16) nebo v seznamu nových jednotek.",
+      "explanation1_1": "Nejjednodušší spočívá v přiřazení slov. K jejich vytvoření můžete použít tlačítko (17) nebo je napsat do textového pole (18).",
+      "explanation2": "Je potřeba napsat jednu část dvojice vlevo a druhou vpravo od symbolu ”==”, s prázdným řádkem mezi nimi. Na příkladu vidíte v jednom sloupci ovoce a ve druhém barvy. Můžou to ale být překlady, čísla, nebo i obrázky, zvuky nebo videa. Nejdůležitější je  dát stejný typ do stejného sloupce. Návrhy k cvičení budou zamíchány.",
+      "explanation3": "K přidaní obrázků nebo zvuků použijte tlačítka (19) a vyberte soubor v počítači. Stejně jako předtím budou vytvořeny prvky mezi složenými závorkami {}. Potom je můžete přesunout na požadované místo. Pokud chcete přidat video, musíte zvolit třetí tlačítko (19) a napsat adresu videa (např. na youtube nebo vimeo...). Video není možné nahrát přímo z počítače.",
+      "explanation4": "Můžete přiřadit text k textu, obrázku nebo zvuku, nebo přiřadit obrázky ke zvukům jako je znázorněno na (20).",
+      "explanation5": "Pokud nenapíšete symbol \"==\", abyste něco spojili s návrhem, jako je uvedené v (21), cvičení se stane seřazováním, ve kterém musíte seřadit návrhy ve správném pořadí. Lze to použít pro obrázky, text, zvuky nebo videa.",
+      "name": "Přiřazování a seřazování",
+      "video": "Video můžete přidat také přímo do pole s popisem vložením url adresy videa mezi složené závorky a napsání \"video:\" před adresu, jako je znázorněné v (22). Není k tomu žádné tlačítko, ale výběrem typu jednotky: \"Otázky k obrazové nahrávce, odpověď na otevřenou otázku\" můžete vidět příklad."
     }
   },
   "home": {
@@ -111,7 +127,8 @@
   },
   "langs": {
     "en": "Angličtina",
-    "eo": "Esperanto"
+    "eo": "Esperanto",
+    "help": "Pomozte nám přeložit tuto stránku."
   },
   "learn": {
     "date": "Datum",
@@ -130,6 +147,9 @@
     "mail_invalid": "E-mailová adresa musí být platná",
     "page_title": "Přihlášení",
     "password": "Heslo",
+    "password_reset": "Resetování hesla",
+    "password_reset_done": "Vaše heslo bylo úspěšně resetováno.",
+    "password_reset_sent": "Na emailovou adresu jsme vám poslali odkaz k restartu hesla.",
     "required_field": "Povinné pole",
     "resend_link": "Znovu poslat odkaz (link)",
     "signup": "Zaregistrujte se v TestU",
@@ -160,7 +180,8 @@
     "social": "Sociální sítě",
     "source_code": "Zdrojový kód",
     "submit": "Odeslat",
-    "terms": "Podmínky užívání"
+    "terms": "Podmínky užívání",
+    "why": "Proč"
   },
   "review": {
     "exam": "Přehled zkoušek",
@@ -379,6 +400,39 @@
       "text4": "Poskytovatel je oprávněn zcela nebo zčásti převést svá práva a povinnosti vyplývající z tohoto uživatelského vztahu na třetí stranu, a to do 4 týdnů od oznámení formou e-mailu.",
       "text5": "Kontaktní informace na poskytovatele nebo správce internetových stránek naleznete na stránce: {link}.",
       "title": "Závěrečná ustanovení"
+    }
+  },
+  "why": {
+    "point1": {
+      "subtitle": "Žádné předplatné, žádné skryté poplatky nebo platební brány, opravdu!",
+      "title": "Úplně zdarma"
+    },
+    "point10": {
+      "subtitle": "Díky programu Erasmus+ a Slovenské národní agentuře můžete používat testu.eu zadarmo!",
+      "title": "Oficiálně podpořeno Evropskou komisí"
+    },
+    "point2": {
+      "subtitle": "Můžete svobodně používat a vytvářet obsah, nemusíte ani uvádět zdroje.",
+      "title": "licencovaný obsah CC0"
+    },
+    "point3": {
+      "subtitle": "Nic není skryto.",
+      "title": "Software s otevřeným zdrojovým kódem (Open source)"
+    },
+    "point4": {
+      "title": "Vícejazyčný"
+    },
+    "point6": {
+      "subtitle": "Ponořte se od online lekcí, kurzů, cvičení a testů - je to moderní přístup k učení!",
+      "title": "Online"
+    },
+    "point7": {
+      "subtitle": "Učení bez hranic, učení bez omezení - ponořte se do tvorby obsahu nebo používejte existující zdroje.",
+      "title": "Užitečný"
+    },
+    "point8": {
+      "subtitle": "Vytváření vzdělávacího obsahu je radost - učte se prostřednictvím tvořivosti!",
+      "title": "Zábava"
     }
   }
 }

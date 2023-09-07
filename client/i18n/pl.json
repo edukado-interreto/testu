@@ -74,7 +74,7 @@
     "report_mistake_to_creator": "Zgłoś błąd do: {username}",
     "report_misuse_to_administrators": "Zgłaszanie administratorom niewłaściwego użycia",
     "submit_mistake_confirm": "Dziękujemy! Autor otrzyma powiadomienie.",
-    "submit_misuse_confirm": "Dziękujemy współpracę pryz doskonaleniu Testu.eu.",
+    "submit_misuse_confirm": "Dziękujemy za współpracę przy doskonaleniu Testu.eu.",
     "target_language": "Studiowany język",
     "target_language_is": "Studiowany język:",
     "unlisted": "To ćwiczenie nie jest wymienione w wynikach wyszukiwania"
@@ -84,25 +84,41 @@
     "about_text": "Przed utworzeniem nowego ćwiczenia należy zarejestrować się i zalogować na stronie.",
     "construction": "Strona w przebudowie",
     "gap_filling": "Wypełnianie luk",
-    "multiple_choice": "Wybór wielokrotny",
-    "sort_and_match": "Dopasowywanie i porządkowanie",
     "video": "O nagraniu wideo (filmiku)",
     "exercice": {
-      "explanation1": "W celu utworzenia nowego ćwiczenia należy przejść do menu głównego (1), a następnie wybrać \"+ UTWÓRZ NOWE ĆWICZENIE\" (2). Po utworzeniu się ćwiczeniu pojawi się na stronie. Nastąpi przejście do następnej strony, jak widać poniżej.",
-      "explanation2": "Ćwiczenie może składać się z więcej niż jednej jednostki. Jednostki można dodawać klikając w przycisk \"+ ADD UNIT\" (3). Każda jednostka ćwiczenia musi być tego samego typu. Gdy chcemy w jednym ćwiceniu zadać różne pytania, należy utworzyć osobną jednostkę dla każdego pytania.",
-      "explanation3": "Jak widać po lewej stronie, istnieje kilka typów jednostek. Można je rozdzielić do tří základních skupin: doplňování, výběr z možností, přiřazování a seřazování.\nJak widać po lewej stronie, istnieje wiele różnych typów jednostek. Można je pogrupować w trzy podstawowe rodzaje: wypełnianie luk, wybór wielokrotny wyboru oraz dopasowywanie i porządkowanie.",
+      "explanation1": "Aby utworzyć nowe ćwiczenie, należy przejść do menu głównego (1), a następnie wybrać opcję \"+ UTWÓRZ NOWE ĆWICZENIE\" (2). Po utworzeniu ćwiczenia pojawią się na tej stronie i  zostaniesz przeniesiony na następną stronę, jak widać poniżej.",
+      "explanation2": "Ćwiczenie może składać się z wielu jednostek. Jednostki można dodawać, klikając przycisk \"+ ADD UNIT\" (3). Istnieją różne rodzaje ćwiczeń, ale w każdej jednostce można użyć tylko tego samego rodzaju. Jeśli chcesz mieszać różne typy pytań w ćwiczeniu, musisz utworzyć osobne jednostki dla każdego typu pytań.",
+      "explanation3": "Jak widać po lewej stronie, istnieje wiele różnych typów jednostek. Ale głównie możemy je pogrupować na  3 grupy: pytania z lukami, pytania wielokrotnego wyboru i pytania typu \"dopasuj lub posortuj\".",
       "explanation4": "Ćwiczenia typu \"wypełnianie luk\" zawierają tekst lub zdanie, w którym usunięto słowo lub kilka słów. Zadanie polega na uzupełnieniu tych luk. Można wybrać jeden z dwóch sposobów odpowiedzi: 1. lista kilku możliwych odpowiedzi do wyboru (co najmniej jedną poprawną i kilka niepoprawnych), 2. puste pole, w którym należy samodzielnie wpisać brakujący wyraz lub wyrazy. W obu przypadkach należy podać prawidłową odpowiedź lub prawidłowe odpowiedzi.",
       "explanation5": "Ćwiczenia typu \"wielokrotny wybór\" umożliwiają tworzenie pytań wielokrotnego wyboru. Zadanie będzie polegało na wybraniu poprawnej odpowiedzi lub poprawnych odpowiedzi z rozwijanej listy. Wybór odpowiedzi może zawierać jedną lub więcej poprawnych odpowiedzi (w zależności od wyboru autora ćwiczenia). W obu przypadkach należy wskazać prawidłową odpowiedź lub prawidłowe odpowiedzi.",
-      "explanation6": "Ćwiczenia typu \"dopasowywania i porządkowanie\" pozwalają na wprowadzanie opisów, pytań, obrazków, jak również dźwięków, słów lub odpowiedzi związanych z przedstawionymi obiektami. W przypadku ćwiczenia \"dopasowywanie\" zadaniem jest utworzenie par obiekt-poprawna odpowiedź, a w przypadku ćwiczenia \"sortowanie\" zadaniem stanowi ułożenie słów, opisów, pytań, obrazków lub dźwięków we właściwej kolejności.",
+      "explanation6": "Ćwiczenia typu \"dopasowywanie i porządkowanie\" pozwalają na wprowadzanie opisów, pytań, obrazków, jak również dźwięków, słów lub odpowiedzi związanych z przedstawionymi obiektami. W przypadku ćwiczenia \"dopasowywanie\" zadaniem jest utworzenie par obiekt-poprawna odpowiedź, a w przypadku ćwiczenia \"sortowanie\" zadanie polega na  ułożeniu słów, opisów, pytań, obrazków lub dźwięków we właściwej kolejności.",
       "explanation7": "Wyjaśnienia dla każdego rodzaju ćwiczeń można znaleźć klikając w odpowiednie zakładki znajdujące się w górnej części strony.",
-      "gap_filling_1": "Ćwiczenia typu \"wypełnianie luk\" mogą mieć dwie odmiany. Pierwsza z nich, nazwana \"Lista rozwijana\" (1), po kliknięciu na lukę wyświetla okno z menu możliwych odpowiedzi. Druga, o nazwie \"Odpowiedź na pytanie otwarte\" (8), nie oferuje odpowiedzi, ponieważ zadaniem jest samodzielne napisanie odpowiedzi. Zademonstrujemy, jak układać pytania i odpowiedzi - zarówno te poprawne, jak i niepoprawne.",
+      "gap_filling_1": "Domyślnym typem ćwiczenia jest uzupełnianie luk. Istnieją dwa rodzaje ćwiczeń uzupełniania luk. Pierwsze z nich (1) nosi nazwę \"Domyślne\" i podaje odpowiedzi po kliknięciu na lukę. Drugi typ to \"Otwarta odpowiedź\" (8), nie ma podanej odpowiedzi, uczeń musi napisać ją bezpośrednio.Zademonstrujemy, jak układać pytania i odpowiedzi - zarówno te poprawne, jak i niepoprawne.",
       "gap_filling_2": "W polu (2) należy podać tytuł ćwiczenia i  w polu (3) krótki opis, wyjaśniający instrukcje do poniższych pytań lub ich kontekst.",
       "gap_filling_3": "Tekst ćwiczenia należy wpisać w polu (4). Można to zrobić na dwa sposoby. Pytania i odpowiedzi można wpisać bezpośrednio w polu lub użyć narzędzi w lewym górnym rogu (6). Rezultat będzie taki sam, w polu (4) pojawi się ten sam tekst.",
-      "gap_filling_4": "W przypadku wpisywania pytań bezpośrednio w polu, musi zostać każde pytanie oddzielone pustą linią, a odpowiedź musi być podana w nawiasach kwadratowych i oddzielona pionowym separatorem: |. Prawidłowe odpowiedzi należy poprzedzić znakiem +. Jeśli istnieje więcej niż jedna poprawna odpowiedź, podczas oceny wyników zostanie uznana za poprawną każda z nich. Kolejność wprowadzonych odpowiedzi można zmienić, klikając w przycisk \"Wymieszaj odpowiedzi\" (7).",
-      "gap_filling_5": "Korzystając z narzędzi do tworzenia pytań (6) należy najpierw kliknąć w przycisk po lewej stronie, aby utworzyć pustą linię do wpisania nowego pytania lub tekstu. W miejscu, w którym ma pozostać luka w pytaniu lub tekście, należy kliknąć w narzędzie po prawej stronie. Otworzy się wtedy okienko - tak, jak pokazano na rysunku. Odpowiedzi można wpisywać jedną po drugiej. Należ kliknąć w przycisk \"Enter\", aby potwierdzić ich poprawność. Domyślnie zostanie uznana za poprawną pierwsza odpowiedź i pojawi się przed nią zielone \"v\". Można jednak wybrać poprawną odpowiedź (odpowiedzi) klikając w mały przycisk przed każdą odpowiedzią (8). Można również dodać opcję \"Pozostaw puste\" - po kliknięciu w przerywany kwadrat po prawej stronie (9).",
-      "gap_filling_open_answer_1": "Drugą odmianą ćwiczenia typu \"wypełnianie luk\" jest \"Odpowiedź na pytanie otwarte\" (10). Jak widać poniżej, nie ma ona żadnej odpowiedzi. Można jednak wskazać oczekiwane odpowiedzi, jedną lub więcej, w taki sam sposób, jak w przypadku pierwszego podtypu tego ćwiczenia - za pomocą narzędzia lub bezpośrednio w polu (11). Można także zasugerować nieprawidłowe odpowiedzi, które pojawią się dopiero przy ocenie wyników.\nJeśli ktoś wpisze jedną z  podanych niepoprawnych odpowiedzi, podczas oceny pojawi się czerwony znak \"x\"; jeśli zaś wpisze poprawną odpowiedź, pojawi się zielony znak \"v\"; a jeśli podał inną odpowiedź, nie zostanie pokazane nic.",
-      "gap_filling_open_answer_2": "Kolejne pytanie lub tekst można dodać w taki sam sposób, jak poprzednie, tj. po wprowadzeniu pustej linii bezpośrednio w polu lub klikając w przycisk po lewej stronie (6). Po wprowadzeniu wszystkich pytań lub tekstów jednego ćwiczenia należy zapisać ćwiczenie klikając w przycisk \"Zapisz\". Zawsze jednak można powrócić i dodać pytania lub wprowadzić w nich zmiany.",
+      "gap_filling_4": "Jeśli wpisujesz pytania bezpośrednio w polu, każde pytanie musi być oddzielone pustą linią, a odpowiedź musi być podana między nawiasami [ ] i oddzielona pionowym separatorem |. Przed właściwą odpowiedzią (odpowiedziami) należy umieścić znak +. Jeśli istnieje więcej niż jedna poprawna odpowiedź, każda z nich zostanie uznana za poprawną. Możesz także wybrać opcję tasowania proponowanych odpowiedzi, klikając przycisk \"Opcje tasowania\" (7).",
+      "gap_filling_5": "Korzystając z narzędzi do tworzenia pytań (6) należy najpierw kliknąć w przycisk po lewej stronie, aby utworzyć pustą linię do wpisania nowego pytania lub tekstu. W miejscu, w którym ma pozostać luka w pytaniu lub tekście, należy kliknąć w narzędzie po prawej stronie. Otworzy się wtedy okienko - tak, jak pokazano na rysunku. Odpowiedzi można wpisywać jedną po drugiej. Należy kliknąć w przycisk \"Enter\", aby potwierdzić ich poprawność. Domyślnie zostanie uznana za poprawną pierwsza odpowiedź i pojawi się przed nią zielone \"v\". Można jednak wybrać poprawną odpowiedź (odpowiedzi) klikając w mały przycisk przed każdą odpowiedzią (8). Można również dodać opcję \"Pozostaw puste\" - po kliknięciu w przerywany kwadrat po prawej stronie (9).",
+      "gap_filling_open_answer_1": "Innym rodzajem ćwiczenia polegającego na wypełnianiu luk jest \"Otwarta odpowiedź\" (10). Jak widać poniżej, dla tego rodzaju ćwiczenia nie ma proponowanej odpowiedzi. Możesz podać oczekiwane odpowiedzi, jedną lub więcej, w taki sam sposób, jak wyjaśniliśmy przed chwilą, za pomocą narzędzia lub bezpośrednio w polu (11). Możesz zaproponować błędne odpowiedzi, nie pojawią się one, ale podczas korekty pojawi się czerwony X, jeśli ktoś wypełnił jedną z tych odpowiedzi, nic, jeśli napisał inną odpowiedź i zielone V, jeśli ma jedną z poprawnych odpowiedzi.",
+      "gap_filling_open_answer_2": "Inne pytania można dodawać w taki sam sposób, jak poprzednio, przechodząc przez pustą linię lub klikając przycisk po lewej stronie (6). Gdy będziesz zadowolony ze swoich pytań, nie zapomnij kliknąć przycisku \"Zapisz\", aby zapisać swoją pracę. Zawsze możesz wrócić, aby dodać pytania lub wprowadzić zmiany.",
       "name": "Nowe ćwiczenie"
+    },
+    "multiple_choice": {
+      "explanation1": "Jeśli wolisz wyświetlać odpowiedzi nie jako luki, ale jako wielokrotny wybór z odpowiedziami pod pytaniem z polami do zaznaczenia, możesz wybrać typ \"Wielokrotny wybór\" (12).",
+      "explanation2": "Na liście ćwiczeń, która pojawia się po dodaniu jednostki, typy \"Pytania dotyczące obrazka, prawda lub fałsz\" i \"Pytania dotyczące tekstu, wielokrotnego wyboru\" podane są  dwa inne przykłady użycia tego typu pytań.",
+      "explanation3": "Tak jak poprzednio, możesz nadać tytuł serii pytań. Możesz także dodać opis, na przykład tekst, na temat którego chcesz zadać pytania lub wprowadzenie do pytań...",
+      "explanation4": "Pytania i odpowiedzi można dodawać jak poprzednio, wpisując je bezpośrednio w polu tekstowym (13) lub za pomocą przycisków, jak wyjaśniono wcześniej w przypadku pytań uzupełniających luki (6). Prawidłową odpowiedź musi poprzedzać „ + ”, a odpowiedzi muszą być oddzielone znakiem „|”. Jeżeli poprawnych odpowiedzi jest więcej niż jedna, pytanie zostanie uznane za prawidłowe po sprawdzeniu wszystkich poprawnych odpowiedzi.",
+      "explanation5": "Istnieje również możliwość dodania zdjęć lub dźwięków do opisu, klikając trzy kropki (14) i wybierając je na komputerze. Następnie można zadawać pytania dotyczące dźwięku lub obrazu. Możesz dodać ich dowolną  liczbę i wybrać miejsce ich umieszczenia w tekście, przesuwając element między nawiasami klamrowymi {} (15).",
+      "name": "Wybór wielokrotny"
+    },
+    "sort_and_match": {
+      "explanation1": "Ostatnią grupą ćwiczeń jest \"sortowanie i dopasowywanie\" zwane również łączeniem w pary (tekst z tekstem, tekst z obrazkami, obrazki z dźwiękami i sortowanie obrazków). Ten typ ćwiczeń można wybrać w polu typu (16) lub na liście nowych jednostek.",
+      "explanation1_1": "Najprostsze z nich polega na dopasowywaniu słów. Aby je utworzyć, możesz użyć przycisku (17) lub wpisać je w polu tekstowym (18).",
+      "explanation2": "Każde dopasowanie musi być zapisane z jedną częścią po lewej i jedną częścią po prawej stronie symbolu \"==\", z jedną pustą linią między nimi. W tym przykładzie w jednej kolumnie znajdują się owoce, a w drugiej kolory. Ale mogą to być tłumaczenia, liczby, a nawet obrazy, dźwięki lub filmy. Najważniejszą rzeczą jest umieszczenie tego samego typu w tej samej kolumnie. Propozycje zostaną wymieszane na potrzeby ćwiczenia.",
+      "explanation3": "Aby dodać zdjęcia lub dźwięk, należy użyć przycisków (19) i wybrać plik na komputerze. Następnie zostaną utworzone elementy między nawiasami klamrowymi {}, tak jak poprzednio. Następnie możesz przenieść je w wybrane miejsce. Aby dodać film, należy wybrać trzeci przycisk (19) i wpisać adres URL filmu (na przykład na youtube lub vimeo...). Nie można bezpośrednio przesłać wideo z komputera.",
+      "explanation4": "Tekst można powiązać z tekstem, obrazem lub dźwiękiem albo obrazy z dźwiękami, jak pokazano w (20).",
+      "explanation5": "Jeśli nie napiszesz symbolu \"==\", aby sparować coś z propozycją, jak pokazano w (21), ćwiczenie stanie się ćwiczeniem sortowania, w którym musisz umieścić propozycję we właściwej kolejności. Możesz to zrobić za pomocą zdjęć, tekstu, dźwięków lub wideo.",
+      "name": "Dopasowywanie i porządkowanie",
+      "video": "Możesz także dodać film bezpośrednio w polu opisu, wpisując adres URL filmu w nawiasach klamrowych i dodając przed nim „video:”, jak pokazano w (22). Nie ma przycisku, aby to zrobić, ale możesz mieć pisemny przykład, wybierając typ jednostki: „Pytania o film, odpowiedź otwarta”."
     }
   },
   "home": {
@@ -111,7 +127,8 @@
   },
   "langs": {
     "en": "Angielski",
-    "eo": "Esperanto"
+    "eo": "Esperanto",
+    "help": "Pomóż nam przetłumaczyć tę stronę"
   },
   "learn": {
     "date": "Data",
@@ -130,6 +147,9 @@
     "mail_invalid": "E-mail musi być ważny",
     "page_title": "Nazwa użytkownika (login)",
     "password": "Hasło",
+    "password_reset": "Resetowanie hasła",
+    "password_reset_done": "Twoje hasło zostało pomyślnie zresetowane",
+    "password_reset_sent": "Na Twój adres e-mail został wysłany link umożliwiający zresetowanie hasła.",
     "required_field": "Pole wymagane",
     "resend_link": "Prześlij ponownie link",
     "signup": "Zarejestruj się w TestU",
@@ -160,7 +180,8 @@
     "social": "Serwisy społecznościowe",
     "source_code": "Kod źródłowy",
     "submit": "Prześlij",
-    "terms": "Warunki korzystania"
+    "terms": "Warunki korzystania",
+    "why": "Dlaczego"
   },
   "review": {
     "exam": "Przegląd egzaminu",
@@ -331,7 +352,7 @@
       "text4_4": "wypowiedzi nękających, obrażających, oszczerczych, zawierających groźby, dyskryminujących;",
       "text4_5": "prywatnych danych innych użytkowników (np. adresów, numerów telefonów, numerów kont bankowych) lub cytatów z prywatnej korespondencji z innymi użytkownikami, administratorem platformy i osobami trzecimi;",
       "text4_6": "linków do stron internetowych zawierających treści niezgodne z prawem;",
-      "text4_7": "wszelkich wysyłanych bez zamówienia reklam, materiałów reklamowych, treści spamowych, \"maili łańcuszkowych\", \"kul śnieżnych\", \"piramid\" oraz pozostałych mających na celu pozyskiwanie klientów;",
+      "text4_7": "wszelkie niezamówione lub nieautoryzowane reklamy, materiały promocyjne, \"wiadomości-śmieci\", spamy, łańcuszki, piramidy finansowe lub inne formy mające na celu pozyskiwanie klientów;",
       "text4_8": "wszelkich treści zawierających wirusy, \"robaki\", trojany i pozostałe programy, które zagrażają lub wpływają negatywnie na funkcjonalność i treść tej oraz innych stron internetowych;",
       "text5": "Użytkownikom zabrania następujących działań:",
       "text5_1": "korzystania lub prób korzystania z konta innego użytkownika oraz systemu bez zezwolenia administratora;",
@@ -379,6 +400,50 @@
       "text4": "Administrator portalu jest uprawniony do przeniesienia praw i obowiązków wynikających z niniejszego Regulaminu w całości lub w części na rzecz osoby trzeciej po ogłoszeniu tego przez e-mail w ciągu 4 tygodni.",
       "text5": "Dane kontaktowe dostawcy lub administratorów serwisu znajdują się na stronie {link}.",
       "title": "Postanowienia końcowe"
+    }
+  },
+  "why": {
+    "because": "Ponieważ jest:",
+    "more_projects": "Więcej projektów na",
+    "point1": {
+      "subtitle": "Żadnych subskrypcji, ukrytych kosztów czy pobierania opłat za dostęp, naprawdę!",
+      "title": "Całkowicie za darmo"
+    },
+    "point10": {
+      "subtitle": "Dzięki programowi Erasmus+ i Słowackiej Agencji Narodowej możesz korzystać z test.eu za darmo!",
+      "title": "Oficjalne wsparcie Komisji Europejskiej"
+    },
+    "point2": {
+      "subtitle": "Możesz swobodnie wykorzystywać i tworzyć treści, bez konieczności podawania źródeł.",
+      "title": "Zawartość objęta licencją CC0"
+    },
+    "point3": {
+      "subtitle": "Nic nie jest ukryte.",
+      "title": "Otwarte oprogramowanie"
+    },
+    "point4": {
+      "subtitle": "Testu.eu celebruje języki. Brakuje Twojego? Dodaj go tutaj:",
+      "title": "Wielojęzyczny"
+    },
+    "point5": {
+      "subtitle": "Przyjazny dla użytkownika, szybki, intuicyjny i łatwy w nawigacji.",
+      "title": "Łatwy w użyciu"
+    },
+    "point6": {
+      "subtitle": "Zanurz się w lekcjach online, kursach, ćwiczeniach i testach - nowoczesne podejście do nauki!",
+      "title": "Online"
+    },
+    "point7": {
+      "subtitle": "Nauka bez granic, nauczanie bez ograniczeń – zanurz się w tworzeniu treści lub ponownie wykorzystaj istniejące zasoby.",
+      "title": "Przydatne"
+    },
+    "point8": {
+      "subtitle": "Tworzenie treści edukacyjnych to przyjemność - ucz się poprzez kreatywność!",
+      "title": "Zabawa"
+    },
+    "point9": {
+      "subtitle": "Ponownie wykorzystuj treści innych lub własne, zmniejsz ilość wydruków, poddawaj recyklingowi pomysły, ćwiczenia i pytania!",
+      "title": "Przyjazne dla środowiska"
     }
   }
 }

@@ -28,7 +28,6 @@
     "details": "Podrobnosti cvičenia",
     "save": "Uložiť",
     "tags": "Štítky",
-    "title": "Názov",
     "unexpected_response": "Neočakávaná odpoveď servera",
     "unlisted": "Nezaradené vo výsledkoch vyhľadávania"
   },
@@ -84,8 +83,6 @@
     "about_text": "Ak chcete vytvoriť nové cvičenie, musíte sa najprv zaregistrovať a prihlásiť na stránke.",
     "construction": "Vo výstavbe",
     "gap_filling": "Vyplň medzeru",
-    "multiple_choice": "Výber z možností",
-    "sort_and_match": "Zoradiť a priradiť",
     "video": "o videu",
     "exercice": {
       "explanation1": "Ak chcete vytvoriť nové cvičenie, musíte byť v ponuke Home (1), potom môžete vybrať „+ VYTVORIŤ NOVÉ CVIČENIE“ (2). Po vytvorení sa zobrazia na tejto stránke. Ale zatiaľ budete presunutí na ďalšiu stránku, ako môžete vidieť nižšie.",
@@ -103,6 +100,24 @@
       "gap_filling_open_answer_1": "Ďalším typom cvičenia na vyplnenie medzier je „Otvorená odpoveď“ (10). Ako vidíte nižšie, pre tento druh cvičenia neexistuje žiadna navrhovaná odpoveď. Očakávané odpovede, jednu alebo viac, môžete poskytnúť rovnakým spôsobom, ako sme práve vysvetlili, pomocou nástroja alebo priamo v rámčeku (11). Môžete navrhnúť nesprávne odpovede, tie sa nezobrazia, ale pri oprave sa zobrazí červené X, ak niekto vyplnil jednu z týchto odpovedí, nič, ak napísal inú odpoveď a zelené V, ak má jednu zo správnych odpovedí.",
       "gap_filling_open_answer_2": "Ďalšie otázky môžete pridať rovnakým spôsobom ako predtým, prejdením prázdneho riadku alebo kliknutím na tlačidlo vľavo (6). Keď budete spokojní so svojimi otázkami, nezabudnite kliknúť na tlačidlo „Uložiť“ a svoju prácu uložte. Vždy sa môžete vrátiť a pridať otázky alebo vykonať nejaké zmeny.",
       "name": "Nové cvičenie"
+    },
+    "multiple_choice": {
+      "explanation1": "Ak uprednostňujete zobrazenie odpovedí nie ako medzery, ale ako viacnásobný výber s odpoveďami pod otázkou s políčkami na zaškrtnutie, môžete vybrať typ „Výber z viacerých možností“ (12).",
+      "explanation2": "V zozname cvičení, ktorý sa zobrazí, keď pridáte jednotku, vám typy „Otázky o obrázku, pravdivé alebo nepravdivé“ a „Otázky k textu, výber z viacerých možností“ poskytujú ďalšie dva príklady použitia tohto typu otázok.",
+      "explanation3": "Sériu otázok môžete rovnako ako predtým pomenovať. Môžete tiež pridať popis, napríklad text, na ktorý sa chcete opýtať, alebo úvod k otázkam...",
+      "explanation4": "Otázky a odpovede je možné pridať tak, ako predtým, ich napísaním priamo do textového poľa (13) alebo pomocou tlačidiel, ako je vysvetlené vyššie pre otázky na vyplnenie medzier (6). Správna odpoveď musí mať pred sebou „+“ a odpovede musia byť oddelené „|“. Ak je viac správnych odpovedí, otázka bude označená ako správna, keď budú skontrolované všetky správne odpovede.",
+      "explanation5": "Máte tiež možnosť pridať obrázky alebo zvuky do popisu kliknutím na tri bodky (14) a ich výberom na vašom počítači. Potom môžete klásť otázky týkajúce sa zvuku alebo obrazu. Môžete ich pridať koľko chcete a vybrať, kam ich chcete v texte umiestniť, presunutím prvku medzi zložené zátvorky {} (15).",
+      "name": "Výber z možností"
+    },
+    "sort_and_match": {
+      "explanation1": "Poslednou skupinou cvičení je „sort and match“ nazývané aj párovanie (text s textom, text s obrázkami, obrázky so zvukmi a triedenie obrázkov). Tento typ cvičení si môžete vybrať v poli typu (16) alebo v zozname nových jednotiek.",
+      "explanation1_1": "Najjednoduchší spôsob spočíva v zhode slov. Na ich vytvorenie môžete použiť tlačidlo (17) alebo ich napísať do textového poľa (18).",
+      "explanation2": "Každá zhoda musí byť napísaná s jednou časťou naľavo a jednou napravo od symbolu ”==”, s jedným prázdnym riadkom medzi nimi. V tomto príklade je ovocie v jednom stĺpci a farby v druhom. Ale môžu to byť preklady, čísla alebo dokonca obrázky, zvuky či videá. Najdôležitejšie je dať rovnaký typ do rovnakého stĺpca. Na cvičenie budú propozície zmiešané.",
+      "explanation3": "Ak chcete pridať obrázky alebo zvuk, musíte použiť tlačidlá (19) a vybrať súbor v počítači. Potom vytvorí prvky medzi zloženými zátvorkami {} ako predtým. Potom ich môžete presunúť na požadované miesto. Ak chcete pridať video, musíte vybrať tretie tlačidlo (19) a napísať url adresu videa (napríklad na youtube alebo vimeo...). Video nemôžete nahrať priamo z počítača.",
+      "explanation4": "Môžete priradiť text k textu, obrázku alebo zvuku, alebo priradiť obrázky zvukom, ako je znázornené na (20).",
+      "explanation5": "Ak nenapíšete symbol \"==\", aby ste niečo spojili s propozíciou, ako je uvedené v (21), úloha sa stane triedením, v ktorom musíte zoradiť propozície v správnom poradí. Môžete to urobiť pomocou obrázkov, textu, zvukov alebo videa.",
+      "name": "Zoradiť a priradiť",
+      "video": "Video môžete pridať aj priamo do poľa s popisom, a to tak, že url adresu videa napíšete medzi kučeravé zátvorky a pred ňu napíšete \"video:\", ako je znázornené v (22). Nie je na to žiadne tlačidlo, ale môžete mať napísaný príklad výberom typu jednotky: \"Otázky týkajúce sa videa, otvorená odpoveď\"."
     }
   },
   "home": {
@@ -111,14 +126,15 @@
   },
   "langs": {
     "en": "Angličtina",
-    "eo": "Esperanto"
+    "eo": "Esperanto",
+    "help": "Pomôžte nám preložiť webstránku"
   },
   "learn": {
     "date": "Dátum",
     "exam": "Test",
     "exercise": "Cvičenie",
     "recent": "Posledná aktivita",
-    "review": "Prehľad",
+    "review": "Náhľad",
     "submitted": "Odovzdané cvičenia za deň"
   },
   "login": {
@@ -130,6 +146,9 @@
     "mail_invalid": "E-mail musí byť platný",
     "page_title": "Prihlásiť sa",
     "password": "Heslo",
+    "password_reset": "Resetovanie hesla",
+    "password_reset_done": "Vaše heslo bolo úspešne resetované",
+    "password_reset_sent": "Na vašu mailovú adresu sme poslali odkaz na resetovanie vášho hesla.",
     "required_field": "Požadované pole",
     "resend_link": "Opäť odoslať odkaz",
     "signup": "Zaregistrujte sa v TestU",
@@ -156,11 +175,12 @@
     "only_logged_in": "Táto stránka je dostupná len pre prihlásených používateľov",
     "privacy": "Vyhlásenie o ochrane osobných údajov",
     "settings": "Nastavenia účtu",
-    "signup": "Prihlásiť sa",
+    "signup": "Zaregistrovať sa",
     "social": "Sociálny",
     "source_code": "Zdrojový kód",
     "submit": "Odoslať",
-    "terms": "Podmienky používania"
+    "terms": "Podmienky používania",
+    "why": "Prečo"
   },
   "review": {
     "exam": "Prehľad skúšok",
@@ -331,7 +351,7 @@
       "text4_4": "obťažujúci, urážlivý, hanlivý, ohrozujúci obsah a diskriminujúce výroky;",
       "text4_5": "súkromné údaje iných používateľov (napr. adresu, telefónne číslo, bankové spojenie), príp. citácie zo súkromnej komunikácie s inými používateľmi, poskytovateľmi/administrátormi portálu alebo tretími stranami;",
       "text4_6": "odkazy na internetové stránky s protiprávnym obsahom;",
-      "text4_7": "akúkoľvek nevyžiadanú alebo neoprávnenú reklamu, reklamné materiály, „junk mail“, spam, reťazové správy, pyramídové systémy alebo akýkoľvek iný druh zákazníckej reklamy;",
+      "text4_7": "akúkoľvek nevyžiadanú alebo neoprávnenú reklamu, reklamné materiály, hromadné správy („junk mail“), spam, reťazové správy, pyramídové systémy alebo akýkoľvek iný druh zákazníckej reklamy;",
       "text4_8": "akýkoľvek materiál obsahujúci vírusy, červy, trójske kone alebo iné programy, ktoré môžu ohroziť alebo poškodiť fungovanie alebo stav tejto alebo inej internetovej stránky;",
       "text5": "Používateľovi je zakázané nasledovné:",
       "text5_1": "používať alebo pokúsiť sa používať konto iného používateľa alebo systém bez povolenia poskytovateľa;",
@@ -379,6 +399,50 @@
       "text4": "Poskytovateľ je oprávnený úplne alebo čiastočne previesť svoje práva a povinnosti vyplývajúce z tohto používateľského vzťahu na tretiu stranu, a to do 4 týždňov od oznámenia formou e-mailu.",
       "text5": "Kontaktné informácie na poskytovateľa alebo správcov webovej stránky nájdete na stránke {link}.",
       "title": "Záverečné ustanovenia"
+    }
+  },
+  "why": {
+    "because": "Pretože to je:",
+    "more_projects": "Viac projektov na",
+    "point1": {
+      "subtitle": "Žiadne predplatné, žiadne skryté poplatky alebo platobné brány, vážne!",
+      "title": "Absolútne zadarmo"
+    },
+    "point10": {
+      "subtitle": "Vďaka programu Erasmus+ a Slovenskej národnej agentúre môžete používať testu.eu zadarmo!",
+      "title": "Oficiálne podporila Európska komisia"
+    },
+    "point2": {
+      "subtitle": "Môžete slobodne používať a vytvárať obsah, nemusíte prispievať.",
+      "title": "licencovaný obsah CC0"
+    },
+    "point3": {
+      "subtitle": "Nič nie je skryté.",
+      "title": "Otvorený zdroj"
+    },
+    "point4": {
+      "subtitle": "Testu.eu oslavuje jazyky. Chýba ten váš? Pridajte ho tu:",
+      "title": "Mnohojazyčný"
+    },
+    "point5": {
+      "subtitle": "Používateľsky prívetivý, rýchly, intuitívny a ľahko navigovateľný.",
+      "title": "Ľahko sa používa"
+    },
+    "point6": {
+      "subtitle": "Ponorte sa od online lekcií, kurzov, cvičení a testov - je to moderný prístup k učeniu!",
+      "title": "Online"
+    },
+    "point7": {
+      "subtitle": "Učenie bez hraníc, učenie bez obmedzení - ponorte sa do vytvárania obsahu alebo opätovne používajte existujúce zdroje.",
+      "title": "Užitočný"
+    },
+    "point8": {
+      "subtitle": "Vytváranie vzdelávacieho obsahu je radosť - učte sa prostredníctvom tvorivosti!",
+      "title": "Zábava"
+    },
+    "point9": {
+      "subtitle": "Opätovne používajte obsah iných ľudí alebo svoj vlastný, znížte množstvo vytlačeného papiera, recyklujte myšlienky, cvičenia a otázky!",
+      "title": "Eko-priateľský"
     }
   }
 }

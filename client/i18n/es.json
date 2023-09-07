@@ -17,6 +17,7 @@
   },
   "editor": {
     "age_range": "Rango de edad",
+    "cefr_levels_label": "CEFR niveles",
     "description": "Descripción",
     "details": "Detalles del ejercicio",
     "save": "Guardar",

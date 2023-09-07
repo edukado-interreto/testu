@@ -22,6 +22,7 @@
   },
   "editor": {
     "age_range": "Altersspanne",
+    "cefr_levels_label": "GER Niveaustufen",
     "confirm_leave": "Diese Seite bittet Sie zu bestätigen, dass Sie die Seite verlassen möchten - die von Ihnen eingegebenen Daten werden möglicherweise nicht gespeichert.",
     "description": "Beschreibung",
     "details": "Details der Übung",
@@ -78,6 +79,48 @@
     "target_language_is": "Erlernte Sprache:",
     "unlisted": "Diese Übung ist in den Suchergebnissen nicht aufgelistet."
   },
+  "guide": {
+    "about": "Wie kreiert man Übungen?",
+    "about_text": "Um Übungen zu kreieren, sind zunächst die Registrierung und Anmeldung auf der Webseite erforderlich.",
+    "construction": "Im Aufbau befindlich",
+    "gap_filling": "Lückentext",
+    "video": "über ein Video",
+    "exercice": {
+      "explanation1": "Um eine neue Übung zu erstellen, müssen Sie sich im Menü HOME (1) befinden, danach können Sie \"+Erstelle eine neue Übung\" (2) wählen. Nach dem Erstellen erscheint die Übung auf dieser Seite. Aber zunächst werden Sie auf die nächste Seite weitergeleitet, wie Sie unten sehen.",
+      "explanation2": "Eine Übung kann aus mehreren Teilen bestehen. Sie können Einheiten ergänzen, indem Sie \"+ERGÄNZE EINE EINHEIT\" (3) anklicken. Es gibt verschiedene Übungstypen, aber innerhalb eines Übungsteils können nur dieselben Übungstypen verwendet werden. Will man verschiedene Arten von Fragen in einer Übung mischen, so muss man gesonderte Einheiten für jeden Typ von Fragen erstellen.",
+      "explanation3": "Wie man links sehen kann, gibt es unterschiedliche Übungstypen. Es lassen sich aber hauptsächlich 3 Übungsfamilien unterscheiden: Lückentexte, Multiple Choice und Zuordnungsübungen.",
+      "explanation4": "Bei Lückentexten wird (oder werden) ein Wort (oder mehrere Wörter) ausgewählt. Es gibt mehrere Antwortmöglichkeiten (mit mindestens einer richtigen Antwort und mehreren falschen) oder man kann das Feld frei lassen, so dass die Person, welche die Aufgabe löst, die Antwort eintippt. Auf jeden Fall muss die richtige Antwort (müssen die richtigen Antworten) beim Erstellen der Übung gekennzeichnet werden.",
+      "explanation5": "Im Falle von Multiple Choice erstellt man Übungen mit einer Auswahl von Antworten. Dabei kann eine Antwort richtig sein oder es gibt mehrere richtige Antworten. Wie bei Lückentexten müssen die richtigen Antworten beim Erstellen der Übung gekennzeichnet werden.",
+      "explanation6": "Zuordnungsübungen funktionieren mit Beschreibungen, Fragen, Bildern oder sogar Tönen. Die Lerner müssen Paare bilden oder eine richtige Reihenfolge finden.",
+      "explanation7": "Man kann genauere Erläuterungen zu den Übungsfamilien finden, indem man die Tabs oben auf der Seite anklickt.",
+      "gap_filling_1": "Der Standardtyp von Übungen ist der Lückentext. Dabei gibt es zwei Arten von Übungen. Die erste (1) nennt sich \"Standard\" (Default) und präsentiert vorgegebene Antworten, wenn man die Lücke anklickt. Beim zweiten Typ handelt es sich um \"freie Antworten\" (Open answer) (8), wobei keine Antworten vorgegeben werden und die Lerner die Antworten direkt eintragen müssen. Wir werden noch sehen, wie die Fragen formuliert und Antworten gegeben werden, wobei wir Beispiele für falsche und richtige Fragen und Antworten betrachten.",
+      "gap_filling_2": "In Feld (2) wird der Titel der Übung eingetragen und in Feld (3) eine kurze Beschreibung mit Instruktionen zur Lösung und Hinweisen zum Kontext.",
+      "gap_filling_3": "Die Fragen oder Aufgaben selbst werden in Feld (4) eingetragen. Dabei gibt es immer zwei Möglichkeiten des Vorgehens. Man kann die Fragen und Antworten in das Feld direkt eintragen, oder man verwendet die Tools in der oberen linken Ecke (6). Das Ergebnis ist dasselbe, d.h. man sieht denselben Text in Feld (4).",
+      "gap_filling_4": "Wenn Sie die Fragen direkt in das Feld eintragen, muss jede Frage durch eine Leerzeile getrennt werden und die Lösungen müssen in eckigen Klammern [ ] angegeben un durch vertikale Striche | getrennt werden. Die richtige Lösung muss mit einem Pluszeichen + gekennzeichnet werden. Gibt es mehrere richtige Antworten, so wird jede beliebige von diesen als richtig betrachtet. Man kann die vorgeschlagenen Lösungen mischen, indem man \"Lösungen mischen\" (Shuffle options) (7) anklickt.",
+      "gap_filling_5": "Nutzt man die Tools (6), um Aufgaben zu erstellen, so wird die Leerzeile mit dem linken Tool erzeugt, damit eine neue Aufgabe erstellt werden kann. Man muss die Frage oder den Text eintragen und das rechte Tool anklicken, um die Lücke zu markieren. Es öffnet sich ein Fenster, wie im Bild gezeigt. Man kann die Antworten einzeln eintragen. Sie werden durch das Drücken der Enter-Taste bestätigt. Standardmäßig wird die erste Lösung als richtig betrachtet und mit einem grünen \"v\" davor gekennzeichnet. Aber durch Anklicken des kleinen Knopfes vor jeder Antwort (8) kann man die richtige Antwort auswählen. Durch Anklicken des gestrichelten Quadrats (9) kann auch die Option gewählt werden, nichts einzutragen (\"frei lassen\" /leave blank).",
+      "gap_filling_open_answer_1": "Der andere Typ von Lückentexten sind jene mit freien Antworten (Open answer) (10). Wie man unten sieht, gibt es für diesen Übungstyp keine vorgeschlagenen Antworten. Man kann (eine oder mehrere) zu erwartende Antworten auf die bereits erwähnte Art durch direkten Eintrag oder mittels Tool in Feld (11) geben. Man kann falsche Antworten vorgeben, die nicht erscheinen, aber bei der Korrektur mit einem roten X gekennzeichnet werden, falls sie eingetragen werden. Es erfolgt keine Kennzeichnung bei einer anderen Eintragung und ein grünes \"v\" bei richtiger Lösung.",
+      "gap_filling_open_answer_2": "Weitere Fragen können wie bereits beschrieben ergänzt werden, indem eine Leerzeile ergänzt oder der linke Knopf (6) angeklickt wird. Wenn Sie mit der erstellten Übung zufrieden sind, so vergessen Sie nicht \"Speichern\" (Save) zu drücken. Sie können jederzeit zur Übung zurückkehren, um Fragen zu ergänzen oder Veränderungen vorzunehmen.",
+      "name": "Neue Übung"
+    },
+    "multiple_choice": {
+      "explanation1": "Wenn die Antworten nicht als Lücken angezeigt werden sollen, sondern als Multiple Choice, d.h. als eine Auswahl in einem Feld, so sollte man den Übungstyp \"Multiple choice\" (12) wählen.",
+      "explanation2": "In der Liste von Übungen, die erscheinen, wenn man eine Einheit hinzufügt, bieten \"Fragen zu einem Bild, richtig/falsch\" (Questions about a picture, true or false) sowie \"Fragen zu einem Text, multiple choice\" (Questions about a text, multiple choice) zwei weitere Beispiele dieses Übungstyps.",
+      "explanation3": "Wie oben, kann man einen Titel für die Serie von Fragen oder Aufgaben festlegen. Man kann auch eine Beschreibung ergänzen, z.B. einen Text, auf den sich die Fragen oder Aufgaben beziehen, oder eine Einführung.",
+      "explanation4": "Die Fragen und Antworten können wie bereits beschrieben ergänzt werden, indem sie direkt ins Textfeld (13) eingetragen werden oder bei Lückentexten mit Hilfe der Schaltknöpfe (6) ergänzt werden. Richtige Antworten müssen vorher mit \"+\" gekennzeichnet sein und die einzelnen Antworten werden mittels \"|” voneinander getrennt. Falls es mehr als eine korrekte Antwort gibt, so gilt die Frage als korrekt beantwortet, wenn alle als korrekt gekennzeichneten Lösung gefunden wurden.",
+      "explanation5": "Man hat auch die Möglichkeit Bilder oder Ton in der Beschreibung zu ergänzen. Dazu klickt man die drei Punkte (14) an und trifft die Wahl auf seinem Computer. Man kann Fragen zur Tonaufnahme oder dem Bild stellen. Man kann beliebig viele Fragen stellen und auswählen, wo diese im Text erscheinen, indem man das Element zwischen den geschwungenen Klammern {} (15) bewegt.",
+      "name": "Multiple Choice"
+    },
+    "sort_and_match": {
+      "explanation1": "Die letzte Übungsfamilie ist die der Zuordnungsübungen (\"sort and match\"). Es sind Paare (aus Text und Text, Text und Bild, Bild und Ton) oder Reihenfolgen zu bilden. Man kann diesen Übungstyp in Feld (16) oder der Liste neuer Einheiten auswählen.",
+      "explanation1_1": "Die einfachste Form dieser Übung ist das Finden passender Wörter. Man kann sie mittels Schaltknopf (17) erstellen oder die Wörter in Feld (18) eintragen.",
+      "explanation2": "Jedes passende Paar muss links und rechts vom Symbol \"==\" eingetragen werden. Die einzelnen Paare werden durch Leerzeile getrennt. Im Beispiel befinden sich auf der einen Seite Früchte und Farben auf der anderen. Es können aber auch Übersetzungen, Zahlen und sogar Bilder, Ton und Videos verwendet werden. Wichtig ist nur, dass man denselben Typ in derselben Spalte anordnet. Die vorgeschlagenen Paare werden dann gemischt.",
+      "explanation3": "Um Bilder or Ton einzufügen, müssen die Schalknöpfe (19) verwendet undeine Datei auf dem Computer ausgewählt werden. Das Element wird dann in geschwungene Klammern {} gesetzt, wie oben erwähnt. Danach kann das Element an die gewünschte Stelle gesetzt werden. Um ein Video hinzuzufügen, muss man den dritten Schaltknopf (19) wählen und die URL-Adresse des Videos eintragen (z.B. aus YouTube oder vimeo). Es ist nicht möglich, ein Video direkt vom Computer hochzuladen.",
+      "explanation4": "Man kann Text mit Text verbinden, oder mit Bildern oder Ton; oder man verbindet Bilder mit Ton wie in (20) gezeigt.",
+      "explanation5": "Verwendet man nicht das Symbol \"==\", um Paare zu bilden, wie in (21) gezeigt, entsteht eine Sortier-Übung, bei der eine richtige Reihenfolge gefunden werden muss. Man kann dazu Bilder, Text, Ton oder Video verwenden.",
+      "name": "Sortieren und Zuordnen (Sort and Match)",
+      "video": "Man kann auch ein Video direkt im Feld Beschreibung hinzufügen, indem man die URL-Adresse des Videos zwischen geschweiften Klammern angibt und \"video\" davor schreibt, wie in (22) gezeigt. Dafür gibt es keinen Schaltknopf, man kann aber ein schriftliches Beispiel erhalten, indem man die Rubrik \"Fragen zu einem Video, freie Antworten\" (Questions about a video, open answer) auswählt."
+    }
+  },
   "home": {
     "create_exercise": "Neue Übung erstellen",
     "search_exercise": "Übung suchen"
@@ -118,6 +161,7 @@
     "catchphrase": "Kreieren Sie Ihre eigenen Sprachtests",
     "cookie_consent": "Diese Website verwendet eine minimale Anzahl von Cookies für ihre Funktion. Durch die weitere Nutzung dieser Website gehen wir davon aus, dass Sie die Verwendung von funktionalen Cookies akzeptieren.",
     "edit": "Bearbeiten",
+    "guide": "Anleitung",
     "home": "Home",
     "lang_menu_header": "Sprache der Benutzeroberfläche",
     "login": "Log-in",
@@ -209,7 +253,7 @@
       "questions_about_a_text_multiple_choice": {
         "code": "Wer hat den Hasen zum einem Wettrennen herausgefordert? [Der Hase|+Die Schildkröte|Ein Vogel]\nWarum hat der Hase während des Wettrennens ein Schläfchen gemacht? [Er war müde|Er wollte der Schildkröte eine Chance geben aufzuholen|+Er war von seinem Sieg überzeugt]\nWer hat das Wettrennen gewonnen? [Der Hase|+Die Schildkröte|Ein Vogel]",
         "description": "Es waren einmal eine Schildkröte und ein Hase, die darüber in Streit gerieten, wer von ihnen der schnellste sei. Die Schildkröte forderte den Hasen zu einem Wettlauf heraus, und der Hase nahm die Wette an, weil er sicher war sie zu gewinnen.\nDer Wettlauf begann und der Hase lag schnell vorn und ließ die Schildkröte hinter sich zurück. Der Hase wurde übermütig und beschloss ein Schläfchen zu machen. In der Zwischenzeit bewegte sich die Schildkröte stetig weiter in Richtung Ziellinie.\nAls der Hase erwachte, bemerkte er, dass die Schildkröte die Ziellinie fast erreicht hat. Er versuchte sie einzuholen, aber es war zu spät. Die Schildkröte hatte das Wettrennen bereits gewonnen.",
-        "name": "Fragen zu einem Text, Multiple choice"
+        "name": "Fragen zu einem Text, Multiple Choice"
       },
       "questions_about_a_video_open_answer": {
         "code": "Wo liegt dieser Ort?\n[]\n\nWer errichtete ihn?\n[]",
@@ -220,6 +264,12 @@
         "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
         "name": "Bilder sortieren"
       }
+    },
+    "types": {
+      "default": "Auswahlliste",
+      "multiple_choice": "Multiple Choice",
+      "open_answer": "Freie Antwort (open answer)",
+      "pairing": "Sortieren und Zuordnen (Sort and match)"
     }
   },
   "sort": {

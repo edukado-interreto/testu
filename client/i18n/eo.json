@@ -12,6 +12,7 @@
       "leipzig_description": "La Universitato de Leipzig, fondita en 1409, estas esplora universitato kiu ofertas edukadon en riĉa kaj diversa esplora medio por ĉirkaŭ 30,000 studentoj instruitaj de proksimume 400 fakultatanoj. La granda vario de 14 fakultatoj (kovrantaj fakojn de medicino ĝis natursciencoj, de matematiko ĝis teologio kaj de sociaj sciencoj ĝis sportoj) ofertas bonegajn ŝancojn por interfaka laboro. Ĝia Instituto de Sorabaj Studoj, okupita pri esplorado pri la soraba kaj aliaj minoritataj lingvoj, ties literaturo kaj kulturo, kaj ankaŭ pri la trejnado de lernejaj instruistoj, estas unika en la mondo. En la jaroj ekde la politikaj ŝanĝoj en 1989 signifaj monsumoj estis investitaj en la esplora infrastrukturo, tiel ke la Universitato de Leipzig estas plej alta institucio kaj en konstruaĵoj kaj ekipaĵo hodiaŭ.",
       "leipzig_location": "Lepsiko, Germanio",
       "leipzig_name": "Universitato de Lepsiko",
+      "uam_description": "La Universitato Adam Mickiewicz en Poznań/Poznano, nomita laŭ la fama pola romantika poeto, estas esplora universitato, unu el la pintaj polaj universitatoj kaj la plej grava akademia institucio en Poznano. Ĝi estis fondita en 1919, sed ĝia reputacio fontas el longa tradicio de supera edukado en la urbo Poznań, reiras al la 16-a jarcento (pole: Akademia Lubrańskiego, angle: The Lubrański Academy, latine: Collegium Lubranscianum; establita en 1518 en Poznano). Nuntempe, ĉirkau 3000 akademiaj kunlaborantoj  ofertas 193 studdirektojn kaj specialaĵojn al proksimume 40 000 studentoj, inkluzive pli ol 1,300 doktorajn studentojn. Aperas pli ol 8 000 sciencaj publikaĵoj ĉiujare kaj AMU partoprenas en pli ol 600 naciaj kaj internaciaj projektoj. La universitato estas dividita en 20 fakultatojn tra larĝa gamo de naturaj kaj sociaj sciencoj kaj la homscienco, tri el ili koncentriĝas pri lingvostudoj, ofertante praktikan lingvoinstruadon de ĉirkaŭ 50 lingvoj. Multaj el la lingvokursoj ricevis la plej altkvalitan kategorion fare de la Pola Akredita Komisiono, kiu atestas la bonegan fakan kompetenton de la instruistoj, la uzadon de la plej novaj instrumetodoj kaj ankaŭ bonegajn akademiajn rezultojn. La Fakultato de Modernaj Lingvoj kaj Literaturoj estas unu el la plej grandaj de la universitato kaj ofertas la plej grandan nombron da lingvokursoj. La Etnolingvistika Instituto, ene de la Fakultato instruas pli ol dekduon da lingvoj en 6 studdirektoj kun kunlaborantaro el pli ol 15 malsamaj landoj.",
       "uam_location": "Poznano, Pollando",
       "uam_name": "Universitato Adam Mickiewicz",
       "vu_description": "La Universitato de Vilno estis fondita en la 16-a jarcento kaj estas konsiderata kiel unu el la plej malnovaj universitatoj en Centra kaj Orienta Eŭropo. Lingvostudoj ĉiam estis integrita parto de la instruplano de la Universitato de Vilno. Tiam, la ĉefa lingvo instruita estis la latina kune kun la malnovgreka kaj la hebrea. Tiel, kvankam la Fakultato de Filologio estis establita same lastatempe kiel 1944, lingvostudoj estis instruitaj eĉ antaŭ ol la Jezuita Kolegio iĝis universitato en 1579. La Instituto por la Lingvoj kaj Kulturoj de la Baltiko kunigas esploristojn de Ĝenerala Lingvistiko, Balta, ĝermanaj, polaj, rusaj, skandinavaj studoj, same kiel multaj aliaj. Fortaj tradicioj pri studado de la rusa lingvo, literaturo kaj kulturo (rusa filologio-fako estis fondita en 1803) sukcese kunekzistas kun la plej altnivelaj kaj modernaj instrumetodoj, kio montriĝas en la aktiva partopreno de la membroj de tiu ĉi fako en internaciaj projektoj kaj sciencaj aranĝoj.",
@@ -21,11 +22,14 @@
   },
   "editor": {
     "age_range": "Aĝogrupo",
+    "cefr_levels_label": "KER nivelo",
+    "confirm_leave": "Tiu ĉi paĝo petas konfirmon ke vi volas forlasi ĝin - enigitaj datumoj povas perdiĝ,",
     "description": "Priskribo",
     "details": "Detaloj de la ekzerco",
     "save": "Konservi",
     "tags": "Etikedoj",
     "title": "Titolo",
+    "unexpected_response": "Neantaŭvidita respondo de la servilo",
     "unlisted": "Nelistigita en serĉrezultoj"
   },
   "exam": {
@@ -43,10 +47,10 @@
     "no_new_submissions": "Ĉi tiu ekzameno ne plu akceptas novajn provojn",
     "no_submissions": "Neniu provo",
     "or": "aŭ",
-    "please_log_in": "Por komenci la ekzamenon, bonvolu ensaluti aŭ elekti uzantnomon.",
-    "untitled": "Sen Titolo",
+    "please_log_in": "Por komenci la ekzamenon, bonvolu ensaluti aŭ elekti uzantonomon.",
+    "untitled": "Sentitola ekzameno",
     "view": "Vidi",
-    "visible_by": "La rezultoj de ĉi tiu ekzerco estos videblaj de la ekzamenanto {name}.",
+    "visible_by": "La rezultoj de ĉi tiu ekzerco estos videblaj por la ekzamenanto {name}.",
     "well_done": "Via ekzameno estis sukcese sendita al la ekzamenanto!"
   },
   "exercise": {
@@ -57,7 +61,7 @@
     "create_copy": "Krei kopion",
     "create_exam": "Krei ekzamenon",
     "create_exam_confirm": "La kreinto de ĉi tiu ekzerco povas redakti aŭ forigi ĝin dum la ekzameno okazas. Ĉu tamen daŭrigi?",
-    "delete": "Forigi la ekzamenon",
+    "delete": "Forigi la ekzercon",
     "delete_confirm": "Ĉu vi certe volas forigi ĉi tiun ekzercon?",
     "edit": "Redakti la ekzercon",
     "error": "Eraro okazis dum konservado de la ekzerco",
@@ -67,13 +71,24 @@
     "mistake_explanation": "Klarigo",
     "misuse": "Raporto pri misuzo",
     "pdf": "PDF",
-    "report_mistake_to_creator": "Raporto al la aútoto pri araro",
-    "report_misuse_to_administrators": "Raporto al administratoroj pri misuzo",
+    "report_mistake_to_creator": "Raporto al la aútoro pri eraro {username}",
+    "report_misuse_to_administrators": "Raporto al la administrantoj pri misuzo",
     "submit_mistake_confirm": "Dankon! La aútoro ricevos informon.",
     "submit_misuse_confirm": "Dankon pro via helpo por plibonigi TestU.eu.",
     "target_language": "Lernata lingvo",
     "target_language_is": "Lernata lingvo:",
     "unlisted": "Ĉi tiu ekzerco ne estas listigata en serĉrezultoj"
+  },
+  "guide": {
+    "about": "Kiel krei ekzercojn",
+    "about_text": "Por krei novan ekzercon vi devas unue registriĝi kaj ensaluti en la retejo.",
+    "construction": "Pretigata",
+    "gap_filling": "Truekzerco",
+    "video": "Pri video",
+    "exercice": {
+      "explanation1": "Por krei novan ekzercon vi devas esti en la Home menu (1), poste vi povas elekti \"+CREATE A NEW EXERCISE\" (2). Se jam kreita, ĝi aperas sur tiu ĉi paĝo. Sed nun vi estos sendita al la sekva paĝo kiel vi povas vidi sube.",
+      "name": "Nova ekzerco"
+    }
   },
   "home": {
     "create_exercise": "Krei novan ekzercon",
