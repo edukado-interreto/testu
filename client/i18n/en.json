@@ -145,6 +145,7 @@
     "email_is_verified": "Your e-mail is verified! You can now log in.",
     "login": "Login",
     "mail_invalid": "E-mail must be valid",
+    "no_account_yet": "You don’t have an account yet?",
     "page_title": "Login",
     "password": "Password",
     "password_reset": "Password reset",
