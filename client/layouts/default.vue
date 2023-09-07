@@ -12,9 +12,10 @@
       class="d-print-none"
     >
       <v-app-bar-nav-icon @click.stop="nav_drawer.show = !nav_drawer.show" />
-
-      <img src="/favicon.png" class="mx-3" height="40" />
-      <v-toolbar-title class="accent--text" v-text="title" />
+      <v-btn class="text-none transparent" text nuxt :to="localePath('/')">
+        <img src="/favicon.png" class="mx-3" height="40" />
+        <v-toolbar-title class="accent--text" v-text="title" />
+      </v-btn>
       <v-spacer />
       <h6
         class="catchphrase d-none d-md-block accent--text"
