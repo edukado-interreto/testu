@@ -23,27 +23,49 @@
       />
       <v-spacer />
 
-      <v-sheet id="top-social-icons" class="mx-2 d-none d-md-flex">
-        <v-btn icon href="https://t.me/+8Z1dtayqGzk2Yzk0" target="_blank">
-          <v-img
-            contain
-            src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"
-            max-height="32"
-            max-width="32"
-          />
+      <v-sheet id="top-social-icons" class="mx-1 d-none d-md-flex">
+        <v-btn
+          href="https://t.me/+8Z1dtayqGzk2Yzk0"
+          target="_blank"
+          class="mx-1"
+          small
+          icon
+        >
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-img
+                contain
+                src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"
+                max-height="28"
+                max-width="28"
+                v-bind="attrs"
+                v-on="on"
+              />
+            </template>
+            <span>Telegram</span>
+          </v-tooltip>
         </v-btn>
 
         <v-btn
-          icon
           href="https://www.facebook.com/profile.php?id=100086451753450"
           target="_blank"
+          class="mx-1"
+          small
+          icon
         >
-          <v-img
-            contain
-            src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
-            max-height="32"
-            max-width="32"
-          />
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-img
+                v-bind="attrs"
+                v-on="on"
+                contain
+                src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
+                max-height="28"
+                max-width="28"
+              />
+            </template>
+            <span>Facebook</span>
+          </v-tooltip>
         </v-btn>
       </v-sheet>
 
@@ -198,6 +220,7 @@
               contain
               src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"
               max-height="32"
+              max-width="32"
             />
           </v-list-item-action>
           <v-list-item-content>
@@ -214,6 +237,7 @@
               contain
               src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
               max-height="32"
+              max-width="32"
             />
           </v-list-item-action>
           <v-list-item-content>
