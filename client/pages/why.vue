@@ -16,7 +16,7 @@ export default {
 
 <template>
   <v-container id="page-why">
-    <h1 class="ms-4">{{ $t("Why") }}</h1>
+    <h1 class="ms-4">{{ $t("why.title") }}</h1>
 
     <v-row>
       <v-col cols="12" class="col-lg-6">

@@ -87,17 +87,17 @@
     "video": "O videu",
     "exercice": {
       "explanation1": "Chcete-li vytvořit nové cvičení, musíte přejít do nabídky Domů (1), a pak z nabízených možností vybrat \"+ CREATE A NEW EXERCISE\" (2). Cvičení se po vytvoření objeví na této stránce. Nyní budete přesunuti na další stránku, jak můžete vidět níže.",
-      "explanation2": "Cvičení může být složeno z více jednotek. Jednotky můžete přidávat kliknutím na \"+ PŘIDAT JEDNOTKU\" (3). Každá jednotka daného cvičení musí stejný typ cvičení. Pokud chcete v jednom cvičení zadat různé otázky, musíte pro každou z otázek vytvořit samostatnou jednotku.",
+      "explanation2": "Cvičení může být složeno z více jednotek. Jednotky můžete přidávat kliknutím na \"+ PŘIDAT JEDNOTKU\" (3). Existují různé druhy cvičení. Každá jednotka daného cvičení musí být stejného druhu. Pokud chcete v jednom cvičení zadat různé typy otázek, musíte pro každou z otázek vytvořit samostatnou jednotku.",
       "explanation3": "Jak vidíte vlevo, existuje několik typů jednotek. Můžeme je rozdělit do tří základních skupin: doplňování, výběr z možností, přiřazování a seřazování.",
       "explanation4": "Cvičení typu doplňování obsahuje text nebo větu, ve kterých odstraníte slovo nebo několik slov. Úkolem bude doplnit tyto mezery. U tohoto typu si můžete vybrat jeden ze dvou možných způsobů odpovědi: 1. uvedete několik možných odpovědí na výběr (alespoň jednu správnou a několik nesprávných), 2. necháte pole prázdné, aby zadáním bylo napsat chybějící slovo nebo slova samostatně. V obou případech musíte uvést správnou odpověď (či správné odpovědi).",
       "explanation5": "Cvičení typu výběr z možností umožňuje vytvářet otázky s výběrem odpovědí. Úkolem bude vybrat z nabídky správnou odpověď, případně správné odpovědi. Nabidla odpovědí může obsahovat jednu nebo více správných odpovědí (podle Vašeho rozhodnutí). V obou případech musíte uvést správnou odpověď (či správné odpovědi).",
       "explanation6": "Cvičení typu přiřazování a seřazování umožňuje zadat popisy, otázky nebo obrázky, případně i zvuky a slova nebo odpovědi vztahující se k daným předmětům. V případě cvičení typu přiřazování bude úkolem přiřadit k předmětům správné odpovědi (vytvořit páry předmět - správná odpověď), v případě typu seřazování bude úkolem seřadit do správného pořadí zadaná slova, popisy, otázky nebo obrázky, případně zvuky.",
       "explanation7": "Vysvětlení pro každý typ cvičení najdete po kliknutí na odpovídající záložku v horní části této stránky.",
-      "gap_filling_1": "Cvičení typu doplňování může mít dva podtypy. První, nazvaný \"Nabidka odpovědí\" (1), po kliknutí na mezeru zobrazuje okno s nabídkou možných odpovědi. Druhý, pojmenovaný \"Odpověď na otevřenou otázku\" (8), nenabízí žádnou odpověď, protože úkolem je napsat odpověď samostatně. Ukážeme si, jak psát otázky a zadávat odpovědi, správné i nesprávné.",
+      "gap_filling_1": "Základní typ cvičení je doplňování. Má dva podtypy. První, nazvaný \"Nabídka odpovědí\" (1), po kliknutí na mezeru zobrazuje okno s nabídkou možných odpovědi. Druhý, pojmenovaný \"Odpověď na otevřenou otázku\" (8), nenabízí žádnou odpověď, protože úkolem je napsat odpověď samostatně. Ukážeme si, jak psát otázky a zadávat odpovědi, správné i nesprávné.",
       "gap_filling_2": "Do políčka (2) napište název cvičení a do políčka (3) krátký popis, který vysvětlí pokyny k následujícím otázkám nebo uvede některé souvislosti.",
       "gap_filling_3": "Text cvičení se zadává do rámečku (4). Existují dva způsoby, jak to udělat. Buď můžete otázky a odpovědi psát přímo do rámečku, nebo můžete použít nástroje v levém horním rohu (6). Výsledek bude stejný, v políčku (4) uvidíte stejný text.",
-      "gap_filling_4": "Pokud píšete otázky přímo do rámečku, musí být každá otázka oddělena prázdným řádkem a odpověď musí být uvedena v hranaté závorce a oddělena tímto svislým oddělovačem: |. Před správnou odpovědí (správnými odpověďmi) musíte uvést znaménko +. Pokud existuje více správných odpovědí, při hodnocení výsledků bude za správnou považována kterákoli z nich. Pořadí odpovědi je možné změnit kliknutím na tlačítko \"Promíchat možnosti\" (7).",
-      "gap_filling_5": "Pokud použijete nástroje pro vytváření otázek (6), nejprve klikněte na tlačítko vlevo, abyste vytvořili prázdný řádek pro napsání nové otázky nebo textu. Tam, kde chcete v otázce nebo textu umístit mezeru, kliknete na nástroj vpravo. Otevře se vyskakovací okno, jak je znázorněno na obrázku. Odpovědi můžete psát jednu po druhé. Po stisknutí tlačítka \"Enter\" se potvrdí jejich správnost. Ve výchozím nastavení bude první z nich automaticky považována za správnou a zobrazí se před ní zelené \"v\", ale správnou odpověď (odpovědi) můžete vybrat kliknutím na malé tlačítko před každou odpovědí (8). Můžete také zvolit přidání možnosti \"Ponechat prázdné\" kliknutím na čárkovaný čtvereček vpravo (9).",
+      "gap_filling_4": "Pokud píšete otázky přímo do rámečku, musí být každá otázka oddělena prázdným řádkem a odpověď musí být uvedena v hranaté závorce a oddělena tímto svislým oddělovačem: |. Před správnou odpovědí (správnými odpověďmi) musíte uvést znaménko +. Pokud existuje více správných odpovědí, při hodnocení výsledků bude za správnou považována kterákoli z nich. Pořadí nabízených odpovědí je možné změnit kliknutím na tlačítko \"Promíchat možnosti\" (7).",
+      "gap_filling_5": "Pokud použijete nástroje pro vytváření otázek (6), nejprve klikněte na tlačítko vlevo, abyste vytvořili prázdný řádek pro napsání nové otázky nebo textu. Tam, kde chcete v otázce nebo textu umístit mezeru, kliknete na nástroj vpravo. Otevře se vyskakovací okno, jak je znázorněno na obrázku. Odpovědi můžete psát jednu po druhé. Po stisknutí tlačítka \"Enter\" budou potvrzeny. Ve výchozím nastavení bude první z nich automaticky považována za správnou a zobrazí se před ní zelené \"v\", ale správnou odpověď (odpovědi) můžete vybrat kliknutím na malé tlačítko před každou odpovědí (8). Můžete také zvolit přidání možnosti \"Ponechat prázdné\" kliknutím na čárkovaný čtvereček vpravo (9).",
       "gap_filling_open_answer_1": "Dalším podtypem cvičení na doplňování je \"Odpověď na otevřenou otázku\" (10). Jak vidíte níže, u tohoto typu cvičení není navržena žádná odpověď. Můžete uvést očekávané odpovědi, jednu nebo více, stejným způsobem jako u prvního podtypu tohoto cvičení - pomocí nástroje nebo přímo v rámečku (11). Můžete také navrhnout nesprávné odpovědi, které se zobrazí až při opravě. \nJestliže někdo použil jednu z těch uvedených nesprávných odpovědí, při hodnocení se ukáže červené X, napíše-li správnou odpověď, ukáže se zelené V, a pokud uvedl jinou odpověď, nezobrazí se nic.",
       "gap_filling_open_answer_2": "Další otázky můžete přidat stejným způsobem vynecháním řádku nebo kliknutím na tlačítko vlevo (6). Když zadáte všechny otázky, nezapomeňte svou práci uložit kliknutím na tlačítko \"Uložit\". Kdykoli se můžete vrátit a otázky doplnit nebo v nich provést změny.",
       "name": "Nové cvičení"
@@ -403,6 +403,9 @@
     }
   },
   "why": {
+    "because": "Protože to je:",
+    "more_projects": "Více projektů na",
+    "title": "Proč používat Testu.eu",
     "point1": {
       "subtitle": "Žádné předplatné, žádné skryté poplatky nebo platební brány, opravdu!",
       "title": "Úplně zdarma"
@@ -420,7 +423,12 @@
       "title": "Software s otevřeným zdrojovým kódem (Open source)"
     },
     "point4": {
+      "subtitle": "Testu.eu oslavuje jazyky. Chybí ten váš? Přidejte ho sem:",
       "title": "Vícejazyčný"
+    },
+    "point5": {
+      "subtitle": "Uživatelsky přívětivý, rychlý, intuitivní a snadno ovladatelný.",
+      "title": "Snadno použitelný"
     },
     "point6": {
       "subtitle": "Ponořte se od online lekcí, kurzů, cvičení a testů - je to moderní přístup k učení!",
@@ -433,6 +441,10 @@
     "point8": {
       "subtitle": "Vytváření vzdělávacího obsahu je radost - učte se prostřednictvím tvořivosti!",
       "title": "Zábava"
+    },
+    "point9": {
+      "subtitle": "Opětovně používejte obsah jiných lidí nebo svůj vlastní, snižte množství vytištěného papíru, recyklujte myšlenky, cvičení a otázky!",
+      "title": "Eko-přátelský"
     }
   }
 }

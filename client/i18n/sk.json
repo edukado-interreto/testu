@@ -28,6 +28,7 @@
     "details": "Podrobnosti cvičenia",
     "save": "Uložiť",
     "tags": "Štítky",
+    "title": "Názov",
     "unexpected_response": "Neočakávaná odpoveď servera",
     "unlisted": "Nezaradené vo výsledkoch vyhľadávania"
   },
@@ -404,6 +405,7 @@
   "why": {
     "because": "Pretože to je:",
     "more_projects": "Viac projektov na",
+    "title": "Prečo používať Testu.eu",
     "point1": {
       "subtitle": "Žiadne predplatné, žiadne skryté poplatky alebo platobné brány, vážne!",
       "title": "Absolútne zadarmo"
