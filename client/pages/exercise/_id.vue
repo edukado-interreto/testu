@@ -5,7 +5,6 @@
       <v-col>
         <h1>{{ exercise.name }}</h1>
       </v-col>
-      <v-spacer class="d-print-none"></v-spacer>
       <v-col cols="auto" class="d-print-none">
         <v-btn @click="window_print" plain>
           <v-icon left color="primary">mdi-printer</v-icon>

@@ -48,7 +48,7 @@
 
       <LanguageSwitcher />
 
-      <div v-if="!logged_in" class="ml-3">
+      <div v-if="!logged_in" class="d-none d-md-block ml-3">
         <v-btn
           class="mr-1 text-none grey lighten-4"
           text
@@ -122,6 +122,22 @@
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>{{ $t("main.home") }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item class="d-md-none" text nuxt :to="localePath('/login')">
+          <v-list-item-action>
+            <v-icon>mdi-login</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            {{ $t("main.login") }}
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item class="d-md-none" text nuxt :to="localePath('/signup')">
+          <v-list-item-action>
+            <v-icon>mdi-account-plus</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            {{ $t("main.signup") }}
           </v-list-item-content>
         </v-list-item>
 
