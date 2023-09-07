@@ -14,15 +14,14 @@
     >
       <template v-slot:label>
         <span
+          v-text.trim="choice.value"
           class="black--text"
           :class="{
             'text-decoration-line-through': is_checked(i) && is_error(i),
             'font-weight-bold': is_correct_answer(i),
             'success--text': is_correct_answer(i),
           }"
-        >
-          {{ choice.value }}
-        </span>
+        />
         <template v-if="!silent">
           <v-icon v-if="show_success_feedback[i]" class="mx-1" color="success">
             mdi-check-bold
