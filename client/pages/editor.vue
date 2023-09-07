@@ -16,7 +16,7 @@
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-text-field
-            label="Title"
+            :label="$t('editor.title')"
             v-model="details.title"
             maxlength="100"
             ref="exercise_title_field"

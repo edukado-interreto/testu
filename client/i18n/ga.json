@@ -18,7 +18,8 @@
     "description": "Cur síos",
     "details": "Eolas faoin gcleachtadh",
     "save": "Sábháil",
-    "tags": "Lipéid"
+    "tags": "Lipéid",
+    "title": "Teideal"
   },
   "exam": {
     "created": "Cruthaithe: {date}",
