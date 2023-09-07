@@ -370,6 +370,9 @@ export default {
   margin-bottom: 4em;
   min-height: 50vh;
 }
+.transparent.v-btn--active::before {
+  opacity: 0 !important;
+}
 .catchphrase {
   font-family: "Roboto Slab", Roboto, serif;
   font-size: 120%;
