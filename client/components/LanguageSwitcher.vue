@@ -57,6 +57,9 @@ export default {
 </template>
 
 <style scoped>
+.v-menu__content {
+  max-height: 85vh;
+}
 .v-list-item--dense,
 .v-list--dense .v-list-item {
   min-height: 1.8rem;
