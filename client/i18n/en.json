@@ -232,11 +232,15 @@
       },
       "multiple_choice": {
         "code": "Where is the book?\n[+on the table|in the table]",
-        "name": "Multiple choice"
+        "name": "Multiple choice (for questions)"
       },
       "pairing_pictures_with_sounds": {
         "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
         "name": "Pairing pictures with sounds"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Dog == {sound:dog.mp3}\n\nElephant == {sound:elephant.mp3}\n\nCat == {sound:cat.mp3}",
+        "name": "Pairing text with sounds"
       },
       "pairing_text_with_pictures": {
         "code": "Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",

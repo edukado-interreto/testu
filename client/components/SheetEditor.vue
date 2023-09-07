@@ -629,6 +629,16 @@ export default {
           },
         },
         {
+          name: this.$t("sheet_editor.snippets.pairing_text_with_sounds.name"),
+          img: "match_sound.svg",
+          unit: {
+            type: "pairing",
+            code: this.$t(
+              "sheet_editor.snippets.pairing_text_with_sounds.code",
+            ),
+          },
+        },
+        {
           name: this.$t("sheet_editor.snippets.sorting_pictures.name"),
           img: "sort_pic.svg",
           unit: {
@@ -922,5 +932,8 @@ export default {
 }
 .code {
   font-family: monospace;
+}
+.v-menu__content {
+  max-height: 85vh;
 }
 </style>
