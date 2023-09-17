@@ -8,6 +8,7 @@
       <v-tab>{{ $t("guide.gap_filling") }}</v-tab>
       <v-tab>{{ $t("guide.multiple_choice.name") }}</v-tab>
       <v-tab>{{ $t("guide.sort_and_match.name") }}</v-tab>
+      <v-tab>{{ $t("guide.exam.name") }}</v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab" class="pa-1 mt-5">
@@ -201,6 +202,75 @@
         <br />
         <v-img :src="`/guide/5_video.png`" height="300px" contain></v-img>
       </v-tab-item>
+
+      <!-- 5_create_an_exam -->
+      <v-tab-item>
+        {{ $t("guide.exam.explanation1") }}
+        <br />
+
+        {{ $t("guide.exam.explanation2") }}
+        <br />
+
+        <br />
+
+        <v-img
+          :src="`/guide/6_exam_1.png`"
+          height="400px"
+          contain
+        ></v-img>
+
+        <v-img
+          :src="`/guide/6_exam_2.png`"
+          height="200px"
+          contain
+        ></v-img>
+        {{ $t("guide.exam.explanation3") }}
+        <br />
+
+        <br />
+        {{ $t("guide.exam.explanation4") }}
+
+        <br />
+
+        <br />
+
+        <v-img
+          :src="`/guide/6_exam_3.png`"
+          height="300px"
+          contain
+        ></v-img>
+
+        <br />
+
+        {{ $t("guide.exam.explanation5") }}
+        <br />
+
+
+        <br />
+        <v-img
+          :src="`/guide/6_exam_4.png`"
+          height="300px"
+          contain
+        ></v-img>
+
+        <br />
+
+        {{ $t("guide.exam.explanation6") }}
+        <br />
+        <br />
+
+        {{ $t("guide.exam.explanation7") }}
+        <br />
+        <br />
+        <v-img
+          :src="`/guide/6_exam_5.png`"
+          height="300px"
+          contain
+        ></v-img>
+
+
+      </v-tab-item>
+
     </v-tabs-items>
   </v-container>
 </template>
@@ -221,7 +291,7 @@ export default {
           "#2_gap_filling",
           "#3_multiple_choice",
           "#4_sort_and_match",
-          "#5_video",
+          "#5_create_an_exam",
         ]
 
         this.$router.replace(list_of_contents[val])
