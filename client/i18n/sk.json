@@ -35,6 +35,7 @@
   "exam": {
     "accept_submissions": "Prijať príspevky",
     "confirm": "Túto operáciu nie je možné vrátiť. Pokračovať?",
+    "copy": "Kópia",
     "created": "Vytvorené: {date}",
     "delete": "Vymazať test",
     "description": "Popis testu",
@@ -145,6 +146,7 @@
     "email_is_verified": "Vaša emailová adresa bola overená! Teraz sa môžete prihlásiť.",
     "login": "Prihlásiť sa",
     "mail_invalid": "E-mail musí byť platný",
+    "no_account_yet": "Ešte nemáte konto?",
     "page_title": "Prihlásiť sa",
     "password": "Heslo",
     "password_reset": "Resetovanie hesla",
@@ -231,7 +233,7 @@
       },
       "multiple_choice": {
         "code": "Kde je kniha?\n[+na stole|v stole]",
-        "name": "Viac možností"
+        "name": "Viac možností (pre otázky)"
       },
       "pairing_pictures_with_sounds": {
         "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
@@ -240,6 +242,10 @@
       "pairing_text_with_pictures": {
         "code": "Pes == {img:dog.jpeg}\n\nSlon == {img:elephant.jpeg}\n\nMačka == {img:cat.jpeg}",
         "name": "Spárovať text s obrázkami"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Pes == {sound:dog.mp3}\n\nSlon == {sound:elephant.mp3}\n\nMačka == {sound:cat.mp3}",
+        "name": "Spárovať text so zvukmi"
       },
       "pairing_text_with_text": {
         "code": "Čerešňa == Červená\n\nCitrón == Žltý\n\nBrokolica == Zelená",

@@ -35,6 +35,7 @@
   "exam": {
     "accept_submissions": "Einsendungen annehmen",
     "confirm": "Diese Operation kann nicht rückgängig gemacht werden. Möchten Sie trotzdem fortfahren?",
+    "copy": "Kopieren",
     "created": "Erstellt: Datum",
     "delete": "Prüfung löschen",
     "description": "Prüfungsbeschreibung",
@@ -127,7 +128,8 @@
   },
   "langs": {
     "en": "Englisch",
-    "eo": "Esperanto"
+    "eo": "Esperanto",
+    "help": "Hilf uns, die Webseite zu übersetzen"
   },
   "learn": {
     "date": "Datum",
@@ -144,8 +146,12 @@
     "email_is_verified": "Ihre Emai-Adresse wurde bestätigt. Sie können sich nun einloggen.",
     "login": "Login",
     "mail_invalid": "Gültige Email-Adresse erforderlich",
+    "no_account_yet": "Sie haben noch kein Konto?",
     "page_title": "Login",
     "password": "Passwort",
+    "password_reset": "Passwort zurücksetzen",
+    "password_reset_done": "Ihr Passwort wurde erfolgreich zurückgesetzt",
+    "password_reset_sent": "An Ihre E-Mail-Adresse wurde ein Link zum Zurücksetzen Ihres Passworts gesendet.",
     "required_field": "Erforderliches Feld",
     "resend_link": "Link erneut senden",
     "signup": "bei TestU anmelden",
@@ -176,7 +182,8 @@
     "social": "Soziales",
     "source_code": "Quellcode",
     "submit": "Einreichen",
-    "terms": "Nutzungsbedingungen"
+    "terms": "Nutzungsbedingungen",
+    "why": "Warum"
   },
   "review": {
     "exam": "Prüfung wiederholen",
@@ -226,7 +233,7 @@
       },
       "multiple_choice": {
         "code": "Wo ist das Buch?\n[+auf dem Tisch|im Tisch]",
-        "name": "Multiple choice"
+        "name": "Multiple choice (für Fragen)"
       },
       "pairing_pictures_with_sounds": {
         "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
@@ -235,6 +242,10 @@
       "pairing_text_with_pictures": {
         "code": "Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",
         "name": "Text mit Bild verbinden"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Hund == {sound:dog.mp3}\n\nElefant == {sound:elephant.mp3}\n\nKatze == {sound:cat.mp3}",
+        "name": "Text mit Tönen kombinieren"
       },
       "pairing_text_with_text": {
         "code": "Kirsche == Rot\n\nZitrone == Gelb\n\nBrokkoli == Grün",
@@ -395,6 +406,51 @@
       "text4": "Der Anbieter ist berechtigt, nach Ankündigung per E-Mail innerhalb von 4 Wochen seine Rechte und Pflichten aus diesem Nutzungsverhältnis ganz oder teilweise auf einen Dritten zu übertragen.",
       "text5": "Kontaktinformationen für den Anbieter oder die Administratoren der Website finden Sie auf der folgenden Seite {link}.",
       "title": "Schlussbestimmungen"
+    }
+  },
+  "why": {
+    "because": "Weil es ist:",
+    "more_projects": "Weitere Projekte unter",
+    "title": "Warum Testu.eu verwenden?",
+    "point1": {
+      "subtitle": "Keine Abos, keine versteckten Kosten oder Bezahlschranken, im Ernst!",
+      "title": "Absolut kostenlos"
+    },
+    "point10": {
+      "subtitle": "Dank des Erasmus+ Programms sowie der Slowakischen Nationalen Agentur kann man testu.eu kostenlos verwenden!",
+      "title": "Von der Europäischen Kommission offiziell gefördert"
+    },
+    "point2": {
+      "subtitle": "Du kannst es frei nutzen und selbst Inhalte erstellen.",
+      "title": "CC0-lizensierte Inhalte"
+    },
+    "point3": {
+      "subtitle": "Nichts Verborgenes.",
+      "title": "Open source"
+    },
+    "point4": {
+      "subtitle": "Testu.eu feiert die Sprachen. Fehlt Deine noch? Ergänze sie hier:",
+      "title": "Mehrsprachig"
+    },
+    "point5": {
+      "subtitle": "Nutzerfreundlich, schnell, intuitiv und leicht zu navigieren.",
+      "title": "Leicht zu handhaben"
+    },
+    "point6": {
+      "subtitle": "Tauche ein die Online-Übungen und Tests – in eine moderne Art des Lernens!",
+      "title": "Online"
+    },
+    "point7": {
+      "subtitle": "Lernen ohne Grenzen, Lehren ohne Grenzen – Kreiere neue Inhalte oder nutze existierende nach!",
+      "title": "Nützlich"
+    },
+    "point8": {
+      "subtitle": "Das Kreieren von Bildungsinhalten macht Spaß – hab Freude daran, kreativ zu sein!",
+      "title": "Spaß"
+    },
+    "point9": {
+      "subtitle": "Das Nachnutzen von Inhalten, die andere oder Du selbst erstellt haben, reduziert die Menge von bedrucktem Papier. Recycle Ideen, Übungen und Fragen!",
+      "title": "Umweltfreundlich"
     }
   }
 }

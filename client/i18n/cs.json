@@ -35,6 +35,7 @@
   "exam": {
     "accept_submissions": "Povolit přístup",
     "confirm": "Tuto operaci nelze vrátit. Pokračovat?",
+    "copy": "Kopírovat",
     "created": "Vytvořeno: {date}",
     "delete": "Smazat zkoušku",
     "description": "Popis zkoušky",
@@ -145,6 +146,7 @@
     "email_is_verified": "Váš e-mail je ověřen! Nyní se můžete přihlásit.",
     "login": "Přihlášení",
     "mail_invalid": "E-mailová adresa musí být platná",
+    "no_account_yet": "Nemáte ještě účet?",
     "page_title": "Přihlášení",
     "password": "Heslo",
     "password_reset": "Resetování hesla",
@@ -231,15 +233,19 @@
       },
       "multiple_choice": {
         "code": "Kde je kniha?\n[+na stole|ve stole]",
-        "name": "Výběr z možností"
+        "name": "Výběr z možností (několik odpovědí na otázku)"
       },
       "pairing_pictures_with_sounds": {
         "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
-        "name": "Přiřazování obrázků ke zvukům"
+        "name": "Přiřazování obrázku ke zvuku"
       },
       "pairing_text_with_pictures": {
-        "code": "Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",
-        "name": "Přiřazování textu k obrázkům"
+        "code": "pes == {img:dog.jpeg}\n\nslon == {img:elephant.jpeg}\n\nkočka == {img:cat.jpeg}",
+        "name": "Přiřazování textu k obrázku"
+      },
+      "pairing_text_with_sounds": {
+        "code": "pes == {sound:dog.mp3}\nslon == {sound:elephant.mp3}\nkočka == {sound:cat.mp3}",
+        "name": "Přiřazování textu ke zvuku"
       },
       "pairing_text_with_text": {
         "code": "třešeň == červená barva\n\ncitron == žlutá barva\n\nbrokolice == zelená barva",
@@ -416,7 +422,7 @@
     },
     "point2": {
       "subtitle": "Můžete svobodně používat a vytvářet obsah, nemusíte ani uvádět zdroje.",
-      "title": "licencovaný obsah CC0"
+      "title": "Licencovaný obsah CC0"
     },
     "point3": {
       "subtitle": "Nic není skryto.",
@@ -431,16 +437,16 @@
       "title": "Snadno použitelný"
     },
     "point6": {
-      "subtitle": "Ponořte se od online lekcí, kurzů, cvičení a testů - je to moderní přístup k učení!",
+      "subtitle": "Využijte lekce, kurzy, cvičení a testy online - je to moderní přístup k učení!",
       "title": "Online"
     },
     "point7": {
-      "subtitle": "Učení bez hranic, učení bez omezení - ponořte se do tvorby obsahu nebo používejte existující zdroje.",
+      "subtitle": "Učení bez hranic, učení bez omezení - zapojte se do tvoření obsahu nebo používejte existující materiály.",
       "title": "Užitečný"
     },
     "point8": {
-      "subtitle": "Vytváření vzdělávacího obsahu je radost - učte se prostřednictvím tvořivosti!",
-      "title": "Zábava"
+      "subtitle": "Vytváření vzdělávacího obsahu je radost - učte se díky své tvořivosti!",
+      "title": "Zábavný"
     },
     "point9": {
       "subtitle": "Opětovně používejte obsah jiných lidí nebo svůj vlastní, snižte množství vytištěného papíru, recyklujte myšlenky, cvičení a otázky!",

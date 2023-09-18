@@ -35,6 +35,7 @@
   "exam": {
     "accept_submissions": "Accepter les soumissions",
     "confirm": "Cette opération ne peut pas être annulée. Continuer ?",
+    "copy": "Copier",
     "created": "Créé le : {date}",
     "delete": "Supprimer l’examen",
     "description": "Description de l’examen",
@@ -71,8 +72,10 @@
     "mistake_explanation": "Explication :",
     "misuse": "Signaler un abus",
     "pdf": "PDF",
+    "report_mistake_to_creator": "Signaler une erreur à {username}",
     "report_misuse_to_administrators": "Signaler un abus aux administrateurs",
     "submit_mistake_confirm": "Merci ! Le créateur recevra une notification.",
+    "submit_misuse_confirm": "Merci d'aider à garder Testu.eu convenable.",
     "target_language": "Langue cible",
     "target_language_is": "Langue cible :",
     "unlisted": "Cet exercice n’est pas listé dans les résultats de recherche"
@@ -81,7 +84,43 @@
     "about": "Comment créer des exercices",
     "about_text": "Pour créer un nouvel exercice, vous devez d'abord vous inscrire et vous connecter.",
     "construction": "En cours de construction",
-    "video": "à propos d'une vidéo"
+    "gap_filling": "Exercice à trous",
+    "video": "à propos d'une vidéo",
+    "exercice": {
+      "explanation1": "Pour créer un nouvel exercice, vous devez être dans l'Accueil (1) puis sélectionnez \"+ CRÉER UN NOUVEL EXERCICE\" (2). Une fois créés, ils apparaîtront sur cette page. Mais pour le moment vous allez être emmenés à la page suivante comme vous pouvez le voir ci-dessous.",
+      "explanation2": "Un exercice peut être composé de plusieurs unités. Vous pouvez en ajouter en cliquant sur \"AJOUTER UNE UNITÉ\" (3). Il y a différents types d'exercices mais vous ne pouvez en utiliser qu'un type par unité. Si vous souhaitez mélanger différents types de questions dans un même exercice, vous devrez le faire dans des unités séparées pour chaque type de questions voulues.",
+      "explanation3": "Comme visible sur la gauche, il y a de nombreux types d'unités. Toutefois nous pouvons les regrouper en trois familles: exercices à trous, à choix multiples ou de triage/faire correspondre.",
+      "explanation4": "Un exercice à trou est un texte ou une phrase auquel l'on retire un ou plusieurs mots. Pour ces questions, vous pouvez choisir de proposer des réponses (au moins une correcte et quelques incorrectes) ou vous pouvez laisser un espace vierge et la personne répondant à la question devra écrire la réponse dans ledit espace. Dans chaque cas, vous indiquerez quelle est la ou les réponses correctes lors de la création de la question.",
+      "explanation5": "Le choix multiple vous permet de créer une question avec un choix de réponse. Il peut y avoir une ou plusieurs bonnes réponses tout comme les exercices à trou, vous devrez indiquer quelle est la ou les réponses correctes lors de la création de la question.",
+      "explanation6": "Pour les questions de trier et faire correspondre, vous aurez le choix d'ajouter une question, image, réponses, mots ou encore sons en liens avec les items donnés. Les apprentis auront à associer les items avec les réponses ou, si vous choisissez une question de triage, ils devront les trier dans le bon ordre.",
+      "explanation7": "Vous pouvez trouver davantage d'explication sur chaque famille en cliquant sur les onglets en haut de la page.",
+      "gap_filling_1": "Le type d'exercice par défaut est l'exercice à trou. Il y a deux genres d'exercices à trou. Le premier (1) est nommé \"Défaut\" et montre les réponses proposés lorsque l'on clique sur le trou. Le second genre est la \"Réponse ouverte\" (8) où il n'y a pas de propositions et l'apprenti doit écrire directement la réponse. Nous verrons comment écrire les questions et comment proposer des réponses, des fausses et les bonnes.",
+      "gap_filling_2": "Dans ce champs (2), vous pouvez écrire le titre de l'exercice et dans celui-ci (3) une brève description pour expliquer les consignes des questions ou donner du contexte.",
+      "gap_filling_3": "Les questions elles-mêmes sont écrites dans cette boîte (4). Il y a toujours deux manières de procéder. Vous pouvez écrire directement la question et les réponses dans l'emplacement ou vous pouvez utiliser les outils dans son coin en haut à gauche (6). Le résultat sera identique, vous verrez le même texte dans la boîte (4).",
+      "gap_filling_4": "Si vous écrivez les questions directement dans la boîte, chaque question sera séparée par une ligne vierge et les réponses doivent être données entre des crochets [ ] et séparées par un séparateur vertical |. De plus vous devez ajouter un + devant la ou les bonnes réponses. S'il y a plus d'une réponse correcte, n'importe laquelle de celles-cis sera considérée comme correcte pour le résultat. Vous pouvez également mélanger les réponses proposées en cliquant sur \"Mélanger les options\" (7).",
+      "gap_filling_5": "Si vous utilisez les outils pour créer les questions (6), celui sur la gauche vous permettra de commencer une nouvelle question. Vous pourrez écrire la question ou le texte et, lorsque vous souhaitez insérer un trou à compléter, cliquer sur l'outil de droite. Une fenêtre pop-up s'ouvrira, comme montré sur l'image. Vous pourrez y écrire les réponses une par une. Elles seront validées lorsque vous appuierez sur la touche \"Entrée\" de votre clavier. Par défaut, la première sera considérée automatiquement comme étant la correcte et un \"v\" vert sera montrée devant elle. Cependant vous pouvez sélectionner si les réponses sont correctes ou non en cochant/décochant le petit bouton présent devant chaque réponse (8). Vous pouvez également choisir d'ajouter une option \"laisser un trou\" en cliquant sur le carré en pointillant situé sur la droite (9).",
+      "gap_filling_open_answer_1": "L'autre type d'exercices à trou est la \"Réponse ouverte\" (10). Comme vous pouvez le voir ci-dessous, pour ce type d'exercices il n'y a pas de réponses proposées. Vous pouvez donner des réponses attendues, une ou plusieurs, comme nous venons de le voir, avec l'outil correspondant ou directement dans la boîte (11). Vous pouvez indiquer des réponses fausses, elles n'apparaîtront pas mais, durant la correction, un X rouge sera affiché si quelqu'un a écrit une de ces mauvaises réponses, rien s'il s'agit d'une réponse autre et un V vert s'il s'agit d'une réponse correcte.",
+      "gap_filling_open_answer_2": "Vous pouvez ajouter d'autres questions, comme précédemment, en sautant une ligne ou en cliquant sur l'outil de gauche (6). Lorsque vous êtes satisfait avec vos questions, n'oubliez pas de cliquer sur le bouton \"Sauvegarder\" pour ne pas perdre votre travail. Vous pouvez toujours revenir ultérieurement pour ajouter ou modifier des questions.",
+      "name": "Nouvel exercice"
+    },
+    "multiple_choice": {
+      "explanation1": "Si vous préférez montrer les réponses non en comme des trous mais comme un choix multiple ayant les réponses sous les questions et des cases à cocher, vous pouvez sélectionner le type \"Choix Multiple\" (12).",
+      "explanation2": "Dans la liste d'exercices qui apparaît lorsque vous ajoutez une unité, les types \"Questions sur une image, vrai ou faux\" et \"Questions sur un texte, choix multiple\" vous donne deux autres exemples de comment utiliser ce type de questions.",
+      "explanation3": "Comme précédemment, vous pouvez donner un titre à la série de questions. Vous pouvez également ajouter une description, comme par exemple un texte sur lequel portera les questions ou encore une introduction à celles-cis.",
+      "explanation4": "Les questions et les réponses peuvent être ajoutées, comme précédemment, en les écrivant directement dans la boîte (13) ou avec les outils (6) vu dans la partie des exercices à trous.\nLa réponse correcte doit avoir un \"+\" devant elle et les réponses doivent être séparées par un \"|\". S'il y a plus d'une réponse correcte, la question sera marquée comme répondue correctement une fois toutes les bonnes réponses cochées.",
+      "explanation5": "Vous avez aussi la possibilité d'ajouter des images ou sons dans la description en cliquant sur les trois points (14) et en les sélectionnant dans votre ordinateur. Vous pouvez également poser des questions à propos du son ou de l'image. Vous pouvez en ajouter autant que vous le souhaitez et choisir où vous voulez les voir dans le texte en déplaçant les éléments entre les accolades {} (15).",
+      "name": "Choix multiple"
+    },
+    "sort_and_match": {
+      "explanation1": "La dernière famille d'exercices est \"trier et faire correspondre\" aussi appeler association (texte avec texte, texte avec image, image avec son et trier les images). Vous pouvez sélectionner ce type d'exercice dans le menu déroulant des types (16) ou dans la liste d'ajout d'unités.",
+      "explanation1_1": "Le plus basique consiste à faire correspondre des mots. Pour les créer, utilisez l'outil (17) ou écrivez les directement dans la boîte (18).",
+      "explanation2": "Chaque correspondance doit être écrite avec une part sur la gauche et l'autre sur la droite du symbole \"==\" avec un saut de ligne entre chacune. Dans cet exemple, il y a des fruits dans une colonne et des couleurs dans l'autre. Mais il peut s'agir de traductions, de nombres ou même d'images de sons ou de vidéos. Le plus important est de mettre les mêmes types dans les mêmes colonnes. Les propositions seront mélangées pour l'exercice.",
+      "explanation3": "Pour ajouter images ou sons, vous devez utiliser les boutons (19) et sélectionner le fichier dans l'ordinateur. Les élements seront alors créés entre les accolades {} comme avant. Après cela, vous pourrez les déplacer à l'endroit de votre choix. Pour ajouter une vidéo, vous devez sélectionner le bouton de droite (19) et vous devez renseigner l'adresse url de la vidéo (par exemple sur youtube ou vimeo...). Vous ne pouvez pas télécharger directement une vidéo depuis votre ordinateur.",
+      "explanation4": "Vous pouvez associer un texte avec un autre ou encore une image avec un son comme montré dans l'exemple (20).",
+      "explanation5": "Si vous n'écrivez pas le symbole \"==\" pour lier quelque chose avec la proposition, comme indiqué en (21), l'exercice devient un triage où l'on doit mettre les propositions dans le bon ordre. Vous pouvez le faire avec des images, textes, sons ou vidéos.",
+      "name": "Trier et faire correspondre",
+      "video": "Vous pouvez aussi ajouter une vidéo, directement dans le champs descriptif, en y écrivant l'adresse url de la vidéo entre des accolades {} et en ajoutant \"vidéo:\" au début comme fait en (22). Il n'y a pas de bouton pour le faire mais vous pouvez avoir un exemple écrit en sélectionnant l'unité: \"Question sur une vidéo, réponse ouverte\"."
+    }
   },
   "home": {
     "create_exercise": "Créer un nouvel exercice",
@@ -89,7 +128,8 @@
   },
   "langs": {
     "en": "Anglais",
-    "eo": "Espéranto"
+    "eo": "Espéranto",
+    "help": "Aidez-nous à traduire le site"
   },
   "learn": {
     "date": "Date",
@@ -106,8 +146,12 @@
     "email_is_verified": "Votre e-mail est vérifié ! Vous pouvez maintenant vous connecter.",
     "login": "Se connecter",
     "mail_invalid": "L’adresse électronique n’est pas valide",
+    "no_account_yet": "Vous ne possédez pas encore un compte ?",
     "page_title": "Connexion",
     "password": "Mot de passe",
+    "password_reset": "Réinitialisation du mot de passe",
+    "password_reset_done": "Votre mot de passe a été réinitialisé avec succès",
+    "password_reset_sent": "Un lien a été envoyé à votre adresse email afin de réinitialiser votre mot de passe.",
     "required_field": "Champ obligatoire",
     "resend_link": "Renvoyer le lien",
     "signup": "S’inscrire à TestU",
@@ -135,9 +179,11 @@
     "privacy": "Politique de confidentialité",
     "settings": "Paramètres du compte",
     "signup": "Inscription",
+    "social": "Social",
     "source_code": "Code source",
     "submit": "Envoyer",
-    "terms": "Conditions d’utilisation"
+    "terms": "Conditions d’utilisation",
+    "why": "Pourquoi ?"
   },
   "review": {
     "exam": "Révision d’examen",
@@ -177,24 +223,57 @@
       "blank_unit": {
         "name": "Unité vide"
       },
+      "gap_filling_dropdown": {
+        "code": "Le livre est [+sur|dans] la table.",
+        "name": "Exercice à trou, liste déroulante"
+      },
+      "gap_filling_open_answer": {
+        "code": "Le livre est [+sur|dans] la table.",
+        "name": "Exercice à trou, réponse ouverte"
+      },
       "multiple_choice": {
-        "name": "Choix multiple"
+        "code": "Où est le livre ?\n[+sur la table|dans la table]",
+        "name": "Choix multiple (pour questions)"
       },
       "pairing_pictures_with_sounds": {
+        "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
         "name": "Associer des images avec des sons"
       },
       "pairing_text_with_pictures": {
+        "code": "Chien == {img:dog.jpeg}\n\nÉléphant == {img:elephant.jpeg}\n\nChat == {img:cat.jpeg}",
         "name": "Associer du texte à des images"
       },
+      "pairing_text_with_sounds": {
+        "code": "Chien == {sound:dog.mp3}\n\nÉléphant == {sound:elephant.mp3}\n\nChat == {sound:cat.mp3}",
+        "name": "Associer du texte à des sons"
+      },
       "pairing_text_with_text": {
+        "code": "Cerise == Rouge\n\nCitron == Jaune\n\nBrocoli == Vert",
         "name": "Associer du texte avec du texte"
       },
+      "questions_about_a_picture_true_or_false": {
+        "code": "L'animal sur l'image est: [Un chien|+Un chat|Un éléphant]\n\nEst-ce un animal sauvage ou de compagnie ? [+Un animal de compagnie|Un animal sauvage]",
+        "description": "{img:cat.jpeg}",
+        "name": "Question sur une image, vrai ou faux"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Quel animal produit ce son?\n[+Chat|Chien|Éléphant]\n\nQuel est le terme utilisé pour décrire le son produit par cet animal?\n[+Miaulement|Aboiement|Barrissement]",
+        "description": "Écoutez l'audio et répondez aux questions:\n\n{sound:cat.mp3}",
+        "name": "Questions sur un son, liste déroulante"
+      },
       "questions_about_a_text_multiple_choice": {
+        "code": "Qui défia le lièvre à la course? [Le lièvre|+La tortue|Un oiseau]\n\nPourquoi le lièvre a-t-il fait une sieste durant la course? [Il était fatigué|Il voulait donner à la tortue une chance de le rattraper|+Il était confiant en sa future victoire]\n\nQui gagna la course? [Le lièvre|+La tortue|Un oiseaux]",
         "description": "Il était une fois un lièvre et une tortue, se disputant toujours pour savoir qui était le plus rapide.\nLa tortue défia le lièvre à une course et le lièvre accepta, pensant que ce serait une victoire facile.\n\nLa course commença et le lièvre décolla rapidement, laissant la tortue derrière lui. Le lièvre, devenu trop confiant, décida de faire une sieste. Pendant ce temps, la tortue continuait à avancer régulièrement vers la ligne d'arrivée.\n\nQuand le lièvre se réveilla, il se rendit compte que la tortue était presque à la ligne d'arrivée. Le lièvre essaya de rattraper son retard, mais il était trop tard. La tortue avait gagné la course.",
         "name": "Questions sur un texte, choix multiple"
       },
       "questions_about_a_video_open_answer": {
+        "code": "Où est situé l'endroit?\n[]\n\nQui l'a construit?\n[]",
+        "description": "Regardez la vidéo et répondez aux questions.\n\n{video:https://www.youtube.com/watch?v=chii_rEU30g}",
         "name": "Questions sur une vidéo, réponse ouverte"
+      },
+      "sorting_pictures": {
+        "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
+        "name": "Trier des images"
       }
     },
     "types": {
@@ -253,7 +332,7 @@
       "text1": "Vous pouvez utiliser certains de nos services sans être inscrit au site. Pour pouvoir profiter de toutes les fonctions du site, vous devez créer un compte d’utilisateur. L’inscription est gratuite.",
       "text2": "Les personnes âgées de plus de 13 ans sont autorisées à s’inscrire. L’utilisation du site par des mineurs est autorisée uniquement avec l’accord de son tuteur légal.",
       "text3": "Vous devez vous assurer que les informations que vous entrez en vous inscrivant sont vraies et que vous les mettrez toujours à jour.",
-      "text4": "En vous inscrivant, vous ne devez pas utiliser d’informations (par exemple nom d’utilisateur, nom, image de profil, etc.) qui enfreignent les droits de quelqu’un d’autre, en particulier le droit des marques et le droit au nom. Les données illégales ou contraires à ces conditions d’utilisation ne sont pas permises non plus.",
+      "text4": "En vous inscrivant, l'utilisation d’informations (par exemple: nom d’utilisateur, nom, textes d'exercices, images, fichiers audios ou vidéos, etc.) portant atteinte aux droits d'un tiers, y comprit les marques déposées et les droit réservés, est prohibée. Les données illégales ou contraires à ces conditions d’utilisation ne sont pas permises non plus.",
       "text5": "Vous devez garder secret le mot de passe que vous choisissez à l’inscription.",
       "text6": "Vous consentez à ce que les données de votre profil (telles que votre nom d’utilisateur, les progrès linguistiques, le statut de connexion, la langue utilisée, la date d’inscription et la dernière date de connexion et d’autres informations que vous indiquez volontairement, y compris la photo de profil) soient publiques. L’adresse électronique et le mot de passe ne seront pas rendus publics.",
       "text7": "L’inscription au site est finalisée au moyen d’un lien d’activation. Après inscription, vous recevrez automatiquement un courriel du site qui contient ce lien d’activation.",
@@ -330,9 +409,44 @@
     }
   },
   "why": {
+    "because": "Car c'est:",
     "more_projects": "Plus de projets sur",
+    "title": "Pourquoi utiliser Testu.eu",
+    "point1": {
+      "subtitle": "sans abonnement, pas de paiement caché ou paywall, sérieusement !",
+      "title": "Totalement gratuit"
+    },
+    "point10": {
+      "subtitle": "Grace au programme Erasmus+ et l'Agence Nationale Slovaque vous pouvez utiliser testu.eu gratuitement !",
+      "title": "Soutenu officiellement par la Comission Européenne"
+    },
+    "point2": {
+      "subtitle": "Vous être libre d'utiliser et créer du contenu, aucun besoin d'attribution non plus.",
+      "title": "Contenu sous licence CC0"
+    },
+    "point3": {
+      "subtitle": "Rien n'est caché.",
+      "title": "Open source"
+    },
+    "point4": {
+      "subtitle": "Testu.eu célèbre les langues. La votre manque ? Ajoutez là ici:",
+      "title": "Multilingue"
+    },
+    "point5": {
+      "subtitle": "Facile d'utilisation, rapide, intuitive et simple à naviguer.",
+      "title": "Facile à utiliser"
+    },
+    "point6": {
+      "subtitle": "Immergez vous en ligne dans des leçons, cours, exercices et tests – une approche moderne à l'apprentissage !",
+      "title": "En ligne"
+    },
     "point7": {
+      "subtitle": "Apprendre sans frontières, enseigner sans limites – plongez dans la création de contenus ou la réutilisation de ressources existantes.",
       "title": "Utile"
+    },
+    "point8": {
+      "subtitle": "Concevoir des contenus éducatifs est une joie – adopter apprendre par la créativité !",
+      "title": "Sympa"
     },
     "point9": {
       "subtitle": "Réutilisez le contenu des autres ou le vôtre, réduisez la quantité d'impression, recyclez les idées, les exercices et les questions!",

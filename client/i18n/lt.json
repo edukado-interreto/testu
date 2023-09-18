@@ -35,6 +35,7 @@
   "exam": {
     "accept_submissions": "Priimti pateiktus dokumentus",
     "confirm": "Operacijos atšaukti negalima. Tęsti?",
+    "copy": "Kopijuoti",
     "created": "Sukurta: {data}",
     "delete": "Ištrinti egzaminą",
     "description": "Egzamino aprašymas",
@@ -127,7 +128,8 @@
   },
   "langs": {
     "en": "Anglų k.",
-    "eo": "Esperanto k."
+    "eo": "Esperanto k.",
+    "help": "Padėkite mums išversti tinklalapį"
   },
   "learn": {
     "date": "Data",

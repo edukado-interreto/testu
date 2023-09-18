@@ -85,7 +85,17 @@
     "about_text": "To create new exercice, you'll first need to register and login in the website.",
     "construction": "Under construction",
     "gap_filling": "Gap Filling",
-    "video": "About a video",
+    "video": "about a video",
+    "exam": {
+      "explanation1": "When you did an exercise, you can transform it in an exam. To do that, you have to be on the page of the exercise and click on the three dots on the right upper corner of the exercise (1).",
+      "explanation2": "You can do an exam from your own exercises, that you'll find in ”My learning” or you can use other's exercises in the ”Home” part. If you use someone else's exercise, your exam will change if the owner of the exercise changes the exercise itself.",
+      "explanation3": "When you click on the three dots (1), four options appear. To make an exam, you have to click on the option ”Create an exam” (2). It will then lead you to the next page where you will be able to customize your exam.",
+      "explanation4": "As you can see below, you can choose the title of your exam (3). It will then show on the upper part (4). You can also add a description of the exam (5) and save it by clicking on the ”save” button (6).",
+      "explanation5": "The page will then change and you will see the page as below, with the title you chose. In the box ”link” (7), you have the link to your exam. You can copy it by clicking on the left icon (and send it to your students) or you can click on ”VIEW” to see your exam as your students will.",
+      "explanation6": "You can also go back to the exercise if you want to change it by clicking on (8) ”Go to the exercise”. In the box ”Submissions” (9), there will be the exams submitted by the students and you will be able to see their results and check every submission.",
+      "explanation7": "If you want to change or control the details of the exam, there are always in the box (10) at the bottom of that page. All your exams will be stored in the ”My teaching” part (11).",
+      "name": "Create an exam"
+    },
     "exercice": {
       "explanation1": "To create a new exercise, you have to be in the Home menu (1), then you can select ”+ CREATE A NEW EXERCISE” (2). Once created, they'll appear on this page. But for now you will be moved to the next page as you can see just below.",
       "explanation2": "An exercise can be composed in multiple units. You can add units by clicking on ”+ ADD UNIT” (3). There are different kinds of exercises but in each unit you can only use the same kind. If you want to mix different types of questions in an exercise, you'll have to do separate units for each type of questions you want.",
@@ -120,16 +130,6 @@
       "explanation5": "If you don't write the ”==” symbol to pair something with the proposition, as shown in (21), the exercise become a sorting exercise where you have to put the proposition in the right order. You can do it with pictures, text, sounds or video.",
       "name": "Sort and Match",
       "video": "You can also add a video, directly in the description box, by writing the url address of the video between curly brackets and with ”video:” before it, as shown in (22). There is no button to do it but you can have a written example by selecting the type of unit: ”Questions about a video, open answer”."
-    },
-    "exam" : {
-      "explanation1": "When you did an exercise, you can transform it in an exam. To do that, you have to be on the page of the exercise and click on the three dots on the right upper corner of the exercise (1).",
-      "explanation2": "You can do an exam from your own exercises, that you'll find in ”My learning” or you can use other's exercises in the ”Home” part. If you use someone else's exercise, your exam will change if the owner of the exercise changes the exercise itself.",
-      "explanation3": "When you click on the three dots (1), four options appear. To make an exam, you have to click on the option ”Create an exam” (2). It will then lead you to the next page where you will be able to customize your exam.",
-      "explanation4": "As you can see below, you can choose the title of your exam (3). It will then show on the upper part (4). You can also add a description of the exam (5) and save it by clicking on the ”save” button (6).",
-      "explanation5": "The page will then change and you will see the page as below, with the title you chose. In the box ”link” (7), you have the link to your exam. You can copy it by clicking on the left icon (and send it to your students) or you can click on ”VIEW” to see your exam as your students will.",
-      "explanation6": "You can also go back to the exercise if you want to change it by clicking on (8) ”Go to the exercise”. In the box ”Submissions” (9), there will be the exams submitted by the students and you will be able to see their results and check every submission. ",
-      "explanation7": "If you want to change or control the details of the exam, there are always in the box (10) at the bottom of that page. All your exams will be stored in the ”My teaching” part (11).",
-      "name" : "Create an exam"
     }
   },
   "home": {
@@ -249,13 +249,13 @@
         "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
         "name": "Pairing pictures with sounds"
       },
-      "pairing_text_with_sounds": {
-        "code": "Dog == {sound:dog.mp3}\n\nElephant == {sound:elephant.mp3}\n\nCat == {sound:cat.mp3}",
-        "name": "Pairing text with sounds"
-      },
       "pairing_text_with_pictures": {
         "code": "Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",
         "name": "Pairing text with pictures"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Dog == {sound:dog.mp3}\n\nElephant == {sound:elephant.mp3}\n\nCat == {sound:cat.mp3}",
+        "name": "Pairing text with sounds"
       },
       "pairing_text_with_text": {
         "code": "Cherry == Red\n\nLemon == Yellow\n\nBroccoli == Green",
@@ -421,6 +421,7 @@
   "why": {
     "because": "Because it is:",
     "more_projects": "More projects at",
+    "title": "Why use Testu.eu",
     "point1": {
       "subtitle": "No subscriptions, no hidden costs or paywalls, seriously!",
       "title": "Absolutely free"
@@ -460,7 +461,6 @@
     "point9": {
       "subtitle": "Reuse the content of others or your own, reduce the amount of printing, recycle ideas, exercises and questions!",
       "title": "Eco-friendly"
-    },
-    "title": "Why use Testu.eu"
+    }
   }
 }

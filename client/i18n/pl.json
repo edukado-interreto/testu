@@ -35,6 +35,7 @@
   "exam": {
     "accept_submissions": "Przyjmowanie zgłoszeń",
     "confirm": "Tej operacji nie można cofnąć. Kontynuować?",
+    "copy": "Kopia",
     "created": "Data utworzenia: {date}",
     "delete": "Usunąć egzamin",
     "description": "Opis egzaminu",
@@ -145,6 +146,7 @@
     "email_is_verified": "Twój e-mail został zweryfikowany! Możesz się teraz zalogować.",
     "login": "Logowanie",
     "mail_invalid": "E-mail musi być ważny",
+    "no_account_yet": "Nie masz jeszcze konta?",
     "page_title": "Nazwa użytkownika (login)",
     "password": "Hasło",
     "password_reset": "Resetowanie hasła",
@@ -231,7 +233,7 @@
       },
       "multiple_choice": {
         "code": "Gdzie jest książka?\n[+na stole| w stole]",
-        "name": "Wielokrotny wybór"
+        "name": "Wielokrotny wybór (w przypadku pytań)"
       },
       "pairing_pictures_with_sounds": {
         "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
@@ -240,6 +242,10 @@
       "pairing_text_with_pictures": {
         "code": "Pies == {img:pies.jpeg}\n\nSłoń == {img:słoń.jpeg}\n\nKot == {img:kot.jpeg}",
         "name": "Łączenie tekstu z obrazkami"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Pies == {sound:dog.mp3}\n\nSłoń == {sound:elephant.mp3}\n\nKot == {sound:cat.mp3}",
+        "name": "Łączenie tekstu z dźwiękami"
       },
       "pairing_text_with_text": {
         "code": "wiśnia == kolor czerwony\n\ncytryna == kolor żółty\n\nbrokuł == kolor zielony",
@@ -405,6 +411,7 @@
   "why": {
     "because": "Ponieważ jest:",
     "more_projects": "Więcej projektów na",
+    "title": "Dlaczego warto korzystać z Testu.eu",
     "point1": {
       "subtitle": "Żadnych subskrypcji, ukrytych kosztów czy pobierania opłat za dostęp, naprawdę!",
       "title": "Całkowicie za darmo"

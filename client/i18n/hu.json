@@ -35,6 +35,7 @@
   "exam": {
     "accept_submissions": "Válaszok fogadása",
     "confirm": "Ez a művelet visszavonhatatlan. Folytatja mégis?",
+    "copy": "Másolás",
     "created": "Létrehozva: {date}",
     "delete": "Vizsga törlése",
     "description": "Vizsga leírása",
@@ -127,7 +128,8 @@
   },
   "langs": {
     "en": "Angol",
-    "eo": "Eszperantó"
+    "eo": "Eszperantó",
+    "help": "Segítsen nekünk az oldal lefordításában."
   },
   "learn": {
     "date": "Dátum",
@@ -144,8 +146,12 @@
     "email_is_verified": "Az e-mail-cím ellenőrzése megtörtént. Most már be tud jelentkezni a fiókjába.",
     "login": "Bejelentkezés",
     "mail_invalid": "Érvénytelen e-mail cím",
+    "no_account_yet": "Még nincs fiókja?",
     "page_title": "Bejelentkezés",
     "password": "Jelszó",
+    "password_reset": "Jelszó megváltoztatása",
+    "password_reset_done": "A jelszó sikeresen módosításra került.",
+    "password_reset_sent": "Egy linket küldtünk az e-mailcímére a jelszó megváltoztatásához.",
     "required_field": "Kötelező mező",
     "resend_link": "Link újraküldése",
     "signup": "Regisztrálás a TestU-ra",
@@ -176,7 +182,8 @@
     "social": "Közösségi media",
     "source_code": "Forráskód",
     "submit": "Beküldés",
-    "terms": "Felhasználási feltételek"
+    "terms": "Felhasználási feltételek",
+    "why": "Miért"
   },
   "review": {
     "exam": "Vizsga megtekintése",
@@ -235,6 +242,10 @@
       "pairing_text_with_pictures": {
         "code": "Kutya =={img:dog.jpeg}\n\nElefánt =={img:elephant.jpeg}\n\nMacska =={img:cat.jpeg}",
         "name": "Szöveg párosítása képpel."
+      },
+      "pairing_text_with_sounds": {
+        "code": "Kutya == {sound:dog.mp3}\n\nElefánt == {sound:elephant.mp3}\n\nMacska == {sound:cat.mp3}",
+        "name": "Szöveg párosítása hangokkal"
       },
       "pairing_text_with_text": {
         "code": "meggy == piros\n\ncitrom == sárga\n\nbrokkoli == zöld",
@@ -395,6 +406,51 @@
       "text4": "Szolgáltató jogosult részben vagy egészben átruházhatja jogait és kötelezettségeit harmadik fél részére a felhasználói jogviszonyból adódóan, méghozzá az e-mailben való kiértesítést követően négy héten belül.",
       "text5": "A szolgáltató vagy adminisztrátor elérhetősége megtalálható a {link} oldalon.",
       "title": "Záró rendelkezések"
+    }
+  },
+  "why": {
+    "because": "Azért, mert:",
+    "more_projects": "További projektek az alábbi címen elérhetők:",
+    "title": "Miért használja a Testu.eu-t",
+    "point1": {
+      "subtitle": "Nem kell előfizetni, nincsenek rejtett költségek, fizetőfalak. És ez valóban így van!",
+      "title": "Teljesen ingyenes"
+    },
+    "point10": {
+      "subtitle": "Az Erasmus+ programnak és a Szlovák Nemzeti Ügynökségnek köszönhetően a testu.eu oldalt ingyenesen használhatja!",
+      "title": "Az Európai Bizottság által hivatalosan támogatott."
+    },
+    "point2": {
+      "subtitle": "Szabadon használhatja a tartalmakat és készíthet is újakat, nincs szükség forrásmegjelölésre sem.",
+      "title": "Tartalmak CC0 licenccel"
+    },
+    "point3": {
+      "subtitle": "Nincsenek rejtett dolgok.",
+      "title": "Nyílt forráskód"
+    },
+    "point4": {
+      "subtitle": "A Testu.eu a nyelvekért van. Az Ön nyelve nem található meg? Adja hozzá itt:",
+      "title": "Többnyelvű"
+    },
+    "point5": {
+      "subtitle": "Felhasználóbarát, gyors, intuitív, könnyen kezelhető.",
+      "title": "Könnyen használható"
+    },
+    "point6": {
+      "subtitle": "Merüljön el az online leckék, kurzusok, feladatok és tesztek világában – modern megközelítés a tanuláshoz.",
+      "title": "Online"
+    },
+    "point7": {
+      "subtitle": "Tanulás határok nélkül, tanítás korlátok nélkül - merüljön el a tartalomkészítésben vagy használja fel újra a meglévő forrásokat.",
+      "title": "Hasznos"
+    },
+    "point8": {
+      "subtitle": "Az oktatási tartalmak készítése öröm – támogassa kreativitásával a tanulást!",
+      "title": "Szórakoztató"
+    },
+    "point9": {
+      "subtitle": "Használja fel újra mások és a saját tartalmait, csökkentse a nyomtatás mennyiségét, használja fel újra az ötleteket, a feladatokat és a kérdéseket!",
+      "title": "Környezetbarát"
     }
   }
 }
