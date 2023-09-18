@@ -52,7 +52,7 @@ export default {
       </v-col>
 
       <v-col id="infographic" cols="12" class="col-sm-10 col-lg-6 mx-sm-auto">
-        <v-img src="/why/testu_10_reasons_why.jpeg" alt="" />
+        <v-img src="/why/testu_10_reasons_why_en.jpeg" alt="" />
       </v-col>
     </v-row>
   </v-container>
