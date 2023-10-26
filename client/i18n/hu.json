@@ -46,7 +46,7 @@
     "link": "Hivatkozás",
     "name": "Vizsga neve",
     "no_new_submissions": "Erre a vizsgára már nem lehet új vizsgalapot beküldeni.",
-    "no_submissions": "Nincs beküldés",
+    "no_submissions": "Nincs beküldött vizsgalap",
     "or": "vagy",
     "please_log_in": "A vizsgához való továbblépéshez kérjük, jelentkezzen be, vagy adja meg a megjelenítendő nevet!",
     "untitled": "Cím nélküli vizsga",
@@ -86,6 +86,16 @@
     "construction": "Fejlesztés alatt",
     "gap_filling": "Kiegészítős feladat",
     "video": "Videóhoz kapcsolódó feladat",
+    "exam": {
+      "explanation1": "Egy feladat elkészítése után vizsgává lehet alakítani azt. Ehhez a feladat oldalán kell lenni és a jobb felső sarokban lévő három pontra kattintani (1)",
+      "explanation2": "Létrehozhat vizsgát a \"Tanítás\" szekcióban található saját feladataiból vagy más felhasználóknak a Főoldalon található feladataiból. Amennyiben más felhasználó feladatát használja fel, és ez a felhasználó közben változtat a feladaton, akkor a vizsgafeladat is ugyanúgy megváltozik.",
+      "explanation3": "Ha a három pontra (1) kattint, négy opció jelenik meg. A vizsga létrehozásához a \"Vizsga létrehozása\" (2) opciót kell választania. Ezután a következő oldalon beállíthatja a vizsga részleteit.",
+      "explanation4": "Amint azt a lenti ábrán láthatjuk, lehet címet is adni a vizsgának (3). Ez később az oldal tetején fog megjelenni (4). Hozzáadhatunk leírást is a vizsgához (5) és a \"Mentés\" gombra kattintva elmenthetjük.",
+      "explanation5": "Ezután az alábbi oldal fog megjelenni a beállított címmel. A \"link\" nevű szövegdobozban (7) található a vizsga linkje. A bal oldali ikonra kattintva kimásolhatja (és elküldheti a diákjainak) vagy a \"MEGTEKINTÉS\" ikonra kattintva megnézheti, hogy hogyan fog megjelenni a vizsga a diákoK számára.",
+      "explanation6": "Amennyiben módosítani szeretné a feladatot, visszatérhet hozzá az \"Ugrás a feladatra\" gombra kattintva (8). A \"Beküldött vizsgalapok\" (9) ablakban lesznek láthatóak a diákok által beküldött vizsgalapok, és itt láthatja az eredményüket és ellenőrizheti a beküldött vizsgalapokat.",
+      "explanation7": "Ha meg szeretné változtatni vagy ellenőrizni szeretné a vizsga részleteit, megtalálja őket az oldal alján található dobozban (10). Az összes vizsga a \"Tanítás\" menüpontban (11) kerül eltárolásra.",
+      "name": "Vizsga készítése"
+    },
     "exercice": {
       "explanation1": "Új feladatot a Főoldal (1) menüpontból tud létrehozni. Itt válassza a \"+ ÚJ FELADAT LÉTREHOZÁSA\" (2) menüpontot. A létrehozott feladatok is ezen az oldalon jelennek meg. Előbb azonban a lenti ábrán látható oldal fog megjelenni.",
       "explanation2": "Egy gyakorlat több egységből is állhat. Az egységeket a \"+ FELADAT HOZZÁADÁSA\" (3) gombra kattintva adhatja hozzá. Különböző típusú gyakorlatok vannak, de minden egységben csak egy fajtát használhat. Ha egy gyakorlatban keverni szeretné a kérdéstípusokat, akkor minden egyes kérdéstípushoz külön egységet kell készítenie.",

@@ -86,6 +86,16 @@
     "construction": "Stránka v přípravě",
     "gap_filling": "Doplňování",
     "video": "O videu",
+    "exam": {
+      "explanation1": "Vytvořené cvičení můžete přeměnit na zkoušku. K tomu musíte být na stránce toho cvičení a kliknout na tři tečky vpravo nahoře (1).",
+      "explanation2": "Zkoušku můžete udělat z vlastních cvičení, která najdete v \"Moje výuka\", nebo můžete použít cvičení jiných uživatelů v části \"Úvodní stránka\". Pokud použijete cvičení někoho jiného, kdo změní to samotné cvičení, změní se i vaše zkouška.",
+      "explanation3": "Po kliknutí na tři tečky (1) se zobrazí čtyři možnosti. Pro vytvoření zkoušky klikněte na možnost \"Vytvořit zkoušku\" (2). Potom se dostanete na další stránku, kde můžete zkoušku upravit.",
+      "explanation4": "Můžete zvolit název vaší zkoušky (3). Ten se potom zobrazí v horní části (4). Můžete také přidat popis zkoušky (5) a uložit ji kliknutím na \"Uložit\" (6).",
+      "explanation5": "Stránka se potom změní a zobrazí se stránka s názvem, který jste vybrali. V políčku \"Odkaz (link)\" (7) máte odkaz na vaši zkoušku. Můžete ho zkopírovat kliknutím na levou ikonu (a poslat ho svým studentům) nebo můžete kliknout na \"ZOBRAZENÍ\" a zobrazit svou zkoušku tak, jak ji uvidí vaši studenti.",
+      "explanation6": "Ke cvičení se můžete vrátit a změnit ho kliknutím na \"Přejít na cvičení\" (8). V políčku \"Odevzdané\" (9) se zobrazí zkoušky odevzdané studenty a vy se budete moct podívat na jejich výsledky a zkontrolovat je.",
+      "explanation7": "Pokud chcete měnit nebo kontrolovat podrobnosti zkoušky, vždy jsou v rámečku (10) v dolní části stránky. Všechny vaše zkoušky budou uložené v časti \"Moje výuka\" (11).",
+      "name": "Vytvořit zkoušku"
+    },
     "exercice": {
       "explanation1": "Chcete-li vytvořit nové cvičení, musíte přejít do nabídky Domů (1), a pak z nabízených možností vybrat \"+ CREATE A NEW EXERCISE\" (2). Cvičení se po vytvoření objeví na této stránce. Nyní budete přesunuti na další stránku, jak můžete vidět níže.",
       "explanation2": "Cvičení může být složeno z více jednotek. Jednotky můžete přidávat kliknutím na \"+ PŘIDAT JEDNOTKU\" (3). Existují různé druhy cvičení. Každá jednotka daného cvičení musí být stejného druhu. Pokud chcete v jednom cvičení zadat různé typy otázek, musíte pro každou z otázek vytvořit samostatnou jednotku.",

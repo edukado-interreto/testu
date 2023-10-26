@@ -86,6 +86,16 @@
     "construction": "Strona w przebudowie",
     "gap_filling": "Wypełnianie luk",
     "video": "O nagraniu wideo (filmiku)",
+    "exam": {
+      "explanation1": "Po wykonaniu ćwiczenia możesz przekształcić je w egzamin. Aby to zrobić należy wejść na stronę ćwiczenia i kliknąć na trzy kropki w prawym górnym rogu ćwiczenia (1).",
+      "explanation2": "Egzamin możesz zrobić z własnych ćwiczeń, które znajdziesz w zakładce „Moja nauka” lub możesz skorzystać z cudzych ćwiczeń w części „Strona główna”. Jeśli skorzystasz z ćwiczenia innej osoby, twój egzamin ulegnie zmianie, jeśli właściciel ćwiczenia zmieni samo ćwiczenie.",
+      "explanation3": "Po kliknięciu trzech kropek (1) pojawią się cztery opcje. Aby utworzyć egzamin, należy kliknąć opcję \"Utwórz egzamin\" (2). Spowoduje to przejście do następnej strony, na której będziesz mógł dostosować swój egzamin.",
+      "explanation4": "Jak widać poniżej, można wybrać tytuł egzaminu (3). Zostanie on wyświetlony w górnej części (4). Możesz również dodać opis egzaminu (5) i zapisać go, klikając przycisk \"Zapisz\" (6).",
+      "explanation5": "Strona zmieni się i zobaczysz stronę jak poniżej, z wybranym tytułem. W polu \"link\" (7) znajduje się link do egzaminu. Możesz go skopiować, klikając lewą ikonę (i wysłać go swoim uczniom) lub kliknąć \"WIDOK\", aby zobaczyć swój egzamin tak, jak zobaczą go twoi uczniowie.",
+      "explanation6": "Możesz także wrócić do ćwiczenia jeśli chcesz je zmienić klikając na (8) „Przejdź do ćwiczenia”. W polu „Zgłoszenia” (9) znajdą się egzaminy przesłane przez studentów, będziesz mógł zobaczyć ich wyniki i sprawdzić każde przesłane zadanie.",
+      "explanation7": "Jeśli chcesz zmienić lub kontrolować szczegóły egzaminu, zawsze możesz to zrobić w polu (10) na dole tej strony. Wszystkie egzaminy będą przechowywane w części \"Moje nauczanie\" (11).",
+      "name": "Utwórz egzamin"
+    },
     "exercice": {
       "explanation1": "Aby utworzyć nowe ćwiczenie, należy przejść do menu głównego (1), a następnie wybrać opcję \"+ UTWÓRZ NOWE ĆWICZENIE\" (2). Po utworzeniu ćwiczenia pojawią się na tej stronie i  zostaniesz przeniesiony na następną stronę, jak widać poniżej.",
       "explanation2": "Ćwiczenie może składać się z wielu jednostek. Jednostki można dodawać, klikając przycisk \"+ ADD UNIT\" (3). Istnieją różne rodzaje ćwiczeń, ale w każdej jednostce można użyć tylko tego samego rodzaju. Jeśli chcesz mieszać różne typy pytań w ćwiczeniu, musisz utworzyć osobne jednostki dla każdego typu pytań.",

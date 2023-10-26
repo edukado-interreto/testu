@@ -19,5 +19,410 @@
       "vu_location": "Vilnius, Lithwania",
       "vu_name": "Prifysgol Vilnius"
     }
+  },
+  "editor": {
+    "age_range": "ystod oedran",
+    "cefr_levels_label": "lefelau CEFR",
+    "confirm_leave": "Mae'r dudalen hon yn gofyn i chi gadarnhau eich bod am adael. Mae'n bosibl na fydd data yr ydych chi wedi'i roi yn cael ei gadw.",
+    "description": "Disgrifiad",
+    "details": "Manylion ymarfer",
+    "save": "Cadw",
+    "tags": "Tagiau",
+    "title": "Teitle",
+    "unexpected_response": "Ymateb gweinydd annisgwyl",
+    "unlisted": "Heb eu rhestru mewn canlyniadau chwiliad"
+  },
+  "exam": {
+    "accept_submissions": "Derbyn/iwch gyflwyniadau",
+    "confirm": "Ni ellir dadwneud y gweithrediad hwn.",
+    "copy": "Copïa/copïwch",
+    "created": "Wedi ei greu {dyddiad}",
+    "delete": "Dilea/dilëwch arholiad",
+    "description": "Disgrifiad arholiad",
+    "details": "Manylion arholiad",
+    "error": "Bu gwall tra cyflwyno'r arholiad.",
+    "goto_exercise": "Cer/wch i'r ymarfer",
+    "is_exam": "Dyma arholiad",
+    "link": "Dolen",
+    "name": "Enw'r arholiad",
+    "no_new_submissions": "Nid yw'r arholiad hwn yn derbyn cynigion newydd",
+    "no_submissions": "Dim cyflwyniadau",
+    "or": "neu",
+    "please_log_in": "I symud ymlaen i'r arholiad, mewngofnoda/wch neu dewis/wch enw arddangosydd.",
+    "untitled": "Arholiad di-deitl",
+    "view": "Golwg",
+    "visible_by": "Bydd canlyniadau'r ymarfer hwn yn weladwy i'r arholwr/-aig {enw}.",
+    "well_done": "Y mae'ch arholiad wedi cael ei gyflwyno'n llwyddiannus i'r arholwr/-aig!"
+  },
+  "exercise": {
+    "age": "oedran:",
+    "anonymous": "anhysbys",
+    "author": "awdur",
+    "check": "Gwiria/wch ganlyniad",
+    "create_copy": "Crea/crëwch gopi",
+    "create_exam": "Crea/crëwch arholiad",
+    "create_exam_confirm": "Gall crëwr/raig yr ymarfer hwn ei olygu neu'i ddileu tra bod yr arholiad yn rhedeg. Myn ymhellach beth bynnag?",
+    "delete": "Dilea/dilëwch ymarfer",
+    "delete_confirm": "A wyt/ydych ti/chi'n siŵr dy/eich f/bod am ddileu'r ymarfer hwn?",
+    "edit": "Golyga/wch yr ymarfer",
+    "error": "Digwyddodd gwall tra cadw cyflwyniad yr ymarfer",
+    "explanation": "Esboniad:",
+    "language": "iaith",
+    "mistake": "Adrodd/wch am gamgymeriad",
+    "mistake_explanation": "Esboniad:",
+    "misuse": "Adrodd/wch am gamddefnydd",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Adrodd/wch am gamgymeriad wrth {enw defnyddiwr}",
+    "report_misuse_to_administrators": "Adrodd/wch am gamddefnydd wrth weinyddwyr.",
+    "submit_mistake_confirm": "Diolch! Bydd y crëwr yn derbyn hysbysiad.",
+    "submit_misuse_confirm": "Diolch am helpu i gadw Testu.eu yn briodol.",
+    "target_language": "Iaith wedi'i hastudio",
+    "target_language_is": "Iaith wedi'i hastudio",
+    "unlisted": "Nid yw'r ymarfer hwn wedi'i restru yn y canlyniadau chwiliad."
+  },
+  "guide": {
+    "about": "Sut i greu ymarferion",
+    "about_text": "I greu ymarfer newydd, yn gyntaf bydd angen i chi/ti gofrestru a mewngofnodi i'r wefan.",
+    "construction": "O dan adeiladaeth",
+    "gap_filling": "Llenwi bylchau",
+    "video": "am fideo",
+    "exam": {
+      "explanation1": "Ar ôl gwneud ymarfer, gelli/gellwch ei drawsnewid yn arholiad. I wneud hynny, mae'n rhaid i chi/ti fod ar dudalen yr ymarfer a chlicio ar y tri dot ar gornel dde uchaf yr ymarfer (1)",
+      "explanation2": "Gellwch/gelli di greu arholiad o'ch/'th ymarferion eich/dy hun, y byddwch yn dod o hyd iddo yn ”Fy addysgu” neu gellwch/gelli ddefnyddio ymarferion pobl eraill yn y rhan ”Cartref”. Os ydych/wyt chi/ti'n defnyddio ymarfer rhywun arall, bydd eich/dy arholiad yn newid pryd bynnag y bydd perchennog yr ymarfer yn newid yr ymarfer ei hun.",
+      "explanation3": "Pan gliciwch/a ar y tri dot (1), mae pedwar opsiwn yn ymddangos. I greu arholiad y mae rhaid i chi /ti glicio ar yr opsiwn \"Creu arholiad\" (2). Yna cewch eich/cei dy arwain at y dudalen nesaf lle byddwch/byddi chi/di'n gallu addasu'ch/'th arholiad.",
+      "explanation4": "Fel y gwelwch/gweli di isod, gellwch/gelli di ddewis teitl eich/dy arholiad (3). Yna bydd yn dangos ar y rhan uchaf (4) Gellwch/Gelli di hefyd ychwanegu disgrifiad o'r arholiad (5) a'i gadw trwy glicio ar y botwm ”cadw” (6).",
+      "explanation5": "Yna bydd y dudalen yn newid a byddwch/byddi yn gweld y dudalen fel isod, gyda'r teitl a ddewisoch/aist. Yn y blwch “dolen” (7)  y mae gennych/gennyt chi/ti'r ddolen i'ch/'th arholiad. Gellwch/gelli ei gopïo trwy glicio ar yr eicon chwith (a'i danfon at eich/dy m/fyfyrwyr) neu gellwch/gelli glicio ar ”Golwg” i weld eich/dy arholiad fel y bydd eich/dy m/dyfyrwyr yn ei weld.",
+      "explanation6": "Gellwch/gelli hefyd fynd yn ôl i'r ymarfer os ydych/wyt am ei newid trwy glicio ar (8) ”Ewch/dos i'r ymarfer”. Yn y blwch “cylwyniadau” (9), bydd yr arholiadau a gyflwynwyd gan y myfyrwyr a byddwch/byddi yn gallu gweld eu canlyniadau a gwirio pob cyflwyniad.",
+      "explanation7": "Os ydych chi/wyt ti am newid neu reoli manylion yr arholiad, maen nhw bob amser yn y blwch (10) ar waelod y dudalen honno. Bydd eich/dy holl arholiadau yn cael eu storio yn y rhan “Fy addysgu” (11).",
+      "name": "Creu arholiad"
+    },
+    "exercice": {
+      "explanation1": "I greu ymarfer newydd y mae'n rhaid i chi/ti fod yn y ddewislen 'Cartref' (1)\nYna gellwch/gelli ddewis “+ CREU YMARFER NEWYDD” (2).\nAr ôl ei greu, bydd yn ymddangos ar y dudalen hon. \nOnd am y tro fe'ch/'th symudir i'r dudalen nesaf fel y gwelwch/gweli di isod.",
+      "explanation2": "Gall ymarfer gael ei gyfansoddi mewn sawl uned. Gellwch/gelli di ychwanegu unedau trwy glicio ar ”+ ADD UNIT” (3).",
+      "explanation3": "Fel y gwelwch/gweli di ar y chwith, mae llawer o fathau gwahanol o unedau. Ond yn fras gellwn eu grwpio mewn 3 theulu: cwestiynau llenwi bylchau, amlddewisiadau a chwestiynau am gyfateb/paru neu ddidoli",
+      "explanation4": "Mae cwestiwn llenwi bylchau yn destun neu'n frawddeg lle yr ydych/wyt chi/ti'n dewis dileu gair neu ychydig eiriau. Ar gyfer y cwestiynau hyn, gellwch/gelli ddewis rhoi rhai atebion (o leiaf un ateb cywir a rhai ffug) neu gellwch/gelli adael i'r maes yn agored a bydd yn rhaid i'r sawl sy'n ateb y cwestiwn ei gwblhau drwy deipio'r ateb. Ym mhob achos, byddwch/byddi yn nodi'r ateb(ion) cywir wrth greu'r cwestiwn.",
+      "explanation5": "Mae amlddewisiadau yn caniatáu i chi/ti greu cwestiwn gyda dewis o atebion. mae un neu rhagor o atebion yn bosibl ac o ran cwestiynau llenwi bylchau, bydd rhaid i chi/ti roi'r ateb(ion) cywir wrth greu cwestiwn.",
+      "explanation7": "Gellwch/gelli di ddod o hyd i ragor o esboniadau ar gyfer pob teulu trwy glicio ar y tabiau ar frig y dudalen hon.",
+      "gap_filling_1": "Y fath diofyn o ymarfer corff yw cwestiwn llenwi bylchau.Y mae dwy fath o ymarferion llenwi bylchau. Gelwir yr un cyntaf (1) yn “Ddiofyn” ac y mae’n rhoi atebion a roddir pan gliciwch ar y bwlch. Yr ail fath yw “Ateb Agored” (8) lle na rhoddir ateb. Y mae rhaid i'r dysgwr/wraig ei ysgrifennu'n uniongyrchol. Cawn weld sut i ysgrifennu'r cwestiynau a sut i roi atebion: rhai anghywir a'r un cywir.",
+      "gap_filling_2": "Yn y meysydd (2), gellwch/gelli di ysgrifennu teitl yr ymarferion ac yn y maes (3) disgrifiad byr i egluro'r cyfarwyddiadau ar gyfer y cwestiynau canlynol neu roi rhywfaint o gyd-destun.",
+      "gap_filling_3": "Mae'r cwestiynau eu hunain wedi'u hysgrifennu yn y blwch (4). Maewastad dwy ffordd i'w wneud. Gellwch/gelli di ysgrifennu'r cwestiynau a'r atebion yn uniongyrchol yn y blwch neu gellwch/gelli di ddefnyddio'r offer yn y gornel chwith uchaf (6). Bydd y canlyniad yr un peth, Gelwch/gweli di'r un testun yn y maes (4).",
+      "name": "Ymarfer newydd"
+    },
+    "multiple_choice": {
+      "explanation1": "Os ydy’n well gennych/genyt ddangos yr atebion nid fel bylchau ond fel amlddewis gyda'r atebion y tu isaf i'r cwestyinau gyda blychau i’w gwirio, gellwch/gelli ddewis y fath ”amlddewis” (12).",
+      "explanation2": "Yn y rhestr o ymarferion sy'n ymddangos pan fyddwch/fyddi chi/ti'n ychwanegu uned, mae'r mathau \"Cwestiynau am lun, gwir neu anghywir\" a \"Cwestiynau am destun, amlddewis\" yn rhoi dwy enghraifft arall i chi/ti o sut i ddefnyddio'r fath hwn o gwestiynau.",
+      "explanation3": "Fel o'r blaen, gellwch/gelli chi/di roi teitl ar gyfer y gyfres o gwestiynau. Gellwch/gelli di hefyd ychwanegu disgrifiad, er enghraifft testun yr hoffech/it ofyn cwestiynau amdano neu gyflwyniad am y cwestiynau...",
+      "explanation4": "Gellir ychwanegu’r cwestiynau a’r atebion fel o’r blaen, trwy eu hysgrifennu’n uniongyrchol yn y blwch testun (13) neu gyda’r botymau fel yr eglurwyd o’r blaen ar gyfer y cwestiynau llenwi bwlch (6). Y mae rhaid i'r ateb cywir ymddangos ”+” o'i flaen a rhaid i'r atebion gael eu gwahanu gan yr arwydd ”|”. Os oes mwy nag un ateb cywir, bydd y cwestiwn yn cael ei farcio'n gywir pan fydd yr holl atebion cywir yn cael eu gwirio.",
+      "explanation5": "Mae gennych/gennyt hefyd y posibilrwydd o ychwanegu delweddeu neu synau yn y disgrifiad trwy glicio ar y tri dot (14) a'u dewis ar eich cyfrifiadur. Yna gellwch/gelli chi/di ofyn cwestiynau am y sain neu'r ddelwedd. Gellwch/gelli ychwanegu cymaint ag y dymunwch/dymuni a dewis ym mha le yr ydych/wyt am iddynt fod yn y testun trwy symud yr elfen rhwng cromfachau cyrliog {} (15).",
+      "name": "amlddewis"
+    },
+    "sort_and_match": {
+      "explanation3": "I ychwanegu delweddau neu sain y mae rhaid i chi/ti ddefnyddio'r botymau (19) a dewis y ffeil ar eich/dy c/gyfrifiadur. Yna bydd yn creu'r elfennau rhwng cromfachau cyrliog {} fel o'r blaen. Ar ôl hynny, gellwch/gelli chi/ti'u symud yn eu blaen i'r lle yr ydych/wyt chi/ti'u heisiau. I ychwanegu fideo y mrhaid i chi/ti ddewis y trydydd botwm (19) a rhaid i chi/ti ysgrifennu cyfeiriad url y fideo (er enghraifft ar youtube neu vimeo...). Ni ellwch/elli uwchlwytho fideo o'ch/'th c/gyfrifiadur yn uniongyrchol.",
+      "explanation4": "Gellwch/gelli gysylltu testun â thestun, neu â  delwedd neu sain, neu gysylltu delweddau â synau fel y dangosir yn (20).",
+      "name": "Trefnu a Chyfateb",
+      "video": "Gellwch/gelli hefyd ddewis fideo, yn uniongyrchol yn y blwch ysgrifennu, trwy ysgrifennu cyfeiriad url y fideo rhwng cromfachau cyrliog a gyda “fideo:\" o'i flaen, fel y dangosir yn (22). Nid oes botwm i'w wneud ond ysgrifennu trwy y fath o uned: ”Cwestiynau am fideo, agor"
+    }
+  },
+  "home": {
+    "create_exercise": "Crea/crëwch ymarfer newydd",
+    "search_exercise": "Chwilia/wch ymarfer"
+  },
+  "langs": {
+    "en": "Saesneg",
+    "eo": "Esperanteg",
+    "help": "Helpa/wch ni i gyfieithu'r wefan"
+  },
+  "learn": {
+    "date": "dyddiad",
+    "exam": "arholiad",
+    "exercise": "ymarfer",
+    "recent": "Gweithred ddiweddar",
+    "review": "adolygiad",
+    "submitted": "Ymarferion wedi'u cyflwyno ar y diwrnod"
+  },
+  "login": {
+    "already_registered": "A oes gennych/gennyt gyfrif yn barod?",
+    "check_inbox": "Gwiriwch eich/dy m/fewnflwch i gadarnhau eich/dy c/gofrestriad, os gweli/wch di/chi'n dda.",
+    "email": "e-bost",
+    "email_is_verified": "Y mae'ch/dy e-bost wedi'i wirio!!Gellwch/gelli di fewngofnodi nawr.",
+    "login": "Mewngofnoda/wch",
+    "mail_invalid": "Mae rhaid i'r e-bost fod yn ddilys",
+    "no_account_yet": "Nid oes gennych/gennyt gyfrif eto?",
+    "page_title": "Mewngofnoda/wch",
+    "password": "cyfrinair",
+    "password_reset": "Ailosod cyfrinair",
+    "password_reset_done": "Cafodd eich/dy c/gyfrinair ei ailosod yn llwyddiannus",
+    "password_reset_sent": "Anfonwyd dolen i'ch/'th c/gyfeiriad e-bost i ailosod eich/dy c/gyfrinair.",
+    "required_field": "Maes angenrheidiol",
+    "resend_link": "Ailddafona/wch y ddolen",
+    "signup": "Cofrestra/wch ar TestU",
+    "signup_thanks": "Diolch am gofrestru.",
+    "username": "Enw defnyddiwr",
+    "verify_email": "Gwirio eich/dy e-bost",
+    "verify_token_used_or_invalid": "Y mae'n ymddangos bod y ddolen hon eisoes wedi'i defnyddio neu'n annilys."
+  },
+  "main": {
+    "about": "Am",
+    "accept": "Derbyn/iwch",
+    "cancel": "Cansla/wch",
+    "catchphrase": "Crea/crëwch eich/dy c/gwisiau iaith eich/dy hun",
+    "cookie_consent": "Y mae'r wefan hon yn defnyddio ychydig iawn o gwcis ar gyfer ei gweithrediad.\nTrwy barhau i ddefnyddio'r wefan honyr ydym yn cymryd yn ganiataol eich/dy b/fod yn derbyn defnydd cwcis gweithredol.",
+    "edit": "Golyga/wch",
+    "guide": "Sut i",
+    "home": "Cartref",
+    "lang_menu_header": "Iaith rhyngwyneb",
+    "login": "Mewngofnoda/wch",
+    "logout": "Allgofnoda/wch",
+    "my_learning": "Fy nysgu i",
+    "my_teaching": "Fy addysgu",
+    "ok": "Iawn",
+    "only_logged_in": "Y mae'r dudalen hon ar gael ond i ddefnyddwyr sydd wedi mewngofnodi",
+    "privacy": "Polisi preifatrwydd",
+    "settings": "Gosodiadau cyfrif",
+    "signup": "Cofrestru",
+    "social": "Cymdeithasol",
+    "source_code": "Cod ffynhonnell",
+    "submit": "Cyflwyna/wch",
+    "terms": "Telerau defnyddio",
+    "why": "Paham"
+  },
+  "review": {
+    "exam": "Adolygiad arholiad",
+    "exercise": "Adolygiad ymarfer",
+    "go_exam": "Cer/cerwch i'r arholiad",
+    "go_exercise": "Cer/wch i'r ymarfer",
+    "submitted_on": "Dyma'r atebion ymarfer a gyflwynwyd gennych/gennyt ar {dyddiad}."
+  },
+  "sheet_editor": {
+    "add_matching_pair": "Ychwanega/wch bâr cyfatebol",
+    "add_sentence": "Ychwanega/wch frawddeg",
+    "add_unit": "Ychwanega/wch uned",
+    "add_unit_to_begin": "Ychwanega/wch uned newydd i ddechrau",
+    "close": "Caea/wch olygydd",
+    "delete": "Dilea/dilëwch",
+    "edit_next": "Golyga/wch yr un nesaf",
+    "edit_previous": "Golyga/wch blaenorol",
+    "empty_exercise": "Gwagia/wch yr ymarfer",
+    "first_item": "Eitem gyntaf",
+    "insert_gap": "Mewnosoda/wch fwlch",
+    "insert_image": "Mewnosoda/wch ddelwedd",
+    "insert_pair": "Mewnosoda/wch bâr",
+    "insert_sound": "Mewnosoda/wch sain",
+    "insert_video": "Mewnosoda/wch fideo",
+    "move_down": "Symuda/wch i lawr",
+    "move_up": "Symuda/wch i fyny",
+    "new_gap": "Bwlch newydd",
+    "new_matching_pair": "Pâr cyfatebol newydd",
+    "second_item": "ail eitem",
+    "shuffle_options": "Shiffla/wch opsiynau",
+    "start_typing": "Dechreua/wch deipio brawddeg…",
+    "title": "Teitle",
+    "untitled_unit": "Uned di-deitle",
+    "valid_url": "Teipia/wch URL dilys, os gweli/wch di/chi'n dda",
+    "snippets": {
+      "blank_unit": {
+        "name": "Uned wag"
+      },
+      "gap_filling_dropdown": {
+        "code": "Mae'r llyfr [+ar|yn] y bwrdd.",
+        "name": "Llenwi bylchau, cwymplen"
+      },
+      "gap_filling_open_answer": {
+        "code": "Mae'r llyfr [+ar|yn] y bwrdd.",
+        "name": "Llenwi bylchau, ateb agored"
+      },
+      "multiple_choice": {
+        "code": "Ble ydy'r llyfr?\n[+ar y bwrdd|yn y bwrdd]",
+        "name": "Amlddewis (ar gyfer cwestiynau)"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{img:ci.jpeg} == {sain:ci.mp3}\n\n{img:eliffant.jpeg} == {sain:eliffant.mp3}\n\n{img:cath.jpeg} == {sain:cath.mp3}",
+        "name": "Paru lluniau gyda synau"
+      },
+      "pairing_text_with_pictures": {
+        "code": "ci, eliffant, cath",
+        "name": "Paru testun gyda lluniau"
+      },
+      "pairing_text_with_sounds": {
+        "code": "ci, eliffant, cath",
+        "name": "Paru testun gyda synau"
+      },
+      "pairing_text_with_text": {
+        "code": "Ceirios = coch\nLemwn = melyn\nBroccoli = gwyrdd",
+        "name": "Paru testun gyda thestun"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "Yr anifail yn y llun yw: [Ci|+Cath|Eliffant]\nAi anifail gwyllt neu anifail anwes ydyw? [+Anifail anwes|Anifail gwyllt]",
+        "description": "cath",
+        "name": "Cwestiynau am lun, gwir neu anghywir"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Pa anifail sy'n gwneud y sŵn hwn?\n[+Cath|Ci|Eliffant]\n\nBeth yw'r term a ddefnyddir i ddisgrifio'r sain y mae'r anifail hwn yn ei wneud?\n[+Meowing|Cyfarth|Trwmpeting]",
+        "description": "Gwranda/ewch ar y sain ac ateba/wch y cwestiynau:",
+        "name": "Cwestiynau am sain, cwymplen"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Pwy heriodd yr ysgyfarnog i ras? [Yr ysgyfarnog|+Crwban|Aderyn]\nPam hunodd yr ysgyfarnog yn ystod y ras? [Yr oedd wedi blino|Yr oedd am roi cyfle i'r crwban ddal i fyny|+Yr oedd yn hyderus yn ei fuddugoliaeth]\nPwy enillodd y ras? [Yr ysgyfarnog|+Crwban|Aderyn]",
+        "description": "Ers llawer dydd, bu ysgyfarnog a chrwban wastad yn dadlau pwy fyddai'n gynt.\nHeriodd y crwban yr ysgyfarnog i ras, a derbyniodd yr ysgyfarnog, gan feddwl y byddai'n ennill yn hawdd.\n\nDechreuodd y ras, a dechreuodd yr ysgyfarnog yn gyflym, gan adael y crwban ar ôl. Aeth yr ysgyfarnog yn or-hyderus a phenderfynodd huno am ychydig. Yn y cyfamser, parhaodd y crwban symud yn gyson tuag at y llinell derfyn.\n\nPan ddeffrodd yr ysgyfarnog, sylweddolodd fod y crwban bron â chyrraedd y llinell derfyn. Ceisiodd yr ysgyfarnog ddal i fyny, ond bu'n rhy hwyr. Enillodd y crwban y ras.",
+        "name": "Cwestiynau am destun, amlddewis"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Ym pha le y mae'r lle hwn?\nPwy adeiladodd ef?",
+        "description": "Gwylia/wch y fideo ac ateba/wch y cwestiynau.",
+        "name": "Cwestiynau am fideo, ateb agored"
+      },
+      "sorting_pictures": {
+        "code": "{img:un_cylch.png}\n\n{img:dau_gylch.png}\n\n{img:tri_chylch.png}"
+      }
+    },
+    "types": {
+      "default": "Rhestr gwymplen",
+      "multiple_choice": "amlddewis",
+      "open_answer": "Ateb agored"
+    }
+  },
+  "sort": {
+    "rated": "Gradd orau",
+    "recent": "Mwyaf diweddar",
+    "sort": "Didola/wch"
+  },
+  "tags": {
+    "agriculture": "Amaethyddiaeth",
+    "art": "Celf",
+    "astronomy": "Seryddiaeth",
+    "biology": "Bioleg",
+    "business": "Busnes",
+    "chemistry": "Cemeg",
+    "computing": "Cyfrifiadureg",
+    "crafting": "Crefft",
+    "economics": "Economics",
+    "engineering": "Peirianneg",
+    "geography": "Daearyddiaeth",
+    "grammar": "Gramadeg",
+    "history": "Hanes",
+    "languages": "Ieithoedd",
+    "literature": "Llenyddiaeth",
+    "logic": "Rhesymeg",
+    "math": "Mathemateg",
+    "medicine": "Meddygaeth",
+    "miscellaneous": "Amrywiol",
+    "music": "Cerddoriaeth",
+    "pedagogy": "Addysgeg",
+    "philosophy": "Athroniaeth",
+    "physics": "Ffiseg",
+    "politics": "Gwleidyddiaeth",
+    "psychology": "Seicoleg",
+    "religion": "Crefydd",
+    "science": "Gwyddoniaeth",
+    "sport": "Chwaraeon",
+    "technology": "Technoleg",
+    "trivia": "Trivia"
+  },
+  "teach": {
+    "exams": "Arholiadau",
+    "exercises": "Ymarferion"
+  },
+  "terms": {
+    "intro": "Croeso cynnes i TestU Online, platfform dysgu e-lein am ddim, amlieithog, sy'n galluogi creu cwisiau, profion ac ymarferion amrywiol yn hawdd ac yn gyflym a fwriedir yn bennaf ar gyfer dysgu ieithoedd! Y mae cyrchu a defnyddio gwefan testu.eu (“y wefan”, “y gwasanaeth”, “y darparwr”) yn awgrymu eich/dy b/fod chi/ti (y “defnyddiwr”) wedi darllen, deall a derbyn y telerau ac amodau canlynol, ni waeth a ydych/wyt chi/ti wedi cofrestru fel aelod ar testu.eu. Felly, darllenwch y testun canlynol yn drylwyr.",
+    "last_update": "Diweddarwyd diwethaf {dyddiad}",
+    "section1": {
+      "text1": "Gellwch/gelli ddefnyddio rhai o'n gwasanaethau heb gofrestru ar y wefan. Er mwyn defnyddio holl nodweddion y wefan, mae angen i chi/ti sefydlu cyfrif personol. Y mae cofrestru yn rhad ac am ddim.",
+      "text3": "Yr ydych/wyt yn gwarantu bod yr holl ddata a ddarperir gennych/gennyt wrth gofrestru yn wir ac yn gywir ac y byddwch/byddi wastad yn eu cadw'n gyfredol.",
+      "text5": "Wrth gofrestru byddwch/byddi yn dewis cyfrinair. Chi/ti sy'n gyfrifol am gadw'r cyfrinair hwn yn gyfrinachol.",
+      "text7": "Cwblheir cofrestru ar y wefan trwy ddolen actifadu. Ar ôl cofrestru ar y wefan, byddwch/byddi yn derbyn e-bost cadarnhau awtomatig gan y Darparwr, yn cynnwys y ddolen hon.",
+      "text8": "Os oes cyfrif wedi'i gofrestru ond byth yn cael ei actifadu, mae'r darparwr yn cadw'r hawl i ddileu'r cyfrif cofrestredig anghyflawn.",
+      "text9": "Nid yw darparwr y wefan hon yn gwarantu gwir hunaniaeth defnyddiwr. Y mae pob defnyddiwr yn gyfrifol am wirio hunaniaeth defnyddwyr eraill. Y mae'r darparwr yn cadw'r hawl i ofyn am brawf o'r wybodaeth berthnasol fel tystiolaeth o hunaniaeth ac oedran. Os na ddarperir dogfennau ategol o fewn y cyfnod a nodir gan ddarparwr y wefan hon, bydd y darparwr yn dileu cyfrif y defnyddiwr o dan sylw.",
+      "title": "Cofrestru"
+    },
+    "section2": {
+      "text1": "Y mae darparwr y wefan hon yn ymwybodol bod diogelu data personol yn bwysig iawn. Dyna pam y mae'r wefan yn cadw'n gaeth at reolau cyfraith diogelu data.Y mae manylion ynghylch â phrosesu data defnyddwyr yn cael eu llywodraethu gan y Polisi Preifatrwydd.",
+      "title": "Diogelu data"
+    },
+    "section3": {
+      "text1": "Nid ond at ddibenion a ganiateir gan y gyfraith y gellir defnyddio’r wefan.",
+      "text2": "Fel defnyddiwry  mae'n ofynnol i chi/ti:",
+      "text2_2": "I gadw data cofrestru yn gyfrinachol a pheidio â'i ddatgelu i drydydd parti;",
+      "text2_3": "hysbysu cyflenwr y wefan ar unwaith os oes rheswm i amau bod trydydd parti wedi dod i wybod am ddata cyrchiad ar gyfer a/neu wedi camddefnyddio cyfrif defnyddiwr.",
+      "text4": "Gwaherddir yn llwyr uwchlwytho'r cynnwys canlynol (fel delweddau, dolenni, lluniau, ymarferion, ffeiliau sain a fideo neu gynnwys arall) ar y wefan a'i bostio, ei ddanfon, ei gysylltu, ei drosglwyddo, ei hyrwyddo, ei gynnig neu ei ddarparu fel arall:",
+      "text4_3": "propaganda a symbolau sefydliadau wedi'u gwahardd;",
+      "text4_5": "data preifat gan ddefnyddwyr eraill (e.e. cyfeiriad, rhif ffôn, cyfrif banc) neu ddyfyniadau o gyfathrebu preifat â defnyddwyr eraill, darparwyr/gweinyddwyr y wefan neu drydydd partïon;",
+      "text4_6": "Dolenni i wefannau gyda chynnwys anghyfreithlon;",
+      "text5": "Y mae'r gweithredoedd canlynol wedi'u gwahardd i'r defnyddiwr:",
+      "text5_1": "defnyddio neu geisio defnyddio cyfrif defnyddiwr arall neu'r system heb awdurdodiad y darparwr;",
+      "text5_2": "dynwared person arall neu ddarparu gwybodaeth ffug amdanat/och ti/chi dy/eich hun",
+      "text6": "Y mae perchennog y wefan hon yn cadw'r hawl i ddileu postiadau anawdurdodedig (gan gynnwys profion, ymarferion, testunau a delweddau) nad ydynt yn bodloni'r telerau ac amodau hyn, neu gyfrif y defnyddiwr, ar unrhyw adeg a heb rybudd.",
+      "title": "Cyfrifoldebau'r defnyddiwr"
+    },
+    "section4": {
+      "text1": "Y mae gan y darparwr hefyd yr hawl i newid neu derfynu'r gwasanaethau a gynigir ar unrhyw adeg, yn ôl ei ddisgresiwn heb rybudd ymlaen llaw.",
+      "title": "Newidiadau i'r gwasanaeth"
+    },
+    "section5": {
+      "title": "Rhoi hawliau"
+    },
+    "section6": {
+      "title": "Hawliau eiddo"
+    },
+    "section7": {
+      "text1": "Mae tymor aelodaeth y wefan yn dechrau gyda chofrestru a chytuno â'r telerau defnydd a rheolau preifatrwydd hyn, ac mae'n parhau am gyfnod amhenodol.",
+      "text2": "Gellwch/gelli ganslo'r gwasanaeth ar unrhyw adeg heb rybudd am unrhyw reswm yma /dolen= Ar ôl terfynu, ni fydd gennych/gennyt fynediad at eich proffil mwyach a bydd yr holl wybodaeth sydd ynddo yn cael ei ddileu gan ddarparwr y wefan.: Yr ydych/wyt yn cytuno y gallai rhywfaint o gynnwys (fel sylwadau, postiadau neu negeseuon) nad ydynt wedi'u cysylltu'n uniongyrchol â'ch/'th p/broffil, aros hyd yn oed ar ôl dileu'ch/'th p/broffil. Nid oes gennych/gennyt hawl i adferiad neu drosglwyddiad arall o'r cynnwys a bostiwyd gennych/gennyt chi/ti.",
+      "text4": "Y mae perchennog y wefan hon yn cadw'r hawl i ddileu cyfrif y defnyddiwr os nad yw defnyddiwr wedi defnyddio'r gwasanaeth ers mwy na 6 mis.",
+      "title": "Cyfnod cytundeb a therfynu"
+    },
+    "section8": {
+      "text1": "Y mae'r darparwr yn ceisio cadw'r wefan yn rhedeg, yn rhydd o wallau ac yn ddiogel, ond nid yw'n gwarantu bod y wefan yn ddiogel, nac yn rhydd o wallau ar unrhyw adeg, na'i bod yn gweithio heb amhariad, oedi na diffygion trwy'r asmer.",
+      "text4": "Er gwaethaf gwirio cynnwys yn ofalus, nid yw darparwyr y wefan yn atebol am gynnwys dolenni allanol.",
+      "text5": "Nid yw'r darparwr yn gyfrifol am gynnwys a chywirdeb hysbysebu.",
+      "title": "Atebolrwydd"
+    },
+    "section9": {
+      "text2": "Y mae fersiwn Saesneg y cytundeb yn gyfreithiol-rwym.",
+      "text5": "Y mae gwybodaeth gyswllt ar gyfer  darparwr neu weinyddwyr y wefan i'w gweld ar y dudalen",
+      "title": "Amodau cau"
+    }
+  },
+  "why": {
+    "because": "Gan ei fod:",
+    "more_projects": "Rhagor am y prosiect",
+    "title": "Pam defnyddio Testu.eu",
+    "point1": {
+      "subtitle": "Dim tanysgrifiadau, dim costau cudd na waliau talu, o ddifrif!",
+      "title": "Yn hollol rhad ac am ddim"
+    },
+    "point10": {
+      "subtitle": "Diolch i raglen Erasmus+ ac Asiantaeth Genedlaethol Slofacia gellwch(gelli ddefnyddio testu.eu heb gostio dim.",
+      "title": "Cefnogir yn swyddogol gan y Comisiwn Ewropeaidd"
+    },
+    "point2": {
+      "subtitle": "Yr ydych/wyt chi/ti'n rhydd i ddefnyddio a chreu cynnwys, nid oes angen cyfraniadau ychwaith."
+    },
+    "point3": {
+      "subtitle": "Nid oes dim yn guddiedig.",
+      "title": "Ffynhonnell agored"
+    },
+    "point4": {
+      "subtitle": "Y mae Testu.eu yn dathlu ieithoedd. \nOes eich/dy iaith chi/di ar goll? \nFe'i hychwanega/wch yma:",
+      "title": "Amlieithog"
+    },
+    "point5": {
+      "subtitle": "Hawdd i'w defnyddio",
+      "title": "Hawdd i'w defnyddio"
+    },
+    "point6": {
+      "subtitle": "Ymgolla/wch mewn gwersi, cyrsiau, ymarferion a phrofion ar-lein - dull modern o ddysgu!",
+      "title": "Ar-lein"
+    },
+    "point7": {
+      "subtitle": "Dysgu heb ffiniau, addysgu heb derfynau - plymio i greu cynnwys neu ailddefnyddio adnoddau presennol.",
+      "title": "Defnyddiol"
+    },
+    "point8": {
+      "subtitle": "Y mae creu cynnwys addysgol yn bleser - cofleidia/wch ddysgu trwy greadigrwydd!",
+      "title": "Hwyl"
+    },
+    "point9": {
+      "subtitle": "Ailddefnyddia/wch gynnwys eraill neu'ch/th c/gynnwys eich/dy hun, lleihau faint o argraffu, ailgylchu syniadau, ymarferion a chwestiynau!",
+      "title": "Cyfeillgar i'r amgylchedd"
+    }
   }
 }

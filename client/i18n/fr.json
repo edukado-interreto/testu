@@ -86,6 +86,16 @@
     "construction": "En cours de construction",
     "gap_filling": "Exercice à trous",
     "video": "à propos d'une vidéo",
+    "exam": {
+      "explanation1": "Lorsque vous avez fait un exercice, vous pouvez le transformer en examen. Pour ce faire, vous devez être sur la page de l'exercice en question et cliquer sur les trois petits points en haut à droite (1).",
+      "explanation2": "Vous pouvez faire des examens à partir de vos propres exercices, que vous trouverez dans \"Mon enseignement\", ou à partir de l'exercice de quelqu'un d'autre trouvable dans \"Accueil\". Notez que si vous utilisez l'exercice de quelqu'un d'autre et que son auteur en modifie le contenu alors votre examen sera également modifié.",
+      "explanation3": "Lorsque vous cliquez sur les trois petits points (1), quatre options apparaissent. Pour faire un examen, vous devez cliquer sur l'option \"Créer un examen\" (2). Cela vous emmenera sur la page suivante où vous pourrez personnaliser votre examen.",
+      "explanation4": "Comme vous pouvez le voir ci-dessous, vous pouvez choisir le titre de votre examen (3). Il s'affichera ensuite sur la partie supérieure (4). Vous pouvez aussi ajouter une description (5) puis sauvegarder en cliquant sur le bouton \"sauvegarder\" (6).",
+      "explanation5": "Ensuite la page changera et vous verrez celle ci-dessous, portant le nom choisit par vous. Dans la boite \"lien\" (7), vous aurez le lien vers l'examen. Vous pouvez le copier en cliquant sur l'icône de gauche (afin de l'envoyer à vos élèves) ou vous pouvez cliquer sur \"VOIR\" pour voir votre examen comme vos élèves le verront.",
+      "explanation6": "Vous pouvez aussi retourner à l'exercice si vous voulez le changer en cliquant sur \"Aller à l'exercice\" (8). Dans la boîte \"Soumissions\" (9), il y aura les examens soumisent par les élèves et vous pourrez voir leurs résultats et vérifier chaque soumission.",
+      "explanation7": "Si vous voulez changer ou contrôler les détails de l'examen, il y a la boîte \"Détails de l'examen\" (10) en bas de l'écran pour le permettre. Tous vos examens seront rangés dans \"Mon enseignement\" (11).",
+      "name": "Créer un examen"
+    },
     "exercice": {
       "explanation1": "Pour créer un nouvel exercice, vous devez être dans l'Accueil (1) puis sélectionnez \"+ CRÉER UN NOUVEL EXERCICE\" (2). Une fois créés, ils apparaîtront sur cette page. Mais pour le moment vous allez être emmenés à la page suivante comme vous pouvez le voir ci-dessous.",
       "explanation2": "Un exercice peut être composé de plusieurs unités. Vous pouvez en ajouter en cliquant sur \"AJOUTER UNE UNITÉ\" (3). Il y a différents types d'exercices mais vous ne pouvez en utiliser qu'un type par unité. Si vous souhaitez mélanger différents types de questions dans un même exercice, vous devrez le faire dans des unités séparées pour chaque type de questions voulues.",

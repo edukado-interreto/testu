@@ -1,31 +1,46 @@
 {
   "about": {
     "about": "Eolas faoin togra",
+    "about_text": "Is ardán ríomhfhoghlama saor in aisce, ilteangach, ar líne é TestU Online a ligeann duit tráth na gceist, tástálacha agus cleachtaí éagsúla atá dírithe go príomha chun teangacha a fhoghlaim a chruthú go héasca agus go tapa. Is do mhúinteoirí, oiliúnóirí/léachtóirí chomh maith lena gcuid daltaí, atá ag freastal ar bhunscoileanna, nó cineálacha eile oideachais, cibé acu foirmeálta nó neamhfhoirmiúil atá an t-ardán seo oiriúnach. Is féidir na cúiseanna a bhaineann le hardán den sórt seo a chruthú a mhíniú tríd an ngá atá le cead a thabhairt do ghlúin óg rochtain a fháil ar oideachas saor in aisce ainneoin a gcúlra socheacnamaíoch, reiligiúnach nó náisiúnta, teorainneacha tíreolaíochta, nó fiú cineálacha éagsúla míchumais.",
     "partners_title": "Comhpháirtithe",
     "partners": {
+      "bit_description": "Tá bit (= best in training) schulungscenter (= ionad oiliúna), a bunaíodh i 1986, ar cheann de na soláthraithe oideachais is mó le rá i réimse na dtionscadal mhargadh saothair, gairmoideachais, oiliúna agus infhostaitheachta san Ostair. Is é an láidreacht shoiléir atá acu ná a dtaithí agus a n-eolas ar dhearadh (teagasc, modheolaíocht, dearadh teagascach) agus ar thionscadail éagsúla náisiúnta agus idirnáisiúnta a chur i gcrích. Tá taithí súntasach acu ar oibriú le spriocghrúpaí éagsúla, e.g. daoine óga, daoine fásta óga dífhostaithe, agus a gcuid riachtanas oideachais trína ngnáthghníomhaíochtaí.",
       "bit_location": "Graz, an Ostair",
+      "european_commission": "Tá an tionscadal seo maoinithe le tacaíocht ón gCoimisiún Eorpach. Ní léiríonn an foilseachán seo ach tuairimí an údair, agus ní féidir leis an gCoimisiún a bheith freagrach as aon úsáid a d’fhéadfaí a bhaint as an bhfaisnéis atá ann.",
+      "ikso_description": "Tacaíonn an eagraíocht idirnáisiúnta E@I, atá ag brath ar thart ar 250 oibrí deonach, le foghlaim idirchultúrtha ar an idirlíon. Is láithreáin ghréasáin ilteangacha iad a thionscadail, a sholáthraíonn bunús le haghaidh deutsch.info, inar féidir Esperanto ({1}) agus Slóvaicis ({2}) a fhoghlaim. Chomh maith le tairseacha foghlama a fhorbairt, eagraíonn E@I tionscnaimh oiliúna éagsúla, go háirithe i réimsí na dteangacha agus na dteicneolaíochtaí nua.",
       "ikso_location": "Partizánske, an tSlóvaic",
+      "leipzig_description": "Is ollscoil taighde í Ollscoil Leipzig, a bunaíodh i 1409, a thairgeann oideachas i dtimpeallacht thaighde saibhir agus éagsúil do thart ar 30,000 mac léinn a mhúineann thart ar 400 ball dáimhe. Tugann an éagsúlacht mhór de 14 dámh (a chlúdaíonn disciplíní ó leigheas go heolaíochtaí nádúrtha, ó mhatamaitic go diagacht agus ó na heolaíochtaí sóisialta go spóirt) deiseanna iontacha le haghaidh obair idirdhisciplíneach. Tá an Institiúid Staidéir Sorbais, a bhaineann le taighde ar an tSorbais agus ar theangacha mionlaigh eile, ar a litríocht agus ar a gcultúr, chomh maith le hoiliúint múinteoirí scoile, uathúil ar fud an domhain. Sna blianta ó na hathruithe polaitiúla i 1989 tá suimeanna suntasacha airgid infheistithe sa bhonneagar taighde, ionas go mbeidh Ollscoil Leipzig mar institiúid den scoth i bhfoirgnimh agus i dtrealamh inniu.",
       "leipzig_location": "Leipzig, an Ghearmáin",
       "leipzig_name": "Ollscoil Leipzig",
+      "uam_description": "Tá Ollscoil Adam Mickiewicz (AMU), Poznań, an Pholainn, ar cheann de na hollscoileanna is fearr sa Pholainn. Tá a cháil 100 bliain d’aois bunaithe ar thraidisiún fada ardoideachais i gcathair Poznań agus ar éachtaí sármhaithe reatha na foirne, na mac léinn agus na gcéimithe. Tá cáil ar AMU mar gheall ar an oideachas proifisiúnta teanga atá ar bun aige ina bhfuil thart ar 50 teanga.",
       "uam_location": "Poznań, an Pholainn",
       "uam_name": "Ollscoil Adam Mickiewicz",
+      "vu_description": "Bunaíodh Ollscoil Vilnius sa 16ú haois agus meastar í a bheith ar cheann de na hollscoileanna is sine i Lár agus in Oirthear na hEorpa. Tá staidéar teanga mar chuid lárnach de churaclam Ollscoil Vilnius. Ba í an Laidin an bhunteanga a múineadh tráth in éineacht leis an tSean-Ghréigis agus an Eabhrais. Mar sin, cé gur bunaíodh Dámh na Focleolaíochta chomh fada siar le 1944, bhí staidéir teanga á múineadh fiú sular tháinig an Coláiste Íosánach ina ollscoil sa bhliain 1579. \nTugann an Institiúid um Theangacha agus Chultúr an Bhailt taighdeoirí le chéile sa Teangeolaíocht Ghinearálta, Baltach, Gearmáinis, Polainnis, Rúisis, staidéir Lochlannacha, chomh maith le go leor eile. Maireann traidisiúin láidre de staidéar a dhéanamh ar an teanga, litríocht agus cultúr na Rúise (bunaíodh roinn foghraíochta na Rúise i 1803) go rathúil taobh leis na modhanna teagaisc is úire agus nua-aimseartha, a léirítear i rannpháirtíocht ghníomhach chomhaltaí na roinne seo i dtionscadail idirnáisiúnta agus imeachtaí eolaíocha.",
       "vu_location": "Vilnias, an Liotuáin",
       "vu_name": "Ollscoil Vilnias"
     }
   },
   "editor": {
     "age_range": "Raon aoise",
+    "cefr_levels_label": "Léibhéil an FTCE",
+    "confirm_leave": "Tá an leathanach seo ag iarraidh ort a dheimhniú gur mian leat imeacht - seans nach sábhálfar na sonraí a d'iontráil tú.",
     "description": "Cur síos",
     "details": "Eolas faoin gcleachtadh",
     "save": "Sábháil",
     "tags": "Lipéid",
-    "title": "Teideal"
+    "title": "Teideal",
+    "unexpected_response": "Freagra freastalaí gan choinne",
+    "unlisted": "Níor aimsíodh aon torthaí"
   },
   "exam": {
+    "accept_submissions": "Glac le haighneachtaí",
+    "confirm": "Ní féidir an oibríocht seo a chealú. Lean ar aghaidh?",
+    "copy": "Cóipéail",
     "created": "Cruthaithe: {date}",
     "delete": "Scrois an scrúdú",
     "description": "Cur síos scrúdaithe",
     "details": "Sonraí scrúdaithe",
+    "error": "Tharla botún agus an scrúdú á chur isteach.",
     "goto_exercise": "Téigh chun an chleachtaidh",
     "is_exam": "Is scrúdú é seo",
     "link": "Nasc",
@@ -33,8 +48,11 @@
     "no_new_submissions": "Ní ghlacann an scrúdú seo le hobair nua",
     "no_submissions": "Taisceadh ar bith",
     "or": "nó",
+    "please_log_in": "Chun leanúint ar aghaidh chuig an scrúdú, logáil isteach nó roghnaigh ainm taispeána le do thoil",
     "untitled": "Scrúdú gan teideal",
-    "view": "Féach ar"
+    "view": "Féach ar",
+    "visible_by": "Beidh torthaí an chleachtaidh seo le feiceáil ag an scrúdaitheoir {name}.",
+    "well_done": "Tá do scrúdú curtha faoi bhráid an scrúdaitheora!"
   },
   "exercise": {
     "age": "Aois:",
@@ -43,13 +61,76 @@
     "check": "Seiceáil an toradh",
     "create_copy": "Déan cóip",
     "create_exam": "Cruthaigh scrúdú",
+    "create_exam_confirm": "Féadfaidh cruthaitheoir an chleachtaidh seo é a chur in eagar nó a scriosadh agus an scrúdú ar siúl. Lean ar aghaidh ar aon nós?",
     "delete": "Scrios an cleachtadh",
     "delete_confirm": "An bhfuil tú cinnte gur mhaith leat an cleachtadh seo a scriosadh?",
     "edit": "Cuir eagar ar an gcleachtadh",
+    "error": "Tharla botún agus an aighneacht cleachtaí á sábháil",
     "explanation": "Míniú:",
     "language": "Teanga",
+    "mistake": "Déan tuairisciú ar bhotún",
     "mistake_explanation": "Míniú:",
-    "pdf": "PDF"
+    "misuse": "Déan tuairisciú ar mhí-úsáid",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Déan tuairisciú ar bhotún do {username}",
+    "report_misuse_to_administrators": "Déan tuairisciú ar mhí-úsáid do riarthóirí",
+    "submit_mistake_confirm": "Go raibh maith agat! Gheobhaidh an cruthaitheoir fógra.",
+    "submit_misuse_confirm": "Go raibh maith agat as cabhrú le Testu.eu a choinneáil feiliúnach.",
+    "target_language": "Sprioctheanga",
+    "target_language_is": "Sprioctheanga:",
+    "unlisted": "Tá an cleachtadh seo neamhliostaithe sna torthaí taighde"
+  },
+  "guide": {
+    "about": "Conas cleachtaí a chruthú",
+    "about_text": "Chun cleactadh nua a chruthú, beidh ort clárú agus logáil isteach ar an suíomh ar dtús.",
+    "construction": "Á tógáil",
+    "gap_filling": "Líon na Bearnaí",
+    "video": "Faoi fhíseán",
+    "exam": {
+      "explanation1": "Nuair atá cleachtadh cruthaithe agat, is féidir é a athrú go scrúdú. Chun é sin a dhéanamh, caithfidh tú a bheith ar leathanach an chleachtaidh agus cliceáil ar na trí phonc ar an gcúinne uachtarach den chleachtadh (1).",
+      "explanation2": "Is féidir scrúdú a chruthú ó do chleachtaí féin, atá le fáil i “Mo chuid foghlama” nó is féidir leat cleachtaí daoine eile a úsáid sa chuid “Baile”. Má úsáideann tú cleachtadh duine eile, athrófar do scrúdú má athraíonn úinéir an chleachtaidh an cleachtadh féin.",
+      "explanation3": "Nuair a chliceálann tú ar na trí phonc (1), tá ceithre rogha le feiceáil. Chun scrúdú a chruthú, caithfidh tú cliceáil ar an rogha “Cruthaigh scrúdú” (2). Tabharfaidh sé ansin tú chuig an gcéad leathanach eile áit a mbeidh tú in ann do scrúdú a shaincheapadh.",
+      "explanation4": "Mar a fheiceann tú thíos, is féidir leat teideal do scrúdú a roghnú (3). Taispeánfaidh sé ansin ar an gcuid uachtarach (4). Is féidir leat cur síos a dhéanamh ar an scrúdú (5) agus é a shábháil trí chliceáil ar an gcnaipe “Sábháil” (6).",
+      "explanation5": "Athróidh an leathanach ansin agus feicfidh tú an leathanach mar atá thíos, leis an teideal a roghnaigh tú. Sa bhosca “nasc” (7), tá nasc chuig do scrúdú agat. Is féidir é a chóipeáil trí chliceáil ar an íocón ar chlé (agus é a sheoladh chuig do mhic léinn) nó is féidir cliceáil ar ”féach ar” chun do scrúdú a fheiceáil mar a fheicfidh do mhic léinn é.",
+      "explanation6": "Is féidir dul ar ais chuig an gcleachtadh freisin más mian leat é a athrú trí chliceáil ar (8) \"Téigh go dtí an cleachtadh\". Sa bhosca “Aighneachtaí” (9), beidh na scrúduithe a chuir na mic léinn isteach le fáil agus beidh tú in ann a gcuid torthaí a fheiceáil agus gach aighneacht a sheiceáil.",
+      "explanation7": "Más mian leat sonraí an scrúdaithe a athrú nó a bhainistiú, tá siad i gcónaí sa bhosca (10) ag bun an leathanaigh sin. Stórálfar do chuid scrúduithe go léir sa chuid \"Mo theagasc\" (11).",
+      "name": "Cruthaigh scrúdú"
+    },
+    "exercice": {
+      "explanation1": "Chun cleachtadh nua a chruthú, ní mór duit a bheith sa roghchlár 'Baile' (1), ansin is féidir \"+ Cruthaigh cleachtadh nua\" (2) a roghnú. Nuair a bheidh siad cruthaithe, beidh siad le feiceáil ar an leathanach seo. Ach faoi láthair aistreofar tú go dtí an chéad leathanach eile mar a fheiceann tú thíos.",
+      "explanation2": "Is féidir aonaid iolracha a bheith i gcleachtadh. Chun aonaid a chur leis, cliceáil ar \"+ Cuir aonad leis\" (3). Tá saghasanna éagsúla cleachtaí ann ach ní mór an saghas cleachtaidh céanna a úsáid i ngach aonad. Más mian leat saghasanna éagsúla ceisteanna a chur isteach i gcleachtadh, beidh ort aonaid ar leith a chruthú.",
+      "explanation3": "Mar a fheiceann tú ar chlé, tá go leor saghasanna éagsúla aonad ann. Go príomha, is féidir iad a rangú i 3 ghrúpa: 'líon na bearnaí', 'ceisteanna ilroghnacha' agus 'ceisteanna a mheaitseáil nó a shórtáil'.",
+      "explanation4": "Is téacs nó abairt é ‘Líon na bearnaí’ a roghnaíonn tú focal nó cúpla focal a fhágáil ar lár. I gcás na gceisteanna seo, is féidir leat roinnt freagraí a thabhairt (freagra ceart amháin ar a laghad agus roinnt freagraí bréagacha) nó is féidir leat an bhearna a oscailt agus beidh ar an té atá ag freagairt na ceiste an freagra a chlóscríobh. I ngach cás, léireoidh tú an freagra/na freagraí cearta agus an cheist á cruthú.",
+      "explanation5": "Tugann na ‘Ceisteanna ilroghnacha’ deis duit ceist a chruthú le rogha freagraí. Is féidir níos mó ná freagra ceart amháin a bheith ann agus maidir leis na ceisteanna ‘líon an bhearna’, beidh ort an freagra ceart (nó freagraí cearta) a thabhairt agus an cheist á cruthú.",
+      "explanation6": "Le haghaidh ceisteanna ‘comhoiriúnú nó sórtáil’, beidh an rogha agat cur síos, ceisteanna, pictiúir, fuaimeanna, focail nó fiú freagraí a bhaineann leis na míreanna a thabhairt. Beidh ar na foghlaimeoirí na míreanna a mheaitseáil leis na freagraí nó má roghnaíonn tú an cheist ‘sórtála’, beidh orthu iad a chur san ord ceart.",
+      "explanation7": "Is féidir leat tuilleadh mínithe a fháil ar gach grúpa trí chliceáil ar na cluaisíní ar bharr an leathanaigh seo.",
+      "gap_filling_1": "Is é an cineál cleachtaidh réamhshocraithe ná ceisteanna 'líon na bearnaí'. Tá dhá chineál cleachtaí ann chun bearna a líonadh: cuireann an cineál ‘Réamhshocrú’ (1) freagraí ar fáil nuair a chliceálann tú ar an mbearna, agus iarrann an rogha ‘Freagra oscailte’ (8) ar fhoghlaimeoirí an freagra a scríobh go díreach. Clúdóimid conas ceisteanna a chruthú, freagraí a sholáthar (ceart agus mícheart).",
+      "gap_filling_2": "I réimse (2), is féidir teideal an chleachtaidh a scríobh, agus i réimse (3), cur síos gairid a scríobh chun treoracha na gceisteanna a mhíniú nó chun comhthéacs a sholáthar.",
+      "gap_filling_3": "Tá na ceisteanna féin scríofa i réimse (4). Tá dhá bhealach chun é a dhéanamh. Is féidir leat na ceisteanna agus na freagraí a scríobh sa bhosca nó is féidir leat na huirlisí a úsáid sa chúinne uachtarach ar chlé (6). Beidh an toradh mar an gcéanna, feicfidh tú an téacs céanna sa réimse (4).",
+      "gap_filling_4": "Má scríobhann tú na ceisteanna go díreach sa bhosca, ní mór gach ceist a dheighilt le líne bhán agus an freagra a thabhairt idir lúibíní [ ] agus deighilteoir ceartingearach |. Caithfidh tú + a chur roimh an bhfreagra cheart. Má tá níos mó ná freagra ceart amháin ann, measfar go bhfuil aon cheann acu ceart don toradh. Is féidir na freagraí molta a mheascadh go randamach freisin trí chliceáil ar “Measc roghanna ” (7).",
+      "gap_filling_5": "Má úsáideann tú na huirlisí chun na ceisteanna a chruthú (6), cruthóidh an ceann ar chlé líne bhán chun tús a chur le ceist nua. Beidh ort an cheist nó an téacs a scríobh agus nuair is mian leat bearna a chur, cliceáil ar an uirlis ar dheis. Preabfaidh fuinneog nua aníos, mar a thaispeántar san íomhá. Is féidir na freagraí a scríobh ceann ar cheann. Déanfar iad a bhailíochtú nuair a bhrúnn tú \"ENTER\". Measfar go huathoibríoch gurb é an chéad cheann ceart, agus taispeánfar “v” glas os a chomhair, ach is féidir an freagra ceart a roghnú trí chliceáil ar an gcnaipe beag os comhair gach freagra (8). Trí chliceáil ar an gcearnóg briste (9) is féidir leat an rogha a roghnú freisin gan aon rud a chur isteach (fág folamh).",
+      "gap_filling_open_answer_1": "Is é an cineál eile cleachtaidh ‘líon na bearnaí’ ná “Freagra oscailte” (10). Mar a fheiceann tú thíos, níl aon fhreagra molta don saghas seo cleachtaidh. Anseo, is féidir freagraí a bhfuiltear ag súil leo a shonrú, ceann amháin nó níos mó, ag baint úsáide as na modhanna céanna a mhíníomar níos luaithe - leis an uirlis a cuireadh ar fáil nó go díreach sa bhosca ainmnithe (11). Is féidir freagraí míchearta a mholadh; ní bheidh siad le feiceáil ach amháin le linn an phróisis cheartúcháin. Beidh ‘X’ dearg le feiceáil má scríobhann duine éigin ceann de na freagraí míchearta. Má thugann siad aon fhreagra eile, ní thaispeánfar aon rud. Taispeánfar seicmharc glas (tic) má tá ceann de na freagraí cearta acu.\"",
+      "gap_filling_open_answer_2": "\"Is féidir leat tuilleadh ceisteanna a chur leis trí úsáid a bhaint as na modhanna céanna a léiríodh roimhe seo: trí líne bhán a chur leis nó trí chliceáil ar an gcnaipe ar chlé (6). Nuair a bheidh tú sásta le do chuid ceisteanna, cliceáil ar an gcnaipe 'Sábháil' chun do chuid oibre a shábháil. Is féidir filleadh am ar bith chun tuilleadh ceisteanna a chur leis nó chun athruithe a dhéanamh.",
+      "name": "Cleachtadh nua"
+    },
+    "multiple_choice": {
+      "explanation1": "Más fearr leat na freagraí a thaispeáint ní mar bhearnaí ach mar cheisteanna ilrogha leis na freagraí faoin gceist agus boscaí le seiceáil, is féidir leat “Iolrogha” a roghnú (12).",
+      "explanation2": "I liosta na gcleachtaí a fheictear nuair a chuireann tú aonad nua ar fáil, tugann na cineálacha “Ceisteanna faoi phictiúr, fíor nó bréagach” agus na cineálacha “Ceisteanna faoi théacs, ilroghnach” dhá shampla eile duit ar conas an cineál seo ceisteanna a úsáid.",
+      "explanation3": "Mar atá léirithe cheana, is féidir teideal a thabhairt don tsraith ceisteanna. Is féidir cur síos a chur leis freisin, mar shampla téacs a bhfuil tú ag iarraidh ceisteanna a chur air nó réamhrá faoi na ceisteanna...",
+      "explanation4": "Is féidir na ceisteanna agus na freagraí a chur leis mar a rinneadh cheana, trí iad a scríobh go díreach sa bhosca téacs (13) nó leis na cnaipí mar a míníodh cheana do na ceisteanna ‘líon na bearnaí’ (6). Caithfidh “+” a bheith ar an bhfreagra ceart agus ní mór “|” a bheith idir na freagraí. Má tá níos mó ná freagra ceart amháin ann, marcálfar an cheist mar cheart nuair a bheidh na freagraí cearta go léir seiceáilte.",
+      "explanation5": "Tá deis agat pictiúir nó fuaimeanna a chur leis an gcur síos freisin, trí chliceáil ar na trí phonc (14) agus iad a roghnú ó do ríomhaire. Is féidir ceisteanna a chur faoin bhfuaim nó faoin íomhá. Is féidir an oiread agus is mian leat a chur leis agus an áit ar mhaith leat iad a bheith sa téacs a roghnú tríd an eilimint a bhogadh idir lúibíní slabhracha {} (15).",
+      "name": "Ceisteanna ilrogha"
+    },
+    "sort_and_match": {
+      "explanation1": "Is é an grúpa deiridh cleachtaí ná “sórtáil agus meaitseáil” ar a dtugtar 'péireáil' freisin (téacs le téacs, téacs le pictiúir, pictiúir le fuaimeanna agus sórtáil pictiúir). Is féidir leat an cineál seo cleachtaí a roghnú sa bhosca ‘saghas’ (16) nó i liosta na n-aonad nua.",
+      "explanation1_1": "Is éard atá sa cheann is simplí ná focail a mheaitseáil. Chun na cleachtaí a chruthú, is féidir an cnaipe (17) a úsáid nó scríobh sa bhosca téacs (18).",
+      "explanation2": "Ní mór gach péire a scríobh le cuid amháin ar chlé agus cuid amháin ar thaobh na láimhe deise den tsiombail ”==”, le líne bhán amháin eatarthu. Sa sampla seo, tá torthaí i gcolún amháin agus dathanna sa cheann eile. Ach is féidir aistriúcháin, uimhreacha, nó fiú pictiúir, fuaimeanna nó físeáin a chur isteach. Is é an rud is tábhachtaí ná an cineál céanna a chur sa cholún céanna. Meascfar na tairiscintí don chleachtadh.",
+      "explanation3": "Chun pictiúir nó fuaim a chur leis, caithfidh tú na cnaipí (19) a úsáid agus an comhad a roghnú ar do ríomhaire. Cruthóidh sé na heilimintí idir lúibíní slabhracha {}. Tar éis sin, is féidir iad a bhogadh go dtí an áit is mian leat. Chun físeán a chur leis, caithfidh tú an tríú cnaipe (19) a roghnú agus seoladh url an fhíseáin a scríobh isteach (mar shampla ó YouTube nó Vimeo...). Ní féidir físeán a uaslódáil go díreach ó do ríomhaire.",
+      "explanation4": "Is féidir téacs a cheangal le téacs, nó le pictiúr nó le fuaim, nó pictiúir a nascadh le fuaimeanna mar a léirítear i (20).",
+      "explanation5": "Mura n-úsáidtear an tsiombail \"==\" chun péirí a dhéanamh, mar a thaispeántar in (21), cruthaítear ceacht sórtála ina gcaithfear ord ceart a fháil. Is féidir íomhánna, téacs, fuaim nó físeáin a úsáid.",
+      "name": "Sortáil agus meaitseáil",
+      "video": "Is féidir físeán a chur leis, go díreach sa bhosca tuairisce, trí sheoladh url an fhíseáin a scríobh idir lúibíní slabhracha agus le “físeán:\" roimhe, mar a thaispeántar in (22). Níl aon chnaipe chun é a dhéanamh ach is féidir sampla scríofa a bheith agat tríd an gcineál aonaid a roghnú: “Ceisteanna faoi fhíseán, freagra oscailte”."
+    }
   },
   "home": {
     "create_exercise": "Cruthaigh cleachtadh nua",
@@ -57,7 +138,8 @@
   },
   "langs": {
     "en": "Béarla",
-    "eo": "Esperanto"
+    "eo": "Esperanto",
+    "help": "Cabhraigh linn aistriúchán a dhéanamh ar an suíomh gréasáin"
   },
   "learn": {
     "date": "Dáta",
@@ -74,8 +156,12 @@
     "email_is_verified": "Dearbhaíodh do ríomhphost! Is féidir leat logáil isteach anois",
     "login": "Logáil isteach",
     "mail_invalid": "Caithfidh an ríomhphost a bheith bailí",
+    "no_account_yet": "Nach bhfuil cúntas agat fós?",
     "page_title": "Logáil isteach",
     "password": "Pasfhocal",
+    "password_reset": "Athshocrú pasfhocal",
+    "password_reset_done": "Rinneadh athshocrú ar do phasfhocal",
+    "password_reset_sent": "Seoladh nasc chuig do seoladh ríomhphost chun do phasfhocal a athshocrú.",
     "required_field": "Réimse riachtanach",
     "resend_link": "Seol an nasc arís",
     "signup": "Cláraigh ar TestU",
@@ -91,6 +177,7 @@
     "catchphrase": "Cruthaigh do chuid trialacha teanga féin",
     "cookie_consent": "Úsáideann an suíomh gréasáin seo an méid íosta fianán chun é a fheidhmiú. Trí leanúint ar aghaidh ag baint úsáide as an suíomh gréasáin seo glacaimid go nglacann tú le húsáid na bhfianán feidhmiúil.",
     "edit": "Cuir in eagar",
+    "guide": "Conas",
     "home": "Baile",
     "lang_menu_header": "Teanga an chomhéadain",
     "login": "Logáil isteach",
@@ -102,9 +189,11 @@
     "privacy": "Polasaí príobháideachais",
     "settings": "Socruithe cuntais",
     "signup": "Cláraigh",
+    "social": "Sóisialta",
     "source_code": "Cód foinse",
     "submit": "Cuir isteach",
-    "terms": "Téarmaí úsáide"
+    "terms": "Téarmaí úsáide",
+    "why": "Cén fáth"
   },
   "review": {
     "exam": "Athbhreithniú scrudaithe",
@@ -120,7 +209,7 @@
     "add_unit_to_begin": "Cuir aonad nua leis chun tosú",
     "close": "Dún eagarthóir",
     "delete": "Scrois",
-    "edit_next": "Cuir eagar ar an chéad mhír eile",
+    "edit_next": "Cuir eagar ar an gcéad mhír eile",
     "edit_previous": "Cuir eagar ar an mír roimhe seo",
     "empty_exercise": "Cleachtadh folamh",
     "first_item": "An chéad mhír",
@@ -134,12 +223,75 @@
     "move_up": "Bog suas",
     "new_gap": "Bearna nua",
     "new_matching_pair": "Péire nua meaitseála",
-    "second_item": "Dara mír",
+    "second_item": "An dara mír",
     "shuffle_options": "Measc roghanna",
     "start_typing": "Tosaigh ag clóscríobh abairte",
     "title": "Teideal",
     "untitled_unit": "Aonad gan teideal",
-    "valid_url": "Clóscríobh URL bailí le do thoil"
+    "valid_url": "Clóscríobh URL bailí le do thoil",
+    "snippets": {
+      "blank_unit": {
+        "name": "Aonad folamh"
+      },
+      "gap_filling_dropdown": {
+        "code": "Tá an leabhar [+ar|do] an mbord.",
+        "name": "Líon na bearnaí, roghchlár anuas"
+      },
+      "gap_filling_open_answer": {
+        "code": "Tá an leabhar [+ar|do] an mbord.",
+        "name": "Líon na bearnaí, freagra oscailte"
+      },
+      "multiple_choice": {
+        "code": "Cá bhfuil an leabhar?\n[+ar an mboard|sa bhord]",
+        "name": "ilrogha (do cheisteanna)"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
+        "name": "Ag meatsáil pictiúr le fuaimeanna"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Madra == {img:dog.jpeg}\n\nEilifint == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",
+        "name": "Ag meatseáil téacsanna le pictiúir"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Madra == {sound:dog.mp3}\nEilifint == {sound:elephant.mp3}\nCat == {sound:cat.mp3}",
+        "name": "Ag meatseáil téacsanna le fuaimeanna"
+      },
+      "pairing_text_with_text": {
+        "code": "Silín == Dearg\nLíomóid == Buí\nBrocailí == Glas",
+        "name": "Ag meatseáil téacs le téacs"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "Is [madra|+cat|eilifint] an t-ainmhí sa phictiúr",
+        "description": "{img:cat.jpeg}",
+        "name": "Ceisteanna faoi phictiúr, fíor nó bréagach"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Cén ainmhí a dhéanann an fhuaim seo?\n[ Cat|Madra|Eilifint]\n\nCad é an téarma a úsáidtear chun cur síos a dhéanamh ar an bhfuaim a dhéanann an t-ainmhí seo?\n[+Míáú| Tafann]",
+        "description": "Éist leis an bhfuaim agus freagair na ceisteanna:\n{sound:cat.mp3}",
+        "name": "Ceisteanna faoi fhuaim, roghchlár anuas"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Cén fáth ar ghlac an giorria sos le linn an rása? [Bhí sé tuirseach|Bhí sé ag iarraidh seans a thabhairt don turtar teacht suas| +Bhí sé féinmhuiníneach]\n\nCé a bhuaigh an rás? [An giorria|+An turtar|Éan]",
+        "description": "Fadó, fadó, bhí giorria agus turtar ann a bhí i gcónaí ag argóint faoi cé a bhí níos tapúla.\nThug an turtar dúshlán giorria rás a bheith acu, agus ghlac an giorria leis, ag ceapadh gur bua éasca a bheadh ann.\n\nThosaigh an rás, agus d'imigh an giorria ar nós na gaoithe, ag fágáil an turtar ina dhiaidh. D’éirigh an giorria rómhuiníneach agus bheartaigh sí néal a chodladh. Le linn an ama seo, lean an turtar ag bogadh go seasta i dtreo na críochlíne.\n\nNuair a dhúisigh an giorria, thuig sé go raibh an turtar beagnach ag an líne deiridh. Rinne an giorria iarracht teacht suas leis, ach bhí sé ró-dhéanach. Bhí an rás buaite ag an turtar.",
+        "name": "Ceisteanna faoi théacs, ilrogha"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Cá bhfuil an áit seo suite?\n[]\nCé a thóg é?\n[]",
+        "description": "Féach ar an bhfíseán agus freagair na ceisteanna.\n\n{video:https://www.youtube.com/watch?v=chii_rEU30g}",
+        "name": "Ceisteanna faoi fhíseán, freagra oscailte"
+      },
+      "sorting_pictures": {
+        "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
+        "name": "Ag sortáil pictiúr"
+      }
+    },
+    "types": {
+      "default": "Liosta anuas",
+      "multiple_choice": "Ceisteanna ilrogha",
+      "open_answer": "Ceisteanna oscailte",
+      "pairing": "Sortáil agus meaitseáil"
+    }
   },
   "sort": {
     "rated": "Is fearr",
@@ -182,5 +334,60 @@
   "teach": {
     "exams": "Scrúdaithe",
     "exercises": "Cleachtaí"
+  },
+  "terms": {
+    "intro": "Fáilte is fiche chuig TestU Online, ardán ríomhfhoghlama ar líne atá saor in aisce agus ilteangach a chuireann ar chumas daoine éagsúlacht de thráth na gceist, trialacha agus cleachtaí foghlama teanga a chruthú go héasca agus go tapa! Má tá tú ag rochtain agus ag baint úsáide as an suíomh gréasáin testu.eu (“an suíomh gréasáin”, “an tseirbhís”, “an soláthraí”) tugann sé le tuiscint go bhfuil na téarmaí agus na coinníollacha seo a leanas léite agat (“an t-úsáideoir”), go dtuigeann tú iad agus go nglacann tú leo, is cuma má tá tú cláraithe mar bhall ar testu.eu. Dá bhrí sin, léigh an téacs seo a leanas le do thoil.",
+    "last_update": "An t-uasdátú is déanaí: {date}",
+    "section1": {
+      "title": "Clárú"
+    },
+    "section2": {
+      "title": "Cosaint sonraí"
+    }
+  },
+  "why": {
+    "because": "Mar go bhfuil sé:",
+    "more_projects": "Tuilleadh tionscadal ag",
+    "title": "Cén fáth ar chóir Test.eu a úsáid?",
+    "point1": {
+      "subtitle": "Gan síntiús, gan aon chostais fholaithe nó ballaí pá, dáiríre!",
+      "title": "Go hiomlán saor in aisce"
+    },
+    "point10": {
+      "subtitle": "A bhuí le clár Erasmus+ agus le Gníomhaireacht Náisiúnta na Slóvaice is féidir leat testu.eu a úsáid saor in aisce!",
+      "title": "Le tacaíocht oifigiúil ón gCoimisiún Eorpach"
+    },
+    "point2": {
+      "subtitle": "Tá cead agat inneachar a úsáid agus a chruthú, ní gá aitreabúidí ach an oiread",
+      "title": "Ábhar ceadúnaithe CC0"
+    },
+    "point3": {
+      "subtitle": "Níl aon rud i bhfolach",
+      "title": "Foinse oscailte"
+    },
+    "point4": {
+      "subtitle": "Déanann Testu.eu teangacha a cheiliúradh. An bhfuil do theanga in easnamh? Cuir isteach anseo í:",
+      "title": "Ilteangach"
+    },
+    "point5": {
+      "subtitle": "So-úsáidte, tapa, iomasach, agus simplí le nascleanúint a dhéanamh.",
+      "title": "Éasca le húsáid"
+    },
+    "point6": {
+      "subtitle": "Léim isteach i gceachtanna, cúrsaí, cleachtaí agus tástálacha ar líne - cur chuige nua-aimseartha i leith na foghlama!",
+      "title": "Ar líne"
+    },
+    "point7": {
+      "subtitle": "Foghlaim gan teorainneacha, teagasc gan teorainneacha - tum isteach i gcruthú ábhair nó athúsáid acmhainní atá ann cheana féin.",
+      "title": "Úsáideach"
+    },
+    "point8": {
+      "subtitle": "Is cúis áthais é ábhar oideachasúil a chruthú - glac le foghlaim trí chruthaitheacht!",
+      "title": "Spraíúil"
+    },
+    "point9": {
+      "subtitle": "Athúsáid ábhar daoine eile nó d'ábhar féin, laghdaigh an méid priontála, déan athchúrsáil ar smaointe, cleachtaí agus ceisteanna!",
+      "title": "Éiceabhách"
+    }
   }
 }

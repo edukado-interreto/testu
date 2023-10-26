@@ -86,6 +86,16 @@
     "construction": "Im Aufbau befindlich",
     "gap_filling": "Lückentext",
     "video": "über ein Video",
+    "exam": {
+      "explanation1": "Wenn Sie eine Übung erstellt haben, können Sie sie in eine Prüfung umwandeln. Dazu müssen Sie sich auf der Seite der Übung befinden und auf die drei Punkte in der rechten oberen Ecke der Übung klicken (1).",
+      "explanation2": "Sie können eine Prüfung aus Ihren eigenen Übungen machen, die Sie in \"Mein Lernen\" finden, oder Sie können die Übungen anderer im Bereich \"Home\" verwenden. Wenn Sie die Übung einer anderen Person verwenden, wird sich Ihre Prüfung ändern, wenn der Eigentümer der Übung die Übung selbst ändert.",
+      "explanation3": "Wenn Sie auf die drei Punkte (1) klicken, erscheinen vier Optionen. Um eine Prüfung zu erstellen, müssen Sie auf die Option \"Eine Prüfung erstellen\" (2) klicken. Sie werden dann zur nächsten Seite weitergeleitet, auf der Sie Ihre Prüfung anpassen können.",
+      "explanation4": "Wie Sie unten sehen können, können Sie den Titel Ihrer Prüfung auswählen (3). Er wird dann im oberen Teil angezeigt (4). Sie können auch eine Beschreibung der Prüfung hinzufügen (5) und sie speichern, indem Sie auf die Schaltfläche \"Speichern\" klicken (6).",
+      "explanation5": "Die Seite ändert sich dann und Sie sehen die Seite wie unten, mit dem von Ihnen gewählten Titel. In dem Feld \"Link\" (7) finden Sie den Link zu Ihrer Prüfung. Sie können diesen kopieren, indem Sie auf das linke Symbol klicken (und ihn an Ihre Schüler:innen senden), oder Sie können auf \"ANSEHEN\" klicken, um Ihre Prüfung so zu sehen, wie Ihre Schüler:innen sie sehen werden.",
+      "explanation6": "Sie können auch zur Übung zurückgehen, wenn Sie diese ändern möchten, indem Sie auf (8) \"Zur Übung gehen\" klicken. Im Feld \" Aubgaben \" (9) werden die von den Schüler:innen eingereichten Prüfungen angezeigt und Sie können die Ergebnisse sehen und jede Aufgabe überprüfen.",
+      "explanation7": "Wenn Sie die Details der Prüfung ändern oder kontrollieren möchten, finden Sie diese immer im Feld (10) unten auf der Seite. Alle Ihre Prüfungen werden in der Rubrik \"Mein Lehren\" (11) gespeichert.",
+      "name": "Eine Prüfung erstellen"
+    },
     "exercice": {
       "explanation1": "Um eine neue Übung zu erstellen, müssen Sie sich im Menü HOME (1) befinden, danach können Sie \"+Erstelle eine neue Übung\" (2) wählen. Nach dem Erstellen erscheint die Übung auf dieser Seite. Aber zunächst werden Sie auf die nächste Seite weitergeleitet, wie Sie unten sehen.",
       "explanation2": "Eine Übung kann aus mehreren Teilen bestehen. Sie können Einheiten ergänzen, indem Sie \"+ERGÄNZE EINE EINHEIT\" (3) anklicken. Es gibt verschiedene Übungstypen, aber innerhalb eines Übungsteils können nur dieselben Übungstypen verwendet werden. Will man verschiedene Arten von Fragen in einer Übung mischen, so muss man gesonderte Einheiten für jeden Typ von Fragen erstellen.",
@@ -437,7 +447,7 @@
       "title": "Leicht zu handhaben"
     },
     "point6": {
-      "subtitle": "Tauche ein die Online-Übungen und Tests – in eine moderne Art des Lernens!",
+      "subtitle": "Tauche ein in die Online-Übungen und Tests – in eine moderne Art des Lernens!",
       "title": "Online"
     },
     "point7": {

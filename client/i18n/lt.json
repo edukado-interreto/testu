@@ -86,6 +86,16 @@
     "construction": "Kuriama",
     "gap_filling": "Tarpų užpildymas",
     "video": "apie vaizdo įrašą",
+    "exam": {
+      "explanation1": "Sukurę pratimą, galite jį paversti egzaminu. Norėdami sukurti egzaminą, turite būti pratimo puslapyje ir spustelėti tris taškus dešiniajame viršutiniame pratimo kampe (1).",
+      "explanation2": "Egzaminą galite sukurti iš savo užduočių, kurias rasite dalyje \"Mano mokymasis\", arba galite naudotis kitų užduotimis, kuriuos rasite dalyje \"Pradžia\". Jei pratimo, kurį naudojate, savininkas pakeis pratimą, jūsų egzaminas taip pat pasikeis.",
+      "explanation3": "Spustelėjus tris taškus (1), atsiranda keturi pasirinkimai. Norėdami sukurti egzaminą, turite spustelėti parinktį \"Sukurti egzaminą\" (2). Tada pereisite į kitą puslapį, kuriame galėsite kurti savo egzaminą.",
+      "explanation4": "Kaip matote apačioje, galite pasirinkti egzamino pavadinimą (3). Tada jis bus rodomas viršutinėje dalyje (4). Taip pat galite pridėti egzamino aprašymą (5) ir išsaugoti jį spustelėdami mygtuką \"Išsaugoti\" (6).",
+      "explanation5": "Tada puslapis pasikeis ir pamatysite puslapį žemiau, su jūsų  parinktu pavadinimu. Laukelyje \"nuoroda\" (7) rasite nuorodą į savo egzaminą. Ją galite nukopijuoti spustelėję kairę piktogramą (ir nusiųsti mokiniams) arba galite spustelėti \"VIEW\" ir pamatyti savo egzaminą taip, kaip jį matys mokiniai.",
+      "explanation6": "Taip pat jei norite pakeisti pratimą, galite į jį grįžti, spustelėję (8) \"Grįžti į pratimą\". Laukelyje \"Pateiktos užduotys\" (9) bus mokinių egzaminai, galėsite matyti jų rezultatus ir patikrinti kiekvieną pateiktą užduotį.",
+      "explanation7": "Jei norite pakeisti ar kontroliuoti egzamino informaciją, visada galite tai padaryti puslapio apačioje esančiame lange (10). Visi jūsų egzaminai bus patalpinti dalyje \"Mano mokymas\" (11).",
+      "name": "Kurti egzaminą"
+    },
     "exercice": {
       "explanation1": "Norėdami sukurti naują užduotį, turite būti Pagrindiniame puslapyje (1), tada galite pasirinkti \"+ Kurti naują užduotį\" (2). Sukūrus pratimą, jie bus rodomi šiame puslapyje. Tačiau kol kas būsite perkelti į kitą puslapį, ką matote šiek tiek žemiau.",
       "explanation2": "Pratimą galima sudaryti iš kelių skyrių. Skyrius galite pridėti spustelėję \"+ PRIDĖTI SKYRIŲ\" (3). Yra įvairių rūšių pratimų, tačiau viename skyriuje galite naudoti tik tos pačios rūšies pratimus. Jei pratybose norite derinti skirtingų rūšių klausimus, turėsite kurti atskirus skyrius kiekvienai norimai klausimų rūšiai.",
@@ -146,8 +156,12 @@
     "email_is_verified": "Jūsų elektroninis paštas patvirtintas! Dabar galite prisijungti.",
     "login": "Prisijungti",
     "mail_invalid": "Elektroninis paštas turi būti galiojantis",
+    "no_account_yet": "Jūs dar neturite savo paskyros?",
     "page_title": "Prisijungti",
     "password": "Slaptažodis",
+    "password_reset": "Slaptažodžio atkūrimas",
+    "password_reset_done": "Jūsų slaptažodis sėkmingai atkurtas",
+    "password_reset_sent": "Slaptažodžio atstatymo nuoroda išsiųsta jūsų el. pašto adresu.",
     "required_field": "Privaloma užpildyti",
     "resend_link": "Pakartotinis nuorodos siuntimas",
     "signup": "RegistruotisTestU",
@@ -178,7 +192,8 @@
     "social": "Socialinis",
     "source_code": "Šaltinio kodas",
     "submit": "Pateikti",
-    "terms": "Naudojimo taisyklės"
+    "terms": "Naudojimo taisyklės",
+    "why": "Kodėl"
   },
   "review": {
     "exam": "Egzamino peržiūra",
@@ -228,7 +243,7 @@
       },
       "multiple_choice": {
         "code": "Kur yra knyga?\n[+ant stalo|stale]",
-        "name": "Pasirinkti iš kelių variantų"
+        "name": "Pasirinkti iš kelių variantų (klausimams)"
       },
       "pairing_pictures_with_sounds": {
         "code": "{img:suo.jpeg} == {sound:suo.mp3}\n\n{img:dramblys.jpeg} == {sound:dramblys.mp3}\n\n{img:kate.jpeg} == {sound:kate.mp3}",
@@ -237,6 +252,10 @@
       "pairing_text_with_pictures": {
         "code": "Šuo == {img:suo.jpeg}\n\nDramblys == {img:dramblys.jpeg}\n\nKatė == {img:kate.jpeg}",
         "name": "Teksto susiejimas su paveikslais"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Šuo == {sound:suo.mp3}\n\nDramblys == {sound:dramblys.mp3}\n\nKatė == {sound:kate.mp3}",
+        "name": "Teksto poravimas su garsu"
       },
       "pairing_text_with_text": {
         "code": "Vyšnia == Raudona\n\nCitrina == Geltona\n\nBrokolis == Žalia",
@@ -397,6 +416,51 @@
       "text4": "Svetainės savininkas turi teisę visiškai arba iš dalies perleisti savo teises ir pareigas trečiajam asmeniui pagal šią sutartį apie tai pranešdamas elektroniniu paštu prieš 4 savaites.",
       "text5": "Paslaugų teikėjo arba svetainės administratorių kontaktinę informaciją galima rasti puslapyje {link}.",
       "title": "Baigiamosios nuostatos"
+    }
+  },
+  "why": {
+    "because": "Nes tai:",
+    "more_projects": "Daugiau projektų",
+    "title": "Kodėl Testu.eu",
+    "point1": {
+      "subtitle": "Jokių prenumeratų, paslėptų išlaidų, tikrai!",
+      "title": "Visiškai nemokamai"
+    },
+    "point10": {
+      "subtitle": "Ačiū \"Erasmus+\" programai ir Slovakijos nacionalinės agentūrai už tai, kad testu.eu galite naudotis nemokamai!",
+      "title": "Oficialiai remia Europos Komisija"
+    },
+    "point2": {
+      "subtitle": "Galite laisvai naudoti ir kurti turinį, nereikia rodyti atributikos.",
+      "title": "CC0 licenciją turintis turinys"
+    },
+    "point3": {
+      "subtitle": "Nieko užslėpto",
+      "title": "Atviras šaltinis"
+    },
+    "point4": {
+      "subtitle": "Testu.eu sveikina kalbas. Pasigendate savosios? Pridėkite ją čia:",
+      "title": "Daugiakalbis"
+    },
+    "point5": {
+      "subtitle": "Patogus naudoti, greitas, intuityvus ir lengvai valdomas.",
+      "title": "Lengva naudotis"
+    },
+    "point6": {
+      "subtitle": "Pasinerkite į internetines pamokas, kursus, pratybas ir testus - tai modernus požiūris į mokymąsi!",
+      "title": "Intenetinis"
+    },
+    "point7": {
+      "subtitle": "Mokymasis be sienų, mokymas be ribų - pasinerkite į turinio kūrimą arba panaudokite jau esamus išteklius.",
+      "title": "Naudingas"
+    },
+    "point8": {
+      "subtitle": "Kurti mokomąjį turinį - džiaugsmas! Mokykitės pasitelkdami kūrybiškumą!",
+      "title": "Linksmas"
+    },
+    "point9": {
+      "subtitle": "Panaudokite kitų arba savo sukurtą turinį, mažinkite spausdinimo kiekį, perdirbkite idėjas, pratimus ir klausimus!",
+      "title": "ekologiškas"
     }
   }
 }

@@ -35,6 +35,7 @@
   "exam": {
     "accept_submissions": "Akcepti provojn",
     "confirm": "Ĉi tiu operacio ne estas malfarebla. Ĉu daŭrigi?",
+    "copy": "Kopio",
     "created": "Kreita: {date}",
     "delete": "Forigi ekzamenon",
     "description": "Priskribo de la ekzameno",
@@ -85,6 +86,16 @@
     "construction": "Pretigata",
     "gap_filling": "Truekzerco",
     "video": "Pri video",
+    "exam": {
+      "explanation1": "Se vi pretigis ekzercon, vi povas transformi ĝin al ekzameno. Por tion fari vi devas esti en la paĝo de la ekzerco kaj kliki sur la tri punktojn supre dekstre (1)",
+      "explanation2": "Vi povas fari ekzamenon el viaj propraj ekzercoj kiujn vi trovas in \"My learning\" aŭ vi povas uzi ekzercojn de aliaj en la \"Home\" parto. Se vi uzas alies ekzercon, via ekzameno povas ŝanĝiĝi, la kreanto de la ekzerco ŝanĝas sian ekzercon.",
+      "explanation3": "Se vi klikas sur la tri punktojn supre dekstre (1), aperos 4 eblecoj. Por fari ekzamenon, vi devas elekti la eblecon ”Create an exam” (2). Tio gvidos vin al la sekva paĝo kie v povas adapti vian ekzamenon.",
+      "explanation4": "Kiel vi vidas sube, vi povas elekti la titolon de via ekzameno (3). Tio montriĝos en la supra parto (4). Vi povas aldoni ankaŭ priskribon de la ekzameno (5) kaj konservi ĝin per kliko al la \"save\" butono (6)",
+      "explanation5": "La paĝo tiam ŝanĝiĝos kaj vi vidos ĝin kiel sube kun la elektita titolo. En la skatolo \"link\" (7) vi havos la ligon al via ekzameno. Vi povas kopii ĝin per kliko sur la maldekstran butonon (kaj sendi ĝin al viaj studentoj) aŭ povas kliki sur \"VIEW\" por vidi la ekzamenon tiel kiel viaj studentoj vidas.",
+      "explanation6": "Vi povas ankaŭ reiri al la ekzerco, se vi volas ŝanĝi ĝin per kliko sur ”Go to the exercise” (8). En la skatolo ”Submissions” (9) troviĝos la ekzamenoj plenumitaj far la studentoj, kaj vi povos vidi iliajn rezultojn kaj kontroli ĉiujn.",
+      "explanation7": "Se vi volas ŝanĝi aŭ kontroli la detalojn de la ekzameno, ili estas en la skatolo (10) sube de la paĝo. Ĉiuj viaj ekzamenoj estos konservataj en ”My teaching” part (11).",
+      "name": "Kreu ekzamenon"
+    },
     "exercice": {
       "explanation1": "Por krei novan ekzercon vi devas esti en la Home menu (1), poste vi povas elekti \"+CREATE A NEW EXERCISE\" (2). Se jam kreita, ĝi aperas sur tiu ĉi paĝo. Sed nun vi estos sendita al la sekva paĝo kiel vi povas vidi sube.",
       "explanation2": "Ekzerco povas esti kunmetita en multoblaj unuoj. Vi povas aldoni unuojn alklakante \"+ ALDONU UNION\" (3). Estas malsamaj specoj de ekzercoj sed en ĉiu unuo vi povas uzi nur la saman specon. Se vi volas miksi malsamajn specojn de demandoj en ekzerco, vi devos fari apartajn unuojn por ĉiu speco de demandoj, kiujn vi volas.",
@@ -99,17 +110,36 @@
       "gap_filling_4": "Se vi skribas la demandojn rekte en la keston, ĉiuj demandoj devas esti apartigitaj per malplena linio kaj la respondo devas esti donita inter krampoj [ ] kaj apartigita per vertikala streko |. Kaj vi devas meti + antaŭ la ĝusta(j)n respondo(j)n. Se estas pli ol unu ĝusta respondo, iu el ili estos konsiderata ĝusta por la rezulto. Vi ankaŭ povas elekti miksi la proponitajn respondojn alklakante la butonon\"Miksi opciojn\" (7)",
       "gap_filling_5": "Se vi uzas la ilojn por krei la demandojn (6), tiu maldekstre faras malplenan linion por komenci novan demandon. Vi devas skribi la demandon aŭ tekston kaj kie vi volas meti breĉon, alklakante la ilon dekstre. Ŝprucfenestro malfermiĝos, kiel montrite en la bildo. Vi povas tajpi la respondojn unu post la alia. Ili estos validigitaj kiam vi tajpas \"enigi\". Defaŭlte, la unua aŭtomate estos konsiderata kiel la ĝusta, kaj verda ”v” montros antaŭ ĝi, sed vi povas elekti la ĝusta(j)n respondo(j)n klakante sur la malgranda butono antaŭ ĉiu respondo (8). Vi ankaŭ povas elekti aldoni opcion \"lasi malplena\" alklakante la streketan kvadraton dekstre (9).",
       "gap_filling_open_answer_1": "La alia speco de ekzerco por plenigi  breĉon estas la \"Malferma respondo\" (10). Kiel vi povas vidi ĉi-sube, por ĉi tiu speco de ekzerco ne estas proponita respondo. Vi povas doni atenditajn respondojn, unu aŭ pli, en la samaj manieroj kiel ni ĵus klarigis, per la ilo aŭ rekte en la kesto (11). Vi povas proponi malĝustajn respondojn; ili ne aperos, sed dum la korekto montriĝos ruĝa X, se iu uzis unu el ĉi tiuj respondoj; nenio okazos, se iu skribis alian respondon kaj verda V aperos, se iu elektis unu el la ĝustaj respondoj.",
-      "gap_filling_open_answer_2": "to\n\nVi povas aldoni aliajn demandojn, same kiel antaŭe, kreante malplenan linion aŭ alklakante la butonon maldekstre (6). Kiam vi estas kontenta kun viaj demandoj, ne forgesu alklaki la butonon \"Konservi\" por konservi vian laboron. Vi ĉiam povas reveni por aldoni demandojn aŭ fari iujn ŝanĝojn.",
+      "gap_filling_open_answer_2": "Vi povas aldoni aliajn demandojn, same kiel antaŭe, kreante malplenan linion aŭ alklakante la butonon maldekstre (6). Kiam vi estas kontenta kun viaj demandoj, ne forgesu alklaki la butonon \"Konservi\" por konservi vian laboron. Vi ĉiam povas reveni por aldoni demandojn aŭ fari iujn ŝanĝojn.",
       "name": "Nova ekzerco"
+    },
+    "multiple_choice": {
+      "explanation1": "Se vi preferas montri la respondojn ne kiel truojn, sed kiel plurelekteblecon kun la respondoj sub la demando kun skatoloj, vi povas elekti ”Multiple choice” (12).",
+      "explanation2": "En la listo de ekzercoj kiu aperas kiam vi aldonas novan, la tipoj ”Questions about a picture, true or false” kaj la ”Questions about a text, multiple choice” ofertas al vi du aliajn ekzemplojn por montri kiel uzi tiun ekzercotipon.",
+      "explanation3": "Kiel antaúe vi povas doni nomon por la demandoserio. Vi povas aldoni ankaú priskribon, nuntempe tekston pri kiu vi volas farigi demandojn aú enkondukon pri la demandoj.",
+      "explanation4": "La demandojn kaj respondojn eblas aldoni kiel antaúe, skribante ilin senpere en la skatolon de la teksto (13) aú per la butonoj kiel klarigite antaúe kaze de la truplenigaj demandoj (6). La ĝusta respondo devas havi \"+\" komence kaj kaze de pluraj eblaj respondoj, \"|\" apartigas ilin. Se estas pluraj bonaj respondoj, la demando estas markita ĝusta post la kontrolo de ĉiuj respondoj.",
+      "explanation5": "Vi havas eblecon aldoni ankaú bildojn kaj sonojn en la priskribon, klikante la tri punktojn (14) kaj elektante ilin el via komputilo. Tiel vi povas starigi demandojn pri la bildoj kaj sonmaterialo. Vi povas aldoni tiom kiom vi volas kaj kie vi volas, montrante la lokon en la teksto kaj metante la elementojn inter  { } (15).",
+      "name": "Plurelekta ekzerco"
+    },
+    "sort_and_match": {
+      "explanation1": "La lasta tipo de ekzercoj estas la ”sort and match”, nomita ankaú parigo (tekston kun teksto, tekston kun bildo, bildojn kun sono kaj ordigo de bildoj). Vi povas elekti tiun ĉi ekzercotipon el la skatolo (16) aú el la listo de novaj unuoj.",
+      "explanation1_1": "La plej simpla estas parigo de vortoj. Por krei ilin, vi povas uzi la butonon (17) aú skribi ilin en la tekstoskatolon (18)",
+      "explanation2": "Ĉiu paro devas esti skribita kun unu parto maldekstre kaj unu parto dekstre de la simbolo ”==”, kun unu malplena linio inter ili. En ĉi tiu ekzemplo, estas fruktoj en unu kolumno kaj koloroj en la alia. Sed povas aperi tradukoj, numeroj, aŭ eĉ bildoj, sonoj aŭ filmetoj. La plej grava afero estas meti la saman tipon en la saman kolumnon La proponoj estos miksitaj por la ekzerco.",
+      "explanation3": "Por aldoni bildojn aŭ sonon, vi devas uzi la butonojn (19) kaj elekti la dosieron en via komputilo. Tiel kreiĝos la elementoj inter buklaj krampoj {} kiel antaŭe. Post tio, vi povas movi ilin sur la lokon, kien vi volas. Por aldoni videon, vi devas elekti la trian butonon (19) kaj skribi la url-adreson de la video (ekzemple en youtube aŭ vimeo...). Vi ne povas rekte alŝuti videon de via komputilo.",
+      "explanation4": "Vi povas kunigi tekston kun teksto aú bildo aú sono aú kunigi bildojn kun sonoj kiel montrita en (20).",
+      "explanation5": "Se vi ne skribas la simbolon ”==” por parigi ion kun la propono, kiel montrite en (21), la ekzerco fariĝas ordiga ekzerco kie vi devas meti la proponon en la ĝustan ordon. Vi povas tion fari per bildoj, tekstoj, sonoj aŭ filmetoj.",
+      "name": "Ordigu kaj parigu",
+      "video": "Vi povas aldoni ankaŭ filmeton, senpere en la priskriban skatolon, skribante la url-adreson de la video/filmeto inter krampoj {} kaj kun \"video:\" antaŭ tio, kiel montrite en (22). Ne ekzistas butono por fari tion, sed vi povas havi skriban ekzemplon elektante la tipon de unuo: ”Questions about a video, open answer”."
     }
   },
   "home": {
     "create_exercise": "Krei novan ekzercon",
-    "search_exercise": "Serĉu ekzercon"
+    "search_exercise": "Serĉi ekzercon"
   },
   "langs": {
     "en": "Angla",
-    "eo": "Esperanto"
+    "eo": "Esperanto",
+    "help": "Helpu al ni por traduki la retejon"
   },
   "learn": {
     "date": "Dato",
@@ -126,8 +156,12 @@
     "email_is_verified": "Via retmesaĝo estas kontrolita. Vi povas ensaluti.",
     "login": "Ensaluti",
     "mail_invalid": "La retpoŝtadreso devas esti valida",
+    "no_account_yet": "Ĉu vi ankoraú ne havas konton?",
     "page_title": "Ensaluto",
     "password": "Pasvorto",
+    "password_reset": "Reakiri pasvorton",
+    "password_reset_done": "Via pasvorto estas sukcese reakirita",
+    "password_reset_sent": "Ligo estas sendita al via retadreso por reakiri vian pasvorton.",
     "required_field": "Tiu ĉi kampo estas deviga",
     "resend_link": "Resendu la ligilon!",
     "signup": "Registriĝi en TestU",
@@ -141,6 +175,7 @@
     "accept": "Akcepti",
     "cancel": "Nuligi",
     "catchphrase": "Kreu viajn proprajn lingvajn kvizojn",
+    "cookie_consent": "Ĉi tiu retejo uzas la minimuman kvanton da kuketoj por sia funkciado. Daŭrigante uzi ĉi tiun retejon, ni supozas, ke vi akceptas la uzon de la funkciaj kuketoj.",
     "edit": "Redakti",
     "guide": "Kiel uzi",
     "home": "Ĉefpaĝo",
@@ -193,7 +228,50 @@
     "start_typing": "Komencu tajpi frazon…",
     "title": "Titolo",
     "untitled_unit": "Sentitola unuo",
-    "valid_url": "Bonvolu entajpi validan URL-n"
+    "valid_url": "Bonvolu entajpi validan URL-n",
+    "snippets": {
+      "blank_unit": {
+        "name": "Malplena unuo"
+      },
+      "gap_filling_dropdown": {
+        "code": "La libro estas [+sur|en] la tablo.",
+        "name": "Truoplenigo, altiro kaj faligo"
+      },
+      "gap_filling_open_answer": {
+        "code": "La libro estas [+sur|en] la tablo.",
+        "name": "Truplenigo, malfermita respondo"
+      },
+      "multiple_choice": {
+        "code": "Kie estas la libro?\n[+sur la tablo|en la tablo]",
+        "name": "Plurelektebleco (por demandoj)"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
+        "name": "Parigo de bildoj kun sonoj"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",
+        "name": "Parigo de teksto kun bildoj"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Dog == {sound:dog.mp3}\n\nElephant == {sound:elephant.mp3}\n\nCat == {sound:cat.mp3}",
+        "name": "Parigo de teksto kun sonoj"
+      },
+      "pairing_text_with_text": {
+        "code": "Ĉerizo == Ruĝa\n\nCitrono == Flava\n\nBrokolo == Verda",
+        "name": "Parigo de teksto kun teksto"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "La besto sur la bildo estas: [hundo|+kato|elefanto]\n\nĈu ĝi estas sovaĝa aú hejma besto? [+hejma|sovaĝa besto]",
+        "description": "{img:cat.jpeg}",
+        "name": "Demajdoj pri bildo, vera aú falsa"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Kiu besto eligas tiun sonon?\n[+Kato|Hundo|Elefanto]\n\nKiel eblas nomi tiun bestan voĉon?\n[+Miaúado|Bojado|Trumpetado]",
+        "description": "Aúskultu la sonon kaj respondu al la demandoj:\n{sound:cat.mp3}",
+        "name": "Demandoj pri sono, altiro kaj faligo"
+      }
+    }
   },
   "sort": {
     "rated": "Plej alte taksitaj",

@@ -22,6 +22,7 @@
   },
   "editor": {
     "age_range": "Starstwo",
+    "cefr_levels_label": "Niwowy pó ZER",
     "confirm_leave": "Na tom boce dejśo wobkšuśiś, až cośo bok spušćiś - zapódane daty mógu se zgubiś.",
     "description": "Wopisanje",
     "details": "Informacije k zwucowanju",
@@ -34,6 +35,7 @@
   "exam": {
     "accept_submissions": "Pśiwześ zapósłanki",
     "confirm": "Ta operacija njedajo se wótwróśiś. Pókšacowaś?",
+    "copy": "Kopija",
     "created": "Stwórjone: {date}",
     "delete": "Wulašuj pśespytowanje",
     "description": "Wopisanje pśespytowanja",
@@ -65,7 +67,7 @@
     "edit": "Wobźěłaj zwucowanje",
     "error": "Zmólka pśi składowanju zapósłanego zwucowanja.",
     "explanation": "Rozjasnjenje:",
-    "language": "rěc",
+    "language": "Rěc",
     "mistake": "Daj powěsć wó zmólce",
     "mistake_explanation": "Rozjasnjenje:",
     "misuse": "Daj powěsć wó znjewužywanju",
@@ -78,13 +80,66 @@
     "target_language_is": "Wuknjona rěc:",
     "unlisted": "To zwucowanje njejo se namakało"
   },
+  "guide": {
+    "about": "Kak napóraś nadawki",
+    "about_text": "Za napóranje nowego nadawka musyśo se bokach registrěrowaś a zalogowaś.",
+    "construction": "Bok se pśigótujo.",
+    "gap_filling": "Test z proznotkami",
+    "video": "Wó wideo",
+    "exam": {
+      "explanation1": "Gaž sćo napórali zwucowanje, móžośo jo pśetwóriś do pśespytowanja. Za to musyśo byś na boce zwucowanja a kliknuś na te tśi dypki w pšawem górjejcnem rožku zwucowanja.",
+      "explanation2": "Móžośo pśespytowanje naźěłaś na zakłaźe swójskich zwucowanjow, kótarež namakajośo pód \"Mójo wuknjenje\", abo móžośo wužywaś zwucowanja drugich we wobłuku \"Doma\". Gaž wužywaśo zwucowanje drugeje wósoby, buźo se pśespytowanje wótpowědnje změniś, gaž swójstwownik zwucowanja zwucowanje sam změnijo.",
+      "explanation3": "Gaž kliknjośo na te tśi dypki (1), zjawiju se styri opcije. Za napóranje pśespytowanja musyśo kliknuś na opciju \"Napóraś pśespytowanje\" (2). Dojźośo pótom na dalšny bok, na kótaremž móžośo pśespytowanje wobźěłaś.",
+      "explanation4": "Ako móžośo wiźeś dołojce, móžośo swójomu pśespytowanju daś titel (3). Titel se pótom pokazujo w zwjerchnem źělu (4). Móžośo teke dodaś wopisanje pśespytowanja (5) a jo składowaś z tym, až kliknjośo na \"Składowaś\" (6).",
+      "explanation5": "Bok se pótom změnijo a wiźiśo bok ako dołojce z titlom, kenž sćo Wy se wumyslili. W kašćiku \"Wótkaz\" (7) namakajośo wótkaz k Wašomu pśespytowanju. Móžośo jen kopěrowaś z tym, až kliknjośo na lěwy symbol (a jen swójim wuknicam/wuknikam pósłaś), abo móžośo kliknuś na \"Woglědaś se\", aby wiźeli swójo pśespytowanje, kaž jo Waše wuknice/wukniki budu wiźeś.",
+      "explanation6": "Móžośo teke hyś slědk k zwucowanju, gaž cośo jo změniś, pśez kliknjenje na (8) \"Hyś k zwucowanju\". W kašćiku \"Nadawki\" (9) se pokazuju wót wuknicow/wuknikow zapódane pśespytowanja a Wy móžośo wiźeś wuslědki a pśeglědaś kuždy nadawk.",
+      "explanation7": "Gaž cośo změniś abo kontrolěrowaś detajle pśespytowanja, namakajośo je pśecej w kašćiku (10) na boce dołojce. Wšykne Waše pśespytowanja se składuju w rubrice \"Mójo wuknjenje\" (11).",
+      "name": "Napóraś pśespytowanje"
+    },
+    "exercice": {
+      "explanation1": "Za napóranje nowego zwucowanja musyśo byś w meniju Doma / HOME (1), pótom móžośo wubraś \"+Napóraś nowe zwucowanje\" (2). Pó napóranju zjawijo se zwucowanje na toś tom boce. Ale nejpjerwjej dojźośo na dalšny bok, ako móžośo dołojce wiźeś.",
+      "explanation2": "Zwucowanje móžo wobstojaś z někotarych źělow. Móžośo jadnotki wudopołniś z tym, až nakliknjośo \"+Wudopołń jadnotku\" (3). Su rozdźělne typy zwucowanjow, ale we jadnom źělu zwucowanja mógu se jano wužywaś samske źěle zwucowanja. Jolic až cośo w zwucowanju měšaś rozdźělne družyny pšašanjow, ga musyśo za kuždy typ pšašanjow napóraś wósebnu jadnotku.",
+      "explanation3": "Ako móžośo wiźeś na lěwem boce, su rozdźělne typy jadnotkow. Rozeznawaju se pśedewšym tśi familije zwucowanjow: teksty z proznotkami, multiple choice a pśirědowańske nadawki.",
+      "explanation4": "Pśi tekstach z proznotkami se wuběraju słowa. Jo wěcej móžnosćow za wótegrono (nanejmjenjej jadno pšawe a někotare wopacne). Kašćik móžośo teke prozny wóstajiś, aby wósoba, kenž nadawk rozwězujo, pšawe wótegrono zapódała. Na kuždy pad musy pšawe wótegrono (muse pšawe wótegrona) pśi napóranju zwucowanja byś wobznamjenjone.",
+      "explanation5": "W paźe multiple choice napóraju se zwucowanja z wuběrkom wótegronow. Pśi tom móžo byś jano jadno pšawe wótegrono abo su někotare pšawe wótegrona. Ako pśi tekstach z proznotkami muse pšawe wótegrona pśi napóranju zwucowanja byś wobznamjenjone.",
+      "explanation6": "Pśirědowańske nadawki funkcioněruju z wopisanjami, pšašanjami, wobrazami a samo ze zukami. Wuknjece muse twóriś póriki abo namakaś pšawy rěd.",
+      "explanation7": "Móžośo namakaś dokradnjeje rozjasnjenja k tym wšakim familijam zwucowanjow, gaž kliknjośo na tabs górjejce na boce.",
+      "gap_filling_1": "Standardny typ zwucowanjow jo tekst z proznotkami. Pśi tom stej dwě družynje zwucowanjow. Prědna (1) jo pomjenjona \"Standard\" (default) a prezentěrujo pśedpódane wótegrona, gaž kliknjośo na proznotku. Pśi drugem typje jadna se wó \"liche wótegrona\" (open answer) (8), pśi comž njejsu žedne wótegrona pśedpódane a źož wuknjece muse wótegrona direktnje zapisaś. Buźomy hyšći wiźeś, kak se pšašanja formulěruju a wótegrona dawaju. Pśi tom glědamy na pśikłady z wopacnymi a na take z pšawymi pšašanjami a wótegronami.",
+      "gap_filling_2": "Do kašćika (2) se zapisujo titel zwucowanja a do kašćika (3) krotke wopisanje z instrukcijami k rozwězanju a z pókiwami a pokazkami ku kontekstoju.",
+      "gap_filling_3": "Pšašanja abo nadawki se zapisuju do kašćika (4). Pśi tom stej pśecej dwě móžnosći: Móžośo pšašanja a wótegrona zapisaś direktnje do kašćika abo wužywaśo rědy w górjejcnem lěwem rožku (6). Wuslědk jo samski, pótakem wiźiš samski tekst w kašćiku (4).",
+      "gap_filling_4": "Gaž zapisujośo pšašanja direktnje do kašćika, musy se kužde pšašanje z prozneju smužku wót pśedchadnego wótźěliś. Rozwězanja muse se pódaś w rožkatyma spinkoma [ ] a se źěliś z wertikalnymi smužkami |. Pšawe rozwězanje musy se wobznamjeniś z plusowym znamuškom +. Su-li někotare pšawe wótegrona, ga se naglěda kužde z nich ako pšawe. Naraźone rozwězanja móžośo póměšaś z tym, až kliknjośo na \"Rozwězanja póměšaś\" (shuffle options) (7).",
+      "gap_filling_5": "Jolic až wužywaśo źěłowe rědy/tools (6) za napóranje nadawkow, ga nastanjo prozna smužka z lěwym źěłowym rědom. Pótom móžośo napóraś nowy nadawk. Musyśo zapisaś pšašanje abo tekst a kliknuś na pšawy źěłowy rěd, aby proznotku markěrowali. Wócynijo se woknyško, kaž na wobrazu pśedstajone. Wótegrona móžośo jadno pó drugem zapisaś. Wóni se wobkšuśiju pśez kliknjenje na \"enter\". Normalnje se naglěda prědne rozwězanje ako pšawe a se wobznamjenijo prězy ze zelenym \"v\". Ale pśez nakliknjenje małego bublinka pśed kuždym wótegronom (8) móžośo wubraś pšawe wótegrono. Pśez nakliknjenje šrafěrowanego kwadrata (9) móžośo teke wubraś opciju \"prozne wóstajiś\" / leave blank.",
+      "gap_filling_open_answer_1": "Drugi typ tekstow z proznotkami su take z lichymi wótegronami (open answer) (10). Ako wiźiśo dołojce, se za ten typ zwucowanjow žedne wótegrona njepórucuju. Móžośo jadno wótegrono abo wěcej wótegronow na znatu wašnju abo ze źěłowym rědom zapisaś do kašćika (11). Móžośo teke nastajiś wopacne wótegrona, kótarež se njejawje, ale se z cerwjenym X wobznamjeniju, gaž wuknjecy je zapišo. Pśi drugich zapiskach (ako njejsu nastajone daniž ako pšawe daniž ako wopacne) se nic njestanjo. Pśi pšawych zapiskach, zjawijo se zelene \"v\".",
+      "gap_filling_open_answer_2": "Dalšne pšašanja móžośo dodaś ako wopisane z tym, až dodajośo proznu smužku abo kliknjośo na lěwy bublink (6). Gaž sćo spokojom ze zwucowanim, njezabyńśo kliknuś na \"Składowaś\". Móžośo kuždy cas slědk hyś k zwucowanju, aby dodali pšašanja abo aby něco změnili.",
+      "name": "Nowe zwucowanje"
+    },
+    "multiple_choice": {
+      "explanation1": "Njedeje-li se wótegrona pokazowaś ako proznotki, ale ako multiple choice, pótakem ako wuběrk w kašćiku, musyśo wubraś typ zwucowanja \"multiple choice\" (12).",
+      "explanation2": "W lisćinje zwucowanjow, pokazanych, gaž dodajośo jadnotku, su \"Pšašanja k wobrazoju, pšawje/wopak\" a \"Pšašanja k tekstoju, multiple choice\" dalšnej pśikłada togo typa zwucowanjow.",
+      "explanation3": "Ako górjejce móžośo póstajiś titel za seriju pšašanjow a wótegronow. Móžośo teke dodaś wopisanje, na pśikład tekst, na kótarež se pšašanja a wótegrona póśěguju, abo zawjeźenje.",
+      "explanation4": "Dalšne pšašanja a wótegrona móžośo, kaž južo wopisane, dodaś z tym, až je zapišośo do tekstowego kašćika (13), abo pśi tekstach z proznotkami z pomocu šaltowańskich bublinkow (6). Pšawe wótegrona musyśo pjerwjej wobznamjeniś z \"+\". Jadnotliwe wótegrona se źěle z \"|\". Jolic až jo wěcej korektnych wótegronow, jo se na pšašanje pšawje wótegroniło, gaž su se pśespytali wšykne ako pšawe wobznamjenjone rozwězanja.",
+      "explanation5": "Móžośo teke dodaś wobraze abo zuki w wopisanju. Za to kliknjośo na te tśi dypki (14) a wuběraśo z datajow na Wašom licaku. Móžośo teke dodaś pšašanja k tonowym nagraśam abo k wobrazoju. Móžośo stajiś tak wjele pšašanjow ako cośo a póstajiś, źo w teksće deje se jawiś, z tym, až pśesunjośo element w wuzgibnjonyma spinkoma {} (15)",
+      "name": "Wěcej móžnosćow (multiple choice)"
+    },
+    "sort_and_match": {
+      "explanation1": "Slědna familija zwucowanjow su pśirědowańske zwucowanja (sort and match). Muse se namakaś póriki (z teksta a teksta, z teksta a wobraza abo z wobraza a zuka) abo rědy. Typ zwucowanjow móžośo wubraś w kašćiku (16) abo w lisćinje z nowymi jadnotkami.",
+      "explanation1_1": "Nejjadnorjejša forma zwucowanja jo namakanje gromadu se góźecych słowow. Tajke zwucowanje móžośo napóraś ze šaltowańskim bublinkom (17) abo z tym, až zapišośo słowa do kašćika (18).",
+      "explanation2": "Kuždy gromadu se góźecy pórik musy se zapisaś na lěwem a na pšawem boce symbola \"==\". Jadnotliwe póriki se źěle z prozneju smužku. W pśikłaźe se namakaju na jadnom boce płody a na drugem barwy. Mógu to pak teke byś pśełožki, licby a samo wobraze, zuki a wideo. Wažne jo, až se samski typ pśecej zapisujo do samskego słupika. Naraźone póriki se pón awtomatiski měšaju.",
+      "explanation3": "Wobraze abo zuki zasajźijośo ze šaltowańskimi bublinkami (19), pśi comž wubjerjośo dataju z Wašogo licaka. Element se stajijo do wuzgibnjoneju spinkowu {}, kaž górjejce južo naspomnjone. Pótom móžośo element stajiś na žycone městno. Aby zasajźili wideo, musyśo wužyś tśeśi šaltowański bublink (19) a zapisaś URL wideo (na pś. z YouTube abo vimeo). Direktne zlodowanje wideo z licaka njejo móžne.",
+      "explanation4": "Móžośo zwězaś tekst z tekstom abo wobraze ze zukom; abo zwěžośo wobraze ze zukom, kaž wopisane w (20).",
+      "explanation5": "Gaž njewužywaśo symbol \"==\" pśi twórjenju pórikow, kaž wopisane w (21), nastanjo sortěrowański nadawk, pśi kótaremž dej se namakaś pšawy rěd. Za to móžośo wužywaś wobraze, tekst, zuk abo wideo.",
+      "name": "Sortěrowaś a pśirědowaś (sort and match)",
+      "video": "Wideo móžośo teke direktnje pśez kašćik z wopisanim z tym, až zasajźijośo URL wideo we wuzgibnjonyma spinkoma a pśed tym napišośo \"video\", kaž pokazane w (22). Za to žeden šaltowański bublink njejo, móžośo pak wiźeś pśikład, gaž wubjerjośo rubriku \"Pšašanja k wideo, wótwórjone wótegrono\" (Questions about a video, open answer)."
+    }
+  },
   "home": {
     "create_exercise": "Wugótuj nowe zwucowanje.",
     "search_exercise": "Pytaj zwucowanje."
   },
   "langs": {
     "en": "engelski",
-    "eo": "esperanto"
+    "eo": "esperanto",
+    "help": "Pomogajśo nam pśi pśełožowanju website."
   },
   "learn": {
     "date": "Datum",
@@ -101,8 +156,12 @@
     "email_is_verified": "Waša mejlowa adresa jo werificěrowana! Móžośo se zalogowaś.",
     "login": "login",
     "mail_invalid": "Mejlka musy byś walidna.",
+    "no_account_yet": "Hyšći njamaśo konto?",
     "page_title": "login",
     "password": "kodowe słowo",
+    "password_reset": "Nastajiś nowe kodowe słowo.",
+    "password_reset_done": "Nowe kodowe słowo jo se wuspěšnje nastajiło.",
+    "password_reset_sent": "Wótkaz jo był pósłany na Wašu mejlowu adresu za nastajenje nowego kodowego słowa.",
     "required_field": "pominane pólo",
     "resend_link": "Pósćel wótkaz hyšći raz",
     "signup": "Registrěrujśo se pla TestU",
@@ -118,6 +177,7 @@
     "catchphrase": "Wugótujśo swójske rěcne kwise",
     "cookie_consent": "Toś ta website wužywa minimalnu licbu cookiejow za funkcioněrowanje. Wužywaśo-li website dalej, wuchadamy z togo, až akceptěrujośo wužywanje funkcionalnych cookiejow.",
     "edit": "Wobźěłaś",
+    "guide": "Wukazanje",
     "home": "Domoj",
     "lang_menu_header": "Rěc menija",
     "login": "Zalogowanje",
@@ -132,7 +192,8 @@
     "social": "Social",
     "source_code": "Źródłowy kod",
     "submit": "Zapódaś",
-    "terms": "Wuměnjenja za wužywanje"
+    "terms": "Wuměnjenja za wužywanje",
+    "why": "Dla cogo?"
   },
   "review": {
     "exam": "Pśespytowanje wóspjetowaś",
@@ -182,15 +243,19 @@
       },
       "multiple_choice": {
         "code": "Źo su knigły? \n[+na bliźe|w bliźe]",
-        "name": "Wěcej móžnosćow"
+        "name": "Wěcej móžnosćow (za pšašanja)"
       },
       "pairing_pictures_with_sounds": {
         "code": "{img:dog.jpeg} == {sound:dog.mp3}\n\n{img:elephant.jpeg} == {sound:elephant.mp3}\n\n{img:cat.jpeg} == {sound:cat.mp3}",
         "name": "Zwězaś wobraze ze zukami"
       },
       "pairing_text_with_pictures": {
-        "code": "Dog == {img:dog.jpeg}\n\nElephant == {img:elephant.jpeg}\n\nCat == {img:cat.jpeg}",
+        "code": "pjas == {img:dog.jpeg}\n\nelefant == {img:elephant.jpeg}\n\nkócka == {img:cat.jpeg}",
         "name": "Zwězaś tekst z wobrazami"
+      },
+      "pairing_text_with_sounds": {
+        "code": "pjas == {sound:dog.mp3}\n\nelefant == {sound:elephant.mp3}\n\nkócka == {sound:cat.mp3}",
+        "name": "Zwězaś tekst ze zukami"
       },
       "pairing_text_with_text": {
         "code": "wišnja == cerwjena\n\ncitrona == žołta\n\nbrokoli == zeleny",
@@ -220,6 +285,12 @@
         "code": "{img:one_circle.png}\n\n{img:two_circles.png}\n\n{img:three_circles.png}",
         "name": "Sortěrowanje wobrazow"
       }
+    },
+    "types": {
+      "default": "Lisćina z wuběrkom (dropdown list)",
+      "multiple_choice": "Wěcej móžnosćow (multiple choice)",
+      "open_answer": "Wótwórjone wótegrono (open answer)",
+      "pairing": "Sortěrowaś a pśirědowaś (sort and match)"
     }
   },
   "sort": {
@@ -297,7 +368,7 @@
       "text4_4": "wobuzujuce, kśiwźece, wobgronjece a wobgrozujuce wopśimjeśa kaž teke diskriminěrujuce wugronjenja;",
       "text4_5": "priwatne daty drugich wužywaŕ(k)ow (na pś. jich adresu, telefonowy numer, bankowy zwisk) abo wurězki z priwatneje komunikacije z drugimi wužywaŕ(k)ami, póbitowarjami/administratorami website abo tśeśich stronow;",
       "text4_6": "wótkaze k website z ilegalnym wopśimjeśim;",
-      "text4_7": "kuždežkuli njepominane abo njewopšawnjone wabjenje, wabjeńske materialije, „junk mail“, spam, rjeśazowe listy, pyramidowe systemy a kužda forma wabjenja klientow;",
+      "text4_7": "kuždežkuli njepominane abo njewopšawnjone wabjenje, wabjeńske materialije, „junk mail“, spam, rjeśazowe listy, pyramidy abo pyramidowe systemy a kužda forma wabjenja klientow;",
       "text4_8": "material, wopśimujucy wiruse, wužeńce, trojanarje abo programy, ako wobgrozuju abo kaze wugbałosć abo wobstaśe toś tych abo drugich bokow.",
       "text5": "Slědujuce jadnanja su wužywaŕce/wužywarjeju zakazane:",
       "text5_1": "wužywanje abo wopyt wužywanja konta drugeje wužywaŕki / drugego wužywarja abo systema mimo pśizwólenja póbitowarja;",
@@ -318,7 +389,7 @@
       "title": "Pśizwólenje pšawow"
     },
     "section6": {
-      "text1": "Njejo-lic nic hynakšego pódane, su wše teksty, wobraze a druge na website wózjawjone wopśimjeśa, inkl. wopśimjeśow wužywaŕ(k)ow, su wózjawjone pód {license}.",
+      "text1": "Njejo-lic nic hynakšego pódane, su wše teksty, wobraze a druge na website wózjawjone wopśimjeśa, inkl. wopśimjeśow wužywaŕ(k)ow, wózjawjone pód {license}.",
       "text1_license": "CC0 1.0 Universal Creative Commons license",
       "title": "Swójstwowe pšawa"
     },
@@ -345,6 +416,51 @@
       "text4": "Póbitowaŕ ma pšawo, pó pśipowěźenju z mejlku pó 4 tyźenjach wšykne swóje pšawa a słušnosći abo wubrane pšawa a słušnosći z wužywańskego poměra pśepódaś drugemu.",
       "text5": "Kontaktowe informacije za póbitowarja abo administratory website namakajośo na slědujucem boce {link}.",
       "title": "Kóńcne póstajenja"
+    }
+  },
+  "why": {
+    "because": "Pśicyny:",
+    "more_projects": "Wěcej projektow na",
+    "title": "Cogodla Testu.eu?",
+    "point1": {
+      "subtitle": "Žeden abonement, žedne zatajone kosty abo paywalls, napšawdu!",
+      "title": "Zadermo."
+    },
+    "point10": {
+      "subtitle": "Dla srědkow z programa Erasmus+ a Słowakskeje narodneje agentury móžośo testu.eu zadermo wužywaś!",
+      "title": "Projekt jo oficielnje spěchowany wót Europskeje komisije."
+    },
+    "point2": {
+      "subtitle": "Móžośo testU licho wužywaś a sami wopśimjeśa napóraś.",
+      "title": "Wopśimjeśa licencěrowane pó CC0."
+    },
+    "point3": {
+      "subtitle": "Nic se njechowa.",
+      "title": "Open source."
+    },
+    "point4": {
+      "subtitle": "Testu.eu celebrěrujo rěcy. Felujo Waša hyšći? Dodajśo ju how:",
+      "title": "Wěcejrěcnje!"
+    },
+    "point5": {
+      "subtitle": "Za wužywarja pśigódny, malsny a intuitiwny źěłowy rěd, kótaryž dajo se lažko nawigěrowaś.",
+      "title": "Dajo se lažko wužywaś."
+    },
+    "point6": {
+      "subtitle": "Zanuŕśo se do zwucowanjow a testow online – moderneje formy wuknjenja!",
+      "title": "Online."
+    },
+    "point7": {
+      "subtitle": "Wuknjenje bźez granicow, wucenje bźez granicow – stwóŕśo nowe wopśimjeśa abo wužywajśo južo eksistěrujuce!",
+      "title": "Wužytny źěłowy rěd."
+    },
+    "point8": {
+      "subtitle": "Twórjenje kubłańskich materialijow jo wjelike wjasele – gótuj sobu!",
+      "title": "Wjasele."
+    },
+    "point9": {
+      "subtitle": "Zasejwužywanje wopśimjeśow, ako su druge abo Wy sami naźěłali, pomoga reducěrowaś kwantitu póśišćaneje papjery. Recycluj ideje, zwucowanja a pšašanja!",
+      "title": "Wobswětoju tyjucy."
     }
   }
 }
