@@ -8,6 +8,7 @@ export default {
     { code: "eo", file: "eo.json" },
     { code: "es", file: "es.json" },
     { code: "fr", file: "fr.json" },
+    { code: "ga", file: "ga.json" },
     { code: "hu", file: "hu.json" },
     { code: "lt", file: "lt.json" },
     { code: "pl", file: "pl.json" },
