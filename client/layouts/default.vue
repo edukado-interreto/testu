@@ -106,7 +106,7 @@
 
           <v-divider></v-divider>
 
-          <v-list-item to="/profile" router exact disabled>
+          <v-list-item to="/account" router exact>
             <v-list-item-action>
               <v-icon>mdi-cog</v-icon>
             </v-list-item-action>

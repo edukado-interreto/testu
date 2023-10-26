@@ -1,10 +1,9 @@
 <template>
   <v-container>
-    <h1>About</h1>
+    <h1>{{ $t("about.about") }}</h1>
 
     <v-row>
       <v-col class="col-12 col-md-9">
-        <h2 class="mb-3">{{ $t("about.about") }}</h2>
         <p class="text-justify">{{ $t("about.about_text") }}</p>
       </v-col>
 
@@ -76,7 +75,7 @@
 <script>
 export default {
   head: () => ({
-    title: "About",
+    title: this.$t("about.about"),
   }),
   data() {
     return {

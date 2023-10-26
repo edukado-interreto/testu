@@ -20,6 +20,13 @@
       "vu_name": "Vilnius University"
     }
   },
+  "account": {
+    "danger_zone": "Danger zone",
+    "delete_btn": "Delete my account",
+    "delete_confirm_btn": "Delete all my data",
+    "delete_description": "By continuing, all your data will be immediatly be deleted without any recovery options.",
+    "title": "Account settings"
+  },
   "editor": {
     "age_range": "Age range",
     "cefr_levels_label": "CEFR levels",

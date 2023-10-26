@@ -16,6 +16,7 @@ from apps.exercises.views import (
     TagViewSet,
     UploadView,
 )
+from apps.core.views import DeleteAccount
 
 router = DefaultRouter()
 
@@ -32,6 +33,7 @@ urlpatterns = [
         "api/auth/register/",
         include("dj_rest_auth.registration.urls"),
     ),
+    path("api/auth/user/delete/", DeleteAccount.as_view(), name="delete_account"),
     path("api/auth/", include(("dj_rest_auth.urls", "rest_auth"), namespace="auth")),
     path("api/v1/", include((router.urls, "api"), namespace="api")),
     path(
