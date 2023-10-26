@@ -96,10 +96,6 @@
           <v-list-item>
             <v-list-item-avatar>
               <v-icon>mdi-account</v-icon>
-              <!--img
-                src="https://cdn.vuetifyjs.com/images/john.jpg"
-                alt="John"
-              -->
             </v-list-item-avatar>
 
             <v-list-item-content>
@@ -355,6 +351,16 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+@media print {
+  .v-image *, /* Vuetify v2 */
+  .v-img * {
+    print-color-adjust: exact; /* force printing background */
+  }
+}
+</style>
+
 <style scoped lang="scss">
 @import "~vuetify/src/styles/settings/_variables";
 @import "~vuetify/src/styles/settings/_colors";
