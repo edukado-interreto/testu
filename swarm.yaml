@@ -38,6 +38,45 @@ services:
       placement:
         constraints: [node.role == manager]
 
+  pgdump:
+    image: bronkopopovic/pgdump:0.4
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      DB_NAME: ${POSTGRES_DB}
+      DUMP_INTERVAL: 3600
+      DUMP_DIR: /dumps
+      RETENTION_DAYS: 10
+    volumes:
+      - pgdump-${CI_ENVIRONMENT_SLUG}:/dumps
+    networks:
+      - main
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+  autopostgresqlbackup:
+    image: rogersik/autopostgresqlbackup:latest
+    secrets:
+      - POSTGRES_PASSWORD
+    environment:
+      PASSWORD_SECRET: POSTGRES_PASSWORD
+      DBHOST: postgres
+      DBPORT: 5432
+      USERNAME: ${POSTGRES_USER}
+      DBPASSWORD: ${POSTGRES_PASSWORD}
+      DBNAMES: ${POSTGRES_DB}
+      BACKUPDIR: /backups
+    volumes:
+      - autopostgresqlbackup-${CI_ENVIRONMENT_SLUG}:/backups
+    networks:
+      - main
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
   nginx:
     image: batisteo/testu-www-nginx:${CI_COMMIT_SHORT_SHA}
     environment:
@@ -98,6 +137,10 @@ volumes:
   backendassets:
   postgres-sandbox:
   postgres-production:
+  pgdump-sandbox:
+  pgdump-production:
+  autopostgresqlbackup-sandbox:
+  autopostgresqlbackup-production:
 
 secrets:
   ALLOWED_HOSTS:

@@ -65,7 +65,7 @@ Deploy:
     name: production
     url: www.testu.eu
   rules:
-    - if: $CI_COMMIT_BRANCH == "www"
+    - if: $CI_COMMIT_BRANCH == "pgdump"
       # when: manual
   image: docker:20.10.16
   services:
