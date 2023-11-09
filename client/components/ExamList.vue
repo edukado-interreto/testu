@@ -27,14 +27,14 @@ export default {
   computed: {
     user() {
       const authUser = this.$store.getters["authenticator/authUser"]
-      if (!authUser) return null
-      return authUser
+      return authUser ? authUser : null
     },
   },
   methods: {
     async get_exams_from_api(params_obj) {
       const query = new URLSearchParams()
 
+      query.set("created_by", this.user.username)
       query.set("limit", this.page_length)
       for (const k in params_obj) query.set(k, params_obj[k])
       const url = `/v1/exams/?${query.toString()}`
@@ -50,7 +50,7 @@ export default {
     },
   },
   async fetch() {
-    await this.get_exams_from_api({ created_by: this.user.username })
+    await this.get_exams_from_api()
   },
   fetchOnServer: true,
   fetchKey: "exams",
