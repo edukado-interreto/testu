@@ -1,11 +1,30 @@
 <template>
   <div>
+    <v-toolbar
+      elevation="0"
+      color="transparent"
+      style="position: sticky; top: calc(64px + 0.5em); z-index: 2"
+      dense
+    >
+      <v-spacer />
+      <v-btn
+        v-show="!edit_drawer.show"
+        @click="$emit('save')"
+        class="primary--text white px-12"
+        large
+      >
+        <v-icon class="mr-2">mdi-content-save</v-icon>
+        {{ $t("editor.save") }}
+      </v-btn>
+    </v-toolbar>
+
     <v-navigation-drawer
       app
       clipped
       right
       bottom
       disable-resize-watcher
+      mobile-breakpoint="xs"
       v-model="edit_drawer.show"
       width="45vw"
     >
@@ -846,6 +865,7 @@ export default {
       this.current.data = this.sheet[i]
       this.$nextTick(function () {
         // scroll to the currently edited section
+        console.log(this.$refs[`section-${this.keyed(this.sheet, i)}`])
         this.$vuetify.goTo(
           this.$refs[`section-${this.keyed(this.sheet, i)}`][0],
           { offset: 15 },

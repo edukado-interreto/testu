@@ -1,7 +1,7 @@
 <template>
   <div>
     <MsgBox ref="msgbox"></MsgBox>
-    <SheetEditor :sheet="sheet" ref="sheet_editor" />
+    <SheetEditor :sheet="sheet" ref="sheet_editor" class="mt-n8" @save="save" />
 
     <v-expansion-panels class="mt-9" v-model="infobox">
       <v-expansion-panel>
@@ -146,7 +146,7 @@ export default {
         ],
       },
     },
-    infobox: undefined,
+    infobox: 0,
   }),
   computed: {
     tags_available_localized() {
