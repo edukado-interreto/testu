@@ -231,5 +231,5 @@ def report_by_email(sender, instance, *args, **kwargs):
 def post_save_image(sender, instance, *args, **kwargs):
     try:
         instance.file.delete(save=False)
-    except:
+    except Exception:
         pass

@@ -8,6 +8,9 @@ license = "Proprietary"
 [tool.isort]
 profile = "black"
 
+[tool.ruff.lint]
+ignore = ["E731"]  # lambda/def
+
 [tool.poetry.dependencies]
 python = "^3.10"
 dj-rest-auth = { extras = ["with-social"], version = "~4" }
