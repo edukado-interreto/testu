@@ -54,7 +54,7 @@ RUN poetry install --only main
 
 
 ### STAGE development installs all dev deps and can be used to develop code
-# For example using docker-compose to mount local volume under /src
+# For example using docker compose to mount local volume under /src
 FROM python-base AS development
 
 RUN touch /.pythonhist && chown 1000:1000 /.pythonhist

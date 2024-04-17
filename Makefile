@@ -1,9 +1,9 @@
-django := docker-compose exec django
+django := docker compose exec django
 
 all: run
 
 run:
-	docker-compose up --build
+	docker compose up --build
 
 migrate:
 	$(django) make migrate
@@ -29,4 +29,4 @@ pdb-shell:
 	docker attach testu_django_1
 
 vue:
-	docker-compose run --rm vue yarn build
+	docker compose run --rm vue yarn build
