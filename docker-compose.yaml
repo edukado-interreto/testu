@@ -33,9 +33,9 @@ services:
       - internal
 
   vue:
-    build: client
+    image: node:20.12-slim
     volumes:
-      - ./client:/code:z
+      - ./ui:/code:z
     working_dir: /code/
     user: 1000:1000
     networks:
@@ -45,10 +45,10 @@ services:
       sh -c "npm install && npm run dev"
 
   nginx:
-    image: nginx:1.25.0-alpine-slim
+    image: nginx:1.26.0-alpine-slim
     restart: on-failure
     volumes:
-      - ./etc/nginx/default.conf:/etc/nginx/templates/default.conf.template:z
+      - ./nginx/default.conf:/etc/nginx/templates/default.conf.template:z
     environment:
       VUE_PORT: "${VUE_PORT}"
       DJANGO_PORT: "${DJANGO_PORT}"
