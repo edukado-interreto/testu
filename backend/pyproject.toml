@@ -12,16 +12,16 @@ profile = "black"
 ignore = ["E731"]  # lambda/def
 
 [tool.poetry.dependencies]
-python = "^3.10"
-dj-rest-auth = { extras = ["with-social"], version = "~4" }
+python = "~3.12"
+dj-rest-auth = {extras = ["with-social"], version = "~4"}
 django = "~4.2"
 django-allauth = "^0.54.0"
-django-anymail = { extras = ["sendgrid"], version = "^8.5" }
-django-cors-headers = "^4.3.1"
+django-anymail = {extras = ["sendgrid"], version = "^8.5"}
+django-cors-headers = "^3.11.0"
 django-extensions = "^3.1.5"
 django-filter = "^21.1"
 djangorestframework = "^3.13"
-djangorestframework-simplejwt = { extras = ["crypto"], version = "^5.2.0" }
+djangorestframework-simplejwt = {extras = ["crypto"], version = "^5.2.0"}
 psycopg2-binary = "^2.9"
 python-decouple = "^3.6"
 gunicorn = "^20.1.0"

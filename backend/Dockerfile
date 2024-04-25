@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM python:3.10.12-slim-bookworm AS python-base
+FROM python:3.12.3-slim-bookworm AS python-base
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -43,7 +43,7 @@ RUN chown -R 1000:1000 $POETRY_HOME $PYSETUP_PATH
 USER 1000
 
 # Install Poetry - respects $POETRY_VERSION & $POETRY_HOME
-RUN curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.6.1 python3 -
+RUN curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.8.2 python3 -
 
 # We copy our Python requirements here to cache them
 # and install only runtime deps using poetry
