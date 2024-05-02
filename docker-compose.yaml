@@ -40,6 +40,9 @@ services:
     user: 1000:1000
     networks:
       - internal
+      - web  # for HMR
+    ports:
+      - "24678:24678"
     tty: true
     command: >
       sh -c "npm install && npm run dev"
