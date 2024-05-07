@@ -28,7 +28,7 @@ services:
     env_file:
       - backend/.env
     volumes:
-      - .postgresql:/var/lib/postgresql:z
+      - .postgresql:/var/lib/postgresql/data:Z
     networks:
       - internal
 
@@ -45,7 +45,7 @@ services:
       - "24678:24678"
     tty: true
     command: >
-      sh -c "npm install && npm run dev"
+      sh -c "npm --quiet install && npm run dev"
 
   nginx:
     image: nginx:1.26.0-alpine-slim

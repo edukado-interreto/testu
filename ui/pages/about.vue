@@ -1,3 +1,9 @@
+<script setup lang="ts">
+//
+</script>
+
 <template>
-  <h1 style="margin-top: 3rem">About</h1>
+  <v-container>
+    <!-- -->
+  </v-container>
 </template>

@@ -1,0 +1,466 @@
+{
+  "about": {
+    "about": "Über das Projekt",
+    "about_text": "TestU Online ist eine kostenlose, mehrsprachige E-Learning-Plattform, die eine einfache und schnelle Erstellung verschiedener Quizze, Tests und Übungen ermöglicht, die in erster Linie für das Erlernen von Sprachen gedacht sind. Die Plattform wird hauptsächlich von Lehrenden und ihren Lernenden genutzt, die Grundschulen oder andere Formen der formalen oder informellen Bildung besuchen. Die Gründe für die Einrichtung einer solchen Plattform lassen sich mit der Notwendigkeit erklären, einer jungen Generation den Zugang zu kostenloser Bildung zu ermöglichen, ungeachtet ihres sozioökonomischen, religiösen oder nationalen Hintergrunds, geografischer Einschränkungen oder sogar verschiedener Arten von Behinderungen.",
+    "partners_title": "Unsere Partner",
+    "partners": {
+      "bit_description": "bit (= best in training) schulungscenter, gegründet 1986, ist einer der führenden Bildungsanbieter im Bereich Arbeitsmarktprojekte, Berufsbildung, Training und Beschäftigungsfähigkeit in Österreich. Ihre klare Stärke liegt in ihrer Erfahrung und ihrem Know-how in der Konzeption (Didaktik, Methodik, Instruktionsdesign) und Durchführung von diversen nationalen und internationalen Projekten. Sie verfügen über umfangreiche Erfahrungen in der Arbeit mit unterschiedlichen Zielgruppen, zum Beispiel Jugendlichen, jungen arbeitslosen Erwachsenen, und deren Bildungsbedürfnissen durch ihre regelmäßigen Aktivitäten.",
+      "bit_location": "Graz, Österreich",
+      "european_commission": "Dieses Projekt wurde mit Unterstützung der Europäischen Kommission finanziert. Die Verantwortung für den Inhalt dieser Veröffentlichung trägt allein der Verfasser; die Kommission haftet nicht für die weitere Verwendung der darin enthaltenen Angaben.",
+      "ikso_description": "Die internationale Organisation E{'@'}I, die sich auf rund 250 Freiwillige stützt, unterstützt das interkulturelle Lernen im Internet. Ihre Projekte, die die Grundlage für deutsch.info bilden, sind mehrsprachige Websites, auf denen man Esperanto ({1}) und Slowakisch ({2}) lernen kann. E{'@'}I entwickelt nicht nur Lernportale, sondern organisiert auch verschiedene Schulungsinitiativen, insbesondere in den Bereichen Sprachen und neue Technologien.",
+      "ikso_location": "Partizánske, Slowakei",
+      "leipzig_description": "Die 1409 gegründete Universität Leipzig ist eine Forschungsuniversität, die rund 30.000 Studierenden, die von etwa 400 Fakultätsmitgliedern unterrichtet werden, eine Ausbildung in einem reichen und vielfältigen Forschungsumfeld bietet. Die große Vielfalt der 14 Fakultäten (von der Medizin bis zu den Naturwissenschaften, von der Mathematik bis zur Theologie und von den Sozialwissenschaften bis zum Sport) bietet hervorragende Möglichkeiten für interdisziplinäres Arbeiten. Weltweit einmalig ist das Institut für Sorbische Studien, das sich mit der Erforschung der sorbischen und anderer Minderheitensprachen, ihrer Literatur und Kultur sowie mit der Ausbildung von Lehrkräften beschäftigt. In den Jahren seit der politischen Wende 1989 wurden erhebliche Summen in die Forschungsinfrastruktur investiert, so dass die Universität Leipzig heute sowohl baulich als auch ausstattungstechnisch zu den Spitzeneinrichtungen gehört.",
+      "leipzig_location": "Leipzig, Deutschland",
+      "leipzig_name": "Leipzig, Universtität",
+      "uam_description": "Die Adam-Mickiewicz-Universität in Poznań, benannt nach dem geschätzten polnischen Dichter der Romantik, ist eine Forschungsuniversität, eine der führenden polnischen Universitäten und die wichtigste akademische Einrichtung in Poznań. Sie wurde 1919 gegründet, doch ihr Ruf gründet sich auf die lange Tradition der Hochschulbildung in der Stadt Poznań, die bis ins 16. Jahrhundert zurückreicht (Akademia Lubrańskiego, dt: Die Lubrański-Akademie, lateinisch: Collegium Lubranscianum; gegründet 1518 in Poznań). Gegenwärtig bietet ein akademisches Personal von 3.000 Personen rund 40.000 Studierenden 193 Studienfächer und Spezialisierungen an, darunter mehr als 1.300 Doktoranden in Promotionsprogrammen. Sie ist für mehr als 8.000 wissenschaftliche Veröffentlichungen pro Jahr verantwortlich und nimmt an mehr als 600 nationalen und internationalen Projekten teil. Die Universität ist in 20 Fakultäten unterteilt, die ein breites Spektrum an Natur-, Sozial- und Geisteswissenschaften abdecken. Drei von ihnen sind auf Sprachstudien ausgerichtet und bieten praktischen Sprachunterricht in rund 50 Sprachen an. Viele der Sprachkurse wurden von der polnischen Akkreditierungskommission mit der höchsten Qualitätskategorie ausgezeichnet, was sowohl die hervorragende fachliche Kompetenz der Lehrkräfte und den Einsatz modernster Lehrmethoden als auch hervorragende akademische Ergebnisse bescheinigt. Die Fakultät für moderne Sprachen und Literaturen ist eine der größten der Universität und bietet das größte Angebot an Sprachkursen. Das Institut für Ethnolinguistik innerhalb der Fakultät unterrichtet mehr als ein Dutzend Sprachen in 6 Hauptfächern und beschäftigt Mitarbeiter aus über 15 verschiedenen Ländern.",
+      "uam_location": "Poznan, Polen",
+      "uam_name": "Adam Mickiewicz Universität",
+      "vu_description": "Die Universität Vilnius wurde im 16. Jahrhundert gegründet und gilt als eine der ältesten Universitäten in Mittel- und Osteuropa. Sprachstudien sind seit jeher ein fester Bestandteil des Lehrplans der Universität Vilnius. Damals wurde neben Altgriechisch und Hebräisch vor allem Latein gelehrt. Obwohl die Philologische Fakultät erst 1944 gegründet wurde, wurden Sprachstudien also schon vor der Umwandlung des Jesuitenkollegs in einer Universität im Jahr 1579 gelehrt. Das Institut für die Sprachen und Kulturen des Baltikums vereint Forschende der allgemeinen Linguistik, der baltischen, germanischen, polnischen, russischen und skandinavischen Studien sowie viele andere. Starke Traditionen des Studiums der russischen Sprache, Literatur und Kultur (die Abteilung für russische Philologie wurde 1803 gegründet) koexistieren erfolgreich mit den fortschrittlichsten und modernsten Lehrmethoden, was sich in der aktiven Teilnahme der Mitglieder dieser Abteilung an internationalen Projekten und wissenschaftlichen Veranstaltungen zeigt.",
+      "vu_location": "Vilnius, Litauen",
+      "vu_name": "Vilnius Universität"
+    }
+  },
+  "editor": {
+    "age_range": "Altersspanne",
+    "cefr_levels_label": "GER Niveaustufen",
+    "confirm_leave": "Diese Seite bittet Sie zu bestätigen, dass Sie die Seite verlassen möchten - die von Ihnen eingegebenen Daten werden möglicherweise nicht gespeichert.",
+    "description": "Beschreibung",
+    "details": "Details der Übung",
+    "save": "Speichern",
+    "tags": "Tags",
+    "title": "Titel",
+    "unexpected_response": "unerwartete Serverantwort",
+    "unlisted": "Nicht aufgelistete Suchergebnisse"
+  },
+  "exam": {
+    "accept_submissions": "Einsendungen annehmen",
+    "confirm": "Diese Operation kann nicht rückgängig gemacht werden. Möchten Sie trotzdem fortfahren?",
+    "copy": "Kopieren",
+    "created": "Erstellt: Datum",
+    "delete": "Prüfung löschen",
+    "description": "Prüfungsbeschreibung",
+    "details": "Prüfungsdetails",
+    "error": "Bei der Übermittlung der Prüfung ist ein Fehler aufgetreten.",
+    "goto_exercise": "Zur Übung",
+    "is_exam": "Dies ist eine Prüfung.",
+    "link": "Link",
+    "name": "Name der Prüfung",
+    "no_new_submissions": "Diese Prüfung erlaubt keine neuen Eingaben.",
+    "no_submissions": "Keine Einsendungen",
+    "or": "oder",
+    "please_log_in": "Um mit der Prüfung fortzufahren, melden Sie sich bitte an oder wählen Sie einen Anzeigenamen.",
+    "untitled": "Prüfung ohne Titel",
+    "view": "Ansehen",
+    "visible_by": "Die Ergebnisse dieser Übung werden für den Prüfer {Name} sichtbar sein.",
+    "well_done": "Ihre Prüfung ist dem Prüfer erfolgreich übermittelt worden."
+  },
+  "exercise": {
+    "age": "Alter:",
+    "anonymous": "anonym",
+    "author": "Autor",
+    "check": "Überprüfen Sie das Ergebnis.",
+    "create_copy": "Kopie erstellen",
+    "create_exam": "Prüfung erstellen",
+    "create_exam_confirm": "Der Ersteller dieser Übung kann sie während der Prüfung bearbeiten oder löschen. Möchten Sie trotzdem fortfahren?",
+    "delete": "Übung löschen",
+    "delete_confirm": "Sind Sie sicher, dass Sie diese Übung löschen möchten?",
+    "edit": "Übung bearbeiten",
+    "error": "Beim Speichern der Eingabe der Übung ist ein Fehler aufgetreten.",
+    "explanation": "Erläuterung",
+    "language": "Sprache",
+    "mistake": "einen Fehler melden",
+    "mistake_explanation": "Erläuterung",
+    "misuse": "Missbräuchliche Verwendung melden",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Fehler an den Autor melden",
+    "report_misuse_to_administrators": "Missbräuchliche Verwendung an den Administrator melden",
+    "submit_mistake_confirm": "Vielen Dank! Der Auror wird eine Nachricht erhalten.",
+    "submit_misuse_confirm": "Vielen Dank, dass Sie helfen, TestU.eu  zu verbessern-",
+    "target_language": "Erlernte Sprache",
+    "target_language_is": "Erlernte Sprache:",
+    "unlisted": "Diese Übung ist in den Suchergebnissen nicht aufgelistet."
+  },
+  "guide": {
+    "about": "Wie kreiert man Übungen?",
+    "about_text": "Um Übungen zu kreieren, sind zunächst die Registrierung und Anmeldung auf der Webseite erforderlich.",
+    "construction": "Im Aufbau befindlich",
+    "gap_filling": "Lückentext",
+    "video": "über ein Video",
+    "exam": {
+      "explanation1": "Wenn Sie eine Übung erstellt haben, können Sie sie in eine Prüfung umwandeln. Dazu müssen Sie sich auf der Seite der Übung befinden und auf die drei Punkte in der rechten oberen Ecke der Übung klicken (1).",
+      "explanation2": "Sie können eine Prüfung aus Ihren eigenen Übungen machen, die Sie in \"Mein Lernen\" finden, oder Sie können die Übungen anderer im Bereich \"Home\" verwenden. Wenn Sie die Übung einer anderen Person verwenden, wird sich Ihre Prüfung ändern, wenn der Eigentümer der Übung die Übung selbst ändert.",
+      "explanation3": "Wenn Sie auf die drei Punkte (1) klicken, erscheinen vier Optionen. Um eine Prüfung zu erstellen, müssen Sie auf die Option \"Eine Prüfung erstellen\" (2) klicken. Sie werden dann zur nächsten Seite weitergeleitet, auf der Sie Ihre Prüfung anpassen können.",
+      "explanation4": "Wie Sie unten sehen können, können Sie den Titel Ihrer Prüfung auswählen (3). Er wird dann im oberen Teil angezeigt (4). Sie können auch eine Beschreibung der Prüfung hinzufügen (5) und sie speichern, indem Sie auf die Schaltfläche \"Speichern\" klicken (6).",
+      "explanation5": "Die Seite ändert sich dann und Sie sehen die Seite wie unten, mit dem von Ihnen gewählten Titel. In dem Feld \"Link\" (7) finden Sie den Link zu Ihrer Prüfung. Sie können diesen kopieren, indem Sie auf das linke Symbol klicken (und ihn an Ihre Schüler:innen senden), oder Sie können auf \"ANSEHEN\" klicken, um Ihre Prüfung so zu sehen, wie Ihre Schüler:innen sie sehen werden.",
+      "explanation6": "Sie können auch zur Übung zurückgehen, wenn Sie diese ändern möchten, indem Sie auf (8) \"Zur Übung gehen\" klicken. Im Feld \" Aubgaben \" (9) werden die von den Schüler:innen eingereichten Prüfungen angezeigt und Sie können die Ergebnisse sehen und jede Aufgabe überprüfen.",
+      "explanation7": "Wenn Sie die Details der Prüfung ändern oder kontrollieren möchten, finden Sie diese immer im Feld (10) unten auf der Seite. Alle Ihre Prüfungen werden in der Rubrik \"Mein Lehren\" (11) gespeichert.",
+      "name": "Eine Prüfung erstellen"
+    },
+    "exercice": {
+      "explanation1": "Um eine neue Übung zu erstellen, müssen Sie sich im Menü HOME (1) befinden, danach können Sie \"+Erstelle eine neue Übung\" (2) wählen. Nach dem Erstellen erscheint die Übung auf dieser Seite. Aber zunächst werden Sie auf die nächste Seite weitergeleitet, wie Sie unten sehen.",
+      "explanation2": "Eine Übung kann aus mehreren Teilen bestehen. Sie können Einheiten ergänzen, indem Sie \"+ERGÄNZE EINE EINHEIT\" (3) anklicken. Es gibt verschiedene Übungstypen, aber innerhalb eines Übungsteils können nur dieselben Übungstypen verwendet werden. Will man verschiedene Arten von Fragen in einer Übung mischen, so muss man gesonderte Einheiten für jeden Typ von Fragen erstellen.",
+      "explanation3": "Wie man links sehen kann, gibt es unterschiedliche Übungstypen. Es lassen sich aber hauptsächlich 3 Übungsfamilien unterscheiden: Lückentexte, Multiple Choice und Zuordnungsübungen.",
+      "explanation4": "Bei Lückentexten wird (oder werden) ein Wort (oder mehrere Wörter) ausgewählt. Es gibt mehrere Antwortmöglichkeiten (mit mindestens einer richtigen Antwort und mehreren falschen) oder man kann das Feld frei lassen, so dass die Person, welche die Aufgabe löst, die Antwort eintippt. Auf jeden Fall muss die richtige Antwort (müssen die richtigen Antworten) beim Erstellen der Übung gekennzeichnet werden.",
+      "explanation5": "Im Falle von Multiple Choice erstellt man Übungen mit einer Auswahl von Antworten. Dabei kann eine Antwort richtig sein oder es gibt mehrere richtige Antworten. Wie bei Lückentexten müssen die richtigen Antworten beim Erstellen der Übung gekennzeichnet werden.",
+      "explanation6": "Zuordnungsübungen funktionieren mit Beschreibungen, Fragen, Bildern oder sogar Tönen. Die Lerner müssen Paare bilden oder eine richtige Reihenfolge finden.",
+      "explanation7": "Man kann genauere Erläuterungen zu den Übungsfamilien finden, indem man die Tabs oben auf der Seite anklickt.",
+      "gap_filling_1": "Der Standardtyp von Übungen ist der Lückentext. Dabei gibt es zwei Arten von Übungen. Die erste (1) nennt sich \"Standard\" (Default) und präsentiert vorgegebene Antworten, wenn man die Lücke anklickt. Beim zweiten Typ handelt es sich um \"freie Antworten\" (Open answer) (8), wobei keine Antworten vorgegeben werden und die Lerner die Antworten direkt eintragen müssen. Wir werden noch sehen, wie die Fragen formuliert und Antworten gegeben werden, wobei wir Beispiele für falsche und richtige Fragen und Antworten betrachten.",
+      "gap_filling_2": "In Feld (2) wird der Titel der Übung eingetragen und in Feld (3) eine kurze Beschreibung mit Instruktionen zur Lösung und Hinweisen zum Kontext.",
+      "gap_filling_3": "Die Fragen oder Aufgaben selbst werden in Feld (4) eingetragen. Dabei gibt es immer zwei Möglichkeiten des Vorgehens. Man kann die Fragen und Antworten in das Feld direkt eintragen, oder man verwendet die Tools in der oberen linken Ecke (6). Das Ergebnis ist dasselbe, d.h. man sieht denselben Text in Feld (4).",
+      "gap_filling_4": "Wenn Sie die Fragen direkt in das Feld eintragen, muss jede Frage durch eine Leerzeile getrennt werden und die Lösungen müssen in eckigen Klammern [ ] angegeben un durch vertikale Striche | getrennt werden. Die richtige Lösung muss mit einem Pluszeichen + gekennzeichnet werden. Gibt es mehrere richtige Antworten, so wird jede beliebige von diesen als richtig betrachtet. Man kann die vorgeschlagenen Lösungen mischen, indem man \"Lösungen mischen\" (Shuffle options) (7) anklickt.",
+      "gap_filling_5": "Nutzt man die Tools (6), um Aufgaben zu erstellen, so wird die Leerzeile mit dem linken Tool erzeugt, damit eine neue Aufgabe erstellt werden kann. Man muss die Frage oder den Text eintragen und das rechte Tool anklicken, um die Lücke zu markieren. Es öffnet sich ein Fenster, wie im Bild gezeigt. Man kann die Antworten einzeln eintragen. Sie werden durch das Drücken der Enter-Taste bestätigt. Standardmäßig wird die erste Lösung als richtig betrachtet und mit einem grünen \"v\" davor gekennzeichnet. Aber durch Anklicken des kleinen Knopfes vor jeder Antwort (8) kann man die richtige Antwort auswählen. Durch Anklicken des gestrichelten Quadrats (9) kann auch die Option gewählt werden, nichts einzutragen (\"frei lassen\" /leave blank).",
+      "gap_filling_open_answer_1": "Der andere Typ von Lückentexten sind jene mit freien Antworten (Open answer) (10). Wie man unten sieht, gibt es für diesen Übungstyp keine vorgeschlagenen Antworten. Man kann (eine oder mehrere) zu erwartende Antworten auf die bereits erwähnte Art durch direkten Eintrag oder mittels Tool in Feld (11) geben. Man kann falsche Antworten vorgeben, die nicht erscheinen, aber bei der Korrektur mit einem roten X gekennzeichnet werden, falls sie eingetragen werden. Es erfolgt keine Kennzeichnung bei einer anderen Eintragung und ein grünes \"v\" bei richtiger Lösung.",
+      "gap_filling_open_answer_2": "Weitere Fragen können wie bereits beschrieben ergänzt werden, indem eine Leerzeile ergänzt oder der linke Knopf (6) angeklickt wird. Wenn Sie mit der erstellten Übung zufrieden sind, so vergessen Sie nicht \"Speichern\" (Save) zu drücken. Sie können jederzeit zur Übung zurückkehren, um Fragen zu ergänzen oder Veränderungen vorzunehmen.",
+      "name": "Neue Übung"
+    },
+    "multiple_choice": {
+      "explanation1": "Wenn die Antworten nicht als Lücken angezeigt werden sollen, sondern als Multiple Choice, d.h. als eine Auswahl in einem Feld, so sollte man den Übungstyp \"Multiple choice\" (12) wählen.",
+      "explanation2": "In der Liste von Übungen, die erscheinen, wenn man eine Einheit hinzufügt, bieten \"Fragen zu einem Bild, richtig/falsch\" (Questions about a picture, true or false) sowie \"Fragen zu einem Text, multiple choice\" (Questions about a text, multiple choice) zwei weitere Beispiele dieses Übungstyps.",
+      "explanation3": "Wie oben, kann man einen Titel für die Serie von Fragen oder Aufgaben festlegen. Man kann auch eine Beschreibung ergänzen, z.B. einen Text, auf den sich die Fragen oder Aufgaben beziehen, oder eine Einführung.",
+      "explanation4": "Die Fragen und Antworten können wie bereits beschrieben ergänzt werden, indem sie direkt ins Textfeld (13) eingetragen werden oder bei Lückentexten mit Hilfe der Schaltknöpfe (6) ergänzt werden. Richtige Antworten müssen vorher mit \"+\" gekennzeichnet sein und die einzelnen Antworten werden mittels \"|” voneinander getrennt. Falls es mehr als eine korrekte Antwort gibt, so gilt die Frage als korrekt beantwortet, wenn alle als korrekt gekennzeichneten Lösung gefunden wurden.",
+      "explanation5": "Man hat auch die Möglichkeit Bilder oder Ton in der Beschreibung zu ergänzen. Dazu klickt man die drei Punkte (14) an und trifft die Wahl auf seinem Computer. Man kann Fragen zur Tonaufnahme oder dem Bild stellen. Man kann beliebig viele Fragen stellen und auswählen, wo diese im Text erscheinen, indem man das Element zwischen den geschwungenen Klammern {'{}'} (15) bewegt.",
+      "name": "Multiple Choice"
+    },
+    "sort_and_match": {
+      "explanation1": "Die letzte Übungsfamilie ist die der Zuordnungsübungen (\"sort and match\"). Es sind Paare (aus Text und Text, Text und Bild, Bild und Ton) oder Reihenfolgen zu bilden. Man kann diesen Übungstyp in Feld (16) oder der Liste neuer Einheiten auswählen.",
+      "explanation1_1": "Die einfachste Form dieser Übung ist das Finden passender Wörter. Man kann sie mittels Schaltknopf (17) erstellen oder die Wörter in Feld (18) eintragen.",
+      "explanation2": "Jedes passende Paar muss links und rechts vom Symbol \"==\" eingetragen werden. Die einzelnen Paare werden durch Leerzeile getrennt. Im Beispiel befinden sich auf der einen Seite Früchte und Farben auf der anderen. Es können aber auch Übersetzungen, Zahlen und sogar Bilder, Ton und Videos verwendet werden. Wichtig ist nur, dass man denselben Typ in derselben Spalte anordnet. Die vorgeschlagenen Paare werden dann gemischt.",
+      "explanation3": "Um Bilder or Ton einzufügen, müssen die Schalknöpfe (19) verwendet undeine Datei auf dem Computer ausgewählt werden. Das Element wird dann in geschwungene Klammern {'{}'} gesetzt, wie oben erwähnt. Danach kann das Element an die gewünschte Stelle gesetzt werden. Um ein Video hinzuzufügen, muss man den dritten Schaltknopf (19) wählen und die URL-Adresse des Videos eintragen (z.B. aus YouTube oder vimeo). Es ist nicht möglich, ein Video direkt vom Computer hochzuladen.",
+      "explanation4": "Man kann Text mit Text verbinden, oder mit Bildern oder Ton; oder man verbindet Bilder mit Ton wie in (20) gezeigt.",
+      "explanation5": "Verwendet man nicht das Symbol \"==\", um Paare zu bilden, wie in (21) gezeigt, entsteht eine Sortier-Übung, bei der eine richtige Reihenfolge gefunden werden muss. Man kann dazu Bilder, Text, Ton oder Video verwenden.",
+      "name": "Sortieren und Zuordnen (Sort and Match)",
+      "video": "Man kann auch ein Video direkt im Feld Beschreibung hinzufügen, indem man die URL-Adresse des Videos zwischen geschweiften Klammern angibt und \"video\" davor schreibt, wie in (22) gezeigt. Dafür gibt es keinen Schaltknopf, man kann aber ein schriftliches Beispiel erhalten, indem man die Rubrik \"Fragen zu einem Video, freie Antworten\" (Questions about a video, open answer) auswählt."
+    }
+  },
+  "home": {
+    "create_exercise": "Neue Übung erstellen",
+    "search_exercise": "Übung suchen"
+  },
+  "langs": {
+    "en": "Englisch",
+    "eo": "Esperanto",
+    "help": "Hilf uns, die Webseite zu übersetzen"
+  },
+  "learn": {
+    "date": "Datum",
+    "exam": "Prüfung",
+    "exercise": "Übung",
+    "recent": "Jüngste Aktivität",
+    "review": "Überprüfung",
+    "submitted": "Anzahl der pro Tag eingegebenen Übungen"
+  },
+  "login": {
+    "already_registered": "Haben Sie bereits ein Konto?",
+    "check_inbox": "Bitte prüfen Sie Ihren Posteingang, um Ihre Anmeldung zu bestätigen.",
+    "email": "E-Mail",
+    "email_is_verified": "Ihre Emai-Adresse wurde bestätigt. Sie können sich nun einloggen.",
+    "login": "Login",
+    "mail_invalid": "Gültige Email-Adresse erforderlich",
+    "no_account_yet": "Sie haben noch kein Konto?",
+    "page_title": "Login",
+    "password": "Passwort",
+    "password_reset": "Passwort zurücksetzen",
+    "password_reset_done": "Ihr Passwort wurde erfolgreich zurückgesetzt",
+    "password_reset_sent": "An Ihre E-Mail-Adresse wurde ein Link zum Zurücksetzen Ihres Passworts gesendet.",
+    "required_field": "Erforderliches Feld",
+    "resend_link": "Link erneut senden",
+    "signup": "bei TestU anmelden",
+    "signup_thanks": "Vielen Dank für Ihre Anmeldung.",
+    "username": "Nutzername",
+    "verify_email": "Bestätigung Ihrer Email-Adresse",
+    "verify_token_used_or_invalid": "Offensichtlich wurde dieser Link bereits verwendet oder ist ungültig."
+  },
+  "main": {
+    "about": "Über uns",
+    "accept": "Akzeptieren",
+    "cancel": "Löschen",
+    "catchphrase": "Kreieren Sie Ihre eigenen Sprachtests",
+    "cookie_consent": "Diese Website verwendet eine minimale Anzahl von Cookies für ihre Funktion. Durch die weitere Nutzung dieser Website gehen wir davon aus, dass Sie die Verwendung von funktionalen Cookies akzeptieren.",
+    "edit": "Bearbeiten",
+    "guide": "Anleitung",
+    "home": "Home",
+    "lang_menu_header": "Sprache der Benutzeroberfläche",
+    "login": "Log-in",
+    "logout": "Log-out",
+    "my_learning": "Mein Lernen",
+    "my_teaching": "Mein Lehren",
+    "ok": "OK",
+    "only_logged_in": "Diese Seite ist nur für angemeldete Benutzer verfügbar.",
+    "privacy": "Datenschutzbestimmungen",
+    "settings": "Konto-Einstellungen",
+    "signup": "Einschreiben",
+    "social": "Soziales",
+    "source_code": "Quellcode",
+    "submit": "Einreichen",
+    "terms": "Nutzungsbedingungen",
+    "why": "Warum"
+  },
+  "review": {
+    "exam": "Prüfung wiederholen",
+    "exercise": "Übung wiederholen",
+    "go_exam": "zur Prüfung",
+    "go_exercise": "zur Übung",
+    "submitted_on": "Dies sind die Übungslösungen, die Sie am {Datum} eingereicht haben."
+  },
+  "sheet_editor": {
+    "add_matching_pair": "Ein passendes Paar auswählen",
+    "add_sentence": "Einen Satz ergänzen",
+    "add_unit": "Einheit ergänzen",
+    "add_unit_to_begin": "Eine neue Einheit hinzufügen, um zu beginnen",
+    "close": "Editor schließen",
+    "delete": "Löschen",
+    "edit_next": "Nächste Einheit bearbeiten",
+    "edit_previous": "Vorherige Einheit bearbeiten",
+    "empty_exercise": "Leere Übung",
+    "first_item": "Erste Einheit",
+    "ignore_case": "Großschreibung ignorieren",
+    "insert_gap": "Lücke einfügen",
+    "insert_image": "Bild einfügen",
+    "insert_pair": "Paar einfügen",
+    "insert_sound": "Ton einfügen",
+    "insert_video": "Video einfügen",
+    "move_down": "Nach unten bewegen",
+    "move_up": "Nach oben bewegen",
+    "new_gap": "Neue Lücke",
+    "new_matching_pair": "Neues passendes Paar",
+    "second_item": "Zweite Einheit",
+    "shuffle_options": "Shuffle-Option",
+    "start_typing": "Beginnen Sie einen Satz einzugeben.",
+    "title": "Titel",
+    "untitled_unit": "Einheit ohne Titel",
+    "valid_url": "Geben Sie einen gültigen URL ein.",
+    "snippets": {
+      "blank_unit": {
+        "name": "Leerfeld"
+      },
+      "gap_filling_dropdown": {
+        "code": "Das Buch ist [+auf|in] dem Tisch.",
+        "name": "Lückenfüller, Dropdown"
+      },
+      "gap_filling_open_answer": {
+        "code": "Das Buch ist [+auf|in] dem Tisch.",
+        "name": "Lückenfüller, offene Antworten"
+      },
+      "multiple_choice": {
+        "code": "Wo ist das Buch?\n[+auf dem Tisch|im Tisch]",
+        "name": "Multiple choice (für Fragen)"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{'{img:dog.jpeg}'} == {'{sound:dog.mp3}'}\n\n{'{img:elephant.jpeg}'} == {'{sound:elephant.mp3}'}\n\n{'{img:cat.jpeg}'} == {'{sound:cat.mp3}'}",
+        "name": "Bild mit Ton verbinden"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Dog == {'{img:dog.jpeg}'}\n\nElephant == {'{img:elephant.jpeg}'}\n\nCat == {'{img:cat.jpeg}'}",
+        "name": "Text mit Bild verbinden"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Hund == {'{sound:dog.mp3}'}\n\nElefant == {'{sound:elephant.mp3}'}\n\nKatze == {'{sound:cat.mp3}'}",
+        "name": "Text mit Tönen kombinieren"
+      },
+      "pairing_text_with_text": {
+        "code": "Kirsche == Rot\n\nZitrone == Gelb\n\nBrokkoli == Grün",
+        "name": "Text mit Text verbinden"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "Das Tier auf dem Bild ist: [Ein Hund|+Eine Katze|Ein Elefant]\n\nIst es ein Wildtier oder ein Haustier? [+Ein Haustier|Ein Wildtier]",
+        "description": "{'{img:cat.jpeg}'}",
+        "name": "Fragen zu einem Bild, richtig oder falsch"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Welches Tier macht diesen Laut?\n[+Katze|Hund|Elefant]\n\nWie bezeichnet man den Laut, den dieses Tier macht?\n[+Miauen|Bellen|Trompeten]",
+        "description": "Höre Dir die Tonaufnahme an und beantworte die Fragen.\n\n{'{sound:cat.mp3}'}",
+        "name": "Fragen zu einer Tonaufnahme, Dropdown"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Wer hat den Hasen zum einem Wettrennen herausgefordert? [Der Hase|+Die Schildkröte|Ein Vogel]\nWarum hat der Hase während des Wettrennens ein Schläfchen gemacht? [Er war müde|Er wollte der Schildkröte eine Chance geben aufzuholen|+Er war von seinem Sieg überzeugt]\nWer hat das Wettrennen gewonnen? [Der Hase|+Die Schildkröte|Ein Vogel]",
+        "description": "Es waren einmal eine Schildkröte und ein Hase, die darüber in Streit gerieten, wer von ihnen der schnellste sei. Die Schildkröte forderte den Hasen zu einem Wettlauf heraus, und der Hase nahm die Wette an, weil er sicher war sie zu gewinnen.\nDer Wettlauf begann und der Hase lag schnell vorn und ließ die Schildkröte hinter sich zurück. Der Hase wurde übermütig und beschloss ein Schläfchen zu machen. In der Zwischenzeit bewegte sich die Schildkröte stetig weiter in Richtung Ziellinie.\nAls der Hase erwachte, bemerkte er, dass die Schildkröte die Ziellinie fast erreicht hat. Er versuchte sie einzuholen, aber es war zu spät. Die Schildkröte hatte das Wettrennen bereits gewonnen.",
+        "name": "Fragen zu einem Text, Multiple Choice"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Wo liegt dieser Ort?\n[]\n\nWer errichtete ihn?\n[]",
+        "description": "Schau Dir das Video an und beantworte die Fragen.\n{'{video:https://www.youtube.com/watch?v=chii_rEU30g}'}",
+        "name": "Fragen zu einem Video, offene Antworten"
+      },
+      "sorting_pictures": {
+        "code": "{'{img:one_circle.png}'}\n\n{'{img:two_circles.png}'}\n\n{'{img:three_circles.png}'}",
+        "name": "Bilder sortieren"
+      }
+    },
+    "types": {
+      "default": "Auswahlliste",
+      "multiple_choice": "Multiple Choice",
+      "open_answer": "Freie Antwort (open answer)",
+      "pairing": "Sortieren und Zuordnen (Sort and match)"
+    }
+  },
+  "sort": {
+    "rated": "bestbewertet",
+    "recent": "aktuellste",
+    "sort": "sortieren"
+  },
+  "tags": {
+    "agriculture": "Landwirtschaft",
+    "art": "Kunst",
+    "astronomy": "Astronomie",
+    "biology": "Biologie",
+    "business": "Business",
+    "chemistry": "Chemie",
+    "computing": "IT",
+    "crafting": "Handwerk",
+    "economics": "Ökonomie",
+    "engineering": "Engineering",
+    "geography": "Geografie",
+    "grammar": "Grammatik",
+    "history": "Geschichte",
+    "languages": "Sprachen",
+    "literature": "Literatur",
+    "logic": "Logik",
+    "math": "Mathematik",
+    "medicine": "Medizin",
+    "miscellaneous": "Sonstiges",
+    "music": "Musik",
+    "pedagogy": "Pädagogik",
+    "philosophy": "Philosophie",
+    "physics": "Physik",
+    "politics": "Politik",
+    "psychology": "Psychologie",
+    "religion": "Religion",
+    "science": "Wissenschaft",
+    "sport": "Sport",
+    "technology": "Technik",
+    "trivia": "Trivia",
+    "zoology": "Zoologie"
+  },
+  "teach": {
+    "exams": "Tests",
+    "exercises": "Übungen"
+  },
+  "terms": {
+    "intro": "Herzlich willkommen bei TestU Online, einer kostenlosen, mehrsprachigen E-Learning-Plattform, die die einfache und schnelle Erstellung verschiedener Quiz, Tests und Übungen ermöglicht, die in erster Linie für das Erlernen von Sprachen gedacht sind! Der Zugang und die Nutzung der Website testu.eu (\"die Website\", \"der Dienst\", \"der Anbieter\") setzt voraus, dass Sie (der \"Nutzer\") die folgenden Bedingungen gelesen, verstanden und akzeptiert haben, unabhängig davon, ob Sie als Nutzer:in auf testu.eu registriert sind. Bitte lesen Sie daher den folgenden Text sorgfältig durch.",
+    "last_update": "Zuletzt aktualisiert: {date}",
+    "section1": {
+      "text1": "Einige unserer Dienste kannst du ohne eine Anmeldung auf der Webseite nutzen. Um alle Funktionen der Webseite nutzen zu können, musst du ein persönliches Benutzerkonto einrichten. Die Registrierung ist kostenlos.",
+      "text2": "Zur Registrierung sind Personen ab 13 Jahren zugelassen. Die Nutzung der Webseite durch Minderjährige ist ausschließlich mit Zustimmung der Erziehungsberechtigten zulässig.",
+      "text3": "Du sicherst zu, dass alle von dir bei der Registrierung angegebenen Daten wahr und korrekt sind sowie, dass du sie immer auf dem neuesten Stand halten wirst.",
+      "text4": "Bei der Registrierung ist die Nutzung von Daten (z.B. Benutzername, Name, Profilbilder usw.), die die Rechte Dritter, insbesondere Marken- oder Namensrechte verletzen, unzulässig. Rechtswidrige oder gegen diese Nutzungsbedingungen verstoßende Daten sind (ebenfalls) nicht zulässig.",
+      "text5": "Bei der Registrierung wählst du ein Passwort und bist verpflichtet, dieses Passwort geheim zu halten.",
+      "text6": "Du bist mit der öffentlichen Wiedergabe deiner Profildaten (z.B. deines Benutzernamens, des sprachlichen Fortschritts, des Online-Status, der gewählten Sprachversion, des Registrierungsdatums und des Datums der letzten Anmeldung sowie weiterer freiwilliger Angaben, einschließlich des Profilbildes) einverstanden. Die E-Mail-Adresse und das Passwort werden nicht veröffentlicht.",
+      "text7": "Die Registrierung auf der Webseite wird über einen Aktivierungslink abgeschlossen. Dafür bekommst du nach dem Eingang der Registrierung vom Anbieter der Webseite eine automatische Bestätigung per E-Mail, die diesen Aktivierungslink enthält.",
+      "text8": "Wenn die Registrierung nicht durch die Aktivierung des Kontos abgeschlossen wird, behält sich der Anbieter vor, das unvollständig registrierte Benutzerkonto zu löschen.",
+      "text9": "Der Anbieter der Webseite leistet keine Gewähr für die tatsächliche Identität eines Nutzers. Jeder Nutzer hat sich daher selbst von der Identität eines anderen Nutzers zu überzeugen. Der Anbieter behält sich jedoch vor, zur Überprüfung der Angaben entsprechende Nachweise hinsichtlich der Identität und des Alters anzufordern. Sollten entsprechende Nachweise nicht innerhalb eines von dem Anbieter der Webseite hierfür bestimmten Zeitraums erbracht werden, wird der Anbieter das betreffende Benutzerkonto löschen.",
+      "title": "Registrierung"
+    },
+    "section2": {
+      "text1": "Der Anbieter der Webseite ist sich bewusst, dass der Schutz der persönlichen Daten sehr wichtig ist. Deswegen hält sich die Webseite strikt an die Regeln der Datenschutzgesetze. Einzelheiten zur Verarbeitung der Daten der Nutzer sind in den Datenschutzbestimmungen geregelt.",
+      "title": "Datenschutz"
+    },
+    "section3": {
+      "text1": "Die Webseite darf ausschließlich zu rechtlich erlaubten Zwecken genutzt werden.",
+      "text2": "Als Nutzer bist du verpflichtet:",
+      "text2_1": "ausschließlich wahrheitsgemäße und nicht irreführende Angaben in deinem Profil und deiner Kommunikation mit anderen Nutzern zu machen;",
+      "text2_2": "die Zugangsdaten geheim zu halten und sie nicht an Dritte weiterzugeben;",
+      "text2_3": "die Anbieter der Webseite umgehend darüber zu informieren, wenn Anlass zu der Vermutung besteht, dass ein Dritter Kenntnis von den Zugangsdaten erlangt hat und/oder ein Benutzerkonto missbraucht.",
+      "text3": "Du bist allein für die von dir eingestellten Inhalte sowie für die (sowohl öffentliche als auch nicht öffentliche) Kommunikation mit anderen verantwortlich. Du bist auch verpflichtet, die Rechte und Interessen der anderen Nutzer oder sonstiger Dritter, insbesondere deren Persönlichkeitsrechte, zu wahren.",
+      "text4": "Es ist strengstens untersagt, die folgenden Inhalte (als Bilder, Links, Fotos, Übungen, Audio- und Videodateien oder andere Inhalte) auf die Website hochzuladen und zu posten, zu versenden, zu verlinken, zu übertragen, zu bewerben, anzubieten oder anderweitig bereitzustellen:",
+      "text4_1": "gesetzlich geschützte Inhalte, die z. B. durch das Urheber-, Leistungsschutz-, Namens-, Marken-, Patent-, Geschmacksmuster-, Gebrauchsmuster-, Eigentums- oder Persönlichkeitsrecht geschützt sind, wenn du nicht dazu berechtigt bist;",
+      "text4_2": "pornografische, gewaltverherrlichende, obszöne, sexistische, diffamierende, verleumderische, rassistische, Angehörige von Minderheiten oder Religionen verletzende Darstellungen sowie Inhalte, die gegen die Jugendschutzgesetze verstoßen;",
+      "text4_3": "Propagandamittel und Kennzeichen verfassungswidriger Organisationen;",
+      "text4_4": "belästigende, beleidigende, verleumderische, bedrohende Inhalte und diskriminierende Äußerungen;",
+      "text4_5": "private Daten von anderen Nutzern (z.B. Anschrift, Telefonnummer, Bankverbindung) bzw. Zitate aus privater Kommunikation mit anderen Nutzern, den Anbietern/Administratoren der Webseite oder Dritten;",
+      "text4_6": "Links auf Internetseiten mit rechtswidrigen Inhalten;",
+      "text4_7": "jegliche unaufgeforderte oder unberechtigte Werbung, Werbematerialien, „Junk Mail“, Spam, Kettenbriefe, Schneeball- oder Pyramidensysteme oder jegliche andere Art von Kundenwerbung;",
+      "text4_8": "jegliches Material, welches Viren, Würmer, Trojaner oder sonstige Programme enthält, die die Funktionsfähigkeit oder den Bestand dieser oder anderer Webseiten gefährden oder beeinträchtigen können;",
+      "text5": "Folgende Handlungen sind dem Nutzer untersagt:",
+      "text5_1": "das Konto eines anderen Nutzers oder das System ohne Genehmigung des Anbieters zu verwenden oder versuchen zu verwenden;",
+      "text5_2": "sich als eine andere Person auszugeben sowie falsche Informationen über sich anzugeben;",
+      "text5_3": "das Blockieren der Webseitenfunktionen, das Überschreiben, Modifizieren oder Kopieren des Inhalts, des Programmcodes und/oder der Daten der Webseite sowie das automatisierte Abrufen von Inhalten, soweit dies nicht für die ordnungsgemäße Nutzung der Dienste der Webseite erforderlich ist;",
+      "text6": "Der Eigentümer dieser Website behält sich das Recht vor, nicht autorisierte Beiträge (einschließlich Tests, Übungen, Texte und Bilder), die gegen diese Bedingungen verstoßen, oder das Konto des:der Benutzer:in jederzeit und ohne Vorankündigung zu löschen.",
+      "title": "Pflichten des Nutzers"
+    },
+    "section4": {
+      "text1": "Der Anbieter ist ferner berechtigt, die angebotenen Dienste und Leistungen jederzeit nach eigenem Ermessen ohne Ankündigung zu ändern oder einzustellen.",
+      "title": "Leistungsänderung"
+    },
+    "section5": {
+      "text1": "Der Anbieter der Webseite räumt dir als Nutzer ein persönliches, weltweit gültiges, nicht übertragbares und nicht ausschließliches Recht zur Nutzung der Dienste gemäß den vorliegenden Nutzungsbedingungen ein.",
+      "text2": "Als Nutzer räumst du der Webseite das weltweite, nicht ausschließliche, unentgeltliche, übertragbare, zeitlich, inhaltlich und räumlich unbeschränkte Recht ein, die von dir eingestellten Inhalte in allen Medien zu nutzen, die der Anbieter verwendet. Der Anbieter der Webseite ist insbesondere dazu berechtigt, diese Inhalte in sämtlichen Medien zu verwenden, zu veröffentlichen, zu vervielfältigen, zu reproduzieren und zu verbreiten sowie sie dafür anzupassen, abzuändern und zu bearbeiten.",
+      "text3": "Als Nutzer garantierst du, dass die von dir eingestellten Inhalte frei von Rechten Dritter im Rahmen von 5.2 genutzt werden können. Du versicherst, dass du über alle Rechte, Vollmachten und Befugnisse verfügst, die erforderlich sind, um die hiermit eingeräumten Rechte an den von dir übermittelten Inhalten zu gewähren.",
+      "text4": "Die der Webseite von dir eingeräumten Rechte und die vorstehend erklärten Gewährleistungs- und Freistellungsansprüche enden nicht mit Beendigung des Nutzungsverhältnisses.",
+      "title": "Rechteeinräumung"
+    },
+    "section6": {
+      "text1": "Alle auf der Website veröffentlichten Texte, Bilder und sonstigen Inhalte, einschließlich der von den Nutzer:innen bereitgestellten Inhalte, werden - sofern nicht anders angegeben - unter der {Lizenz} veröffentlicht.",
+      "text1_license": "CC0 1.0 Universal Creative Commons Lizenz",
+      "title": "Eigentumsrechte"
+    },
+    "section7": {
+      "text1": "Die Laufzeit der Mitgliedschaft bei der Webseite beginnt mit der Registrierung und dem Einverständnis mit diesen Nutzungsbedingungen und der Datenschutzbestimmung und bleibt auf eine unbestimmte Zeit bestehen.",
+      "text2": "Du kannst den Dienst jederzeit ohne Angabe von Gründen unter {link} kündigen. Nach der Kündigung wirst du keinen Zugang mehr zu deinem Profil haben und alle darin enthaltenen Informationen werden vom Anbieter der Webseite gelöscht. Du stimmst zu, dass einige Inhalte (wie zum Beispiel Kommentare, Posts oder Nachrichten), die nicht direkt mit deinem Profil verbunden sind, auch nach der Löschung deines Profils erhalten bleiben können. Du hast keinen Anspruch auf Herausgabe oder sonstige Überlassung der von dir eingestellten Inhalte.",
+      "text3": "Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt hiervon unberührt. Ein wichtiger Grund liegt insbesondere dann vor, wenn eine der Parteien gegen Verpflichtungen aus diesen Nutzungsbedingungen verstoßen hat. Im Falle einer außerordentlichen Kündigung durch den Anbieter bist du grundsätzlich von einer weiteren Nutzung der Webseite dauerhaft ausgeschlossen. Damit ist auch eine erneute Registrierung unzulässig.",
+      "text4": "Der Anbieter der Webseite behält sich das Recht vor, das Konto des Nutzers löschen zu dürfen, wenn ein Nutzer den Dienst länger als 6 Monate nicht in Anspruch genommen hat.",
+      "title": "Laufzeit und Beendigung"
+    },
+    "section8": {
+      "text1": "Der Anbieter ist bemüht, die Webseite in Betrieb, fehlerfrei und sicher zu halten, jedoch garantiert er nicht, dass die Webseite zu jedem Zeitpunkt ungefährlich, sicher und fehlerfrei ist, oder dass sie immer ohne Unterbrechungen, Verzögerungen oder Mängel funktioniert.",
+      "text2": "Der Anbieter schließt die Haftung für leicht fahrlässige Pflichtverletzung aus, sofern aus dieser Verletzung keine Schäden des Lebens, des Körpers oder der Gesundheit aufgetreten sind sowie keine Garantien oder Ansprüche nach dem Produkthaftungsgesetz berührt sind. Unberührt davon bleibt ferner die Haftung für die Verletzung von Pflichten, deren Erfüllung die ordnungsgemäße Durchführung des Nutzungsverhältnisses überhaupt erst ermöglicht und auf deren Einhaltung der Nutzer regelmäßig vertrauen darf. Gleiches gilt für Pflichtverletzungen unserer Erfüllungsgehilfen.",
+      "text3": "Nach den gesetzlichen Bestimmungen ist der Anbieter der Webseite als Dienstanbieter nicht dazu verpflichtet, die übermittelten oder gespeicherten Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Er übernimmt daher keine Verantwortung für die von den Nutzern der Webseite bereitgestellten Inhalte, Daten und/oder Informationen, getätigten Aussagen sowie für Inhalte auf verlinkten externen Webseiten.",
+      "text4": "Trotz sorgfältiger inhaltlicher Kontrolle übernimmt der Anbieter der Webseite keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.",
+      "text5": "Der Anbieter ist nicht für den Inhalt und die Richtigkeit der Werbung verantwortlich. Für den Inhalt der Werbeanzeigen ist der jeweilige Autor einzig und allein verantwortlich. Gleiches gilt für den Inhalt der beworbenen Webseite. Bei einer Darstellung einer Werbeanzeige auf der Webseite ist der Anbieter nicht gleichzeitig mit dem rechtswidrigen Inhalt einverstanden. Daher liegt die Haftung ausschließlich bei dem Werbekunden.",
+      "text6": "Als Nutzer stellst du den Anbieter der Webseite von sämtlichen Ansprüchen, einschließlich Schadensersatzansprüche, frei, die andere Nutzer oder sonstige Dritte gegen den Anbieter wegen Verletzung ihrer Rechte durch dich beziehungsweise auf Grund der von dir erstellten Inhalte geltend machen. Der Nutzer, der die betreffenden Inhalte auf der Webseite veröffentlicht hat, übernimmt alle Kosten, die dem Anbieter der Webseite aufgrund einer Verletzung von Rechten Dritter entstehen, einschließlich der für die Rechtsverteidigung entstehenden angemessenen Kosten. Alle weitergehenden Rechte sowie Schadensersatzansprüche des Anbieters bleiben unberührt.",
+      "title": "Haftung"
+    },
+    "section9": {
+      "text1": "Diese Bedingungen und alle damit zusammenhängenden Streitigkeiten unterliegen dem Recht der Slowakischen Republik. Erfüllungsort und ausschließlicher Gerichtsstand ist, soweit gesetzlich zulässig, die Slowakei.",
+      "text2": "Die englische Fassung der Vereinbarung ist rechtsverbindlich.",
+      "text3": "Der Anbieter der Webseite behält sich vor, diese Nutzungsbedingungen jederzeit und ohne Nennung von Gründen zu ändern. Die aktuellste Version wird immer unter {link} bereitgestellt. Ein ausdrücklicher Hinweis auf die Änderung der Nutzungsbedingungen erfolgt nicht, sondern es liegt im Verantwortungsbereich des Nutzers, die jeweils aktuellen Nutzungsbedingungen abzurufen und einzusehen. Mit der Weiternutzung der Webseite nach einer Änderung der Nutzungsbedingungen erklärt der Nutzer sein Einverständnis zu den Änderungen.",
+      "text4": "Der Anbieter ist berechtigt, nach Ankündigung per E-Mail innerhalb von 4 Wochen seine Rechte und Pflichten aus diesem Nutzungsverhältnis ganz oder teilweise auf einen Dritten zu übertragen.",
+      "text5": "Kontaktinformationen für den Anbieter oder die Administratoren der Website finden Sie auf der folgenden Seite {link}.",
+      "title": "Schlussbestimmungen"
+    }
+  },
+  "why": {
+    "because": "Weil es ist:",
+    "more_projects": "Weitere Projekte unter",
+    "title": "Warum Testu.eu verwenden?",
+    "point1": {
+      "subtitle": "Keine Abos, keine versteckten Kosten oder Bezahlschranken, im Ernst!",
+      "title": "Absolut kostenlos"
+    },
+    "point10": {
+      "subtitle": "Dank des Erasmus+ Programms sowie der Slowakischen Nationalen Agentur kann man testu.eu kostenlos verwenden!",
+      "title": "Von der Europäischen Kommission offiziell gefördert"
+    },
+    "point2": {
+      "subtitle": "Du kannst es frei nutzen und selbst Inhalte erstellen.",
+      "title": "CC0-lizensierte Inhalte"
+    },
+    "point3": {
+      "subtitle": "Nichts Verborgenes.",
+      "title": "Open source"
+    },
+    "point4": {
+      "subtitle": "Testu.eu feiert die Sprachen. Fehlt Deine noch? Ergänze sie hier:",
+      "title": "Mehrsprachig"
+    },
+    "point5": {
+      "subtitle": "Nutzerfreundlich, schnell, intuitiv und leicht zu navigieren.",
+      "title": "Leicht zu handhaben"
+    },
+    "point6": {
+      "subtitle": "Tauche ein in die Online-Übungen und Tests – in eine moderne Art des Lernens!",
+      "title": "Online"
+    },
+    "point7": {
+      "subtitle": "Lernen ohne Grenzen, Lehren ohne Grenzen – Kreiere neue Inhalte oder nutze existierende nach!",
+      "title": "Nützlich"
+    },
+    "point8": {
+      "subtitle": "Das Kreieren von Bildungsinhalten macht Spaß – hab Freude daran, kreativ zu sein!",
+      "title": "Spaß"
+    },
+    "point9": {
+      "subtitle": "Das Nachnutzen von Inhalten, die andere oder Du selbst erstellt haben, reduziert die Menge von bedrucktem Papier. Recycle Ideen, Übungen und Fragen!",
+      "title": "Umweltfreundlich"
+    }
+  }
+}

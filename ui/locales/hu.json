@@ -1,0 +1,466 @@
+{
+  "about": {
+    "about": "A projektről",
+    "about_text": "A TestU Online egy ingyenes, többnyelvű, online e-learning platform, amely lehetővé teszi elsősorban nyelvtanulásra szánt különböző kvízek, tesztek és gyakorlatok egyszerű és gyors létrehozását. A platform elsősorban általános iskolai tanárok és diákok, valamint az oktatásban más módon részt vevők számára készül, legyen szó akár intézményes keretek között vagy azon kívül zajló tanulásról/tanításról. Egy ilyen platform létrehozását az indokolja, hogy társadalmi-gazdasági, vallási vagy nemzeti hátterük, földrajzi korlátaik vagy akár különféle fogyatékosságuk ellenére is lehetővé kell tenni a fiatal generációk számára az ingyenes oktatást.",
+    "partners_title": "Partnereink",
+    "partners": {
+      "bit_description": "Az 1986-ban alapított Bit (= best in training) Schulungscenter (= képzési központ) Ausztria egyik vezető oktatásszervező cége a munkaerő-piaci projektek, a szakképzés, az oktatás és a foglalkoztathatóság területén. Egyértelmű erősségük a tervezés (didaktika, módszertan, oktatástervezés) és a különböző nemzeti és nemzetközi projektek megvalósítása terén szerzett tapasztalatuk és know-how-juk. Rendszeres tevékenységeik révén jelentős tapasztalattal rendelkeznek a különböző célcsoportokkal, pl. fiatalokkal, fiatal munkanélküli felnőttekkel és azok oktatási igényeivel kapcsolatban.",
+      "bit_location": "Graz, Ausztria",
+      "european_commission": "A projekt az Európai Bizottság támogatásával valósult meg. A kiadvány kizárólag a szerzők nézeteit tükrözi, az Európai Bizottság nem tehető felelőssé az abban foglaltak bárminemű felhasználásáért.",
+      "ikso_description": "Az E{'@'}I nemzetközi szervezet mintegy 250 önkéntesre támaszkodva támogatja az interkulturális tanulást az interneten. Projektjei között szerepelnek az eszperantó ({1}) és a szlovák nyelv ({2}) tanulására létrehozott többnyelvű weboldalak, amelyek a deutsch.info nevű holnap alapját képezik. A tanulási portálok fejlesztése mellett az E{'@'}I különböző képzési kezdeményezéseket is megvalósít, elsősorban a nyelvek és az új technológiák területén.",
+      "ikso_location": "Simony (Partizánske), Szlovákia",
+      "leipzig_description": "Az 1409-ben alapított Lipcsei Egyetem egy olyan kutatóegyetem, amely gazdag és változatos kutatási környezetben kínál képzést több mint 400 oktatóval mintegy 30 000 diák számára. A 14 kar széles skálája (az orvostudományoktól a természettudományokon, a matematikán, a teológián és a társadalomtudományokon át egészen a sportig) kiváló lehetőségeket kínál az interdiszciplináris tanulmányok és kutatások végzésére. A világon egyedülálló az egyetemen működő Szorb Intézet, amely a szorb és más kisebbségi nyelvekkel, irodalmuk és kultúrájuk kutatásával, valamint az iskolai tanárok képzésével foglalkozik. Az 1989-es politikai változások óta eltelt években jelentős összegeket fektettek a kutatási infrastruktúrába, így a Lipcsei Egyetem ma mind az épületek, mind a felszereltség tekintetében a legmodernebb intézmények közé tartozik.",
+      "leipzig_location": "Lipcse, Németország",
+      "leipzig_name": "Lipcsei Egyetem",
+      "uam_description": "A poznańi Adam Mickiewicz Egyetem kutatóegyetem, a legjobb lengyel egyetemek egyike és Poznań legfontosabb tudományos intézménye. Névadója a legjelentősebb lengyel romantikus költő. Az egyetemet 1919-ben alapították, de hírnevét a poznańi felsőoktatás hosszú, a 16. századig visszanyúló hagyományai alapozzák meg (A Lubrański Akadémiát - angolul: The Lubrański Academy, latinul: Collegium Lubranscianum - 1518-ban alapították Poznańban). Jelenleg a 3000 fős oktatógárda 193 szakot és szakirányt kínál mintegy 40 000 hallgatónak, akik közül több mint 1300 doktorandusz. Az egyetem több mint 600 nemzeti és nemzetközi projektben vesz részt, a tudományos publikációk száma meghaladja a nyolcezret. Az intézmény 20 karra oszlik a természet- és társadalomtudományok, valamint a bölcsészettudományok széles skáláján, három karon a nyelvoktatás foglalja el a központi helyet mintegy 50 nyelv gyakorlati nyelvoktatását kínálva. A nyelvi kurzusok közül sok elnyerte a Lengyel Akkreditációs Bizottság legmagasabb minőségi kategóriáját, ami egyaránt tanúsítja a tanárok kiváló tárgyi kompetenciáját és a legújabb oktatási módszerek alkalmazását kiváló tanulmányi eredményeket vonva maga után. A Modern Filológia Kar az egyetem egyik legnagyobb kara, egyben a legtöbb nyelvi kurzust kínálja. A karon működő Etnolingvisztikai Intézetben 6 szakon egy tucatnál is több idegen nyelvet oktatnak 15 különböző országból érkezett anyanyelvű tanárral.",
+      "uam_location": "Poznań, Lengyelország",
+      "uam_name": "Adam Mickiewicz Egyetem",
+      "vu_description": "A 16. században alapított Vilniusi Egyetem az egyik legrégebbi felsőoktatási intézmény Közép- és Kelet-Európában. Az egyetemen folyó képzésnek mindig is szerves része volt a nyelvoktatás. A kezdetekkor az ógörög és a héber mellett a latin volt az elsődlegesen tanított nyelv. Bár a Filológiai Kart csak 1944-ben alapították meg, nyelvi tanulmányokat már az előtt is lehetett folytatni, hogy a jezsuita kollégium egyetemmé alakult 1579-ben. A Balti Nyelvek és Kultúrák Intézete sok más mellett az általános nyelvészet, a balti, a germán, a lengyel, az orosz, és a skandináv nyelvek kutatóit fogja össze. Az orosz nyelv, irodalom és kultúra tanulmányozásának erős hagyományai (az orosz filológiai tanszéket 1803-ban alapították) sikeresen megférnek a legfejlettebb és legmodernebb oktatási módszerekkel, amit a tanszék tagjainak nemzetközi projektekben és tudományos rendezvényeken való aktív részvétele is mutat.",
+      "vu_location": "Vilnius, Litvánia",
+      "vu_name": "Vilniusi Egyetem"
+    }
+  },
+  "editor": {
+    "age_range": "Életkor",
+    "cefr_levels_label": "KER szintek",
+    "confirm_leave": "Biztos benne, hogy el kívánja hagyni az oldalt? A bevitt adatok elveszhetnek.",
+    "description": "Leírás",
+    "details": "A feladat részletei",
+    "save": "Mentés",
+    "tags": "Címkék",
+    "title": "Cím",
+    "unexpected_response": "Váratlan szerver válasz",
+    "unlisted": "Ne jelenjen meg a keresési eredményeknél"
+  },
+  "exam": {
+    "accept_submissions": "Válaszok fogadása",
+    "confirm": "Ez a művelet visszavonhatatlan. Folytatja mégis?",
+    "copy": "Másolás",
+    "created": "Létrehozva: {date}",
+    "delete": "Vizsga törlése",
+    "description": "Vizsga leírása",
+    "details": "Vizsga részletei",
+    "error": "A vizsgalap beküldésekor hiba lépett fel.",
+    "goto_exercise": "Ugrás a feladatra",
+    "is_exam": "Ez egy vizsgalap",
+    "link": "Hivatkozás",
+    "name": "Vizsga neve",
+    "no_new_submissions": "Erre a vizsgára már nem lehet új vizsgalapot beküldeni.",
+    "no_submissions": "Nincs beküldött vizsgalap",
+    "or": "vagy",
+    "please_log_in": "A vizsgához való továbblépéshez kérjük, jelentkezzen be, vagy adja meg a megjelenítendő nevet!",
+    "untitled": "Cím nélküli vizsga",
+    "view": "Megtekintés",
+    "visible_by": "Ennek a feladatnak az eredményét a vizsgáztató látni fogja.{name}",
+    "well_done": "A vizsgalapot sikeresen elküldte a vizsgáztatónak."
+  },
+  "exercise": {
+    "age": "Életkor:",
+    "anonymous": "Névtelen",
+    "author": "Szerző",
+    "check": "Eredmény megtekintése",
+    "create_copy": "Másolat készítése",
+    "create_exam": "Vizsga létrehozása",
+    "create_exam_confirm": "Előfordulhat, hogy a feladat készítője a vizsga közben szerkeszteni vagy törölni fogja a feladatot. Folytassuk?",
+    "delete": "Feladat törlése",
+    "delete_confirm": "Biztos benne, hogy törölni szeretné ezt a feladatot?",
+    "edit": "Feladat szerkesztése",
+    "error": "Hiba történt a feladat elküldése közben",
+    "explanation": "Leírás:",
+    "language": "Nyelv",
+    "mistake": "Hiba jelentése",
+    "mistake_explanation": "Leírás:",
+    "misuse": "Visszaélés bejelentése",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Hiba jelentése {username} részére",
+    "report_misuse_to_administrators": "Visszaélés jelentése az adminisztrátoroknak",
+    "submit_mistake_confirm": "Köszönjük! Elküldtük az értesítést a feladat készítőjének.",
+    "submit_misuse_confirm": "Köszönjük, hogy segít nekünk rendben tartani a Testu.eu oldalt.",
+    "target_language": "Tanulandó nyelv",
+    "target_language_is": "Tanulandó nyelv:",
+    "unlisted": "Ez a feladat nem fog megjelenni a keresési eredmények között"
+  },
+  "guide": {
+    "about": "Hogyan lehet feladatokat készíteni?",
+    "about_text": "Új feladat létrehozásához előbb regisztrálnia kell, és be kell jelentkeznie a weboldalra.",
+    "construction": "Fejlesztés alatt",
+    "gap_filling": "Kiegészítős feladat",
+    "video": "Videóhoz kapcsolódó feladat",
+    "exam": {
+      "explanation1": "Egy feladat elkészítése után vizsgává lehet alakítani azt. Ehhez a feladat oldalán kell lenni és a jobb felső sarokban lévő három pontra kattintani (1)",
+      "explanation2": "Létrehozhat vizsgát a \"Tanítás\" szekcióban található saját feladataiból vagy más felhasználóknak a Főoldalon található feladataiból. Amennyiben más felhasználó feladatát használja fel, és ez a felhasználó közben változtat a feladaton, akkor a vizsgafeladat is ugyanúgy megváltozik.",
+      "explanation3": "Ha a három pontra (1) kattint, négy opció jelenik meg. A vizsga létrehozásához a \"Vizsga létrehozása\" (2) opciót kell választania. Ezután a következő oldalon beállíthatja a vizsga részleteit.",
+      "explanation4": "Amint azt a lenti ábrán láthatjuk, lehet címet is adni a vizsgának (3). Ez később az oldal tetején fog megjelenni (4). Hozzáadhatunk leírást is a vizsgához (5) és a \"Mentés\" gombra kattintva elmenthetjük.",
+      "explanation5": "Ezután az alábbi oldal fog megjelenni a beállított címmel. A \"link\" nevű szövegdobozban (7) található a vizsga linkje. A bal oldali ikonra kattintva kimásolhatja (és elküldheti a diákjainak) vagy a \"MEGTEKINTÉS\" ikonra kattintva megnézheti, hogy hogyan fog megjelenni a vizsga a diákoK számára.",
+      "explanation6": "Amennyiben módosítani szeretné a feladatot, visszatérhet hozzá az \"Ugrás a feladatra\" gombra kattintva (8). A \"Beküldött vizsgalapok\" (9) ablakban lesznek láthatóak a diákok által beküldött vizsgalapok, és itt láthatja az eredményüket és ellenőrizheti a beküldött vizsgalapokat.",
+      "explanation7": "Ha meg szeretné változtatni vagy ellenőrizni szeretné a vizsga részleteit, megtalálja őket az oldal alján található dobozban (10). Az összes vizsga a \"Tanítás\" menüpontban (11) kerül eltárolásra.",
+      "name": "Vizsga készítése"
+    },
+    "exercice": {
+      "explanation1": "Új feladatot a Főoldal (1) menüpontból tud létrehozni. Itt válassza a \"+ ÚJ FELADAT LÉTREHOZÁSA\" (2) menüpontot. A létrehozott feladatok is ezen az oldalon jelennek meg. Előbb azonban a lenti ábrán látható oldal fog megjelenni.",
+      "explanation2": "Egy gyakorlat több egységből is állhat. Az egységeket a \"+ FELADAT HOZZÁADÁSA\" (3) gombra kattintva adhatja hozzá. Különböző típusú gyakorlatok vannak, de minden egységben csak egy fajtát használhat. Ha egy gyakorlatban keverni szeretné a kérdéstípusokat, akkor minden egyes kérdéstípushoz külön egységet kell készítenie.",
+      "explanation3": "Ahogy az a bal oldalon látszik, különböző fajta feladatok vannak, de ezeket három fő csoportba oszthatjuk: kiegészítéses feladatok, feleletválasztós feladatok és csoportosítós/párosítós feladatok.",
+      "explanation4": "A kiegészítéses feladat létrehozásakor egy vagy több kifejezést ki kell hagyni a mondatból. A válaszokat meg lehet adni előre (legalább egy helyes választ és több helytelen választ), s ekkor a feladat megoldójának kell kiválasztania közülük a helyeset. Ha üresen hagyjuk a helyet, akkor a feladat megoldójának be kell írnia a választ. A feladat készítésekor mindkét esetben meg kell jelölnünk a helyes válasz(oka)t.",
+      "explanation5": "A feleletválasztós kérdés létrehozásakor előre megadjuk a válaszlehetőségeket. Ez lehet egy vagy több helyes válasz, és a kiegészítéses feladathoz hasonlóan a kérdés létrehozásakor meg kell adnia a helyes válasz(oka)t.",
+      "explanation6": "A párosítás és sorba rendezés típusú feladatok létrehozásakor választhatunk, hogy feladatleírást, kérdést, képeket, esetleg hangokat, szavakat vagy ezekhez kapcsolódó válaszokat adunk meg. Ezeket a tanulónak össze kell párosítania, illetve sorba kell rendeznie, amennyiben a sorba rendezés opciót választjuk.",
+      "explanation7": "További magyarázatot a feladattípusokhoz az oldal tetején található fülekre kattintva talál.",
+      "gap_filling_1": "Az alapértelmezett feladattípus a kiegészítéses típus. Ennek két fajtája van: az első a \"Legördülő menü\" (1), ahol előre megadott válaszok közül választhatunk, amikor az üres mezőre kattintunk. \nA másik típus, amikor a tanulónak önállóan kell beírnia a választ (8). Itt nincsenek előre megadott válaszok, a tanulónak kell azokat beírnia. A továbbiakban megmutatjuk, hogyan kell megírni a kérdéseket és a válaszokat: néhány hibás választ és a helyes(ek)et.",
+      "gap_filling_2": "A (2)-es mezőbe a feladat címét, a (3)-as mezőbe a feladat rövid leírását adhatjuk meg (pl. utasítás, kontextus).",
+      "gap_filling_3": "A feladat mondatait az ablakban (4) tudjuk megírni. Ezt mindig kétféleképpen tudjuk megtenni. Vagy magunk szerkesztjük a mondatokat, vagy az eszközök (6) segítségével. Az eredmény ugyanaz lesz, az ablakban (4) ugyanazt a szöveget látja.",
+      "gap_filling_4": "Ha közvetlenül a szövegdobozba írjuk a kérdéseket, az egyes mondatok/kérdések között egy üres sornak kell lennie, a válaszokat pedig szögletes zárójelben [ ] kell megadni függőleges elválasztóval | elválasztva. A helyes válasz(ok) elé + jelet kell tenni. Ha egynél több helyes válasz van, bármelyik helyesnek számít az eredmény szempontjából. A beírt válaszokat a program véletlenszerűen rendezi, ha a \"Véletlenszerű rendezés\"-re kattintunk (7).",
+      "gap_filling_5": "Amennyiben a mondatokat az eszközök (6) segítségével szerkesztjük, a bal oldali egy üres sort szúr be új mondat beírásához. Itt be kell írnia az új kérdést vagy szöveget, és ahol a kihagyást szeretnénk, ott a jobb oldali eszközre kell kattintani. Amint az a képen látható, egy felugró ablak fog megjelenni. Ide kell beírni egyesével a válaszokat, majd az Enter lenyomásával véglegesíteni. Alapértelmezés szerint az elsőként beírt válasz lesz a helyes, és egy zölt pipa fog megjelenni előtte. De mi is megjelölhetjük a helyes válasz(oka)t az egyes válaszok előtti gombra kattintva (8). Választhatjuk a \"hagyd üresen\" lehetőséget is a (9)-re kattintva.",
+      "gap_filling_open_answer_1": "A kiegészítéses feladat másik típusa, amikor a tanulónak önállóan kell beírnia a választ (10). Amint az itt látható, ebben a típusban nincsenek előre megadott válaszlehetőségek. Ettől függetlenül, az előbbiekben leírtak szerint itt is megadhatunk helyes válaszokat a mondatok beírásakor (11). Rossz válaszokat is megadhatunk, ezek nem fognak megjelenni, de az ellenőrzéskor egy piros X fog megjelenni, ha valaki ezek közül írt be valamit, semmi nem jelenik meg, ha más választ írt, és zöld pipa jelenik meg, ha a jó válaszok közül adott meg egyet.",
+      "gap_filling_open_answer_2": "További mondatokat a fent említett módokon - tehát üres sor manuális beszúrásával vagy az eszközök (6) segítségével - adhat a feladathoz. Ha elkészült a feladattal, ne felejtse elmenteni azt a \"Mentés\" gombra kattintva! Később bármikor szerkesztheti a feladatot.",
+      "name": "Új feladat"
+    },
+    "multiple_choice": {
+      "explanation1": "Ha a kiegészítendő válasz helyett többszörös választási lehetőségként szeretné megjeleníteni a lehetséges válaszokat a kérdés alatt, akkor válassza a \"Feleletválasztós teszt\" típust (12).",
+      "explanation2": "Az egység hozzáadásakor megjelenő feladatlistában az ”Igaz/hamis kérdés képről” és a ”Szövegértés, feleletválasztós feladat” típusnál két további példát találhat ennek a feladattípusnak a használatához.",
+      "explanation3": "Az korábbiakhoz hasonlóan itt is adhat címet a kérdéssorozatnak. Hozzáadhat feladatleírást is, vagy például egy szöveget, amellyel kapcsolatban kérdéseket szeretne feltenni, vagy írhat egy bevezetőt a kérdésekhez...",
+      "explanation4": "A kérdéseket és a válaszokat a korábbiakhoz hasonlóan lehet megadni, közvetlenül a szövegdobozba beírva (13), vagy pedig a gombok segítségével, ahogyan azt korábban a kiegészítős feladatoknál (6) elmagyaráztuk. A helyes válasz előtt \"+\" jelnek kell állnia, a válaszokat pedig a \"|\" karakterrel kell elválasztani egymástól. Egynél több helyes válasz esetén a válasz akkor lesz helyesként elfogadva, amenyiben az összes helyes választ bejelölték.",
+      "explanation5": "Lehetőség van képek vagy hangok hozzáadására is a feladatok leírásához, amelyeket a három pontra (14) kattintva lehet kiválasztani a számítógépről. Ezután kérdéseket tehetünk fel a hanggal vagy a képpel kapcsolatban. A feladathoz tetszőleges számú képet vagy hangot adhatunk hozzá, és ezek helyét is meghatározhatuk a kapcsos zárójelben {'{}'} lévő elem helyének módósításával (15).",
+      "name": "Feleletválasztós teszt"
+    },
+    "sort_and_match": {
+      "explanation1": "A feladattípusok utolsó családja a \"sorba rendezés és párosítás\" (szöveget szöveggel, szöveget képpel, képet hanggal, valamint képek rendezése). Ezt a feladattípust a típus mezőben (16) vagy az új egységek listájában választhatja ki.",
+      "explanation1_1": "A legegyszerűbb feladattípus szavak párosításából áll. A párok létrehozásához használja a megfelelő gombot (17), vagy írja be őket közvetlenül a szövegdobozba (18).",
+      "explanation2": "Minden párt úgy kell megadni, hogy a pár egyik tagja az \"==\" szimbólumtól balra, a másik pedig jobbra legyen, és az egyes párokat üres sorral kell elválasztani egymástól. Ebben a példában az egyik oszlopban gyümölcsök vannak, a másikban pedig színek. De ezek lehetnek fordítások, számok, vagy akár képek, hangok vagy videók is. A legfontosabb, hogy ugyanabba az oszlopba ugyanazt a típust tegyük. A feladat megoldásakor a párokat összekeverve mutatjuk.",
+      "explanation3": "Képek vagy hangok hozzáadása a megfelelő gombokra (19) kattintva történik, és ekkor ki kell választani a fájlt a számítógépen. Ezután a program a korábbiakhoz hasonlóan létrehozza a kapcsos zárójelek {'{}'} közötti elemeket. Ezután áthelyezheti ezeket a kívánt helyre. Videó hozzáadásához a harmadik gombot (19) kell kiválasztani, és meg kell adni a videó url címét (például a youtube-ról vagy a vimeóról...). Közvetlenül a számítógépről nem lehet videót feltölteni.",
+      "explanation4": "Szöveget lehet szöveggel, képpel vagy hanggal párosítani, illetve lehet képet hanggal, ahogy az a (20)-as szám alatt látható.",
+      "explanation5": "Ha nem használjuk az \"==\" szimbólumot, hogy valamit valamivel összepárosítsunk, ahogyan a (21)-ben látható, akkor a feladat egy sorba rendezési feladattá válik, ahol az egyes tételeket megfelelő sorrendbe kell tennünk. Ezt megtehetjük képekkel, szöveggel, hangokkal vagy videókkal.",
+      "name": "Sorba rendezés és párosítás",
+      "video": "Videót közvetlenül a leírás mezőhöz is hozzáadhat, ha a videó url-címét kapcsos zárójelek közé írja, és előtte a \"video:\" előtagot használja, ahogy az a (22)-es ábrán látható. Ehhez nincs gomb, de a \"Kérdések egy videóval kapcsolatban, önálló válasz\" című egységet kiválasztva találhat példát."
+    }
+  },
+  "home": {
+    "create_exercise": "Új feladat létrehozása",
+    "search_exercise": "Feladat keresése"
+  },
+  "langs": {
+    "en": "Angol",
+    "eo": "Eszperantó",
+    "help": "Segítsen nekünk az oldal lefordításában."
+  },
+  "learn": {
+    "date": "Dátum",
+    "exam": "Vizsga",
+    "exercise": "Feladat",
+    "recent": "Legutóbbi tevékenységek",
+    "review": "Megtekintés",
+    "submitted": "Az adott napokon beküldött feladatok száma"
+  },
+  "login": {
+    "already_registered": "Már van fiókja?",
+    "check_inbox": "Kérjük, ellenőrizze a bejövő leveleit a regisztráció jóváhagyásához.",
+    "email": "E-mail",
+    "email_is_verified": "Az e-mail-cím ellenőrzése megtörtént. Most már be tud jelentkezni a fiókjába.",
+    "login": "Bejelentkezés",
+    "mail_invalid": "Érvénytelen e-mail cím",
+    "no_account_yet": "Még nincs fiókja?",
+    "page_title": "Bejelentkezés",
+    "password": "Jelszó",
+    "password_reset": "Jelszó megváltoztatása",
+    "password_reset_done": "A jelszó sikeresen módosításra került.",
+    "password_reset_sent": "Egy linket küldtünk az e-mailcímére a jelszó megváltoztatásához.",
+    "required_field": "Kötelező mező",
+    "resend_link": "Link újraküldése",
+    "signup": "Regisztrálás a TestU-ra",
+    "signup_thanks": "Köszönjük, hogy regisztrált!",
+    "username": "Felhasználónév",
+    "verify_email": "E-mail cím ellenőrzése",
+    "verify_token_used_or_invalid": "Úgy tűnik. hogy ezt a linket már használták vagy érvénytelen."
+  },
+  "main": {
+    "about": "Rólunk",
+    "accept": "Elfogadom",
+    "cancel": "Mégsem",
+    "catchphrase": "Készítsen saját nyelvi kvízeket",
+    "cookie_consent": "Ez a weboldal a működéséhez minimális mennyiségű sütit használ. A weboldal további használatával feltételezzük, hogy elfogadja a funkcionális sütik használatát.",
+    "edit": "Szerkesztés",
+    "guide": "Hogyan csináljam?",
+    "home": "Főoldal",
+    "lang_menu_header": "A kezelőfelület nyelve",
+    "login": "Bejelentkezés",
+    "logout": "Kijelentkezés",
+    "my_learning": "Tanulás",
+    "my_teaching": "Tanítás",
+    "ok": "OK",
+    "only_logged_in": "Ez az oldal csak bejelentkezett felhasználók számára elérhető",
+    "privacy": "Adatvédelmi irányelvek",
+    "settings": "Fiókbeállítások",
+    "signup": "Regisztráció",
+    "social": "Közösségi media",
+    "source_code": "Forráskód",
+    "submit": "Beküldés",
+    "terms": "Felhasználási feltételek",
+    "why": "Miért"
+  },
+  "review": {
+    "exam": "Vizsga megtekintése",
+    "exercise": "A feladat megtekintése",
+    "go_exam": "Ugrás a vizsgára",
+    "go_exercise": "Ugrás a gyakorlathoz",
+    "submitted_on": "Ezek az ön által beküldött feladatmegoldások {date}-n."
+  },
+  "sheet_editor": {
+    "add_matching_pair": "Párosítás hozzáadása",
+    "add_sentence": "Mondat hozzáadása",
+    "add_unit": "Feladat hozzáadása",
+    "add_unit_to_begin": "Új feladat hozzáadása a kezdéshez",
+    "close": "Szerkesztő bezárása",
+    "delete": "Törlés",
+    "edit_next": "Következő szerkesztése",
+    "edit_previous": "Előző szerkesztése",
+    "empty_exercise": "Üres gyakorlat",
+    "first_item": "Első elem",
+    "ignore_case": "Kis- és nagybetűk figyelmen kívül hagyása",
+    "insert_gap": "Üres hely beszúrása",
+    "insert_image": "Kép beszúrása",
+    "insert_pair": "Párosítás beszúrása",
+    "insert_sound": "Hang beszúrása",
+    "insert_video": "Videó beszúrása",
+    "move_down": "Mozgatás lefelé",
+    "move_up": "Mozgatás felfelé",
+    "new_gap": "Új üres hely",
+    "new_matching_pair": "Új párosítás",
+    "second_item": "Második elem",
+    "shuffle_options": "Véletlenszerű rendezés",
+    "start_typing": "Kezdjen el gépelni egy mondatot...",
+    "title": "Cím",
+    "untitled_unit": "Cím nélküli feladat",
+    "valid_url": "Kérjük, érvényes URL-t adjon meg!",
+    "snippets": {
+      "blank_unit": {
+        "name": "Üres egység"
+      },
+      "gap_filling_dropdown": {
+        "code": "A könyv az asztal [+on|hoz] van.",
+        "name": "Kiegészítéses feladat, legördülő menü"
+      },
+      "gap_filling_open_answer": {
+        "code": "A könyv az asztal [+on|hoz] van.",
+        "name": "Kiegészítéses feladat, ahol a választ önállóan kell beírni"
+      },
+      "multiple_choice": {
+        "code": "Hol van a könyv? \nAz asztal [+on|hoz].",
+        "name": "Feleletválasztós teszt"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{'{img:dog.jpeg}'} == {'{sound:dog.mp3}'}\n\n{'{img:elephant.jpeg}'} == {'{sound:elephant.mp3}'}\n\n{'{img:cat.jpeg}'} == {'{sound:cat.mp3}'}",
+        "name": "Képek párosítása hanggal."
+      },
+      "pairing_text_with_pictures": {
+        "code": "Kutya =={'{img:dog.jpeg}'}\n\nElefánt =={'{img:elephant.jpeg}'}\n\nMacska =={'{img:cat.jpeg}'}",
+        "name": "Szöveg párosítása képpel."
+      },
+      "pairing_text_with_sounds": {
+        "code": "Kutya == {'{sound:dog.mp3}'}\n\nElefánt == {'{sound:elephant.mp3}'}\n\nMacska == {'{sound:cat.mp3}'}",
+        "name": "Szöveg párosítása hangokkal"
+      },
+      "pairing_text_with_text": {
+        "code": "meggy == piros\n\ncitrom == sárga\n\nbrokkoli == zöld",
+        "name": "Szöveg párosítása szöveggel"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "A képen látható állat egy [kutya|+macska|elefánt]\n\nHáziállat vagy vadállat? [+háziállat|vadállat]",
+        "description": "{'{img:cat.jpeg}'}",
+        "name": "Igaz/hamis kérdés képről"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Melyik állat hangja ez?\n[+macska|kutya|elefánt]\n\nMit csinál ez az állat?\n[+nyávog|ugat|trombitál]",
+        "description": "Hallgassa meg a hanganyagot, majd válaszoljon a kérdésekre!\n\n{'{sound:cat.mp3}'}",
+        "name": "Kérdés hanganyagról, legördülő menü"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Ki hívta ki a nyulat versenyre? [A nyúl|+A teknősbéka|Egy madár]\n\nMiért szundikált a nyúl a verseny alatt? [Fáradt volt|Esélyt akart adni a teknősbékának, hogy utolérje|+Biztos volt a győzelmében]\n\nKi nyerte a versenyt? [A nyúl|+A teknősbéka|Egy madár]",
+        "description": "Réges régen egy nyúl és egy teknősbéka mindig azon vitatkozott, hogy ki a gyorsabb.\nA teknős kihívta a nyulat egy versenyre, és a nyúl elfogadta, mert azt hitte, hogy könnyű győzelem lesz.\n\nA verseny elkezdődött, és a nyúl gyorsan szaladt, maga mögött hagyva a teknőst. A nyúl túlságosan elbízta magát, és úgy döntött, hogy szundikál egyet. Eközben a teknősbéka folyamatosan haladt a cél felé.\n\nAmikor a nyúl felébredt, észrevette, hogy a teknős már majdnem a célban van. A nyúl megpróbálta utolérni, de már túl késő volt. A teknős megnyerte a versenyt.",
+        "name": "Szövegértés, feleletválasztós feladat"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Hol található a filmen látható helyszín?\n[]\nKi építette?\n[]",
+        "description": "Nézze meg a videót, majd válaszoljon a kérdésekre!\n\n{'{video:https://www.youtube.com/watch?v=chii_rEU30g}'}",
+        "name": "Kérdések egy videóval kapcsolatban, önálló válasz"
+      },
+      "sorting_pictures": {
+        "code": "{'{img:one_circle.png}'}{'{img:two_circles.png}'}{'{img:three_circles.png}'}",
+        "name": "Képek sorba rendezése"
+      }
+    },
+    "types": {
+      "default": "Legördülő menü",
+      "multiple_choice": "Feleletválasztós teszt",
+      "open_answer": "Önálló válasz",
+      "pairing": "Sorba rendezés és párosítás"
+    }
+  },
+  "sort": {
+    "rated": "Legjobb értékelés",
+    "recent": "Legújabb",
+    "sort": "Sorbarendezés"
+  },
+  "tags": {
+    "agriculture": "Mezőgazdaság",
+    "art": "Művészet",
+    "astronomy": "Csillagászat",
+    "biology": "Biológia",
+    "business": "Üzlet",
+    "chemistry": "Kémia",
+    "computing": "Számítástechnika",
+    "crafting": "Kézműveskedés",
+    "economics": "Közgazdaságtan",
+    "engineering": "Műszaki tudomány",
+    "geography": "Földrajz",
+    "grammar": "Nyelvtan",
+    "history": "Történelem",
+    "languages": "Nyelvek",
+    "literature": "Irodalom",
+    "logic": "Logika",
+    "math": "Matematika",
+    "medicine": "Orvostudomány",
+    "miscellaneous": "Egyéb",
+    "music": "Zene",
+    "pedagogy": "Pedagógia",
+    "philosophy": "Filozófia",
+    "physics": "Fizika",
+    "politics": "Politika",
+    "psychology": "Pszichológia",
+    "religion": "Vallás",
+    "science": "Tudomány",
+    "sport": "Sport",
+    "technology": "Technológia",
+    "trivia": "Érdekességek",
+    "zoology": "Állattan"
+  },
+  "teach": {
+    "exams": "Vizsgák",
+    "exercises": "Feladatok"
+  },
+  "terms": {
+    "intro": "Üdvözöljük a TestU Online honlapon! A TestU Online egy ingyenes, többnyelvű e-learning platform, amelyen könnyen és gyorsan lehet létrehozni kvízeket, feladatokat, teszteket, elősorban nyelvtanulás céljából.  \nA testu.eu weboldal (\"a weboldal\", \"a szolgáltatás\", \"a szolgáltató\") elérése és használata azt jelenti, hogy Ön (a \"felhasználó\") elolvasta, megértette és elfogadta az alábbi általános szerződési feltételeket, függetlenül attól, hogy tagként regisztrált-e a testu.eu oldalon vagy sem. Kérjük, figyelmesen olvassa el az alábbi szöveget!",
+    "last_update": "Utolsó frissítés: {date}",
+    "section1": {
+      "text1": "Egyes szolgáltatásainkat bejelentkezés nélkül használhatja a portálon. Ahhoz, hogy valamennyi szolgáltatást használatba tudjon venni, egy személyes felhasználói fiókot szükséges létrehozni. A regisztráció ingyenes.",
+      "text2": "A regisztráció 13 éves kortól megengedett. Kiskorúak a portált kizárólag szülői vagy törvényes képviselői beleegyezéssel használhatják.",
+      "text3": "Ön garantálja, hogy a regisztráció során megadott adatok megfelelnek a valóságnak, s gondoskodik azok naprakészségéről.",
+      "text4": "A regisztráció során tilos olyan adatokat megadni (pl. felhasználónév, név, feladatok szövegei, képek, hang- és videófájlok stb.), amelyek sértik harmadik személyek jogait, különösen a védjegy- és névjogokat. Tilos továbbá illegális adatok megadása, vagy jelen Felhasználási Feltételek megszegése.",
+      "text5": "A Regisztrációkor jelszót kell megadnia. A jelszó titokban tartása az Ön felelőssége.",
+      "text6": "Ön egyetért azzal, hogy a felhasználói fiókjában közölt adatok mások számára is megjelenjenek (pl. felhasználónév, tanulási folyamat, \"bejelentkezett\" státusz, kiválasztott nyelv, regisztráció napja és az utolsó bejelentkezés időpontja, valamint egyéb önként felvitt adat, a profilképet beleértve). Az e-mail cím és a jelszó nem jelenik meg nyilvánosan.",
+      "text7": "A regisztrációt az aktiváló linkre kattintva véglegesíti. A regisztráció után a portál szolgáltatója automatikusan visszaigazoló e-mailt küld, amely tartalmazza az aktivációs linket.",
+      "text8": "Hiányos regisztráció esetében a szolgáltató fenntartja a jogot, hogy törölje a nem aktivált felhasználói fiókot.",
+      "text9": "A portál szolgáltatója nem garantálja, hogy a felhasználók személyazonossága valódi. A másik felhasználó személyazonosságáról minden felhasználónak meg kell győződnie. Szolgáltató fenntartja a jogot, hogy a felhasználók személyazonosságáról és életkoráról releváns kérdéseket tegyen fel a megadott információk ellenőrzése érdekében. Ha a releváns bizonyítékok meghatározott határidőn belül nem kerülnek felmutatásra, a portál szolgáltatója törli a felhasználói fiókot.",
+      "title": "Regisztráció"
+    },
+    "section2": {
+      "text1": "A portál szolgáltatója nagy hangsúlyt fektet a személyes adatok védelmére. A portál szigorúan betartja a a személyes adatok védelmének törvényben lefektetett jogszabályait. A felhasználók adatainak feldolgozását az Adatvédelmi Irányelvek szabályozzák.",
+      "title": "Adatvédelem"
+    },
+    "section3": {
+      "text1": "A portál használata kizárólag nem törvénysértő célból megengedett.",
+      "text2": "Felhasználóként Ön köteles:",
+      "text2_1": "saját fiókjában, valamint más felhasználókkal folytatott kommunikációkor valós és nem félrevezető információkat közölni;",
+      "text2_2": "a bejelentkezéshez szükséges adatokat bizalmasan kezelni, és azokat harmadik fél számára nem kiadni;",
+      "text2_3": "haladéktalanul tájékoztatni a szolgáltatót, ha felmerül annak a gyanúja, hogy egy harmadik fél hozzáférést nyer a felhasználói adatokhoz és/vagy visszaélnek felhasználói fiókjával.",
+      "text3": "Ön felel az Ön által közzétett tartalomért, valamint más felhasználókkal fennálló (nyilvános vagy nem nyilvános) kommunikációért. Más felhasználók vagy harmadik személy jogait és érdekeit is köteles védeni, különösen a személyhez fűződő jogokat.",
+      "text4": "Szigorúan tilos az alábbi tartalmakat (képek, linkek, fotók, feladatok, hang- és videófájlok vagy egyéb tartalmak formájában) feltölteni a weboldalra, azokat közzétenni, elküldeni, linkelni, továbbítani, népszerűsíteni, felajánlani vagy más módon rendelkezésre bocsátani:",
+      "text4_1": "a törvény által védett tartalom, amely pl. szerzői vagy releváns jogok által védett, mint a név-, védjegy-, szabadalom-, design jog, a használati minták joga, a saját vagy személyes jogok, amennyiben Ön nem jogosult használatukra;",
+      "text4_2": "pornográf tartalom, az erőszakot propagáló, obszcén, szexista, becsületsértő, rágalmazó, rasszista tartalom, a kisebbséghez vagy valláshoz tartozókat sértő tartalom, valamint a kiskorúak védelmét sértő tartalom;",
+      "text4_3": "Betiltott szervezetek propagandanyagai és jelképei",
+      "text4_4": "zaklató, rágalmazó, gyalázkodó, fenyegető tartalom és diszkriminatív megnyilatkozásokat;",
+      "text4_5": "más felhasználók személyes adatai (pl. cím, telefonszám, banki adatok), esetlegesen más felhasználókkal, szolgálati/portál adminisztrátorral vagy harmadik személyekkel való kommunikációból származó idézetek;",
+      "text4_6": "jogellenes tartalommal rendelkező weboldalakra mutató hivatkozások;",
+      "text4_7": "bármilyen kéretlen vagy jogosulatlan reklám, promóciós anyag, \"levélszemét\", spam, lánclevél, piramisjáték, vagy bármilyen másfajta megkeresés;",
+      "text4_8": "bármilyen vírusokat, férgeket, trójai lovakat tartalmazó anyagok vagy más programok, amelyek veszélyeztethetik e vagy bármely más honlap üzemeltetését vagy állapotát;",
+      "text5": "A felhasználó számára tilos a következő:",
+      "text5_1": "egy másik felhasználói fiók vagy a rendszer használata, használatának megkísérlése a szolgáltató engedélye nélkül;",
+      "text5_2": "magát más személynek kiadni, valamint személyéről hamis információkat feltüntetni;",
+      "text5_3": "A honlap funkcióinak blokkolása, a tartalom, programkód és/vagy a webhelyadatok felülírása, módosítása vagy másolása, valamint a tartalom automatikus lehívása, kivéve, ha utóbbi szükséges a megfelelő szolgáltatások igénybevételéhez;",
+      "text6": "Az oldal tulajdonosa fenntartja a jogot, hogy bármikor és előzetes értesítés nélkül törölje a jelen feltételeknek nem megfelelő, nem engedélyezett bejegyzéseket (beleértve a teszteket, gyakorlatokat, szövegeket és képeket), illetve a felhasználó fiókját.",
+      "title": "Felhasználó kötelezettségei"
+    },
+    "section4": {
+      "text1": "A szolgáltatónak továbbá jogában áll a kínált szolgáltatásokat bármikor, saját belátása szerint, előzetes figyelmeztetés nélkül megváltoztatni és működését leállítani.",
+      "title": "Szolgáltatások változása"
+    },
+    "section5": {
+      "text1": "A szolgáltató Önnek mint felhasználónak megadja a személyes, világszerte érvényes, nem átruházható, nem kizárólagos jogot a szolgáltatások jelen Felhasználási Feltételeknek megfelelő használatához.",
+      "text2": "Mint felhasználó, Ön elismeri a portál globális, nem kizárólagos, ingyenes, átruházható, időben, tartalomban és térben korlátlan használati jogát az Ön által közzétett nyilvános tartalom használatát a szolgáltató által használt valamennyi médiában. A szolgáltató jogosult a tartalmat valamennyi médiában használni, nyilvánosságra hozni, másolni, reprodukálni vagy terjeszteni, és azt ebből a célból megváltoztatni és módosítani.",
+      "text3": "Mint felhasználó Ön biztosítja, hogy az Ön által közzétett tartalom nem védett harmadik felek szerzői joga által, így használható a 5.2. pont szerint. Ön garantálja, hogy Ön illet meg valamennyi jog, meghatalmazás és hatáskör, mely szükséges ahhoz, hogy a portál fent leírtak szerint végezhesse a tartalomszolgáltatást.",
+      "text4": "A jogok, amelyeket Ön a portálnak tulajdonít, a fent leírt jogi követelések hatályban maradnak a portál használatának befejezését követően is.",
+      "title": "Jogok megadása"
+    },
+    "section6": {
+      "text1": "A weboldalon közzétett minden szöveg, kép és egyéb tartalom, beleértve a felhasználók által rendelkezésre bocsátott tartalmakat is, - hacsak másképp nem jelezzük - a {license} alapján kerül közzétételre.",
+      "text1_license": "CC0 1.0 Universal Creative Commons licenc",
+      "title": "Tulajdonjogok"
+    },
+    "section7": {
+      "text1": "A tagság érvényességi ideje a regisztrációval, valamint jelen Felhasználási Feltételekkel és az Adatkezelési Szabályzattal való egyetértés pillanatában kezdődik el, és határozatlan időre szól.",
+      "text2": "Bármikor indoklás nélkül felmondhatja a szolgáltatást az alábbi linkre kattintva: {link}. Felmondás esetén a szolgáltatás elérhetetlenné válik az Ön számára, mint ahogy valamennyi olyan információ, amelyet töröl szolgáltató. Ön elfogadja, hogy bizonyos tartalmak (például kommentek, hozzászólások a fórumon, vagy üzenetek), amely közvetlenül nem profiljához kapcsolódnak, fenntarthatók. Nem tartja fenn a jogot az Ön által közzétett tartalom visszatérítésére.",
+      "text3": "A jogviszony rendkívüli megszüntetésének joga komoly okok miatt érinthetetlen marad ezáltal. Komoly oknak lehet tekinteni különösen azt a helyzetet, amikor az egyik fél megszegi jelen Felhasználási Feltételeket. Rendkívüli felmondás esetén a szolgáltató véglegesen kizárja a további felhasználás alól a portál, és új regisztráció sem megengedett.",
+      "text4": "Szolgáltató fenntartja a jogot a felhasználói fiók törlésére, amennyiben a felhasználó nem használja a portált több, mint 6 hónapig.",
+      "title": "Érvényesség ideje és lejárata"
+    },
+    "section8": {
+      "text1": "Szolgáltató igyekszik fenntartani a portál rendes, hibamentes és biztonságos működését, de nem garantálja, hogy a honlap biztonságos, megbízható és hibamentes mindenkor, vagy hogy folyamatosan és megszakítás, késések vagy hibák nélkül működik.",
+      "text2": "Szolgáltató nem vonható felelősségre a könnyebb kötelezettségszegésért, amennyiben a jogsértés következtében élet, testi épség vagy egészség nem kerül megsértésre, és ha a hibás termékek által okozott kártérítési felelősségről szóló jogszabály (\"Produkthaftungsgesetz\") szerinti semmilyen garanciát vagy követelést nem érint. A kötelezettségek megszegésének felelőssége, amelyek teljesítése a megfelelő végrehajtás előfeltétele felhasználói tekintetben, és amelynek betartásában a felhasználó megbízik, érintetlen marad. Ez képviselőink kötelességszegésére is érvényes.",
+      "text3": "Jogi rendelkezések alapján a portál szolgáltatója mint szolgáltató nem köteles nyomon követni a közvetített vagy tárolt információkat, vagy feltárni az illegális tevékenység körülményeit. Nem vállal felelősséget a felhasználók által közzétett tartalomért, adatokért és/vagy információkért, sem a külső internetes oldalakért, amelyekre a weboldalon hivatkoznak.",
+      "text4": "Annak ellenére, hogy a szolgáltató a tartalmat gondosan ellenőrzi, nem vállal felelősséget a külső linkek tartalmáért. A külső internetes oldalak tartalmáért, amelyekre a portálon hivatkoznak, kizárólagosan azok szolgáltatója felel.",
+      "text5": "Szolgáltató nem vállal felelősséget a reklám tartalmáért és pontosságáért. A hirdetések tartalmáért kizárólagosan a szerző a felelős. Ez a reklámozott internetes oldalak tartalmára is vonatkozik. A hirdetések honlapon való megjelenítésével a szolgáltató nem ért egyet az illegális tartalmakkal. Felelős ebben az esetben mindig az ügyfél, aki elrendelte a hirdetések megjelenítését.",
+      "text6": "Mint felhasználó, Ön mentesíti a szolgáltatót valamennyi követelés alól, ideértve a kártérítési igényeket, amelyeket más felhasználók vagy harmadik felek alkalmaznak a szolgáltató felé, amennyiben megszegi jogaikat az Ön által közzétett tartalom által. A tartalmat közzétevő felhasználó vállalja a szolgáltató valamennyi felmerülő költségét harmadik személyek jogainak megsértése esetén, beleértve a jogi védelem ésszerű költségeit. Minden egyéb jog vagy a szolgáltató érintő kártérítési követelése érintetlen marad.",
+      "title": "Felelősségi körök meghatározása"
+    },
+    "section9": {
+      "text1": "A jelen feltételekre és az azokkal kapcsolatos vitákra a Szlovák Köztársaság törvényei vonatkoznak. A teljesítés helye és a kizárólagos joghatóság helye, amennyire ez jogilag lehetséges, Szlovákia.",
+      "text2": "Jelen megállapodás jogilag kötelező érvényű változata az angol nyelvű változat.",
+      "text3": "Szolgáltató fenntartja a jogot, hogy bármikor és minden ok nélkül megváltozhassa jelen Felhasználási Feltételeket. Az aktuális verzió mindig az alábbi linken található meg {link}. A felhasználók nem kerülnek tájékoztatásra a Feltételek módosítása alkalmával, a Felhasználási Feltételek jelenlegi változatának megjelenítése és elolvasása minden felhasználó felelőssége. A portál használatának folytonosságával a felhasználó kifejezi egyetértését a változásokkal.",
+      "text4": "Szolgáltató jogosult részben vagy egészben átruházhatja jogait és kötelezettségeit harmadik fél részére a felhasználói jogviszonyból adódóan, méghozzá az e-mailben való kiértesítést követően négy héten belül.",
+      "text5": "A szolgáltató vagy adminisztrátor elérhetősége megtalálható a {link} oldalon.",
+      "title": "Záró rendelkezések"
+    }
+  },
+  "why": {
+    "because": "Azért, mert:",
+    "more_projects": "További projektek az alábbi címen elérhetők:",
+    "title": "Miért használja a Testu.eu-t",
+    "point1": {
+      "subtitle": "Nem kell előfizetni, nincsenek rejtett költségek, fizetőfalak. És ez valóban így van!",
+      "title": "Teljesen ingyenes"
+    },
+    "point10": {
+      "subtitle": "Az Erasmus+ programnak és a Szlovák Nemzeti Ügynökségnek köszönhetően a testu.eu oldalt ingyenesen használhatja!",
+      "title": "Az Európai Bizottság által hivatalosan támogatott."
+    },
+    "point2": {
+      "subtitle": "Szabadon használhatja a tartalmakat és készíthet is újakat, nincs szükség forrásmegjelölésre sem.",
+      "title": "Tartalmak CC0 licenccel"
+    },
+    "point3": {
+      "subtitle": "Nincsenek rejtett dolgok.",
+      "title": "Nyílt forráskód"
+    },
+    "point4": {
+      "subtitle": "A Testu.eu a nyelvekért van. Az Ön nyelve nem található meg? Adja hozzá itt:",
+      "title": "Többnyelvű"
+    },
+    "point5": {
+      "subtitle": "Felhasználóbarát, gyors, intuitív, könnyen kezelhető.",
+      "title": "Könnyen használható"
+    },
+    "point6": {
+      "subtitle": "Merüljön el az online leckék, kurzusok, feladatok és tesztek világában – modern megközelítés a tanuláshoz.",
+      "title": "Online"
+    },
+    "point7": {
+      "subtitle": "Tanulás határok nélkül, tanítás korlátok nélkül - merüljön el a tartalomkészítésben vagy használja fel újra a meglévő forrásokat.",
+      "title": "Hasznos"
+    },
+    "point8": {
+      "subtitle": "Az oktatási tartalmak készítése öröm – támogassa kreativitásával a tanulást!",
+      "title": "Szórakoztató"
+    },
+    "point9": {
+      "subtitle": "Használja fel újra mások és a saját tartalmait, csökkentse a nyomtatás mennyiségét, használja fel újra az ötleteket, a feladatokat és a kérdéseket!",
+      "title": "Környezetbarát"
+    }
+  }
+}

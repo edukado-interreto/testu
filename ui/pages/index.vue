@@ -1,7 +1,5 @@
-<script setup lang="ts">
-const route = useRoute()
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div style="margin-top: 3rem">Index</div>
+  <h1 style="padding-top: 5rem">Index</h1>
 </template>
