@@ -7,12 +7,14 @@ const menu = [
   { label: "my_teaching", icon: "briefcase", path: "/teach" },
   { label: "about", icon: "information", path: "/about" },
   { label: "why", icon: "star-shooting-outline", path: "/why" },
-  { label: "guide", icon: "help-circle", path: "/guide" },
+  { label: "guide", icon: "help-circle", path: "/guide#1_exercise" },
 ]
 </script>
 
 <template>
   <v-list>
-    <MenuItem v-for="item in menu" v-bind="item" :key="item.label"></MenuItem>
+    <MenuItem v-for="item in menu" v-bind="item" :key="item.label" />
+
+    <v-list-subheader>{{ $t("main.social") }}</v-list-subheader>
   </v-list>
 </template>

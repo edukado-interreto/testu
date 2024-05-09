@@ -1,25 +1,34 @@
 <script setup lang="ts">
+import { useDisplay } from "vuetify"
+const { mobile } = useDisplay()
 const localPath = useLocalePath()
-
 const nav_drawer = ref(null)
+const embedded = computed(() => window?.location !== window?.parent?.location)
 </script>
 
 <template>
   <v-app>
-    <v-app-bar id="app-bar" flat outlined :app="true">
-      <v-app-bar-nav-icon variant="text" @click="nav_drawer = !nav_drawer" />
+    <v-app-bar
+      v-if="!embedded"
+      :app="!embedded"
+      id="app-bar"
+      class="d-print-none"
+      flat
+      tile
+      outlined
+    >
       <v-btn
         id="home-button"
         size="x-large"
         variant="flat"
-        class="text-none"
+        class="text-none text-accent font-weight-medium"
         :active="false"
         :to="localePath('/')"
       >
         <template v-slot:prepend>
           <img src="/favicon.png" height="40" />
         </template>
-        Testu.eu
+        testu.eu
       </v-btn>
       <v-spacer />
       <h6
@@ -28,26 +37,38 @@ const nav_drawer = ref(null)
       />
       <v-spacer />
       <LanguageSwitcher />
-      <v-btn
-        class="text-none mx-2"
-        variant="flat"
-        color="grey-lighten-4"
-        :to="localePath('/login')"
-        nuxt
-      >
-        {{ $t("main.login") }}
-      </v-btn>
-      <v-btn
-        class="text-none"
-        variant="flat"
-        color="amber-darken-1"
-        :to="localePath('/signup')"
-        nuxt
-      >
-        {{ $t("main.signup") }}
-      </v-btn>
+
+      <div v-if="!logged_in" class="d-none d-md-block mx-4">
+        <v-btn
+          class="text-none mx-2"
+          variant="flat"
+          color="grey-lighten-4"
+          :to="localePath('/login')"
+          nuxt
+        >
+          {{ $t("main.login") }}
+        </v-btn>
+        <v-btn
+          class="text-none"
+          variant="flat"
+          color="amber-darken-1"
+          :to="localePath('/signup')"
+          nuxt
+        >
+          {{ $t("main.signup") }}
+        </v-btn>
+      </div>
+      <v-app-bar-nav-icon v-if="mobile" @click="nav_drawer = !nav_drawer" />
     </v-app-bar>
-    <v-navigation-drawer v-model="nav_drawer">
+    <v-navigation-drawer
+      v-model="nav_drawer"
+      v-if="!embedded"
+      :app="!embedded"
+      class="d-print-none"
+      mobile-breakpoint="xs"
+      :temporary="mobile"
+      :location="mobile ? 'right' : 'left'"
+    >
       <MainMenu />
     </v-navigation-drawer>
     <v-main>
@@ -55,6 +76,8 @@ const nav_drawer = ref(null)
         <NuxtPage />
       </NuxtLayout>
     </v-main>
+    <MainFooter :embedded="embedded" />
+    <CookieConsent />
   </v-app>
 </template>
 
@@ -75,7 +98,7 @@ const nav_drawer = ref(null)
 }
 
 .v-main {
-  margin-bottom: 4em;
+  margin-bottom: 3em;
   min-height: 50vh;
 }
 .catchphrase {
