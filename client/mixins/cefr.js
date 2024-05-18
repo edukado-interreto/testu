@@ -24,8 +24,7 @@ export default {
       const item_min = item.lang_learn_cefr_level_min
       const item_max = item.lang_learn_cefr_level_max
 
-      if (item_min == this.cefr_lbound && item_max == this.cefr_ubound)
-        return ""
+      if (item_min == this.cefr_lbound && item_max == this.cefr_ubound) return ""
 
       if (item_min == item_max) return this.n2cefr(item_min)
 

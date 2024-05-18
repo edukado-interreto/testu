@@ -1,38 +1,27 @@
-import locale_names from "./locale_names.json"
+import i18n from "./i18n/nuxt-i18n.config"
 
-const locales = Object.entries(locale_names).map(([code, name]) => ({code, name, file: `${code}.json`}));
+const DJANGO_HOST = "http://django:8000"
+const BACKEND_URLS = ["api", "admin", "assets", "__debug__"]
+const devProxy = Object.fromEntries(
+  BACKEND_URLS.map((url) => [`/${url}`, `${DJANGO_HOST}/${url}`]),
+)
 
 export default defineNuxtConfig({
   devtools: false,
+
   css: [
     "vuetify/lib/styles/main.sass",
     "@mdi/font/css/materialdesignicons.min.css",
-    "@/assets/testu.scss"
+    "@/assets/testu.scss",
   ],
 
-  build: {
-    transpile: ["vuetify"],
-  },
+  build: { transpile: ["vuetify"] },
 
-  vite: {
-    define: {
-      "process.env.DEBUG": false,
-    },
-  },
+  nitro: { devProxy },
+
+  vite: { define: { "process.env.DEBUG": false } },
 
   modules: ["@nuxtjs/i18n"],
 
-  i18n: {
-    defaultLocale: "en",
-    langDir: "locales",
-    lazy: true,
-    locales,
-    strategy: "prefix",
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: "i18n_redirected",
-      alwaysRedirect: true,
-      redirectOn: "root"
-    },
-  }
+  i18n,
 })

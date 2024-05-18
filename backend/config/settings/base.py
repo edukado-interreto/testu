@@ -15,6 +15,8 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 ADMINS = config("ADMINS", cast=Csv(NamedEmail()), default=None)
 
+USE_I18N = True
+
 USE_TZ = True
 TIME_ZONE = "Europe/Bratislava"
 
@@ -77,6 +79,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",

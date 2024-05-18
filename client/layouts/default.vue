@@ -127,9 +127,9 @@
       </v-menu>
     </v-app-bar>
     <v-navigation-drawer
+      v-model="nav_drawer.show"
       v-if="!embedded"
       :app="!embedded"
-      v-model="nav_drawer.show"
       class="d-print-none"
       mobile-breakpoint="xs"
       disable-resize-watcher

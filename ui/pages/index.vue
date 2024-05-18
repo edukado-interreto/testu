@@ -1,23 +1,38 @@
 <script setup lang="ts">
+const { $api } = useNuxtApp()
 const { t } = useI18n()
-const { $http } = useNuxtApp()
-const { data: raw_exercises, pending, error } = await $http("/v1/exercises/")
-const exercises = computed(() => raw_exercises.value?.results)
-const { data: authors_used } = await $http(
-  "/v1/authors/?limit=999&ordering=username",
+const localePath = useLocalePath()
+
+const loading = ref(false)
+const page_length = ref(0)
+const on_page_update = () => {}
+
+let raw_exercises: Ref<object[]> = ref([])
+let authors_used = ref(null)
+let tags_used = ref(null)
+let source_langs_used = ref(null)
+let learn_langs_used = ref(null)
+
+onMounted(async () => {
+  raw_exercises.value = (await $api("/v1/exercises/")).results
+  authors_used.value = (await $api("/v1/authors/?limit=999&ordering=username")).results
+  tags_used.value = (await $api("/v1/tags/?limit=999")).results // /v1/tags/used/
+  source_langs_used.value = (await $api("/v1/languages/source/")).results
+  learn_langs_used.value = (await $api("/v1/languages/learn/")).results
+})
+
+const exercises = computed(() => raw_exercises.value)
+const iterator_key = ref("")
+const source_langs_localized = computed(() => [])
+const learn_langs_localized = computed(() => [])
+const tags_used_localized = computed(() =>
+  tags_used.value?.map((tag) => ({
+    value: tag.name,
+    text: t(`tags.${tag.name}`),
+    count: tag.count,
+  })),
 )
-const { data: tags_used } = await $http("/v1/tags/?limit=999") // /v1/tags/used/
-const { data: source_langs_used } = await $http("/v1/languages/source/")
-const { data: learn_langs_used } = await $http("/v1/languages/learn/")
-const tags_used_localized = computed(
-  () =>
-    tags_used.value?.results.map((tag) => ({
-      value: tag.name,
-      text: t(`tags.${tag.name}`),
-      count: tag.count,
-    })),
-)
-let search = ref({
+const search = ref({
   offset: 0,
   text: "",
   tags: [],
@@ -29,7 +44,7 @@ let search = ref({
   },
   sort: "-likes,-created",
 })
-const update_filtered_exercises = () => {}
+const update_filtered_exercises = () => undefined
 </script>
 
 <template>
@@ -143,7 +158,7 @@ const update_filtered_exercises = () => {}
         />
       </v-col>
       <v-spacer />
-      <v-col>
+      <v-col cols="12" md="3">
         <v-select
           density="compact"
           variant="underlined"
@@ -158,5 +173,35 @@ const update_filtered_exercises = () => {}
         />
       </v-col>
     </v-row>
+
+    <v-btn
+      class="mt-3"
+      color="primary"
+      size="large"
+      variant="text"
+      prepend-icon="mdi-plus"
+      :to="localePath('/editor')"
+    >
+      {{ $t("home.create_exercise") }}
+    </v-btn>
+
+    <v-data-iterator
+      class="mt-5"
+      :key="iterator_key"
+      :items="exercises?.results"
+      :items-per-page="page_length"
+      :server-items-length="exercises?.count"
+      :footer-props="{ 'disable-items-per-page': true }"
+      @update:page="on_page_update"
+      :loading="loading"
+    >
+      <template v-slot:default="props">
+        <ExerciseListItem
+          v-for="item in props.items"
+          :item="item"
+          :key="item.id"
+        />
+      </template>
+    </v-data-iterator>
   </v-container>
 </template>

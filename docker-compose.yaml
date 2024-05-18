@@ -40,31 +40,13 @@ services:
     user: 1000:1000
     networks:
       - internal
-      - web  # for HMR
+      - web
     ports:
-      - "24678:24678"
+      - 80:3000
+      - 24678:24678
     tty: true
     command: >
-      sh -c "npm --quiet install && npm run dev"
-
-  nginx:
-    image: nginx:1.26.0-alpine-slim
-    restart: on-failure
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/templates/default.conf.template:z
-    environment:
-      VUE_PORT: "${VUE_PORT}"
-      DJANGO_PORT: "${DJANGO_PORT}"
-      DJANGO_ADMIN_URL: "${DJANGO_ADMIN_URL}"
-      DOMAIN: ${DOMAIN}
-    depends_on:
-      - django
-      - vue
-    ports:
-      - "80:80"
-    networks:
-      - internal
-      - web
+      sh -c "rm -f /tmp/nitro/worker-*.sock ; npm -q --silent install && npm run dev"
 
 networks:
   web:

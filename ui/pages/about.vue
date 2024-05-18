@@ -18,7 +18,7 @@
               <v-img contain src="/logos/facebook-2021.svg" max-height="50" />
               <p
                 class="text-center mt-2 mb-0"
-                v-text="$t('about.facebook_page')"
+                v-text="$t('main.facebook_page')"
               />
             </a>
           </v-col>
@@ -31,7 +31,7 @@
               <v-img contain src="/logos/telegram-2019.svg" max-height="50" />
               <p
                 class="text-center mt-2 mb-0"
-                v-text="$t('about.telegram_chat')"
+                v-text="$t('main.telegram_chat')"
               />
             </a>
           </v-col>

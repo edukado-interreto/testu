@@ -6,6 +6,7 @@ from django.urls import include, path
 from django.views.generic import RedirectView, TemplateView
 from rest_framework.routers import DefaultRouter
 
+from apps.core.views import DeleteAccount
 from apps.exercises.views import (
     CreatedByViewSet,
     ExamViewSet,
@@ -16,7 +17,6 @@ from apps.exercises.views import (
     TagViewSet,
     UploadView,
 )
-from apps.core.views import DeleteAccount
 
 router = DefaultRouter()
 
@@ -28,27 +28,33 @@ router.register("reports", ReportViewSet, basename="report")
 router.register("submissions", SubmissionViewSet, basename="submission")
 router.register("tags", TagViewSet, basename="tag")
 
-urlpatterns = [
-    path(
-        "api/auth/register/",
-        include("dj_rest_auth.registration.urls"),
-    ),
-    path("api/auth/user/delete/", DeleteAccount.as_view(), name="delete_account"),
-    path("api/auth/", include(("dj_rest_auth.urls", "rest_auth"), namespace="auth")),
-    path("api/v1/", include((router.urls, "api"), namespace="api")),
-    path(
-        "dj-rest-auth/account-confirm-email/",
-        VerifyEmailView.as_view(),
-        name="account_email_verification_sent",
-    ),
-    path("api/v1/upload/", UploadView),
-    path("api/", RedirectView.as_view(url="/api/v1/")),
-    path("admin/", admin.site.urls),
-    path("~/", TemplateView.as_view(), name="account_email_verification_sent"),
-    path("verify/<str:key>", TemplateView.as_view(), name="account_confirm_email"),
-    path(
-        "reset-password/<str:uid>:<str:token>",
-        TemplateView.as_view(),
-        name="password_reset_confirm",
-    ),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns = (
+    [
+        path(
+            "api/auth/register/",
+            include("dj_rest_auth.registration.urls"),
+        ),
+        path("api/auth/user/delete/", DeleteAccount.as_view(), name="delete_account"),
+        path(
+            "api/auth/", include(("dj_rest_auth.urls", "rest_auth"), namespace="auth")
+        ),
+        path("api/v1/", include((router.urls, "api"), namespace="api")),
+        path(
+            "dj-rest-auth/account-confirm-email/",
+            VerifyEmailView.as_view(),
+            name="account_email_verification_sent",
+        ),
+        path("api/v1/upload/", UploadView),
+        path("api/", RedirectView.as_view(url="/api/v1/")),
+        path("admin/", admin.site.urls),
+        path("~/", TemplateView.as_view(), name="account_email_verification_sent"),
+        path("verify/<str:key>", TemplateView.as_view(), name="account_confirm_email"),
+        path(
+            "reset-password/<str:uid>:<str:token>",
+            TemplateView.as_view(),
+            name="password_reset_confirm",
+        ),
+    ]
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+)

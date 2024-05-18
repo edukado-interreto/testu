@@ -1,19 +1,21 @@
 <script setup lang="ts">
-import locale_names from "@/locale_names.json"
-
 const { locale, locales, setLocale } = useI18n()
+
 const switchLocalePath = useSwitchLocalePath()
+const locale_names = Object.fromEntries(
+  locales.value.map(({ code, name }) => [code, name]),
+)
 
 const set_locale = (code) => {
   setLocale(code)
-  console.info(switchLocalePath(code))
+  switchLocalePath(code)
 }
 </script>
 
 <template>
   <v-menu transition="slide-y-transition" scroll-strategy="block">
     <template #activator="{ props }">
-      <v-btn v-bind="props" class="text-none px-1 mr-1">
+      <v-btn v-bind="props" class="text-none px-1">
         <v-icon class="mr-1">mdi-translate</v-icon>
         <span class="d-none d-sm-inline">
           {{ locale_names[locale] }}
@@ -44,7 +46,7 @@ const set_locale = (code) => {
 
       <v-list-item>
         <v-btn
-          to="https://tradukejo.ikso.net/project/6/"
+          href="https://tradukejo.ikso.net/project/6/"
           target="_blank"
           size="small"
           density="comfortable"

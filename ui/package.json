@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "testu-ui",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,9 +14,12 @@
     "@nuxtjs/i18n": "^8.3.1",
     "defu": "^6.1.4",
     "nuxt": "^3.11.2",
-    "sass": "^1.76.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vuetify": "^3.6.0-beta.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.76.0",
+    "typescript": "^5.4.5"
   }
 }
