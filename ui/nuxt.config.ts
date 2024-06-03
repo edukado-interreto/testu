@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 
   vite: { define: { "process.env.DEBUG": false } },
 
-  modules: ["@nuxtjs/i18n"],
+  modules: ["@nuxtjs/i18n", "@pinia/nuxt"],
 
   i18n,
 })

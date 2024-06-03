@@ -1,9 +1,7 @@
 <script setup lang="ts">
-const { $api } = useNuxtApp()
 const { t } = useI18n()
-const router = useRouter()
-const route = useRoute()
-const localePath = useLocalePath()
+const [route, router, localePath] = [useRoute(), useRouter(), useLocalePath()]
+const auth = useAuth()
 
 useHead({ title: t("login.page_title") })
 
@@ -22,22 +20,16 @@ const login_error = (e) => {
 const login = async () => {
   if (!(await validate()).valid) return
 
+  const credentials = { email: email.value, password: password.value }
+
   try {
-    const response = await $api("/auth/login/", {
-      method: "POST",
-      body: {
-        email: email.value,
-        password: password.value,
-      },
-    })
-    router.push({
-      // path: $store.state.authenticator.redirectUrl,
+    await auth.login(credentials)
+    return router.push({
+      // path: auth.redirectUrl,
       path: "/",
     })
-    return
   } catch (error) {
-    login_error(error)
-    return
+    return login_error(error)
   }
 }
 </script>

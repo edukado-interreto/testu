@@ -14,14 +14,14 @@ let source_langs_used = ref(null)
 let learn_langs_used = ref(null)
 
 onMounted(async () => {
-  raw_exercises.value = (await $api("/v1/exercises/")).results
+  raw_exercises.value = await $api("/v1/exercises/")
   authors_used.value = (await $api("/v1/authors/?limit=999&ordering=username")).results
   tags_used.value = (await $api("/v1/tags/?limit=999")).results // /v1/tags/used/
   source_langs_used.value = (await $api("/v1/languages/source/")).results
   learn_langs_used.value = (await $api("/v1/languages/learn/")).results
 })
 
-const exercises = computed(() => raw_exercises.value)
+const exercises = computed(() => raw_exercises.value.results)
 const iterator_key = ref("")
 const source_langs_localized = computed(() => [])
 const learn_langs_localized = computed(() => [])
@@ -188,19 +188,15 @@ const update_filtered_exercises = () => undefined
     <v-data-iterator
       class="mt-5"
       :key="iterator_key"
-      :items="exercises?.results"
+      :items="exercises"
       :items-per-page="page_length"
       :server-items-length="exercises?.count"
       :footer-props="{ 'disable-items-per-page': true }"
       @update:page="on_page_update"
       :loading="loading"
     >
-      <template v-slot:default="props">
-        <ExerciseListItem
-          v-for="item in props.items"
-          :item="item"
-          :key="item.id"
-        />
+      <template #default="{ items }">
+        <ExerciseListItem v-for="item in items" :item="item.raw" :key="item.raw.id" />
       </template>
     </v-data-iterator>
   </v-container>

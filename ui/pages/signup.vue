@@ -46,7 +46,7 @@ const validate = () => signup_form.value?.validate()
 
 <template>
   <v-row class="mt-5">
-    <v-spacer></v-spacer>
+    <v-spacer />
     <v-col v-if="submitted" cols="7">
       <p>
         {{ $t("login.signup_thanks") }}
@@ -70,7 +70,7 @@ const validate = () => signup_form.value?.validate()
           :label="$t('login.username')"
           :rules="[(v) => v !== '' || $t('login.required_field')]"
           required
-        ></v-text-field>
+         />
         <v-text-field
           variant="outlined"
           density="compact"
@@ -81,7 +81,7 @@ const validate = () => signup_form.value?.validate()
           name="email"
           validate-on-blur
           required
-        ></v-text-field>
+         />
         <v-text-field
           variant="outlined"
           density="compact"
@@ -90,7 +90,7 @@ const validate = () => signup_form.value?.validate()
           type="password"
           :rules="[(v) => v !== '' || $t('login.required_field')]"
           required
-        ></v-text-field>
+         />
         <v-btn type="submit" color="primary" class="mt-2">
           {{ $t("main.signup") }}
         </v-btn>
@@ -112,6 +112,6 @@ const validate = () => signup_form.value?.validate()
         <v-btn :to="localePath('/login')" v-text="t('main.login')" class="mx-3 text-none" variant="outlined" density="compact" color="primary" />
       </div>
     </v-col>
-    <v-spacer></v-spacer>
+    <v-spacer />
   </v-row>
 </template>

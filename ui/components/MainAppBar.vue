@@ -10,9 +10,9 @@ const logged_in = ref(false)
       :app="!embedded"
       id="app-bar"
       class="d-print-none"
+      scroll-behavior="hide"
       flat
       tile
-      outlined
     >
       <v-btn
         id="home-button"

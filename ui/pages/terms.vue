@@ -69,12 +69,12 @@
     </ol>
 
     <h2 class="mt-4 mb-2">6. {{ $t("terms.section6.title") }}</h2>
-    <p v-html="$t('terms.section6.text1', { license: licenseLink })"></p>
+    <p v-html="$t('terms.section6.text1', { license: licenseLink })" />
 
     <h2 class="mt-4 mb-2">7. {{ $t("terms.section7.title") }}</h2>
     <ol>
       <li>{{ $t("terms.section7.text1") }}</li>
-      <li v-html="$t('terms.section7.text2', { link: settingsLink })"></li>
+      <li v-html="$t('terms.section7.text2', { link: settingsLink })" />
       <li>{{ $t("terms.section7.text3") }}</li>
       <li>{{ $t("terms.section7.text4") }}</li>
     </ol>
@@ -93,9 +93,9 @@
     <ol>
       <li>{{ $t("terms.section9.text1") }}</li>
       <li>{{ $t("terms.section9.text2") }}</li>
-      <li v-html="$t('terms.section9.text3', { link: termsLink })"></li>
+      <li v-html="$t('terms.section9.text3', { link: termsLink })" />
       <li>{{ $t("terms.section9.text4") }}</li>
-      <li v-html="$t('terms.section9.text5', { link: contactLink })"></li>
+      <li v-html="$t('terms.section9.text5', { link: contactLink })" />
     </ol>
 
     <p class="mt-4">{{ $t("terms.last_update", { date: lastUpdate }) }}</p>
@@ -111,7 +111,7 @@ export default {
   data() {
     return {
       settingsLink:
-        '<a href="/user/settings" target="_blank">https://testu.eu/user/settings</a>',
+        '<a href="/" target="_blank">https://testu.eu/user/settings</a>',
       lastUpdate: "2023-07-13",
     }
   },
