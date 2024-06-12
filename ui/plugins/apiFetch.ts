@@ -1,6 +1,8 @@
 import type { UseFetchOptions } from "nuxt/app"
 import type { Composer } from "vue-i18n"
 
+const config = useRuntimeConfig()
+
 async function refreshToken() {
   const token = useCookie("refreshToken").value
 
@@ -16,7 +18,7 @@ async function refreshToken() {
 }
 
 export default defineNuxtPlugin((app) => {
-  const baseURL = "/api"
+  const baseURL = `${config.public.apiBase}/api`
   const i18n = app.$i18n as Composer
   const token = useCookie<string | null>("jwt-access")
   const headers = {
