@@ -30,9 +30,7 @@ export default defineNuxtPlugin((app) => {
     baseURL,
     headers,
     onRequest({ request, options }) {
-      if (token.value) {
-        options.headers.Authorization = `Bearer ${token.value}`
-      }
+      if (token.value) options.headers.set("Authorization", `Bearer ${token.value}`)
     },
     onResponse({ request, response, options }) {
       // response._data = new myBusinessResponse(response._data)
