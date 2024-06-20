@@ -15,6 +15,7 @@ const validate = () => login_form.value?.validate()
 
 const login_error = (e) => {
   const error = unref(e)
+  console.info(error)
   error_message.value = error.data.non_field_errors.join("\n")
 }
 const login = async () => {
@@ -72,8 +73,7 @@ const login = async () => {
             validate-on="submit"
             required
           />
-          <v-btn type="submit" color="primary" class="mt-2 me-2"
-          >
+          <v-btn type="submit" color="primary" class="mt-2 me-2">
             {{ $t("login.login") }}
           </v-btn>
           <v-btn
@@ -114,5 +114,3 @@ const login = async () => {
     </v-row>
   </v-container>
 </template>
-
-
