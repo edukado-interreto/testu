@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { t } = useI18n()
 const [route, router, localePath] = [useRoute(), useRouter(), useLocalePath()]
+const { t } = useI18n()
 const auth = useAuth()
 
 useHead({ title: t("login.page_title") })
@@ -13,10 +13,9 @@ const error_message = ref("")
 
 const validate = () => login_form.value?.validate()
 
-const login_error = (e) => {
+const login_error = (e: any | Error) => {
   const error = unref(e)
-  console.info(error)
-  error_message.value = error.data.non_field_errors.join("\n")
+  error_message.value = error.data?.non_field_errors.join("\n")
 }
 const login = async () => {
   if (!(await validate()).valid) return
@@ -25,10 +24,7 @@ const login = async () => {
 
   try {
     await auth.login(credentials)
-    return router.push({
-      // path: auth.redirectUrl,
-      path: "/",
-    })
+    return router.push(localePath("/"))
   } catch (error) {
     return login_error(error)
   }

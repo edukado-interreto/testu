@@ -2,7 +2,6 @@
 import { useDisplay } from "vuetify"
 
 const { mobile } = useDisplay()
-const localPath = useLocalePath()
 
 const nav_drawer = ref(null)
 const embedded = computed(() => window?.location !== window?.parent?.location)

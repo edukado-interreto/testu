@@ -1,15 +1,22 @@
 <script setup lang="ts">
+import { useLocale } from "vuetify"
 const { locale, locales, setLocale } = useI18n()
+const { current } = useLocale()
 
 const switchLocalePath = useSwitchLocalePath()
 const locale_names = Object.fromEntries(
   locales.value.map(({ code, name }) => [code, name]),
 )
 
-const set_locale = (code) => {
+const set_locale = (code: string) => {
+  current.value = code // Vuetify
   setLocale(code)
   switchLocalePath(code)
 }
+
+onMounted(() => {
+  locale.value && set_locale(locale.value)
+})
 </script>
 
 <template>

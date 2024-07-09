@@ -9,7 +9,9 @@ const router = useRouter()
 
 const unit_component = useUnitComponent()
 
-const $store = { getters: { "authenticator/authUser": { username: "batistex" } } }
+const $store = {
+  getters: { "authenticator/authUser": { username: "batistex" } },
+}
 
 const id = computed(() => route.params.id as string)
 const url = computed(() => `/api/v1/exercises/${id.value}/`)
@@ -95,7 +97,7 @@ const submit = async () => {
 
   const submission = create_submission()
   try {
-    await $api("/v1/submissions/", { method: "POST", body: { submission } })
+    await $api("/v1/submissions/", { method: "POST", body: submission })
   } catch (e) {
     console.error({ ...e })
     await msgbox.alert(t("exercise.error"), JSON.stringify(e))
@@ -109,9 +111,9 @@ useHead({ title: exercise.value?.name })
 
 <template>
   <v-container v-if="pending" class="d-flex">
-    <v-spacer/>
-      <v-progress-circular indeterminate color="primary" size="70" width="3" />
-    <v-spacer/>
+    <v-spacer />
+    <v-progress-circular indeterminate color="primary" size="70" width="3" />
+    <v-spacer />
   </v-container>
   <v-container v-if="exercise">
     <MsgBox ref="msgbox" />
@@ -120,7 +122,12 @@ useHead({ title: exercise.value?.name })
         <h1>{{ exercise?.name }}</h1>
       </v-col>
       <v-col cols="auto" class="d-print-none">
-        <v-btn @click="window_print" variant="text" prepend-icon="mdi-printer" color="primary">
+        <v-btn
+          @click="window_print"
+          variant="text"
+          prepend-icon="mdi-printer"
+          color="primary"
+        >
           {{ $t("exercise.pdf") }}
         </v-btn>
         <LikeButton icon :item="exercise" @liked="liked" />
@@ -135,8 +142,12 @@ useHead({ title: exercise.value?.name })
             />
           </template>
           <v-list v-if="user_logged_in">
-            <v-list-item nuxt @click="create_exam" prepend-icon="mdi-school"
-            :title="t('exercise.create_exam')" />
+            <v-list-item
+              nuxt
+              @click="create_exam"
+              prepend-icon="mdi-school"
+              :title="t('exercise.create_exam')"
+            />
             <v-list-item
               :to="localePath(`/editor?new_from=${exercise.lid}`)"
               :title="t('exercise.create_copy')"
@@ -154,7 +165,7 @@ useHead({ title: exercise.value?.name })
               @click="remove"
               :title="t('exercise.delete')"
               prepend-icon="mdi-delete"
-              />
+            />
             <v-list-item
               v-if="!user_is_creator"
               @click="() => (mistake_dialog = !mistake_dialog)"
@@ -173,14 +184,13 @@ useHead({ title: exercise.value?.name })
     </v-row>
 
     <ExerciseFooterAttributes :exercise="exercise" class="mb-6" />
-
     <v-sheet v-if="exercise.description" class="mb-7">
       {{ exercise.description }}
     </v-sheet>
 
     <v-sheet v-for="(unit, i) in exercise.data.sheet" :key="unit._key">
       <div class="headline my-4">
-        <span v-if="exercise.data.sheet.length > 1">{{ i + 1 }}.</span> 
+        <span v-if="exercise.data.sheet.length > 1">{{ i + 1 }}.</span>
         <span class="font-weight-medium">{{ unit.title }}</span>
         <span v-if="unit.title === ''" class="font-italic">
           {{ $t("sheet_editor.untitled_unit") }}
@@ -196,7 +206,11 @@ useHead({ title: exercise.value?.name })
         :ignore_case="unit.ignore_case"
         :silent="all_silent"
         :readonly="all_readonly"
-        :ref="(el) => { units[`unit-${unit._key}`] = el }"
+        :ref="
+          (el) => {
+            units[`unit-${unit._key}`] = el
+          }
+        "
       />
     </v-sheet>
 

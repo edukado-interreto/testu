@@ -59,21 +59,19 @@ const parsed: ComputedRef<Token[][]> = computed(() => {
             <UnitOpenAnswerTextField
               :key="j"
               v-if="token.token === 'gap'"
-              :options="token.options"
-              :value="token.answer"
+              :options="token.options || []"
+              :value="token.answer || ''"
               :shuffle="shuffle"
               :ignore_case="ignore_case"
+              :once="false"
               :error-explanation="token.errorExplanation"
               :readonly="readonly"
               :ref="(el) => gaps.push(el)"
-              @answer="on_answer($event, i, j)"
               :silent="silent"
+              :success="token.right || false"
+              @answer="on_answer($event, i, j)"
             />
-            <span
-              :key="j"
-              v-if="token.token === 'text'"
-              v-text="token.value"
-            />
+            <span :key="j" v-if="token.token === 'text'" v-text="token.value" />
           </template>
         </li>
       </ol>

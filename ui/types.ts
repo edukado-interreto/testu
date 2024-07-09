@@ -22,7 +22,8 @@ declare global {
     user: User
   }
 
-  /* TestU */
+  /* Models */
+
   type UnitType = "default" | "open_answer" | "multiple_choice" | "pairing"
 
   type Cefr = "A1" | "A2" | "B1" | "B2" | "C1" | "C2"
@@ -49,6 +50,13 @@ declare global {
     }
   }
 
+  type DRF<T> = {
+    previous: string | null
+    next: string | null
+    count: number
+    results: T[]
+  }
+
   type Unit = {
     _key: string
     code: string
@@ -60,16 +68,25 @@ declare global {
   }
 
   type Submission = {
+    pk: number
     created: Date
     exercise_lid: string
     exam_lid: string | null
     exercise: Exercise
     guest?: string
+    data: object
+    score: number
+  }
+
+  type Option = {
+    value?: string
+    right?: boolean
+    answer?: string
   }
 
   type Token = {
     token?: string
-    options?: string[]
+    options?: Option[]
     value?: string
     right?: boolean
     answer?: string

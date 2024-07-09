@@ -15,6 +15,7 @@
     "@nuxtjs/i18n": "^8.3.1",
     "@pinia/nuxt": "^0.5.1",
     "@vueuse/core": "^10.11.0",
+    "@vueuse/router": "^10.11.0",
     "canvas-confetti": "^1.9.3",
     "defu": "^6.1.4",
     "nuxt": "^3.11.2",

@@ -1,7 +1,8 @@
-import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
-import colors from 'vuetify/util/colors'
+import { createVuetify } from "vuetify"
+import * as components from "vuetify/components"
+import * as directives from "vuetify/directives"
+import colors from "vuetify/util/colors"
+import { ca, cs, de, en, es, fr, hu, lt, pl, ru, sk, uk } from "vuetify/locale"
 
 const vuetify = createVuetify({
   ssr: true,
@@ -23,9 +24,13 @@ const vuetify = createVuetify({
       },
     },
   },
+  locale: {
+    // locale: "en",
+    fallback: "en",
+    messages: { ca, cs, de, en, es, fr, hu, lt, pl, ru, sk, uk },
+  },
 })
 
-export default defineNuxtPlugin(nuxtApp => {
+export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(vuetify)
-
 })

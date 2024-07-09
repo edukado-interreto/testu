@@ -1,5 +1,7 @@
 import { LOCALE_NAMES } from "./locale_names"
 
+const DEFAULT_LOCALE = "en"
+
 const FORMATS = {
   short: {
     year: "numeric",
@@ -16,12 +18,12 @@ const FORMATS = {
 }
 
 const datetimeFormats = Object.fromEntries(
-  Object.keys(LOCALE_NAMES).map((code) => [code, FORMATS]),
+  Object.keys(LOCALE_NAMES).map((code) => [code, FORMATS])
 )
 
 export default defineI18nConfig(() => ({
   legacy: false,
-  defaultLocale: "ga",
+  defaultLocale: DEFAULT_LOCALE,
   fallbackLocale: { sk: ["cs"], cs: ["sk"], default: ["en", "eo"] },
   datetimeFormats,
 }))
