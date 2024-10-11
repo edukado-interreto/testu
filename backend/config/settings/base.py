@@ -50,6 +50,7 @@ CSRF_TRUSTED_ORIGINS = config(
 )
 CORS_ALLOWED_ORIGINS = config("CORS_ALLOWED_ORIGINS", cast=Csv(), default="")
 CORS_ALLOW_ALL_ORIGINS = config("CORS_ALLOW_ALL_ORIGINS", cast=bool, default=False)
+CORS_ALLOW_CREDENTIALS = config("CORS_ALLOW_CREDENTIALS", cast=bool, default=False)
 
 INSTALLED_APPS = [
     "django.contrib.admin",

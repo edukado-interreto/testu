@@ -1,8 +1,8 @@
-version: "3.9"
+name: "testu"
 
 services:
   django:
-    image: batisteo/testu-www-django:${CI_COMMIT_SHORT_SHA}
+    image: batisteo/testu-www-django:latest
     working_dir: /src
     environment:
       - DJANGO_PORT
@@ -12,11 +12,6 @@ services:
       - backendassets:/src/assets:z
     networks:
       - main
-    secrets:
-      - ADMINS
-      - ALLOWED_HOSTS
-      - POSTGRES_PASSWORD
-      - SENDGRID_API_KEY
     command: |
       sh -c "ls -lAh /src/ &&
       python manage.py collectstatic --noinput &&
@@ -26,129 +21,23 @@ services:
 
   postgres:
     image: postgres:14-alpine
+    env_file:
     environment:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
     volumes:
-      - postgres-${CI_ENVIRONMENT_SLUG}:/var/lib/postgresql/data
+      - postgres-ikso:/var/lib/postgresql/data
     networks:
       - main
     deploy:
       placement:
         constraints: [node.role == manager]
-
-  pgdump:
-    image: bronkopopovic/pgdump:0.4
-    environment:
-      DB_HOST: postgres
-      DB_PORT: 5432
-      DB_USER: ${POSTGRES_USER}
-      DB_PASSWORD: ${POSTGRES_PASSWORD}
-      DB_NAME: ${POSTGRES_DB}
-      DUMP_INTERVAL: 3600
-      DUMP_DIR: /dumps
-      RETENTION_DAYS: 10
-    volumes:
-      - pgdump-${CI_ENVIRONMENT_SLUG}:/dumps
-    networks:
-      - main
-    deploy:
-      placement:
-        constraints: [node.role == manager]
-
-  autopostgresqlbackup:
-    image: rogersik/autopostgresqlbackup:latest
-    secrets:
-      - POSTGRES_PASSWORD
-    environment:
-      PASSWORD_SECRET: POSTGRES_PASSWORD
-      DBHOST: postgres
-      DBPORT: 5432
-      USERNAME: ${POSTGRES_USER}
-      DBPASSWORD: ${POSTGRES_PASSWORD}
-      DBNAMES: ${POSTGRES_DB}
-      BACKUPDIR: /backups
-    volumes:
-      - autopostgresqlbackup-${CI_ENVIRONMENT_SLUG}:/backups
-    networks:
-      - main
-    deploy:
-      placement:
-        constraints: [node.role == manager]
-
-  nginx:
-    image: batisteo/testu-www-nginx:${CI_COMMIT_SHORT_SHA}
-    environment:
-      VUE_PORT: "${VUE_PORT}"
-      DJANGO_PORT: "${DJANGO_PORT}"
-      DJANGO_ADMIN_URL: "${DJANGO_ADMIN_URL}"
-      DOMAIN: ${DOMAIN}
-    volumes:
-      - backendassets:/var/www/testu/assets
-    depends_on:
-      - django
-    networks:
-      - main
-      - traefik-public
-    deploy:
-      labels:
-        - traefik.enable=true
-        - traefik.docker.network=traefik-public
-        - traefik.constraint-label=traefik-public
-
-        - traefik.http.routers.nginx-http.rule=Host(`www.testu.eu`)
-        - traefik.http.routers.nginx-http.entrypoints=http
-        - traefik.http.routers.nginx-http.middlewares=https-redirect
-
-        - traefik.http.routers.nginx-https.entrypoints=https
-        - traefik.http.routers.nginx-https.rule=Host(`www.testu.eu`)
-        - traefik.http.routers.nginx-https.tls=true
-        - traefik.http.routers.nginx-https.tls.certresolver=le
-
-        - traefik.http.services.nginx.loadbalancer.server.port=80
-
-        - traefik.http.routers.root-http.rule=Host(`testu.eu`)
-        - traefik.http.routers.root-http.entrypoints=http
-        - traefik.http.routers.root-http.middlewares=force-redirect
-
-        - traefik.http.routers.root-https.entrypoints=https
-        - traefik.http.routers.root-https.rule=Host(`testu.eu`)
-        - traefik.http.routers.root-https.tls=true
-        - traefik.http.routers.root-https.tls.certresolver=le
-        - traefik.http.routers.root-https.middlewares=force-redirect
-
-        - traefik.http.routers.sandbox.entrypoints=https
-        - traefik.http.routers.sandbox.rule=Host(`sandbox.testu.eu`)
-        - traefik.http.routers.sandbox.tls=true
-        - traefik.http.routers.sandbox.tls.certresolver=le
-        - traefik.http.routers.sandbox.middlewares=force-redirect
-
-        - traefik.http.middlewares.force-redirect.redirectregex.regex=^https?://(?:sandbox.)?testu.eu(/.*)?
-        - traefik.http.middlewares.force-redirect.redirectregex.replacement=https://www.testu.eu$${1}
 
 networks:
-  traefik-public: 
-    external: true
   main:
     driver: overlay
 
 volumes:
   backendassets:
-  postgres-sandbox:
-  postgres-production:
-  pgdump-sandbox:
-  pgdump-production:
-  autopostgresqlbackup-sandbox:
-  autopostgresqlbackup-production:
-
-secrets:
-  ALLOWED_HOSTS:
-    external: true
-  ADMINS:
-    external: true
-  POSTGRES_PASSWORD:
-    external: true
-  SENDGRID_API_KEY:
-    external: true
-
+  postgres-ikso:

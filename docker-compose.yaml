@@ -8,45 +8,33 @@ services:
     restart: on-failure
     volumes:
       - ./backend:/src:z
+      - .assets:/src/assets:z
     working_dir: /src
     environment:
       DJANGO_PORT: "${DJANGO_PORT}"
     depends_on:
       - postgres
-    user: 1000:1000
     env_file:
       - backend/.env
     networks:
+      - web
       - internal
     tty: true
+    ports:
+      - 8092:8092
     stdin_open: true
     command: >
       sh -c "make migrate && make run"
 
   postgres:
     image: postgres:14-alpine
+    restart: always
     env_file:
       - backend/.env
     volumes:
-      - .postgresql:/var/lib/postgresql/data:Z
+      - .postgresql/data:/var/lib/postgresql/data:z
     networks:
       - internal
-
-  vue:
-    image: node:20.12-slim
-    volumes:
-      - ./ui:/code:z
-    working_dir: /code/
-    user: 1000:1000
-    networks:
-      - internal
-      - web
-    ports:
-      - 80:3000
-      - 24678:24678
-    tty: true
-    command: >
-      sh -c "rm -f /tmp/nitro/worker-*.sock ; npm -q --silent install && npm run dev"
 
 networks:
   web:

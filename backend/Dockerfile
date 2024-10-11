@@ -38,9 +38,13 @@ RUN apt-get update && \
 
 RUN mkdir -p $POETRY_HOME $PYSETUP_PATH
 
-RUN chown -R 1000:1000 $POETRY_HOME $PYSETUP_PATH
+RUN mkdir /.cache && chown -R 1026:1027 /.cache
 
-USER 1000
+RUN mkdir "$PYSETUP_PATH/.cache" && chown -R 1026:1027 "$PYSETUP_PATH/.cache"
+
+RUN chown -R 1026:1027 $POETRY_HOME $PYSETUP_PATH
+
+USER 1026
 
 # Install Poetry - respects $POETRY_VERSION & $POETRY_HOME
 RUN curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.8.3 python3 -
@@ -57,7 +61,7 @@ RUN poetry install --only main
 # For example using docker compose to mount local volume under /src
 FROM python-base AS development
 
-RUN touch /.pythonhist && chown 1000:1000 /.pythonhist
+RUN touch /.pythonhist && chown 1026:1027 /.pythonhist
 
 # Copying poetry and venv into image
 COPY --from=builder-base $POETRY_HOME $POETRY_HOME

@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Backend for the Testu.eu website"
 authors = ["Baptiste Darthenay <baptiste@darthenay.fr>"]
 license = "Proprietary"
+package-mode = false
 
 [tool.isort]
 profile = "black"

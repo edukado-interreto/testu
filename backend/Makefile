@@ -6,7 +6,7 @@ init:
 	$(django) createsuperuser
 
 run:
-	@$(django) runserver 0.0.0.0:${DJANGO_PORT}
+	@$(django) migrate && gunicorn config.wsgi:application --bind 0.0.0.0:${DJANGO_PORT} --workers 3
 
 shell:
 	@$(django) shell_plus
