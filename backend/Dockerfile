@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM python:3.12.3-slim-bookworm AS python-base
+FROM python:3.13-slim-bookworm AS python-base
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
