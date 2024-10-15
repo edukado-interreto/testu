@@ -47,7 +47,7 @@ RUN chown -R 1026:1027 $POETRY_HOME $PYSETUP_PATH
 USER 1026
 
 # Install Poetry - respects $POETRY_VERSION & $POETRY_HOME
-RUN curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.8.3 python3 -
+RUN curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.8.4 python3 -
 
 # We copy our Python requirements here to cache them
 # and install only runtime deps using poetry

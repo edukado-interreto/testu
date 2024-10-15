@@ -14,34 +14,34 @@ ignore = ["E731"] # lambda/def
 
 [tool.poetry.dependencies]
 python = "~3.12"
-dj-rest-auth = { extras = ["with-social"], version = "~4" }
+dj-rest-auth = { extras = ["with-social"], version = "~6" }
 django = "~5.1"
-django-allauth = "^0.54.0"
-django-anymail = { extras = ["sendgrid"], version = "^8.5" }
-django-cors-headers = "^3.11.0"
-django-extensions = "^3.1.5"
-django-filter = "^21.1"
-djangorestframework = "^3.13"
-djangorestframework-simplejwt = { extras = ["crypto"], version = "^5.2.0" }
+django-allauth = "^0.61"
+django-anymail = { extras = ["sendgrid"], version = "~12" }
+django-cors-headers = "^4.5.0"
+django-extensions = "^3.2.3"
+django-filter = "^24.3"
+djangorestframework = "^3.15"
+djangorestframework-simplejwt = { extras = ["crypto"], version = "^5.3.0" }
 psycopg = { extras = ["binary"], version = "^3.2.3" }
 python-decouple = "^3.8"
-gunicorn = "^20.1.0"
-whitenoise = "^6.6.0"
+gunicorn = "~23"
+whitenoise = "~6.7"
 
 [tool.poetry.dev-dependencies]
 black = "24.10.0"
-django-stubs = "^1.9.0"
-djhtml = "^1.5.0"
+django-stubs = "~5.1"
+djhtml = "~3"
 Faker = "^13.3.3"
 flake8 = "^6.0.0"
 isort = "^5.10.1"
-model-bakery = "^1.4.0"
+model-bakery = "~1"
 pre-commit = "^2.17.0"
 pytest = "^6"
-pytest-cov = "^3.0.0"
-pytest-django = "^4.5.2"
-pytest-factoryboy = "^2.1.0"
-freezegun = "^1.2.1"
+pytest-cov = "~5"
+pytest-django = "~4"
+pytest-factoryboy = "~2"
+freezegun = "~1.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
