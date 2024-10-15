@@ -36,6 +36,21 @@ services:
     networks:
       - internal
 
+  vue:
+    image: node:22-alpine
+    volumes:
+      - ./ui:/code:z
+    working_dir: /code/
+    user: 1000:1000
+    networks:
+      - web
+      - internal
+    tty: true
+    ports:
+      - 80:3000
+    command: >
+      sh -c "npm install && npm run dev"
+
 networks:
   web:
     driver: bridge
