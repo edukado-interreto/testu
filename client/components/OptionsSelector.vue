@@ -12,7 +12,7 @@
     :label="label"
     :autofocus="autofocus"
     :rules="rules"
-    validate-on-blur
+    validate-on="blur"
   >
     <template v-slot:append>
       <v-tooltip bottom>

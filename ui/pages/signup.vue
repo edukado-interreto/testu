@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { FetchError } from "ofetch"
+
 const { $api, $apiFetch } = useNuxtApp()
 const { t } = useI18n()
 const localePath = useLocalePath()
@@ -10,9 +12,10 @@ const email = ref("")
 const password = ref("")
 const valid = ref(undefined)
 const submitted = ref(false)
-const error_messages = ref([])
+const error_messages: Ref<string[]> = ref([])
 
 useHead({ title: t("login.signup") })
+
 const register_new_user = async () => {
   if (!(await validate()).valid) return
 
@@ -28,17 +31,14 @@ const register_new_user = async () => {
         password2: password.value,
       },
     })
-    console.error(JSON.stringify(response))
-    console.error(response)
-    console.error(response._data)
     submitted.value = true
-  } catch (e) {
-    if (e.response.status === 400) {
-      error_messages.value = Object.values(e.response.data).flat()
+  } catch (e: FetchError | any) {
+    if (e.status === 400) {
+      error_messages.value = Object.values(e.data).flat()
       return
     }
-    error_messages.value = [`Server error (${e.response.status})`]
-    console.error({ ...e })
+    error_messages.value = [`Server error (${e.status}: ${e.statusText})`]
+    console.error({ ...e.response })
   }
 }
 const validate = () => signup_form.value?.validate()
@@ -70,7 +70,7 @@ const validate = () => signup_form.value?.validate()
           :label="$t('login.username')"
           :rules="[(v) => v !== '' || $t('login.required_field')]"
           required
-         />
+        />
         <v-text-field
           variant="outlined"
           density="compact"
@@ -79,9 +79,9 @@ const validate = () => signup_form.value?.validate()
           :rules="[(v) => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
           type="email"
           name="email"
-          validate-on-blur
+          validate-on="blur"
           required
-         />
+        />
         <v-text-field
           variant="outlined"
           density="compact"
@@ -90,7 +90,7 @@ const validate = () => signup_form.value?.validate()
           type="password"
           :rules="[(v) => v !== '' || $t('login.required_field')]"
           required
-         />
+        />
         <v-btn type="submit" color="primary" class="mt-2">
           {{ $t("main.signup") }}
         </v-btn>
@@ -109,7 +109,14 @@ const validate = () => signup_form.value?.validate()
 
       <div class="text--secondary mt-8">
         {{ $t("login.already_registered") }}
-        <v-btn :to="localePath('/login')" v-text="t('main.login')" class="mx-3 text-none" variant="outlined" density="compact" color="primary" />
+        <v-btn
+          :to="localePath('/login')"
+          v-text="t('main.login')"
+          class="mx-3 text-none"
+          variant="outlined"
+          density="compact"
+          color="primary"
+        />
       </div>
     </v-col>
     <v-spacer />

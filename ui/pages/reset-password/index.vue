@@ -16,7 +16,7 @@
           :label="$t('login.email')"
           prepend-icon="mdi-account"
           :rules="[(v) => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
-          validate-on-blur
+          validate-on="blur"
           required
         />
         <v-btn

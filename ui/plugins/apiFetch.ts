@@ -35,12 +35,12 @@ export default defineNuxtPlugin((app) => {
     onResponse({ request, response, options }) {
       // response._data = new myBusinessResponse(response._data)
     },
-    onResponseError: async ({ request, response, options }) => {
+    async onResponseError({ request, response, options }) {
       if (response.status === 401) {
         try {
           token.value = await refreshToken()
 
-          options.headers.Authorization = `Bearer ${token.value}`
+          options.headers.set("Authorization", `Bearer ${token.value}`)
           $fetch(request.url, options as UseFetchOptions<T>)
         } catch (error) {
           console.error(error)
