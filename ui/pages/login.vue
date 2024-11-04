@@ -1,33 +1,47 @@
 <script setup lang="ts">
 const [route, router, localePath] = [useRoute(), useRouter(), useLocalePath()]
-const { t } = useI18n()
+const { t: $t, t } = useI18n()
 const auth = useAuth()
 
 useHead({ title: t("login.page_title") })
 
-const login_form = ref<HTMLFormElement | null>(null)
+const form = ref<HTMLFormElement | null>(null)
 const email = ref("")
 const password = ref("")
 const valid = ref(undefined)
 const error_message = ref("")
+const loading = ref(false)
 
-const validate = () => login_form.value?.validate()
+const filled = computed(() => email.value && password.value)
+const validate = async () => {
+  return filled && (await form.value?.validate()).valid
+}
 
+const login_success = () => {
+  router.push(localePath("/"))
+}
 const login_error = (e: any | Error) => {
   const error = unref(e)
   error_message.value = error.data?.non_field_errors.join("\n")
 }
+
 const login = async () => {
-  if (!(await validate()).valid) return
-
+  if (!(await validate())) return
   const credentials = { email: email.value, password: password.value }
-
   try {
+    loading.value = true
     await auth.login(credentials)
-    return router.push(localePath("/"))
+    login_success()
   } catch (error) {
-    return login_error(error)
+    login_error(error)
+  } finally {
+    loading.value = false
   }
+}
+const reset_validation = () => {
+  error_message.value = ""
+  loading.value = false
+  form.value?.resetValidation()
 }
 </script>
 
@@ -43,33 +57,43 @@ const login = async () => {
           {{ $t("login.password_reset_done") }}
         </v-alert>
         <v-form
-          ref="login_form"
+          ref="form"
           v-model="valid"
-          :lazy-validation="true"
+          validation-on="submit lazy"
           @submit.prevent="login"
         >
           <v-text-field
             v-model="email"
+            autofocus
             variant="underlined"
             name="email"
             type="email"
             :label="$t('login.email')"
             prepend-icon="mdi-account"
+            validate-on="lazy submit"
             :rules="[(v) => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
-            validate-on="submit"
+            @update:modelValue="reset_validation"
             required
           />
           <v-text-field
             v-model="password"
             variant="underlined"
             :label="$t('login.password')"
+            name="password"
             type="password"
             prepend-icon="mdi-lock"
+            validate-on="lazy submit"
             :rules="[(v) => v !== '' || $t('login.required_field')]"
-            validate-on="submit"
+            @update:modelValue="reset_validation"
+            @update:focused="reset_validation"
             required
           />
-          <v-btn type="submit" color="primary" class="mt-2 me-2">
+          <v-btn
+            type="submit"
+            color="primary"
+            class="mt-2 me-2"
+            :disabled="!filled || loading"
+          >
             {{ $t("login.login") }}
           </v-btn>
           <v-btn
