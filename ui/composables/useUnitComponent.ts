@@ -5,7 +5,7 @@ import {
   UnitPairing,
 } from "#components"
 
-export default function () {
+export default function (): UnitComponent {
   return (type: UnitType) =>
     ({
       default: UnitDefault,

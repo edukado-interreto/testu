@@ -26,6 +26,10 @@ declare global {
 
   type UnitType = "default" | "open_answer" | "multiple_choice" | "pairing"
 
+  type UnitComponent = (unit_type: UnitType) => {
+    get_solved: () => { parsed: Token[][] }
+  }
+
   type Cefr = "A1" | "A2" | "B1" | "B2" | "C1" | "C2"
 
   type Exercise = {
@@ -76,6 +80,14 @@ declare global {
     guest?: string
     data: object
     score: number
+  }
+
+  type NewSubmission = {
+    created: Date
+    exercise_lid: string
+    exam_lid: string | null
+    exercise: Exercise
+    guest?: string
   }
 
   type Option = {

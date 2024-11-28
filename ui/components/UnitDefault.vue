@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type PlayGapSelect from "~/components/PlayGapSelect.vue"
+
 const tokenize = useTokenize()
 const props = defineProps<{
   code: string
@@ -9,7 +11,7 @@ const props = defineProps<{
 }>()
 const score_awarded = ref(0)
 
-const gaps: Ref<Element[]> = ref([])
+const gaps: Ref<InstanceType<typeof PlayGapSelect>[]> = ref([])
 
 const on_answer = (answer, i, j) => {
   // We use this event to update the amount of
@@ -18,12 +20,13 @@ const on_answer = (answer, i, j) => {
   // to get the amount of successful answers.
   score_awarded.value = gaps.value.filter((c) => !!c.success).length
 }
+
 const get_solved = () => {
   // inject the answers into "parsed"
   // and return the whole object
   let i = 0
-  const parsed_filled = parsed.map((s) =>
-    s.map((t) => {
+  const parsed_filled: Token[][] = parsed.value.map((s) =>
+    s.map((t: Token) => {
       if (t.token != "gap") return t
       const new_t = JSON.parse(JSON.stringify(t))
       new_t.answer = gaps.value[i].answer
@@ -36,8 +39,10 @@ const get_solved = () => {
     parsed: parsed_filled,
   }
 }
+
 const score_available = computed(() => {
-  return parsed.value.flatMap((row) => row.filter((t) => t.token === "gap")).length
+  return parsed.value.flatMap((row) => row.filter((t) => t.token === "gap"))
+    .length
 })
 
 const parsed: ComputedRef<Token[][]> = computed(() => {
@@ -49,6 +54,8 @@ const parsed: ComputedRef<Token[][]> = computed(() => {
 
   return tokenize(props.code)
 })
+
+defineExpose({ get_solved })
 </script>
 
 <template>
@@ -65,15 +72,11 @@ const parsed: ComputedRef<Token[][]> = computed(() => {
               :shuffle="solved === undefined ? shuffle : false"
               :error-explanation="token.errorExplanation"
               :readonly="readonly"
-              ref="gap"
+              ref="gaps"
               @answer="on_answer($event, i, j)"
               :silent="silent"
             />
-            <span
-              :key="j"
-              v-if="token.token === 'text'"
-              v-text="token.value"
-            />
+            <span :key="j" v-if="token.token === 'text'" v-text="token.value" />
           </template>
         </li>
       </ol>

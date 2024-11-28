@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MsgBox from "~/components/MsgBox.vue"
+import type MsgBox from "~/components/MsgBox.vue"
 
 const { $api } = useNuxtApp()
 const { t } = useI18n()
@@ -9,17 +9,17 @@ const router = useRouter()
 
 const unit_component = useUnitComponent()
 
-const $store = {
-  getters: { "authenticator/authUser": { username: "batistex" } },
-}
+const auth = useAuth()
 
 const id = computed(() => route.params.id as string)
 const url = computed(() => `/api/v1/exercises/${id.value}/`)
-const { data: exercise, refresh, pending } = await useFetch<Exercise>(url.value)
+const { status, data: exercise, refresh } = await useFetch<Exercise>(url.value)
 
 const msgbox: Ref<InstanceType<typeof MsgBox> | null> = ref(null)
-const units: Ref<VueElement> = ref({})
-
+const units: Ref<{ [key: `unit-${string}`]: UnitComponent }> = ref({})
+const append_unit = (el: UnitComponent, unit: Unit) => {
+  units.value[`unit-${unit._key}`] = el
+}
 const all_readonly = ref(false)
 const all_silent = ref(true)
 const mistake_dialog = ref(false)
@@ -27,13 +27,11 @@ const misuse_dialog = ref(false)
 const submitted = ref(false)
 
 const user_logged_in = computed(() => {
-  const authUser = $store.getters["authenticator/authUser"]
-  return !!authUser
+  return !!auth.user
 })
 const user_is_creator = computed(() => {
-  const authUser = $store.getters["authenticator/authUser"]
-  if (!authUser || exercise === null) return false
-  return exercise.value?.created_by === authUser.username
+  if (!auth.user || exercise === null) return false
+  return exercise.value?.created_by === auth.user.username
 })
 
 const create_exam = async () => {
@@ -46,29 +44,23 @@ const create_exam = async () => {
   router.push(localePath(`/exam_editor?new_from=${exercise.value.lid}`))
 }
 const remove = async () => {
-  if (!(await msgbox.confirm(t("exercise.delete_confirm", "")))) return
+  if (!(await msgbox.value?.confirm(t("exercise.delete_confirm"), ""))) return
 
   try {
     await $api(`/v1/exercises/${id}`, { method: "DELETE" })
     router.push(localePath("/"))
-  } catch (e) {
+  } catch (e: Error | unknown) {
     console.error({ ...e })
-    await msgbox.alert(`Error ${e.response.status}`)
+    await msgbox.value?.alert(`Error ${e.response.status}`, "")
   }
 }
 
-const create_submission = (): Submission => {
+const create_submission = (): NewSubmission => {
   if (!exercise.value) throw Error("Exercise shouldn’t be null or undefined")
 
-  exercise.value.data.sheet.map((unit) => {
-    console.info(`unit-${unit._key}:`, units.value[`unit-${unit._key}`])
-  })
-
-  const username = $store.getters["authenticator/authUser"].username
-
   // Create the submission object to be sent to the server
-  const submission: Submission = {
-    guest: username ? undefined : "x", // TODO: display name
+  const submission: NewSubmission = {
+    guest: auth.user?.username ? undefined : "x", // TODO: display name
     created: new Date(),
     exercise_lid: id.value,
     exam_lid: null,
@@ -77,7 +69,7 @@ const create_submission = (): Submission => {
 
   submission.exercise.data.sheet = exercise.value.data.sheet.map((unit) => ({
     ...unit,
-    solved: units.value[`unit-${unit._key}`].get_solved(),
+    solved: units.value[`unit-${unit._key}`]?.get_solved(),
   }))
 
   return submission
@@ -97,10 +89,13 @@ const submit = async () => {
 
   const submission = create_submission()
   try {
-    await $api("/v1/submissions/", { method: "POST", body: submission })
-  } catch (e) {
+    await $api("/v1/submissions/", {
+      method: "POST",
+      body: JSON.stringify(submission),
+    })
+  } catch (e: Error | unknown) {
     console.error({ ...e })
-    await msgbox.alert(t("exercise.error"), JSON.stringify(e))
+    await msgbox.value?.alert(t("exercise.error"), JSON.stringify(e))
   }
 }
 
@@ -110,7 +105,7 @@ useHead({ title: exercise.value?.name })
 </script>
 
 <template>
-  <v-container v-if="pending" class="d-flex">
+  <v-container v-if="status === 'pending'" class="d-flex">
     <v-spacer />
     <v-progress-circular indeterminate color="primary" size="70" width="3" />
     <v-spacer />
@@ -206,18 +201,15 @@ useHead({ title: exercise.value?.name })
         :ignore_case="unit.ignore_case"
         :silent="all_silent"
         :readonly="all_readonly"
-        :ref="
-          (el) => {
-            units[`unit-${unit._key}`] = el
-          }
-        "
+        :ref="(el: UnitComponent) => append_unit(el, unit)"
       />
     </v-sheet>
 
     <v-btn
       @click="submit"
-      color="primary"
+      type="submit"
       class="mt-9 d-print-none"
+      :color="submitted ? 'grey' : 'primary'"
       :disabled="submitted"
       v-text="t('exercise.check')"
     />
