@@ -12,8 +12,8 @@ const unit_component = useUnitComponent()
 const auth = useAuth()
 
 const id = computed(() => route.params.id as string)
-const url = computed(() => `/api/v1/exercises/${id.value}/`)
-const { status, data: exercise, refresh } = await useFetch<Exercise>(url.value)
+const url = computed(() => `exercises/${id.value}/`)
+const { status, data: exercise, refresh } = useApiFetch<Exercise>(url.value)
 
 const msgbox: Ref<InstanceType<typeof MsgBox> | null> = ref(null)
 const units: Ref<{ [key: `unit-${string}`]: UnitComponent }> = ref({})
@@ -47,7 +47,7 @@ const remove = async () => {
   if (!(await msgbox.value?.confirm(t("exercise.delete_confirm"), ""))) return
 
   try {
-    await $api(`/v1/exercises/${id}`, { method: "DELETE" })
+    await $api(`exercises/${id}`, { method: "DELETE" })
     router.push(localePath("/"))
   } catch (e: Error | unknown) {
     console.error({ ...e })
@@ -89,7 +89,7 @@ const submit = async () => {
 
   const submission = create_submission()
   try {
-    await $api("/v1/submissions/", {
+    await $api("submissions/", {
       method: "POST",
       body: JSON.stringify(submission),
     })

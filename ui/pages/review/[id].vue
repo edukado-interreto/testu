@@ -4,7 +4,7 @@ const localePath = useLocalePath()
 const route = useRoute()
 
 const id = computed(() => route.params.id as string)
-const url = computed(() => `/v1/submissions/${id.value}`)
+const url = computed(() => `submissions/${id.value}`)
 const { data: submission } = await useAsyncData<Submission>(
   async () => await $api(url.value),
 )

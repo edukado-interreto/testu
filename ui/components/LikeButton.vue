@@ -16,7 +16,7 @@ const click = async () => {
   if (!user) return
 
   const model = props.item.url.includes("exercise") ? "exercises" : "exams"
-  const url = `/v1/${model}/${props.item.lid}/like/`
+  const url = `${model}/${props.item.lid}/like/`
   const resp = await $api(url, { method: "POST" })
   const liked = resp.data.liked
   liked.value = !!liked.value // Cast null or 1 as Boolean

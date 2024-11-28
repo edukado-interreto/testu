@@ -18,7 +18,7 @@ async function refreshToken() {
 export default defineNuxtPlugin((app) => {
   const config = useRuntimeConfig()
 
-  const baseURL = `${config.public.apiBase}/api`
+  const baseURL = `${config.public.apiBase}/api/v1/`
   const i18n = app.$i18n as Composer
   const token = useCookie<string | null>("jwt-access")
   const headers = {

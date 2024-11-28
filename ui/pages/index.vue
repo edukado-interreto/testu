@@ -14,23 +14,26 @@ let source_langs_used = ref(null)
 let learn_langs_used = ref(null)
 
 onMounted(async () => {
-  raw_exercises.value = await $api("/v1/exercises/")
-  authors_used.value = (await $api("/v1/authors/?limit=999&ordering=username")).results
-  tags_used.value = (await $api("/v1/tags/?limit=999")).results // /v1/tags/used/
-  source_langs_used.value = (await $api("/v1/languages/source/")).results
-  learn_langs_used.value = (await $api("/v1/languages/learn/")).results
+  raw_exercises.value = await $api("exercises/")
+  authors_used.value = (
+    await $api("authors/?limit=999&ordering=username")
+  ).results
+  tags_used.value = (await $api("tags/?limit=999")).results // tags/used/
+  source_langs_used.value = (await $api("languages/source/")).results
+  learn_langs_used.value = (await $api("languages/learn/")).results
 })
 
 const exercises = computed(() => raw_exercises.value.results)
 const iterator_key = ref("")
 const source_langs_localized = computed(() => [])
 const learn_langs_localized = computed(() => [])
-const tags_used_localized = computed(() =>
-  tags_used.value?.map((tag) => ({
-    value: tag.name,
-    text: t(`tags.${tag.name}`),
-    count: tag.count,
-  })),
+const tags_used_localized = computed(
+  () =>
+    tags_used.value?.map((tag) => ({
+      value: tag.name,
+      text: t(`tags.${tag.name}`),
+      count: tag.count,
+    })),
 )
 const search = ref({
   offset: 0,

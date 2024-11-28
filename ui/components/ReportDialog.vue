@@ -15,7 +15,7 @@ const close = () => emit("input", false)
 const submit = async () => {
   disabled.value = true
 
-  const response = await $api("/v1/reports/", {
+  const response = await $api("reports/", {
     method: "POST",
     body: {
       exercise: props.exercise,

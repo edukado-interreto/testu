@@ -41,7 +41,7 @@ const {
   refresh,
 } = await useAsyncData<DRF<Submission>>(
   "submissions",
-  () => $api("v1/submissions/", { params: { offset: offset.value } }),
+  () => $api("submissions/", { params: { offset: offset.value } }),
   { watch: [offset] },
 )
 
