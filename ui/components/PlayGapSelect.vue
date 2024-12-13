@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { ref, computed, watch, defineProps, defineEmits } from "vue"
-
+type Value = {
+  value: string
+  right: boolean
+}
 type Props = {
-  value: [string, Object]
+  value: Value
   options: any[]
   shuffle: boolean
-  once: boolean
-  errorExplanation: string
-  readonly: boolean
+  once?: boolean
+  errorExplanation?: string
+  readonly?: boolean
   silent: boolean
 }
 
@@ -19,6 +21,8 @@ const select: Ref<HTMLElement | null> = ref(null)
 
 const answer = ref(props.value)
 
+const { confetti_shoot } = useConfettiShoot()
+
 // Computed properties
 const icon = computed(() => {
   if (props.silent) return undefined
@@ -26,7 +30,7 @@ const icon = computed(() => {
   return success.value ? "mdi-check-bold" : "mdi-close-thick"
 })
 
-const errorMessages = computed(() => {
+const error_messages = computed(() => {
   if (props.silent) return undefined
   if (success.value !== false) return undefined
   return props.errorExplanation
@@ -37,11 +41,11 @@ const choices = computed(() => {
   return props.options
 })
 
-const longestChoiceLength = computed(() =>
+const longest_choice_length = computed(() =>
   Math.max(...choices.value.map((s: any) => s.value.length)),
 )
 
-const gapWidth = computed(() => `${longestChoiceLength.value + 7}ch`)
+const gap_width = computed(() => `${longest_choice_length.value + 7}ch`)
 
 const success = computed(() => {
   if ("right" in (answer.value || {})) {
@@ -73,9 +77,8 @@ function onChange() {
 
   if (props.silent) return
   if (typeof window === "undefined") return
-  if (success.value === true) {
-    // Uncomment and add confetti logic if needed
-    // confettiShoot();
+  if (success.value === true && select?.value) {
+    confetti_shoot(select.value)
   }
 }
 
@@ -87,6 +90,14 @@ defineExpose({ answer, choices })
 </script>
 
 <template>
+  <span class="print">
+    <span
+      class="choice"
+      v-for="choice in choices.map((c) => c.value)"
+      :key="choice"
+      v-text="choice"
+    />
+  </span>
   <v-select
     ref="select"
     v-model="answer"
@@ -95,24 +106,27 @@ defineExpose({ answer, choices })
     item-title="value"
     return-object
     :success="!props.silent && success === true"
-    :error-messages="errorMessages"
+    :error-messages="error_messages"
     :error="!props.silent && success === false"
     :prepend-inner-icon="icon"
     @change="onChange"
     :readonly="props.readonly || (props.once && success !== undefined)"
-    :style="`width: ${gapWidth}`"
+    :style="`width: ${gap_width}`"
     hide-details="auto"
     density="compact"
     variant="underlined"
   />
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .gap-select {
   position: relative;
-  bottom: -0.6rem;
+  bottom: -0.4rem;
   padding: 0 0.2em;
   display: inline-block;
+  @media print {
+    display: none;
+  }
   .v-field {
     &--appended {
       padding-inline-end: initial;
@@ -126,16 +140,17 @@ defineExpose({ answer, choices })
 }
 
 .print {
+  display: none;
+
   @media print {
     display: initial;
-
-    .choice {
-      color: dimgrey;
-      padding: 0.5ch;
-      border: solid 1px silver;
-      border-radius: 4px;
-      margin: 0 1pt;
-    }
+  }
+  .choice {
+    color: dimgrey;
+    padding: 0.5ch;
+    border: solid 1px silver;
+    border-radius: 1ch;
+    margin: 0 1pt;
   }
 }
 </style>

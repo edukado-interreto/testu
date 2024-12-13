@@ -15,6 +15,7 @@ const embedded = computed(() => window?.location !== window?.parent?.location)
       v-if="!embedded"
       :app="!embedded"
       class="d-print-none"
+      style="z-index: 1010"
       mobile-breakpoint="xs"
       :temporary="mobile"
       :location="mobile ? 'right' : 'left'"

@@ -74,6 +74,7 @@ const update_filtered_exercises = () => undefined
     <v-row no-gutters>
       <v-col cols="12" md="7">
         <v-text-field
+          id="search-text"
           v-model="search.text"
           @keyup.enter="update_filtered_exercises"
           :label="$t('home.search_exercise')"
@@ -88,6 +89,7 @@ const update_filtered_exercises = () => undefined
     <v-row>
       <v-col cols="12" md="3">
         <v-autocomplete
+          id="exercise-language"
           :label="$t('exercise.language')"
           density="compact"
           variant="outlined"
@@ -99,7 +101,7 @@ const update_filtered_exercises = () => undefined
           :items="source_langs_localized"
           @change="update_filtered_exercises"
         >
-          <template v-slot:selection="{ item, index }">
+          <template #selection="{ item, index }">
             <span>{{ item.text }}</span>
             <span v-if="index < search.src_langs.length - 1">,&nbsp;</span>
           </template>
@@ -107,6 +109,7 @@ const update_filtered_exercises = () => undefined
       </v-col>
       <v-col cols="12" md="3">
         <v-autocomplete
+          id="exercise-target-language"
           :label="$t('exercise.target_language')"
           @change="update_filtered_exercises"
           prepend-inner-icon="mdi-chat"
@@ -118,7 +121,7 @@ const update_filtered_exercises = () => undefined
           :items="learn_langs_localized"
           clearable
         >
-          <template v-slot:prepend-item>
+          <template #prepend-item>
             <v-list-item @mousedown.prevent>
               <v-range-slider
                 density="compact"
@@ -145,6 +148,7 @@ const update_filtered_exercises = () => undefined
 
       <v-col cols="12" md="2">
         <v-autocomplete
+          id="exercise-author"
           :label="$t('exercise.author')"
           prepend-inner-icon="mdi-human-male-board"
           density="compact"
@@ -163,6 +167,7 @@ const update_filtered_exercises = () => undefined
       <v-spacer />
       <v-col cols="12" md="3">
         <v-select
+          id="sorting"
           density="compact"
           variant="underlined"
           :label="$t('sort.sort')"
@@ -199,7 +204,11 @@ const update_filtered_exercises = () => undefined
       :loading="loading"
     >
       <template #default="{ items }">
-        <ExerciseListItem v-for="item in items" :item="item.raw" :key="item.raw.id" />
+        <ExerciseListItem
+          v-for="item in items"
+          :item="item.raw"
+          :key="item.raw.id"
+        />
       </template>
     </v-data-iterator>
   </v-container>

@@ -1,7 +1,7 @@
-import CanvasConfetti from "canvas-confetti"
+import confetti from "canvas-confetti"
 
 const confetti_shoot = (element: HTMLElement) => {
-  CanvasConfetti({
+  confetti({
     angle: 90,
     spread: 110,
     particleCount: 60,

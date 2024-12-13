@@ -6,6 +6,8 @@ const props = defineProps<{
   cls?: string
 }>()
 const { locale, setLocale } = useI18n()
+const localePath = useLocalePath()
+
 const list_item_classes =
   "v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text"
 </script>
