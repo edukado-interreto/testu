@@ -1,32 +1,32 @@
 {
-  "name": "testu-ui",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build --reset netlify",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "prerender": "nuxt build --prerender",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@mdi/font": "^7.4.47",
-    "@nuxtjs/i18n": "^8.3.1",
-    "@pinia/nuxt": "^0.5.1",
-    "@vueuse/core": "^10.11.0",
-    "@vueuse/router": "^10.11.0",
-    "canvas-confetti": "^1.9.3",
-    "defu": "^6.1.4",
-    "nuxt": "^3.11.2",
-    "pinia": "^2.1.7",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0",
-    "vuetify": "^3.6.0-beta.0.0"
-  },
-  "devDependencies": {
-    "@types/canvas-confetti": "^1.6.4",
-    "sass": "^1.76.0",
-    "typescript": "^5.4.5"
-  }
+	"name": "testu-ui",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "nuxt build --reset netlify",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"prerender": "nuxt build --prerender",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"dependencies": {
+		"@mdi/font": "^7.4.47",
+		"@nuxtjs/i18n": "^9.1.0",
+		"@pinia/nuxt": "^0.5.1",
+		"@vueuse/core": "^10.11.0",
+		"@vueuse/router": "^10.11.0",
+		"canvas-confetti": "^1.9.3",
+		"defu": "^6.1.4",
+		"nuxt": "^3.14.0",
+		"pinia": "^2.1.7",
+		"vue": "^3.5.13",
+		"vue-router": "^4.5.0",
+		"vuetify": "^3.7.4"
+	},
+	"devDependencies": {
+		"@types/canvas-confetti": "^1.6.4",
+		"sass": "^1.76.0",
+		"typescript": "^5.4.5"
+	}
 }
