@@ -1,3 +1,36 @@
+<script setup lang="ts">
+const { locale, t } = useI18n()
+const localePath = useLocalePath()
+
+useHead({ title: t("main.terms") })
+const lastUpdate = ref("2023-07-13")
+
+const lang = computed(() => locale.value.split("-")[0])
+
+const terms_link = computed(
+  () =>
+    `<a href="${localePath(
+      "/terms",
+    )}" target="_blank">https://testu.eu${localePath("/terms")}</a>`,
+)
+const contact_link = computed(
+  () =>
+    `<a href="${localePath("/privacy")}" target="_blank">${t(
+      "main.privacy",
+    )}</a>`,
+)
+const license_link = computed(
+  () =>
+    `<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.${lang}" target="_blank">${t(
+      "terms.section6.text1_license",
+    )}</a>`,
+)
+
+const settings_link = ref(
+  '<a href="/" target="_blank">https://testu.eu/user/settings</a>',
+)
+</script>
+
 <template>
   <v-container>
     <h1>{{ $t("main.terms") }}</h1>
@@ -69,12 +102,12 @@
     </ol>
 
     <h2 class="mt-4 mb-2">6. {{ $t("terms.section6.title") }}</h2>
-    <p v-html="$t('terms.section6.text1', { license: licenseLink })" />
+    <p v-html="$t('terms.section6.text1', { license: license_link })" />
 
     <h2 class="mt-4 mb-2">7. {{ $t("terms.section7.title") }}</h2>
     <ol>
       <li>{{ $t("terms.section7.text1") }}</li>
-      <li v-html="$t('terms.section7.text2', { link: settingsLink })" />
+      <li v-html="$t('terms.section7.text2', { link: settings_link })" />
       <li>{{ $t("terms.section7.text3") }}</li>
       <li>{{ $t("terms.section7.text4") }}</li>
     </ol>
@@ -93,47 +126,11 @@
     <ol>
       <li>{{ $t("terms.section9.text1") }}</li>
       <li>{{ $t("terms.section9.text2") }}</li>
-      <li v-html="$t('terms.section9.text3', { link: termsLink })" />
+      <li v-html="$t('terms.section9.text3', { link: terms_link })" />
       <li>{{ $t("terms.section9.text4") }}</li>
-      <li v-html="$t('terms.section9.text5', { link: contactLink })" />
+      <li v-html="$t('terms.section9.text5', { link: contact_link })" />
     </ol>
 
     <p class="mt-4">{{ $t("terms.last_update", { date: lastUpdate }) }}</p>
   </v-container>
 </template>
-<script>
-export default {
-  head() {
-    return {
-      title: this.$t("main.terms"),
-    }
-  },
-  data() {
-    return {
-      settingsLink:
-        '<a href="/" target="_blank">https://testu.eu/user/settings</a>',
-      lastUpdate: "2023-07-13",
-    }
-  },
-  computed: {
-    termsLink() {
-      return `<a href="${this.localePath(
-        "/terms",
-      )}" target="_blank">https://testu.eu${this.localePath("/terms")}</a>`
-    },
-    contactLink() {
-      return `<a href="${this.localePath(
-        "/privacy",
-      )}" target="_blank">${this.$t("main.privacy")}</a>`
-    },
-    licenseLink() {
-      return `<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.${
-        this.locale
-      }" target="_blank">${this.$t("terms.section6.text1_license")}</a>`
-    },
-    locale() {
-      return this.$i18n.locale.split("-")[0]
-    },
-  },
-}
-</script>
