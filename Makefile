@@ -26,7 +26,7 @@ shell:
 	$(django) make shell
 
 pdb-shell:
-	docker attach testu_django_1
+	docker attach testu-django-1
 
 vue:
 	docker compose run --rm vue yarn build

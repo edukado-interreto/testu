@@ -32,7 +32,7 @@ services:
     env_file:
       - backend/.env
     volumes:
-      - .postgresql/data:/var/lib/postgresql/data:z
+      - .docker/volumes/postgresql/data:/var/lib/postgresql/data:z
     networks:
       - internal
 
@@ -49,6 +49,7 @@ services:
     ports:
       - 80:3000
       - 24678:24678
+    tmpfs: /tmp  # https://github.com/nuxt/nuxt/issues/13587#issuecomment-1451481510
     command: >
       sh -c "npm install && npm run dev"
 
