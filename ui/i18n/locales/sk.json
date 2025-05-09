@@ -137,9 +137,25 @@
     "search_exercise": "Vyhľadať cvičenie"
   },
   "langs": {
-    "en": "Angličtina",
-    "eo": "Esperanto",
-    "help": "Pomôžte nám preložiť webstránku"
+    "help": "Pomôžte nám preložiť webstránku",
+    "name": {
+      "cs": "Čeština",
+      "cy": "Welština",
+      "de": "Nemčina",
+      "dsb": "Dolnolužická srbčina",
+      "en": "Angličtina",
+      "eo": "Esperanto",
+      "es": "Španielčina",
+      "fr": "Francúzština",
+      "ga": "Írčina",
+      "hu": "Maďarčina",
+      "lt": "Litovčina",
+      "pl": "Poľština",
+      "ru": "Ruština",
+      "sk": "Slovenčina",
+      "uk": "Ukrajinčina"
+    },
+    "self": "Slovenčina"
   },
   "learn": {
     "date": "Dátum",
@@ -234,15 +250,15 @@
         "name": "Prázdna jednotka"
       },
       "gap_filling_dropdown": {
-        "code": "Kniha je [+na|na] stole.",
+        "code": "Kniha je [+na{'|'}na] stole.",
         "name": "Vyplnenie medzier, rozbaľovacia ponuka"
       },
       "gap_filling_open_answer": {
-        "code": "Kniha je [+na|na] stole.",
+        "code": "Kniha je [+na{'|'}na] stole.",
         "name": "Vyplnenie medzier, otvorená odpoveď"
       },
       "multiple_choice": {
-        "code": "Kde je kniha?\n[+na stole|v stole]",
+        "code": "Kde je kniha?\n[+na stole{'|'}v stole]",
         "name": "Viac možností (pre otázky)"
       },
       "pairing_pictures_with_sounds": {
@@ -262,17 +278,17 @@
         "name": "Spárovať text s textom"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "Zviera na obrázku je: [pes|+mačka|slon]\n\nJe to divoké zviera alebo domáce zviera? [+Domáce zviera|Divoké zviera]",
+        "code": "Zviera na obrázku je: [pes{'|'}+mačka{'|'}slon]\n\nJe to divoké zviera alebo domáce zviera? [+Domáce zviera{'|'}Divoké zviera]",
         "description": "{'{img:cat.jpeg}'}",
         "name": "Otázky o obrázku, pravdivé alebo nepravdivé"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Ktoré zviera vydáva tento zvuk?\n[+Mačka|Pes|Slon]\n\nAký výraz sa používa na opis zvuku, ktorý toto zviera vydáva?\n[+Mňaukanie|Štekanie|Trúbenie]",
+        "code": "Ktoré zviera vydáva tento zvuk?\n[+Mačka{'|'}Pes{'|'}Slon]\n\nAký výraz sa používa na opis zvuku, ktorý toto zviera vydáva?\n[+Mňaukanie{'|'}Štekanie{'|'}Trúbenie]",
         "description": "Vypočujte si zvuk a odpovedzte na otázky:\n{'{sound:cat.mp3}'}",
         "name": "Otázky týkajúce sa zvuku, rozbaľovacia ponuka"
       },
       "questions_about_a_text_multiple_choice": {
-        "code": "Kto vyzval zajaca na preteky? [Zajac|+korytnačka|Vták]\n\nPrečo si zajac počas pretekov zdriemol? [Bol unavený|Chcel dať korytnačke šancu, aby ho dobehla|+Veril vo svoje víťazstvo]\n\nKto vyhral preteky? [Zajac|+korytnačka|Vták]",
+        "code": "Kto vyzval zajaca na preteky? [Zajac{'|'}+korytnačka{'|'}Vták]\n\nPrečo si zajac počas pretekov zdriemol? [Bol unavený{'|'}Chcel dať korytnačke šancu, aby ho dobehla{'|'}+Veril vo svoje víťazstvo]\n\nKto vyhral preteky? [Zajac{'|'}+korytnačka{'|'}Vták]",
         "description": "Kde bolo, tam bolo, zajac a korytnačka sa vždy hádali, kto je rýchlejší.\nKorytnačka vyzvala zajaca na preteky a zajac to prijal. Myslel si, že to bude ľahké víťazstvo.\n\nPreteky sa začali a zajac rýchlo vyštartoval a nechal korytnačku za sebou. Zajac začal byť príliš sebavedomý a rozhodol sa zdriemnuť si. Korytnačka sa medzitým neustále pohybovala k  cieľovej čiare.\n\nKeď sa zajac prebudil, uvedomil si, že korytnačka je takmer v cieli. Zajac sa ju snažil dobehnúť, ale už bolo neskoro. Korytnačka preteky vyhrala.",
         "name": "Otázky o texte, viac možností"
       },

@@ -68,8 +68,25 @@
     "search_exercise": "Buscar ejercicio"
   },
   "langs": {
-    "en": "Inglés",
-    "eo": "Esperanto"
+    "help": "Ayúdanos a traducir el sitio web",
+    "name": {
+      "cs": "Checo",
+      "cy": "Galés",
+      "de": "Alemán",
+      "dsb": "Bajo sorabo",
+      "en": "Inglés",
+      "eo": "Esperanto",
+      "es": "Español",
+      "fr": "Francés",
+      "ga": "Irlandés",
+      "hu": "Húngaro",
+      "lt": "Lituano",
+      "pl": "Polaco",
+      "ru": "Ruso",
+      "sk": "Eslovaco",
+      "uk": "Ucraniano"
+    },
+    "self": "Español"
   },
   "learn": {
     "date": "Fecha",

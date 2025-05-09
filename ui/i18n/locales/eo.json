@@ -137,9 +137,25 @@
     "search_exercise": "Serĉi ekzercon"
   },
   "langs": {
-    "en": "Angla",
-    "eo": "Esperanto",
-    "help": "Helpu al ni por traduki la retejon"
+    "help": "Helpu al ni por traduki la retejon",
+    "name": {
+      "cs": "Ĉeĥa",
+      "cy": "Kimra",
+      "de": "Germana",
+      "dsb": "Malsuprasoraba",
+      "en": "Angla",
+      "eo": "Esperanto",
+      "es": "Hispana",
+      "fr": "Franca",
+      "ga": "Irlanda",
+      "hu": "Hungara",
+      "lt": "Litova",
+      "pl": "Pola",
+      "ru": "Rusa",
+      "sk": "Slovaka",
+      "uk": "Ukraina"
+    },
+    "self": "Esperanto"
   },
   "learn": {
     "date": "Dato",
@@ -234,15 +250,15 @@
         "name": "Malplena unuo"
       },
       "gap_filling_dropdown": {
-        "code": "La libro estas [+sur|en] la tablo.",
+        "code": "La libro estas [+sur{'|'}en] la tablo.",
         "name": "Truoplenigo, altiro kaj faligo"
       },
       "gap_filling_open_answer": {
-        "code": "La libro estas [+sur|en] la tablo.",
+        "code": "La libro estas [+sur{'|'}en] la tablo.",
         "name": "Truplenigo, malfermita respondo"
       },
       "multiple_choice": {
-        "code": "Kie estas la libro?\n[+sur la tablo|en la tablo]",
+        "code": "Kie estas la libro?\n[+sur la tablo{'|'}en la tablo]",
         "name": "Plurelektebleco (por demandoj)"
       },
       "pairing_pictures_with_sounds": {
@@ -262,12 +278,12 @@
         "name": "Parigo de teksto kun teksto"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "La besto sur la bildo estas: [hundo|+kato|elefanto]\n\nĈu ĝi estas sovaĝa aú hejma besto? [+hejma|sovaĝa besto]",
+        "code": "La besto sur la bildo estas: [hundo{'|'}+kato{'|'}elefanto]\n\nĈu ĝi estas sovaĝa aú hejma besto? [+hejma{'|'}sovaĝa besto]",
         "description": "{'{img:cat.jpeg}'}",
         "name": "Demajdoj pri bildo, vera aú falsa"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Kiu besto eligas tiun sonon?\n[+Kato|Hundo|Elefanto]\n\nKiel eblas nomi tiun bestan voĉon?\n[+Miaúado|Bojado|Trumpetado]",
+        "code": "Kiu besto eligas tiun sonon?\n[+Kato{'|'}Hundo{'|'}Elefanto]\n\nKiel eblas nomi tiun bestan voĉon?\n[+Miaúado{'|'}Bojado{'|'}Trumpetado]",
         "description": "Aúskultu la sonon kaj respondu al la demandoj:\n{'{sound:cat.mp3}'}",
         "name": "Demandoj pri sono, altiro kaj faligo"
       }

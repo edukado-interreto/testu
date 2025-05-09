@@ -128,9 +128,25 @@
     "search_exercise": "Chwilia/wch ymarfer"
   },
   "langs": {
-    "en": "Saesneg",
-    "eo": "Esperanteg",
-    "help": "Helpa/wch ni i gyfieithu'r wefan"
+    "help": "Helpa/wch ni i gyfieithu'r wefan",
+    "name": {
+      "cs": "Tsieceg",
+      "cy": "Cymraeg",
+      "de": "Almaeneg",
+      "dsb": "Sorbeg Isaf",
+      "en": "Saesneg",
+      "eo": "Esperanto",
+      "es": "Sbaeneg",
+      "fr": "Ffrangeg",
+      "ga": "Gwyddeleg",
+      "hu": "Hwngareg",
+      "lt": "Lithwaneg",
+      "pl": "Pwyleg",
+      "ru": "Rwsieg",
+      "sk": "Slofaceg",
+      "uk": "Wcreineg"
+    },
+    "self": "Cymraeg"
   },
   "learn": {
     "date": "dyddiad",
@@ -224,15 +240,15 @@
         "name": "Uned wag"
       },
       "gap_filling_dropdown": {
-        "code": "Mae'r llyfr [+ar|yn] y bwrdd.",
+        "code": "Mae'r llyfr [+ar{'|'}yn] y bwrdd.",
         "name": "Llenwi bylchau, cwymplen"
       },
       "gap_filling_open_answer": {
-        "code": "Mae'r llyfr [+ar|yn] y bwrdd.",
+        "code": "Mae'r llyfr [+ar{'|'}yn] y bwrdd.",
         "name": "Llenwi bylchau, ateb agored"
       },
       "multiple_choice": {
-        "code": "Ble ydy'r llyfr?\n[+ar y bwrdd|yn y bwrdd]",
+        "code": "Ble ydy'r llyfr?\n[+ar y bwrdd{'|'}yn y bwrdd]",
         "name": "Amlddewis (ar gyfer cwestiynau)"
       },
       "pairing_pictures_with_sounds": {
@@ -252,17 +268,17 @@
         "name": "Paru testun gyda thestun"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "Yr anifail yn y llun yw: [Ci|+Cath|Eliffant]\nAi anifail gwyllt neu anifail anwes ydyw? [+Anifail anwes|Anifail gwyllt]",
+        "code": "Yr anifail yn y llun yw: [Ci{'|'}+Cath{'|'}Eliffant]\nAi anifail gwyllt neu anifail anwes ydyw? [+Anifail anwes{'|'}Anifail gwyllt]",
         "description": "cath",
         "name": "Cwestiynau am lun, gwir neu anghywir"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Pa anifail sy'n gwneud y sŵn hwn?\n[+Cath|Ci|Eliffant]\n\nBeth yw'r term a ddefnyddir i ddisgrifio'r sain y mae'r anifail hwn yn ei wneud?\n[+Meowing|Cyfarth|Trwmpeting]",
+        "code": "Pa anifail sy'n gwneud y sŵn hwn?\n[+Cath{'|'}Ci{'|'}Eliffant]\n\nBeth yw'r term a ddefnyddir i ddisgrifio'r sain y mae'r anifail hwn yn ei wneud?\n[+Meowing{'|'}Cyfarth{'|'}Trwmpeting]",
         "description": "Gwranda/ewch ar y sain ac ateba/wch y cwestiynau:",
         "name": "Cwestiynau am sain, cwymplen"
       },
       "questions_about_a_text_multiple_choice": {
-        "code": "Pwy heriodd yr ysgyfarnog i ras? [Yr ysgyfarnog|+Crwban|Aderyn]\nPam hunodd yr ysgyfarnog yn ystod y ras? [Yr oedd wedi blino|Yr oedd am roi cyfle i'r crwban ddal i fyny|+Yr oedd yn hyderus yn ei fuddugoliaeth]\nPwy enillodd y ras? [Yr ysgyfarnog|+Crwban|Aderyn]",
+        "code": "Pwy heriodd yr ysgyfarnog i ras? [Yr ysgyfarnog{'|'}+Crwban{'|'}Aderyn]\nPam hunodd yr ysgyfarnog yn ystod y ras? [Yr oedd wedi blino{'|'}Yr oedd am roi cyfle i'r crwban ddal i fyny{'|'}+Yr oedd yn hyderus yn ei fuddugoliaeth]\nPwy enillodd y ras? [Yr ysgyfarnog{'|'}+Crwban{'|'}Aderyn]",
         "description": "Ers llawer dydd, bu ysgyfarnog a chrwban wastad yn dadlau pwy fyddai'n gynt.\nHeriodd y crwban yr ysgyfarnog i ras, a derbyniodd yr ysgyfarnog, gan feddwl y byddai'n ennill yn hawdd.\n\nDechreuodd y ras, a dechreuodd yr ysgyfarnog yn gyflym, gan adael y crwban ar ôl. Aeth yr ysgyfarnog yn or-hyderus a phenderfynodd huno am ychydig. Yn y cyfamser, parhaodd y crwban symud yn gyson tuag at y llinell derfyn.\n\nPan ddeffrodd yr ysgyfarnog, sylweddolodd fod y crwban bron â chyrraedd y llinell derfyn. Ceisiodd yr ysgyfarnog ddal i fyny, ond bu'n rhy hwyr. Enillodd y crwban y ras.",
         "name": "Cwestiynau am destun, amlddewis"
       },

@@ -137,9 +137,25 @@
     "search_exercise": "Wyszukiwanie ćwiczeń"
   },
   "langs": {
-    "en": "Angielski",
-    "eo": "Esperanto",
-    "help": "Pomóż nam przetłumaczyć tę stronę"
+    "help": "Pomóż nam przetłumaczyć tę stronę",
+    "name": {
+      "cs": "Czeski",
+      "cy": "Walijski",
+      "de": "Niemiecki",
+      "dsb": "Dolnołużycki",
+      "en": "Angielski",
+      "eo": "Esperanto",
+      "es": "Hiszpański",
+      "fr": "Francuski",
+      "ga": "Irlandzki",
+      "hu": "Węgierski",
+      "lt": "Litewski",
+      "pl": "Polski",
+      "ru": "Rosyjski",
+      "sk": "Słowacki",
+      "uk": "Ukraiński"
+    },
+    "self": "Polski"
   },
   "learn": {
     "date": "Data",
@@ -234,15 +250,15 @@
         "name": "Pusta jednostka"
       },
       "gap_filling_dropdown": {
-        "code": "Książka jest [na|w] stole.",
+        "code": "Książka jest [na{'|'}w] stole.",
         "name": "Wypełnianie luk, lista rozwijana"
       },
       "gap_filling_open_answer": {
-        "code": "Książka jest [na|w] stole.",
+        "code": "Książka jest [na{'|'}w] stole.",
         "name": "Wypełnianie luk, odpowiedź na pytanie otwarte"
       },
       "multiple_choice": {
-        "code": "Gdzie jest książka?\n[+na stole| w stole]",
+        "code": "Gdzie jest książka?\n[+na stole{'|'} w stole]",
         "name": "Wielokrotny wybór (w przypadku pytań)"
       },
       "pairing_pictures_with_sounds": {
@@ -262,17 +278,17 @@
         "name": "Łączenie tekstu z tekstem"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "Zwierzę na zdjęciu to: [Pies| +Kot | Słoń]\n\nCzy to dzikie zwierzę, czy zwierzę domowe? [+Zwierzę domowe|Dzikie zwierzę]",
+        "code": "Zwierzę na zdjęciu to: [Pies{'|'} +Kot | Słoń]\n\nCzy to dzikie zwierzę, czy zwierzę domowe? [+Zwierzę domowe{'|'}Dzikie zwierzę]",
         "description": "{'{img:kot.jpeg}'}",
         "name": "Pytania dotyczące obrazka, prawda lub fałsz"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Które zwierzę wydaje ten dźwięk?\n[+Kot|Pies|Słoń]\n\nJakim wyrazem określa się dźwięk wydawany przez to zwierzę?\n[+Miauczenie|Szczekanie|Trąbienie]",
+        "code": "Które zwierzę wydaje ten dźwięk?\n[+Kot{'|'}Pies{'|'}Słoń]\n\nJakim wyrazem określa się dźwięk wydawany przez to zwierzę?\n[+Miauczenie{'|'}Szczekanie{'|'}Trąbienie]",
         "description": "Posłuchaj nagrania i odpowiedz na pytania:\n{'{sound:cat.mp3}'}",
         "name": "Pytania dotyczące nagrania, lista rozwijana"
       },
       "questions_about_a_text_multiple_choice": {
-        "code": "Kto wyzwał zająca na wyścig? [Zając|+Żółw|Ptak]\n\nDlaczego zając zdrzemnął się podczas wyścigu? [Był zmęczony|Chciał dać żółwiowi szansę dogonienia|+Był pewny swojego zwycięstwa]\n\nKto wygrał wyścig? [Zając|+Żółw|Ptak]",
+        "code": "Kto wyzwał zająca na wyścig? [Zając{'|'}+Żółw{'|'}Ptak]\n\nDlaczego zając zdrzemnął się podczas wyścigu? [Był zmęczony{'|'}Chciał dać żółwiowi szansę dogonienia{'|'}+Był pewny swojego zwycięstwa]\n\nKto wygrał wyścig? [Zając{'|'}+Żółw{'|'}Ptak]",
         "description": "Dawno, dawno temu zając i żółw zawsze kłócili się o to, kto jest szybszy.\nŻółw wyzwał zająca na wyścig, a zając się zgodził, myśląc, że będzie to łatwe zwycięstwo.\n\nWyścig się rozpoczął, a zając szybko wystartował, zostawiając żółwia w tyle. Zając stał się zbyt pewny siebie i postanowił się zdrzemnąć. Tymczasem żółw szedł miarowo w kierunku mety.\n\nKiedy zając się obudził, zdał sobie sprawę, że żółw jest już prawie na mecie. Zając próbował go dogonić, ale było już za późno. Żółw wygrał wyścig.",
         "name": "Pytania dotyczące tekstu, wielokrotny wybór"
       },

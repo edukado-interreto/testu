@@ -137,9 +137,25 @@
     "search_exercise": "Übung suchen"
   },
   "langs": {
-    "en": "Englisch",
-    "eo": "Esperanto",
-    "help": "Hilf uns, die Webseite zu übersetzen"
+    "help": "Hilf uns, die Webseite zu übersetzen",
+    "name": {
+      "cs": "Tschechisch",
+      "cy": "Walisisch",
+      "de": "Deutsch",
+      "dsb": "Niedersorbisch",
+      "en": "Englisch",
+      "eo": "Esperanto",
+      "es": "Spanisch",
+      "fr": "Französisch",
+      "ga": "Irisch",
+      "hu": "Ungarisch",
+      "lt": "Litauisch",
+      "pl": "Polnisch",
+      "ru": "Russisch",
+      "sk": "Slowakisch",
+      "uk": "Ukrainisch"
+    },
+    "self": "Deutsch"
   },
   "learn": {
     "date": "Datum",
@@ -234,15 +250,15 @@
         "name": "Leerfeld"
       },
       "gap_filling_dropdown": {
-        "code": "Das Buch ist [+auf|in] dem Tisch.",
+        "code": "Das Buch ist [+auf{'|'}in] dem Tisch.",
         "name": "Lückenfüller, Dropdown"
       },
       "gap_filling_open_answer": {
-        "code": "Das Buch ist [+auf|in] dem Tisch.",
+        "code": "Das Buch ist [+auf{'|'}in] dem Tisch.",
         "name": "Lückenfüller, offene Antworten"
       },
       "multiple_choice": {
-        "code": "Wo ist das Buch?\n[+auf dem Tisch|im Tisch]",
+        "code": "Wo ist das Buch?\n[+auf dem Tisch{'|'}im Tisch]",
         "name": "Multiple choice (für Fragen)"
       },
       "pairing_pictures_with_sounds": {
@@ -262,17 +278,17 @@
         "name": "Text mit Text verbinden"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "Das Tier auf dem Bild ist: [Ein Hund|+Eine Katze|Ein Elefant]\n\nIst es ein Wildtier oder ein Haustier? [+Ein Haustier|Ein Wildtier]",
+        "code": "Das Tier auf dem Bild ist: [Ein Hund{'|'}+Eine Katze{'|'}Ein Elefant]\n\nIst es ein Wildtier oder ein Haustier? [+Ein Haustier{'|'}Ein Wildtier]",
         "description": "{'{img:cat.jpeg}'}",
         "name": "Fragen zu einem Bild, richtig oder falsch"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Welches Tier macht diesen Laut?\n[+Katze|Hund|Elefant]\n\nWie bezeichnet man den Laut, den dieses Tier macht?\n[+Miauen|Bellen|Trompeten]",
+        "code": "Welches Tier macht diesen Laut?\n[+Katze{'|'}Hund{'|'}Elefant]\n\nWie bezeichnet man den Laut, den dieses Tier macht?\n[+Miauen{'|'}Bellen{'|'}Trompeten]",
         "description": "Höre Dir die Tonaufnahme an und beantworte die Fragen.\n\n{'{sound:cat.mp3}'}",
         "name": "Fragen zu einer Tonaufnahme, Dropdown"
       },
       "questions_about_a_text_multiple_choice": {
-        "code": "Wer hat den Hasen zum einem Wettrennen herausgefordert? [Der Hase|+Die Schildkröte|Ein Vogel]\nWarum hat der Hase während des Wettrennens ein Schläfchen gemacht? [Er war müde|Er wollte der Schildkröte eine Chance geben aufzuholen|+Er war von seinem Sieg überzeugt]\nWer hat das Wettrennen gewonnen? [Der Hase|+Die Schildkröte|Ein Vogel]",
+        "code": "Wer hat den Hasen zum einem Wettrennen herausgefordert? [Der Hase{'|'}+Die Schildkröte{'|'}Ein Vogel]\nWarum hat der Hase während des Wettrennens ein Schläfchen gemacht? [Er war müde{'|'}Er wollte der Schildkröte eine Chance geben aufzuholen{'|'}+Er war von seinem Sieg überzeugt]\nWer hat das Wettrennen gewonnen? [Der Hase{'|'}+Die Schildkröte{'|'}Ein Vogel]",
         "description": "Es waren einmal eine Schildkröte und ein Hase, die darüber in Streit gerieten, wer von ihnen der schnellste sei. Die Schildkröte forderte den Hasen zu einem Wettlauf heraus, und der Hase nahm die Wette an, weil er sicher war sie zu gewinnen.\nDer Wettlauf begann und der Hase lag schnell vorn und ließ die Schildkröte hinter sich zurück. Der Hase wurde übermütig und beschloss ein Schläfchen zu machen. In der Zwischenzeit bewegte sich die Schildkröte stetig weiter in Richtung Ziellinie.\nAls der Hase erwachte, bemerkte er, dass die Schildkröte die Ziellinie fast erreicht hat. Er versuchte sie einzuholen, aber es war zu spät. Die Schildkröte hatte das Wettrennen bereits gewonnen.",
         "name": "Fragen zu einem Text, Multiple Choice"
       },

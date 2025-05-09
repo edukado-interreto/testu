@@ -137,9 +137,25 @@
     "search_exercise": "Cuardaigh cleachtadh"
   },
   "langs": {
-    "en": "Béarla",
-    "eo": "Esperanto",
-    "help": "Cabhraigh linn aistriúchán a dhéanamh ar an suíomh gréasáin"
+    "help": "Cabhraigh linn aistriúchán a dhéanamh ar an suíomh gréasáin",
+    "name": {
+      "cs": "Seicis",
+      "cy": "Breatnais",
+      "de": "Gearmáinis",
+      "dsb": "Sorbais Íochtarach",
+      "en": "Béarla",
+      "eo": "Esperanto",
+      "es": "Spáinnis",
+      "fr": "Fraincis",
+      "ga": "Gaeilge",
+      "hu": "Ungáiris",
+      "lt": "Liotuáinis",
+      "pl": "Polainnis",
+      "ru": "Rúisis",
+      "sk": "Slóvaicis",
+      "uk": "Úcráinis"
+    },
+    "self": "Gaeilge"
   },
   "learn": {
     "date": "Dáta",
@@ -234,15 +250,15 @@
         "name": "Aonad folamh"
       },
       "gap_filling_dropdown": {
-        "code": "Tá an leabhar [+ar|do] an mbord.",
+        "code": "Tá an leabhar [+ar{'|'}do] an mbord.",
         "name": "Líon na bearnaí, roghchlár anuas"
       },
       "gap_filling_open_answer": {
-        "code": "Tá an leabhar [+ar|do] an mbord.",
+        "code": "Tá an leabhar [+ar{'|'}do] an mbord.",
         "name": "Líon na bearnaí, freagra oscailte"
       },
       "multiple_choice": {
-        "code": "Cá bhfuil an leabhar?\n[+ar an mboard|sa bhord]",
+        "code": "Cá bhfuil an leabhar?\n[+ar an mboard{'|'}sa bhord]",
         "name": "ilrogha (do cheisteanna)"
       },
       "pairing_pictures_with_sounds": {
@@ -262,17 +278,17 @@
         "name": "Ag meatseáil téacs le téacs"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "Is [madra|+cat|eilifint] an t-ainmhí sa phictiúr",
+        "code": "Is [madra{'|'}+cat{'|'}eilifint] an t-ainmhí sa phictiúr",
         "description": "{'{img:cat.jpeg}'}",
         "name": "Ceisteanna faoi phictiúr, fíor nó bréagach"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Cén ainmhí a dhéanann an fhuaim seo?\n[ Cat|Madra|Eilifint]\n\nCad é an téarma a úsáidtear chun cur síos a dhéanamh ar an bhfuaim a dhéanann an t-ainmhí seo?\n[+Míáú| Tafann]",
+        "code": "Cén ainmhí a dhéanann an fhuaim seo?\n[ Cat{'|'}Madra{'|'}Eilifint]\n\nCad é an téarma a úsáidtear chun cur síos a dhéanamh ar an bhfuaim a dhéanann an t-ainmhí seo?\n[+Míáú{'|'} Tafann]",
         "description": "Éist leis an bhfuaim agus freagair na ceisteanna:\n{'{sound:cat.mp3}'}",
         "name": "Ceisteanna faoi fhuaim, roghchlár anuas"
       },
       "questions_about_a_text_multiple_choice": {
-        "code": "Cén fáth ar ghlac an giorria sos le linn an rása? [Bhí sé tuirseach|Bhí sé ag iarraidh seans a thabhairt don turtar teacht suas| +Bhí sé féinmhuiníneach]\n\nCé a bhuaigh an rás? [An giorria|+An turtar|Éan]",
+        "code": "Cén fáth ar ghlac an giorria sos le linn an rása? [Bhí sé tuirseach{'|'}Bhí sé ag iarraidh seans a thabhairt don turtar teacht suas{'|'} +Bhí sé féinmhuiníneach]\n\nCé a bhuaigh an rás? [An giorria{'|'}+An turtar{'|'}Éan]",
         "description": "Fadó, fadó, bhí giorria agus turtar ann a bhí i gcónaí ag argóint faoi cé a bhí níos tapúla.\nThug an turtar dúshlán giorria rás a bheith acu, agus ghlac an giorria leis, ag ceapadh gur bua éasca a bheadh ann.\n\nThosaigh an rás, agus d'imigh an giorria ar nós na gaoithe, ag fágáil an turtar ina dhiaidh. D’éirigh an giorria rómhuiníneach agus bheartaigh sí néal a chodladh. Le linn an ama seo, lean an turtar ag bogadh go seasta i dtreo na críochlíne.\n\nNuair a dhúisigh an giorria, thuig sé go raibh an turtar beagnach ag an líne deiridh. Rinne an giorria iarracht teacht suas leis, ach bhí sé ró-dhéanach. Bhí an rás buaite ag an turtar.",
         "name": "Ceisteanna faoi théacs, ilrogha"
       },

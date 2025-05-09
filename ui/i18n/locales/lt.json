@@ -137,9 +137,26 @@
     "search_exercise": "Ieškoti užduoties"
   },
   "langs": {
+    "help": "Padėkite mums išversti tinklalapį",
     "en": "Anglų k.",
-    "eo": "Esperanto k.",
-    "help": "Padėkite mums išversti tinklalapį"
+    "names": {
+      "cs": "Čekų",
+      "cy": "Valų",
+      "de": "Vokiečių",
+      "dsb": "Žemutinių sorbų",
+      "en": "Anglų",
+      "eo": "Esperanto",
+      "es": "Ispanų",
+      "fr": "Prancūzų",
+      "ga": "Airių",
+      "hu": "Vengrų",
+      "lt": "Lietuvių",
+      "pl": "Lenkų",
+      "ru": "Rusų",
+      "sk": "Slovakų",
+      "uk": "Ukrainiečių"
+    },
+    "self": "Lietuvių"
   },
   "learn": {
     "date": "Data",
@@ -234,15 +251,15 @@
         "name": "Tuščia"
       },
       "gap_filling_dropdown": {
-        "code": "Knyga yra [+ant|and] stalo.",
+        "code": "Knyga yra [+ant{'|'}and] stalo.",
         "name": "Išskleidžiamas tarpo užpildymas"
       },
       "gap_filling_open_answer": {
-        "code": "Knyga yra [+ant|and] stalo.",
+        "code": "Knyga yra [+ant{'|'}and] stalo.",
         "name": "tarpo užpildymas, atviras atsakymas"
       },
       "multiple_choice": {
-        "code": "Kur yra knyga?\n[+ant stalo|stale]",
+        "code": "Kur yra knyga?\n[+ant stalo{'|'}stale]",
         "name": "Pasirinkti iš kelių variantų (klausimams)"
       },
       "pairing_pictures_with_sounds": {
@@ -262,17 +279,17 @@
         "name": "Teksto susiejimas su tekstu"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "Nuotraukoje pavaizduotas gyvūnas: [Šuo|+Katė|Dramblys]\n\nAr tai laukinis, ar naminis gyvūnas? [+Naminis|Laukinis]",
+        "code": "Nuotraukoje pavaizduotas gyvūnas: [Šuo{'|'}+Katė{'|'}Dramblys]\n\nAr tai laukinis, ar naminis gyvūnas? [+Naminis{'|'}Laukinis]",
         "description": "{'{img:kate.jpeg}'}",
         "name": "Klausimai apie paveikslą, tiesa ar melas"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Koks gyvūnas skleidžia šį garsą?\n[+Katė|Šuo|Dramblys]\n\nKaip apibūdintumėte šio gyvūno skleidžiamą garsą?\n[+Miaukimas|Lojimas|Trimitavimas]",
+        "code": "Koks gyvūnas skleidžia šį garsą?\n[+Katė{'|'}Šuo{'|'}Dramblys]\n\nKaip apibūdintumėte šio gyvūno skleidžiamą garsą?\n[+Miaukimas{'|'}Lojimas{'|'}Trimitavimas]",
         "description": "Išklausykite garso įrašo ir atsakykite į klausimus:\n\n{'{sound:cat.mp3}'}",
         "name": "Klausimai apie garso įrašus, įterpiamieji"
       },
       "questions_about_a_text_multiple_choice": {
-        "code": "Kas pakvietė kiškį lenktynių? [Kiškis|+Vėžlys|Paukštis]\n\nKodėl kiškis per lenktynes nusprendė pasnausti? [Jis buvo pavargęs|Norėjo suteikti vėžliui galimybę pasivyti|+Buvo įsitikinęs savo pergale]\n\nKas laimėjo lenktynes? [Kiškis|+Vėžlys|Paukštis]",
+        "code": "Kas pakvietė kiškį lenktynių? [Kiškis{'|'}+Vėžlys{'|'}Paukštis]\n\nKodėl kiškis per lenktynes nusprendė pasnausti? [Jis buvo pavargęs{'|'}Norėjo suteikti vėžliui galimybę pasivyti{'|'}+Buvo įsitikinęs savo pergale]\n\nKas laimėjo lenktynes? [Kiškis{'|'}+Vėžlys{'|'}Paukštis]",
         "description": "Seniai seniai kiškis ir vėžlys nuolat ginčydavosi, kuris gi iš jų greitesnis.\nVėžlys pakvietė kiškį lenktynių, kiškis sutiko, nes manė, kad bus lengva laimėti.\n\nPrasidėjo lenktynės, ir kiškis greitai nušuoliavo, palikdamas vėžlį už nugaros. Kiškis ėmė pernelyg pasitikėti savimi ir nutarė išsimiegoti. Tuo tarpu vėžlys vis nesustodamas judėjo finišo link.\n\nPabudęs kiškis suprato, kad vėžlys jau beveik pasiekė finišo liniją. Kiškis bandė pasivyti vėžlį, bet jau buvo per vėlu. Vėžlys laimėjo lenktynes.",
         "name": "Klausimai apie tekstą, daugybinis pasirinkimas"
       },

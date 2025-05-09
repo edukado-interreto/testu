@@ -137,9 +137,25 @@
     "search_exercise": "Hledat cvičení"
   },
   "langs": {
-    "en": "Angličtina",
-    "eo": "Esperanto",
-    "help": "Pomozte nám přeložit tuto stránku."
+    "help": "Pomozte nám přeložit tuto stránku.",
+    "name": {
+      "cs": "Čeština",
+      "cy": "Velština",
+      "de": "Němčina",
+      "dsb": "Dolnolužická srbština",
+      "en": "Angličtina",
+      "eo": "Esperanto",
+      "es": "Španělština",
+      "fr": "Francouzština",
+      "ga": "Irština",
+      "hu": "Maďarština",
+      "lt": "Litevština",
+      "pl": "Polština",
+      "ru": "Ruština",
+      "sk": "Slovenština",
+      "uk": "Ukrajinština"
+    },
+    "self": "Čeština"
   },
   "learn": {
     "date": "Datum",
@@ -234,15 +250,15 @@
         "name": "Prázdné pole"
       },
       "gap_filling_dropdown": {
-        "code": "Kniha je [+na|ve] stole.",
+        "code": "Kniha je [+na{'|'}ve] stole.",
         "name": "Doplňování, okno s nabídkou výběru možností"
       },
       "gap_filling_open_answer": {
-        "code": "Kniha je [+na|ve] stole.",
+        "code": "Kniha je [+na{'|'}ve] stole.",
         "name": "Doplňování, oodpověď na otevřenou otázku"
       },
       "multiple_choice": {
-        "code": "Kde je kniha?\n[+na stole|ve stole]",
+        "code": "Kde je kniha?\n[+na stole{'|'}ve stole]",
         "name": "Výběr z možností (několik odpovědí na otázku)"
       },
       "pairing_pictures_with_sounds": {
@@ -262,17 +278,17 @@
         "name": "Přiřazování textu k textu"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "Zvíře na obrázku je: [pes|+kočka|slon]\n\nJe to divoké zvíře nebo domácí mazlíček? [+domácí mazlíček|divoké zvíře]",
+        "code": "Zvíře na obrázku je: [pes{'|'}+kočka{'|'}slon]\n\nJe to divoké zvíře nebo domácí mazlíček? [+domácí mazlíček{'|'}divoké zvíře]",
         "description": "{'{img:cat.jpeg}'}",
         "name": "Otázky k obrázku, pravdivé nebo nepravdivé"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Které zvíže vydává takový zvuk?\n[+kočka|pes|slon]\n\nJak se pojmenovává zvuk, který zvíře vydává?\n[+mňoukání|štěkání|troubení]",
+        "code": "Které zvíže vydává takový zvuk?\n[+kočka{'|'}pes{'|'}slon]\n\nJak se pojmenovává zvuk, který zvíře vydává?\n[+mňoukání{'|'}štěkání{'|'}troubení]",
         "description": "Poslechněte si zvukovou nahrávku a odpovězte na otázky:\n\n{'{sound:cat.mp3}'}",
         "name": "Otázky ke zvukové nahrávce, okno s nabídkou výběru možností"
       },
       "questions_about_a_text_multiple_choice": {
-        "code": "Kdo vyzval zajíce na závod? [zajíc|+želva|pták]\n\nProč si zajíc během závodu zdříml? [byl unavený|chtěl dát želvě šanci, aby ho dohnala|+byl si jistý svým vítězstvím]\n\nKdo vyhrál závod? [zajíc|+želva|pták]",
+        "code": "Kdo vyzval zajíce na závod? [zajíc{'|'}+želva{'|'}pták]\n\nProč si zajíc během závodu zdříml? [byl unavený{'|'}chtěl dát želvě šanci, aby ho dohnala{'|'}+byl si jistý svým vítězstvím]\n\nKdo vyhrál závod? [zajíc{'|'}+želva{'|'}pták]",
         "description": "Kdysi dávno se zajíc a želva neustále hádali, kdo je rychlejší.\nŽelva vyzvala zajíce na závod a zajíc souhlasil, protože si myslel, že to bude snadné vítězství.\n\nKdyž závod začal, zajíc rychle vyrazil a želvu nechal za sebou. Zajíc si začal příliš věřit a rozhodl se, že si zdřímne. Želva mezitím vytrvale postupovala k cíli.\n\nKdyž se zajíc probudil, zjistil, že želva je téměř v cíli. Zajíc se ji snažil dohnat, ale bylo už pozdě. Želva závod vyhrála.",
         "name": "Otázky k textu, výběr z možností"
       },

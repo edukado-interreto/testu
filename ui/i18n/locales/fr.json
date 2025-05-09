@@ -137,9 +137,25 @@
     "search_exercise": "Rechercher un exercice"
   },
   "langs": {
-    "en": "Anglais",
-    "eo": "Espéranto",
-    "help": "Aidez-nous à traduire le site"
+    "help": "Aidez-nous à traduire le site",
+    "name": {
+      "cs": "Tchèque",
+      "cy": "Gallois",
+      "de": "Allemand",
+      "dsb": "Bas sorabe",
+      "en": "Anglais",
+      "eo": "Espéranto",
+      "es": "Espagnol",
+      "fr": "Français",
+      "ga": "Irlandais",
+      "hu": "Hongrois",
+      "lt": "Lituanien",
+      "pl": "Polonais",
+      "ru": "Russe",
+      "sk": "Slovaque",
+      "uk": "Ukrainien"
+    },
+    "self": "Français"
   },
   "learn": {
     "date": "Date",
@@ -236,15 +252,15 @@
         "name": "Unité vide"
       },
       "gap_filling_dropdown": {
-        "code": "Le livre est [+sur|dans] la table.",
+        "code": "Le livre est [+sur{'|'}dans] la table.",
         "name": "Exercice à trou, liste déroulante"
       },
       "gap_filling_open_answer": {
-        "code": "Le livre est [+sur|dans] la table.",
+        "code": "Le livre est [+sur{'|'}dans] la table.",
         "name": "Exercice à trou, réponse ouverte"
       },
       "multiple_choice": {
-        "code": "Où est le livre ?\n[+sur la table|dans la table]",
+        "code": "Où est le livre ?\n[+sur la table{'|'}dans la table]",
         "name": "Choix multiple (pour questions)"
       },
       "pairing_pictures_with_sounds": {
@@ -264,17 +280,17 @@
         "name": "Associer du texte avec du texte"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "L'animal sur l'image est: [Un chien|+Un chat|Un éléphant]\n\nEst-ce un animal sauvage ou de compagnie ? [+Un animal de compagnie|Un animal sauvage]",
+        "code": "L'animal sur l'image est: [Un chien{'|'}+Un chat{'|'}Un éléphant]\n\nEst-ce un animal sauvage ou de compagnie ? [+Un animal de compagnie{'|'}Un animal sauvage]",
         "description": "{'{img:cat.jpeg}'}",
         "name": "Question sur une image, vrai ou faux"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Quel animal produit ce son?\n[+Chat|Chien|Éléphant]\n\nQuel est le terme utilisé pour décrire le son produit par cet animal?\n[+Miaulement|Aboiement|Barrissement]",
+        "code": "Quel animal produit ce son?\n[+Chat{'|'}Chien{'|'}Éléphant]\n\nQuel est le terme utilisé pour décrire le son produit par cet animal?\n[+Miaulement{'|'}Aboiement{'|'}Barrissement]",
         "description": "Écoutez l'audio et répondez aux questions:\n\n{'{sound:cat.mp3}'}",
         "name": "Questions sur un son, liste déroulante"
       },
       "questions_about_a_text_multiple_choice": {
-        "code": "Qui défia le lièvre à la course? [Le lièvre|+La tortue|Un oiseau]\n\nPourquoi le lièvre a-t-il fait une sieste durant la course? [Il était fatigué|Il voulait donner à la tortue une chance de le rattraper|+Il était confiant en sa future victoire]\n\nQui gagna la course? [Le lièvre|+La tortue|Un oiseaux]",
+        "code": "Qui défia le lièvre à la course? [Le lièvre{'|'}+La tortue{'|'}Un oiseau]\n\nPourquoi le lièvre a-t-il fait une sieste durant la course? [Il était fatigué{'|'}Il voulait donner à la tortue une chance de le rattraper{'|'}+Il était confiant en sa future victoire]\n\nQui gagna la course? [Le lièvre{'|'}+La tortue{'|'}Un oiseaux]",
         "description": "Il était une fois un lièvre et une tortue, se disputant toujours pour savoir qui était le plus rapide.\nLa tortue défia le lièvre à une course et le lièvre accepta, pensant que ce serait une victoire facile.\n\nLa course commença et le lièvre décolla rapidement, laissant la tortue derrière lui. Le lièvre, devenu trop confiant, décida de faire une sieste. Pendant ce temps, la tortue continuait à avancer régulièrement vers la ligne d'arrivée.\n\nQuand le lièvre se réveilla, il se rendit compte que la tortue était presque à la ligne d'arrivée. Le lièvre essaya de rattraper son retard, mais il était trop tard. La tortue avait gagné la course.",
         "name": "Questions sur un texte, choix multiple"
       },

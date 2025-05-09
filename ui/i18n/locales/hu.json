@@ -137,9 +137,25 @@
     "search_exercise": "Feladat keresése"
   },
   "langs": {
-    "en": "Angol",
-    "eo": "Eszperantó",
-    "help": "Segítsen nekünk az oldal lefordításában."
+    "help": "Segítsen nekünk az oldal lefordításában.",
+    "name": {
+      "cs": "Cseh",
+      "cy": "Walesi",
+      "de": "Német",
+      "dsb": "Alsó szorb",
+      "en": "Angol",
+      "eo": "Eszperantó",
+      "es": "Spanyol",
+      "fr": "Francia",
+      "ga": "Ír",
+      "hu": "Magyar",
+      "lt": "Litván",
+      "pl": "Lengyel",
+      "ru": "Orosz",
+      "sk": "Szlovák",
+      "uk": "Ukrán"
+    },
+    "self": "Magyar"
   },
   "learn": {
     "date": "Dátum",
@@ -234,15 +250,15 @@
         "name": "Üres egység"
       },
       "gap_filling_dropdown": {
-        "code": "A könyv az asztal [+on|hoz] van.",
+        "code": "A könyv az asztal [+on{'|'}hoz] van.",
         "name": "Kiegészítéses feladat, legördülő menü"
       },
       "gap_filling_open_answer": {
-        "code": "A könyv az asztal [+on|hoz] van.",
+        "code": "A könyv az asztal [+on{'|'}hoz] van.",
         "name": "Kiegészítéses feladat, ahol a választ önállóan kell beírni"
       },
       "multiple_choice": {
-        "code": "Hol van a könyv? \nAz asztal [+on|hoz].",
+        "code": "Hol van a könyv? \nAz asztal [+on{'|'}hoz].",
         "name": "Feleletválasztós teszt"
       },
       "pairing_pictures_with_sounds": {
@@ -262,17 +278,17 @@
         "name": "Szöveg párosítása szöveggel"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "A képen látható állat egy [kutya|+macska|elefánt]\n\nHáziállat vagy vadállat? [+háziállat|vadállat]",
+        "code": "A képen látható állat egy [kutya{'|'}+macska{'|'}elefánt]\n\nHáziállat vagy vadállat? [+háziállat{'|'}vadállat]",
         "description": "{'{img:cat.jpeg}'}",
         "name": "Igaz/hamis kérdés képről"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Melyik állat hangja ez?\n[+macska|kutya|elefánt]\n\nMit csinál ez az állat?\n[+nyávog|ugat|trombitál]",
+        "code": "Melyik állat hangja ez?\n[+macska{'|'}kutya{'|'}elefánt]\n\nMit csinál ez az állat?\n[+nyávog{'|'}ugat{'|'}trombitál]",
         "description": "Hallgassa meg a hanganyagot, majd válaszoljon a kérdésekre!\n\n{'{sound:cat.mp3}'}",
         "name": "Kérdés hanganyagról, legördülő menü"
       },
       "questions_about_a_text_multiple_choice": {
-        "code": "Ki hívta ki a nyulat versenyre? [A nyúl|+A teknősbéka|Egy madár]\n\nMiért szundikált a nyúl a verseny alatt? [Fáradt volt|Esélyt akart adni a teknősbékának, hogy utolérje|+Biztos volt a győzelmében]\n\nKi nyerte a versenyt? [A nyúl|+A teknősbéka|Egy madár]",
+        "code": "Ki hívta ki a nyulat versenyre? [A nyúl{'|'}+A teknősbéka{'|'}Egy madár]\n\nMiért szundikált a nyúl a verseny alatt? [Fáradt volt{'|'}Esélyt akart adni a teknősbékának, hogy utolérje{'|'}+Biztos volt a győzelmében]\n\nKi nyerte a versenyt? [A nyúl{'|'}+A teknősbéka{'|'}Egy madár]",
         "description": "Réges régen egy nyúl és egy teknősbéka mindig azon vitatkozott, hogy ki a gyorsabb.\nA teknős kihívta a nyulat egy versenyre, és a nyúl elfogadta, mert azt hitte, hogy könnyű győzelem lesz.\n\nA verseny elkezdődött, és a nyúl gyorsan szaladt, maga mögött hagyva a teknőst. A nyúl túlságosan elbízta magát, és úgy döntött, hogy szundikál egyet. Eközben a teknősbéka folyamatosan haladt a cél felé.\n\nAmikor a nyúl felébredt, észrevette, hogy a teknős már majdnem a célban van. A nyúl megpróbálta utolérni, de már túl késő volt. A teknős megnyerte a versenyt.",
         "name": "Szövegértés, feleletválasztós feladat"
       },

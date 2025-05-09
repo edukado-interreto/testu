@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { useLocale } from "vuetify"
-const { locale, locales, setLocale } = useI18n()
+import type { Locale } from "vue-i18n"
+
+const { availableLocales, locale, locales, setLocale, t, getLocaleMessage } =
+  useI18n()
 const { current } = useLocale()
 
 const switchLocalePath = useSwitchLocalePath()
-const locale_names = Object.fromEntries(
-  locales.value.map(({ code, name }) => [code, name]),
-)
 
-const set_locale = (code: string) => {
-  current.value = code // Vuetify
+const set_locale = (code: Locale) => {
+  current.value = code // Vuetify useLocale()
   setLocale(code)
   switchLocalePath(code)
 }
@@ -25,7 +25,7 @@ onMounted(() => {
       <v-btn v-bind="props" class="text-none px-1">
         <v-icon class="mr-1">mdi-translate</v-icon>
         <span class="d-none d-sm-inline">
-          {{ locale_names[locale] }}
+          {{ t("langs.self") }}
         </span>
         <v-icon class="ml-1">mdi-chevron-down</v-icon>
       </v-btn>
@@ -72,7 +72,7 @@ onMounted(() => {
 .v-menu__content {
   max-height: 85vh;
 }
-.v-list-item--dense,
+.v-list-item--dens,
 .v-list--dense .v-list-item {
   min-height: 1.8rem;
   padding: 0 8px;

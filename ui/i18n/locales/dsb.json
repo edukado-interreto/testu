@@ -137,9 +137,25 @@
     "search_exercise": "Pytaj zwucowanje."
   },
   "langs": {
-    "en": "engelski",
-    "eo": "esperanto",
-    "help": "Pomogajśo nam pśi pśełožowanju website."
+    "help": "Pomogajśo nam pśi pśełožowanju website.",
+    "name": {
+      "cs": "Česka rěc",
+      "cy": "Walizišćina",
+      "de": "Nimšćina",
+      "dsb": "Dolnoserbšćina",
+      "en": "Engelšćina",
+      "eo": "Esperanto",
+      "es": "Špańšćina",
+      "fr": "Francošćina",
+      "ga": "Iršćina",
+      "hu": "Madźaršćina",
+      "lt": "Litawšćina",
+      "pl": "Pólšćina",
+      "ru": "Rušćina",
+      "sk": "Słowakšćina",
+      "uk": "Ukrainšćina"
+    },
+    "self": "Dolnoserbšćina"
   },
   "learn": {
     "date": "Datum",
@@ -234,15 +250,15 @@
         "name": "Prozna jadnotka"
       },
       "gap_filling_dropdown": {
-        "code": "Knigły su [+na|w] bliźe.",
+        "code": "Knigły su [+na{'|'}w] bliźe.",
         "name": "Wupołnjenje proznotkow, dropdown"
       },
       "gap_filling_open_answer": {
-        "code": "Knigły su [+na|w] bliźe.",
+        "code": "Knigły su [+na{'|'}w] bliźe.",
         "name": "Wupołnjenje proznotkow, wótwórjone wótegrono"
       },
       "multiple_choice": {
-        "code": "Źo su knigły? \n[+na bliźe|w bliźe]",
+        "code": "Źo su knigły? \n[+na bliźe{'|'}w bliźe]",
         "name": "Wěcej móžnosćow (za pšašanja)"
       },
       "pairing_pictures_with_sounds": {
@@ -262,17 +278,17 @@
         "name": "Zwězaś tekst z tekstom"
       },
       "questions_about_a_picture_true_or_false": {
-        "code": "Zwěrje na wobrazu jo: [pjas|+kócka|elefant]\n\nJo to źiwe zwěrje abo domacne zwěrje? [+domacne zwěrje|źiwe zwěrje]",
+        "code": "Zwěrje na wobrazu jo: [pjas{'|'}+kócka{'|'}elefant]\n\nJo to źiwe zwěrje abo domacne zwěrje? [+domacne zwěrje{'|'}źiwe zwěrje]",
         "description": "{'{img:cat.jpeg}'}",
         "name": "Pšašanja wó wobrazu, pšawje abo wopaki"
       },
       "questions_about_a_sound_dropdown": {
-        "code": "Kótare zwěrje gótujo ten zuk?\n[+kócka|pjas|elefant]\n\nZ kótarym słowom wopisujomy zuk, kótaryž to zwěrje gótujo?\n[+mjawcaś|łajaś|tšubiś]",
+        "code": "Kótare zwěrje gótujo ten zuk?\n[+kócka{'|'}pjas{'|'}elefant]\n\nZ kótarym słowom wopisujomy zuk, kótaryž to zwěrje gótujo?\n[+mjawcaś{'|'}łajaś{'|'}tšubiś]",
         "description": "Słuchaj nagraśe a wótegroń na pšašanja:\n\n{'{sound:cat.mp3}'}",
         "name": "Pšašanja wó zuku, dropdown"
       },
       "questions_about_a_text_multiple_choice": {
-        "code": "Chto jo wuchaca wupominał na wuběgowanje? [Wuchac|+Nopawa|Ptašk]\n\nCogodla jo wuchac za cas wuběgowanja pódrěmnuł? [Wón jo był mucny|Wón jo kśěł nopawje daś móžnosć, aby jogo dogóniła|+Wón jo wěrił na swójo dobyśe]\n\nChto jo pśi wuběgowanju dobył? [Wuchac|+Nopawa|Ptašk]",
+        "code": "Chto jo wuchaca wupominał na wuběgowanje? [Wuchac{'|'}+Nopawa{'|'}Ptašk]\n\nCogodla jo wuchac za cas wuběgowanja pódrěmnuł? [Wón jo był mucny{'|'}Wón jo kśěł nopawje daś móžnosć, aby jogo dogóniła{'|'}+Wón jo wěrił na swójo dobyśe]\n\nChto jo pśi wuběgowanju dobył? [Wuchac{'|'}+Nopawa{'|'}Ptašk]",
         "description": "Něga stej se waźiłej wuchac a nopawa, chto z njeju by był malsnjejšy. Nopawa jo wuchaca wupominała na wuběgowanje a wuchac, se myslecy, až by zlažkim dobydnuł, jo był wobjadny.\n\nWuběgowanje jo se zachopiło a wuchac jo malsnje zastartował a wóstajił nopawu za sobu. Wuchac jo był pśeliš sebjewědobny a jo se rozsuźił pódrěmnuś. Mjaztym pak jo nopawa se pśecej wěcej celowej cerje bližyła.\n\nAko wuchac jo wócuśeł, jo pytnuł, až nopawa jo južo pśisamem pśi celowej cerje. Wuchac jo wopytał ju dogóniś, ale jo było pśepózdźe. Nopawa jo dobydnuła.",
         "name": "Pšašanja wó teksće, wěcej móžnosćow"
       },

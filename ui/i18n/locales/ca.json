@@ -1,1 +1,475 @@
-{'{}'}
+{
+  "about": {
+    "about": "Sobre el projecte",
+    "about_text": "TestU Online és una plataforma d'aprenentatge en línia, multiligüe i de franc que permet de crear diversos tests, exàmens i exercicis destinats principalment a l'aprenentatge d'idiomes. Els usuaris de la plataforma són els mateixos mestres i ensenyants, així com els alumnes de llurs cursos a escoles o altres centres, tant d'educació formal com d'informal. La creació d'una plataforma com aquesta respon a la necessitat de brindar als joves una educació gratuïta, independentment de llur situació econòmica, religió, nacionalitat, localització o de llurs possibles discapacitats.",
+    "partners_title": "Socis",
+    "partners": {
+      "bit_description": "",
+      "bit_location": "Graz, Àustria",
+      "european_commission": "",
+      "ikso_description": "",
+      "ikso_location": "Partizánske, Eslovàquia",
+      "leipzig_description": "",
+      "leipzig_location": "Leipzig, Alemanya",
+      "leipzig_name": "Universitat de Leipzig",
+      "uam_description": "",
+      "uam_location": "Poznań, Polònia",
+      "uam_name": "Universitat Adam Mickiewicz",
+      "vu_description": "",
+      "vu_location": "Vílnius, Lituània",
+      "vu_name": "Universitat de Vílnius"
+    }
+  },
+  "account": {
+    "danger_zone": "Zona de perill",
+    "delete_btn": "Esborrar el compte",
+    "delete_confirm_btn": "Esborrar totes les meves dades",
+    "delete_description": "En continuant, se suprimiran de manera definitiva totes les vostres dades i no les podreu recuperar de cap manera.",
+    "title": "Configuració del compte"
+  },
+  "editor": {
+    "age_range": "Franja d'edat",
+    "cefr_levels_label": "Nivells MECR",
+    "confirm_leave": "Aquesta pàgina us demana que confirmeu que, efectivament, en voleu sortir – pot ser que les dades que hi hagueu afegit no es desin.",
+    "description": "Descripció",
+    "details": "Detalls de l'exercici",
+    "save": "Deseu",
+    "tags": "Etiquetes",
+    "title": "Títol",
+    "unexpected_response": "Resposta inesperada per part del servidor",
+    "unlisted": "Els paràmetres de cerca no s'han pogut trobar"
+  },
+  "exam": {
+    "accept_submissions": "",
+    "confirm": "Aquesta operació no es podrà desfer. Voleu continuar?",
+    "copy": "",
+    "created": "Creat: {date}",
+    "delete": "Esborrar l'examen",
+    "description": "Descripció de l'examen",
+    "details": "Detalls de l'examen",
+    "display_name": "Nom públic",
+    "display_name_placeholder": "Trieu un nom públic...",
+    "error": "",
+    "goto_exercise": "Aneu a l'exercici",
+    "is_exam": "Això és un examen",
+    "link": "Enllaç",
+    "name": "Nom de l'examen",
+    "no_new_submissions": "Aquest examen no accepta més entregues",
+    "no_submissions": "Cap entrega",
+    "or": "o",
+    "please_log_in": "",
+    "untitled": "Examen sense títol",
+    "view": "Mostra",
+    "visible_by": "",
+    "well_done": ""
+  },
+  "exercise": {
+    "age": "Edat:",
+    "anonymous": "anònim",
+    "author": "Autor",
+    "check": "Comproveu-ne el resultat",
+    "create_copy": "Feu-ne una còpia",
+    "create_exam": "Creeu un examen",
+    "create_exam_confirm": "El creador pot editar o esborrar l'exercici mentre dura l'examen. Voleu continuar?",
+    "delete": "Esborreu l'exercici",
+    "delete_confirm": "De debò que voleu esborrar aquest exercici?",
+    "edit": "Editeu l'exercici",
+    "error": "S'ha produït un error mentre es desava l'exercici",
+    "explanation": "Explicació:",
+    "language": "Idioma",
+    "mistake": "Denuncieu un error",
+    "mistake_explanation": "Explicació:",
+    "misuse": "Denuncieu males pràctiques",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Denuncieu un error a {username}",
+    "report_misuse_to_administrators": "Denuncieu males pràctiques als administradors",
+    "submit_mistake_confirm": "Mercès! El creador rebrà una notificació.",
+    "submit_misuse_confirm": "Moltes mercès per ajudar-nos a mantenir Testu.eu un lloc adequat.",
+    "target_language": "Idioma estudiat",
+    "target_language_is": "Idioma estudiat:",
+    "unlisted": "Aquest exercici no apareix als resultats de la cerca"
+  },
+  "guide": {
+    "about": "Com crear exercicis",
+    "about_text": "Per crear un nou exercici, cal que creeu un compte i que us hi connecteu des de la pàgina web.",
+    "construction": "En construcció",
+    "gap_filling": "Ompliu el buit",
+    "video": "sobre un vídeo",
+    "exam": {
+      "explanation1": "",
+      "explanation2": "",
+      "explanation3": "",
+      "explanation4": "",
+      "explanation5": "",
+      "explanation6": "",
+      "explanation7": "",
+      "name": "Creeu un examen"
+    },
+    "exercice": {
+      "explanation1": "",
+      "explanation2": "",
+      "explanation3": "",
+      "explanation4": "",
+      "explanation5": "",
+      "explanation6": "",
+      "explanation7": "",
+      "gap_filling_1": "",
+      "gap_filling_2": "",
+      "gap_filling_3": "",
+      "gap_filling_4": "",
+      "gap_filling_5": "",
+      "gap_filling_open_answer_1": "",
+      "gap_filling_open_answer_2": "",
+      "name": ""
+    },
+    "multiple_choice": {
+      "explanation1": "",
+      "explanation2": "",
+      "explanation3": "",
+      "explanation4": "",
+      "explanation5": "",
+      "name": ""
+    },
+    "sort_and_match": {
+      "explanation1": "",
+      "explanation1_1": "",
+      "explanation2": "",
+      "explanation3": "",
+      "explanation4": "",
+      "explanation5": "",
+      "name": "",
+      "video": ""
+    }
+  },
+  "home": {
+    "create_exercise": "",
+    "search_exercise": ""
+  },
+  "langs": {
+    "self": "Esperanto",
+    "name": {},
+    "help": "Ajuda'ns a traduir la pàgina web"
+  },
+  "learn": {
+    "date": "Data",
+    "exam": "Examen",
+    "exercise": "Exercici",
+    "recent": "Activitat recent",
+    "review": "Revisió",
+    "submitted": "Exercicis entregats per dia"
+  },
+  "login": {
+    "already_registered": "",
+    "check_inbox": "",
+    "email": "Correu electrònic",
+    "email_is_verified": "",
+    "login": "Inici de sessió",
+    "mail_invalid": "El correu electrònic ha de ser vàlid",
+    "no_account_yet": "",
+    "page_title": "Inici de sessió",
+    "password": "Contrasenya",
+    "password_reset": "",
+    "password_reset_done": "",
+    "password_reset_sent": "",
+    "required_field": "",
+    "resend_link": "",
+    "signup": "",
+    "signup_thanks": "",
+    "username": "Nom d'usuari",
+    "verify_email": "",
+    "verify_token_used_or_invalid": ""
+  },
+  "main": {
+    "about": "",
+    "accept": "",
+    "cancel": "",
+    "catchphrase": "",
+    "cookie_consent": "",
+    "edit": "",
+    "guide": "",
+    "home": "",
+    "lang_menu_header": "",
+    "login": "",
+    "logout": "",
+    "my_learning": "",
+    "my_teaching": "",
+    "ok": "",
+    "only_logged_in": "",
+    "privacy": "",
+    "settings": "",
+    "signup": "",
+    "social": "",
+    "source_code": "",
+    "submit": "",
+    "terms": "",
+    "why": ""
+  },
+  "review": {
+    "exam": "",
+    "exercise": "",
+    "go_exam": "",
+    "go_exercise": "",
+    "submitted_on": ""
+  },
+  "sheet_editor": {
+    "add_matching_pair": "",
+    "add_sentence": "Afegiu-hi una frase",
+    "add_unit": "Afegiu-hi una unitat",
+    "add_unit_to_begin": "Afegiu-hi una primera unitat",
+    "close": "Tanqueu l'editor",
+    "delete": "Suprimir",
+    "edit_next": "",
+    "edit_previous": "",
+    "empty_exercise": "",
+    "first_item": "",
+    "ignore_case": "",
+    "insert_gap": "",
+    "insert_image": "",
+    "insert_pair": "",
+    "insert_sound": "",
+    "insert_video": "",
+    "move_down": "",
+    "move_up": "",
+    "new_gap": "",
+    "new_matching_pair": "",
+    "second_item": "",
+    "shuffle_options": "",
+    "start_typing": "",
+    "title": "",
+    "untitled_unit": "",
+    "valid_url": "",
+    "snippets": {
+      "blank_unit": {
+        "name": ""
+      },
+      "gap_filling_dropdown": {
+        "code": "",
+        "name": ""
+      },
+      "gap_filling_open_answer": {
+        "code": "",
+        "name": ""
+      },
+      "multiple_choice": {
+        "code": "",
+        "name": ""
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "",
+        "name": ""
+      },
+      "pairing_text_with_pictures": {
+        "code": "",
+        "name": ""
+      },
+      "pairing_text_with_sounds": {
+        "code": "",
+        "name": ""
+      },
+      "pairing_text_with_text": {
+        "code": "",
+        "name": ""
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "",
+        "description": "",
+        "name": ""
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "",
+        "description": "",
+        "name": ""
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "",
+        "description": "",
+        "name": ""
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "",
+        "description": "",
+        "name": ""
+      },
+      "sorting_pictures": {
+        "code": "",
+        "name": ""
+      }
+    },
+    "types": {
+      "default": "",
+      "multiple_choice": "",
+      "open_answer": "",
+      "pairing": ""
+    }
+  },
+  "sort": {
+    "rated": "Millors",
+    "recent": "Més recents",
+    "sort": "Ordeneu"
+  },
+  "tags": {
+    "agriculture": "Agricultura",
+    "art": "Art",
+    "astronomy": "Astronomia",
+    "biology": "Biologia",
+    "business": "Empresarials",
+    "chemistry": "Química",
+    "computing": "Informàtica",
+    "crafting": "Artesania",
+    "economics": "Economia",
+    "engineering": "Enginyeria",
+    "geography": "Geografia",
+    "grammar": "Gramàtica",
+    "history": "Història",
+    "languages": "Idiomes",
+    "literature": "Literatura",
+    "logic": "Lògica",
+    "math": "Matemàtiques",
+    "medicine": "Medicina",
+    "miscellaneous": "Miscel·lània",
+    "music": "Música",
+    "pedagogy": "Pedagogia",
+    "philosophy": "Filosofia",
+    "physics": "Física",
+    "politics": "Política",
+    "psychology": "Psicologia",
+    "religion": "Religió",
+    "science": "Ciència",
+    "sport": "Esport",
+    "technology": "Tecnologia",
+    "trivia": "Trivialitats",
+    "zoology": "Zoologia"
+  },
+  "teach": {
+    "exams": "Exàmens",
+    "exercises": "Exercicis"
+  },
+  "terms": {
+    "intro": "",
+    "last_update": "",
+    "section1": {
+      "text1": "",
+      "text2": "",
+      "text3": "",
+      "text4": "",
+      "text5": "",
+      "text6": "",
+      "text7": "",
+      "text8": "",
+      "text9": "",
+      "title": ""
+    },
+    "section2": {
+      "text1": "",
+      "title": ""
+    },
+    "section3": {
+      "text1": "",
+      "text2": "",
+      "text2_1": "",
+      "text2_2": "",
+      "text2_3": "",
+      "text3": "",
+      "text4": "",
+      "text4_1": "",
+      "text4_2": "",
+      "text4_3": "",
+      "text4_4": "",
+      "text4_5": "",
+      "text4_6": "",
+      "text4_7": "",
+      "text4_8": "",
+      "text5": "",
+      "text5_1": "",
+      "text5_2": "",
+      "text5_3": "",
+      "text6": "",
+      "title": ""
+    },
+    "section4": {
+      "text1": "",
+      "title": "Canvis al servei"
+    },
+    "section5": {
+      "text1": "",
+      "text2": "",
+      "text3": "",
+      "text4": "",
+      "title": ""
+    },
+    "section6": {
+      "text1": "",
+      "text1_license": "",
+      "title": ""
+    },
+    "section7": {
+      "text1": "",
+      "text2": "",
+      "text3": "",
+      "text4": "",
+      "title": ""
+    },
+    "section8": {
+      "text1": "",
+      "text2": "",
+      "text3": "",
+      "text4": "",
+      "text5": "",
+      "text6": "",
+      "title": ""
+    },
+    "section9": {
+      "text1": "",
+      "text2": "",
+      "text3": "",
+      "text4": "",
+      "text5": "",
+      "title": ""
+    }
+  },
+  "why": {
+    "because": "",
+    "more_projects": "",
+    "title": "",
+    "point1": {
+      "subtitle": "",
+      "title": ""
+    },
+    "point10": {
+      "subtitle": "",
+      "title": ""
+    },
+    "point2": {
+      "subtitle": "",
+      "title": ""
+    },
+    "point3": {
+      "subtitle": "",
+      "title": ""
+    },
+    "point4": {
+      "subtitle": "",
+      "title": ""
+    },
+    "point5": {
+      "subtitle": "",
+      "title": ""
+    },
+    "point6": {
+      "subtitle": "",
+      "title": ""
+    },
+    "point7": {
+      "subtitle": "",
+      "title": ""
+    },
+    "point8": {
+      "subtitle": "",
+      "title": ""
+    },
+    "point9": {
+      "subtitle": "",
+      "title": ""
+    }
+  }
+}

@@ -15,10 +15,8 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 ADMINS = config("ADMINS", cast=Csv(NamedEmail()), default=None)
 
-USE_I18N = True
-
-USE_TZ = True
 TIME_ZONE = "Europe/Bratislava"
+LANGUAGE_COOKIE_NAME = "lang"
 
 AUTH_USER_MODEL = "core.User"
 AUTHENTICATION_BACKENDS = ["apps.core.auth.EmailBackend"]
