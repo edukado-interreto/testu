@@ -9,7 +9,7 @@ const router = useRouter()
 
 const unit_component = useUnitComponent()
 
-const auth = useAuth()
+const auth = useAuthStore()
 
 const id = computed(() => route.params.id as string)
 const url = computed(() => `exercises/${id.value}/`)

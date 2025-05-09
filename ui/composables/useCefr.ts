@@ -1,36 +1,27 @@
 const CEFR = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6 } as const
+const LABELS = { 1: "A1", 2: "A2", 3: "B1", 4: "B2", 5: "C1", 6: "C2" } as const
+const [MIN, MAX] = [CEFR.A1, CEFR.C2]
 
-const cefr_levels = Object.keys(CEFR).sort()
+/**
+ * Return a human readable text describing a cefr level range.
+ * @example
+ *   const cefr = useCefr()
+ *   cefr.dispay([1, 2]) => "A1 - A2"
+ *   cefr.dispay([1, 1]) => "A1"
+ *   cefr.dispay([1, 6]) => "" (any level: empty string)
+ */
+const display = (range: [CefrValue | undefined, CefrValue | undefined]) => {
+  const [min, max] = [range[0] || MIN, range[1] || MAX]
 
-const n2cefr = (n: number) => Object.keys(CEFR).find((key: Cefr) => CEFR[key] === n)
-
-const cefr_info = (item: Exercise) => {
-  /**
-   * Return a human readable text describing a cefr level range.
-   * @param {object} item - An object with fields lang_learn_cefr_level_min
-   *   and lang_learn_cefr_level_max containing values in the range 1-6,
-   *   representing resp. A1-C2.
-   * @example
-   *   cefr_info({…min: 1, …max: 2}) => 'A1 - A2'
-   *   cefr_info({…min: 1, …max: 1}) => 'A1'
-   *   cefr_info({…min: 1, …max: 6}) => '' (any level: empty string)
-   */
-
-  const item_min = item.lang_learn_cefr_level_min
-  const item_max = item.lang_learn_cefr_level_max
-
-  if (item_min === CEFR.A1 && item_max === CEFR.C2) return ""
-
-  if (item_min === item_max) return n2cefr(item_min)
-
-  return `${n2cefr(item_min)} - ${n2cefr(item_max)}`
+  if (min === CEFR.A1 && max === CEFR.C2) return ""
+  if (min === max) return LABELS[min]
+  return `${LABELS[min]} - ${LABELS[max]}`
 }
 
-export default function () {
-  return {
-    CEFR,
-    n2cefr,
-    cefr_info,
-    cefr_levels,
-  }
-}
+export default () => ({
+  CEFR,
+  LABELS,
+  MAX,
+  MIN,
+  display,
+})

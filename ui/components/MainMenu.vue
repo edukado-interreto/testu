@@ -1,22 +1,25 @@
 <script setup lang="ts">
-const menu = [
-  { label: "home", icon: "home", path: "/" },
-  { label: "login", icon: "login", path: "/login", cls: "d-md-none" },
-  { label: "signup", icon: "account-plus", path: "/signup", cls: "d-md-none" },
-  { label: "my_learning", icon: "chart-bar", path: "/learn" },
-  { label: "my_teaching", icon: "briefcase", path: "/teach" },
-  { label: "about", icon: "information", path: "/about" },
-  { label: "why", icon: "star-shooting-outline", path: "/why" },
-  { label: "guide", icon: "help-circle", path: "/guide#1_exercise" },
-]
+const menu = {
+  home: { icon: "home", route: { name: "index" } },
+  login: { icon: "login", cls: "d-md-none", route: { name: "login" } },
+  signup: { icon: "account-plus", cls: "d-md-none", route: { name: "signup" } },
+  my_learning: { icon: "chart-bar", route: { name: "learn" } },
+  my_teaching: { icon: "briefcase", route: { name: "teach" } },
+  about: { icon: "information", route: { name: "about" } },
+  why: { icon: "star-shooting-outline", route: { name: "why" } },
+  guide: { icon: "help-circle", route: { name: "guide", hash: "#1_exercise" } },
+}
 </script>
 
 <template>
   <v-list>
-    <MenuItem v-for="item in menu" v-bind="item" :key="item.label" />
+    <MenuItem v-for="(item, label) in menu" v-bind="item" :label :key="label" />
 
     <v-list-subheader>{{ $t("main.social") }}</v-list-subheader>
-    <v-list-item href="https://www.facebook.com/profile.php?id=100086451753450" target="_blank">
+    <v-list-item
+      href="https://www.facebook.com/profile.php?id=100086451753450"
+      target="_blank"
+    >
       <template #prepend>
         <v-icon size="22" class="logo">
           <v-img src="/logos/facebook-2021.svg" cover />

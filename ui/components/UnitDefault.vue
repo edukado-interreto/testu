@@ -3,11 +3,11 @@ import type PlayGapSelect from "~/components/PlayGapSelect.vue"
 
 const tokenize = useTokenize()
 const props = defineProps<{
-  code: string
-  shuffle: boolean
+  code?: string
+  shuffle?: boolean
   solved: { parsed: string[] }
-  readonly: boolean
-  silent: boolean
+  readonly?: boolean
+  silent?: boolean
 }>()
 const score_awarded = ref(0)
 
@@ -41,8 +41,7 @@ const get_solved = () => {
 }
 
 const score_available = computed(() => {
-  return parsed.value.flatMap((row) => row.filter((t) => t.token === "gap"))
-    .length
+  return parsed.value.flatMap((row) => row.filter((t) => t.token === "gap")).length
 })
 
 const parsed: ComputedRef<Token[][]> = computed(() => {

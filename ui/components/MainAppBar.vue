@@ -1,15 +1,23 @@
 <script setup lang="ts">
-const auth = useAuth()
+const auth = useAuthStore()
 const localePath = useLocalePath()
-const router = useRouter()
 const { t } = useI18n()
 
-const embedded = computed(() => window?.location !== window?.parent?.location)
+const home = localePath({ name: "index" })
 
-const logout = () => {
+const embedded = computed(() => {
+  if (!window) return false
+  return window.location !== window.parent?.location
+})
+
+const logout = async () => {
   auth.logout()
-  router.push(localePath("/"))
+  await navigateTo(home)
 }
+
+onMounted(async () => {
+  await auth.check_token()
+})
 </script>
 
 <template>
@@ -28,7 +36,7 @@ const logout = () => {
       variant="flat"
       class="text-none text-accent font-weight-medium"
       :active="false"
-      :to="localePath('/')"
+      :to="home"
     >
       <template v-slot:prepend>
         <img src="/favicon.png" height="40" />
@@ -44,26 +52,23 @@ const logout = () => {
 
     <LanguageSwitcher class="me-2" />
 
-    <v-menu v-if="auth.logged_in" offset-y>
-      <template v-slot:activator="{ props }">
-        <v-btn icon v-bind="props">
-          <v-icon>mdi-account</v-icon>
-        </v-btn>
-      </template>
+    <v-btn v-if="auth.logged_in" icon class="mx-4">
+      <v-icon>mdi-account</v-icon>
+      <v-menu activator="parent">
+        <v-list>
+          <v-list-item :title="auth.user?.username" />
 
-      <v-list>
-        <v-list-item :title="auth.user?.username" />
-
-        <v-list-item @click="logout" :title="t('main.logout')" />
-      </v-list>
-    </v-menu>
+          <v-list-item @click="logout" :title="t('main.logout')" />
+        </v-list>
+      </v-menu>
+    </v-btn>
 
     <div v-else class="d-none d-md-block mx-4">
       <v-btn
         class="text-none me-4"
         variant="flat"
         color="grey-lighten-4"
-        :to="localePath('/login')"
+        :to="localePath({ name: 'login' })"
         nuxt
       >
         {{ $t("main.login") }}
@@ -72,7 +77,7 @@ const logout = () => {
         class="text-none"
         variant="flat"
         color="amber-darken-1"
-        :to="localePath('/signup')"
+        :to="localePath({ name: 'signup' })"
         nuxt
       >
         {{ $t("main.signup") }}

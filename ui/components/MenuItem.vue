@@ -1,11 +1,13 @@
 <script setup lang="ts">
+const { locale, setLocale } = useI18n()
+import type { RouteLocation, RouteLocationNamedI18n } from "vue-router"
+
 const props = defineProps<{
   label: string
   icon: string
-  path: string
+  route: RouteLocationNamedI18n
   cls?: string
 }>()
-const { locale, setLocale } = useI18n()
 const localePath = useLocalePath()
 
 const list_item_classes =
@@ -14,7 +16,7 @@ const list_item_classes =
 
 <template>
   <nuxt-link
-    :to="localePath(path)"
+    :to="localePath(route)"
     active-class="v-list-item--active text-primary"
     :class="[list_item_classes, cls || ''].join(' ')"
   >

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// ChatGPT made!!
 const { confetti_shoot } = useConfettiShoot()
 const shuffle_array = useShuffleArray()
 
@@ -12,24 +11,22 @@ const props = defineProps<{
 }>()
 
 const score_awarded = ref(0)
-const drags = ref([])
+const drags = ref<string[]>([])
 const movable = ref([])
 const overed = ref([])
 
 const update_dragging = () => {
-  const parsed = computedParsed.value
-
-  drags.value = parsed
-    .map((p) => p[0])
+  drags.value = parsed.value
+    .map(p => p[0])
     .sort((a, b) => a.localeCompare(b))
-    .map((e) => [e, null])
+    .map(e => [e, null])
 
   if (props.shuffle) {
     drags.value = shuffle_array(drags.value)
   }
 
-  movable.value = parsed.map((p) => [false, false])
-  overed.value = parsed.map((p) => [false, false])
+  movable.value = parsed.value.map(p => [false, false])
+  overed.value = parsed.value.map(p => [false, false])
 }
 
 const load_drags_from_solved = () => {
@@ -92,16 +89,16 @@ const on_drop = (e, dst_row, dst_col) => {
 }
 
 const get_solved = () => ({
-  parsed: computedParsed.value,
+  parsed: parsed.value,
   drags: drags.value,
 })
 
-const computedParsed = computed(() => {
+const parsed = computed(() => {
   if (props.solved) return props.solved.parsed || []
   return props.code
     .split("\n\n")
     .map((s, i) => {
-      let [src, dst] = s.split(/==(.*)/s).map((s) => s.trim())
+      let [src, dst] = s.split(/==(.*)/s).map(s => s.trim())
       if (!dst) {
         dst = `${i + 1}`
       }
@@ -113,22 +110,20 @@ const computedParsed = computed(() => {
 const success = computed(() => {
   return drags.value.map((pair, i) => {
     if (pair[1] === null) return undefined
-    return pair[1] === computedParsed.value[i][0]
+    return pair[1] === parsed.value[i][0]
   })
 })
 
 const score_available = computed(() => 0) // TODO
 
+load_drags_from_solved()
+
 watch(() => props.solved, load_drags_from_solved)
 watch(() => props.shuffle, update_dragging)
-watch(computedParsed, update_dragging)
+watch(parsed, update_dragging)
 
 onMounted(() => {
   update_dragging()
-})
-
-created(() => {
-  load_drags_from_solved()
 })
 </script>
 

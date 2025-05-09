@@ -1,3 +1,9 @@
+ype Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] extends N
+  ? Acc[number]
+  : Enumerate<N, [...Acc, Acc["length"]]>
+
+type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
+
 declare global {
   /* App */
   type VueElement = { [k: string]: Element | ComponentPublicInstance | null }
@@ -31,26 +37,60 @@ declare global {
   }
 
   type Cefr = "A1" | "A2" | "B1" | "B2" | "C1" | "C2"
+  type CefrValue = 1 | 2 | 3 | 4 | 5 | 6
 
-  type Exercise = {
-    _key: string
-    id: number
-    lid: string
-    age_min: number
-    age_max: number
-    created_by: string
-    modified: string
+  type CefrValueStr = "1" | "2" | "3" | "4" | "5" | "6"
+
+  type AgeMin = 0
+  type AgeMax = 18
+  type AgeRange = Range<AgeMin, AgeMax>
+
+  type BuildExercise = {
+    age_min: AgeMin
+    age_max: AgeMax
+    created_by: User["username"]
     description: string
     name: string
+    src_lang: string
     searchable: boolean
     lang_learn: boolean
-    lang_learn_lang: string
-    lang_learn_cefr_level_min: number
-    lang_learn_cefr_level_max: number
-    likes: number
+    lang_learn_lang?: string
+    lang_learn_cefr_level_min?: CefrValue
+    lang_learn_cefr_level_max?: CefrValue
     tags: string[]
     data: {
       sheet: Unit[]
+    }
+  }
+  type Exercise = BuildExercise & {
+    _key: string
+    id: number
+    lid: string
+    modified: string
+    likes: number
+  }
+
+  // Exercise-like
+  type Details = {
+    title: string
+    src_lang: string
+    description: string
+    unlisted: boolean
+    tags: Tag[]
+    age_range: number[]
+    lang_learn: {
+      lang?: string
+      cefr_level_range: [CefrValue?, CefrValue?]
+    }
+  }
+
+  type Snippet = {
+    name: string
+    img: string
+    unit: {
+      type: string
+      code: string
+      description?: string
     }
   }
 
@@ -90,10 +130,40 @@ declare global {
     guest?: string
   }
 
+  type Search = {
+    offset: number
+    text: string
+    tags: Tag[]
+    created_by: Author["username"]
+    src_langs: Lang[]
+    lang_learn: {
+      langs: Lang[]
+      levels: [CefrValue, CefrValue]
+    }
+    sort: string
+  }
+
   type Option = {
     value?: string
     right?: boolean
     answer?: string
+  }
+
+  type Author = {
+    id: string
+    username: string
+    count: number
+  }
+
+  type Tag = {
+    pk: string
+    name: string
+    count: number
+  }
+
+  type Lang = {
+    code: string
+    count: number
   }
 
   type Token = {
