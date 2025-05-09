@@ -1,33 +1,35 @@
-import { StorageSerializers, useLocalStorage } from "@vueuse/core"
-import type { NitroFetchOptions } from "@nitropack/types"
+import * as vueuse from "@vueuse/core"
 
-const AS_OBJECT = { serializer: StorageSerializers.object }
-
-type LoginBody = NitroFetchOptions<string, LoginCredential>
+const AS_OBJECT = { serializer: vueuse.StorageSerializers.object }
 
 const $auth = $fetch.create({ baseURL: "/api/auth", method: "POST" })
 
-export const useAuth = defineStore("auth", () => {
+export const useAuthStore = defineStore("auth", () => {
   // STORE
-  const user: Ref<User | null> = useLocalStorage("user", null, AS_OBJECT)
+  const user: Ref<User | null> = vueuse.useLocalStorage("user", null, AS_OBJECT)
 
   // GETTERS
-  const logged_in: ComputedRef<boolean> = computed(() => user.value !== null)
+  const logged_in = computed<boolean>(() => user.value !== null)
 
   // ACTIONS
   const $reset = () => {
     user.value = null
   }
 
-  const login = async (credentials: LoginCredential): Promise<User> => {
-    const body = { body: credentials } as LoginBody
-    let data = null
+  const check_token = async (): Promise<boolean> => {
     try {
-      data = await $auth<LoginResponse>("login/", body)
-    } finally {
-      user.value = data?.user
+      const data = await $auth<User>("user/", { method: "get" })
+      user.value = data
+      return true
+    } catch {
+      return false
     }
-    return user
+  }
+
+  const login = async (credentials: LoginCredential) => {
+    const body = { body: credentials }
+    const data = await $auth<LoginResponse>("login/", body)
+    user.value = data.user
   }
 
   const logout = async () => {
@@ -35,5 +37,5 @@ export const useAuth = defineStore("auth", () => {
     $reset()
   }
 
-  return { user, login, logout, logged_in, $reset }
+  return { $reset, check_token, logged_in, login, logout, user }
 })

@@ -1,9 +1,7 @@
 <script setup lang="ts">
 const [route, router, localePath] = [useRoute(), useRouter(), useLocalePath()]
 const { t: $t, t } = useI18n()
-const auth = useAuth()
-
-useHead({ title: t("login.page_title") })
+const auth = useAuthStore()
 
 const form = ref<HTMLFormElement | null>(null)
 const email = ref("")
@@ -16,9 +14,14 @@ const filled = computed(() => email.value && password.value)
 const validate = async () => {
   return filled && (await form.value?.validate()).valid
 }
+const redirect = async () => {
+  await navigateTo(route.redirectedFrom || "/")
+}
+
+useHead(() => ({ title: t("login.page_title") }))
 
 const login_success = () => {
-  router.push(localePath("/"))
+  redirect()
 }
 const login_error = (e: any | Error) => {
   const error = unref(e)
@@ -43,6 +46,11 @@ const reset_validation = () => {
   loading.value = false
   form.value?.resetValidation()
 }
+
+onMounted(async () => {
+  if (auth.user === null) await auth.check_token()
+  if (auth.user?.username) redirect()
+})
 </script>
 
 <template>
@@ -71,7 +79,7 @@ const reset_validation = () => {
             :label="$t('login.email')"
             prepend-icon="mdi-account"
             validate-on="lazy submit"
-            :rules="[(v) => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
+            :rules="[v => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
             @update:modelValue="reset_validation"
             required
           />
@@ -83,7 +91,7 @@ const reset_validation = () => {
             type="password"
             prepend-icon="mdi-lock"
             validate-on="lazy submit"
-            :rules="[(v) => v !== '' || $t('login.required_field')]"
+            :rules="[v => v !== '' || $t('login.required_field')]"
             @update:modelValue="reset_validation"
             @update:focused="reset_validation"
             required

@@ -2,10 +2,11 @@ import type { UseFetchOptions } from "nuxt/app"
 import type { Composer } from "vue-i18n"
 
 async function refreshToken() {
+  const config = useRuntimeConfig()
   const token = useCookie("refreshToken").value
 
   try {
-    const response = (await $fetch("/api/auth/token/refresh/", {
+    const response = (await $fetch(`${config.public.apiBase}/api/auth/token/refresh/`, {
       method: "POST",
       data: { refresh: token },
     })) as Response
@@ -49,7 +50,7 @@ export default defineNuxtPlugin((app) => {
       }
     },
   })
-  // Expose to useNuxtApp().$apiFetch
+  // Use with: const { $api, $apiFetch } = useNuxtApp()
   return {
     provide: { api: $apiFetch, apiFetch: $apiFetch.raw },
   }
