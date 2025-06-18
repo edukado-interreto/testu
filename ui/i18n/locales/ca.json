@@ -73,6 +73,7 @@
     "create_exam_confirm": "El creador pot editar o esborrar l'exercici mentre dura l'examen. Voleu continuar?",
     "delete": "Esborreu l'exercici",
     "delete_confirm": "De debò que voleu esborrar aquest exercici?",
+    "drop_here": "drop here",
     "edit": "Editeu l'exercici",
     "error": "S'ha produït un error mentre es desava l'exercici",
     "explanation": "Explicació:",

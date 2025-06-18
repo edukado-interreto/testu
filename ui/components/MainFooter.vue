@@ -54,12 +54,12 @@ const props = defineProps<{ embedded: boolean }>()
         {{ $t("main.privacy") }}
       </nuxt-link>
     </div>
+    <Toasts />
   </v-footer>
 </template>
 
 <style scoped lang="scss">
 #erasmus {
-  
   padding: 0.6rem;
   width: 100%;
 
@@ -70,6 +70,5 @@ const props = defineProps<{ embedded: boolean }>()
 
 #footer-links {
   font-size: 12px;
-  
 }
 </style>

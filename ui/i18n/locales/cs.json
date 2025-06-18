@@ -64,6 +64,7 @@
     "create_exam_confirm": "Autor cvičení jej může během zkoušky upravovat nebo mazat. Přejete si přesto pokračovat?",
     "delete": "Smazat cvičení",
     "delete_confirm": "Opravdu chcete toto cvičení smazat?",
+    "drop_here": "drop here",
     "edit": "Upravit cvičení",
     "error": "Při ukládání zadání cvičení došlo k chybě",
     "explanation": "Vysvětlení",

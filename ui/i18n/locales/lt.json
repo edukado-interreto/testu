@@ -64,6 +64,7 @@
     "create_exam_confirm": "Egzamino rengėjas viso egzamino metu gali redaguoti arba ištrinti egzaminą. Vis tiek tęsti?",
     "delete": "Ištrinti užduotį",
     "delete_confirm": "Ar tikrai norite ištrinti šią užduotį?",
+    "drop_here": "drop here",
     "edit": "Redaguoti užduotį",
     "error": "Išsaugant užduotį įvyko klaida",
     "explanation": "Paaiškinimas",

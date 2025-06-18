@@ -64,6 +64,7 @@
     "create_exam_confirm": "Der Ersteller dieser Übung kann sie während der Prüfung bearbeiten oder löschen. Möchten Sie trotzdem fortfahren?",
     "delete": "Übung löschen",
     "delete_confirm": "Sind Sie sicher, dass Sie diese Übung löschen möchten?",
+    "drop_here": "drop here",
     "edit": "Übung bearbeiten",
     "error": "Beim Speichern der Eingabe der Übung ist ein Fehler aufgetreten.",
     "explanation": "Erläuterung",

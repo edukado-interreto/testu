@@ -46,7 +46,7 @@ const loaded_sheet: Ref<string | null> = ref(null)
 const loaded_details: Ref<string | null> = ref(null)
 
 useHead({
-  title: overwrite_id === undefined ? "New exercise" : "Edit exercise",
+  title: overwrite_id.value === undefined ? "New exercise" : "Edit exercise",
 })
 
 // computed
@@ -64,7 +64,7 @@ const age_range_label = computed(() => {
 })
 
 const fetch = async () => {
-  const { results } = await $api<DRF<Tag>>("/v1/tags/?limit=999")
+  const { results } = await $api<DRF<Tag>>("/tags/?limit=999")
   tags_available.value = results.map(tag => tag.name)
 
   if (route.query.new_from) {
@@ -78,7 +78,7 @@ const fetch = async () => {
 }
 
 const load_exercise = async (id: string) => {
-  const exercise = await $api<Exercise>(`/v1/exercises/${id}/`)
+  const exercise = await $api<Exercise>(`/exercises/${id}/`)
   sheet.value = exercise.data.sheet || []
   details.title = exercise.name
   details.description = exercise.description
@@ -122,9 +122,9 @@ const save = async () => {
     age_max: details.age_range[1] as AgeMax,
     searchable: !details.unlisted,
     data: {
-      sheet: sheet.map((e, i) => ({
+      sheet: sheet.value.map((e, i) => ({
         ...e,
-        _parsed: sheet_editor.unit[i].parsed,
+        _parsed: sheet_editor.value.unit[i].parsed,
         // inject the parsed exercises into the sheet object that will
         // be stored in the database. The code is parsed by the grand-children
         // components so we use $refs to access it here.
@@ -145,23 +145,24 @@ const save = async () => {
   // contains an exercise id, or a POST request if
   // creating a new one otherwise
   const api = {
-    path: "/v1/exercises/",
+    path: "/exercises/",
     method: "POST",
   }
-  if (overwrite_id !== undefined) {
-    api.path = `/v1/exercises/${overwrite_id}/`
+  console.log("overwrite_id:", overwrite_id.value)
+  if (overwrite_id.value !== undefined) {
+    api.path = `/exercises/${overwrite_id.value}/`
     api.method = "PUT"
   }
 
   try {
-    const ret = await $api({
-      url: api.path,
+    const data = await $api(api.path, {
       method: api.method,
       body: payload,
     })
+    console.info(" ret:", data)
     dirty.value = false
-    loaded_sheet.value = JSON.stringify(ret.data.sheet)
-    navigateTo(localePath(`/exercise/${ret.data.lid}`))
+    loaded_sheet.value = JSON.stringify(data.sheet)
+    navigateTo(localePath(`/exercise/${data.lid}`))
   } catch (e) {
     console.error({ ...e })
     const resp = e.response
@@ -171,10 +172,10 @@ const save = async () => {
         .join("\n")
       // { name: ['Field missing.', 'Other error.'], field2: ['Field too long.'] }
       // => 'name: Field missing. Other error.\nfield2: Field too long.'
-      await msgbox.alert(`Server error:\n${details}`)
+      await msgbox.value.alert(`Server error:\n${details}`)
     }
     if (resp.status > 400) {
-      await msgbox.alert(`Server error (${resp.status})`)
+      await msgbox.value.alert(`Server error (${resp.status})`)
     }
   }
 }

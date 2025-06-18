@@ -89,19 +89,18 @@ defineExpose({ hide, show, alert, confirm })
     :persistent="opts.modal"
   >
     <v-card>
-      <v-card-title
-        v-if="opts.title"
-        :class="`${opts.color} white--text text-overline py-1`"
-        v-text="opts.title"
-      />
-      <v-card-text class="text-body-1 black--text d-flex pt-5">
-        <v-icon x-large>{{ opts.icon }}</v-icon>
-        <div
-          class="ml-5"
-          style="white-space: pre-line"
-          v-text="opts.text"
-      />
-      </v-card-text>
+      <v-card-item>
+        <v-card-title
+          v-if="opts.title"
+          :color="opts.color"
+          class="text-white text-overline py-1"
+          v-text="opts.title"
+        />
+        <v-card-text class="text-body-1 text-black d-flex pt-5">
+          <v-icon x-large>{{ opts.icon }}</v-icon>
+          <div class="ml-5" style="white-space: pre-line" v-text="opts.text" />
+        </v-card-text>
+      </v-card-item>
       <v-card-actions class="pb-5">
         <v-spacer />
         <v-btn

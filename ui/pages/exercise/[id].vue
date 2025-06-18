@@ -29,9 +29,10 @@ const submitted = ref(false)
 const user_logged_in = computed(() => {
   return !!auth.user
 })
+const username = computed(() => exercise?.value?.created_by || "")
 const user_is_creator = computed(() => {
   if (!auth.user || exercise === null) return false
-  return exercise.value?.created_by === auth.user.username
+  return username.value === auth.user.username
 })
 
 const create_exam = async () => {
@@ -67,7 +68,7 @@ const create_submission = (): NewSubmission => {
     exercise: { ...exercise.value },
   }
 
-  submission.exercise.data.sheet = exercise.value.data.sheet.map((unit) => ({
+  submission.exercise.data.sheet = exercise.value.data.sheet.map(unit => ({
     ...unit,
     solved: units.value[`unit-${unit._key}`]?.get_solved(),
   }))
@@ -163,13 +164,13 @@ useHead({ title: exercise.value?.name })
             />
             <v-list-item
               v-if="!user_is_creator"
-              @click="() => (mistake_dialog = !mistake_dialog)"
+              @click="() => (mistake_dialog = true)"
               :title="t('exercise.mistake')"
               prepend-icon="mdi-format-strikethrough-variant"
             />
             <v-list-item
               v-if="!user_is_creator"
-              @click="() => (misuse_dialog = !misuse_dialog)"
+              @click="() => (misuse_dialog = true)"
               :title="t('exercise.misuse')"
               prepend-icon="mdi-alert-box"
             />
@@ -216,26 +217,26 @@ useHead({ title: exercise.value?.name })
 
     <ReportDialog
       nature="mistake"
-      :exercise="exercise.lid"
       v-model="mistake_dialog"
+      :exercise="exercise.lid"
+      :title="t('exercise.report_mistake_to_creator', { username })"
     >
-      <v-icon class="pe-3" color="warning">
-        mdi-format-strikethrough-variant
-      </v-icon>
-      {{
-        $t("exercise.report_mistake_to_creator", {
-          username: exercise.created_by,
-        })
-      }}
+      <template #prepend>
+        <v-icon class="pe-3" color="warning">
+          mdi-format-strikethrough-variant
+        </v-icon>
+      </template>
     </ReportDialog>
 
     <ReportDialog
       nature="misuse"
-      :exercise="exercise.lid"
       v-model="misuse_dialog"
+      :exercise="exercise.lid"
+      :title="t('exercise.report_misuse_to_administrators')"
     >
-      <v-icon class="pe-3" color="error">mdi-alert-box</v-icon>
-      {{ $t("exercise.report_misuse_to_administrators") }}
+      <template #prepend>
+        <v-icon class="pe-3" color="error">mdi-alert-box</v-icon>
+      </template>
     </ReportDialog>
   </v-container>
 </template>

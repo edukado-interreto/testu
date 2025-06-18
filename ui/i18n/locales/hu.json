@@ -64,6 +64,7 @@
     "create_exam_confirm": "Előfordulhat, hogy a feladat készítője a vizsga közben szerkeszteni vagy törölni fogja a feladatot. Folytassuk?",
     "delete": "Feladat törlése",
     "delete_confirm": "Biztos benne, hogy törölni szeretné ezt a feladatot?",
+    "drop_here": "drop here",
     "edit": "Feladat szerkesztése",
     "error": "Hiba történt a feladat elküldése közben",
     "explanation": "Leírás:",

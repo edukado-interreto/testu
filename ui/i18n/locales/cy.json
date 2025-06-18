@@ -64,6 +64,7 @@
     "create_exam_confirm": "Gall crëwr/raig yr ymarfer hwn ei olygu neu'i ddileu tra bod yr arholiad yn rhedeg. Myn ymhellach beth bynnag?",
     "delete": "Dilea/dilëwch ymarfer",
     "delete_confirm": "A wyt/ydych ti/chi'n siŵr dy/eich f/bod am ddileu'r ymarfer hwn?",
+    "drop_here": "drop here",
     "edit": "Golyga/wch yr ymarfer",
     "error": "Digwyddodd gwall tra cadw cyflwyniad yr ymarfer",
     "explanation": "Esboniad:",

@@ -1,101 +1,109 @@
 <script setup lang="ts">
+const instance = getCurrentInstance()
+const { t } = useI18n()
 const { confetti_shoot } = useConfettiShoot()
 const shuffle_array = useShuffleArray()
 
-const props = defineProps<{
+type Props = {
   code: string
-  shuffle: boolean
-  solved: object
-  readonly: boolean
-  silent: boolean
-}>()
+  shuffle?: boolean
+  solved?: SolvedDrags
+  readonly?: boolean
+  silent?: boolean
+  parsed?: [string, string][]
+}
+const {
+  code,
+  shuffle = false,
+  solved,
+  readonly = false,
+  silent = false,
+  parsed,
+} = defineProps<Props>()
 
+const uid = computed(() => instance?.uid || 0)
 const score_awarded = ref(0)
-const drags = ref<string[]>([])
-const movable = ref([])
-const overed = ref([])
+const drags = ref<Drags | []>([])
+const movable = ref<[boolean, boolean][] | []>([])
+const hovered = ref<[boolean, boolean][] | []>([])
 
 const update_dragging = () => {
-  drags.value = parsed.value
+  drags.value = parsed_local.value
     .map(p => p[0])
     .sort((a, b) => a.localeCompare(b))
     .map(e => [e, null])
 
-  if (props.shuffle) {
-    drags.value = shuffle_array(drags.value)
+  if (shuffle) {
+    drags.value = shuffle_array(drags.value) as Drags
   }
 
-  movable.value = parsed.value.map(p => [false, false])
-  overed.value = parsed.value.map(p => [false, false])
+  movable.value = parsed_local.value.map(p => [false, false])
+  hovered.value = parsed_local.value.map(p => [false, false])
 }
 
 const load_drags_from_solved = () => {
-  if (!props.solved || !props.solved.drags) return
+  if (!solved || !solved.drags) return
   nextTick(() => {
-    drags.value = [...props.solved.drags]
+    drags.value = [...solved.drags]
   })
 }
 
 const on_dragstart = (e, src_row, src_col) => {
-  if (props.readonly) return
+  if (readonly) return
   e.dataTransfer.setData(
     "text/plain",
-    JSON.stringify({
-      component: componentUid,
-      row: src_row,
-      col: src_col,
-    }),
+    JSON.stringify({ uid: uid.value, row: src_row, col: src_col }),
   )
 }
 
 const on_dragleave = (e, dst_row, dst_col) => {
-  if (props.readonly) return
-  overed.value[dst_row][dst_col] = false
+  if (readonly) return
+  hovered.value[dst_row][dst_col] = false
 }
 
 const on_dragover = (e, dst_row, dst_col) => {
-  if (props.readonly) return
+  if (readonly) return
   if (drags.value[dst_row][dst_col] !== null) return
   e.preventDefault()
 }
 
 const on_dragenter = (e, dst_row, dst_col) => {
-  if (props.readonly) return
+  if (readonly) return
   if (drags.value[dst_row][dst_col] !== null) return
   e.preventDefault()
-  overed.value[dst_row][dst_col] = true
+  hovered.value[dst_row][dst_col] = true
 }
 
 const on_drop = (e, dst_row, dst_col) => {
-  if (props.readonly) return
+  if (readonly) return
   let src
   try {
     src = JSON.parse(e.dataTransfer.getData("text"))
-    if (src.component !== componentUid) throw "Cross-component drop"
+    if (src.uid !== uid.value) throw "Cross-component drop"
   } catch (e) {
-    overed.value[dst_row][dst_col] = false
+    hovered.value[dst_row][dst_col] = false
     return
   }
   e.preventDefault()
   drags.value[dst_row][dst_col] = drags.value[src.row][src.col]
   drags.value[src.row][src.col] = null
-  overed.value[dst_row][dst_col] = false
+  hovered.value[dst_row][dst_col] = false
 
   if (dst_col === 1 && success.value[dst_row]) {
-    if (!props.silent) {
+    if (!silent) {
       confetti_shoot(guess_col.value[dst_row])
     }
   }
 }
 
-const get_solved = () => ({
-  parsed: parsed.value,
+const get_solved = (): SolvedDrags => ({
+  parsed: parsed_local.value,
   drags: drags.value,
 })
 
-const parsed = computed(() => {
-  if (props.solved) return props.solved.parsed || []
-  return props.code
+const parsed_local = computed(() => {
+  if (solved) return solved.parsed || []
+  return code
     .split("\n\n")
     .map((s, i) => {
       let [src, dst] = s.split(/==(.*)/s).map(s => s.trim())
@@ -110,7 +118,7 @@ const parsed = computed(() => {
 const success = computed(() => {
   return drags.value.map((pair, i) => {
     if (pair[1] === null) return undefined
-    return pair[1] === parsed.value[i][0]
+    return pair[1] === parsed_local.value[i][0]
   })
 })
 
@@ -118,18 +126,18 @@ const score_available = computed(() => 0) // TODO
 
 load_drags_from_solved()
 
-watch(() => props.solved, load_drags_from_solved)
-watch(() => props.shuffle, update_dragging)
-watch(parsed, update_dragging)
+watch(() => solved, load_drags_from_solved)
+watch(() => shuffle, update_dragging)
+watch(parsed_local, update_dragging)
 
-onMounted(() => {
-  update_dragging()
-})
+onMounted(update_dragging)
+
+defineExpose({ get_solved })
 </script>
 
 <template>
   <div class="mb-5">
-    <v-row dense v-for="(pair, i) in drags" :key="parsed[i][1]">
+    <v-row dense v-for="(pair, i) in drags" :key="parsed_local[i][1]">
       <v-col cols="4">
         <div class="mr-4 fill-height">
           <!--
@@ -145,32 +153,28 @@ onMounted(() => {
             <v-sheet
               rounded
               :elevation="2"
-              class="pa-1 fill-height"
-              style="position: relative"
+              class="d-flex align-center fill-height"
             >
-              <div class="pa-1 mr-7">
-                <RichContent :text="pair[0]" />
-              </div>
-              <v-icon
-                class="pa-2"
-                style="position: absolute; right: 0; top: 0; cursor: move"
-                :disabled="readonly === true"
-                @mouseenter="$set(movable[i], 0, true)"
-                @touchstart="$set(movable[i], 0, true)"
-                @mouseleave="$set(movable[i], 0, false)"
-                @touchend="$set(movable[i], 0, false)"
-              >
-                mdi-drag
-              </v-icon>
+              <RichContent class="v-col" :text="pair[0]" />
+              <v-col class="flex-grow-0">
+                <v-icon
+                  class="cursor-move"
+                  :disabled="readonly === true"
+                  @mouseenter="movable[i][0] = true"
+                  @touchstart="movable[i][0] = true"
+                  @mouseleave="movable[i][0] = false"
+                  @touchend="movable[i][0] = false"
+                >
+                  mdi-drag
+                </v-icon>
+              </v-col>
             </v-sheet>
           </div>
           <v-sheet
             v-else
             rounded
-            :class="
-              'pa-2 grey grey--text text-center fill-height ' +
-              (overed[i][0] ? 'lighten-2' : 'lighten-5')
-            "
+            :color="hovered[i][0] ? 'grey-lighten-2' : 'grey-lighten-5'"
+            class="drop-zone pa-2 text-grey border-t border-s text-center fill-height"
             @drop="on_drop($event, i, 0)"
             @dragenter="on_dragenter($event, i, 0)"
             @dragleave="on_dragleave($event, i, 0)"
@@ -190,69 +194,101 @@ onMounted(() => {
           <v-sheet
             rounded
             :elevation="2"
-            class="pa-1 fill-height"
-            style="position: relative"
+            class="d-flex align-center fill-height"
           >
-            <div class="pa-1 mr-7">
-              <RichContent :text="pair[1]" />
-            </div>
-            <v-icon
-              class="pa-2"
-              style="position: absolute; right: 0; top: 0; cursor: move"
-              :disabled="readonly === true"
-              @mouseenter="$set(movable[i], 1, true)"
-              @touchstart="$set(movable[i], 1, true)"
-              @mouseleave="$set(movable[i], 1, false)"
-              @touchend="$set(movable[i], 1, false)"
-            >
-              mdi-drag
-            </v-icon>
+            <RichContent class="v-col" :text="pair[1]" />
+            <v-col class="flex-grow-0">
+              <v-icon
+                class="cursor-move"
+                :disabled="readonly === true"
+                @mouseenter="movable[i][1] = true"
+                @touchstart="movable[i][1] = true"
+                @mouseleave="movable[i][1] = false"
+                @touchend="movable[i][1] = false"
+              >
+                mdi-drag
+              </v-icon>
+            </v-col>
           </v-sheet>
         </div>
         <v-sheet
           v-else
           rounded
-          :class="
-            'pa-2 grey grey--text ' +
-            'd-flex justify-center align-center fill-height ' +
-            (overed[i][1] ? 'lighten-2' : 'lighten-4')
-          "
+          class="drop-zone border-t border-s pa-2 text-grey d-flex justify-center align-center fill-height"
+          :color="hovered[i][1] ? 'grey-lighten-2' : 'grey-lighten-4'"
           @drop="on_drop($event, i, 1)"
           @dragenter="on_dragenter($event, i, 1)"
           @dragleave="on_dragleave($event, i, 1)"
           @dragover="on_dragover($event, i, 1)"
         >
-          <div style="pointer-events: none; touch-action: none">drop here</div>
-        </v-sheet>
-      </v-col>
-      <v-col cols="4" style="position: relative">
-        <v-sheet rounded :elevation="2" class="pa-1 mr-7 fill-height">
-          <div class="pa-1">
-            <RichContent :text="parsed[i][1]" />
+          <div class="drop-zone-text">
+            {{ t("exercise.drop_here") }}
           </div>
         </v-sheet>
-        <div
-          v-if="!silent && success !== undefined"
-          style="position: absolute; right: 4px; top: 10px"
-        >
-          <v-icon v-if="success[i] === true" color="success">
-            mdi-check-bold
-          </v-icon>
-          <v-icon v-if="success[i] === false" color="error">
-            mdi-close-thick
-          </v-icon>
-        </div>
+      </v-col>
+      <v-col cols="4" class="d-flex flex-wrap">
+        <TransitionGroup name="result">
+          <v-sheet
+            rounded
+            cols="11"
+            :elevation="2"
+            class="v-col align-center fill-height"
+            key="answer"
+          >
+            <RichContent :text="parsed_local[i][1]" />
+          </v-sheet>
+          <v-col
+            cols="1"
+            v-if="!silent && success !== undefined"
+            key="feedback"
+          >
+            <v-icon v-if="success[i] === true" color="success">
+              mdi-check-bold
+            </v-icon>
+            <v-icon v-if="success[i] === false" color="error">
+              mdi-close-thick
+            </v-icon>
+          </v-col>
+        </TransitionGroup>
       </v-col>
     </v-row>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 li {
   margin-bottom: 1.25em;
   line-height: 2.25em;
 }
 .pre-line {
   white-space: pre-line;
+}
+.drop-zone {
+  transition: background-color 300ms ease-out;
+
+  .drop-zone-text {
+    pointer-events: none;
+    touch-action: none;
+    text-shadow: 0 1px white;
+  }
+}
+.result {
+  &-move,
+  &-enter-active,
+  &-leave-active {
+    transition: all 300ms ease;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+
+  /* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+  &-leave-active {
+    position: absolute;
+  }
 }
 </style>

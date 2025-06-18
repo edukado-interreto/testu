@@ -1,4 +1,4 @@
-const shuffle_array = (in_array: string[]) => {
+const shuffle_array = (in_array: unknown[]) => {
   /**
    * Shuffle an array using the Fisher-Yates algorithm,
    * O(n), un-biased.
@@ -7,8 +7,8 @@ const shuffle_array = (in_array: string[]) => {
   const out_array = in_array.slice()
   // clone the input array
 
-  let currentIndex = out_array.length,
-    randomIndex
+  let currentIndex = out_array.length
+  let randomIndex: typeof currentIndex
 
   // While there remain elements to shuffle...
   while (currentIndex !== 0) {

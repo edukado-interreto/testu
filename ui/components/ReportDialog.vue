@@ -1,69 +1,90 @@
 <script setup lang="ts">
-const { $api } = useNuxtApp()
+const { $apiFetch } = useNuxtApp()
 const { t } = useI18n()
+const toasts = useToasts()
 
-const props = defineProps<{ exercise: string; nature: "mistake" | "misuse" }>()
-const emit = defineEmits<{ input: [value: boolean] }>()
+type Props = { exercise: string; nature: UserReport["nature"]; title: string }
+const { exercise, nature, title } = defineProps<Props>()
+const model = defineModel({ type: Boolean })
 
-const toasts: Component | null = ref(null)
+const EXPLANATION_MIN_LENGTH = 8
 
-const description = ref("")
+const valid = ref(false)
+const explanation = ref("")
 const disabled = ref(false)
-
-const close = () => emit("input", false)
+const rules = {
+  length: (len: number) => (v: string) => (v || "").length >= len,
+}
+const close = () => {
+  model.value = false
+}
 
 const submit = async () => {
   disabled.value = true
 
-  const response = await $api("reports/", {
+  const response = await $apiFetch<UserReport>("reports/", {
     method: "POST",
-    body: {
-      exercise: props.exercise,
-      nature: props.nature,
-      description: description.value,
-    },
+    body: { exercise, nature, description: explanation.value },
   })
   if (response?.status !== 201) throw response
 
-  toasts.success(t(`exercise.submit_${props.nature}_confirm`))
-  description.value = ""
+  const label = {
+    misuse: "exercise.submit_misuse_confirm",
+    mistake: "exercise.submit_mistake_confirm",
+  }[nature]
+  toasts.success(t(label))
+  explanation.value = ""
   disabled.value = false
   close()
 }
+
+defineExpose({ close })
 </script>
 
 <template>
   <div>
-    <v-dialog v-bind="$attrs" max-width="500px">
-      <v-card>
-        <v-form ref="flag_form" :disabled="disabled">
-          <v-card-title><slot /></v-card-title>
-          <v-card-text>
+    <v-dialog v-model="model" max-width="500px">
+      <v-card :title="title">
+        <template #prepend>
+          <slot name="prepend" />
+        </template>
+        <v-card-text>
+          <v-form
+            :id="`report-${nature}`"
+            v-model="valid"
+            tag="form"
+            ref="flag_form"
+            :disabled="disabled"
+          >
             <v-textarea
+              autofocus
               @keypress.ctrl.enter="submit"
-              v-model="description"
+              v-model="explanation"
               rows="2"
-              outlined
-              :label="$t('exercise.explanation')"
-            />
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer />
-            <v-btn @click="close">
-              {{ $t("main.cancel") }}
-            </v-btn>
-            <v-btn
-              type="submit"
               color="primary"
-              @click.prevent="submit"
-              :disabled="disabled"
-            >
-              {{ $t("main.submit") }}
-            </v-btn>
-          </v-card-actions>
-        </v-form>
+              variant="outlined"
+              counter
+              :rules="[rules.length(EXPLANATION_MIN_LENGTH)]"
+              :label="t('exercise.explanation')"
+            />
+          </v-form>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn @click="close">
+            {{ t("main.cancel") }}
+          </v-btn>
+          <v-btn
+            type="submit"
+            :form="`report-${nature}`"
+            color="primary"
+            @click.prevent="submit"
+            :disabled="disabled || !valid"
+          >
+            {{ t("main.submit") }}
+          </v-btn>
+        </v-card-actions>
       </v-card>
     </v-dialog>
-    <Toast ref="toasts" />
   </div>
 </template>

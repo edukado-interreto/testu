@@ -64,6 +64,7 @@
     "create_exam_confirm": "Twórca tego ćwiczenia może je edytować lub usuwać podczas trwania egzaminu. Kontynuować mimo wszystko?",
     "delete": "Usunąć ćwiczenie",
     "delete_confirm": "Czy na pewno chcesz usunąć to ćwiczenie?",
+    "drop_here": "drop here",
     "edit": "Edycja ćwiczenia",
     "error": "Wystąpił błąd podczas zapisywania przesłanego ćwiczenia",
     "explanation": "Wyjaśnienie:",

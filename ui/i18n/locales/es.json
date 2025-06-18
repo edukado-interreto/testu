@@ -56,6 +56,7 @@
     "create_exam_confirm": "El creador de este ejercicio puede editarlo o eliminarlo mientras el examen esté en curso. ¿Deseas continuar de todos modos?",
     "delete": "Eliminar ejercicio",
     "delete_confirm": "¿Estás seguro de que deseas eliminar este ejercicio?",
+    "drop_here": "drop here",
     "edit": "Editar ejercicio",
     "error": "Se produjo un error al guardar el envío del ejercicio",
     "language": "Idioma",

@@ -1,4 +1,4 @@
-ype Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] extends N
+type Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] extends N
   ? Acc[number]
   : Enumerate<N, [...Acc, Acc["length"]]>
 
@@ -6,9 +6,43 @@ type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate
 
 declare global {
   /* App */
+
   type VueElement = { [k: string]: Element | ComponentPublicInstance | null }
 
+  type DRF<T> = {
+    previous: string | null
+    next: string | null
+    count: number
+    results: T[]
+  }
+
+  type MsgBoxOptions = {
+    buttons?: {
+      value: boolean
+      text: string
+    }[]
+    color?: string
+    icon?: string
+    max_width?: number
+    modal?: boolean
+    text?: string
+    title?: string
+  }
+
+  type Toast = {
+    text: string
+    color: string
+  }
+
+  type UserReport = {
+    user: number
+    exercise: string
+    nature: "mistake" | "misuse"
+    description: string
+  }
+
   /* Auth */
+
   type User = {
     id: number
     username: string
@@ -33,7 +67,7 @@ declare global {
   type UnitType = "default" | "open_answer" | "multiple_choice" | "pairing"
 
   type UnitComponent = (unit_type: UnitType) => {
-    get_solved: () => { parsed: Token[][] }
+    get_solved: () => Solved
   }
 
   type Cefr = "A1" | "A2" | "B1" | "B2" | "C1" | "C2"
@@ -92,13 +126,6 @@ declare global {
       code: string
       description?: string
     }
-  }
-
-  type DRF<T> = {
-    previous: string | null
-    next: string | null
-    count: number
-    results: T[]
   }
 
   type Unit = {
@@ -166,6 +193,15 @@ declare global {
     count: number
   }
 
+  type Solved = {
+    parsed: Token[][]
+  }
+
+  type SolvedDrags = {
+    parsed: [string, string][]
+    drags: Drags
+  }
+
   type Token = {
     token?: string
     options?: Option[]
@@ -175,18 +211,7 @@ declare global {
     errorExplanation?: string
   }
 
-  type MsgBoxOptions = {
-    buttons?: {
-      value: boolean
-      text: string
-    }[]
-    color?: string
-    icon?: string
-    max_width?: number
-    modal?: boolean
-    text?: string
-    title?: string
-  }
+  type Drags = ([string, string] | [string, null])[]
 }
 
 declare module "nuxt/schema" {

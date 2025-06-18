@@ -64,6 +64,7 @@
     "create_exam_confirm": "Tvorca tohto cvičenia ho môže upraviť alebo vymazať, kým skúška prebieha. Chcete napriek tomu pokračovať?",
     "delete": "Zmazať cvičenie",
     "delete_confirm": "Naozaj chcete odstrániť toto cvičenie?",
+    "drop_here": "drop here",
     "edit": "Upraviť cvičenie",
     "error": "Pri ukladaní zadania cvičenia sa vyskytla chyba",
     "explanation": "Vysvetlenie:",
