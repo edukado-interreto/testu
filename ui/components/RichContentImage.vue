@@ -6,7 +6,7 @@
       contain
       max-height="150"
       @error="broken = true"
-     />
+    />
     <div v-else class="grey--text">
       <v-icon small>mdi-alert-outline</v-icon>
       <i>Invalid image: {{ content }}</i>

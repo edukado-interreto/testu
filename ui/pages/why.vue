@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const point = (idx) => `why.point${idx + 1}`
-const title = (idx) => [point(idx), "title"].join(".")
-const subtitle = (idx) => [point(idx), "subtitle"].join(".")
+const point = idx => `why.point${idx + 1}`
+const title = idx => [point(idx), "title"].join(".")
+const subtitle = idx => [point(idx), "subtitle"].join(".")
 </script>
 
 <template>

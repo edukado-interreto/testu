@@ -12,7 +12,7 @@ const PAGE_LENGTH = 30
 const offset = useRouteQuery("offset", "0", { transform: Number })
 
 const table = computed(() => {
-  const items = submissions.value?.results.map((s) => ({
+  const items = submissions.value?.results.map(s => ({
     pk: s.pk,
     created: new Date(s.created),
     is_exam: !!s.exam_lid,
@@ -48,7 +48,7 @@ const {
 const stats = computed(() => {
   const days: { [key: string]: number } = {}
 
-  submissions.value?.results.forEach((s) => {
+  submissions.value?.results.forEach(s => {
     const dateWithoutTime = new Date(s.created).setHours(0, 0, 0, 0) // as int
     days[dateWithoutTime] = days[dateWithoutTime] + 1 || 1
   })
@@ -58,7 +58,7 @@ const stats = computed(() => {
     .sort(
       (a, b) => a[0] - b[0], // oldest to newest
     )
-    .map((a) => ({
+    .map(a => ({
       day: new Date(a[0] * 1).toLocaleString(locale.value, {
         dateStyle: "short",
       }),
@@ -69,7 +69,7 @@ const stats = computed(() => {
   //   { "day": "2/23/23", "value": 9 }
   // ]
 
-  const empties = [...Array(7 - days_array.length)].map((a) => ({
+  const empties = [...Array(7 - days_array.length)].map(a => ({
     day: "·",
     value: 0,
   }))
@@ -86,8 +86,8 @@ const stats = computed(() => {
   // ]
 
   return {
-    labels: days_array.map((a) => a.day),
-    values: days_array.map((a) => a.value),
+    labels: days_array.map(a => a.day),
+    values: days_array.map(a => a.value),
   }
   // {
   //   "labels": [ "2/17/23", "2/23/23" ],

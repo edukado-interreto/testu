@@ -43,7 +43,7 @@ const success = computed(() => {
    * The correctness status of each checkbox
    * @returns: [ true | false ]
    */
-  return choices.value.map((c) => {
+  return choices.value.map(c => {
     const checked = answer.value.includes(c.value)
     if (checked && c.right === true) return true
     if (!checked && c.right === false) return true
@@ -52,7 +52,7 @@ const success = computed(() => {
 })
 
 const correct_answers = computed(() => {
-  return choices.value.map((c) => c.right)
+  return choices.value.map(c => c.right)
 })
 
 const show_success_feedback = computed(() => {
@@ -67,21 +67,21 @@ const show_success_feedback = computed(() => {
   )
 })
 
-const is_correct_answer = (i) => {
+const is_correct_answer = i => {
   if (props.silent === true) return false
   return correct_answers.value[i]
 }
 
-const is_checked = (i) => {
+const is_checked = i => {
   return answer.value.includes(choices.value[i])
 }
 
-const is_error = (i) => {
+const is_error = i => {
   if (props.silent) return false
   return success[i] === false
 }
 
-const on_change = (i) => {
+const on_change = i => {
   emit("update:answer", answer.value)
 
   if (props.silent) return
@@ -91,7 +91,7 @@ const on_change = (i) => {
   }
 }
 
-const shuffle_array = (in_array) => {
+const shuffle_array = in_array => {
   /**
    * Shuffle an array using the Fisher-Yates algorithm,
    * O(n), un-biased.
@@ -118,13 +118,15 @@ const shuffle_array = (in_array) => {
   return out_array
 }
 
-watch(answer, (v) => {
+watch(answer, v => {
   emit("input", v)
 })
 
 watchEffect(() => {
   props.silent &&
-    answer.value.map((v) => on_change(choices.value.findIndex((c) => c.value === v)))
+    answer.value.map(v =>
+      on_change(choices.value.findIndex(c => c.value === v)),
+    )
 })
 
 defineExpose({ success, answer, choices })
@@ -139,7 +141,11 @@ defineExpose({ success, answer, choices })
       :value="choice.value"
       :hide-details="true"
       @change="on_change(i)"
-      :ref="(el) => {checkbox.push(el)}"
+      :ref="
+        el => {
+          checkbox.push(el)
+        }
+      "
       :key="choice.value"
       :readonly="readonly"
       :color="silent ? 'primary' : is_correct_answer(i) ? 'green' : 'grey'"

@@ -157,7 +157,7 @@ defineExpose({ get_solved })
             dense
           >
             <v-col
-              class="flex-grow-0 cursor-hand first"
+              class="flex-grow-0 cursor-move first"
               @mouseenter="movable[i][0] = true"
               @touchstart="movable[i][0] = true"
               @mouseleave="movable[i][0] = false"

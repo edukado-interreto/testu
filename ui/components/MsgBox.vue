@@ -89,27 +89,24 @@ defineExpose({ hide, show, alert, confirm })
     :persistent="opts.modal"
   >
     <v-card>
-      <v-card-item>
-        <v-card-title
-          v-if="opts.title"
-          :color="opts.color"
-          class="text-white text-overline py-1"
-          v-text="opts.title"
-        />
-        <v-card-text class="text-body-1 text-black d-flex pt-5">
-          <v-icon x-large>{{ opts.icon }}</v-icon>
-          <div class="ml-5" style="white-space: pre-line" v-text="opts.text" />
-        </v-card-text>
-      </v-card-item>
-      <v-card-actions class="pb-5">
+      <v-card-title
+        v-if="opts.title"
+        :class="`bg-${opts.color} text-white text-overline py-2`"
+        v-text="opts.title"
+      />
+      <v-card-text class="text-body-1 text-black d-flex align-center pt-5">
+        <v-icon size="x-large" color="grey-darken-2">{{ opts.icon }}</v-icon>
+        <div class="ml-5" style="white-space: pre-line" v-text="opts.text" />
+      </v-card-text>
+      <v-card-actions class="pa-5">
         <v-spacer />
         <v-btn
           v-for="btn in opts?.buttons || []"
           :key="btn.value.toString()"
           v-text="btn.text"
-          :color="btn.value ? 'primary' : undefined"
+          :color="btn.value ? 'primary' : 'tertiaryy'"
           @click="onclick($event, btn.value)"
-          outlined
+          variant="outlined"
         />
       </v-card-actions>
     </v-card>

@@ -10,12 +10,16 @@ const vuetify = createVuetify({
   directives,
   theme: {
     themes: {
+      dark: {
+        dark: true,
+      },
       light: {
         dark: false,
         colors: {
           primary: colors.blue.darken2,
           accent: colors.pink.accent4,
           secondary: colors.amber.darken3,
+          tertiary: colors.grey.darken2,
           info: colors.teal.lighten1,
           warning: colors.amber.darken3,
           error: colors.pink.accent2,

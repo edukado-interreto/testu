@@ -14,7 +14,7 @@ const open = (content: Content) => {
   dialog.value = true
   title.value = content?.title || ""
   message.value = content?.message || ""
-  return new Promise<boolean>((resolver) => {
+  return new Promise<boolean>(resolver => {
     resolve = resolver
   })
 }

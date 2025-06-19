@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type PlayGapSelect from "~/components/PlayGapSelect.vue"
 
 const tokenize = useTokenize()
 const props = defineProps<{
@@ -18,14 +17,14 @@ const on_answer = (answer, i, j) => {
   // right answers. We access the computed
   // 'success' prop of each child component
   // to get the amount of successful answers.
-  score_awarded.value = gaps.value.filter((c) => !!c.success).length
+  score_awarded.value = gaps.value.filter(c => !!c.success).length
 }
 
 const get_solved = () => {
   // inject the answers into "parsed"
   // and return the whole object
   let i = 0
-  const parsed_filled: Token[][] = parsed.value.map((s) =>
+  const parsed_filled: Token[][] = parsed.value.map(s =>
     s.map((t: Token) => {
       if (t.token != "gap") return t
       const new_t = JSON.parse(JSON.stringify(t))
@@ -41,7 +40,7 @@ const get_solved = () => {
 }
 
 const score_available = computed(() => {
-  return parsed.value.flatMap((row) => row.filter((t) => t.token === "gap")).length
+  return parsed.value.flatMap(row => row.filter(t => t.token === "gap")).length
 })
 
 const parsed: ComputedRef<Token[][]> = computed(() => {

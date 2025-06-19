@@ -68,7 +68,7 @@ const validate = () => signup_form.value?.validate()
           density="compact"
           v-model="username"
           :label="$t('login.username')"
-          :rules="[(v) => v !== '' || $t('login.required_field')]"
+          :rules="[v => v !== '' || $t('login.required_field')]"
           required
         />
         <v-text-field
@@ -76,7 +76,7 @@ const validate = () => signup_form.value?.validate()
           density="compact"
           v-model="email"
           :label="$t('login.email')"
-          :rules="[(v) => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
+          :rules="[v => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
           type="email"
           name="email"
           validate-on="blur"
@@ -88,7 +88,7 @@ const validate = () => signup_form.value?.validate()
           v-model="password"
           :label="$t('login.password')"
           type="password"
-          :rules="[(v) => v !== '' || $t('login.required_field')]"
+          :rules="[v => v !== '' || $t('login.required_field')]"
           required
         />
         <v-btn type="submit" color="primary" class="mt-2">

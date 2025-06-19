@@ -83,7 +83,7 @@ function onChange() {
 }
 
 // Watcher
-watch(answer, (newValue) => {
+watch(answer, newValue => {
   emit("input", newValue)
 })
 defineExpose({ answer, choices })
@@ -93,7 +93,7 @@ defineExpose({ answer, choices })
   <span class="print">
     <span
       class="choice"
-      v-for="choice in choices.map((c) => c.value)"
+      v-for="choice in choices.map(c => c.value)"
       :key="choice"
       v-text="choice"
     />

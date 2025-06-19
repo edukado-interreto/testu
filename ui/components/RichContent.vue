@@ -8,11 +8,7 @@
           <v-icon small>mdi-alert-outline</v-icon>
           <i>Invalid image: {{ t.content }}</i>
         </div>
-        <RichContentImage
-          v-else
-          :src="t.src"
-          :content="t.content"
-         />
+        <RichContentImage v-else :src="t.src" :content="t.content" />
       </template>
 
       <template v-if="t.type == 'video'">
@@ -28,7 +24,7 @@
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-         />
+        />
       </template>
 
       <template v-if="t.type == 'sound'">
@@ -36,11 +32,7 @@
           <v-icon small>mdi-alert-outline</v-icon>
           <i>Invalid audio: {{ t.content }}</i>
         </div>
-        <RichContentSound
-          v-else
-          :src="t.src"
-          :content="t.content"
-         />
+        <RichContentSound v-else :src="t.src" :content="t.content" />
       </template>
     </template>
   </div>
@@ -97,7 +89,7 @@ export default {
 
           return ret
         })
-        .filter((t) => t.content)
+        .filter(t => t.content)
     },
   },
   methods: {

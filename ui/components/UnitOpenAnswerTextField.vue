@@ -56,7 +56,7 @@ const choices = computed(() => {
  * @returns {int}
  */
 const longest_choice_length = computed(() => {
-  return Math.max(...choices.value.map((s) => s.length))
+  return Math.max(...choices.value.map(s => s.length))
 })
 
 /**
@@ -88,10 +88,10 @@ const success = computed(() => {
   // s && props.ignore_case ? s.toLowerCase() : s
 
   const current_option = props.options.find(
-    (option) => adapt_str(option.value) === adapt_str(answer.value),
+    option => adapt_str(option.value) === adapt_str(answer.value),
   )
 
-  if (props.options.every((o) => o.right === true)) {
+  if (props.options.every(o => o.right === true)) {
     // the options list contains only one (or more) right option(s),
     // e.g.: "2+2 = [+4]" or "red is a [+color|+colour]".
     // In this case, we consider wrong (success = false) any
@@ -112,7 +112,7 @@ const on_change = () => {
   if (props.success && select.value) confetti_shoot(select.value)
 }
 
-watch(answer, (value) => {
+watch(answer, value => {
   emit("input", value)
 })
 </script>

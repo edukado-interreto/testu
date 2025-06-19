@@ -18,14 +18,14 @@ const on_answer = (answer, i, j) => {
   // right answers. We access the computed
   // 'success' prop of each child component
   // to get the amount of successful answers.
-  props.score_awarded = gaps.value.filter((c) => !!c.success).length
+  props.score_awarded = gaps.value.filter(c => !!c.success).length
 }
 const get_solved = () => {
   // inject the answers into "parsed"
   // and return the whole object
   let i = 0
-  const parsed_filled = parsed.map((phrase) =>
-    phrase.map((token) => {
+  const parsed_filled = parsed.map(phrase =>
+    phrase.map(token => {
       if (token.token != "gap") return token
       token.answer = gaps.value[i].answer
       i++
@@ -37,7 +37,7 @@ const get_solved = () => {
   }
 }
 const score_available = computed(() => {
-  return parsed.flatMap((line) => line.filter((t) => t.token === "gap")).length
+  return parsed.flatMap(line => line.filter(t => t.token === "gap")).length
 })
 const parsed: ComputedRef<Token[][]> = computed(() => {
   if (props.solved !== undefined) return props.solved.parsed
@@ -66,7 +66,7 @@ const parsed: ComputedRef<Token[][]> = computed(() => {
               :once="false"
               :error-explanation="token.errorExplanation"
               :readonly="readonly"
-              :ref="(el) => gaps.push(el)"
+              :ref="el => gaps.push(el)"
               :silent="silent"
               :success="token.right || false"
               @answer="on_answer($event, i, j)"

@@ -3,7 +3,9 @@ const { $api } = useNuxtApp()
 
 const props = defineProps<{ item: object }>()
 const liked = ref(false)
-const $store = { getters: { "authenticator/authUser": { username: "USERNAME" } } }
+const $store = {
+  getters: { "authenticator/authUser": { username: "USERNAME" } },
+}
 const emit = defineEmits(["liked"])
 
 const user = computed(() => {
@@ -29,7 +31,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <v-btn v-bind="$attrs" @click="click" :disabled="!user" class="d-print-none" variant="text">
+  <v-btn
+    v-bind="$attrs"
+    @click="click"
+    :disabled="!user"
+    class="d-print-none"
+    variant="text"
+  >
     <v-hover v-slot:default="{ isHovering, props }">
       <v-icon
         v-bind="props"

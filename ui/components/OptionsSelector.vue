@@ -75,7 +75,7 @@ export default {
   mounted() {
     const combobox = this.$refs.combobox
 
-    combobox.$refs.input.addEventListener("input", (e) => {
+    combobox.$refs.input.addEventListener("input", e => {
       // NOTE: this may not be bulletproof
 
       if (
@@ -110,7 +110,7 @@ export default {
       // other option get removed too.
       // Using '\0' instead is a workaround for
       // this issue.
-      this.optionsModel = [...this.optionsModel.filter((e) => e != "\0"), "\0"]
+      this.optionsModel = [...this.optionsModel.filter(e => e != "\0"), "\0"]
     },
     keydown(e) {
       // append an empty string to the model on Ctrl+Enter
@@ -130,7 +130,7 @@ export default {
       this[k] = val
     },
     unescapeEmpty(arr) {
-      return arr.map((e) => (e == "\0" ? "" : e))
+      return arr.map(e => (e == "\0" ? "" : e))
     },
   },
   watch: {
@@ -149,7 +149,7 @@ export default {
 
       this.$emit(
         "input",
-        u_val.map((e) => ({
+        u_val.map(e => ({
           value: e,
           right: u_checkedModel.includes(e),
         })),
@@ -161,7 +161,7 @@ export default {
 
       this.$emit(
         "input",
-        u_optionsModel.map((e) => ({
+        u_optionsModel.map(e => ({
           value: e,
           right: u_val.includes(e),
         })),
@@ -169,18 +169,18 @@ export default {
     },
     value: {
       handler(val) {
-        val = val.map((e) => ({
+        val = val.map(e => ({
           right: e.right,
           value: e.value == "" ? "\0" : e.value,
         }))
 
         this.updateData(
           "optionsModel",
-          val.map((e) => e.value),
+          val.map(e => e.value),
         )
         this.updateData(
           "checkedModel",
-          val.filter((e) => e.right).map((e) => e.value),
+          val.filter(e => e.right).map(e => e.value),
         )
       },
       deep: true,

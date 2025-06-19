@@ -18,21 +18,22 @@ const tokenize = useTokenize()
 
 const score_awarded = ref(0)
 
-const gaps: Ref<{ [k: string]: Element | ComponentPublicInstance | null }> = ref({})
+const gaps: Ref<{ [k: string]: Element | ComponentPublicInstance | null }> =
+  ref({})
 
 const on_answer = (answer, i, j) => {
   // We use this event to update the amount of
   // right answers. We access the computed
   // 'success' prop of each child component
   // to get the amount of successful answers.
-  score_awarded.value = gaps.value.filter((c) => !!c.success).length
+  score_awarded.value = gaps.value.filter(c => !!c.success).length
 }
 const get_solved = () => {
   // inject the answers into "parsed"
   // and return the whole object
   let i = 0
-  const parsed_filled = parsed.value.map((s) =>
-    s.map((t) => {
+  const parsed_filled = parsed.value.map(s =>
+    s.map(t => {
       if (t.token != "gap") return t
       const new_t = JSON.parse(JSON.stringify(t))
       new_t.answer = gaps.value[i]?.answer
@@ -47,7 +48,7 @@ const get_solved = () => {
 }
 
 const score_available = computed(() => {
-  return parsed.value.flatMap((row) => row.filter((t) => t.token === "gap")).length
+  return parsed.value.flatMap(row => row.filter(t => t.token === "gap")).length
 })
 
 const parsed: ComputedRef<Token[][]> = computed(() => {
@@ -79,15 +80,11 @@ defineExpose({ get_solved })
               :shuffle="solved === undefined ? shuffle : false"
               :error-explanation="token.errorExplanation"
               :readonly="readonly"
-              :ref="(el) => gaps[i] = el"
+              :ref="el => (gaps[i] = el)"
               @answer="on_answer($event, i, j)"
               :silent="silent"
             />
-            <span
-              :key="j"
-              v-if="token.token === 'text'"
-              v-text="token.value"
-            />
+            <span :key="j" v-if="token.token === 'text'" v-text="token.value" />
           </template>
         </li>
       </ol>
