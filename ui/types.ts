@@ -158,8 +158,9 @@ declare global {
   }
 
   type Search = {
+    limit: number
     offset: number
-    text: string
+    name: string
     tags: Tag[]
     created_by: Author["username"]
     src_langs: Lang[]
@@ -167,7 +168,7 @@ declare global {
       langs: Lang[]
       levels: [CefrValue, CefrValue]
     }
-    sort: string
+    sort: "created" | "likes" | "-created" | "-likes"
   }
 
   type Option = {

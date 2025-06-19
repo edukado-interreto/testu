@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useDebounceFn as debounce } from "@vueuse/core"
+
 const { $api } = useNuxtApp()
 const { t } = useI18n()
 const localePath = useLocalePath()
@@ -8,43 +10,48 @@ const cefr = useCefr()
 const loading = ref(false)
 const page_length = ref(0)
 const on_page_update = () => {}
+const on_options_update = (options: object) => {
+  console.table(options)
+}
 
-const INITIAL_LIMIT = 20
-const initial_limit = ref(20)
-const no_exercise = ref(true)
-const exercise_limit = computed(() =>
-  initial_limit.value ? `?limit=${initial_limit.value}` : "",
-)
+const TYPING_DEBOUNCE_MS = 300
+const PAGE_SIZE = 20
+const page = shallowRef(1)
+const search = reactive<Search>({
+  limit: PAGE_SIZE,
+  offset: (page.value - 1) * PAGE_SIZE,
+  name: "",
+  tags: [],
+  created_by: "",
+  src_langs: [],
+  lang_learn: {
+    langs: [],
+    levels: [cefr.MIN, cefr.MAX],
+  },
+  sort: "-created",
+})
 
 const {
   data: exercises,
+  error,
   status,
   refresh,
-} = useLazyAsyncData(
+} = await useAsyncData(
   "exercises",
-  () => $api<DRF<Exercise>>(`exercises/${exercise_limit.value}`),
-  { server: false },
+  () => $api<DRF<Exercise>>("exercises/", { query: search }),
+  { server: false, watch: [page, search] },
 )
-watch(
-  exercises,
-  async (incoming, previous) => {
-    no_exercise.value = false
-    if (exercises.value?.results.length == initial_limit.value) {
-      initial_limit.value = 0
-      await refresh()
-    }
-  },
-  { once: true },
-)
-
 const { data: authors_used } = useLazyAsyncData(
   "authors_used",
-  () => $api<DRF<Author>>("authors/?limit=999&ordering=username"),
+  () =>
+    $api<DRF<Author>>("authors/", {
+      query: { limit: 999, ordering: "username" },
+    }),
   { server: false, transform: payload => payload.results },
 )
 const { data: tags_used } = useLazyAsyncData(
   "tags_used",
-  () => $api<DRF<Tag>>("tags/?limit=999"),
+  () => $api<DRF<Tag>>("tags/", { query: { limit: 999 } }),
   { server: false, transform: payload => payload.results },
 )
 const { data: source_langs_used } = useLazyAsyncData(
@@ -58,7 +65,13 @@ const { data: learn_langs_used } = useLazyAsyncData(
   { server: false },
 )
 
-const iterator_key = ref("")
+const set_name = debounce((name: Search["name"]) => {
+  search.name = name
+}, TYPING_DEBOUNCE_MS)
+const iterator_key = ref("") // ?
+const total_pages = computed(() =>
+  Math.ceil((exercises?.value?.count || 0) / PAGE_SIZE),
+)
 const source_langs_localized = computed(() => {
   if (!source_langs_used?.value) return []
   const codes = source_langs_used.value.map(l => l.code)
@@ -76,24 +89,10 @@ const tags_used_localized = computed(() =>
     count: tag.count,
   })),
 )
-const search = ref<Search>({
-  offset: 0,
-  text: "",
-  tags: [],
-  created_by: "",
-  src_langs: [],
-  lang_learn: {
-    langs: [],
-    levels: [cefr.MIN, cefr.MAX],
-  },
-  sort: "-created",
-})
+
 const current_cefr_label = computed(() => {
-  return cefr.display(search.value.lang_learn.levels)
+  return cefr.display(search.lang_learn.levels)
 })
-const update_filtered_exercises = () => {
-  return search.value
-}
 </script>
 
 <template>
@@ -105,7 +104,6 @@ const update_filtered_exercises = () => {
           selected-class="text-primary"
           show-arrows
           v-model="search.tags"
-          @change="update_filtered_exercises"
         >
           <v-chip
             v-for="tag in tags_used_localized"
@@ -121,8 +119,8 @@ const update_filtered_exercises = () => {
       <v-col cols="12" md="7">
         <v-text-field
           id="search-text"
-          v-model="search.text"
-          @keyup.enter="update_filtered_exercises"
+          :modelValue="search.name"
+          @update:modelValue="set_name"
           :label="$t('home.search_exercise')"
           append-inner-icon="mdi-magnify"
           density="comfortable"
@@ -148,7 +146,7 @@ const update_filtered_exercises = () => {
           @change="update_filtered_exercises"
         >
           <template #selection="{ item, index }">
-            <span>{{ item.text }}</span>
+            <span>{{ item?.title }}</span>
             <span v-if="index < search.src_langs.length - 1">,&nbsp;</span>
           </template>
         </v-autocomplete>
@@ -244,22 +242,26 @@ const update_filtered_exercises = () => {
       {{ $t("home.create_exercise") }}
     </v-btn>
 
-    <div v-if="status === 'error'">ERROR LOADING EXERCISES!</div>
+    <div v-if="status === 'error'">
+      <pre class="text-error">
+      ERROR LOADING EXERCISES!
+
+      {{ error }}
+      </pre>
+    </div>
 
     <v-skeleton-loader
-      v-if="['pending', 'idle'].includes(status) && no_exercise"
+      v-if="['pending', 'idle'].includes(status)"
       class="my-4"
       type="list-item-three-line@5"
     ></v-skeleton-loader>
-    <div v-else>
+    <div v-if="exercises?.count">
       <v-data-iterator
         class="mt-5"
-        :key="iterator_key"
         :items="exercises?.results"
         :items-per-page="page_length"
         :server-items-length="exercises?.count"
         :footer-props="{ 'disable-items-per-page': true }"
-        @update:page="on_page_update"
         :loading="loading"
       >
         <template #default="{ items }">
@@ -268,6 +270,9 @@ const update_filtered_exercises = () => {
             :item="item.raw"
             :key="item.raw.id"
           />
+        </template>
+        <template #footer>
+          <v-pagination v-model="page" :length="total_pages" class="my-4" />
         </template>
       </v-data-iterator>
     </div>
