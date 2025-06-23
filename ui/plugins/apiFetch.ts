@@ -6,11 +6,11 @@ async function refreshToken() {
   const token = useCookie("refreshToken").value
 
   try {
-    const response = (await $fetch(`${config.public.apiBase}/api/auth/token/refresh/`, {
+    const {access} = await $fetch<RefreshResponse>(`${config.public.apiBase}/api/auth/token/refresh/`, {
       method: "POST",
-      data: { refresh: token },
-    })) as Response
-    return response.json()?.access
+      body: { refresh: token },
+    }) 
+    return access
   } catch (error) {
     throw new Error("Token refresh failed")
   }

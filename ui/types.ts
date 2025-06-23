@@ -62,6 +62,15 @@ declare global {
     user: User
   }
 
+  type LogoutResponse = {
+    detail: string
+  }
+
+  type RefreshResponse = {
+    access: string
+    refresh: string
+  }
+
   /* Models */
 
   type UnitType = "default" | "open_answer" | "multiple_choice" | "pairing"

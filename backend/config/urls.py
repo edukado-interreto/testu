@@ -1,3 +1,4 @@
+from dj_rest_auth import urls
 from dj_rest_auth.registration.views import VerifyEmailView
 from django.conf import settings
 from django.conf.urls.static import static

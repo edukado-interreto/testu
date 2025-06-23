@@ -1,12 +1,13 @@
-import * as vueuse from "@vueuse/core"
+import { StorageSerializers, useLocalStorage } from "@vueuse/core"
 
-const AS_OBJECT = { serializer: vueuse.StorageSerializers.object }
-
-const $auth = $fetch.create({ baseURL: "/api/auth", method: "POST" })
+const AS_OBJECT = { serializer: StorageSerializers.object }
 
 export const useAuthStore = defineStore("auth", () => {
+  const API_BASE_URL = useRuntimeConfig().public.apiBase
+  const $auth = $fetch.create({ baseURL: `${API_BASE_URL}/api/auth`, method: "POST" })
+
   // STORE
-  const user: Ref<User | null> = vueuse.useLocalStorage("user", null, AS_OBJECT)
+  const user: Ref<User | null> = useLocalStorage("user", null, AS_OBJECT)
 
   // GETTERS
   const logged_in = computed<boolean>(() => user.value !== null)
@@ -27,14 +28,13 @@ export const useAuthStore = defineStore("auth", () => {
   }
 
   const login = async (credentials: LoginCredential) => {
-    const body = { body: credentials }
-    const data = await $auth<LoginResponse>("login/", body)
-    user.value = data.user
+    user.value = (await $auth<LoginResponse>("login/", { body: credentials })).user
   }
 
   const logout = async () => {
-    await $auth("logout/")
+    const { detail } = await $auth<LogoutResponse>("logout/")
     $reset()
+    useToasts().success(detail)
   }
 
   return { $reset, check_token, logged_in, login, logout, user }
