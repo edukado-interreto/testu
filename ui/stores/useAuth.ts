@@ -1,5 +1,6 @@
 import { StorageSerializers, useLocalStorage } from "@vueuse/core"
 
+const ACCESS_TOKEN_LIFETIME = 3600 // seconds
 const AS_OBJECT = { serializer: StorageSerializers.object }
 
 export const useAuthStore = defineStore("auth", () => {

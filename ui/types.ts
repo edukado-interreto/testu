@@ -1,3 +1,5 @@
+import type langs from "~/data/langs.js"
+
 type Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] extends N
   ? Acc[number]
   : Enumerate<N, [...Acc, Acc["length"]]>
@@ -81,8 +83,9 @@ declare global {
 
   type Cefr = "A1" | "A2" | "B1" | "B2" | "C1" | "C2"
   type CefrValue = 1 | 2 | 3 | 4 | 5 | 6
-
   type CefrValueStr = "1" | "2" | "3" | "4" | "5" | "6"
+  type CefrRange = [CefrValue, CefrValue]
+  type MaybeCefrRange = [CefrValue | undefined, CefrValue | undefined]
 
   type AgeMin = 0
   type AgeMax = 18
@@ -96,8 +99,8 @@ declare global {
     name: string
     src_lang: string
     searchable: boolean
-    lang_learn: boolean
-    lang_learn_lang?: string
+    lang_learn: Lang["code"]
+    lang_learn_lang?: Lang["code"]
     lang_learn_cefr_level_min?: CefrValue
     lang_learn_cefr_level_max?: CefrValue
     tags: string[]
@@ -106,6 +109,9 @@ declare global {
     }
   }
   type Exercise = BuildExercise & {
+    lang_learn_lang: Lang["code"]
+    lang_learn_cefr_level_min: CefrValue
+    lang_learn_cefr_level_max: CefrValue
     _key: string
     id: number
     lid: string
@@ -180,6 +186,19 @@ declare global {
     sort: "created" | "likes" | "-created" | "-likes"
   }
 
+  type SearchQuery = {
+    limit: number
+    offset?: number
+    name?: string
+    tags?: Tag[]
+    created_by?: Author["username"]
+    src_lang?: Lang[]
+    lang_learn_lang?: Lang[]
+    cefr_level_min?: CefrValue
+    cefr_level_max?: CefrValue
+    ordering: "created" | "likes" | "-created" | "-likes"
+  }
+
   type Option = {
     value?: string
     right?: boolean
@@ -199,7 +218,7 @@ declare global {
   }
 
   type Lang = {
-    code: string
+    code: keyof typeof langs.langs
     count: number
   }
 

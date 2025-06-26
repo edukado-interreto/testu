@@ -1,6 +1,4 @@
-import type RawLocation from "vue-router"
-
-export default defineNuxtRouteMiddleware(async (to, from) => {
+export default defineNuxtRouteMiddleware(async () => {
   const auth = useAuthStore()
   const localePath = useLocalePath()
 
