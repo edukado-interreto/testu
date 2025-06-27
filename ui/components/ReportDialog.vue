@@ -42,49 +42,47 @@ defineExpose({ close })
 </script>
 
 <template>
-  <div>
-    <v-dialog v-model="model" max-width="500px">
-      <v-card :title="title">
-        <template #prepend>
-          <slot name="prepend" />
-        </template>
-        <v-card-text>
-          <v-form
-            :id="`report-${nature}`"
-            v-model="valid"
-            tag="form"
-            ref="flag_form"
-            :disabled="disabled"
-          >
-            <v-textarea
-              autofocus
-              @keypress.ctrl.enter="submit"
-              v-model="explanation"
-              rows="2"
-              color="primary"
-              variant="outlined"
-              counter
-              :rules="[rules.length(EXPLANATION_MIN_LENGTH)]"
-              :label="t('exercise.explanation')"
-            />
-          </v-form>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn @click="close">
-            {{ t("main.cancel") }}
-          </v-btn>
-          <v-btn
-            type="submit"
-            :form="`report-${nature}`"
+  <v-dialog v-model="model" max-width="500px">
+    <v-card :title="title">
+      <template #prepend>
+        <slot name="prepend" />
+      </template>
+      <v-card-text>
+        <v-form
+          :id="`report-${nature}`"
+          v-model="valid"
+          tag="form"
+          ref="flag_form"
+          :disabled="disabled"
+        >
+          <v-textarea
+            autofocus
+            @keypress.ctrl.enter="submit"
+            v-model="explanation"
+            rows="2"
             color="primary"
-            @click.prevent="submit"
-            :disabled="disabled || !valid"
-          >
-            {{ t("main.submit") }}
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </div>
+            variant="outlined"
+            counter
+            :rules="[rules.length(EXPLANATION_MIN_LENGTH)]"
+            :label="t('exercise.explanation')"
+          />
+        </v-form>
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer />
+        <v-btn @click="close">
+          {{ t("main.cancel") }}
+        </v-btn>
+        <v-btn
+          type="submit"
+          :form="`report-${nature}`"
+          color="primary"
+          @click.prevent="submit"
+          :disabled="disabled || !valid"
+        >
+          {{ t("main.submit") }}
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>

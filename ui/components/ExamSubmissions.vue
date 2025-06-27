@@ -31,41 +31,39 @@ const currentSubmission = computed(
 </script>
 
 <template>
-  <div>
-    <v-row class="sticky mb-6">
-      <v-col>
-        <v-select
-          outlined
-          density="compact"
-          :items="submissionsItems"
-          v-model="submissionsIndex"
-          hide-details
-        />
-      </v-col>
-      <v-col class="d-flex align-center">
-        <v-btn
-          icon
-          @click="submissionsIndex--"
-          :disabled="submissionsIndex === 0"
-        >
-          <v-icon>mdi-chevron-left</v-icon>
-        </v-btn>
-        <span class="mx-2">{{ nthOfTotal }}</span>
-        <v-btn
-          icon
-          @click="submissionsIndex++"
-          :disabled="submissionsIndex === submissionsItems.length - 1"
-        >
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-btn>
-      </v-col>
-    </v-row>
-    <SheetReview
-      v-if="currentSubmission"
-      :key="currentSubmission.pk"
-      :submission="currentSubmission"
-    />
-  </div>
+  <v-row class="sticky mb-6">
+    <v-col>
+      <v-select
+        outlined
+        density="compact"
+        :items="submissionsItems"
+        v-model="submissionsIndex"
+        hide-details
+      />
+    </v-col>
+    <v-col class="d-flex align-center">
+      <v-btn
+        icon
+        @click="submissionsIndex--"
+        :disabled="submissionsIndex === 0"
+      >
+        <v-icon>mdi-chevron-left</v-icon>
+      </v-btn>
+      <span class="mx-2">{{ nthOfTotal }}</span>
+      <v-btn
+        icon
+        @click="submissionsIndex++"
+        :disabled="submissionsIndex === submissionsItems.length - 1"
+      >
+        <v-icon>mdi-chevron-right</v-icon>
+      </v-btn>
+    </v-col>
+  </v-row>
+  <SheetReview
+    v-if="currentSubmission"
+    :key="currentSubmission.pk"
+    :submission="currentSubmission"
+  />
 </template>
 
 <style scoped>

@@ -1,42 +1,3 @@
-<template>
-  <div>
-    <template v-for="(t, i) in tokens">
-      <span v-if="t.type == 'text'">{{ t.content }}</span>
-
-      <template v-if="t.type == 'img'">
-        <div v-if="t.invalid_src" class="grey--text">
-          <v-icon small>mdi-alert-outline</v-icon>
-          <i>Invalid image: {{ t.content }}</i>
-        </div>
-        <RichContentImage v-else :src="t.src" :content="t.content" />
-      </template>
-
-      <template v-if="t.type == 'video'">
-        <div v-if="t.invalid_url" class="grey--text">
-          <v-icon small>mdi-alert-outline</v-icon>
-          <i>Invalid video url: {{ t.content }}</i>
-        </div>
-        <iframe
-          v-else
-          style="max-height: 150px; max-width: 100%"
-          :src="t.embed_url"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        />
-      </template>
-
-      <template v-if="t.type == 'sound'">
-        <div v-if="t.invalid_src" class="grey--text">
-          <v-icon small>mdi-alert-outline</v-icon>
-          <i>Invalid audio: {{ t.content }}</i>
-        </div>
-        <RichContentSound v-else :src="t.src" :content="t.content" />
-      </template>
-    </template>
-  </div>
-</template>
 <script>
 export default {
   name: "RichContent",
@@ -105,3 +66,41 @@ export default {
   },
 }
 </script>
+
+<template>
+  <template v-for="(t, i) in tokens">
+    <span v-if="t.type == 'text'">{{ t.content }}</span>
+
+    <template v-if="t.type == 'img'">
+      <div v-if="t.invalid_src" class="grey--text">
+        <v-icon small>mdi-alert-outline</v-icon>
+        <i>Invalid image: {{ t.content }}</i>
+      </div>
+      <RichContentImage v-else :src="t.src" :content="t.content" />
+    </template>
+
+    <template v-if="t.type == 'video'">
+      <div v-if="t.invalid_url" class="grey--text">
+        <v-icon small>mdi-alert-outline</v-icon>
+        <i>Invalid video url: {{ t.content }}</i>
+      </div>
+      <iframe
+        v-else
+        style="max-height: 150px; max-width: 100%"
+        :src="t.embed_url"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      />
+    </template>
+
+    <template v-if="t.type == 'sound'">
+      <div v-if="t.invalid_src" class="grey--text">
+        <v-icon small>mdi-alert-outline</v-icon>
+        <i>Invalid audio: {{ t.content }}</i>
+      </div>
+      <RichContentSound v-else :src="t.src" :content="t.content" />
+    </template>
+  </template>
+</template>

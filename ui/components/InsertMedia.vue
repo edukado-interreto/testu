@@ -1,18 +1,3 @@
-<template>
-  <div>
-    <MsgBox ref="msgbox"></MsgBox>
-    <form ref="form">
-      <input
-        type="file"
-        ref="uploader"
-        @change="change"
-        :accept="`${type}/*`"
-        class="d-none"
-      />
-      <slot :click="click"></slot>
-    </form>
-  </div>
-</template>
 <script>
 export default {
   props: ["type", "input_el", "model"],
@@ -82,3 +67,17 @@ export default {
   },
 }
 </script>
+
+<template>
+  <MsgBox ref="msgbox"></MsgBox>
+  <form ref="form">
+    <input
+      type="file"
+      ref="uploader"
+      @change="change"
+      :accept="`${type}/*`"
+      class="d-none"
+    />
+    <slot :click="click"></slot>
+  </form>
+</template>

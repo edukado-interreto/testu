@@ -1,18 +1,3 @@
-<template>
-  <div>
-    <v-img
-      v-if="!broken"
-      :src="src"
-      contain
-      max-height="150"
-      @error="broken = true"
-    />
-    <div v-else class="grey--text">
-      <v-icon small>mdi-alert-outline</v-icon>
-      <i>Invalid image: {{ content }}</i>
-    </div>
-  </div>
-</template>
 <script>
 export default {
   props: ["src", "content"],
@@ -26,3 +11,17 @@ export default {
   },
 }
 </script>
+
+<template>
+  <v-img
+    v-if="!broken"
+    :src="src"
+    contain
+    max-height="150"
+    @error="broken = true"
+  />
+  <div v-else class="grey--text">
+    <v-icon small>mdi-alert-outline</v-icon>
+    <i>Invalid image: {{ content }}</i>
+  </div>
+</template>

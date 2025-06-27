@@ -133,46 +133,40 @@ defineExpose({ success, answer, choices })
 </script>
 
 <template>
-  <div>
-    <v-checkbox
-      density="compact"
-      v-for="(choice, i) in choices"
-      v-model="answer"
-      :value="choice.value"
-      :hide-details="true"
-      @change="on_change(i)"
-      :ref="
-        el => {
-          checkbox.push(el)
-        }
-      "
-      :key="choice.value"
-      :readonly="readonly"
-      :color="silent ? 'primary' : is_correct_answer(i) ? 'green' : 'grey'"
-    >
-      <template v-slot:label>
-        <span
-          v-text.trim="choice.value"
-          class="text-black"
-          :class="{
-            'text-decoration-line-through': is_checked(i) && is_error(i),
-            'font-weight-bold': is_correct_answer(i),
-            'text-success': is_correct_answer(i),
-          }"
-        />
-        <template v-if="!silent">
-          <v-icon v-if="show_success_feedback[i]" class="mx-1" color="success">
-            mdi-check-bold
-          </v-icon>
-          <v-icon
-            v-if="is_checked(i) && is_error(i)"
-            class="mx-1"
-            color="error"
-          >
-            mdi-close-thick
-          </v-icon>
-        </template>
+  <v-checkbox
+    density="compact"
+    v-for="(choice, i) in choices"
+    v-model="answer"
+    :value="choice.value"
+    :hide-details="true"
+    @change="on_change(i)"
+    :ref="
+      el => {
+        checkbox.push(el)
+      }
+    "
+    :key="choice.value"
+    :readonly="readonly"
+    :color="silent ? 'primary' : is_correct_answer(i) ? 'green' : 'grey'"
+  >
+    <template v-slot:label>
+      <span
+        v-text.trim="choice.value"
+        class="text-black"
+        :class="{
+          'text-decoration-line-through': is_checked(i) && is_error(i),
+          'font-weight-bold': is_correct_answer(i),
+          'text-success': is_correct_answer(i),
+        }"
+      />
+      <template v-if="!silent">
+        <v-icon v-if="show_success_feedback[i]" class="mx-1" color="success">
+          mdi-check-bold
+        </v-icon>
+        <v-icon v-if="is_checked(i) && is_error(i)" class="mx-1" color="error">
+          mdi-close-thick
+        </v-icon>
       </template>
-    </v-checkbox>
-  </div>
+    </template>
+  </v-checkbox>
 </template>

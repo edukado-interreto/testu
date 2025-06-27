@@ -1,3 +1,44 @@
+<script setup lang="ts">
+const { t } = useI18n()
+useHead({ title: t("about.about") })
+
+const partners = {
+  ikso: {
+    name: "Edukácia@Internet",
+    url: "https://ikso.net/",
+    domain: "ikso.net",
+    description: t("about.partners.ikso_description", {
+      1: '<a href="https://lernu.net/" target="_blank">lernu.net</a>',
+      2: '<a href="https://slovake.eu/" target="_blank">slovake.eu</a>',
+    }),
+  },
+  bit: {
+    name: "bit schulungscenter GmbH",
+    url: "https://www.bitschulungscenter.at/en/innovation/",
+    domain: "bitschulungscenter.at",
+    description: t("about.partners.bit_description"),
+  },
+  vu: {
+    name: t("about.partners.vu_name"),
+    url: "https://www.flf.vu.lt/",
+    domain: "flf.vu.lt",
+    description: t("about.partners.vu_description"),
+  },
+  uam: {
+    name: t("about.partners.uam_name"),
+    url: "https://amu.edu.pl",
+    domain: "amu.edu.pl",
+    description: t("about.partners.uam_description"),
+  },
+  leipzig: {
+    name: t("about.partners.leipzig_name"),
+    url: "https://www.uni-leipzig.de/",
+    domain: "uni-leipzig.de",
+    description: t("about.partners.leipzig_description"),
+  },
+}
+</script>
+
 <template>
   <v-container>
     <v-row>
@@ -66,47 +107,6 @@
     </div>
   </v-container>
 </template>
-
-<script setup lang="ts">
-const { t } = useI18n()
-useHead({ title: t("about.about") })
-
-const partners = {
-  ikso: {
-    name: "Edukácia@Internet",
-    url: "https://ikso.net/",
-    domain: "ikso.net",
-    description: t("about.partners.ikso_description", {
-      1: '<a href="https://lernu.net/" target="_blank">lernu.net</a>',
-      2: '<a href="https://slovake.eu/" target="_blank">slovake.eu</a>',
-    }),
-  },
-  bit: {
-    name: "bit schulungscenter GmbH",
-    url: "https://www.bitschulungscenter.at/en/innovation/",
-    domain: "bitschulungscenter.at",
-    description: t("about.partners.bit_description"),
-  },
-  vu: {
-    name: t("about.partners.vu_name"),
-    url: "https://www.flf.vu.lt/",
-    domain: "flf.vu.lt",
-    description: t("about.partners.vu_description"),
-  },
-  uam: {
-    name: t("about.partners.uam_name"),
-    url: "https://amu.edu.pl",
-    domain: "amu.edu.pl",
-    description: t("about.partners.uam_description"),
-  },
-  leipzig: {
-    name: t("about.partners.leipzig_name"),
-    url: "https://www.uni-leipzig.de/",
-    domain: "uni-leipzig.de",
-    description: t("about.partners.leipzig_description"),
-  },
-}
-</script>
 
 <style scoped>
 .partner {

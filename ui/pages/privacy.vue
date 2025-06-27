@@ -1,3 +1,7 @@
+<script setup>
+useHead(() => ({ title: "Privacy policy" }))
+</script>
+
 <template>
   <v-container>
     <h1>Privacy policy</h1>
@@ -19,17 +23,17 @@
     </p>
     <p>
       Edukácia@Internet
-      <br />
+      <br>
       Víťazná 840/67A
-      <br />
+      <br>
       958 04 Partizánske
-      <br />
+      <br>
       Slovakia
     </p>
     <p>
       Website:
       <a href="https://ikso.net/">https://ikso.net/</a>
-      <br />
+      <br>
       Email:
       <a href="mailto:info@ikso.net">info@ikso.net</a>
     </p>
@@ -277,17 +281,17 @@
 
     <p>
       Edukácia@Internet
-      <br />
+      <br>
       Víťazná 840/67A
-      <br />
+      <br>
       958 04 Partizánske
-      <br />
+      <br>
       Slovakia
     </p>
     <p>
       Website:
       <a href="https://ikso.net/">https://ikso.net/</a>
-      <br />
+      <br>
       Email:
       <a href="mailto:info@ikso.net">info@ikso.net</a>
     </p>
@@ -311,10 +315,3 @@
     <p>Last updated: July 1st, 2022</p>
   </v-container>
 </template>
-<script>
-export default {
-  head: () => ({
-    title: "Privacy policy",
-  }),
-}
-</script>

@@ -1,58 +1,3 @@
-<template>
-  <v-combobox
-    ref="combobox"
-    multiple
-    chips
-    @keydown="keydown"
-    @input="input_is_blank = true"
-    v-model="optionsModel"
-    :hint="hint"
-    placeholder="Start typing an option..."
-    :append-icon="null"
-    :label="label"
-    :autofocus="autofocus"
-    :rules="rules"
-    validate-on="blur"
-  >
-    <template v-slot:append>
-      <v-tooltip bottom>
-        <template v-slot:activator="{ on }">
-          <v-btn
-            :disabled="!input_is_blank"
-            v-on="on"
-            rounded
-            text
-            @click="insert_blank"
-          >
-            <v-icon small>mdi-plus</v-icon>
-            <v-icon small>mdi-selection</v-icon>
-          </v-btn>
-        </template>
-        <span>Add the "leave blank" option (Ctrl+Enter)</span>
-      </v-tooltip>
-    </template>
-    <template v-slot:selection="data">
-      <v-chip
-        :key="JSON.stringify(data.item)"
-        v-bind="data.attrs"
-        :input-value="data.selected"
-        :disabled="data.disabled"
-        @click:close="data.parent.selectItem(data.item)"
-      >
-        <v-switch
-          v-model="checkedModel"
-          :value="data.item"
-          dense
-          color="success"
-        >
-          <template v-slot:label></template>
-        </v-switch>
-        <v-icon small v-if="data.item === '\0'">mdi-selection</v-icon>
-        <template v-else>{{ data.item }}</template>
-      </v-chip>
-    </template>
-  </v-combobox>
-</template>
 <script>
 export default {
   props: ["value", "label", "autofocus", "rules", "firstchecked"],
@@ -189,6 +134,63 @@ export default {
   },
 }
 </script>
+
+<template>
+  <v-combobox
+    ref="combobox"
+    multiple
+    chips
+    @keydown="keydown"
+    @input="input_is_blank = true"
+    v-model="optionsModel"
+    :hint="hint"
+    placeholder="Start typing an option..."
+    :append-icon="null"
+    :label="label"
+    :autofocus="autofocus"
+    :rules="rules"
+    validate-on="blur"
+  >
+    <template v-slot:append>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn
+            :disabled="!input_is_blank"
+            v-on="on"
+            rounded
+            text
+            @click="insert_blank"
+          >
+            <v-icon small>mdi-plus</v-icon>
+            <v-icon small>mdi-selection</v-icon>
+          </v-btn>
+        </template>
+        <span>Add the "leave blank" option (Ctrl+Enter)</span>
+      </v-tooltip>
+    </template>
+    <template v-slot:selection="data">
+      <v-chip
+        :key="JSON.stringify(data.item)"
+        v-bind="data.attrs"
+        :input-value="data.selected"
+        :disabled="data.disabled"
+        @click:close="data.parent.selectItem(data.item)"
+      >
+        <v-switch
+          v-model="checkedModel"
+          :value="data.item"
+          dense
+          color="success"
+        >
+          <template v-slot:label></template>
+        </v-switch>
+        <v-icon small v-if="data.item === '\0'">mdi-selection</v-icon>
+        <template v-else>{{ data.item }}</template>
+      </v-chip>
+    </template>
+  </v-combobox>
+</template>
+
 <style>
 .v-input--switch__thumb.success--text::after {
   content: "\002714"; /* heavy check mark */

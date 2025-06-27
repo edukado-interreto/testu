@@ -1,19 +1,3 @@
-<template>
-  <div>
-    <audio
-      v-if="!broken"
-      controls
-      style="max-height: 150px; max-width: 100%"
-      :key="src"
-    >
-      <source :src="src" @error="broken = true" />
-    </audio>
-    <div v-else class="grey--text">
-      <v-icon small>mdi-alert-outline</v-icon>
-      <i>Invalid sound: {{ content }}</i>
-    </div>
-  </div>
-</template>
 <script>
 export default {
   props: ["src", "content"],
@@ -27,3 +11,18 @@ export default {
   },
 }
 </script>
+
+<template>
+  <audio
+    v-if="!broken"
+    controls
+    style="max-height: 150px; max-width: 100%"
+    :key="src"
+  >
+    <source :src="src" @error="broken = true" />
+  </audio>
+  <div v-else class="grey--text">
+    <v-icon small>mdi-alert-outline</v-icon>
+    <i>Invalid sound: {{ content }}</i>
+  </div>
+</template>
