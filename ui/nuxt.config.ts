@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-04-06",
   css: [
     "vuetify/lib/styles/main.sass",
+    "@/assets/vuetify/settings.scss",
     "@mdi/font/css/materialdesignicons.min.css",
     "@/assets/testu.scss",
   ],
@@ -19,4 +20,13 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/i18n", "@pinia/nuxt"],
   nitro: { devProxy },
   runtimeConfig: { public: { apiBase: "" } }, // or NUXT_PUBLIC_API_BASE
+  // vite: {
+  //   css: {
+  //     preprocessorOptions: {
+  //       scss: {
+  //         additionalData: '@forward "~/assets/vuetify/settings.scss";',
+  //       },
+  //     },
+  //   },
+  // },
 })
