@@ -3,43 +3,31 @@ import { nanoid } from "nanoid"
 import { useGoTo } from "vuetify"
 import { useI18n } from "vue-i18n"
 import type { ShallowRef } from "@vue/reactivity"
+import type { ComponentInternalInstance } from "@vue/runtime-core"
+import type { VForm, VTextarea } from "vuetify/components"
 
 const { t } = useI18n()
 const goTo = useGoTo()
 
 // Models
-const sheet = defineModel<SheetUnit[]>("sheet", { required: true })
+const sheet = defineModel<Unit[]>("sheet", { required: true })
 
 // Emits
 const emit = defineEmits(["save"])
 
 // Types
-interface SheetUnit {
-  type: UnitType
-  title: string
-  code: string
-  description?: string
-  shuffle?: boolean
-  ignore_case?: boolean
-  _key?: string
-}
-
-interface GapOption {
-  value: string
-  right: boolean
-}
 
 interface Current {
   index?: number
-  data: Partial<SheetUnit>
+  data: Partial<Unit>
 }
 
 // Component references
 const unit_component = useUnitComponent()
-const unit_description = useTemplateRef<HTMLElement>("unit_description")
-const add_pair_form = useTemplateRef<HTMLFormElement>("add_pair_form")
-const insert_video_form = useTemplateRef<HTMLFormElement>("insert_video_form")
-const new_gap_form = useTemplateRef<HTMLFormElement>("new_gap_form")
+const unit_description = useTemplateRef<VTextarea>("unit_description")
+const add_pair_form = useTemplateRef<VForm>("add_pair_form")
+const insert_video_form = useTemplateRef<VForm>("insert_video_form")
+const new_gap_form = useTemplateRef<VForm>("new_gap_form")
 const unit = useTemplateRef<HTMLElement>("unit")
 
 // State
@@ -64,7 +52,10 @@ const edit_drawer = ref({
 
 const current = ref<Current>({
   index: undefined,
-  data: {},
+  data: {
+    description: "",
+    code: "",
+  },
 })
 
 // Computed properties
@@ -206,8 +197,7 @@ const snippets: Snippet[] = [
 // Methods
 
 const get_textarea_input = () =>
-  (document.getElementsByName("textarea-input")[0] as HTMLTextAreaElement) ||
-  null
+  document.querySelector('[name="textarea-input"]') as HTMLTextAreaElement
 
 const load_snippet_thumb = (snippet: Snippet): string => {
   return `/_nuxt/assets/snippet_thumb/${snippet.img}`
@@ -241,14 +231,13 @@ const add_gap_dialog_show = (show: boolean) => {
   add_gap_dialog.value = show
 }
 
-const insert_gap_click = () => {
+const insert_gap_click = async () => {
   // Using double requestAnimationFrame will ensure that
   // the value of the OptionsSelectors is updated even
   // if the user doesn't press Enter or blurs the input.
-  doubleRequestAnimationFrame(() => {
-    if (!new_gap_form.value?.validate()) return
-    insert_gap()
-  })
+  const validation = await new_gap_form.value?.validate()
+  if (!validation.valid) return
+  insert_gap()
 }
 
 const insert_gap = () => {
@@ -262,6 +251,7 @@ const insert_gap = () => {
 
   inject_snippet(new_gap)
   add_gap_dialog.value = false
+  new_gap_options.value = []
 }
 
 const add_pair_insert_click = () => {
@@ -375,6 +365,10 @@ const add = (unit: Partial<SheetUnit>) => {
   sheet.value.push({ ...base_unit, ...unit } as SheetUnit)
 
   edit(sheet.value.length - 1)
+}
+const close_add_gap_dialog = () => {
+  add_gap_dialog_show(false)
+  new_gap_options.value = []
 }
 
 // Watch handlers
@@ -497,7 +491,7 @@ defineExpose({
             <span>{{ t("sheet_editor.move_down") }}</span>
           </v-tooltip>
 
-          <v-spacer></v-spacer>
+          <v-spacer />
 
           <v-tooltip location="left">
             <template #activator="{ props }">
@@ -528,6 +522,7 @@ defineExpose({
         <v-textarea
           v-model="current.data.description"
           ref="unit_description"
+          id="unit_description"
           rows="1"
           auto-grow
           :label="t('editor.description')"
@@ -538,7 +533,7 @@ defineExpose({
             <v-menu location="bottom end">
               <template #activator="{ props }">
                 <v-icon v-bind="props" :disabled="description_loading">
-                  mdi-dots-vertical
+                  mdi-dots-vertical z
                 </v-icon>
               </template>
               <v-list>
@@ -547,10 +542,9 @@ defineExpose({
                   type="image"
                   @load_start="description_loading = true"
                   @load_end="description_loading = false"
-                  :input_el="
-                    unit_description ? [unit_description.$refs, 'input'] : null
-                  "
-                  :model="current ? [current.data, 'description'] : null"
+                  :input_el="unit_description?.$el.querySelector('textarea')"
+                  v-model="current.data"
+                  field="description"
                 >
                   <v-list-item
                     @click="s.click"
@@ -563,10 +557,9 @@ defineExpose({
                   type="audio"
                   @load_start="description_loading = true"
                   @load_end="description_loading = false"
-                  :input_el="
-                    unit_description ? [unit_description.$refs, 'input'] : null
-                  "
-                  :model="current ? [current.data, 'description'] : null"
+                  :input_el="unit_description?.$el.querySelector('textarea')"
+                  v-model="current.data"
+                  field="description"
                 >
                   <v-list-item
                     @click="s.click"
@@ -637,6 +630,7 @@ defineExpose({
                 <v-card-text>
                   <v-text-field
                     v-model="add_pair_first_item"
+                    variant="underlined"
                     autofocus
                     :label="t('sheet_editor.first_item')"
                     :rules="[
@@ -645,6 +639,7 @@ defineExpose({
                   ></v-text-field>
                   <v-text-field
                     v-model="add_pair_second_item"
+                    variant="underlined"
                     :label="t('sheet_editor.second_item')"
                     :rules="[
                       (val: string) => (!val ? 'Please type some text' : true),
@@ -652,7 +647,7 @@ defineExpose({
                   ></v-text-field>
                 </v-card-text>
                 <v-card-actions>
-                  <v-spacer></v-spacer>
+                  <v-spacer />
                   <v-btn color="primary" type="submit">
                     {{ t("sheet_editor.insert_pair") }}
                   </v-btn>
@@ -672,7 +667,8 @@ defineExpose({
             @load_start="image_uploading = true"
             @load_end="image_uploading = false"
             :input_el="get_textarea_input()"
-            :model="[current.data, 'code']"
+            v-model="current.data"
+            field="code"
           >
             <v-tooltip location="bottom">
               <template #activator="{ props }">
@@ -696,7 +692,8 @@ defineExpose({
             @load_start="audio_uploading = true"
             @load_end="audio_uploading = false"
             :input_el="get_textarea_input()"
-            :model="[current.data, 'code']"
+            v-model="current.data"
+            field="code"
           >
             <v-tooltip location="bottom">
               <template #activator="{ props }">
@@ -751,7 +748,7 @@ defineExpose({
                   ></v-text-field>
                 </v-card-text>
                 <v-card-actions>
-                  <v-spacer></v-spacer>
+                  <v-spacer />
                   <v-btn color="primary" type="submit">
                     {{ t("sheet_editor.insert_video") }}
                   </v-btn>
@@ -765,28 +762,41 @@ defineExpose({
 
           <v-dialog v-model="add_gap_dialog" max-width="750">
             <v-card>
-              <v-form ref="new_gap_form">
+              <v-form
+                ref="new_gap_form"
+                @submit.prevent="insert_gap_click"
+                @keydown.enter.prevent="
+                  () => {
+                    /*Prevent submiting form on Return in new_option field */
+                  }
+                "
+              >
                 <v-card-title>{{ t("sheet_editor.new_gap") }}</v-card-title>
                 <v-card-text>
                   <OptionsSelector
                     v-model="new_gap_options"
                     firstchecked
                     :rules="[
-                      (val: GapOption[]) =>
-                        val.length === 0
-                          ? 'Please insert at least one option'
+                      () =>
+                        new_gap_options.length === 0
+                          ? $t('sheet_editor.add_option_validation')
                           : true,
                     ]"
                     autofocus
+                    @update:model-value="new_gap_form?.resetValidation()"
                   ></OptionsSelector>
                 </v-card-text>
                 <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <v-btn color="primary" @click="insert_gap_click">
-                    {{ t("sheet_editor.insert_gap") }}
-                  </v-btn>
-                  <v-btn variant="text" @click="add_gap_dialog_show(false)">
+                  <v-spacer />
+                  <v-btn variant="text" @click="close_add_gap_dialog">
                     {{ t("main.cancel") }}
+                  </v-btn>
+                  <v-btn
+                    color="primary"
+                    variant="elevated"
+                    @click.prevent="insert_gap_click"
+                  >
+                    {{ t("sheet_editor.insert_gap") }}
                   </v-btn>
                 </v-card-actions>
               </v-form>
@@ -803,7 +813,6 @@ defineExpose({
           hide-details="auto"
           class="code rounded-t-0 rounded-b-md"
         ></v-textarea>
-
         <v-switch
           v-model="current.data.shuffle"
           :disabled="current.data.type === 'open_answer'"
@@ -867,8 +876,9 @@ defineExpose({
                 </v-btn>
               </v-col>
               <v-col class="ms-4">
-                <div class="headline my-4">
-                  {{ i + 1 }}. {{ section.title }}
+                <div class="text-h4 my-4">
+                  <span v-if="sheet.length > 1">{{ i + 1 }}.</span>
+                  {{ section.title }}
                   <span v-if="section.title === ''" class="font-italic">
                     {{ $t("sheet_editor.untitled_unit") }}
                   </span>
@@ -927,9 +937,11 @@ defineExpose({
 .pre-line {
   white-space: pre-line;
 }
+
 .code {
   font-family: monospace;
 }
+
 .v-menu__content {
   max-height: 85vh;
 }

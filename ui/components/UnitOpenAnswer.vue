@@ -3,7 +3,7 @@ const tokenize = useTokenize()
 const props = defineProps<{
   code: string
   shuffle: boolean
-  solved: { parsed: string[] }
+  solved?: { parsed: string[] }
   readonly: boolean
   silent: boolean
   ignore_case: boolean
@@ -56,21 +56,10 @@ const parsed: ComputedRef<Token[][]> = computed(() => {
       <ol>
         <li v-for="(phrase, i) in parsed" :key="i" class="pre-line">
           <template v-for="(token, j) in phrase">
-            <UnitOpenAnswerTextField
-              :key="j"
-              v-if="token.token === 'gap'"
-              :options="token.options || []"
-              :value="token.answer || ''"
-              :shuffle="shuffle"
-              :ignore_case="ignore_case"
-              :once="false"
-              :error-explanation="token.errorExplanation"
-              :readonly="readonly"
-              :ref="el => gaps.push(el)"
-              :silent="silent"
-              :success="token.right || false"
-              @answer="on_answer($event, i, j)"
-            />
+            <UnitOpenAnswerTextField :key="j" v-if="token.token === 'gap'" :options="token.options || []"
+              :value="token.answer || ''" :shuffle="shuffle" :ignore_case="ignore_case" :once="false"
+              :error-explanation="token.errorExplanation" :readonly="readonly" :ref="el => gaps.push(el)"
+              :silent="silent" :success="token.right || false" @answer="on_answer($event, i, j)" />
             <span :key="j" v-if="token.token === 'text'" v-text="token.value" />
           </template>
         </li>
@@ -84,6 +73,7 @@ li {
   margin-bottom: 1.25em;
   line-height: 2.25em;
 }
+
 .pre-line {
   white-space: pre-line;
 }

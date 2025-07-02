@@ -1,75 +1,100 @@
-<script>
-export default {
-  props: ["type", "input_el", "model"],
-  computed: {
-    snippet_prefix() {
-      if (this.type === "audio") return "sound"
-      if (this.type === "image") return "img"
-      throw `InsertMedia: type must be 'audio' or 'image', was: '${this.type}'`
-    },
-  },
-  methods: {
-    click() {
-      this.$refs.uploader.click()
-    },
-    async change(e) {
-      const file = e.target.files[0]
-      if (!file) return // canceled by user
+<script setup lang="ts">
+import MsgBox from "@/components/MsgBox.vue"
 
-      this.$emit("load_start")
+const model = defineModel<Partial<Unit>>()
+const props = defineProps<{
+  type: "audio" | "image"
+  input_el: HTMLTextAreaElement
+  field: "description" | "code"
+}>()
+const emit = defineEmits<{
+  load_start: []
+  load_end: []
+}>()
 
-      const formData = new FormData()
-      formData.append("file", file)
-      formData.append("type", this.type)
+const { $apiFetch } = useNuxtApp()
 
-      let resp = undefined
+// Template refs
+const uploader = useTemplateRef<HTMLInputElement>("uploader")
+const msgbox = useTemplateRef<typeof MsgBox>("msgbox")
+const form = useTemplateRef<HTMLFormElement>("form")
 
-      try {
-        resp = await this.$auth.axios.post("/v1/upload/", formData)
-      } catch (e) {
-        console.error({ ...e })
-        await this.$refs.msgbox.alert(
-          e.response.data.error || this.$t("editor.unexpected_response"),
-        )
-      } finally {
-        this.$emit("load_end")
-      }
+const snippet_prefix = computed(() => {
+  if (props.type === "audio") return "sound"
+  if (props.type === "image") return "img"
+  throw new Error(
+    `InsertMedia: type must be 'audio' or 'image', was: '${props.type}'`,
+  )
+})
 
-      if (!resp) return
+const open = () => {
+  uploader.value?.click()
+}
 
-      this.inject_snippet(`{${this.snippet_prefix}:${resp.data.name}}`)
-      this.$refs.form.reset()
-    },
-    inject_snippet(snippet) {
-      // insert in the current code a snippet at the
-      // current cursor position, move the cursor
-      // after the snippet and focus the textarea
+const change = async (e: Event) => {
+  const target = e.target as HTMLInputElement
+  const file = target.files?.[0]
+  if (!file) return // canceled by user
 
-      const input = this.input_el
-      const code = this.model[0][this.model[1]] || ""
+  emit("load_start")
 
-      const start = input.selectionStart
+  const formData = new FormData()
+  formData.append("file", file)
+  formData.append("type", props.type)
 
-      //this.model[0][this.model[1]] = code.slice(
-      this.$set(
-        this.model[0],
-        this.model[1],
-        code.slice(0, input.selectionStart) +
-          snippet +
-          code.slice(input.selectionEnd),
-      )
-      requestAnimationFrame(() => {
-        input.selectionStart = start + snippet.length
-        input.selectionEnd = start + snippet.length
-        input.focus()
-      })
-    },
-  },
+  let resp: any = undefined
+
+  try {
+    // Note: You'll need to inject or import your auth/axios service
+    // resp = await $auth.axios.post('/v1/upload/', formData)
+    resp = await $apiFetch("upload/", {
+      method: "POST",
+      body: formData,
+    })
+    console.log(resp)
+  } catch (e: any) {
+    console.error({ ...e })
+    msgbox.value?.alert(
+      e.response?.data?.error || "Unexpected response",
+      JSON.stringify(e),
+    )
+  } finally {
+    emit("load_end")
+  }
+
+  if (!resp) return
+
+  inject_snippet(`{${snippet_prefix.value}:${resp._data.name}}`)
+  form.value?.reset()
+}
+
+const inject_snippet = (snippet: string) => {
+  // Insert in the current code a snippet at the current cursor position,
+  // move the cursor after the snippet and focus the textarea
+  if (model.value === undefined) return
+
+  const input = props.input_el
+  const code = model.value[props.field] || ""
+
+  const start = input.selectionStart as number
+
+  model.value[props.field] =
+    code.slice(0, input.selectionStart) +
+    snippet +
+    code.slice(input.selectionEnd as number)
+
+  console.info("snippet", snippet)
+
+  nextTick(() => {
+    input.selectionStart = start + snippet.length
+    input.selectionEnd = start + snippet.length
+    input.focus()
+  })
 }
 </script>
 
 <template>
-  <MsgBox ref="msgbox"></MsgBox>
+  <MsgBox ref="msgbox" />
   <form ref="form">
     <input
       type="file"
@@ -78,6 +103,6 @@ export default {
       :accept="`${type}/*`"
       class="d-none"
     />
-    <slot :click="click"></slot>
+    <slot :click="open"></slot>
   </form>
 </template>

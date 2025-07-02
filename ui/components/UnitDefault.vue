@@ -4,7 +4,7 @@ const tokenize = useTokenize()
 const props = defineProps<{
   code?: string
   shuffle?: boolean
-  solved: { parsed: string[] }
+  solved?: { parsed: string[] }
   readonly?: boolean
   silent?: boolean
 }>()
@@ -62,18 +62,9 @@ defineExpose({ get_solved })
       <ol>
         <li v-for="(phrase, i) in parsed" :key="i" class="pre-line">
           <template v-for="(token, j) in phrase">
-            <PlayGapSelect
-              :key="j"
-              v-if="token.token === 'gap'"
-              :options="token.options"
-              :value="token.answer"
-              :shuffle="solved === undefined ? shuffle : false"
-              :error-explanation="token.errorExplanation"
-              :readonly="readonly"
-              ref="gaps"
-              @answer="on_answer($event, i, j)"
-              :silent="silent"
-            />
+            <PlayGapSelect :key="j" v-if="token.token === 'gap'" :options="token.options" :value="token.answer"
+              :shuffle="solved === undefined ? shuffle : false" :error-explanation="token.errorExplanation"
+              :readonly="readonly" ref="gaps" @answer="on_answer($event, i, j)" :silent="silent" />
             <span :key="j" v-if="token.token === 'text'" v-text="token.value" />
           </template>
         </li>
@@ -87,6 +78,7 @@ li {
   margin-bottom: 1.25em;
   line-height: 2.25em;
 }
+
 .pre-line {
   white-space: pre-line;
 }

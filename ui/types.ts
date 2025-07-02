@@ -1,3 +1,5 @@
+import type { default as TMsgBox } from "@/components/MsgBox.vue"
+
 import type langs from "~/data/langs.js"
 
 type Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] extends N
@@ -7,6 +9,8 @@ type Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] exte
 type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
 
 declare global {
+  type MsgBox = typeof TMsgBox
+
   /* App */
 
   type VueElement = { [k: string]: Element | ComponentPublicInstance | null }
@@ -140,6 +144,7 @@ declare global {
       type: string
       code: string
       description?: string
+      shuffle?: boolean
     }
   }
 
@@ -203,6 +208,11 @@ declare global {
     value?: string
     right?: boolean
     answer?: string
+  }
+
+  type GapOption = {
+    value: string
+    right: boolean
   }
 
   type Author = {

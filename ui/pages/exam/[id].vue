@@ -189,7 +189,7 @@ async function submit() {
       </v-sheet>
 
       <v-sheet v-for="(unit, i) in exercise.data?.sheet || []" :key="unit._key">
-        <div class="headline my-4">
+        <div class="text-h4 my-4">
           {{ i + 1 }}. {{ unit.title }}
           <span v-if="unit.title === ''" class="font-italic">
             {{ t("sheet_editor.untitled_unit") }}

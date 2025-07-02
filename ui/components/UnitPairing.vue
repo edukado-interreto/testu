@@ -167,7 +167,9 @@ defineExpose({ get_solved })
                 mdi-drag
               </v-icon>
             </v-col>
-            <RichContent class="v-col ps-1 ps-lg-2 second" :text="pair[0]" />
+            <v-col class="ps-1 ps-lg-2 second">
+              <RichContent :text="pair[0]" />
+            </v-col>
           </v-row>
           <v-sheet
             v-else
@@ -200,7 +202,9 @@ defineExpose({ get_solved })
           >
             <v-icon color="grey" :disabled="readonly === true">mdi-drag</v-icon>
           </v-col>
-          <RichContent class="v-col ps-2 ps-lg-4 second" :text="pair[1]" />
+          <v-col class="ps-2 ps-lg-4 second">
+            <RichContent :text="pair[1]" />
+          </v-col>
         </v-row>
         <v-sheet
           v-else

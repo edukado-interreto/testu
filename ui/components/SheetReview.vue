@@ -12,7 +12,7 @@ export default {
       v-for="(unit, i) in submission.exercise?.data?.sheet"
       :key="`submitted_${unit._key}`"
     >
-      <div class="headline my-4">
+      <div class="text-h4 my-4">
         {{ i + 1 }}. {{ unit.title }}
         <span v-if="unit.title === ''" class="font-italic">Untitled unit</span>
       </div>

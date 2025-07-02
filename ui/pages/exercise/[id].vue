@@ -185,7 +185,7 @@ useHead({ title: exercise.value?.name })
     </v-sheet>
 
     <v-sheet v-for="(unit, i) in exercise.data.sheet" :key="unit._key">
-      <div class="headline my-4">
+      <div class="text-h4 my-4">
         <span v-if="exercise.data.sheet.length > 1">{{ i + 1 }}.</span>
         <span class="font-weight-medium">{{ unit.title }}</span>
         <span v-if="unit.title === ''" class="font-italic">

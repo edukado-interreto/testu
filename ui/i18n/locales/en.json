@@ -38,6 +38,7 @@
     },
     "description": "Description",
     "details": "Exercise details",
+    "option_new_gap_tooltip": "Add the ‘leave blank’ option",
     "save": "Save",
     "tags": "Tags",
     "title": "Title",
@@ -235,6 +236,9 @@
   },
   "sheet_editor": {
     "add_matching_pair": "Add matching pair",
+    "add_option_placeholder": "Start typing an option…",
+    "add_option_validation": "Please insert at least one option",
+    "add_option_is_right_answer": "Correct answer?",
     "add_sentence": "Add sentence",
     "add_unit": "Add unit",
     "add_unit_to_begin": "Add a new unit to begin",

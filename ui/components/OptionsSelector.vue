@@ -1,201 +1,116 @@
-<script>
-export default {
-  props: ["value", "label", "autofocus", "rules", "firstchecked"],
-  data: () => ({
-    checkedModel: [],
-    optionsModel: [],
-    input_is_blank: true,
-  }),
-  computed: {
-    hint() {
-      if (!this.input_is_blank) {
-        return "Press Enter to finalize the option…"
-      }
-      if (this.optionsModel.length == 0) {
-        return ""
-      }
-      return "Toggle the switches to change the options' rightness or start typing a new option."
-    },
-  },
-  mounted() {
-    const combobox = this.$refs.combobox
+<script lang="ts" setup>
+import type { SubmitEventPromise } from "vuetify"
+import type { VForm } from "vuetify/components"
 
-    combobox.$refs.input.addEventListener("input", e => {
-      // NOTE: this may not be bulletproof
+interface Props {
+  label?: string
+  autofocus?: boolean
+  rules?: Array<(value: any) => boolean | string>
+  firstchecked?: boolean
+}
 
-      if (
-        combobox.$el.classList.contains("v-autocomplete--is-selecting-index")
-      ) {
-        // when the v-combobox has the class
-        // 'v-autocomplete--is-selecting-index',
-        // VueJS sets the <input> (e.target) opacity
-        // to 0 and read its key events so that the user
-        // can traverse the chips using the arrow keys.
-        // This means that the user may actually
-        // type some text in it, which VueJS would
-        // remove when setting back the opacity to 1.
-        this.input_is_blank = true
-        return
-      }
+const {
+  autofocus = false,
+  firstchecked = false,
+  label = "",
+  rules = [],
+} = defineProps<Props>()
 
-      this.input_is_blank = e.target.value === ""
-    })
-  },
-  methods: {
-    insert_blank() {
-      // Append a '\0' to the array of options.
-      // If the option is already in the array,
-      // remove that one and append a new one.
-      //
-      // NOTE: we use '\0' instead of '' because
-      // the v-combobox has issues when an option
-      // contains an empty string or any falsy
-      // values, e.g. if the user uses backspace
-      // to remove an empty string option, every
-      // other option get removed too.
-      // Using '\0' instead is a workaround for
-      // this issue.
-      this.optionsModel = [...this.optionsModel.filter(e => e != "\0"), "\0"]
-    },
-    keydown(e) {
-      // append an empty string to the model on Ctrl+Enter
+const model = defineModel<GapOption[]>({ required: true })
 
-      if (!e.ctrlKey) return
-      if (e.code != "Enter") return
-      if (!this.input_is_blank) return
+const new_option = ref("")
 
-      this.insert_blank()
-    },
-    updateData(k, val) {
-      // update a data attribute only if its value differs
-      // from the one we want to set. This is useful to
-      // avoid triggering a watcher, specifically when that
-      // leads to infinite loops
-      if (JSON.stringify(this[k]) == JSON.stringify(val)) return
-      this[k] = val
-    },
-    unescapeEmpty(arr) {
-      return arr.map(e => (e == "\0" ? "" : e))
-    },
-  },
-  watch: {
-    optionsModel(val) {
-      if (this.firstchecked !== undefined) {
-        // automatically set the inserted item
-        // as checked (i.e. right option), if
-        // it's the first and only one.
-        if (this.optionsModel.length == 1 && this.checkedModel.length == 0) {
-          this.checkedModel.push(this.optionsModel[0])
-        }
-      }
-
-      const u_val = this.unescapeEmpty(val)
-      const u_checkedModel = this.unescapeEmpty(this.checkedModel)
-
-      this.$emit(
-        "input",
-        u_val.map(e => ({
-          value: e,
-          right: u_checkedModel.includes(e),
-        })),
-      )
-    },
-    checkedModel(val) {
-      const u_val = this.unescapeEmpty(val)
-      const u_optionsModel = this.unescapeEmpty(this.optionsModel)
-
-      this.$emit(
-        "input",
-        u_optionsModel.map(e => ({
-          value: e,
-          right: u_val.includes(e),
-        })),
-      )
-    },
-    value: {
-      handler(val) {
-        val = val.map(e => ({
-          right: e.right,
-          value: e.value == "" ? "\0" : e.value,
-        }))
-
-        this.updateData(
-          "optionsModel",
-          val.map(e => e.value),
-        )
-        this.updateData(
-          "checkedModel",
-          val.filter(e => e.right).map(e => e.value),
-        )
-      },
-      deep: true,
-      immediate: true,
-    },
-  },
+const submit = (e: SubmitEventPromise) => {
+  insert(new_option.value)
+  new_option.value = ""
+}
+const insert = (value: string) => {
+  const empty = model.value.length === 0
+  if (!model.value.map(o => o.value).includes(value)) {
+    model.value.push({ value, right: empty })
+  }
 }
 </script>
 
 <template>
-  <v-combobox
-    ref="combobox"
-    multiple
-    chips
-    @keydown="keydown"
-    @input="input_is_blank = true"
-    v-model="optionsModel"
-    :hint="hint"
-    placeholder="Start typing an option..."
-    :append-icon="null"
-    :label="label"
-    :autofocus="autofocus"
-    :rules="rules"
+  <v-text-field
+    v-model="new_option"
+    variant="underlined"
+    class="ms-4"
+    required
     validate-on="blur"
+    :placeholder="$t('sheet_editor.add_option_placeholder')"
+    :rules="rules"
+    @keyup.enter.stop="submit"
   >
-    <template v-slot:append>
-      <v-tooltip bottom>
-        <template v-slot:activator="{ on }">
-          <v-btn
-            :disabled="!input_is_blank"
-            v-on="on"
-            rounded
-            text
-            @click="insert_blank"
-          >
-            <v-icon small>mdi-plus</v-icon>
-            <v-icon small>mdi-selection</v-icon>
-          </v-btn>
-        </template>
-        <span>Add the "leave blank" option (Ctrl+Enter)</span>
-      </v-tooltip>
-    </template>
-    <template v-slot:selection="data">
-      <v-chip
-        :key="JSON.stringify(data.item)"
-        v-bind="data.attrs"
-        :input-value="data.selected"
-        :disabled="data.disabled"
-        @click:close="data.parent.selectItem(data.item)"
+    <template #append>
+      <v-btn
+        @click="submit"
+        variant="elevated"
+        color="primary"
+        icon="mdi-keyboard-return"
+        size="small"
+        :disabled="!new_option"
+      />
+      <v-btn
+        :disabled="!!new_option || model.map(o => o.value).includes('')"
+        icon
+        class="mx-4"
+        variant="flat"
+        size="small"
+        @click="insert('')"
+        v-tooltip:bottom="$t('editor.option_new_gap_tooltip')"
       >
-        <v-switch
-          v-model="checkedModel"
-          :value="data.item"
-          dense
-          color="success"
-        >
-          <template v-slot:label></template>
-        </v-switch>
-        <v-icon small v-if="data.item === '\0'">mdi-selection</v-icon>
-        <template v-else>{{ data.item }}</template>
-      </v-chip>
+        <v-icon small icon="mdi-plus" />
+        <v-icon small icon="mdi-selection" />
+      </v-btn>
     </template>
-  </v-combobox>
-</template>
+  </v-text-field>
 
-<style>
-.v-input--switch__thumb.success--text::after {
-  content: "\002714"; /* heavy check mark */
-  font-weight: bold;
-  color: white;
-  text-shadow: 0 0 5px rgb(0, 0, 0, 0.5);
-}
-</style>
+  <v-list density="compact" width="50%" class="mx-auto">
+    <v-list-item
+      v-for="(option, index) in model"
+      item.title="option.value"
+      class="rounded-pill"
+      slim
+      :class="option.right ? ['bg-green-lighten-5'] : undefined"
+    >
+      <template #prepend>
+        <v-list-item-action
+          start
+          v-tooltip:bottom="$t('sheet_editor.add_option_is_right_answer')"
+        >
+          <v-checkbox-btn v-model="option.right" color="green" />
+        </v-list-item-action>
+      </template>
+
+      <template #title>
+        <v-icon small v-if="option.value === ''">mdi-selection</v-icon>
+        <span v-else class="font-weight-medium">{{ option.value }}</span>
+      </template>
+
+      <template #append>
+        <v-list-item-action end>
+          <v-hover #="{ isHovering, props }">
+            <v-btn
+              v-bind="props"
+              v-tooltip:bottom="$t('sheet_editor.delete')"
+              icon
+              variant="flat"
+              size="small"
+              :class="isHovering ? ['opacity-100'] : ['opacity-10']"
+              :color="isHovering ? 'red-lighten-5' : undefined"
+              @click="model.splice(index, 1)"
+            >
+              <v-icon
+                :color="isHovering ? 'red' : undefined"
+                icon="mdi-close"
+                size="x-large"
+              ></v-icon>
+            </v-btn>
+          </v-hover>
+        </v-list-item-action>
+      </template>
+    </v-list-item>
+  </v-list>
+</template>
