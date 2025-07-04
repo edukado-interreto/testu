@@ -3,7 +3,6 @@ import { nanoid } from "nanoid"
 import { useGoTo } from "vuetify"
 import { useI18n } from "vue-i18n"
 import type { ShallowRef } from "@vue/reactivity"
-import type { ComponentInternalInstance } from "@vue/runtime-core"
 import type { VForm, VTextarea } from "vuetify/components"
 
 const { t } = useI18n()
@@ -306,7 +305,7 @@ const inject_snippet = (snippet: string) => {
   })
 }
 
-const keyed = (iterable: SheetUnit[], i: number) => {
+const keyed = (iterable: Unit[], i: number) => {
   if ("_key" in iterable[i] && iterable[i]._key) {
     return iterable[i]._key
   }
@@ -355,14 +354,14 @@ const edit = (i: number) => {
   })
 }
 
-const add = (unit: Partial<SheetUnit>) => {
-  const base_unit: SheetUnit = {
+const add = (unit: Partial<Unit>) => {
+  const base_unit = {
     type: "default",
     title: "",
     code: "",
   }
 
-  sheet.value.push({ ...base_unit, ...unit } as SheetUnit)
+  sheet.value.push({ ...base_unit, ...unit } as Unit)
 
   edit(sheet.value.length - 1)
 }
@@ -427,9 +426,10 @@ defineExpose({
 <template>
   <div id="sheet-editor">
     <v-navigation-drawer
+      id="editor-drawer"
       :location="$vuetify.display.mobile ? 'bottom' : 'right'"
       permanent
-      width="45vw"
+      width="0"
       v-if="sheet && edit_drawer.show"
     >
       <template #prepend>
@@ -830,7 +830,10 @@ defineExpose({
         ></v-switch>
       </v-container>
     </v-navigation-drawer>
-    <v-container>
+    <v-container
+      id="current-sheet"
+      :class="edit_drawer.show ? ['edition', 'ms-0'] : undefined"
+    >
       <div
         class="mb-5 pa-9"
         v-if="sheet?.length == 0"
@@ -856,7 +859,7 @@ defineExpose({
           <v-sheet
             :elevation="i == current.index ? 8 : 0"
             :data-section-key="keyed(sheet, i)"
-            class="mb-4 transition-swing"
+            class="mb-4 mx-2 transition-swing"
             rounded
           >
             <v-row no-gutters>
@@ -868,9 +871,10 @@ defineExpose({
                     i != current.index ? edit(i) : (edit_drawer.show = false)
                   "
                   :color="i != current.index ? undefined : 'primary'"
-                  style="height: 100%; border-radius: 4px 0 0 4px"
+                  class="rounded-te-0 rounded-be-0"
+                  style="height: 100%; font-size: 1em"
                 >
-                  <v-icon small>
+                  <v-icon>
                     {{ i != current.index ? "mdi-pencil" : "mdi-check-bold" }}
                   </v-icon>
                 </v-btn>
@@ -934,6 +938,18 @@ defineExpose({
 </template>
 
 <style scoped>
+#sheet-editor {
+  container: sheet-editor / inline-size;
+}
+@container sheet-editor (min-width: 600px) {
+  #editor-drawer {
+    width: 45cqw;
+  }
+  #current-sheet.edition {
+    width: 55cqw;
+  }
+}
+
 .pre-line {
   white-space: pre-line;
 }

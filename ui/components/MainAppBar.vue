@@ -3,6 +3,8 @@ const auth = useAuthStore()
 const localePath = useLocalePath()
 const { t } = useI18n()
 
+const model = defineModel<boolean>()
+
 const home = localePath({ name: "index" })
 
 const embedded = computed(() => {
@@ -83,7 +85,7 @@ onMounted(async () => {
         {{ $t("main.signup") }}
       </v-btn>
     </div>
-    <v-app-bar-nav-icon class="d-md-none" @click="nav_drawer = !nav_drawer" />
+    <v-app-bar-nav-icon class="d-md-none" @click="model = !model" />
   </v-app-bar>
 </template>
 

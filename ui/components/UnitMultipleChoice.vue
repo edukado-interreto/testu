@@ -69,7 +69,7 @@ defineExpose({ get_solved })
 <template>
   <div class="editor">
     <div class="gap_demo">
-      <ol class="ms-4">
+      <ol class="ms-4" :class="parsed.length === 1 ? ['just-one'] : undefined">
         <li v-for="(phrase, i) in parsed" :key="i" class="pre-line">
           <template v-for="(token, j) in phrase">
             <UnitMultipleChoiceCheckbox
@@ -93,6 +93,9 @@ defineExpose({ get_solved })
 </template>
 
 <style scoped>
+ol.just-one {
+  list-style: none;
+}
 li {
   margin-bottom: 1.25em;
   line-height: 2.25em;

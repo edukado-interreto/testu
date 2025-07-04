@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const tokenize = useTokenize()
 const props = defineProps<{
   code?: string
@@ -59,12 +58,21 @@ defineExpose({ get_solved })
 <template>
   <div class="editor">
     <div class="gap_demo">
-      <ol>
+      <ol class="ms-4" :class="parsed.length === 1 ? ['just-one'] : undefined">
         <li v-for="(phrase, i) in parsed" :key="i" class="pre-line">
           <template v-for="(token, j) in phrase">
-            <PlayGapSelect :key="j" v-if="token.token === 'gap'" :options="token.options" :value="token.answer"
-              :shuffle="solved === undefined ? shuffle : false" :error-explanation="token.errorExplanation"
-              :readonly="readonly" ref="gaps" @answer="on_answer($event, i, j)" :silent="silent" />
+            <PlayGapSelect
+              :key="j"
+              v-if="token.token === 'gap'"
+              :options="token.options"
+              :value="token.answer"
+              :shuffle="solved === undefined ? shuffle : false"
+              :error-explanation="token.errorExplanation"
+              :readonly="readonly"
+              ref="gaps"
+              @answer="on_answer($event, i, j)"
+              :silent="silent"
+            />
             <span :key="j" v-if="token.token === 'text'" v-text="token.value" />
           </template>
         </li>
@@ -74,6 +82,9 @@ defineExpose({ get_solved })
 </template>
 
 <style scoped>
+ol.just-one {
+  list-style: none;
+}
 li {
   margin-bottom: 1.25em;
   line-height: 2.25em;

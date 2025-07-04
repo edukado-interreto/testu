@@ -53,13 +53,24 @@ const parsed: ComputedRef<Token[][]> = computed(() => {
 <template>
   <div class="editor">
     <div class="gap_demo">
-      <ol>
+      <ol class="ms-4" :class="parsed.length === 1 ? ['just-one'] : undefined">
         <li v-for="(phrase, i) in parsed" :key="i" class="pre-line">
           <template v-for="(token, j) in phrase">
-            <UnitOpenAnswerTextField :key="j" v-if="token.token === 'gap'" :options="token.options || []"
-              :value="token.answer || ''" :shuffle="shuffle" :ignore_case="ignore_case" :once="false"
-              :error-explanation="token.errorExplanation" :readonly="readonly" :ref="el => gaps.push(el)"
-              :silent="silent" :success="token.right || false" @answer="on_answer($event, i, j)" />
+            <UnitOpenAnswerTextField
+              :key="j"
+              v-if="token.token === 'gap'"
+              :options="token.options || []"
+              :value="token.answer || ''"
+              :shuffle="shuffle"
+              :ignore_case="ignore_case"
+              :once="false"
+              :error-explanation="token.errorExplanation"
+              :readonly="readonly"
+              :ref="el => gaps.push(el)"
+              :silent="silent"
+              :success="token.right || false"
+              @answer="on_answer($event, i, j)"
+            />
             <span :key="j" v-if="token.token === 'text'" v-text="token.value" />
           </template>
         </li>
@@ -69,6 +80,9 @@ const parsed: ComputedRef<Token[][]> = computed(() => {
 </template>
 
 <style scoped>
+ol.just-one {
+  list-style: none;
+}
 li {
   margin-bottom: 1.25em;
   line-height: 2.25em;

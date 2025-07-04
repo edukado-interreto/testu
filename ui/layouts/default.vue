@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { useDisplay } from "vuetify"
 
+const attrs = useAttrs()
 const { mobile } = useDisplay()
 
-const nav_drawer = ref(null)
+const nav_drawer = ref(!mobile)
 const embedded = computed(() => window?.location !== window?.parent?.location)
 </script>
 
 <template>
-  <MainAppBar />
+  <MainAppBar v-model="nav_drawer" />
   <v-navigation-drawer
     v-model="nav_drawer"
     v-if="!embedded"
@@ -18,6 +19,7 @@ const embedded = computed(() => window?.location !== window?.parent?.location)
     mobile-breakpoint="xs"
     :temporary="mobile"
     :location="mobile ? 'right' : 'left'"
+    :rail="(attrs.is_editor as boolean) && !mobile"
   >
     <MainMenu />
   </v-navigation-drawer>

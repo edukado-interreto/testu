@@ -237,7 +237,7 @@ watch(details, details => {
     <SheetEditor
       v-model:sheet="sheet"
       ref="sheet_editor"
-      class="mt-n8"
+      class="mt-8"
       @save="save"
     />
 
