@@ -1,37 +1,30 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from "vue-router"
 import { useI18n } from "vue-i18n"
-import { useNuxtApp } from "#app"
-import { useApiFetch } from "~/composables/useApiFetch"
+const { $api } = useNuxtApp()
 
+const localePath = useLocalePath()
 const route = useRoute()
 const router = useRouter()
 const { t, d } = useI18n()
-const { $localePath } = useNuxtApp()
 
 const msgbox = ref()
 const is_saving = ref(false)
 const is_toggling_accept_submission = ref(false)
-const infobox = ref(0)
+const infobox = ref<number | undefined>(0)
 const exam = reactive<any>({ accept_submission: true })
 const submissions = ref<any[]>([])
 
-function localePath(path: string) {
-  return $localePath ? $localePath(path) : path
-}
-
 const breadcrumbs = computed(() => [
   {
-    text: t("main.my_teaching"),
-    href: localePath("teach"),
-    disabled: false,
+    title: t("main.my_teaching"),
+    href: localePath({ name: "teach" }),
   },
   {
-    text: "Exams",
-    href: localePath("teach") + "#exams",
-    disabled: false,
+    title: t("teach.exams"),
+    href: localePath({ name: "teach", hash: "#exams" }),
   },
-  { text: exam.name || t("exam.untitled"), disabled: true },
+  { title: exam.name || t("exam.untitled"), disabled: true },
 ])
 
 const sharable_link = computed(() => {
@@ -40,8 +33,8 @@ const sharable_link = computed(() => {
 })
 
 async function fetch_exam_submissions(id: string) {
-  const { data, error } = await useApiFetch<any[]>(
-    `/v1/exams/${id}/submissions/`,
+  const { data, error } = await useApiFetch<Submission[]>(
+    `exams/${id}/submissions/`,
   )
   if (data.value) {
     submissions.value = data.value.map(s => ({
@@ -59,7 +52,7 @@ async function fetchExam() {
   }
   if (exam_id) {
     infobox.value = undefined
-    const { data } = await useApiFetch<any>(`/v1/exams/${exam_id}/`)
+    const { data } = await useApiFetch<Exam>(`exams/${exam_id}/`)
     if (data.value) {
       Object.assign(exam, data.value)
       exam.created = new Date(exam.created)
@@ -112,26 +105,17 @@ async function save() {
     return
   }
   is_saving.value = true
-  const api = {
-    path: "/v1/exams/",
-    method: "POST",
-  }
-  if (exam.lid) {
-    api.path = `/v1/exams/${exam.lid}/`
-    api.method = "PUT"
-  }
-  let ret
+  const path = exam.lid ? `exams/${exam.lid}/` : "exams/"
+  const method = exam.lid ? "PUT" : "POST"
+
   try {
-    ret = await useApiFetch(api.path, {
-      method: api.method,
-      body: { ...exam },
-    })
-    if (ret.data.value) {
+    const created_exam = await $api<Exam>(path, { method, body: { ...exam } })
+    if (created_exam) {
       if (!exam.lid) {
-        router.replace({ query: { exam: ret.data.value.lid } })
+        router.replace({ query: { exam: created_exam.lid } })
         infobox.value = undefined
       }
-      Object.assign(exam, ret.data.value)
+      Object.assign(exam, created_exam)
       exam.created = new Date(exam.created)
       window.scrollTo({ top: 0, behavior: "smooth" })
     }
@@ -177,9 +161,9 @@ async function save() {
           <v-list>
             <v-list-item color="error" @click="delete_exam">
               <v-list-item-icon>
-                <v-icon class="error--text">mdi-delete</v-icon>
+                <v-icon class="text-error">mdi-delete</v-icon>
               </v-list-item-icon>
-              <v-list-item-title class="error--text font-weight-bold">
+              <v-list-item-title class="text-error font-weight-bold">
                 {{ t("exam.delete") }}
               </v-list-item-title>
             </v-list-item>
@@ -204,7 +188,7 @@ async function save() {
         <v-btn
           :disabled="!exam.lid"
           :to="localePath(`/exam/${exam.lid}`)"
-          class="primary--text"
+          class="text-primary"
           nuxt
           text
         >
@@ -230,37 +214,39 @@ async function save() {
     <template v-else>
       <div
         v-if="exam.lid"
-        class="pa-9 text-h5 grey--text grey lighten-4 rounded mb-10"
+        class="pa-9 text-h5 text-grey grey lighten-4 rounded mb-10"
       >
-        <v-icon large class="grey--text me-1 pb-1">mdi-inbox</v-icon>
+        <v-icon large class="text-grey me-1 pb-1">mdi-inbox</v-icon>
         {{ t("exam.no_submissions") }}
       </div>
     </template>
     <v-expansion-panels class="mt-9" v-model="infobox">
       <v-expansion-panel>
-        <v-expansion-panel-header>
-          <template #default="{ open }">
+        <v-expansion-panel-title>
+          <template #="{ expanded }">
             {{ t("exam.details") }}
-            <span class="ml-5 text--disabled" v-if="!open">
+            <span class="ml-5 text-disabled" v-if="!expanded">
               <span v-if="exam.name">{{ exam.name }}</span>
               <span v-else class="font-italic">{{ t("exam.untitled") }}</span>
             </span>
           </template>
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
+        </v-expansion-panel-title>
+        <v-expansion-panel-text>
           <v-text-field
             :label="t('exam.name')"
             v-model="exam.name"
             maxlength="100"
+            variant="underlined"
           />
           <v-textarea
             :label="t('exam.description')"
             v-model="exam.description"
             auto-grow
+            variant="underlined"
             rows="1"
           />
           <v-btn
-            class="my-3 primary--text"
+            class="my-3 text-primary"
             large
             :loading="is_saving"
             text
@@ -269,7 +255,7 @@ async function save() {
             <v-icon class="mr-2">mdi-content-save</v-icon>
             {{ t("editor.save") }}
           </v-btn>
-        </v-expansion-panel-content>
+        </v-expansion-panel-text>
       </v-expansion-panel>
     </v-expansion-panels>
   </v-container>

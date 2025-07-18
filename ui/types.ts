@@ -121,6 +121,7 @@ declare global {
     lid: string
     modified: string
     likes: number
+    url: string
   }
 
   // Exercise-like
@@ -158,12 +159,28 @@ declare global {
     type: UnitType
   }
 
+  type Exam = {
+    pk: number
+    lid: string
+    created: Date
+    modified: Date
+    created_by: string
+    name: string
+    description: string
+    exercise_lid: string
+    accept_submission: boolean
+    likes: boolean
+    liked: Liked
+    url: string
+  }
+
   type Submission = {
     pk: number
     created: Date
     exercise_lid: string
     exam_lid: string | null
     exercise: Exercise
+    created_by?: string
     guest?: string
     data: object
     score: number
@@ -174,6 +191,7 @@ declare global {
     exercise_lid: string
     exam_lid: string | null
     exercise: Exercise
+    created_by?: string
     guest?: string
   }
 

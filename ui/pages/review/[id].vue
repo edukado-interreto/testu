@@ -1,12 +1,13 @@
 <script setup lang="ts">
 const { $api } = useNuxtApp()
 const localePath = useLocalePath()
-const route = useRoute()
 
-const id = computed(() => route.params.id as string)
-const url = computed(() => `submissions/${id.value}`)
-const { data: submission } = await useAsyncData<Submission>(
-  async () => await $api(url.value),
+const id = computed(() => useRoute().params.id as string)
+const url = computed(() => `submissions/${id.value}/`)
+const { data: submission } = await useLazyAsyncData(
+  url.value,
+  () => $api<Submission>(url.value),
+  { server: false },
 )
 </script>
 

@@ -1,15 +1,22 @@
-<script>
+<script setup lang="ts">
+import {
+  UnitDefault,
+  UnitMultipleChoice,
+  UnitOpenAnswer,
+  UnitPairing,
+} from "#components"
 // load a solved, submitted exercise and
 // display it for review
-export default {
-  props: ["submission", "silent"],
-}
+const { submission, silent } = defineProps<{
+  submission: Submission
+  silent: boolean
+}>()
 </script>
 
 <template>
   <div v-if="submission">
     <v-sheet
-      v-for="(unit, i) in submission.exercise?.data?.sheet"
+      v-for="(unit, i) in submission.exercise.data.sheet"
       :key="`submitted_${unit._key}`"
     >
       <div class="text-h4 my-4">
@@ -26,7 +33,7 @@ export default {
         :readonly="true"
         :silent="silent"
       />
-      <UnitPairing(
+      <UnitPairing
         v-if="unit.type == 'pairing'"
         :key="i"
         :solved="unit.solved"
