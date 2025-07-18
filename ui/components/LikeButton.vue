@@ -1,28 +1,25 @@
 <script setup lang="ts">
 const { $api } = useNuxtApp()
 
-const props = defineProps<{ item: object }>()
+const props = defineProps<{ item: Exercise | Exam }>()
 const liked = ref(false)
-const $store = {
-  getters: { "authenticator/authUser": { username: "USERNAME" } },
-}
+const auth = useAuthStore()
 const emit = defineEmits(["liked"])
 
-const user = computed(() => {
-  const authUser = $store.getters["authenticator/authUser"]
-  if (!authUser) return null
-  return authUser
-})
-
 const click = async () => {
-  if (!user) return
+  if (!auth.user) return
 
   const model = props.item.url.includes("exercise") ? "exercises" : "exams"
   const url = `${model}/${props.item.lid}/like/`
-  const resp = await $api(url, { method: "POST" })
-  const liked = resp.data.liked
-  liked.value = !!liked.value // Cast null or 1 as Boolean
+  const resp = await $api<LikedResponse>(url, { method: "post" })
+  liked.value = !!resp.liked // Cast null or 1 as Boolean
   emit("liked", liked.value)
+}
+
+const color = (active: boolean, hover: boolean) => {
+  const hue = active || hover ? "pink" : "grey"
+  const transparency = 4 - Number(active) * 2 - Number(hover)
+  return `${hue}-lighten-${transparency}`
 }
 
 onMounted(() => {
@@ -31,23 +28,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <v-btn
-    v-bind="$attrs"
-    @click="click"
-    :disabled="!user"
-    class="d-print-none"
-    variant="text"
-  >
-    <v-hover v-slot:default="{ isHovering, props }">
-      <v-icon
-        v-bind="props"
-        class="icon"
-        :color="`${liked || isHovering ? 'pink' : 'grey'} lighten-${
-          isHovering ? '4' : '2'
-        }`"
-      >
+  <v-hover #="{ isHovering, props }">
+    <v-btn
+      v-bind="props"
+      @click="click"
+      icon
+      :disabled="!auth.user"
+      class="d-print-none"
+      variant="text"
+    >
+      <v-icon class="icon" size="large" :color="color(liked, !!isHovering)">
         mdi-heart
       </v-icon>
-    </v-hover>
-  </v-btn>
+    </v-btn>
+  </v-hover>
 </template>

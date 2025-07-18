@@ -121,6 +121,7 @@ declare global {
     lid: string
     modified: string
     likes: number
+    liked: Liked
     url: string
   }
 
@@ -269,6 +270,11 @@ declare global {
   }
 
   type Drags = ([string, string] | [string, null])[]
+
+  type Liked = number | null
+  type LikedResponse = {
+    liked: Liked
+  }
 }
 
 declare module "nuxt/schema" {
