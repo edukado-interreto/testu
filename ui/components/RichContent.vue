@@ -72,7 +72,7 @@ export default {
     <span v-if="t.type == 'text'">{{ t.content }}</span>
 
     <template v-if="t.type == 'img'">
-      <div v-if="t.invalid_src" class="grey--text">
+      <div v-if="t.invalid_src" class="text-grey">
         <v-icon small>mdi-alert-outline</v-icon>
         <i>Invalid image: {{ t.content }}</i>
       </div>
@@ -80,7 +80,7 @@ export default {
     </template>
 
     <template v-if="t.type == 'video'">
-      <div v-if="t.invalid_url" class="grey--text">
+      <div v-if="t.invalid_url" class="text-grey">
         <v-icon small>mdi-alert-outline</v-icon>
         <i>Invalid video url: {{ t.content }}</i>
       </div>
@@ -96,7 +96,7 @@ export default {
     </template>
 
     <template v-if="t.type == 'sound'">
-      <div v-if="t.invalid_src" class="grey--text">
+      <div v-if="t.invalid_src" class="text-grey">
         <v-icon small>mdi-alert-outline</v-icon>
         <i>Invalid audio: {{ t.content }}</i>
       </div>

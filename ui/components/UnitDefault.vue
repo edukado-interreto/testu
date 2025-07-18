@@ -1,12 +1,22 @@
 <script setup lang="ts">
 const tokenize = useTokenize()
-const props = defineProps<{
+type Props = {
   code?: string
   shuffle?: boolean
-  solved?: { parsed: string[] }
+  solved?: SolvedDrags
   readonly?: boolean
   silent?: boolean
-}>()
+  parsed?: [string, string][]
+}
+const {
+  code = "",
+  shuffle = false,
+  solved,
+  readonly = false,
+  silent = false,
+  parsed,
+} = defineProps<Props>()
+
 const score_awarded = ref(0)
 
 const gaps: Ref<InstanceType<typeof PlayGapSelect>[]> = ref([])
@@ -23,7 +33,7 @@ const get_solved = () => {
   // inject the answers into "parsed"
   // and return the whole object
   let i = 0
-  const parsed_filled: Token[][] = parsed.value.map(s =>
+  const parsed_filled: Token[][] = parsed_local.value.map(s =>
     s.map((t: Token) => {
       if (t.token != "gap") return t
       const new_t = JSON.parse(JSON.stringify(t))
@@ -39,17 +49,18 @@ const get_solved = () => {
 }
 
 const score_available = computed(() => {
-  return parsed.value.flatMap(row => row.filter(t => t.token === "gap")).length
+  return parsed_local.value.flatMap(row => row.filter(t => t.token === "gap"))
+    .length
 })
 
-const parsed: ComputedRef<Token[][]> = computed(() => {
-  if (props.solved !== undefined) return props.solved.parsed
+const parsed_local: ComputedRef<Token[][]> = computed(() => {
+  if (solved !== undefined) return solved.parsed
   // if the parent component provided a 'solved' prop,
   // bypass 'code' and load the 'solved' object which
   // contains the already parsed 'code' with answers
   // included.
 
-  return tokenize(props.code)
+  return tokenize(code)
 })
 
 defineExpose({ get_solved })
@@ -58,8 +69,11 @@ defineExpose({ get_solved })
 <template>
   <div class="editor">
     <div class="gap_demo">
-      <ol class="ms-4" :class="parsed.length === 1 ? ['just-one'] : undefined">
-        <li v-for="(phrase, i) in parsed" :key="i" class="pre-line">
+      <ol
+        class="ms-4"
+        :class="parsed_local.length === 1 ? ['just-one'] : undefined"
+      >
+        <li v-for="(phrase, i) in parsed_local" :key="i" class="pre-line">
           <template v-for="(token, j) in phrase">
             <PlayGapSelect
               :key="j"

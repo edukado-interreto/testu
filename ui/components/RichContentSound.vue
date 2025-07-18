@@ -21,7 +21,7 @@ export default {
   >
     <source :src="src" @error="broken = true" />
   </audio>
-  <div v-else class="grey--text">
+  <div v-else class="text-grey">
     <v-icon small>mdi-alert-outline</v-icon>
     <i>Invalid sound: {{ content }}</i>
   </div>

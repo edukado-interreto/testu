@@ -244,11 +244,11 @@ watch(details, details => {
     <v-expansion-panels class="mt-9" v-model="infobox">
       <v-expansion-panel>
         <v-expansion-panel-title>
-          <template v-slot:default="{ open }">
+          <template #="{ expanded }">
             {{ $t("editor.details") }}
-            <span class="ml-5 text--disabled" v-if="!open">
+            <span class="ml-5 text-disabled" v-if="!expanded">
               <span v-if="details.title">{{ details.title }}</span>
-              <span v-else class="font-italic">Untitled exercise</span>
+              <span v-else class="font-italic">{{ $t("exercise.untitled") }}</span>
             </span>
           </template>
         </v-expansion-panel-title>

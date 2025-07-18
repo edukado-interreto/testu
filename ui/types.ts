@@ -1,3 +1,10 @@
+import type { ComponentPublicInstance } from "vue"
+import type {
+  UnitDefault,
+  UnitMultipleChoice,
+  UnitOpenAnswer,
+  UnitPairing,
+} from "#components"
 import type { default as TMsgBox } from "@/components/MsgBox.vue"
 
 import type langs from "~/data/langs.js"
@@ -13,7 +20,7 @@ declare global {
 
   /* App */
 
-  type VueElement = { [k: string]: Element | ComponentPublicInstance | null }
+  type VueElement = Element | ComponentPublicInstance | null
 
   type DRF<T> = {
     previous: string | null
@@ -80,10 +87,11 @@ declare global {
   /* Models */
 
   type UnitType = "default" | "open_answer" | "multiple_choice" | "pairing"
-
-  type UnitComponent = (unit_type: UnitType) => {
-    get_solved: () => Solved
-  }
+  type UnitComponent =
+    | typeof UnitDefault
+    | typeof UnitMultipleChoice
+    | typeof UnitOpenAnswer
+    | typeof UnitPairing
 
   type Cefr = "A1" | "A2" | "B1" | "B2" | "C1" | "C2"
   type CefrValue = 1 | 2 | 3 | 4 | 5 | 6

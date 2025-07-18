@@ -42,7 +42,7 @@ const create_exam = async () => {
     !(await msgbox.value?.confirm(t("exercise.create_exam_confirm"), ""))
   )
     return
-  router.push(localePath(`/exam_editor?new_from=${exercise.value.lid}`))
+  router.push(localePath(`/exam-editor?new_from=${exercise.value.lid}`))
 }
 const remove = async () => {
   if (!(await msgbox.value?.confirm(t("exercise.delete_confirm"), ""))) return
@@ -157,7 +157,7 @@ useHead({ title: exercise.value?.name })
             />
             <v-list-item
               v-if="user_is_creator"
-              class="error--text font-weight-'old"
+              class="text-error font-weight-'old"
               @click="remove"
               :title="t('exercise.delete')"
               prepend-icon="mdi-delete"

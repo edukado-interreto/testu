@@ -92,7 +92,8 @@
     "submit_misuse_confirm": "Thank you for helping keeping Testu.eu appropriate.",
     "target_language": "Studied language",
     "target_language_is": "Studied language:",
-    "unlisted": "This exercise is unlisted in search results"
+    "unlisted": "This exercise is unlisted in search results",
+    "untitled": "Untitled exercise"
   },
   "guide": {
     "about": "How to create exercises",

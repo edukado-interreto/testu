@@ -105,10 +105,10 @@ const x: SparklineItem = ""
   <v-container>
     <v-card max-width="600" elevation="1" class="mb-4">
       <v-card-text class="d-block d-sm-flex align-baseline">
-        <div class="text-h6 font-weight-light grey--text text--darken-3">
+        <div class="text-h6 font-weight-light text-grey text--darken-3">
           {{ $t("learn.recent") }}
         </div>
-        <div class="subheading ms-0 ms-sm-4 grey--text">
+        <div class="subheading ms-0 ms-sm-4 text-grey">
           {{ $t("learn.submitted") }}
         </div>
       </v-card-text>

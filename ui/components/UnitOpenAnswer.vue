@@ -1,13 +1,23 @@
 <script setup lang="ts">
 const tokenize = useTokenize()
-const props = defineProps<{
-  code: string
-  shuffle: boolean
-  solved?: { parsed: string[] }
-  readonly: boolean
-  silent: boolean
-  ignore_case: boolean
-}>()
+type Props = {
+  code?: string
+  shuffle?: boolean
+  solved?: SolvedDrags
+  readonly?: boolean
+  silent?: boolean
+  parsed?: [string, string][]
+  ignore_case?: boolean
+}
+const {
+  code = "",
+  shuffle = false,
+  solved,
+  readonly = false,
+  silent = false,
+  parsed,
+  ignore_case = false,
+} = defineProps<Props>()
 
 const score_awarded = ref(0)
 
@@ -24,7 +34,7 @@ const get_solved = () => {
   // inject the answers into "parsed"
   // and return the whole object
   let i = 0
-  const parsed_filled = parsed.map(phrase =>
+  const parsed_filled = parsed_local.map(phrase =>
     phrase.map(token => {
       if (token.token != "gap") return token
       token.answer = gaps.value[i].answer
@@ -37,9 +47,10 @@ const get_solved = () => {
   }
 }
 const score_available = computed(() => {
-  return parsed.flatMap(line => line.filter(t => t.token === "gap")).length
+  return parsed_local.flatMap(line => line.filter(t => t.token === "gap"))
+    .length
 })
-const parsed: ComputedRef<Token[][]> = computed(() => {
+const parsed_local: ComputedRef<Token[][]> = computed(() => {
   if (props.solved !== undefined) return props.solved.parsed
   // if the parent component provided a 'solved' prop,
   // bypass 'code' and load the 'solved' object which
@@ -53,8 +64,11 @@ const parsed: ComputedRef<Token[][]> = computed(() => {
 <template>
   <div class="editor">
     <div class="gap_demo">
-      <ol class="ms-4" :class="parsed.length === 1 ? ['just-one'] : undefined">
-        <li v-for="(phrase, i) in parsed" :key="i" class="pre-line">
+      <ol
+        class="ms-4"
+        :class="parsed_local.length === 1 ? ['just-one'] : undefined"
+      >
+        <li v-for="(phrase, i) in parsed_local" :key="i" class="pre-line">
           <template v-for="(token, j) in phrase">
             <UnitOpenAnswerTextField
               :key="j"

@@ -20,7 +20,7 @@ export default {
     max-height="150"
     @error="broken = true"
   />
-  <div v-else class="grey--text">
+  <div v-else class="text-grey">
     <v-icon small>mdi-alert-outline</v-icon>
     <i>Invalid image: {{ content }}</i>
   </div>

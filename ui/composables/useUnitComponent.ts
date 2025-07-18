@@ -1,16 +1,16 @@
 import {
   UnitDefault,
-  UnitOpenAnswer,
   UnitMultipleChoice,
+  UnitOpenAnswer,
   UnitPairing,
 } from "#components"
 
-export default function (): UnitComponent {
-  return (type: UnitType) =>
+export default function () {
+  return (unit_type: UnitType): UnitComponent =>
     ({
       default: UnitDefault,
       open_answer: UnitOpenAnswer,
       multiple_choice: UnitMultipleChoice,
       pairing: UnitPairing,
-    })[type]
+    })[unit_type]
 }

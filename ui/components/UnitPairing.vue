@@ -11,7 +11,7 @@ const shuffle_array = useShuffleArray()
 enableDragDropTouch()
 
 type Props = {
-  code: string
+  code?: string
   shuffle?: boolean
   solved?: SolvedDrags
   readonly?: boolean
@@ -19,7 +19,7 @@ type Props = {
   parsed?: [string, string][]
 }
 const {
-  code,
+  code = "",
   shuffle = false,
   solved,
   readonly = false,
