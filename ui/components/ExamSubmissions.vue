@@ -1,32 +1,27 @@
 <script setup lang="ts">
-import SheetReview from "./SheetReview.vue"
+const { submissions } = defineProps<{ submissions: Submission[] }>()
+const current = shallowRef(0)
 
-const props = defineProps<{ submissions: any[] }>()
-const submissionsIndex = ref(0)
-
-const submissionsItems = computed(() =>
-  [...props.submissions]
-    .sort((a, b) => b.created - a.created)
-    .map((e, i) => ({
-      value: i,
-      text:
-        (e.created_by || `${e.guest} (guest)`) +
-        " (" +
-        new Date(e.created).toLocaleString("en-US") +
-        ")",
-      data: e,
-    })),
+const display = (submission: Submission) => {
+  return (
+    (submission.created_by || `${submission.guest} (guest)`) +
+    ` (${new Date(submission.created).toLocaleString()})`
+  )
+}
+const submissions_items = computed(() =>
+  submissions
+    .sort((a, b) => (b.created < a.created ? 1 : -1))
+    .map((subm, i) => ({ value: i, title: display(subm), data: subm })),
 )
 
-const nthOfTotal = computed(() => {
-  const of = "of"
-  const len = submissionsItems.value.length
-  if (len === 0) return `0 ${of} 0`
-  return `${submissionsIndex.value + 1} ${of} ${len}`
+const nth_of_total = computed(() => {
+  const len = submissions_items.value.length
+  if (len === 0) return [0, 0]
+  return [current.value + 1, len]
 })
 
-const currentSubmission = computed(
-  () => submissionsItems.value[submissionsIndex.value]?.data,
+const current_submission = computed(
+  () => submissions_items.value[current.value]?.data,
 )
 </script>
 
@@ -34,35 +29,37 @@ const currentSubmission = computed(
   <v-row class="sticky mb-6">
     <v-col>
       <v-select
-        outlined
+        variant="outlined"
         density="compact"
-        :items="submissionsItems"
-        v-model="submissionsIndex"
+        :items="submissions_items"
+        v-model="current"
         hide-details
       />
     </v-col>
     <v-col class="d-flex align-center">
       <v-btn
-        icon
-        @click="submissionsIndex--"
-        :disabled="submissionsIndex === 0"
-      >
-        <v-icon>mdi-chevron-left</v-icon>
-      </v-btn>
-      <span class="mx-2">{{ nthOfTotal }}</span>
+        icon="mdi-chevron-left"
+        variant="text"
+        @click="current--"
+        :disabled="current === 0"
+      />
+      <span class="mx-2">
+        {{
+          $t("main.of", { current: nth_of_total[0], total: nth_of_total[1] })
+        }}
+      </span>
       <v-btn
-        icon
-        @click="submissionsIndex++"
-        :disabled="submissionsIndex === submissionsItems.length - 1"
-      >
-        <v-icon>mdi-chevron-right</v-icon>
-      </v-btn>
+        icon="mdi-chevron-right"
+        variant="text"
+        @click="current++"
+        :disabled="current === submissions_items.length - 1"
+      />
     </v-col>
   </v-row>
   <SheetReview
-    v-if="currentSubmission"
-    :key="currentSubmission.pk"
-    :submission="currentSubmission"
+    v-if="current_submission"
+    :key="current_submission.pk"
+    :submission="current_submission"
   />
 </template>
 

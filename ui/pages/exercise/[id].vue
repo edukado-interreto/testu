@@ -42,14 +42,19 @@ const create_exam = async () => {
     !(await msgbox.value?.confirm(t("exercise.create_exam_confirm"), ""))
   )
     return
-  router.push(localePath(`/exam-editor?new_from=${exercise.value.lid}`))
+  await navigateTo(
+    localePath({
+      name: "exam-editor",
+      query: { new_from: exercise.value.lid },
+    }),
+  )
 }
 const remove = async () => {
   if (!(await msgbox.value?.confirm(t("exercise.delete_confirm"), ""))) return
 
   try {
     await $api(`exercises/${id}`, { method: "DELETE" })
-    router.push(localePath("/"))
+    await navigateTo(localePath({ name: "index" }))
   } catch (e: Error | unknown) {
     console.error({ ...e })
     await msgbox.value?.alert(`Error ${e.response.status}`, "")
@@ -145,13 +150,20 @@ useHead({ title: exercise.value?.name })
               :title="t('exercise.create_exam')"
             />
             <v-list-item
-              :to="localePath(`/editor?new_from=${exercise.lid}`)"
+              :to="
+                localePath({
+                  name: 'editor',
+                  query: { new_from: exercise.lid },
+                })
+              "
               :title="t('exercise.create_copy')"
               prepend-icon="mdi-content-copy"
             />
             <v-list-item
               v-if="user_is_creator"
-              :to="localePath(`/editor?edit=${exercise.lid}`)"
+              :to="
+                localePath({ name: 'editor', query: { edit: exercise.lid } })
+              "
               :title="t('exercise.edit')"
               prepend-icon="mdi-pencil"
             />

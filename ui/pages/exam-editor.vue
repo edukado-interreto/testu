@@ -6,7 +6,7 @@ const { $api } = useNuxtApp()
 const localePath = useLocalePath()
 const route = useRoute()
 const router = useRouter()
-const { t, d } = useI18n()
+const { t } = useI18n()
 
 const msgbox = ref()
 const is_saving = ref(false)
@@ -29,7 +29,10 @@ const breadcrumbs = computed(() => [
 
 const sharable_link = computed(() => {
   if (!exam.lid) return ""
-  return new URL(localePath(`/exam/${exam.lid}`), window.location.origin).href
+  return new URL(
+    localePath({ name: "exam", params: { id: exam.lid } }),
+    window.location.origin,
+  ).href
 })
 
 async function fetch_exam_submissions(id: string) {
@@ -73,7 +76,7 @@ async function delete_exam() {
     await msgbox.value?.alert(t("exam.delete_error"))
     return
   }
-  router.push(localePath("teach") + "#exams")
+  await navigateTo(localePath({ name: "teach", hash: "#exams" }))
 }
 
 async function toggle_accept_submission(value: boolean) {
@@ -153,18 +156,20 @@ async function save() {
       <v-spacer />
       <v-col cols="auto">
         <v-menu>
-          <template #activator="{ props: menuProps }">
-            <v-btn icon v-bind="menuProps" :disabled="!exam.lid">
+          <template #activator="{ props }">
+            <v-btn icon variant="text" v-bind="props" :disabled="!exam.lid">
               <v-icon>mdi-dots-vertical</v-icon>
             </v-btn>
           </template>
           <v-list>
             <v-list-item color="error" @click="delete_exam">
-              <v-list-item-icon>
-                <v-icon class="text-error">mdi-delete</v-icon>
-              </v-list-item-icon>
+              <template #prepend>
+                <v-avatar>
+                  <v-icon class="text-error">mdi-delete</v-icon>
+                </v-avatar>
+              </template>
               <v-list-item-title class="text-error font-weight-bold">
-                {{ t("exam.delete") }}
+                {{ $t("exam.delete") }}
               </v-list-item-title>
             </v-list-item>
           </v-list>
@@ -172,25 +177,30 @@ async function save() {
       </v-col>
     </v-row>
     <p class="text-caption" v-if="exam.created">
-      {{ t("exam.created", { date: d(exam.created, "dt") }) }}
+      {{ $t("exam.created", { date: $d(exam.created, "short") }) }}
     </p>
     <v-row no-gutters class="mt-4">
       <v-col cols="12" sm="6">
-        <NuxtLink :to="localePath(`/exercise/${exam.exercise_lid}`)">
-          <v-icon>mdi-file-outline</v-icon>
-          {{ t("exam.goto_exercise") }}
-        </NuxtLink>
+        <v-btn
+          prepend-icon="mdi-file-outline"
+          size="large"
+          color="primary"
+          variant="text"
+          :to="localePath(`/exercise/${exam.exercise_lid}`)"
+        >
+          {{ $t("exam.goto_exercise") }}
+        </v-btn>
       </v-col>
       <v-col v-if="exam.lid">
-        <t-CopyTextField :value="sharable_link" :label="t('exam.link')" />
+        <CopyTextField v-model="sharable_link" :label="t('exam.link')" />
       </v-col>
       <v-col v-if="exam.lid" class="flex-shrink-1 flex-grow-0">
         <v-btn
           :disabled="!exam.lid"
-          :to="localePath(`/exam/${exam.lid}`)"
+          :to="localePath({ name: 'exam', params: { id: exam.lid } })"
           class="text-primary"
           nuxt
-          text
+          variant="text"
         >
           {{ t("exam.view") }}
         </v-btn>
@@ -204,6 +214,7 @@ async function save() {
           v-model="exam.accept_submission"
           @change="toggle_accept_submission"
           :loading="is_toggling_accept_submission"
+          color="primary"
         />
       </v-col>
       <v-spacer />
@@ -214,10 +225,10 @@ async function save() {
     <template v-else>
       <div
         v-if="exam.lid"
-        class="pa-9 text-h5 text-grey grey lighten-4 rounded mb-10"
+        class="pa-9 text-h5 text-grey bg-grey-lighten-4 rounded mb-10"
       >
         <v-icon large class="text-grey me-1 pb-1">mdi-inbox</v-icon>
-        {{ t("exam.no_submissions") }}
+        {{ $t("exam.no_submissions") }}
       </div>
     </template>
     <v-expansion-panels class="mt-9" v-model="infobox">

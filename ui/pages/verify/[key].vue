@@ -26,7 +26,7 @@ const verify_email = async () => {
       return
     }
   }
-  router.push({ path: localePath("/login"), query: { verified: null } })
+  await navigateTo(localePath({ name: "login", query: { verified: null } }))
 }
 
 const resend_link = async () => {
@@ -62,11 +62,16 @@ onMounted(async () => {
       <div v-if="error_messages.length > 0">
         <v-alert class="my-4" type="error">
           <ul style="list-style: none; padding: 0">
-            <li v-for="(msg, i) in error_messages" :key="i" v-text="msg"/>
+            <li v-for="(msg, i) in error_messages" :key="i" v-text="msg" />
           </ul>
         </v-alert>
 
-        <v-form @submit.prevent="resend_link" v-show="!submitted" ref="form" class="my-6 ">
+        <v-form
+          @submit.prevent="resend_link"
+          v-show="!submitted"
+          ref="form"
+          class="my-6"
+        >
           <v-text-field
             v-model="email"
             name="email"
@@ -74,7 +79,7 @@ onMounted(async () => {
             variant="underlined"
             :label="$t('login.email')"
             prepend-icon="mdi-account"
-            :rules="[(v) => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
+            :rules="[v => /.+@.+\..+/.test(v) || $t('login.mail_invalid')]"
             validate-on="submit lazy"
             required
           />
@@ -87,9 +92,9 @@ onMounted(async () => {
         </v-form>
       </div>
       <div v-else class="d-flex mt-16">
-        <v-spacer/>
+        <v-spacer />
         <v-progress-circular indeterminate color="accent" size="70" width="3" />
-        <v-spacer/>
+        <v-spacer />
       </div>
     </v-col>
     <v-spacer />

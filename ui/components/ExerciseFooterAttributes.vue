@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { d, t } = useI18n()
+const { t } = useI18n()
 const unit_component = useUnitComponent()
 const cefr = useCefr()
 const { langs_table, langs_available } = useLangsAvailable()
@@ -16,13 +16,13 @@ const tags_localized = computed(() => {
     <v-col cols="auto">
       <v-icon size="small" class="align-start" start>mdi-account</v-icon>
       <span class="username">
-        {{ exercise.created_by || t("exercise.anonymous") }}
+        {{ exercise.created_by || $t("exercise.anonymous") }}
       </span>
     </v-col>
     <v-col cols="auto" v-if="exercise.modified">
       <v-icon size="small" start>mdi-clock</v-icon>
       <time :datetime="exercise.modified">
-        {{ d(new Date(exercise.modified), "short") }}
+        {{ $d(new Date(exercise.modified), "short") }}
       </time>
     </v-col>
 

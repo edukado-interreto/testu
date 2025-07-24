@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n"
+const model = defineModel({ type: String })
+const { label } = defineProps<{ label?: string }>()
+const field = useTemplateRef("field")
 
-const props = defineProps<{ value: string; label?: string }>()
-const field = ref()
-const { t } = useI18n()
-
-function copyText() {
+function copy_text() {
   const input = field.value?.$el?.querySelector("input")
   if (!input) return
   input.select()
   if (navigator.clipboard) {
-    navigator.clipboard.writeText(props.value)
+    navigator.clipboard.writeText(model.value as string)
   } else {
     document.execCommand("copy")
   }
@@ -20,15 +18,15 @@ function copyText() {
 <template>
   <v-text-field
     ref="field"
-    outlined
+    variant="outlined"
     density="compact"
     prepend-inner-icon="mdi-link-variant"
     append-inner-icon="mdi-content-copy"
-    @click:append-inner="copyText"
-    :model-value="props.value"
-    :label="props.label"
+    @click:append-inner="copy_text"
+    :model-value="model"
+    :label="label"
+    :title="$t('exam.copy')"
     readonly
-    :title="t('exam.copy')"
     hide-details
   />
 </template>

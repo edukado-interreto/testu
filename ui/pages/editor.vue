@@ -155,14 +155,14 @@ const save = async () => {
   }
 
   try {
-    const data = await $api(api.path, {
+    const data = await $api<Exercise>(api.path, {
       method: api.method,
       body: payload,
     })
     console.info(" ret:", data)
     dirty.value = false
     loaded_sheet.value = JSON.stringify(data.sheet)
-    navigateTo(localePath(`/exercise/${data.lid}`))
+    await navigateTo(localePath({ name: "exercise", params: { id: data.lid } }))
   } catch (e) {
     console.error({ ...e })
     const resp = e.response
@@ -248,7 +248,9 @@ watch(details, details => {
             {{ $t("editor.details") }}
             <span class="ml-5 text-disabled" v-if="!expanded">
               <span v-if="details.title">{{ details.title }}</span>
-              <span v-else class="font-italic">{{ $t("exercise.untitled") }}</span>
+              <span v-else class="font-italic">
+                {{ $t("exercise.untitled") }}
+              </span>
             </span>
           </template>
         </v-expansion-panel-title>

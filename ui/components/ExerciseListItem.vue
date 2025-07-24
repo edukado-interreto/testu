@@ -4,7 +4,10 @@ const props = defineProps<{ item: Exercise }>()
 </script>
 
 <template>
-  <v-card :to="localePath(`/exercise/${item.lid}`)" class="mb-5">
+  <v-card
+    :to="localePath({ name: 'exercise', params: { id: item.lid } })"
+    class="mb-5"
+  >
     <v-card-title class="subheading font-weight-bold">
       {{ item.name }}
       <v-tooltip position="bottom" v-if="item.searchable === false">

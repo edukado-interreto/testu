@@ -1,16 +1,10 @@
 <script setup lang="ts">
-import {
-  UnitDefault,
-  UnitMultipleChoice,
-  UnitOpenAnswer,
-  UnitPairing,
-} from "#components"
-// load a solved, submitted exercise and
-// display it for review
+// Load a solved, submitted exercise and display it for review
 const { submission, silent } = defineProps<{
   submission: Submission
   silent: boolean
 }>()
+const len = computed(() => submission.exercise.data.sheet.length)
 </script>
 
 <template>
@@ -20,7 +14,8 @@ const { submission, silent } = defineProps<{
       :key="`submitted_${unit._key}`"
     >
       <div class="text-h4 my-4">
-        {{ i + 1 }}. {{ unit.title }}
+        <template v-if="len > 1">{{ i + 1 }}.</template>
+        {{ unit.title }}
         <span v-if="unit.title === ''" class="font-italic">Untitled unit</span>
       </div>
       <div v-if="unit.description" class="body-2 mb-4 pre-line">

@@ -1,43 +1,35 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n"
-import { useRoute, useRouter } from "vue-router"
-import { useNuxtApp } from "#app"
-
-const props = defineProps<{ item: any }>()
-const { t, d } = useI18n()
-const { $localePath } = useNuxtApp()
-
-function localePath(path: string) {
-  // fallback if $localePath is not available
-  return $localePath ? $localePath(path) : path
-}
+const { item: exam } = defineProps<{ item: Exam }>()
+const localePath = useLocalePath()
 </script>
 
 <template>
   <v-card
-    :to="localePath(`/exam_editor?exam=${props.item.lid}`)"
+    :to="localePath({ name: 'exam-editor', query: { exam: exam.lid } })"
     nuxt
     class="mb-5"
   >
-    <v-card-title class="subheading font-weight-bold">
-      <span>
-        {{ props.item.name }}
-      </span>
-      <v-spacer></v-spacer>
-      <v-chip v-if="props.item.accept_submission" small color="primary">
-        Accepts submissions
-      </v-chip>
-    </v-card-title>
-    <v-card-subtitle v-if="props.item.description">
-      {{ props.item.description }}
-    </v-card-subtitle>
-    <v-divider></v-divider>
+    <v-card-item>
+      <v-card-title class="d-flex text-h6 font-weight-bold">
+        <span>
+          {{ exam.name }}
+        </span>
+        <v-spacer />
+        <v-chip v-if="exam.accept_submission" size="small" color="primary" variant="flat">
+          {{ $t("exam.accepts_submissions") }}
+        </v-chip>
+      </v-card-title>
+      <v-card-subtitle v-if="exam.description">
+        {{ exam.description }}
+      </v-card-subtitle>
+    </v-card-item>
+    <v-divider />
     <v-card-text>
-      <v-icon small>mdi-account</v-icon>
-      {{ props.item.created_by || t("exercise.anonymous") }}
+      <v-icon size="small">mdi-account</v-icon>
+      {{ exam.created_by || $t("exercise.anonymous") }}
       <span>·</span>
-      <v-icon small>mdi-clock</v-icon>
-      {{ d(new Date(props.item.created), "dt") }}
+      <v-icon size="small">mdi-clock</v-icon>
+      {{ $d(new Date(exam.created), "long") }}
     </v-card-text>
   </v-card>
 </template>

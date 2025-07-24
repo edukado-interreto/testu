@@ -107,7 +107,7 @@ onMounted(async () => {
           <v-btn
             color="secondary"
             class="mt-2 text-white"
-            :to="localePath(`/reset-password/?email=${email}`)"
+            :to="localePath({ name: 'reset-password', query: { email } })"
             v-show="!!error_message"
           >
             {{ $t("login.password_reset") }}

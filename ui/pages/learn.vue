@@ -6,6 +6,8 @@ const localePath = useLocalePath()
 
 useHead({ title: t("main.my_learning") })
 
+definePageMeta({ middleware: ["authenticated"] })
+
 const { $api } = useNuxtApp()
 
 const PAGE_LENGTH = 30
@@ -150,7 +152,7 @@ const x: SparklineItem = ""
           size="small"
           variant="tonal"
           nuxt
-          :to="localePath(`/review/${item.pk}`)"
+          :to="localePath({ name: 'review-id', params: { id: item.pk } })"
         >
           {{ $t("learn.review") }}
         </v-btn>

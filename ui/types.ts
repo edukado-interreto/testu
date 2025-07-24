@@ -111,7 +111,7 @@ declare global {
     name: string
     src_lang: string
     searchable: boolean
-    lang_learn: Lang["code"]
+    lang_learn: boolean
     lang_learn_lang?: Lang["code"]
     lang_learn_cefr_level_min?: CefrValue
     lang_learn_cefr_level_max?: CefrValue
@@ -164,6 +164,7 @@ declare global {
     description: string
     shuffle: boolean
     ignore_case: boolean
+    solved?: SolvedDrags
     title: string
     type: UnitType
   }

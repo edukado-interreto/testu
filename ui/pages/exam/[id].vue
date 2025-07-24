@@ -54,8 +54,8 @@ const loading = computed(() => {
   return ["pending", "idle"].includes(status.value)
 })
 
-function login() {
-  navigateTo(localePath({ name: "login" }))
+const login = async () => {
+  await navigateTo(localePath({ name: "login" }))
 }
 
 // create the submission object to be sent to the server
@@ -171,9 +171,8 @@ async function submit() {
           <v-btn
             class="ms-2 text-primary"
             v-if="current_username == exam.created_by"
-            text
             nuxt
-            :to="localePath(`/exam_editor?exam=${id}`)"
+            :to="localePath({ name: 'exam-editor', query: { exam: id } })"
           >
             <v-icon class="me-1">mdi-pencil</v-icon>
             {{ t("main.edit") }}

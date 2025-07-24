@@ -47,6 +47,7 @@
   },
   "exam": {
     "accept_submissions": "Accept submissions",
+    "accepts_submissions": "Accepts submissions",
     "confirm": "This operation cannot be undone. Proceed?",
     "copy": "Copy",
     "created": "Created: {date}",
@@ -216,6 +217,7 @@
     "logout": "Logout",
     "my_learning": "My learning",
     "my_teaching": "My teaching",
+    "of": "{current} of {total}",
     "ok": "OK",
     "only_logged_in": "This page is available only for signed in users",
     "privacy": "Privacy policy",

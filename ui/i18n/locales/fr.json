@@ -34,6 +34,7 @@
   },
   "exam": {
     "accept_submissions": "Accepter les soumissions",
+    "accepts_submissions": "Accepte les soumissions",
     "confirm": "Cette opération ne peut pas être annulée. Continuer ?",
     "copy": "Copier",
     "created": "Créé le : {date}",
@@ -202,6 +203,7 @@
     "logout": "Déconnexion",
     "my_learning": "Mon apprentissage",
     "my_teaching": "Mon enseignement",
+    "of": "{current} sur {total}",
     "ok": "OK",
     "only_logged_in": "Cette page n’est accessible qu’aux utilisateurs inscrits.",
     "privacy": "Politique de confidentialité",

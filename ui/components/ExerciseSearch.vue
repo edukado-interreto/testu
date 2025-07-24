@@ -14,11 +14,11 @@ const cefr = useCefr()
 
 // Search
 const TYPING_DEBOUNCE_MS = 300
-const PAGE_SIZE = 20
+const page_length = shallowRef(50)
 const page = shallowRef(1)
 
-const limit = ref(PAGE_SIZE)
-const offset = computed(() => (page.value - 1) * PAGE_SIZE)
+const limit = ref(page_length.value)
+const offset = computed(() => (page.value - 1) * page_length.value)
 const name = ref("") // debounced by search_text
 const tags = ref<Tag[]>([])
 const created_by = ref("")
@@ -64,7 +64,7 @@ const {
   error,
   status,
   refresh,
-} = await useAsyncData(
+} = await useLazyAsyncData(
   "exercises",
   () => $api<DRF<Exercise>>("exercises/", { query: params.value }),
   { server: false, watch: [params] },
