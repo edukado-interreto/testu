@@ -29,9 +29,20 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_EMAIL_SUBJECT_PREFIX = ""
 
-DEFAULT_FROM_EMAIL = "Testu team <noreply@testu.eu>"
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="Testu team <testu@ikso.net>")
 SERVER_EMAIL = DEFAULT_FROM_EMAIL  # For mail_admins()
 EMAIL_SUBJECT_PREFIX = ""  # Instead of "[Django] "
+
+EMAIL_BACKEND = config(
+    "EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
+)
+
+if "emaillabs" in EMAIL_BACKEND:
+    ANYMAIL = {
+        "EMAILLABS_SMTP_ACCOUNT": config("EMAILLABS_SMTP_ACCOUNT"),
+        "EMAILLABS_APP_KEY": config("EMAILLABS_APP_KEY"),
+        "EMAILLABS_SECRET_KEY": config("EMAILLABS_SECRET_KEY"),
+    }
 
 STATIC_URL = "/assets/static/"
 STATIC_ROOT = config("STATIC_ROOT", default=str(BASE_DIR / "assets/static/"))
@@ -158,18 +169,5 @@ REST_AUTH = {
     "JWT_AUTH_REFRESH_COOKIE": "jwt-refresh",
     "USER_DETAILS_SERIALIZER": "apps.core.serializers.UserSerializer",
 }
-
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
-if SENDGRID_API_KEY := config("SENDGRID_API_KEY", default=None):
-    INSTALLED_APPS += ["anymail"]
-    EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
-    ANYMAIL = {
-        "SENDGRID_API_KEY": SENDGRID_API_KEY,
-        "SENDGRID_API_URL": config(
-            "SENDGRID_API_URL", default="https://api.sendgrid.com/v3/"
-        ),
-    }
-
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
