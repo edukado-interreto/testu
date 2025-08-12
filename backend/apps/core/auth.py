@@ -1,7 +1,20 @@
+from urllib.parse import urljoin
+
 from django.contrib.auth import get_user_model
 from django.contrib.auth.backends import ModelBackend
+from django.contrib.sites.models import Site
+from django.urls import reverse
+
+from allauth.account.adapter import DefaultAccountAdapter
 
 UserModel = get_user_model()
+
+
+class CustomAdapter(DefaultAccountAdapter):
+    def get_email_confirmation_url(self, request, emailconfirmation):
+        domain = Site.objects.get(name="frontend").domain
+        url = reverse("account_confirm_email", args=[emailconfirmation.key])
+        return urljoin(domain, url)
 
 
 class EmailBackend(ModelBackend):

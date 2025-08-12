@@ -21,6 +21,7 @@ LANGUAGE_COOKIE_NAME = "lang"
 AUTH_USER_MODEL = "core.User"
 AUTHENTICATION_BACKENDS = ["apps.core.auth.EmailBackend"]
 
+ACCOUNT_ADAPTER = "apps.core.auth.CustomAdapter"
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_USER_DISPLAY = lambda user: user.__str__()
 ACCOUNT_USERNAME_REQUIRED = False
