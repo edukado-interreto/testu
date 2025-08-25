@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const [route, router, localePath] = [useRoute(), useRouter(), useLocalePath()]
-const { t: $t, t } = useI18n()
+const { t } = useI18n()
 const auth = useAuthStore()
 
-const form = ref<HTMLFormElement | null>(null)
+const form = useTemplateRef("form")
 const email = ref("")
 const password = ref("")
 const valid = ref(undefined)
@@ -58,10 +58,10 @@ onMounted(async () => {
     <v-row class="mt-5">
       <v-spacer />
       <v-col class="col-md-7">
-        <v-alert type="success" v-if="'verified' in route.query">
+        <v-alert v-if="'verified' in route.query" type="success" class="mb-4">
           {{ $t("login.email_is_verified") }}
         </v-alert>
-        <v-alert type="success" v-if="'reset' in route.query">
+        <v-alert v-if="'reset' in route.query" type="success" class="mb-4">
           {{ $t("login.password_reset_done") }}
         </v-alert>
         <v-form

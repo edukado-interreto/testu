@@ -34,7 +34,7 @@ const register_new_user = async () => {
     submitted.value = true
   } catch (e: FetchError | any) {
     if (e.status === 400) {
-      error_messages.value = Object.values(e.data).flat()
+      error_messages.value = Object.values(e.data).flat() as string[]
       return
     }
     error_messages.value = [`Server error (${e.status}: ${e.statusText})`]

@@ -37,6 +37,28 @@ export const useAuthStore = defineStore("auth", () => {
     $reset()
     useToasts().success(detail)
   }
+  const reset_password_send = async (email: string) => {
+    console.log(email)
+    const { detail } = await $auth<LogoutResponse>("password/reset/", {
+      body: { email },
+    })
+    return detail
+  }
+  const reset_password = async (uid: string, token: string, password: string) => {
+    const { detail } = await $auth<LogoutResponse>("password/reset/confirm/", {
+      body: { uid, token, new_password1: password, new_password2: password },
+    })
+    return detail
+  }
 
-  return { $reset, check_token, logged_in, login, logout, user }
+  return {
+    $reset,
+    check_token,
+    logged_in,
+    login,
+    logout,
+    user,
+    reset_password,
+    reset_password_send,
+  }
 })
