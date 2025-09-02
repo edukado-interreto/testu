@@ -162,7 +162,7 @@ const save = async () => {
     console.info(" ret:", data)
     dirty.value = false
     loaded_sheet.value = JSON.stringify(data.sheet)
-    await navigateTo(localePath({ name: "exercise", params: { id: data.lid } }))
+    await navigateTo(localePath({ name: "exercise-id", params: { id: data.lid } }))
   } catch (e) {
     console.error({ ...e })
     const resp = e.response

@@ -3,7 +3,7 @@ const tokenize = useTokenize()
 type Props = {
   code?: string
   shuffle?: boolean
-  solved?: SolvedDrags
+  solved?: Solved
   readonly?: boolean
   silent?: boolean
   parsed?: [string, string][]
@@ -28,13 +28,13 @@ const on_answer = (answer, i, j) => {
   // right answers. We access the computed
   // 'success' prop of each child component
   // to get the amount of successful answers.
-  props.score_awarded = gaps.value.filter(c => !!c.success).length
+  score_awarded.value = gaps.value.filter(c => !!c.success).length
 }
 const get_solved = () => {
   // inject the answers into "parsed"
   // and return the whole object
   let i = 0
-  const parsed_filled = parsed_local.map(phrase =>
+  const parsed_filled = parsed_local.value.map(phrase =>
     phrase.map(token => {
       if (token.token != "gap") return token
       token.answer = gaps.value[i].answer
@@ -47,18 +47,20 @@ const get_solved = () => {
   }
 }
 const score_available = computed(() => {
-  return parsed_local.flatMap(line => line.filter(t => t.token === "gap"))
+  return parsed_local.value.flatMap(line => line.filter(t => t.token === "gap"))
     .length
 })
 const parsed_local: ComputedRef<Token[][]> = computed(() => {
-  if (props.solved !== undefined) return props.solved.parsed
+  if (solved !== undefined) return solved.parsed
   // if the parent component provided a 'solved' prop,
   // bypass 'code' and load the 'solved' object which
   // contains the already parsed 'code' with answers
   // included.
 
-  return tokenize(props.code)
+  return tokenize(code)
 })
+
+defineExpose({ get_solved })
 </script>
 
 <template>

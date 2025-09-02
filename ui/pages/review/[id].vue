@@ -41,7 +41,10 @@ const { data: submission } = await useLazyAsyncData(
         <li v-if="submission.exam_lid">
           <NuxtLink
             :to="
-              localePath({ name: 'exam', params: { id: submission.exam_lid } })
+              localePath({
+                name: 'exam-id',
+                params: { id: submission.exam_lid },
+              })
             "
           >
             {{ $t("review.go_exam") }}

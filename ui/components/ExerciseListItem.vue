@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const localePath = useLocalePath()
-const props = defineProps<{ item: Exercise }>()
+const { item } = defineProps<{ item: Exercise }>()
 </script>
 
 <template>
   <v-card
-    :to="localePath({ name: 'exercise', params: { id: item.lid } })"
+    :to="localePath({ name: 'exercise-id', params: { id: item.lid } })"
     class="mb-5"
   >
     <v-card-title class="subheading font-weight-bold">

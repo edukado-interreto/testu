@@ -3,7 +3,7 @@ const tokenize = useTokenize()
 type Props = {
   code?: string
   shuffle?: boolean
-  solved?: SolvedDrags
+  solved?: Solved
   readonly?: boolean
   silent?: boolean
   parsed?: [string, string][]

@@ -30,7 +30,7 @@ const breadcrumbs = computed(() => [
 const sharable_link = computed(() => {
   if (!exam.lid) return ""
   return new URL(
-    localePath({ name: "exam", params: { id: exam.lid } }),
+    localePath({ name: "exam-id", params: { id: exam.lid } }),
     window.location.origin,
   ).href
 })
@@ -186,7 +186,12 @@ async function save() {
           size="large"
           color="primary"
           variant="text"
-          :to="localePath(`/exercise/${exam.exercise_lid}`)"
+          :to="
+            localePath({
+              name: 'exercise-id',
+              params: { id: exam.exercise_lid },
+            })
+          "
         >
           {{ $t("exam.goto_exercise") }}
         </v-btn>
@@ -197,7 +202,7 @@ async function save() {
       <v-col v-if="exam.lid" class="flex-shrink-1 flex-grow-0">
         <v-btn
           :disabled="!exam.lid"
-          :to="localePath({ name: 'exam', params: { id: exam.lid } })"
+          :to="localePath({ name: 'exam-id', params: { id: exam.lid } })"
           class="text-primary"
           nuxt
           variant="text"

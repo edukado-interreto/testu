@@ -24,6 +24,7 @@ export const useAuthStore = defineStore("auth", () => {
       user.value = data
       return true
     } catch {
+      $reset()
       return false
     }
   }
