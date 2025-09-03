@@ -1,3 +1,9 @@
+import makeFetchCookie from "fetch-cookie"
+import * as ofetch from "ofetch"
+
+const fetch_with_cookies = makeFetchCookie(ofetch.$fetch.native)
+const client = $fetch.create({ fetch: fetch_with_cookies })
+
 import { StorageSerializers, useLocalStorage } from "@vueuse/core"
 
 const ACCESS_TOKEN_LIFETIME = 3600 // seconds
@@ -10,12 +16,9 @@ export const useAuthStore = defineStore("auth", () => {
   const create =
     (method: "get" | "post") =>
     async <T>(url: string, options?: Record<string, any>): Promise<T> => {
-      return await requestFetch(`${AUTH_BASE_URL}/${url}`, { method, ...options })
+      return await client(`${AUTH_BASE_URL}/${url}`, { method, ...options })
     }
 
-  // const post = async <T>(url: string, options?: Record<string, any>): Promise<T> => {
-  //   return await requestFetch(`${AUTH_BASE_URL}/${url}`, { method: "post", ...options })
-  // }
   const $auth = { get: create("get"), post: create("post") }
 
   // STORE
